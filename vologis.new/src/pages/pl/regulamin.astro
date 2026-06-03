@@ -1,0 +1,505 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const schemaBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Strona główna",
+      "item": "https://vologis.com/pl/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Regulamin",
+      "item": "https://vologis.com/pl/regulamin"
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Regulamin — Vologis Sp. z o.o."
+  description="Regulamin serwisu internetowego vologis.com prowadzonego przez Vologis Sp. z o.o."
+  canonical="https://vologis.com/pl/regulamin"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaBreadcrumb)} />
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb-list" role="list">
+        <li><a href="/pl/">Strona główna</a></li>
+        <li aria-hidden="true" class="breadcrumb-sep">›</li>
+        <li aria-current="page">Regulamin</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="legal-page">
+    <div class="container">
+      <div class="legal-wrap">
+
+        <header class="legal-header">
+          <h1 class="legal-h1">Regulamin serwisu</h1>
+          <p class="legal-meta">Vologis Sp. z o.o. &mdash; <time datetime="2026-05">obowiązuje od maja 2026</time></p>
+          <p class="legal-intro">
+            Niniejszy Regulamin określa zasady świadczenia usług drogą elektroniczną
+            przez serwis internetowy <strong>vologis.com</strong>, prowadzony przez
+            Vologis Sp. z o.o. Dokument sporządzono zgodnie z ustawą z dnia 18 lipca
+            2002&nbsp;r. o świadczeniu usług drogą elektroniczną (Dz.U.&nbsp;2002 nr&nbsp;144
+            poz.&nbsp;1204 z późn. zm.), Kodeksem cywilnym oraz RODO.
+          </p>
+        </header>
+
+        <section class="legal-section" aria-labelledby="s1">
+          <h2 id="s1">1. Postanowienia ogólne</h2>
+          <ol class="legal-ol">
+            <li>
+              Operatorem serwisu internetowego dostępnego pod adresem
+              <strong>https://vologis.com</strong> jest:
+              <address class="legal-address">
+                <strong>Vologis Sp. z o.o.</strong><br />
+                ul. Wrocławska 79B, 63-200 Jarocin<br />
+                NIP: 6172220630 &nbsp;|&nbsp; KRS: 0000902577<br />
+                E-mail: <a href="mailto:biuro@vologis.com">biuro@vologis.com</a>
+              </address>
+            </li>
+            <li>
+              Serwis ma charakter <strong>informacyjny i lead generation</strong> — służy
+              prezentacji oferty Operatora, umożliwieniu kontaktu z Operatorem oraz
+              umówienia konsultacji. Serwis <strong>nie jest sklepem internetowym</strong>
+              i nie umożliwia zawierania umów sprzedaży lub świadczenia usług za
+              pośrednictwem serwisu (z wyjątkiem umówienia wstępnej konsultacji).
+            </li>
+            <li>
+              Korzystanie z serwisu jest dobrowolne i bezpłatne.
+            </li>
+            <li>
+              Niniejszy Regulamin jest udostępniony nieodpłatnie pod adresem
+              <a href="/pl/regulamin">vologis.com/pl/regulamin</a> w formie umożliwiającej
+              jego pobranie, utrwalenie i wydrukowanie.
+            </li>
+          </ol>
+        </section>
+
+        <section class="legal-section" aria-labelledby="s2">
+          <h2 id="s2">2. Definicje</h2>
+          <ul>
+            <li>
+              <strong>Serwis</strong> — serwis internetowy prowadzony przez Operatora
+              pod adresem <em>https://vologis.com</em> wraz ze wszystkimi podstronami.
+            </li>
+            <li>
+              <strong>Operator</strong> — Vologis Sp. z o.o. z siedzibą w Jarocinie.
+            </li>
+            <li>
+              <strong>Użytkownik</strong> — każda osoba fizyczna lub prawna korzystająca
+              z serwisu, w szczególności przeglądająca jego treści lub wypełniająca
+              formularz kontaktowy.
+            </li>
+            <li>
+              <strong>Usługi</strong> — usługi świadczone drogą elektroniczną przez
+              Operatora za pośrednictwem serwisu, opisane w §&nbsp;3.
+            </li>
+            <li>
+              <strong>Formularz kontaktowy</strong> — interaktywny formularz dostępny
+              pod adresem <a href="/pl/kontakt">/pl/kontakt</a>, umożliwiający przesłanie
+              zapytania do Operatora.
+            </li>
+            <li>
+              <strong>Regulamin</strong> — niniejszy dokument.
+            </li>
+          </ul>
+        </section>
+
+        <section class="legal-section" aria-labelledby="s3">
+          <h2 id="s3">3. Rodzaj i zakres usług świadczonych drogą elektroniczną</h2>
+          <p>Operator świadczy za pośrednictwem serwisu następujące usługi:</p>
+          <ol class="legal-ol">
+            <li>
+              <strong>Udostępnianie treści informacyjnych</strong> — prezentacja informacji
+              o oferowanych usługach doradztwa logistycznego, transporcie i zarządzaniu
+              łańcuchem dostaw; artykuły edukacyjne w sekcji Wiedza.
+            </li>
+            <li>
+              <strong>Formularz kontaktowy</strong> — umożliwienie Użytkownikom przesłania
+              zapytania handlowego lub informacyjnego do Operatora. Usługa jest aktywna
+              po przesłaniu formularza i kończy się z chwilą wysłania wiadomości.
+            </li>
+            <li>
+              <strong>Umówienie konsultacji (Calendly)</strong> — umożliwienie Użytkownikom
+              zarezerwowania terminu bezpłatnej konsultacji za pośrednictwem narzędzia
+              Calendly, dostępnego w serwisie. Calendly jest usługą zewnętrzną —
+              jej regulamin dostępny jest na stronie calendly.com.
+            </li>
+          </ol>
+        </section>
+
+        <section class="legal-section" aria-labelledby="s4">
+          <h2 id="s4">4. Warunki świadczenia usług</h2>
+
+          <h3>4.1. Wymagania techniczne</h3>
+          <p>
+            Do korzystania z serwisu niezbędne jest:
+          </p>
+          <ul>
+            <li>urządzenie z dostępem do Internetu (komputer, tablet, smartfon),</li>
+            <li>aktualna przeglądarka internetowa obsługująca HTML5 i CSS3
+              (Chrome, Firefox, Safari, Edge w aktualnych wersjach),</li>
+            <li>włączona obsługa JavaScript,</li>
+            <li>aktywne konto e-mail (przy korzystaniu z formularza kontaktowego).</li>
+          </ul>
+
+          <h3>4.2. Zakaz dostarczania treści bezprawnych</h3>
+          <p>
+            Użytkownik zobowiązany jest do korzystania z serwisu w sposób zgodny
+            z prawem, Regulaminem oraz dobrymi obyczajami. Zakazane jest w szczególności:
+          </p>
+          <ul>
+            <li>przesyłanie za pośrednictwem formularza kontaktowego treści o charakterze
+              bezprawnym, obraźliwym, naruszającym prawa osób trzecich lub spam,</li>
+            <li>podejmowanie działań mogących zakłócić funkcjonowanie serwisu,</li>
+            <li>automatyczne scrapowanie treści serwisu bez zgody Operatora,</li>
+            <li>podszywanie się pod inne osoby lub podmioty.</li>
+          </ul>
+        </section>
+
+        <section class="legal-section" aria-labelledby="s5">
+          <h2 id="s5">5. Formularz kontaktowy — zasady korzystania</h2>
+          <ol class="legal-ol">
+            <li>
+              Formularz kontaktowy służy wyłącznie do przesyłania zapytań
+              związanych z działalnością Operatora.
+            </li>
+            <li>
+              Użytkownik wypełniający formularz oświadcza, że podane przez niego
+              dane są prawdziwe i aktualne.
+            </li>
+            <li>
+              Obowiązkowym warunkiem przesłania formularza jest wyrażenie zgody
+              na przetwarzanie danych osobowych w celu odpowiedzi na zapytanie.
+            </li>
+            <li>
+              Operator dołoży starań, aby odpowiedzieć na zapytanie w ciągu
+              1 dnia roboczego.
+            </li>
+            <li>
+              Przesłanie formularza nie stanowi zawarcia umowy o świadczenie
+              usług doradczych w rozumieniu Kodeksu cywilnego.
+            </li>
+          </ol>
+        </section>
+
+        <section class="legal-section" aria-labelledby="s6">
+          <h2 id="s6">6. Odpowiedzialność</h2>
+          <ol class="legal-ol">
+            <li>
+              Operator nie gwarantuje nieprzerwanego dostępu do serwisu.
+              Przerwy techniczne mogą wynikać z prac konserwacyjnych lub awarii
+              infrastruktury. Operator nie ponosi odpowiedzialności za czasową
+              niedostępność serwisu.
+            </li>
+            <li>
+              Treści zamieszczone w serwisie mają charakter <strong>wyłącznie informacyjny</strong>
+              i nie stanowią oferty handlowej w rozumieniu art. 66 Kodeksu cywilnego,
+              chyba że wyraźnie wskazano inaczej.
+            </li>
+            <li>
+              Operator nie ponosi odpowiedzialności za skutki korzystania przez
+              Użytkownika z informacji zawartych w serwisie bez uprzedniej konsultacji
+              z Operatorem.
+            </li>
+            <li>
+              Operator nie ponosi odpowiedzialności za treści, polityki prywatności
+              ani funkcjonowanie serwisów zewnętrznych, do których prowadzą linki
+              zamieszczone w serwisie (m.in. Calendly, LinkedIn).
+            </li>
+            <li>
+              Serwis jest chroniony prawem autorskim. Kopiowanie, reprodukowanie
+              lub dystrybucja treści bez pisemnej zgody Operatora jest zabroniona,
+              z wyjątkiem cytowania w zakresie dozwolonego użytku.
+            </li>
+          </ol>
+        </section>
+
+        <section class="legal-section" aria-labelledby="s7">
+          <h2 id="s7">7. Ochrona danych osobowych</h2>
+          <p>
+            Zasady przetwarzania danych osobowych Użytkowników przez Operatora
+            opisuje szczegółowo <a href="/pl/polityka-prywatnosci">Polityka Prywatności</a>,
+            dostępna pod adresem <em>vologis.com/pl/polityka-prywatnosci</em>.
+            Polityka Prywatności stanowi integralną część niniejszego Regulaminu.
+          </p>
+        </section>
+
+        <section class="legal-section" aria-labelledby="s8">
+          <h2 id="s8">8. Reklamacje</h2>
+          <ol class="legal-ol">
+            <li>
+              Użytkownik może złożyć reklamację dotyczącą funkcjonowania serwisu
+              lub usług świadczonych drogą elektroniczną drogą elektroniczną na adres:
+              <a href="mailto:biuro@vologis.com">biuro@vologis.com</a>.
+            </li>
+            <li>
+              Reklamacja powinna zawierać: dane identyfikujące Użytkownika (imię,
+              adres e-mail), opis problemu oraz datę jego wystąpienia.
+            </li>
+            <li>
+              Operator rozpatrzy reklamację w terminie <strong>14 dni kalendarzowych</strong>
+              od jej otrzymania i poinformuje Użytkownika o sposobie rozpatrzenia
+              na adres e-mail podany w reklamacji.
+            </li>
+            <li>
+              Operator zastrzega sobie prawo do wydłużenia terminu rozpatrzenia
+              reklamacji w przypadkach szczególnie skomplikowanych, informując o tym
+              Użytkownika.
+            </li>
+          </ol>
+        </section>
+
+        <section class="legal-section" aria-labelledby="s9">
+          <h2 id="s9">9. Postanowienia końcowe</h2>
+          <ol class="legal-ol">
+            <li>
+              W sprawach nieuregulowanych niniejszym Regulaminem zastosowanie mają
+              przepisy prawa polskiego, w szczególności Kodeksu cywilnego oraz
+              ustawy o świadczeniu usług drogą elektroniczną.
+            </li>
+            <li>
+              Sądem właściwym do rozstrzygania sporów wynikłych na tle stosowania
+              niniejszego Regulaminu jest sąd miejscowo właściwy dla siedziby Operatora
+              (Jarocin), chyba że przepisy bezwzględnie obowiązujące stanowią inaczej.
+            </li>
+            <li>
+              Operator zastrzega sobie prawo do zmiany Regulaminu. Zmiany wchodzą
+              w życie z chwilą opublikowania zaktualizowanej wersji w serwisie.
+              Dalsze korzystanie z serwisu po opublikowaniu zmian oznacza ich akceptację.
+            </li>
+            <li>
+              Jeżeli którekolwiek postanowienie Regulaminu zostanie uznane za
+              nieważne lub bezskuteczne, pozostałe postanowienia zachowują moc.
+            </li>
+          </ol>
+        </section>
+
+        <section class="legal-section" aria-labelledby="s10">
+          <h2 id="s10">10. Kontakt</h2>
+          <p>
+            We wszystkich sprawach związanych z serwisem i niniejszym Regulaminem
+            skontaktuj się z Operatorem:
+          </p>
+          <ul>
+            <li>E-mail: <a href="mailto:biuro@vologis.com">biuro@vologis.com</a></li>
+            <li>Adres korespondencyjny: Vologis Sp. z o.o., ul. Wrocławska 79B, 63-200 Jarocin</li>
+          </ul>
+        </section>
+
+        <footer class="legal-footer">
+          <p>
+            Zobacz również: <a href="/pl/polityka-prywatnosci">Polityka Prywatności</a>
+          </p>
+          <p class="legal-date">Regulamin obowiązuje od maja 2026. Ostatnia aktualizacja: maj 2026.</p>
+        </footer>
+
+      </div>
+    </div>
+  </main>
+
+</BaseLayout>
+
+<style>
+  .breadcrumb {
+    padding-block: var(--space-md);
+    border-bottom: 1px solid var(--color-rule);
+  }
+
+  .breadcrumb-list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    list-style: none;
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+  }
+
+  .breadcrumb-list a {
+    color: var(--color-muted);
+    text-decoration: none;
+    transition: color var(--dur-micro) var(--ease-out);
+  }
+
+  .breadcrumb-list a:hover { color: var(--color-ink); }
+
+  .breadcrumb-sep { color: var(--color-neutral); user-select: none; }
+
+  .breadcrumb-list [aria-current="page"] {
+    color: var(--color-ink);
+    font-weight: 500;
+  }
+
+  /* ── Page layout ─────────────────────────────────── */
+  .legal-page {
+    padding-block: var(--space-3xl);
+  }
+
+  .legal-wrap {
+    max-width: 72ch;
+    margin-inline: auto;
+  }
+
+  /* ── Header ──────────────────────────────────────── */
+  .legal-header {
+    margin-bottom: var(--space-3xl);
+    padding-bottom: var(--space-2xl);
+    border-bottom: 2px solid var(--color-ink);
+  }
+
+  .legal-h1 {
+    font-size: var(--text-display-s);
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    color: var(--color-ink);
+    margin-bottom: var(--space-xs);
+  }
+
+  .legal-meta {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-neutral);
+    letter-spacing: 0.04em;
+    margin-bottom: var(--space-lg);
+  }
+
+  .legal-intro {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.7;
+    max-width: 65ch;
+  }
+
+  /* ── Sections ────────────────────────────────────── */
+  .legal-section {
+    margin-bottom: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
+    border-bottom: 1px solid var(--color-rule);
+  }
+
+  .legal-section:last-of-type {
+    border-bottom: none;
+  }
+
+  .legal-section h2 {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+    margin-bottom: var(--space-lg);
+  }
+
+  .legal-section h3 {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-ink);
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-md);
+  }
+
+  .legal-section p {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.75;
+    margin-bottom: var(--space-md);
+  }
+
+  .legal-section p:last-child { margin-bottom: 0; }
+
+  .legal-section ul {
+    margin-bottom: var(--space-md);
+    padding-left: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .legal-section li {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.65;
+  }
+
+  .legal-section a {
+    color: var(--color-secondary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color var(--dur-micro) var(--ease-out);
+  }
+
+  .legal-section a:hover { color: var(--color-ink); }
+
+  /* ── Ordered list ────────────────────────────────── */
+  .legal-ol {
+    margin-bottom: var(--space-md);
+    padding-left: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    list-style: decimal;
+  }
+
+  .legal-ol li {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.7;
+    padding-left: var(--space-xs);
+  }
+
+  /* ── Address block ───────────────────────────────── */
+  .legal-address {
+    font-style: normal;
+    background: var(--color-paper-2);
+    border-left: 3px solid var(--color-secondary);
+    padding: var(--space-md) var(--space-lg);
+    border-radius: 0 var(--space-2xs) var(--space-2xs) 0;
+    margin-block: var(--space-md);
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.75;
+  }
+
+  .legal-address a {
+    color: var(--color-secondary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* ── Footer ──────────────────────────────────────── */
+  .legal-footer {
+    margin-top: var(--space-3xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--color-rule);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .legal-footer p {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+  }
+
+  .legal-footer a {
+    color: var(--color-secondary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .legal-date {
+    color: var(--color-neutral) !important;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs) !important;
+    letter-spacing: 0.03em;
+  }
+</style>

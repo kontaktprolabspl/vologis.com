@@ -1,0 +1,463 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  canonical?: string;
+  noIndex?: boolean;
+}
+
+const {
+  title = "Vologis — Doradztwo Logistyczne | Transport i Spedycja | SCM",
+  description = "Vologis: doradztwo logistyczne, transport i spedycja oraz zarządzanie łańcuchem dostaw dla firm produkcyjnych i e-commerce. Działamy od 2011, rynki PL i EU.",
+  ogImage = "/og/home.jpg",
+  canonical,
+  noIndex = false,
+} = Astro.props;
+
+const canonicalURL = canonical ?? new URL(Astro.url.pathname, "https://vologis.com").href;
+
+const plPath = Astro.url.pathname;
+const enPath = plPath.replace(/^\/pl/, "/en");
+const plURL = new URL(plPath, "https://vologis.com").href;
+const enURL = new URL(enPath, "https://vologis.com").href;
+
+const schemaOrg = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Vologis Sp. z o.o.",
+  "url": "https://vologis.com",
+  "foundingDate": "2011",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Jarocin",
+    "addressRegion": "Wielkopolska",
+    "addressCountry": "PL"
+  },
+  "areaServed": ["PL", "EU"],
+  "knowsAbout": [
+    "doradztwo logistyczne",
+    "transport i spedycja",
+    "zarządzanie łańcuchem dostaw"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/company/vologis"
+  ]
+};
+---
+
+<!doctype html>
+<html lang="pl" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Google Search Console verification -->
+  <meta name="google-site-verification" content="PmUjYUC4MOQ_6C5EF33coJsiUG1ZcnqaOp3Vu2iUJXk" />
+
+  <meta name="generator" content={Astro.generator} />
+
+  <!-- SEO -->
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+  {noIndex && <meta name="robots" content="noindex, nofollow" />}
+
+  <!-- hreflang PL + EN -->
+  <link rel="alternate" hreflang="pl" href={plURL} />
+  <link rel="alternate" hreflang="en" href={enURL} />
+  <link rel="alternate" hreflang="x-default" href={plURL} />
+
+  <!-- GEO -->
+  <meta name="geo.region" content="PL-WP" />
+  <meta name="geo.placename" content="Jarocin, Polska" />
+  <meta name="geo.position" content="51.9694;17.4975" />
+  <meta name="ICBM" content="51.9694, 17.4975" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:site_name" content="Vologis" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+
+  <!-- Google Fonts: Geist -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Schema: Organization -->
+  <script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
+
+  <!-- Google Analytics 4 — replace G-XXXXXXXXXX -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+
+  <!-- Microsoft Clarity — replace with your project ID -->
+  <!-- <script>(function(c,l,a,r,i,t,y){...})(window, document, "clarity", "script", "YOUR_ID");</script> -->
+
+  <!-- Google Search Console verification — replace content -->
+  <!-- <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" /> -->
+
+  <!-- Calendly widget -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+  <!-- Microsoft Clarity — heatmaps & session recording -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wyaq74tm7t");
+  </script>
+</head>
+
+<body>
+
+  <!-- N5 Floating pill nav ─────────────────────────── -->
+  <header class="nav-wrap" role="banner">
+    <nav class="nav-pill" aria-label="Nawigacja główna">
+      <a href="/pl/" class="nav-wordmark" aria-label="Vologis — strona główna">
+        VOLOGIS
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="/pl/uslugi/doradztwo-logistyczne">Usługi</a></li>
+        <li><a href="/pl/proces">Proces</a></li>
+        <li><a href="/pl/wiedza">Wiedza</a></li>
+        <li><a href="/pl/kontakt">Kontakt</a></li>
+      </ul>
+
+      <a
+        href="#calendly"
+        class="nav-cta"
+        onclick="Calendly && Calendly.initPopupWidget({url:'https://calendly.com/vologis/konsultacja'}); return false;"
+      >
+        Umów spotkanie
+      </a>
+
+      <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="nav-hamburger__bar"></span>
+        <span class="nav-hamburger__bar"></span>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <ul role="list">
+        <li><a href="/pl/uslugi/doradztwo-logistyczne">Usługi</a></li>
+        <li><a href="/pl/proces">Proces</a></li>
+        <li><a href="/pl/wiedza">Wiedza</a></li>
+        <li><a href="/pl/kontakt">Kontakt</a></li>
+        <li>
+          <a
+            href="#calendly"
+            class="mobile-cta"
+            onclick="Calendly && Calendly.initPopupWidget({url:'https://calendly.com/vologis/konsultacja'}); return false;"
+          >
+            Umów spotkanie →
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <slot />
+  </main>
+
+  <!-- Ft1 Mast-headed footer ──────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <p class="footer-wordmark">VOLOGIS</p>
+          <p class="footer-tagline">Doradztwo logistyczne dla firm z ambicjami.</p>
+        </div>
+        <div class="footer-meta">
+          <address class="footer-nap">
+            Vologis Sp. z o.o. &middot; Jarocin, Polska
+          </address>
+          <nav class="footer-links" aria-label="Linki stopki">
+            <a href="/pl/polityka-prywatnosci">Polityka prywatności</a>
+            <a href="/pl/regulamin">Regulamin</a>
+            <a href="/pl/kontakt">Kontakt</a>
+          </nav>
+          <p class="footer-copy">&copy; 2026 Vologis Sp. z o.o.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+<style>
+  /* ── Nav N5 Floating pill ──────────────────────── */
+  .nav-wrap {
+    position: fixed;
+    top: var(--space-md);
+    left: 0;
+    right: 0;
+    z-index: var(--z-sticky);
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .nav-pill {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+    padding: var(--space-xs) var(--space-md);
+    background: var(--color-paper-glass);
+    backdrop-filter: blur(12px) saturate(1.4);
+    -webkit-backdrop-filter: blur(12px) saturate(1.4);
+    border: 1px solid var(--color-rule);
+    border-radius: 9999px;
+    pointer-events: all;
+    box-shadow: 0 2px 12px oklch(14% 0.04 250 / 0.08);
+  }
+
+  .nav-wordmark {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--text-sm);
+    letter-spacing: 0.12em;
+    color: var(--color-ink);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-muted);
+    text-decoration: none;
+    white-space: nowrap;
+    transition:
+      color var(--dur-micro) var(--ease-out);
+  }
+
+  .nav-links a:hover {
+    color: var(--color-ink);
+  }
+
+  .nav-cta {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-ink-on-dark);
+    background: var(--color-ink);
+    padding: var(--space-xs) var(--space-md);
+    border-radius: 9999px;
+    white-space: nowrap;
+    text-decoration: none;
+    transition:
+      background var(--dur-micro) var(--ease-out),
+      transform var(--dur-micro) var(--ease-out);
+    cursor: pointer;
+    border: none;
+  }
+
+  .nav-cta:hover {
+    background: var(--color-accent);
+    transform: translateY(-1px);
+  }
+
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--space-xs);
+    border-radius: var(--space-xs);
+  }
+
+  .nav-hamburger__bar {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--color-ink);
+    border-radius: 1px;
+    transition: transform var(--dur-short) var(--ease-out), opacity var(--dur-short) var(--ease-out);
+  }
+
+  /* Mobile menu */
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    background: var(--color-paper-dark);
+    z-index: calc(var(--z-sticky) - 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--dur-long) var(--ease-out);
+  }
+
+  .mobile-menu.is-open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .mobile-menu ul {
+    list-style: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .mobile-menu a {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--color-ink-on-dark);
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    transition: color var(--dur-micro) var(--ease-out);
+  }
+
+  .mobile-menu a:hover { color: var(--color-accent); }
+
+  .mobile-cta {
+    font-size: var(--text-xl) !important;
+    color: var(--color-accent) !important;
+  }
+
+  /* ── Footer Ft1 Mast-headed ──────────────────────── */
+  .footer {
+    background: var(--color-paper-2);
+    border-top: 1px solid var(--color-rule);
+    padding-block: var(--space-2xl);
+    margin-top: var(--space-3xl);
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-xl);
+  }
+
+  .footer-wordmark {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--text-xl);
+    letter-spacing: 0.08em;
+    color: var(--color-ink);
+    margin-bottom: var(--space-xs);
+  }
+
+  .footer-tagline {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    max-width: 28ch;
+  }
+
+  .footer-meta {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    align-items: flex-end;
+  }
+
+  .footer-nap {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    font-style: normal;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .footer-links a {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    text-decoration: none;
+    transition: color var(--dur-micro) var(--ease-out);
+  }
+
+  .footer-links a:hover { color: var(--color-ink); }
+
+  .footer-copy {
+    font-size: var(--text-xs);
+    color: var(--color-neutral);
+  }
+
+  /* ── Responsive ──────────────────────────────────── */
+  @media (max-width: 60rem) {
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .nav-hamburger { display: flex; }
+
+    .nav-pill {
+      justify-content: space-between;
+      width: calc(100% - 2 * var(--space-md));
+      border-radius: var(--space-sm);
+    }
+  }
+
+  @media (max-width: 40rem) {
+    .footer-inner {
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+    .footer-meta {
+      text-align: left;
+      align-items: flex-start;
+    }
+    .footer-links { justify-content: flex-start; }
+  }
+</style>
+
+<script>
+  const hamburger = document.querySelector('.nav-hamburger') as HTMLButtonElement | null;
+  const mobileMenu = document.querySelector('.mobile-menu') as HTMLElement | null;
+
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('is-open');
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+      hamburger.setAttribute('aria-label', isOpen ? 'Zamknij menu' : 'Otwórz menu');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        hamburger.setAttribute('aria-label', 'Otwórz menu');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+</script>

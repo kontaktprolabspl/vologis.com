@@ -1,0 +1,512 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const schemaBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Strona główna",
+      "item": "https://vologis.com/pl/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Polityka Prywatności",
+      "item": "https://vologis.com/pl/polityka-prywatnosci"
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Polityka Prywatności — Vologis Sp. z o.o."
+  description="Polityka prywatności serwisu vologis.com. Informacje o przetwarzaniu danych osobowych zgodnie z RODO."
+  canonical="https://vologis.com/pl/polityka-prywatnosci"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaBreadcrumb)} />
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb-list" role="list">
+        <li><a href="/pl/">Strona główna</a></li>
+        <li aria-hidden="true" class="breadcrumb-sep">›</li>
+        <li aria-current="page">Polityka Prywatności</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="legal-page">
+    <div class="container">
+      <div class="legal-wrap">
+
+        <header class="legal-header">
+          <h1 class="legal-h1">Polityka Prywatności</h1>
+          <p class="legal-meta">Vologis Sp. z o.o. &mdash; <time datetime="2026-05">aktualizacja: maj 2026</time></p>
+          <p class="legal-intro">
+            Niniejsza Polityka Prywatności opisuje zasady przetwarzania danych osobowych
+            użytkowników serwisu internetowego <strong>vologis.com</strong>
+            przez Vologis Sp. z o.o. Dokument sporządzono zgodnie z Rozporządzeniem Parlamentu
+            Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. (RODO) oraz
+            ustawą z dnia 18 lipca 2002 r. o świadczeniu usług drogą elektroniczną.
+          </p>
+        </header>
+
+        <section class="legal-section" aria-labelledby="s1">
+          <h2 id="s1">1. Administrator danych osobowych</h2>
+          <p>
+            Administratorem Twoich danych osobowych jest:
+          </p>
+          <address class="legal-address">
+            <strong>Vologis Sp. z o.o.</strong><br />
+            ul. Wrocławska 79B, 63-200 Jarocin<br />
+            NIP: 6172220630 &nbsp;|&nbsp; KRS: 0000902577<br />
+            E-mail: <a href="mailto:biuro@vologis.com">biuro@vologis.com</a>
+          </address>
+          <p>
+            W sprawach dotyczących ochrony danych osobowych możesz kontaktować się
+            pod adresem e-mail: <a href="mailto:biuro@vologis.com">biuro@vologis.com</a>.
+            Administrator nie powołał Inspektora Ochrony Danych — nie jest do tego zobowiązany
+            na podstawie art. 37 RODO.
+          </p>
+        </section>
+
+        <section class="legal-section" aria-labelledby="s2">
+          <h2 id="s2">2. Jakie dane zbieramy</h2>
+
+          <h3>2.1. Dane z formularza kontaktowego</h3>
+          <p>
+            Gdy wypełniasz formularz kontaktowy na stronie <code>/pl/kontakt</code>, przetwarzamy
+            następujące dane osobowe podane przez Ciebie dobrowolnie:
+          </p>
+          <ul>
+            <li>imię i nazwisko,</li>
+            <li>nazwa firmy,</li>
+            <li>służbowy adres e-mail,</li>
+            <li>numer telefonu (opcjonalnie),</li>
+            <li>treść wiadomości.</li>
+          </ul>
+          <p>
+            Dane z formularza są przesyłane za pośrednictwem usługi Formspree (podmiot
+            przetwarzający) i trafiają na adres e-mail Administratora.
+          </p>
+
+          <h3>2.2. Dane analityczne (Google Analytics 4)</h3>
+          <p>
+            Serwis korzysta z Google Analytics 4 (Google LLC, USA) do analizy ruchu.
+            Zbierane dane obejmują: typ urządzenia i przeglądarki, przybliżoną lokalizację
+            (na poziomie kraju/miasta), odwiedzone strony, czas sesji. Adres IP jest
+            anonimizowany przed zapisem. GA4 działa w trybie bez identyfikatorów
+            użytkownika między sesjami (cookieless measurement).
+          </p>
+
+          <h3>2.3. Dane behawioralne (Microsoft Clarity)</h3>
+          <p>
+            Serwis korzysta z Microsoft Clarity (Microsoft Corporation, USA) do rejestrowania
+            sesji użytkowników (nagrania ekranu, heatmapy kliknięć). Dane nie zawierają
+            danych osobowych umożliwiających bezpośrednią identyfikację. Clarity może
+            używać lokalnego przechowywania danych w przeglądarce.
+          </p>
+
+          <h3>2.4. Dane marketingowe (Klaviyo)</h3>
+          <p>
+            Jeśli zapiszesz się do komunikacji marketingowej, Twój adres e-mail oraz
+            wyrażona zgoda będą przechowywane w systemie Klaviyo Inc. (USA). Przetwarzanie
+            odbywa się wyłącznie na podstawie Twojej dobrowolnej zgody.
+          </p>
+        </section>
+
+        <section class="legal-section" aria-labelledby="s3">
+          <h2 id="s3">3. Cel i podstawa prawna przetwarzania</h2>
+          <div class="legal-table-wrap">
+            <table class="legal-table">
+              <thead>
+                <tr>
+                  <th>Cel przetwarzania</th>
+                  <th>Podstawa prawna (RODO)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Obsługa zapytania przesłanego przez formularz kontaktowy</td>
+                  <td>Art. 6 ust. 1 lit. b — niezbędność do podjęcia działań na żądanie osoby</td>
+                </tr>
+                <tr>
+                  <td>Analityka i optymalizacja serwisu (Google Analytics 4, Microsoft Clarity)</td>
+                  <td>Art. 6 ust. 1 lit. f — prawnie uzasadniony interes Administratora</td>
+                </tr>
+                <tr>
+                  <td>Komunikacja marketingowa (Klaviyo)</td>
+                  <td>Art. 6 ust. 1 lit. a — dobrowolna zgoda</td>
+                </tr>
+                <tr>
+                  <td>Ustalenie, dochodzenie lub obrona roszczeń</td>
+                  <td>Art. 6 ust. 1 lit. f — prawnie uzasadniony interes Administratora</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="legal-section" aria-labelledby="s4">
+          <h2 id="s4">4. Okres przechowywania danych</h2>
+          <ul>
+            <li>
+              <strong>Dane z formularza kontaktowego</strong> — przez czas niezbędny do
+              obsługi zapytania, nie dłużej niż 3 lata od ostatniego kontaktu, chyba że
+              nawiązana zostanie relacja handlowa.
+            </li>
+            <li>
+              <strong>Dane analityczne (GA4)</strong> — domyślnie 14 miesięcy (ustawienie
+              retencji danych w Google Analytics), następnie automatyczne usunięcie.
+            </li>
+            <li>
+              <strong>Dane behawioralne (Clarity)</strong> — zgodnie z polityką Microsoftu,
+              maksymalnie 13 miesięcy.
+            </li>
+            <li>
+              <strong>Dane marketingowe (Klaviyo)</strong> — do momentu cofnięcia zgody
+              lub żądania usunięcia, nie dłużej niż 5 lat od jej udzielenia.
+            </li>
+          </ul>
+        </section>
+
+        <section class="legal-section" aria-labelledby="s5">
+          <h2 id="s5">5. Odbiorcy danych</h2>
+          <p>
+            Twoje dane mogą być przekazywane następującym podmiotom przetwarzającym,
+            działającym na podstawie umów powierzenia przetwarzania danych:
+          </p>
+          <ul>
+            <li><strong>Google LLC</strong> (Google Analytics 4) — analityka internetowa,</li>
+            <li><strong>Microsoft Corporation</strong> (Microsoft Clarity) — analityka behawioralna,</li>
+            <li><strong>Klaviyo Inc.</strong> — platforma e-mail marketingu,</li>
+            <li><strong>Formspree Inc.</strong> — obsługa formularza kontaktowego,</li>
+            <li><strong>Cloudflare Inc.</strong> — hosting, CDN, ochrona DDoS.</li>
+          </ul>
+          <p>
+            Dane nie są sprzedawane ani udostępniane innym podmiotom w celach
+            komercyjnych. Dane mogą być udostępnione organom publicznym, gdy wynika
+            to z obowiązującego prawa.
+          </p>
+        </section>
+
+        <section class="legal-section" aria-labelledby="s6">
+          <h2 id="s6">6. Prawa osoby, której dane dotyczą</h2>
+          <p>Na podstawie RODO przysługują Ci następujące prawa:</p>
+          <ul>
+            <li><strong>Prawo dostępu</strong> (art. 15) — możesz uzyskać informację, czy i jakie Twoje dane przetwarzamy.</li>
+            <li><strong>Prawo do sprostowania</strong> (art. 16) — możesz żądać poprawienia nieprawidłowych danych.</li>
+            <li><strong>Prawo do usunięcia</strong> (art. 17) — możesz żądać usunięcia danych („prawo do bycia zapomnianym"), gdy nie są już niezbędne do celu, dla którego zostały zebrane.</li>
+            <li><strong>Prawo do ograniczenia przetwarzania</strong> (art. 18) — możesz żądać wstrzymania przetwarzania w określonych przypadkach.</li>
+            <li><strong>Prawo do przenoszenia danych</strong> (art. 20) — możesz otrzymać swoje dane w ustrukturyzowanym formacie.</li>
+            <li><strong>Prawo do sprzeciwu</strong> (art. 21) — możesz sprzeciwić się przetwarzaniu opartemu na prawnie uzasadnionym interesie.</li>
+            <li><strong>Prawo do cofnięcia zgody</strong> — w każdej chwili, bez wpływu na zgodność z prawem przetwarzania dokonanego przed cofnięciem.</li>
+          </ul>
+          <p>
+            Aby skorzystać z powyższych praw, wyślij wiadomość na:
+            <a href="mailto:biuro@vologis.com">biuro@vologis.com</a>.
+            Odpowiemy bez zbędnej zwłoki, nie później niż w ciągu 30 dni.
+          </p>
+        </section>
+
+        <section class="legal-section" aria-labelledby="s7">
+          <h2 id="s7">7. Prawo do wniesienia skargi do UODO</h2>
+          <p>
+            Jeśli uważasz, że przetwarzanie Twoich danych osobowych narusza przepisy RODO,
+            masz prawo wniesienia skargi do organu nadzorczego:
+          </p>
+          <address class="legal-address">
+            <strong>Prezes Urzędu Ochrony Danych Osobowych (UODO)</strong><br />
+            ul. Stawki 2, 00-193 Warszawa<br />
+            <a href="https://uodo.gov.pl" target="_blank" rel="noopener noreferrer">uodo.gov.pl</a>
+          </address>
+        </section>
+
+        <section class="legal-section" aria-labelledby="s8">
+          <h2 id="s8">8. Przekazywanie danych poza Europejski Obszar Gospodarczy</h2>
+          <p>
+            Część podmiotów przetwarzających (Google LLC, Microsoft Corporation, Klaviyo Inc.,
+            Formspree Inc., Cloudflare Inc.) ma siedziby w Stanach Zjednoczonych i może
+            przetwarzać dane poza EOG. Przekazanie odbywa się z zastosowaniem odpowiednich
+            zabezpieczeń — Standardowych Klauzul Umownych (SCC) przyjętych przez Komisję
+            Europejską (art. 46 ust. 2 lit. c RODO). Możesz uzyskać kopię tych
+            zabezpieczeń kontaktując się z Administratorem.
+          </p>
+        </section>
+
+        <section class="legal-section" aria-labelledby="s9">
+          <h2 id="s9">9. Pliki cookies</h2>
+          <p>
+            Serwis <strong>vologis.com nie zapisuje własnych plików cookies analitycznych</strong>
+            ani marketingowych na Twoim urządzeniu. Narzędzia analityczne (Google Analytics 4,
+            Microsoft Clarity) działają w trybie cookieless lub korzystają z lokalnego
+            przechowywania danych w przeglądarce na podstawie prawnie uzasadnionego interesu
+            Administratora. Serwis nie wyświetla baneru cookie.
+          </p>
+          <p>
+            Możesz zarządzać ustawieniami swojej przeglądarki, aby blokować przechowywanie
+            danych lokalnych przez strony trzecie. Większość przeglądarek umożliwia to
+            w ustawieniach prywatności.
+          </p>
+        </section>
+
+        <section class="legal-section" aria-labelledby="s10">
+          <h2 id="s10">10. Zmiany polityki prywatności</h2>
+          <p>
+            Administrator zastrzega sobie prawo do aktualizacji niniejszej Polityki Prywatności.
+            O istotnych zmianach poinformujemy przez zamieszczenie zaktualizowanej wersji
+            w serwisie z nową datą aktualizacji. Zalecamy okresowe zapoznawanie się z treścią
+            dokumentu.
+          </p>
+        </section>
+
+        <section class="legal-section" aria-labelledby="s11">
+          <h2 id="s11">11. Kontakt w sprawach danych osobowych</h2>
+          <p>
+            We wszystkich sprawach dotyczących ochrony danych osobowych skontaktuj się z nami:
+          </p>
+          <ul>
+            <li>E-mail: <a href="mailto:biuro@vologis.com">biuro@vologis.com</a></li>
+            <li>Adres korespondencyjny: Vologis Sp. z o.o., ul. Wrocławska 79B, 63-200 Jarocin</li>
+          </ul>
+        </section>
+
+        <footer class="legal-footer">
+          <p>
+            Zobacz również: <a href="/pl/regulamin">Regulamin serwisu</a>
+          </p>
+          <p class="legal-date">Dokument obowiązuje od maja 2026. Ostatnia aktualizacja: maj 2026.</p>
+        </footer>
+
+      </div>
+    </div>
+  </main>
+
+</BaseLayout>
+
+<style>
+  .breadcrumb {
+    padding-block: var(--space-md);
+    border-bottom: 1px solid var(--color-rule);
+  }
+
+  .breadcrumb-list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    list-style: none;
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+  }
+
+  .breadcrumb-list a {
+    color: var(--color-muted);
+    text-decoration: none;
+    transition: color var(--dur-micro) var(--ease-out);
+  }
+
+  .breadcrumb-list a:hover { color: var(--color-ink); }
+
+  .breadcrumb-sep { color: var(--color-neutral); user-select: none; }
+
+  .breadcrumb-list [aria-current="page"] {
+    color: var(--color-ink);
+    font-weight: 500;
+  }
+
+  /* ── Page layout ─────────────────────────────────── */
+  .legal-page {
+    padding-block: var(--space-3xl);
+  }
+
+  .legal-wrap {
+    max-width: 72ch;
+    margin-inline: auto;
+  }
+
+  /* ── Header ──────────────────────────────────────── */
+  .legal-header {
+    margin-bottom: var(--space-3xl);
+    padding-bottom: var(--space-2xl);
+    border-bottom: 2px solid var(--color-ink);
+  }
+
+  .legal-h1 {
+    font-size: var(--text-display-s);
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    color: var(--color-ink);
+    margin-bottom: var(--space-xs);
+  }
+
+  .legal-meta {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-neutral);
+    letter-spacing: 0.04em;
+    margin-bottom: var(--space-lg);
+  }
+
+  .legal-intro {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.7;
+    max-width: 65ch;
+  }
+
+  /* ── Sections ────────────────────────────────────── */
+  .legal-section {
+    margin-bottom: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
+    border-bottom: 1px solid var(--color-rule);
+  }
+
+  .legal-section:last-of-type {
+    border-bottom: none;
+  }
+
+  .legal-section h2 {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+    margin-bottom: var(--space-lg);
+  }
+
+  .legal-section h3 {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-ink);
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-md);
+  }
+
+  .legal-section p {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.75;
+    margin-bottom: var(--space-md);
+  }
+
+  .legal-section p:last-child { margin-bottom: 0; }
+
+  .legal-section ul {
+    margin-bottom: var(--space-md);
+    padding-left: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .legal-section li {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.65;
+  }
+
+  .legal-section a {
+    color: var(--color-secondary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color var(--dur-micro) var(--ease-out);
+  }
+
+  .legal-section a:hover { color: var(--color-ink); }
+
+  code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    background: var(--color-paper-2);
+    border: 1px solid var(--color-rule);
+    border-radius: 3px;
+    padding: 0.1em 0.35em;
+    color: var(--color-ink);
+  }
+
+  /* ── Address block ───────────────────────────────── */
+  .legal-address {
+    font-style: normal;
+    background: var(--color-paper-2);
+    border-left: 3px solid var(--color-secondary);
+    padding: var(--space-md) var(--space-lg);
+    border-radius: 0 var(--space-2xs) var(--space-2xs) 0;
+    margin-block: var(--space-md);
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.75;
+  }
+
+  .legal-address a {
+    color: var(--color-secondary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* ── Table ───────────────────────────────────────── */
+  .legal-table-wrap {
+    overflow-x: auto;
+    margin-block: var(--space-md);
+    border-radius: var(--space-2xs);
+    border: 1px solid var(--color-rule);
+  }
+
+  .legal-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+  }
+
+  .legal-table th {
+    background: var(--color-paper-2);
+    color: var(--color-ink);
+    font-weight: 600;
+    text-align: left;
+    padding: var(--space-sm) var(--space-md);
+    border-bottom: 1px solid var(--color-rule);
+  }
+
+  .legal-table td {
+    padding: var(--space-sm) var(--space-md);
+    color: var(--color-muted);
+    line-height: 1.55;
+    border-bottom: 1px solid var(--color-rule);
+    vertical-align: top;
+  }
+
+  .legal-table tr:last-child td { border-bottom: none; }
+
+  .legal-table tr:nth-child(even) td {
+    background: oklch(99% 0.003 250);
+  }
+
+  /* ── Footer ──────────────────────────────────────── */
+  .legal-footer {
+    margin-top: var(--space-3xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--color-rule);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .legal-footer p {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+  }
+
+  .legal-footer a {
+    color: var(--color-secondary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .legal-date {
+    color: var(--color-neutral) !important;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs) !important;
+    letter-spacing: 0.03em;
+  }
+</style>

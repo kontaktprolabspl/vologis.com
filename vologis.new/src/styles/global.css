@@ -1,0 +1,173 @@
+/* Hallmark · genre: modern-minimal · macrostructure: Split Studio · theme: custom
+ * nav: N5 Floating pill · footer: Ft1 Mast-headed
+ * vibe: authoritative navy-red B2B consulting
+ * paper: oklch(97% 0.004 250) · accent: oklch(48% 0.19 26) warm-red · display+body: Geist
+ * axes: light / geometric-sans / warm
+ * tone: utilitarian-expert · audience: B2B decision-makers · use: book consultation
+ * pre-emit: P5 H5 E5 S4 R5 V4
+ */
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-body:    "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    "Geist Mono", ui-monospace, monospace;
+}
+
+:root {
+  /* ─── Color tokens ──────────────────────────────────── */
+  --color-paper:        oklch(97%   0.004 250);
+  --color-paper-2:      oklch(93%   0.008 250);
+  --color-paper-dark:   oklch(14%   0.04  250);
+  --color-paper-dark-2: oklch(19%   0.04  250);
+  --color-ink:          oklch(14%   0.04  250);
+  --color-ink-on-dark:  oklch(95%   0.005 250);
+  --color-rule:         oklch(88%   0.008 250);
+  --color-neutral:      oklch(56%   0.010 250);
+  --color-muted:        oklch(53%   0.008 250);
+  --color-accent:       oklch(48%   0.19  26);
+  --color-accent-hover: oklch(42%   0.19  26);
+  --color-secondary:    oklch(61%   0.13  243);
+  --color-focus:        oklch(61%   0.13  243);
+  --color-muted-on-dark:oklch(70%   0.008 250);
+  --color-paper-glass:  oklch(97% 0.004 250 / 0.88);
+  --color-border-dark:  oklch(30%   0.03  250);
+  --color-input-dark:   oklch(22%   0.035 250);
+
+  /* Reference-derived surfaces (nlslogistic / locura) */
+  --color-blue:         oklch(55%   0.15  250);  /* #4a90d9-family icon/highlight */
+  --color-blue-tint:    oklch(95%   0.025 250);  /* soft icon-container fill */
+  --color-blue-on-dark: oklch(72%   0.12  250);  /* eyebrow / icon on navy */
+  --color-glass-dark:   oklch(100%  0      0 / 0.06);
+  --color-glass-border: oklch(100%  0      0 / 0.12);
+
+  /* ─── Radius ────────────────────────────────────────── */
+  --radius-xs:   0.5rem;
+  --radius-sm:   0.75rem;
+  --radius-md:   1rem;
+  --radius-lg:   1.5rem;
+  --radius-pill: 9999px;
+
+  /* ─── Elevation (soft B2B shadows) ──────────────────── */
+  --shadow-sm: 0 1px 2px oklch(20% 0.04 250 / 0.04), 0 2px 8px oklch(20% 0.04 250 / 0.06);
+  --shadow-md: 0 4px 12px oklch(20% 0.04 250 / 0.07), 0 12px 32px oklch(20% 0.04 250 / 0.07);
+  --shadow-lg: 0 8px 24px oklch(20% 0.04 250 / 0.10), 0 28px 64px oklch(20% 0.04 250 / 0.12);
+
+  /* ─── Brand gradients ───────────────────────────────── */
+  --gradient-navy: linear-gradient(155deg, oklch(21% 0.06 255) 0%, oklch(13% 0.045 250) 62%);
+  --gradient-cta:  linear-gradient(150deg, oklch(24% 0.07 255) 0%, oklch(14% 0.045 250) 70%);
+
+  /* ─── Typography ────────────────────────────────────── */
+  --font-display: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-body:    "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    "Geist Mono", ui-monospace, monospace;
+
+  --text-xs:       0.64rem;
+  --text-sm:       0.8rem;
+  --text-base:     1rem;
+  --text-md:       1.25rem;
+  --text-lg:       1.5625rem;
+  --text-xl:       1.9531rem;
+  --text-2xl:      2.4414rem;
+  --text-3xl:      3.0518rem;
+  --text-4xl:      3.8147rem;
+  --text-display-s:clamp(2rem,   3.5vw + 0.5rem, 3.25rem);
+  --text-display:  clamp(2.75rem, 5vw  + 1rem,   5.25rem);
+
+  /* ─── Spacing (4 pt) ────────────────────────────────── */
+  --space-3xs: 0.125rem;
+  --space-2xs: 0.25rem;
+  --space-xs:  0.5rem;
+  --space-sm:  0.75rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 9rem;
+
+  /* ─── Motion ────────────────────────────────────────── */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:     cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro:   120ms;
+  --dur-short:   220ms;
+  --dur-long:    420ms;
+
+  /* ─── Layout ────────────────────────────────────────── */
+  --page-gutter: clamp(1rem, 4vw, 1.5rem);
+  --page-max:    72rem;
+  --section-gap: var(--space-3xl);
+
+  /* ─── Z-index ───────────────────────────────────────── */
+  --z-base:     1;
+  --z-raised:   10;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-modal:    400;
+  --z-toast:    500;
+  --z-tooltip:  600;
+}
+
+/* ─── Global safety ─────────────────────────────────── */
+html { overflow-x: clip; }
+body { overflow-x: clip; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ─── Base ──────────────────────────────────────────── */
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 400;
+  line-height: 1.62;
+  color: var(--color-ink);
+  background: var(--color-paper);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--color-ink);
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ─── Focus ─────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+/* ─── Utility ───────────────────────────────────────── */
+.tnum { font-variant-numeric: tabular-nums; }
+
+.container {
+  width: 100%;
+  max-width: var(--page-max);
+  margin-inline: auto;
+  padding-inline: var(--page-gutter);
+}
+
+/* ─── Reduced motion ────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 150ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 150ms !important;
+  }
+}
