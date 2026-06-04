@@ -19,8 +19,9 @@ const {
 
 const canonicalURL = canonical ?? new URL(Astro.url.pathname, "https://vologis.com").href;
 
-const plPath = Astro.url.pathname;
-const enPath = plPath.replace(/^\/pl/, "/en");
+const currentLang = Astro.url.pathname.startsWith("/en") ? "en" : "pl";
+const plPath = currentLang === "en" ? Astro.url.pathname.replace(/^\/en/, "/pl") : Astro.url.pathname;
+const enPath = currentLang === "en" ? Astro.url.pathname : Astro.url.pathname.replace(/^\/pl/, "/en");
 const plURL = new URL(plPath, "https://vologis.com").href;
 const enURL = new URL(enPath, "https://vologis.com").href;
 
@@ -49,7 +50,7 @@ const schemaOrg = {
 ---
 
 <!doctype html>
-<html lang="pl" dir="ltr">
+<html lang={currentLang} dir="ltr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -140,6 +141,22 @@ const schemaOrg = {
         <li><a href="/pl/kontakt">Kontakt</a></li>
       </ul>
 
+      <div class="nav-lang" aria-label="Wybór języka / Language">
+        <a
+          href={plPath}
+          hreflang="pl"
+          title="Polski"
+          aria-current={currentLang === "pl" ? "true" : undefined}
+        >PL</a>
+        <span class="nav-lang-sep" aria-hidden="true">/</span>
+        <a
+          href={enPath}
+          hreflang="en"
+          title="English"
+          aria-current={currentLang === "en" ? "true" : undefined}
+        >EN</a>
+      </div>
+
       <a
         href="#calendly"
         class="nav-cta"
@@ -169,6 +186,11 @@ const schemaOrg = {
           >
             Umów spotkanie →
           </a>
+        </li>
+        <li class="mobile-lang" aria-label="Wybór języka / Language">
+          <a href={plPath} hreflang="pl" aria-current={currentLang === "pl" ? "true" : undefined}>Polski</a>
+          <span class="mobile-lang-sep" aria-hidden="true">/</span>
+          <a href={enPath} hreflang="en" aria-current={currentLang === "en" ? "true" : undefined}>English</a>
         </li>
       </ul>
     </div>
@@ -262,6 +284,36 @@ const schemaOrg = {
     color: var(--color-ink);
   }
 
+  .nav-lang {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2xs);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+
+  .nav-lang a {
+    color: var(--color-muted);
+    text-decoration: none;
+    padding: var(--space-3xs) var(--space-2xs);
+    border-radius: var(--space-2xs);
+    transition: color var(--dur-micro) var(--ease-out);
+  }
+
+  .nav-lang a:hover { color: var(--color-ink); }
+
+  .nav-lang a[aria-current="true"] {
+    color: var(--color-ink);
+    font-weight: 700;
+  }
+
+  .nav-lang-sep {
+    color: var(--color-neutral);
+    user-select: none;
+  }
+
   .nav-cta {
     font-size: var(--text-sm);
     font-weight: 600;
@@ -346,6 +398,29 @@ const schemaOrg = {
     color: var(--color-accent) !important;
   }
 
+  .mobile-lang {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+  }
+
+  .mobile-lang a {
+    font-size: var(--text-md);
+    font-weight: 500;
+    color: var(--color-muted-on-dark, var(--color-neutral));
+  }
+
+  .mobile-lang a[aria-current="true"] {
+    color: var(--color-ink-on-dark);
+  }
+
+  .mobile-lang-sep {
+    color: var(--color-neutral);
+    user-select: none;
+  }
+
   /* ── Footer Ft1 Mast-headed ──────────────────────── */
   .footer {
     background: var(--color-paper-2);
@@ -414,6 +489,7 @@ const schemaOrg = {
   /* ── Responsive ──────────────────────────────────── */
   @media (max-width: 60rem) {
     .nav-links { display: none; }
+    .nav-lang { display: none; }
     .nav-cta { display: none; }
     .nav-hamburger { display: flex; }
 

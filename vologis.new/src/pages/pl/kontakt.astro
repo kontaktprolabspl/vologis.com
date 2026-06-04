@@ -45,20 +45,16 @@ const schemaBreadcrumb = {
   <script type="application/ld+json" set:html={JSON.stringify(schemaLocalBusiness)} />
   <script type="application/ld+json" set:html={JSON.stringify(schemaBreadcrumb)} />
 
-  <!-- ── Breadcrumb ──────────────────────────────────── -->
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol class="breadcrumb-list" role="list">
-        <li><a href="/pl/">Strona główna</a></li>
-        <li aria-hidden="true" class="breadcrumb-sep">›</li>
-        <li aria-current="page">Kontakt</li>
-      </ol>
-    </div>
-  </nav>
-
   <!-- ── Hero ───────────────────────────────────────── -->
   <section class="contact-hero" aria-labelledby="contact-heading">
     <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list" role="list">
+          <li><a href="/pl/">Strona główna</a></li>
+          <li aria-hidden="true" class="breadcrumb-sep">›</li>
+          <li aria-current="page">Kontakt</li>
+        </ol>
+      </nav>
       <p class="eyebrow">SKONTAKTUJ SIĘ</p>
       <h1 id="contact-heading" class="contact-h1">
         Umów bezpłatną<br>konsultację
@@ -269,8 +265,7 @@ const schemaBreadcrumb = {
 <style>
   /* ── Breadcrumb ─────────────────────────────────── */
   .breadcrumb {
-    padding-block: var(--space-md);
-    border-bottom: 1px solid var(--color-rule);
+    margin-bottom: var(--space-lg);
   }
 
   .breadcrumb-list {

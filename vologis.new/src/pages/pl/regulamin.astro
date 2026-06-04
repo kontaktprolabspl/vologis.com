@@ -28,21 +28,18 @@ const schemaBreadcrumb = {
 >
   <script type="application/ld+json" set:html={JSON.stringify(schemaBreadcrumb)} />
 
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol class="breadcrumb-list" role="list">
-        <li><a href="/pl/">Strona główna</a></li>
-        <li aria-hidden="true" class="breadcrumb-sep">›</li>
-        <li aria-current="page">Regulamin</li>
-      </ol>
-    </div>
-  </nav>
-
   <main class="legal-page">
     <div class="container">
       <div class="legal-wrap">
 
         <header class="legal-header">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol class="breadcrumb-list" role="list">
+              <li><a href="/pl/">Strona główna</a></li>
+              <li aria-hidden="true" class="breadcrumb-sep">›</li>
+              <li aria-current="page">Regulamin</li>
+            </ol>
+          </nav>
           <h1 class="legal-h1">Regulamin serwisu</h1>
           <p class="legal-meta">Vologis Sp. z o.o. &mdash; <time datetime="2026-05">obowiązuje od maja 2026</time></p>
           <p class="legal-intro">
@@ -312,8 +309,7 @@ const schemaBreadcrumb = {
 
 <style>
   .breadcrumb {
-    padding-block: var(--space-md);
-    border-bottom: 1px solid var(--color-rule);
+    margin-bottom: var(--space-lg);
   }
 
   .breadcrumb-list {
@@ -342,7 +338,8 @@ const schemaBreadcrumb = {
 
   /* ── Page layout ─────────────────────────────────── */
   .legal-page {
-    padding-block: var(--space-3xl);
+    padding-top: calc(var(--space-3xl) + 5rem);
+    padding-bottom: var(--space-3xl);
   }
 
   .legal-wrap {
