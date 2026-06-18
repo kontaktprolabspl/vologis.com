@@ -1,43 +1,53 @@
 /* Hallmark · genre: modern-minimal · macrostructure: Split Studio · theme: custom
  * nav: N5 Floating pill · footer: Ft1 Mast-headed
- * vibe: authoritative navy-red B2B consulting
- * paper: oklch(97% 0.004 250) · accent: oklch(48% 0.19 26) warm-red · display+body: Geist
- * axes: light / geometric-sans / warm
+ * vibe: clean berkeley-navy + imperial-red B2B consulting
+ * palette: #E63946 #F1FAEE #A8DADC #457B9D #1D3557 (coolors)
+ * paper: oklch(97.5% 0.018 138) honeydew · accent: oklch(61.2% 0.208 22) red · display+body: Geist
+ * axes: light / geometric-sans / cool
  * tone: utilitarian-expert · audience: B2B decision-makers · use: book consultation
  * pre-emit: P5 H5 E5 S4 R5 V4
  */
 @import "tailwindcss";
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/geist-mono";
 
 @theme {
-  --font-display: "Geist", ui-sans-serif, system-ui, sans-serif;
-  --font-body:    "Geist", ui-sans-serif, system-ui, sans-serif;
-  --font-mono:    "Geist Mono", ui-monospace, monospace;
+  --font-display: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-body:    "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    "Geist Mono Variable", ui-monospace, monospace;
 }
 
 :root {
-  /* ─── Color tokens ──────────────────────────────────── */
-  --color-paper:        oklch(97%   0.004 250);
-  --color-paper-2:      oklch(93%   0.008 250);
-  --color-paper-dark:   oklch(14%   0.04  250);
-  --color-paper-dark-2: oklch(19%   0.04  250);
-  --color-ink:          oklch(14%   0.04  250);
-  --color-ink-on-dark:  oklch(95%   0.005 250);
-  --color-rule:         oklch(88%   0.008 250);
-  --color-neutral:      oklch(56%   0.010 250);
-  --color-muted:        oklch(53%   0.008 250);
-  --color-accent:       oklch(48%   0.19  26);
-  --color-accent-hover: oklch(42%   0.19  26);
-  --color-secondary:    oklch(61%   0.13  243);
-  --color-focus:        oklch(61%   0.13  243);
-  --color-muted-on-dark:oklch(70%   0.008 250);
-  --color-paper-glass:  oklch(97% 0.004 250 / 0.88);
-  --color-border-dark:  oklch(30%   0.03  250);
-  --color-input-dark:   oklch(22%   0.035 250);
+  /* ─── Color tokens · palette #E63946 #F1FAEE #A8DADC #457B9D #1D3557 ─── */
+  /* Light surfaces — #F1FAEE honeydew */
+  --color-paper:        oklch(97.5% 0.018 138);
+  --color-paper-2:      oklch(94%   0.020 160);
+  --color-paper-glass:  oklch(97.5% 0.018 138 / 0.88);
 
-  /* Reference-derived surfaces (nlslogistic / locura) */
-  --color-blue:         oklch(55%   0.15  250);  /* #4a90d9-family icon/highlight */
-  --color-blue-tint:    oklch(95%   0.025 250);  /* soft icon-container fill */
-  --color-blue-on-dark: oklch(72%   0.12  250);  /* eyebrow / icon on navy */
+  /* Dark surfaces — #1D3557 berkeley navy */
+  --color-paper-dark:   oklch(26%   0.060 257);
+  --color-paper-dark-2: oklch(32.8% 0.068 257);   /* #1D3557 */
+  --color-border-dark:  oklch(40%   0.055 257);
+  --color-input-dark:   oklch(29%   0.062 257);
+
+  /* Ink & neutrals — navy-tinted */
+  --color-ink:          oklch(28%   0.062 257);
+  --color-ink-on-dark:  oklch(97.5% 0.014 138);    /* honeydew text on navy */
+  --color-rule:         oklch(88%   0.014 200);
+  --color-neutral:      oklch(44%   0.034 250);    /* darkened: 4.5:1 on paper */
+  --color-muted:        oklch(42%   0.032 250);    /* darkened: 4.5:1 on paper */
+  --color-muted-on-dark:oklch(80%   0.035 205);
+
+  /* Accent — #E63946 imperial red */
+  --color-accent:       oklch(61.2% 0.208 22);     /* #E63946 */
+  --color-accent-hover: oklch(52%   0.190 22);
+
+  /* Blue — #457B9D cerulean / #A8DADC powder */
+  --color-secondary:    oklch(56%   0.078 238);    /* #457B9D */
+  --color-focus:        oklch(56%   0.078 238);
+  --color-blue:         oklch(56%   0.078 238);     /* icon/highlight */
+  --color-blue-tint:    oklch(90%   0.045 200);     /* #A8DADC-soft fill */
+  --color-blue-on-dark: oklch(85.4% 0.052 199);     /* #A8DADC powder on navy */
   --color-glass-dark:   oklch(100%  0      0 / 0.06);
   --color-glass-border: oklch(100%  0      0 / 0.12);
 
@@ -49,18 +59,18 @@
   --radius-pill: 9999px;
 
   /* ─── Elevation (soft B2B shadows) ──────────────────── */
-  --shadow-sm: 0 1px 2px oklch(20% 0.04 250 / 0.04), 0 2px 8px oklch(20% 0.04 250 / 0.06);
-  --shadow-md: 0 4px 12px oklch(20% 0.04 250 / 0.07), 0 12px 32px oklch(20% 0.04 250 / 0.07);
-  --shadow-lg: 0 8px 24px oklch(20% 0.04 250 / 0.10), 0 28px 64px oklch(20% 0.04 250 / 0.12);
+  --shadow-sm: 0 1px 2px oklch(33% 0.068 257 / 0.05), 0 2px 8px oklch(33% 0.068 257 / 0.07);
+  --shadow-md: 0 4px 12px oklch(33% 0.068 257 / 0.08), 0 12px 32px oklch(33% 0.068 257 / 0.08);
+  --shadow-lg: 0 8px 24px oklch(33% 0.068 257 / 0.11), 0 28px 64px oklch(33% 0.068 257 / 0.13);
 
-  /* ─── Brand gradients ───────────────────────────────── */
-  --gradient-navy: linear-gradient(155deg, oklch(21% 0.06 255) 0%, oklch(13% 0.045 250) 62%);
-  --gradient-cta:  linear-gradient(150deg, oklch(24% 0.07 255) 0%, oklch(14% 0.045 250) 70%);
+  /* ─── Brand gradients · #1D3557 berkeley navy ───────── */
+  --gradient-navy: linear-gradient(155deg, oklch(34% 0.068 257) 0%, oklch(21% 0.055 257) 62%);
+  --gradient-cta:  linear-gradient(150deg, oklch(36% 0.072 257) 0%, oklch(22% 0.055 257) 70%);
 
   /* ─── Typography ────────────────────────────────────── */
-  --font-display: "Geist", ui-sans-serif, system-ui, sans-serif;
-  --font-body:    "Geist", ui-sans-serif, system-ui, sans-serif;
-  --font-mono:    "Geist Mono", ui-monospace, monospace;
+  --font-display: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-body:    "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    "Geist Mono Variable", ui-monospace, monospace;
 
   --text-xs:       0.64rem;
   --text-sm:       0.8rem;

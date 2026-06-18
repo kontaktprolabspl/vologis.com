@@ -1,0 +1,64 @@
+---
+interface Props {
+  title: string;
+  desc: string;
+  tag: string;
+}
+const { title, desc, tag } = Astro.props;
+---
+
+<article class="pcard">
+  <h3 class="pcard__title">{title}</h3>
+  <p class="pcard__desc">{desc}</p>
+  <span class="pcard__tag">{tag}</span>
+</article>
+
+<style>
+  .pcard {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    background: var(--color-paper);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-sm);
+    transition:
+      border-color var(--dur-short) var(--ease-out),
+      transform var(--dur-short) var(--ease-out),
+      box-shadow var(--dur-short) var(--ease-out);
+  }
+
+  .pcard:hover {
+    border-color: var(--color-blue);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .pcard__title {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+  }
+
+  .pcard__desc {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .pcard__tag {
+    align-self: flex-start;
+    margin-top: var(--space-2xs);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: 0.03em;
+    color: var(--color-blue);
+    background: var(--color-blue-tint);
+    padding: var(--space-2xs) var(--space-sm);
+    border-radius: var(--radius-pill);
+  }
+</style>

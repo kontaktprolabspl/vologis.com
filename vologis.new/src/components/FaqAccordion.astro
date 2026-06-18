@@ -1,0 +1,90 @@
+---
+interface Item { q: string; a: string; }
+interface Props { items: Item[]; single?: boolean; }
+const { items, single = false } = Astro.props;
+---
+
+<div class:list={["faq", { "faq--single": single }]}>
+  {items.map((it, i) => (
+    <details class="faq__item" open={i === 0}>
+      <summary class="faq__q">
+        <span class="faq__q-text">{it.q}</span>
+        <svg class="faq__icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+      </summary>
+      <p class="faq__a">{it.a}</p>
+    </details>
+  ))}
+</div>
+
+<style>
+  .faq {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+    align-items: start;
+  }
+
+  .faq--single {
+    grid-template-columns: 1fr;
+    max-width: 46rem;
+    margin-inline: auto;
+  }
+
+  .faq__item {
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-md);
+    background: var(--color-paper);
+    padding: 0 var(--space-lg);
+    transition: border-color var(--dur-micro) var(--ease-out);
+  }
+
+  .faq__item[open] { border-color: var(--color-blue); }
+
+  .faq__q {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    padding: var(--space-md) 0;
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--color-ink);
+  }
+
+  .faq__q::-webkit-details-marker { display: none; }
+
+  .faq__icon {
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--color-blue);
+    transition: transform var(--dur-short) var(--ease-out);
+  }
+
+  .faq__item[open] .faq__icon { transform: rotate(45deg); }
+
+  .faq__a {
+    margin: 0;
+    padding: 0 0 var(--space-md);
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.7;
+  }
+
+  .faq__item[open] .faq__a {
+    animation: faqIn var(--dur-short) var(--ease-out);
+  }
+
+  @keyframes faqIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  @media (max-width: 48rem) {
+    .faq { grid-template-columns: 1fr; }
+  }
+</style>

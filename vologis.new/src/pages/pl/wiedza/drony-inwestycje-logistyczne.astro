@@ -1,0 +1,655 @@
+---
+import KnowledgeArticleLayout from "../../../layouts/KnowledgeArticleLayout.astro";
+import FaqAccordion from "../../../components/FaqAccordion.astro";
+import CalloutBox from "../../../components/CalloutBox.astro";
+import { articleSchema, speakableSchema } from "../../../utils/schema";
+
+const toc = [
+  { id: "pomiary-geodezyjne", label: "Pomiary geodezyjne z drona" },
+  { id: "ocena-dzialki",      label: "Ocena dzialki inwestycyjnej" },
+  { id: "monitoring-budowy",  label: "Monitoring postępu budowy" },
+  { id: "pomiary-objetosci",  label: "Pomiary objętości i prac ziemnych" },
+  { id: "komercjalizacja",    label: "Komercjalizacja i marketing" },
+  { id: "drony-w-projekcie",  label: "Drony jako element projektu" },
+  { id: "faq",                label: "FAQ" },
+];
+
+const whenCards = [
+  {
+    title: "Ukształtowanie i niweleta terenu",
+    text: "Dokładna analiza różnicy poziomów i objętości prac ziemnych do wyrównania. Niespodzianki na etapie budowlanym to jedne z najdroższych.",
+  },
+  {
+    title: "Otoczenie i dostępność",
+    text: "Rzeczywisty obraz dojazdu, sąsiadów, linii energetycznych i infrastruktury podziemnej — danych, których nie widać na mapach.",
+  },
+  {
+    title: "Porównanie lokalizacji",
+    text: "Ortofotomapy kilku alternatywnych działek w jednym formacie pozwalają na obiektywne porównanie — bez wielokrotnych wizyt w terenie.",
+  },
+];
+
+const scopeCards = [
+  {
+    title: "Pomiar objętości hałd i składowisk",
+    text: "Dokładny pomiar bez ręcznego mierzenia — wystarczy lot i oprogramowanie fotogrametryczne.",
+  },
+  {
+    title: "Weryfikacja wykopów i nasypów",
+    text: "Kontrola zgodności z projektem geodezyjnym na każdym etapie robót ziemnych.",
+  },
+  {
+    title: "Inwentaryzacja materiałów budowlanych",
+    text: "Kontrola ilościowa dostaw kruszyw, betonu i innych materiałów przechowywanych na placu.",
+  },
+  {
+    title: "Dokumentacja postępu niwelacji",
+    text: "Datowany zapis stanu terenu po każdym etapie robót — na potrzeby rozliczeń i protokołów.",
+  },
+];
+
+const tagItems = [
+  "Wybór lokalizacji",
+  "Analiza terenu",
+  "Masterplan",
+  "Monitoring budowy",
+  "Rozliczenie prac",
+  "Komercjalizacja",
+];
+
+const faqs = [
+  {
+    q: "Jaka jest dokładność pomiarów geodezyjnych z drona?",
+    a: "Przy zastosowaniu punktów GCP (Ground Control Points) lub systemu RTK osiągamy dokładność poziomą 2–5 cm i pionową 3–8 cm. Dla większości zastosowań inwestycyjnych (projekt budowlany, weryfikacja prac ziemnych) to wystarczająca dokładność. Dla pomiarów wymagających wyższej precyzji (np. geodezja prawna) dobieramy metodologię do wymagań projektu.",
+  },
+  {
+    q: "Czy do lotów dronem potrzebne są specjalne uprawnienia?",
+    a: "Tak. Loty wykonujemy zgodnie z rozporządzeniami EASA i polskim prawem lotniczym (Rozporządzenie UE 2019/947). Posiadamy wymagane uprawnienia operatorskie. Dla lotów w strefach kontrolowanych lub wymagających indywidualnych zezwoleń zapewniamy pełną obsługę formalną.",
+  },
+  {
+    q: "Ile kosztuje ortofotomapa działki inwestycyjnej?",
+    a: "Koszt zależy od powierzchni działki, wymaganej dokładności i formy dostarczenia danych. Orientacyjnie: ortofotomapa działki 5–10 ha to koszt zbliżony do jednego dnia pracy tradycyjnego zespołu geodezyjnego — przy znacznie krótszym czasie realizacji. Szczegółową wycenę przygotowujemy po zapoznaniu się z wymaganiami projektu.",
+  },
+  {
+    q: "Jak często warto robić monitoring budowy z drona?",
+    a: "Na aktywnej budowie magazynu co 2–4 tygodnie to dobra częstotliwość, która pozwala śledzić postęp etapami i reagować na opóźnienia zanim się eskalują. Przed wypłatą kolejnych transz finansowania warto wykonać lot tuż przed spotkaniem z bankiem lub inwestorem. Na spokojniejszych etapach wystarczy monitoring miesięczny.",
+  },
+  {
+    q: "Do czego wykorzystać drony w projekcie magazynu?",
+    a: "Zastosowania obejmują: analizę działki przed zakupem (ukształtowanie, otoczenie, infrastruktura), pomiary geodezyjne do masterplanu, monitoring postępu budowy i weryfikację prac ziemnych, dokumentację stanu na potrzeby rozliczeń etapowych, oraz materiały marketingowe do komercjalizacji gotowego obiektu. Drony mogą towarzyszyć projektowi od pierwszej wizyty na działce po odbiór gotowego magazynu.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const schemaArticle = articleSchema({
+  headline: "Drony w inwestycjach logistycznych — od pomiaru działki po komercjalizację obiektu",
+  description: "Jak wykorzystać drony w projektach logistycznych i inwestycyjnych: pomiary geodezyjne, ortofotomapy, monitoring budowy i materiały marketingowe. Praktyczne zastosowania i realne korzyści.",
+  url: "/pl/wiedza/drony-inwestycje-logistyczne",
+  datePublished: "2026-06-18",
+  dateModified: "2026-06-18",
+  inLanguage: "pl-PL",
+  image: "/knowledge/drony-inwestycje.webp",
+});
+
+const schemaSpeakable = speakableSchema("/pl/wiedza/drony-inwestycje-logistyczne", [
+  "[data-speakable='headline']",
+  "[data-speakable='summary']",
+]);
+---
+
+<KnowledgeArticleLayout
+  title="Drony w inwestycjach logistycznych — pomiary, monitoring, komercjalizacja | Vologis"
+  description="Jak wykorzystać drony w projektach logistycznych i inwestycyjnych: pomiary geodezyjne, ortofotomapy, monitoring budowy i materiały marketingowe. Praktyczne zastosowania i realne korzyści."
+  canonical="https://vologis.com/pl/wiedza/drony-inwestycje-logistyczne"
+  heroImage="/knowledge/drony-inwestycje.webp"
+  category="Wiedza"
+  readTime="7–9 min"
+  updatedAt="czerwiec 2026"
+  datePublished="2026-06-18"
+  dateModified="2026-06-18"
+  h1="Drony w inwestycjach logistycznych — od pomiaru działki po komercjalizację obiektu"
+  lead="Drony w logistyce kojarzą się głównie z efektownymi ujęciami z lotu ptaka. Tymczasem ich realna wartość leży w precyzyjnych danych: pomiarach geodezyjnych, ortofotomapach i obiektywnym monitoringu postępu budowy. Dla inwestorów i deweloperów logistycznych to narzędzie, które skraca czas inwestycji, ogranicza ryzyko i obniża koszty dokumentacji. Ten artykuł pokazuje konkretne zastosowania dronów na każdym etapie projektu inwestycyjnego."
+  toc={toc}
+  ctaPrimaryLabel="Zapytaj o usługi dronowe"
+  ctaSecondary={{ label: "Zobacz zastosowania dronów", href: "#monitoring-budowy" }}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaArticle)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaSpeakable)} />
+
+  <!-- ─── 1. Pomiary geodezyjne ────────────────────────────── -->
+  <section class="s" id="pomiary-geodezyjne" aria-labelledby="h-pomiary">
+    <h2 class="h2" id="h-pomiary">Pomiary geodezyjne z drona — szybciej i taniej niż metodami tradycyjnymi</h2>
+
+    <p class="body">
+      Tradycyjny pomiar geodezyjny dużej działki inwestycyjnej zajmuje dni i angażuje kilkuosobowy zespół w terenie. Dron z odpowiednim oprzyrządowaniem i punktami GCP (Ground Control Points) wykonuje pomiar tej samej działki w godziny — z dokładnością do kilku centymetrów.
+    </p>
+    <p class="body">
+      Wynikiem jest ortofotomapa (skalibrowane zdjęcie lotnicze w układzie kartograficznym), numeryczny model terenu (NMT/DSM) i dane wektorowe gotowe do wczytania w oprogramowaniu CAD i GIS. To materiał, który bezpośrednio zasila projektowanie i analizy inwestycyjne — bez konieczności ręcznego przerysowywania.
+    </p>
+    <p class="body">
+      Oszczędności są wymierne: pomiar działki o powierzchni 5–10 ha metodami tradycyjnymi zajmuje 3–5 dni. Dronem — 4–8 godzin lotu i przetwarzania danych. Koszt proporcjonalnie niższy, a dokładność porównywalna lub wyższa przy zastosowaniu RTK.
+    </p>
+
+    <div class="three-q">
+      <p class="three-q__label">Dane dostarczane po pomiarze geodezyjnym z drona:</p>
+      <ol class="three-q__list">
+        <li><strong>Ortofotomapa terenu</strong> w wysokiej rozdzielczości</li>
+        <li><strong>Numeryczny model terenu (NMT)</strong> i model powierzchni (DSM)</li>
+        <li><strong>Wektory gotowe do CAD/GIS</strong> z kalibracją kartograficzną</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ─── 2. Ocena działki ──────────────────────────────────── -->
+  <section class="s" id="ocena-dzialki" aria-labelledby="h-dzialka">
+    <h2 class="h2" id="h-dzialka">Ocena i wybór działki inwestycyjnej z pomocą drona</h2>
+
+    <p class="body">
+      Przed zakupem działki pod inwestycję logistyczną warto zebrać jak najwięcej obiektywnych danych. Ortofotomapa i model terenu z drona pokazują rzeczywiste ukształtowanie działki, drzewostanu, uzbrojenia, niwelety i otoczenia w sposób, który jest niemożliwy do uzyskania z wizji lokalnej ani z map satelitarnych o niskiej rozdzielczości.
+    </p>
+    <p class="body">
+      Te dane odpowiadają na kluczowe pytania przed zakupem: jakie prace ziemne będą konieczne i w jakiej skali, czy teren jest regularny i nadaje się pod projektowany obiekt, jakie jest rzeczywiste sąsiedztwo i potencjalne ograniczenia, jak przebiega infrastruktura i czy istnieje ryzyko kolizji. Godzina lotu dronem może uniknąć wielomiesięcznych niespodzianek na budowie.
+    </p>
+
+    <div class="when-grid">
+      {whenCards.map((card) => (
+        <div class="when-card">
+          <div>
+            <p class="when-card__title">{card.title}</p>
+            <p class="when-card__text">{card.text}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ─── 3. Monitoring budowy ─────────────────────────────── -->
+  <section class="s" id="monitoring-budowy" aria-labelledby="h-monitoring">
+    <h2 class="h2" id="h-monitoring">Monitoring postępu budowy z powietrza</h2>
+
+    <p class="body">
+      Inwestor lub deweloper logistyczny nadzorujący budowę magazynu o wartości 50–200 mln zł potrzebuje obiektywnego, niezależnego wglądu w postęp prac — niezależnego od raportów i zdjęć dostarczanych przez generalnego wykonawcę.
+    </p>
+    <p class="body">
+      Regularne loty dronem (cotygodniowe lub comiesięczne) dostarczają datowany, skalibrowany zapis stanu budowy z powietrza. Zdjęcia i modele 3D pozwalają śledzić postęp każdej strefy obiektu, wykrywać opóźnienia przed ich eskalacją i dokumentować stan prac na potrzeby rozliczeń etapowych.
+    </p>
+    <p class="body">
+      Dokumentacja z drona jest bezosobowym dowodem — żaden kierownik budowy nie dyskutuje ze zdjęciem datowanym i skalibrowanym z GPS. Dla inwestorów finansujących projekt kredytem ta dokumentacja często jest wymagana przez bank lub fundusz jako warunek kolejnej transzy finansowania.
+    </p>
+
+    <div class="inline-cta">
+      <p class="inline-cta__text">
+        Realizujesz inwestycję logistyczną? Zintegrowane usługi dronowe dostarczą Ci precyzyjnych danych na każdym etapie — od oceny działki po monitoring budowy.
+      </p>
+      <a href="/pl/kontakt" class="inline-cta__btn">
+        Zapytaj o usługi dronowe →
+      </a>
+    </div>
+  </section>
+
+  <!-- ─── 4. Pomiary objętości ──────────────────────────────── -->
+  <section class="s" id="pomiary-objetosci" aria-labelledby="h-objetosci">
+    <h2 class="h2" id="h-objetosci">Pomiary objętości i kontrola prac ziemnych</h2>
+
+    <p class="body">
+      Prace ziemne to jeden z trudniejszych do skontrolowania zakresów kontraktu budowlanego. Ile ziemi faktycznie wywieziono? Ile materiału przywieziono? Jaka jest objętość hałdy kruszywa? Tradycyjne odpowiedzi na te pytania opierają się na deklaracjach wykonawcy lub trudnych do weryfikacji obliczeniach.
+    </p>
+    <p class="body">
+      Dron z modelowaniem 3D terenu mierzy objętość hałd, skarp i wykopów z dokładnością kilku procent — w czasie kilkudziesięciu minut lotu. To narzędzie do weryfikacji ilości wykonanych prac ziemnych, kontroli dostaw materiałów i zarządzania stanem surowców na placu budowy.
+    </p>
+
+    <div class="scope-grid">
+      {scopeCards.map((c) => (
+        <div class="scope-card">
+          <h3 class="scope-card__title">{c.title}</h3>
+          <p class="scope-card__text">{c.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ─── 5. Komercjalizacja ────────────────────────────────── -->
+  <section class="s" id="komercjalizacja" aria-labelledby="h-komercjalizacja">
+    <h2 class="h2" id="h-komercjalizacja">Komercjalizacja i marketing obiektu logistycznego</h2>
+
+    <p class="body">
+      Deweloper logistyczny sprzedający lub wynajmujący obiekt 30 000–100 000 m² potrzebuje materiałów, które pozwolą potencjalnemu najemcy ocenić lokalizację, dostępność, skomunikowanie i skalę obiektu — najlepiej bez wizyty na miejscu. Profesjonalne zdjęcia i wideo z drona dają to lepiej niż jakiekolwiek rzuty na papierze.
+    </p>
+    <p class="body">
+      Materiały dronowe do komercjalizacji obejmują: zdjęcia obiektu z różnych kątów i wysokości, wideo prezentujące dojazd, otoczenie i skalę obiektu, mapy lotnicze z naniesionym obiektem i infrastrukturą oraz fotografie wnętrz (hangary, strefy operacyjne). Profesjonalny materiał wideo skraca czas komercjalizacji i podnosi wiarygodność oferty w oczach potencjalnych najemców.
+    </p>
+
+    <CalloutBox>
+      Materiały z drona to nie tylko estetyka. Potencjalny najemca widzi rzeczywisty dostęp do drogi, odległość od węzła, sąsiedztwo i skalę obiektu — wszystko w jednym materiale wideo, bez wizyty w terenie. To skraca decyzję.
+    </CalloutBox>
+  </section>
+
+  <!-- ─── 6. Drony w projekcie ──────────────────────────────── -->
+  <section class="s" id="drony-w-projekcie" aria-labelledby="h-drony-projekt">
+    <h2 class="h2" id="h-drony-projekt">Drony jako element projektu, nie osobna usługa</h2>
+
+    <p class="body">
+      Firma dronowa dostarczy Ci zdjęcia. Vologis dostarcza dane w kontekście projektu inwestycyjnego. Wiemy, co ortofotomapa oznacza dla masterplanu magazynu, jak pomiar objętości przekłada się na harmonogram robót ziemnych i które ujęcia faktycznie pomagają skomercjalizować obiekt — bo jesteśmy doradcami logistycznymi, nie tylko operatorami dronów.
+    </p>
+    <p class="body">
+      Usługi dronowe jako element prowadzenia projektu Greenfield oznaczają ciągłość danych: ta sama działka analizowana na etapie wyboru lokalizacji, monitorowana podczas budowy i dokumentowana po uruchomieniu dla celów marketingowych. Jeden partner, spójna dokumentacja przez cały cykl inwestycji.
+    </p>
+
+    <div class="tag-list" role="list">
+      {tagItems.map((item) => (
+        <span class="tag" role="listitem">{item}</span>
+      ))}
+    </div>
+  </section>
+
+  <!-- ─── FAQ ──────────────────────────────────────────────── -->
+  <section class="s" id="faq" aria-labelledby="h-faq">
+    <h2 class="h2" id="h-faq">FAQ — najczęściej zadawane pytania</h2>
+    <FaqAccordion items={faqs} />
+  </section>
+
+  <!-- ─── Related links ────────────────────────────────────── -->
+  <section class="s" id="powiazane" aria-label="Powiązane usługi">
+    <p class="related-label">Powiązane usługi Vologis</p>
+    <div class="related-grid">
+      <a class="related-card" href="/pl/uslugi/uslugi-dronowe">
+        <span class="related-card__title">Usługi dronowe</span>
+        <span class="related-card__desc">Pomiary geodezyjne, ortofotomapy, inspekcje terenów i monitoring budowy — jako usługa i jako element projektu.</span>
+        <span class="related-card__arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="related-card" href="/pl/uslugi/projekty-greenfield">
+        <span class="related-card__title">Projekty Greenfield</span>
+        <span class="related-card__desc">Kompleksowe prowadzenie inwestycji logistycznej od działki do uruchomienia operacji — z usługami dronowymi w pakiecie.</span>
+        <span class="related-card__arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ─── CTA końcowe ──────────────────────────────────────── -->
+  <div class="end-cta">
+    <h2 class="end-cta__h2">Potrzebujesz danych z powietrza dla swojej inwestycji?</h2>
+    <p class="end-cta__text">
+      Vologis łączy usługi dronowe z doradztwem logistycznym i prowadzeniem projektów inwestycyjnych. Dostarczamy dane, które realnie wpływają na decyzje — nie tylko efektowne ujęcia.
+    </p>
+    <a href="/pl/kontakt" class="end-cta__btn">
+      Zapytaj o usługi dronowe →
+    </a>
+  </div>
+</KnowledgeArticleLayout>
+
+<style>
+  /* ─── Section shell ─────────────────────────────────────── */
+  .s {
+    padding-block: var(--space-2xl);
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .s:first-of-type {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    color: var(--color-ink);
+    margin-bottom: var(--space-lg);
+  }
+
+  .body {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.75;
+    margin-bottom: var(--space-md);
+  }
+
+  /* Shared check icon */
+  .check-ico {
+    flex-shrink: 0;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-top: 0.15rem;
+    color: var(--color-blue);
+  }
+
+  /* ─── Three questions box ───────────────────────────────── */
+  .three-q {
+    margin-top: var(--space-lg);
+    border: 1px solid var(--color-blue);
+    border-radius: var(--radius-lg);
+    background: var(--color-blue-tint);
+    padding: var(--space-lg) var(--space-xl);
+  }
+
+  .three-q__label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    margin-bottom: var(--space-md);
+  }
+
+  .three-q__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding-left: var(--space-lg);
+  }
+
+  .three-q__list li {
+    font-size: var(--text-base);
+    color: var(--color-ink);
+    line-height: 1.6;
+  }
+
+  /* ─── When-cards grid ───────────────────────────────────── */
+  .when-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+
+  .when-card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    background: var(--color-paper);
+    transition: border-color var(--dur-micro) var(--ease-out);
+  }
+
+  .when-card:hover { border-color: var(--color-blue); }
+
+  .when-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+    margin-bottom: var(--space-xs);
+  }
+
+  .when-card__text {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.55;
+  }
+
+  /* ─── Internal CTA strip ────────────────────────────────── */
+  .inline-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-lg);
+    background: var(--color-paper-dark);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg) var(--space-xl);
+    flex-wrap: wrap;
+  }
+
+  .inline-cta__text {
+    font-size: var(--text-base);
+    color: var(--color-muted-on-dark);
+    line-height: 1.6;
+    flex: 1;
+    min-width: 180px;
+  }
+
+  .inline-cta__btn {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-pill);
+    background: var(--color-accent);
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background var(--dur-micro) var(--ease-out);
+    flex-shrink: 0;
+  }
+
+  .inline-cta__btn:hover { background: var(--color-accent-hover); }
+
+  /* ─── Scope areas ───────────────────────────────────────── */
+  .scope-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+  }
+
+  .scope-card {
+    border: 1px solid var(--color-rule);
+    border-left: 4px solid var(--color-secondary);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    background: var(--color-paper);
+  }
+
+  .scope-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+    margin-bottom: var(--space-sm);
+  }
+
+  .scope-card__text {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.6;
+  }
+
+  /* ─── Process timeline ──────────────────────────────────── */
+  .steps { display: flex; flex-direction: column; }
+
+  .step { display: grid; grid-template-columns: 2.75rem 1fr; gap: var(--space-lg); }
+
+  .step__rail { display: flex; flex-direction: column; align-items: center; }
+
+  .step__badge {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    flex-shrink: 0;
+    border-radius: var(--radius-pill);
+    background: var(--color-ink);
+    color: var(--color-ink-on-dark);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--text-sm);
+  }
+
+  .step__line {
+    width: 2px;
+    flex: 1;
+    min-height: var(--space-lg);
+    background: var(--color-rule);
+    margin-block: var(--space-xs);
+  }
+
+  .step__body { padding-bottom: var(--space-xl); }
+  .step:last-child .step__body { padding-bottom: 0; }
+
+  .step__title {
+    font-family: var(--font-display);
+    font-size: var(--text-md);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: var(--color-ink);
+    margin-bottom: var(--space-sm);
+    padding-top: var(--space-2xs);
+  }
+
+  .step__text { font-size: var(--text-base); color: var(--color-muted); line-height: 1.7; }
+
+  /* ─── Checklist ─────────────────────────────────────────── */
+  .checklist { list-style: none; display: flex; flex-direction: column; gap: var(--space-sm); margin-bottom: var(--space-lg); }
+
+  .checklist__item { display: flex; align-items: flex-start; gap: var(--space-sm); font-size: var(--text-base); color: var(--color-ink); line-height: 1.55; }
+
+  /* ─── Tag list ──────────────────────────────────────────── */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+  }
+
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-xs) var(--space-md);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-pill);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-ink);
+    background: var(--color-paper);
+  }
+
+  /* ─── Related links ─────────────────────────────────────── */
+  .related-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-neutral);
+    margin-bottom: var(--space-lg);
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    background: var(--color-paper);
+    text-decoration: none;
+    transition: border-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out);
+  }
+
+  .related-card:hover {
+    border-color: var(--color-blue);
+    transform: translateY(-2px);
+  }
+
+  .related-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+  }
+
+  .related-card__desc {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.55;
+    flex: 1;
+  }
+
+  .related-card__arrow {
+    font-size: var(--text-md);
+    color: var(--color-secondary);
+    transition: transform var(--dur-short) var(--ease-out);
+    align-self: flex-start;
+    margin-top: auto;
+  }
+
+  .related-card:hover .related-card__arrow { transform: translateX(4px); }
+
+  /* ─── Final CTA block ───────────────────────────────────── */
+  .end-cta {
+    margin-top: var(--space-3xl);
+    background: var(--gradient-cta);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl) var(--space-2xl);
+    text-align: center;
+  }
+
+  .end-cta__h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    color: var(--color-ink-on-dark);
+    margin-bottom: var(--space-md);
+  }
+
+  .end-cta__text {
+    font-size: var(--text-base);
+    color: var(--color-muted-on-dark);
+    line-height: 1.7;
+    max-width: 52ch;
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+  }
+
+  .end-cta__btn {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    padding: var(--space-md) var(--space-2xl);
+    border-radius: var(--radius-pill);
+    background: var(--color-accent);
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background var(--dur-micro) var(--ease-out);
+  }
+
+  .end-cta__btn:hover { background: var(--color-accent-hover); }
+
+  /* ─── Responsive ─────────────────────────────────────────── */
+  @media (max-width: 48rem) {
+    .when-grid { grid-template-columns: 1fr; }
+    .scope-grid { grid-template-columns: 1fr; }
+    .related-grid { grid-template-columns: 1fr; }
+
+    .inline-cta {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: var(--space-lg);
+    }
+    .inline-cta__btn { width: 100%; text-align: center; justify-content: center; }
+
+    .end-cta { padding: var(--space-xl) var(--space-lg); }
+    .end-cta__h2 { font-size: var(--text-lg); }
+    .end-cta__btn { width: 100%; text-align: center; }
+
+    .timeline-box { padding: var(--space-lg); }
+  }
+</style>

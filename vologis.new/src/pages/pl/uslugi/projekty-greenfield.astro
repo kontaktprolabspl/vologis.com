@@ -1,0 +1,846 @@
+---
+import ServicePageLayout from "../../../layouts/ServicePageLayout.astro";
+import FaqAccordion from "../../../components/FaqAccordion.astro";
+import CalloutBox from "../../../components/CalloutBox.astro";
+
+const SITE = "https://vologis.com";
+
+/* ── Data ────────────────────────────────────────────────── */
+
+const trustItems = [
+  "Analiza przedinwestycyjna i wybór lokalizacji",
+  "Masterplan magazynu i projekt koncepcyjny",
+  "Kalkulacje CAPEX / OPEX / ROI",
+  "Dobór dostawców, technologii i automatyki",
+  "Nadzór nad realizacją i uruchomieniem",
+  "Rekrutacja zespołu i start operacyjny",
+  "Usługi dronowe: pomiary terenu, ortofotomapy, monitoring budowy",
+];
+
+const forWhom = [
+  {
+    title: "Inwestorzy i deweloperzy logistyczni",
+    text: "Gdy potrzebujesz kompleksowego prowadzenia inwestycji od działki po gotowość operacyjną, bez obciążania własnych zespołów.",
+  },
+  {
+    title: "Firmy produkcyjne budujące zakład lub magazyn",
+    text: "Gdy stawiasz nowy obiekt i potrzebujesz pewności, że layout i procesy będą działać przez lata.",
+  },
+  {
+    title: "Firmy w fazie szybkiego wzrostu",
+    text: "Gdy obecny magazyn przestał wystarczać i potrzebujesz większego, lepiej zaprojektowanego obiektu.",
+  },
+  {
+    title: "Firmy relokujące operacje",
+    text: "Gdy przenosisz logistykę do nowej lokalizacji i nie możesz pozwolić sobie na przestój ani błędy.",
+  },
+  {
+    title: "Fundusze i firmy inwestujące w nieruchomości logistyczne",
+    text: "Gdy potrzebujesz partnera prowadzącego projekt pod konkretnego najemcę lub pod komercjalizację.",
+  },
+];
+
+const scopeCards = [
+  {
+    num: "01",
+    title: "Analiza przedinwestycyjna",
+    text: "Definiujemy wymagania biznesowe, prognozy wolumenów, profil rotacji i scenariusze rozwoju. Tworzymy dokumentację przedinwestycyjną, która jest fundamentem wszystkich kolejnych decyzji.",
+  },
+  {
+    num: "02",
+    title: "Wybór i analiza lokalizacji",
+    text: "Analizujemy lokalizacje pod kątem dostępności transportowej, rynku pracy, kosztów, infrastruktury i potencjału rozwoju. Wykorzystujemy własne usługi dronowe do pomiarów terenu i ortofotomap działek inwestycyjnych.",
+  },
+  {
+    num: "03",
+    title: "Masterplan i projekt koncepcyjny",
+    text: "Projektujemy layout magazynu, rozmieszczenie stref, regałów, automatyki i ciągów komunikacyjnych. Wszystko pod konkretny profil rotacji, wolumen i plany rozwoju — z kalkulacjami CAPEX/OPEX/ROI.",
+  },
+  {
+    num: "04",
+    title: "Dobór dostawców i technologii",
+    text: "Dobieramy i negocjujemy z dostawcami regałów, automatyki, systemów WMS i wyposażenia — w 100% niezależnie. Prowadzimy przetargi i porównujemy oferty pod kątem realnego zwrotu, nie prowizji.",
+  },
+  {
+    num: "05",
+    title: "Nadzór nad realizacją",
+    text: "Koordynujemy realizację projektu: nadzór nad pracami, wdrożenie infrastruktury i systemów IT, integracja automatyki. Pilnujemy harmonogramu, budżetu i jakości na każdym etapie.",
+  },
+  {
+    num: "06",
+    title: "Uruchomienie operacji",
+    text: "Zarządzamy startem operacyjnym: testy, rozruch systemów, szkolenia i rekrutacja zespołu. Doprowadzamy obiekt do pełnej gotowości operacyjnej w ustalonym terminie.",
+  },
+  {
+    num: "07",
+    title: "Optymalizacja po starcie",
+    text: "Po uruchomieniu monitorujemy wydajność, korygujemy procesy i doprowadzamy operację do założonych KPI. Projekt kończymy, gdy widać liczby — nie w dniu przekazania kluczy.",
+  },
+];
+
+const whenItems = [
+  "Planujesz budowę nowego magazynu lub centrum dystrybucyjnego",
+  "Relokujesz operacje do większego lub lepiej zlokalizowanego obiektu",
+  "Nie masz wewnętrznego zespołu do prowadzenia inwestycji logistycznej",
+  "Chcesz uniknąć kosztownych błędów na etapie projektu",
+  "Potrzebujesz obiektywnej analizy lokalizacji przed zakupem działki",
+  "Twój zespół nie ma czasu koordynować dziesiątek dostawców",
+  "Inwestujesz w pierwszy obiekt automatyczny i brakuje doświadczenia",
+  "Jesteś deweloperem potrzebującym kompleksowego prowadzenia projektu pod klienta",
+];
+
+const deliverables = [
+  {
+    title: "Dokumentacja przedinwestycyjna i analiza biznesowa",
+    text: "Solidna podstawa decyzyjna przed zaangażowaniem kapitału — profile wolumenów, scenariusze, ryzyko.",
+  },
+  {
+    title: "Obiektywna analiza i rekomendacja lokalizacji",
+    text: "Porównanie lokalizacji według twardych kryteriów: transport, rynek pracy, koszty, infrastruktura, potencjał.",
+  },
+  {
+    title: "Masterplan z layoutem i kalkulacjami CAPEX/OPEX/ROI",
+    text: "Projekt koncepcyjny pod konkretny wolumen i procesy, z pełną kalkulacją ekonomiki inwestycji.",
+  },
+  {
+    title: "Wynegocjowane oferty dostawców i technologii",
+    text: "Obiektywne przetargi i negocjacje — bez prowizji, bez konfliktu interesów, z dokumentacją porównawczą.",
+  },
+  {
+    title: "Pełny nadzór nad realizacją i harmonogramem",
+    text: "Jeden punkt kontaktu kontrolujący budowę, instalacje, systemy IT i integrację automatyki.",
+  },
+  {
+    title: "Uruchomiona, działająca operacja w terminie",
+    text: "Start operacyjny z przeszkolonym zespołem i przetestowanymi systemami — gotowy do pełnego wolumenu.",
+  },
+  {
+    title: "Osiągnięte KPI operacyjne po starcie",
+    text: "Projekt kończymy po osiągnięciu założonych wskaźników wydajności, nie przy odbiorze kluczy.",
+  },
+];
+
+const faqs = [
+  {
+    q: "Ile trwa projekt Greenfield?",
+    a: "Pełny projekt od analizy przedinwestycyjnej do uruchomienia operacji trwa zwykle 6–18 miesięcy, w zależności od skali obiektu, poziomu automatyzacji i tempa realizacji budowlanej. Sam etap analizy i masterplanu to zazwyczaj 4–10 tygodni.",
+  },
+  {
+    q: "Czy prowadzicie projekt też od strony budowlanej?",
+    a: "Koordynujemy projekt z perspektywy logistyczno-operacyjnej i nadzorujemy dostawców. Nie jesteśmy generalnym wykonawcą budowlanym, ale współpracujemy z deweloperami i wykonawcami, pilnując żeby obiekt spełniał wymagania operacyjne i logistyczne.",
+  },
+  {
+    q: "Czy możemy zlecić tylko wybór lokalizacji albo sam masterplan?",
+    a: "Tak. Każdy etap można zlecić osobno — od samej analizy lokalizacji, przez masterplan, po pełne prowadzenie projektu. Wielu klientów zaczyna od analizy przedinwestycyjnej i decyduje o dalszych etapach po jej wynikach.",
+  },
+  {
+    q: "Jak dobieracie dostawców automatyki i WMS?",
+    a: "W 100% niezależnie. Nie mamy umów partnerskich ani prowizji od dostawców. Prowadzimy przetargi, porównujemy oferty pod kątem realnego ROI i rekomendujemy rozwiązanie najlepiej dopasowane do skali i budżetu projektu.",
+  },
+  {
+    q: "Do czego wykorzystujecie drony w projektach Greenfield?",
+    a: "Na etapie wyboru lokalizacji wykonujemy pomiary geodezyjne i ortofotomapy działek. W trakcie realizacji prowadzimy monitoring postępu prac budowlanych z powietrza. Tworzymy też materiały wizualne dla inwestorów i pod komercjalizację obiektu.",
+  },
+  {
+    q: "Co jeśli nie mam jeszcze wybranej działki?",
+    a: "To idealny moment, żeby nas zaangażować. Analiza lokalizacji to jeden z najważniejszych etapów — błąd na tym poziomie kosztuje przez całą eksploatację. Pomożemy ocenić i porównać lokalizacje zanim podejmiesz decyzję o zakupie.",
+  },
+];
+
+/* ── Schema ───────────────────────────────────────────────── */
+
+const schemaService = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Projekty Greenfield — kompleksowe inwestycje logistyczne",
+  "provider": {
+    "@type": "Organization",
+    "name": "Vologis Sp. z o.o.",
+    "url": SITE,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Jarocin",
+      "addressRegion": "Wielkopolska",
+      "addressCountry": "PL",
+    },
+  },
+  "areaServed": ["Polska", "Europa"],
+  "serviceType": "Greenfield logistics project management",
+  "description": "Vologis prowadzi projekty Greenfield end-to-end — od analizy lokalizacji i masterplanu, przez projekt magazynu i dobór automatyki, po uruchomienie operacji. Jeden partner przez cały cykl inwestycji logistycznej.",
+  "url": `${SITE}/pl/uslugi/projekty-greenfield`,
+};
+
+const schemaWebPage = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Projekty Greenfield — kompleksowe inwestycje logistyczne | Vologis",
+  "description": "Vologis prowadzi projekty Greenfield end-to-end — od analizy lokalizacji i masterplanu, przez projekt magazynu i dobór automatyki, po uruchomienie operacji. Jeden partner przez cały cykl inwestycji logistycznej.",
+  "url": `${SITE}/pl/uslugi/projekty-greenfield`,
+  "inLanguage": "pl-PL",
+};
+
+const schemaFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ServicePageLayout
+  title="Projekty Greenfield — kompleksowe inwestycje logistyczne | Vologis"
+  description="Vologis prowadzi projekty Greenfield end-to-end — od analizy lokalizacji i masterplanu, przez projekt magazynu i dobór automatyki, po uruchomienie operacji. Jeden partner przez cały cykl inwestycji logistycznej."
+  canonical="https://vologis.com/pl/uslugi/projekty-greenfield"
+  heroImage="/services/projekty-greenfield.webp"
+  eyebrow="Usługi logistyczne / Projekty Greenfield"
+  h1="Projekty Greenfield — od pustej działki do działającej operacji"
+  lead="Budowa magazynu, centrum dystrybucyjnego lub zakładu od podstaw to jeden z najbardziej kapitałochłonnych i ryzykownych projektów w firmie. Błędy popełnione na etapie wyboru lokalizacji czy projektu layoutu kosztują przez kolejne 10–15 lat eksploatacji. Vologis prowadzi projekty Greenfield kompleksowo — od analizy przedinwestycyjnej i wyboru lokalizacji, przez masterplan i dobór technologii, aż po fizyczne uruchomienie operacji i osiągnięcie zakładanych KPI. Jeden partner, jedna odpowiedzialność, przez cały cykl życia projektu."
+  trustItems={trustItems}
+  ctaPrimaryLabel="Omów swój projekt"
+  ctaPrimaryHref="/pl/kontakt"
+  ctaSecondaryLabel="Zobacz jak pracujemy"
+  ctaSecondaryHref="/pl/proces"
+  breadcrumbs={[{ name: "Projekty Greenfield" }]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaService)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaWebPage)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaFaq)} />
+
+  <!-- ─── 1. Problem ───────────────────────────────────────── -->
+  <section class="ps-problem" aria-labelledby="h-problem">
+    <div class="container">
+      <div class="ps-problem__grid">
+        <div class="ps-problem__copy">
+          <h2 class="h2" id="h-problem">
+            Greenfield to decyzje, które zostają z firmą na lata
+          </h2>
+          <p class="body">
+            Wybór niewłaściwej lokalizacji, źle zaprojektowany layout, przewymiarowana lub niedoszacowana automatyka — te błędy nie znikają po uruchomieniu. Zostają w kosztach operacyjnych, w czasie kompletacji, w rotacji pracowników i w ograniczeniach, które blokują rozwój przez całą dekadę eksploatacji obiektu.
+          </p>
+          <p class="body">
+            Problem w tym, że projekt Greenfield wymaga jednoczesnej koordynacji dziesiątek podmiotów: deweloperów, generalnych wykonawców, dostawców regałów, integratorów automatyki, dostawców WMS, firm rekrutacyjnych. Każdy patrzy na swój wycinek. Nikt nie odpowiada za całość — poza Tobą.
+          </p>
+          <p class="body">
+            Vologis przejmuje tę rolę. Jesteśmy jednym punktem kontaktu i jedną odpowiedzialnością przez cały projekt. Łączymy analizę biznesową, lokalizacyjną, techniczną i operacyjną w spójną całość — i doprowadzamy projekt do momentu, w którym operacja działa zgodnie z założonymi wskaźnikami.
+          </p>
+        </div>
+        <aside class="ps-brief" aria-label="W skrócie">
+          <p class="ps-brief__label">W skrócie</p>
+          <p class="ps-brief__text">
+            Projekt Greenfield to kompleksowe prowadzenie inwestycji logistycznej od podstaw — od analizy przedinwestycyjnej i wyboru lokalizacji, przez masterplan, projekt magazynu i dobór technologii, po uruchomienie operacji i osiągnięcie KPI. Vologis pełni rolę jednego partnera odpowiedzialnego za cały cykl projektu, integrując analizę biznesową, lokalizacyjną, techniczną i operacyjną — wraz z usługami dronowymi do pomiarów terenu i monitoringu budowy.
+          </p>
+          <hr class="ps-brief__rule" />
+          <p class="ps-brief__sub">
+            Vologis &middot; Jarocin, Polska &middot; Obsługa rynku PL i EU
+          </p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 2. Zakres projektu ────────────────────────────────── -->
+  <section class="ps-scope" aria-labelledby="h-scope">
+    <div class="container">
+      <h2 class="h2" id="h-scope">Zakres projektu Greenfield</h2>
+      <p class="body">
+        Prowadzimy projekt przez wszystkie etapy — od pierwszego arkusza kalkulacyjnego po chwilę, w której operacja działa na pełnym wolumenie. Możemy wejść na każdym etapie.
+      </p>
+      <div class="scope-grid">
+        {scopeCards.map((c) => (
+          <div class="scope-card">
+            <span class="scope-card__num tnum">{c.num}</span>
+            <h3 class="scope-card__title">{c.title}</h3>
+            <p class="scope-card__text">{c.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 3. Drony (differentiator, dark) ──────────────────── -->
+  <section class="ps-drones" aria-labelledby="h-drones">
+    <div class="container">
+      <div class="drones-inner">
+        <div class="drones-copy">
+          <p class="dark-eyebrow">Przewaga technologiczna</p>
+          <h2 class="h2 h2--dark" id="h-drones">
+            Drony zintegrowane z projektem inwestycyjnym
+          </h2>
+          <p class="drones-text">
+            W odróżnieniu od klasycznego doradztwa, integrujemy własne usługi dronowe bezpośrednio z projektami inwestycyjnymi. Na etapie wyboru lokalizacji dostarczamy precyzyjne pomiary geodezyjne i ortofotomapy działek. W trakcie realizacji prowadzimy monitoring postępu prac budowlanych z powietrza. Dla deweloperów i inwestorów tworzymy materiały marketingowe prezentujące obiekt z lotu ptaka.
+          </p>
+          <a href="/pl/uslugi/uslugi-dronowe" class="drones-link">
+            Zobacz usługi dronowe <span aria-hidden="true">→</span>
+          </a>
+        </div>
+        <ul class="drones-pills" role="list">
+          <li class="drones-pill">Pomiary geodezyjne działek</li>
+          <li class="drones-pill">Ortofotomapy terenu inwestycji</li>
+          <li class="drones-pill">Monitoring postępu budowy</li>
+          <li class="drones-pill">Wizualizacje dla inwestorów</li>
+          <li class="drones-pill">Materiały do komercjalizacji obiektów</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 4. Kiedy warto ────────────────────────────────────── -->
+  <section class="ps-when" aria-labelledby="h-when">
+    <div class="container">
+      <h2 class="h2" id="h-when">Kiedy warto zaangażować Vologis?</h2>
+      <ul class="when-list when-list--2col" role="list">
+        {whenItems.map((item) => (
+          <li class="when-item">
+            <svg class="when-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m4 10.5 4 4 8-9" />
+            </svg>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ─── 5. Co dostajesz ───────────────────────────────────── -->
+  <section class="ps-benefits" aria-labelledby="h-benefits">
+    <div class="container">
+      <h2 class="h2" id="h-benefits">Co otrzymujesz w projekcie Greenfield</h2>
+      <div class="ben-grid">
+        {deliverables.map((d) => (
+          <div class="ben-card">
+            <h3 class="ben-card__title">{d.title}</h3>
+            <p class="ben-card__text">{d.text}</p>
+          </div>
+        ))}
+      </div>
+      <CalloutBox>
+        Im wcześniej wejdziemy w projekt, tym więcej błędów uda się uniknąć — i tym mniejszy koszt ich korekty. Najdroższa zmiana to ta, którą trzeba wprowadzić po uruchomieniu obiektu.
+      </CalloutBox>
+    </div>
+  </section>
+
+  <!-- ─── 6. Dla kogo ───────────────────────────────────────── -->
+  <section class="ps-forwho" aria-labelledby="h-forwho">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-forwho">Dla kogo jest usługa Greenfield?</h2>
+      <p class="section-intro">
+        Każda inwestycja logistyczna jest inna — skalą, specyfiką i poziomem złożoności. Angażujemy się tam, gdzie projekt wymaga koordynacji, której własny zespół nie jest w stanie udźwignąć.
+      </p>
+      <div class="fw-grid">
+        {forWhom.map((p) => (
+          <div class="fw-card">
+            <h3 class="fw-card__title">{p.title}</h3>
+            <p class="fw-card__text">{p.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 7. FAQ ────────────────────────────────────────────── -->
+  <section class="ps-faq" aria-labelledby="h-faq">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-faq">FAQ — najczęściej zadawane pytania</h2>
+      <FaqAccordion items={faqs} single />
+    </div>
+  </section>
+
+  <!-- ─── CTA końcowe ───────────────────────────────────────── -->
+  <section class="ps-endcta" aria-labelledby="h-endcta">
+    <div class="container">
+      <div class="endcta-inner">
+        <h2 class="endcta__h2" id="h-endcta">
+          Planujesz inwestycję logistyczną?
+        </h2>
+        <p class="endcta__text">
+          Im wcześniej wejdziemy w projekt, tym więcej błędów uda się uniknąć. Bezpłatna pierwsza rozmowa.
+        </p>
+        <div class="endcta__actions">
+          <a href="/pl/kontakt" class="endcta__btn endcta__btn--primary">
+            Omów swój projekt <span aria-hidden="true">→</span>
+          </a>
+          <a href="/pl/proces" class="endcta__btn endcta__btn--ghost">
+            Zobacz nasz proces →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Related services ─────────────────────────────────── -->
+  <section class="ps-related" aria-labelledby="h-related">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-related">Inne usługi Vologis</h2>
+      <div class="related-grid">
+        <a class="related-card" href="/pl/uslugi/doradztwo-operacyjne">
+          <span class="related-card__title">Doradztwo operacyjne i audyt</span>
+          <span class="related-card__desc">Identyfikacja wąskich gardeł, optymalizacja procesów, quick wins.</span>
+          <span class="related-card__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="related-card" href="/pl/uslugi/uslugi-dronowe">
+          <span class="related-card__title">Usługi dronowe</span>
+          <span class="related-card__desc">Pomiary geodezyjne, ortofotomapy, inspekcje i monitoring budowy.</span>
+          <span class="related-card__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="related-card" href="/pl/uslugi/interim-management">
+          <span class="related-card__title">Interim management</span>
+          <span class="related-card__desc">Wsparcie zarządcze i stabilizacja operacji w trudnych momentach.</span>
+          <span class="related-card__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</ServicePageLayout>
+
+<style>
+  /* ─── Shared section primitives ─────────────────────────── */
+  .h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    color: var(--color-ink);
+    margin-bottom: var(--space-lg);
+  }
+
+  .h2--center { text-align: center; }
+
+  .h2--dark { color: var(--color-ink-on-dark); }
+
+  .body {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.75;
+    margin-bottom: var(--space-md);
+  }
+
+  .section-intro {
+    font-size: var(--text-md);
+    color: var(--color-muted);
+    line-height: 1.65;
+    max-width: 60ch;
+    margin-inline: auto;
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  .dark-eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-blue-on-dark);
+    margin-bottom: var(--space-md);
+  }
+
+  /* ─── 1. Problem ─────────────────────────────────────────── */
+  .ps-problem {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper);
+  }
+
+  .ps-problem__grid {
+    display: grid;
+    grid-template-columns: 1fr 20rem;
+    gap: var(--space-3xl);
+    align-items: start;
+  }
+
+  .ps-brief {
+    border: 1px solid var(--color-blue);
+    border-radius: var(--radius-lg);
+    background: var(--color-blue-tint);
+    padding: var(--space-lg) var(--space-xl);
+    position: sticky;
+    top: calc(4.25rem + 3px + var(--space-lg));
+  }
+
+  .ps-brief__label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    margin-bottom: var(--space-md);
+  }
+
+  .ps-brief__text {
+    font-size: var(--text-base);
+    color: var(--color-ink);
+    line-height: 1.7;
+  }
+
+  .ps-brief__rule {
+    border: none;
+    border-top: 1px solid var(--color-blue);
+    margin-block: var(--space-md);
+    opacity: 0.3;
+  }
+
+  .ps-brief__sub {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.5;
+  }
+
+  /* ─── 2. Zakres projektu ─────────────────────────────────── */
+  .ps-scope {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper-2);
+  }
+
+  .scope-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+  }
+
+  .scope-card {
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    background: var(--color-paper);
+    transition: border-color var(--dur-micro) var(--ease-out), box-shadow var(--dur-short) var(--ease-out);
+  }
+
+  .scope-card:hover {
+    border-color: var(--color-blue);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .scope-card__num {
+    display: block;
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin-bottom: var(--space-sm);
+    letter-spacing: 0.04em;
+  }
+
+  .scope-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+    margin-bottom: var(--space-sm);
+  }
+
+  .scope-card__text {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.65;
+  }
+
+  /* ─── 3. Drony (dark) ────────────────────────────────────── */
+  .ps-drones {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper-dark);
+  }
+
+  .drones-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--space-3xl);
+    align-items: center;
+  }
+
+  .drones-text {
+    font-size: var(--text-base);
+    color: var(--color-muted-on-dark);
+    line-height: 1.75;
+    margin-bottom: var(--space-lg);
+  }
+
+  .drones-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-blue-on-dark);
+    text-decoration: none;
+    transition: color var(--dur-micro) var(--ease-out);
+  }
+
+  .drones-link:hover { color: var(--color-ink-on-dark); }
+
+  .drones-pills {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    min-width: 18rem;
+  }
+
+  .drones-pill {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-ink-on-dark);
+    padding: var(--space-sm) var(--space-lg);
+    border: 1px solid var(--color-glass-border);
+    border-left: 3px solid var(--color-blue-on-dark);
+    border-radius: var(--radius-sm);
+    background: var(--color-glass-dark);
+    line-height: 1.4;
+  }
+
+  /* ─── 4. Kiedy warto ─────────────────────────────────────── */
+  .ps-when {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper);
+  }
+
+  .when-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+  }
+
+  .when-list--2col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .when-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    font-size: var(--text-base);
+    color: var(--color-ink);
+    line-height: 1.55;
+  }
+
+  .when-icon {
+    flex-shrink: 0;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-top: 0.15rem;
+    color: var(--color-blue);
+  }
+
+  /* ─── 5. Co dostajesz ────────────────────────────────────── */
+  .ps-benefits {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper-2);
+  }
+
+  .ben-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+
+  .ben-card {
+    border: 1px solid var(--color-rule);
+    border-top: 3px solid var(--color-secondary);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    background: var(--color-paper);
+  }
+
+  .ben-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+    margin-bottom: var(--space-sm);
+  }
+
+  .ben-card__text {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.65;
+  }
+
+  /* ─── 6. Dla kogo ────────────────────────────────────────── */
+  .ps-forwho {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper);
+  }
+
+  .fw-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-md);
+  }
+
+  .fw-card {
+    border: 1px solid var(--color-rule);
+    border-left: 4px solid var(--color-secondary);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    background: var(--color-paper);
+  }
+
+  .fw-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+    margin-bottom: var(--space-sm);
+  }
+
+  .fw-card__text {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.65;
+  }
+
+  /* ─── 7. FAQ ─────────────────────────────────────────────── */
+  .ps-faq {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper-2);
+  }
+
+  /* ─── CTA końcowe ────────────────────────────────────────── */
+  .ps-endcta {
+    padding-block: var(--space-3xl);
+    background: var(--gradient-cta);
+  }
+
+  .endcta-inner {
+    max-width: 52rem;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .endcta__h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    color: var(--color-ink-on-dark);
+    margin-bottom: var(--space-md);
+  }
+
+  .endcta__text {
+    font-size: var(--text-base);
+    color: var(--color-muted-on-dark);
+    line-height: 1.7;
+    margin-bottom: var(--space-xl);
+  }
+
+  .endcta__actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .endcta__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 600;
+    padding: var(--space-md) var(--space-2xl);
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out);
+  }
+
+  .endcta__btn--primary {
+    background: var(--color-accent);
+    color: #fff;
+  }
+
+  .endcta__btn--primary:hover { background: var(--color-accent-hover); }
+
+  .endcta__btn--ghost {
+    background: var(--color-glass-dark);
+    color: var(--color-ink-on-dark);
+    border-color: var(--color-glass-border);
+  }
+
+  .endcta__btn--ghost:hover { background: oklch(100% 0 0 / 0.12); }
+
+  /* ─── Related services ───────────────────────────────────── */
+  .ps-related {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper);
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+  }
+
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    background: var(--color-paper);
+    text-decoration: none;
+    transition: border-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out);
+  }
+
+  .related-card:hover {
+    border-color: var(--color-blue);
+    transform: translateY(-3px);
+  }
+
+  .related-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+  }
+
+  .related-card__desc {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.55;
+    flex: 1;
+  }
+
+  .related-card__arrow {
+    font-size: var(--text-md);
+    color: var(--color-secondary);
+    transition: transform var(--dur-short) var(--ease-out);
+    align-self: flex-start;
+    margin-top: auto;
+  }
+
+  .related-card:hover .related-card__arrow { transform: translateX(4px); }
+
+  /* ─── Responsive ─────────────────────────────────────────── */
+  @media (max-width: 60rem) {
+    .ps-problem__grid { grid-template-columns: 1fr; }
+    .ps-brief { position: static; }
+    .drones-inner { grid-template-columns: 1fr; }
+    .drones-pills { min-width: 0; flex-direction: row; flex-wrap: wrap; }
+    .related-grid { grid-template-columns: 1fr; }
+    .when-list--2col { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 48rem) {
+    .fw-grid { grid-template-columns: 1fr; }
+    .scope-grid { grid-template-columns: 1fr; }
+    .ben-grid { grid-template-columns: 1fr; }
+    .when-list { grid-template-columns: 1fr; }
+    .endcta__actions { flex-direction: column; align-items: stretch; }
+    .endcta__btn { width: 100%; justify-content: center; }
+  }
+</style>

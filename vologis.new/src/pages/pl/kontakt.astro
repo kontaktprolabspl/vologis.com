@@ -92,7 +92,7 @@ const schemaBreadcrumb = {
             <form
               id="contact-form"
               class="contact-form"
-              action="https://formspree.io/f/REPLACE_WITH_FORM_ID"
+              action="https://formspree.io/f/mjgdvnav"
               method="POST"
               novalidate
             >
@@ -215,6 +215,8 @@ const schemaBreadcrumb = {
 
               <p class="form-req-note"><span class="req" aria-hidden="true">*</span> Pola wymagane</p>
 
+              <span class="form-error" id="form-error" aria-live="assertive"></span>
+
               <button type="submit" class="btn-submit" id="submit-btn">
                 Wyślij wiadomość →
               </button>
@@ -241,17 +243,19 @@ const schemaBreadcrumb = {
             </address>
           </div>
 
-          <!-- Calendly inline -->
+          <!-- Calendly — load on demand (avoids inline cookies and 9s LCP) -->
           <div class="calendly-block">
             <p class="info-block-label">LUB UMÓW SPOTKANIE ONLINE</p>
-            <!-- Calendly inline widget — script loaded in BaseLayout head -->
-            <div
-              class="calendly-inline-widget"
-              data-url="https://calendly.com/vologis/konsultacja"
-              style="min-width:320px;height:630px;"
-            ></div>
+            <button
+              class="btn-calendly"
+              data-calendly="popup"
+              type="button"
+              aria-label="Otwórz kalendarz Calendly i wybierz termin spotkania"
+            >
+              Otwórz kalendarz i wybierz termin
+            </button>
             <p class="calendly-note">
-              Link do Calendly zostanie zaktualizowany po założeniu konta.
+              Kliknij, aby zarezerwować bezpłatną konsultację online (30 min).
             </p>
           </div>
 
@@ -414,7 +418,7 @@ const schemaBreadcrumb = {
 
   .field-input:focus {
     border-color: var(--color-secondary);
-    box-shadow: 0 0 0 3px oklch(58% 0.14 240 / 0.15);
+    box-shadow: 0 0 0 3px oklch(56% 0.078 238 / 0.20);
   }
 
   .field-input.is-invalid {
@@ -488,6 +492,14 @@ const schemaBreadcrumb = {
     color: var(--color-neutral);
   }
 
+  .form-error {
+    font-size: var(--text-sm);
+    color: var(--color-accent);
+    min-height: 1em;
+  }
+
+  .form-error:empty { display: none; }
+
   /* Submit */
   .btn-submit {
     font-family: var(--font-display);
@@ -520,8 +532,8 @@ const schemaBreadcrumb = {
 
   /* ── Success message ────────────────────────────── */
   .success-msg {
-    border: 1px solid oklch(58% 0.14 240 / 0.25);
-    background: oklch(98% 0.01 240);
+    border: 1px solid oklch(56% 0.078 238 / 0.30);
+    background: var(--color-blue-tint);
     border-radius: var(--space-xs);
     padding: var(--space-2xl);
     text-align: center;
@@ -618,6 +630,30 @@ const schemaBreadcrumb = {
     gap: var(--space-sm);
   }
 
+  .btn-calendly {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink-on-dark);
+    background: var(--color-ink);
+    border: none;
+    border-radius: 9999px;
+    padding: var(--space-sm) var(--space-xl);
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition:
+      background var(--dur-micro) var(--ease-out),
+      transform var(--dur-micro) var(--ease-out);
+  }
+
+  .btn-calendly:hover {
+    background: var(--color-secondary);
+    transform: translateY(-1px);
+  }
+
+  .btn-calendly:active { transform: translateY(0); }
+
   .calendly-note {
     font-size: var(--text-xs);
     color: var(--color-neutral);
@@ -653,11 +689,12 @@ const schemaBreadcrumb = {
 </style>
 
 <script>
-  /* Show success message when ?success=true ──────── */
+  const successEl = document.getElementById('success-msg');
+  const formWrapper = document.getElementById('form-wrapper');
+
+  /* Show success message when ?success=true (no-JS fallback redirect) ── */
   const params = new URLSearchParams(window.location.search);
   if (params.get('success') === 'true') {
-    const successEl = document.getElementById('success-msg');
-    const formWrapper = document.getElementById('form-wrapper');
     if (successEl) successEl.hidden = false;
     if (formWrapper) formWrapper.hidden = true;
   }
@@ -706,12 +743,16 @@ const schemaBreadcrumb = {
       el.addEventListener('input', () => validateField(el as HTMLElement));
     });
 
-    form.addEventListener('submit', (e) => {
+    const formError = document.getElementById('form-error');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (formError) formError.textContent = '';
+
       const fields = Array.from(form.querySelectorAll('input, textarea, select'));
       const allValid = fields.map((el) => validateField(el as HTMLElement)).every(Boolean);
 
       if (!allValid) {
-        e.preventDefault();
         const firstInvalid = form.querySelector('.is-invalid') as HTMLElement | null;
         firstInvalid?.focus();
         return;
@@ -720,6 +761,31 @@ const schemaBreadcrumb = {
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.textContent = 'Wysyłanie…';
+      }
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+
+        if (res.ok) {
+          if (successEl) successEl.hidden = false;
+          if (formWrapper) formWrapper.hidden = true;
+          successEl?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          throw new Error('Formspree responded with ' + res.status);
+        }
+      } catch {
+        if (formError) {
+          formError.textContent =
+            'Coś poszło nie tak. Spróbuj ponownie lub napisz do nas bezpośrednio na biuro@vologis.com.';
+        }
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Wyślij wiadomość →';
+        }
       }
     });
   }

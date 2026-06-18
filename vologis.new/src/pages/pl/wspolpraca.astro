@@ -1,0 +1,823 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const schemaBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Strona główna",
+      "item": "https://vologis.com/pl/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Współpraca",
+      "item": "https://vologis.com/pl/wspolpraca"
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Współpraca | Vologis"
+  description="Nawiąż współpracę z Vologis. Szukamy ekspertów i partnerów z obszaru logistyki, transportu i magazynowania."
+  canonical="https://vologis.com/pl/wspolpraca"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaBreadcrumb)} />
+
+  <!-- ── Hero ───────────────────────────────────────── -->
+  <section class="coop-hero" aria-labelledby="coop-heading">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list" role="list">
+          <li><a href="/pl/">Strona główna</a></li>
+          <li aria-hidden="true" class="breadcrumb-sep">›</li>
+          <li aria-current="page">Współpraca</li>
+        </ol>
+      </nav>
+      <p class="eyebrow">WSPÓŁPRACA</p>
+      <h1 id="coop-heading" class="coop-h1">
+        Zostań wolnym<br>współpracownikiem
+      </h1>
+      <p class="coop-sub">
+        Realizujemy projekty doradcze i wdrożeniowe w obszarze logistyki, transportu
+        i magazynowania. Stale poszerzamy sieć niezależnych ekspertów i partnerów —
+        jeśli masz doświadczenie w branży, zostaw nam swoje CV lub portfolio.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Cards ──────────────────────────────────────── -->
+  <section class="coop-cards" aria-label="Formy współpracy">
+    <div class="container">
+      <div class="cards-grid">
+        <article class="coop-card">
+          <h2 class="card-title">Ekspert / Konsultant</h2>
+          <p class="card-text">
+            Specjalizujesz się w logistyce, transporcie, magazynowaniu lub zarządzaniu
+            łańcuchem dostaw? Współpracujemy z niezależnymi konsultantami przy projektach
+            doradczych, audytach procesów i optymalizacji operacji dla naszych klientów.
+          </p>
+        </article>
+        <article class="coop-card">
+          <h2 class="card-title">Partner projektowy</h2>
+          <p class="card-text">
+            Prowadzisz firmę lub działasz jako freelancer w obszarze TSL, spedycji,
+            IT logistycznego lub pokrewnych? Szukamy partnerów do wspólnej realizacji
+            projektów i przetargów.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Form ───────────────────────────────────────── -->
+  <section class="coop-body" aria-label="Formularz zgłoszenia współpracy">
+    <div class="container">
+      <div class="form-wrap">
+
+        <!-- Success message (hidden by default, shown via JS) -->
+        <div class="success-msg hidden" id="success-message" role="status" aria-live="polite">
+          <div class="success-inner">
+            <span class="success-icon" aria-hidden="true">✉</span>
+            <h2 class="success-title">Dokończ wysyłkę w programie pocztowym</h2>
+            <p class="success-text">
+              Otworzyliśmy nową wiadomość do <strong>biuro@vologis.com</strong> z Twoimi danymi.
+              Dołącz CV lub portfolio jako załącznik i wyślij e-mail. Jeśli okno się nie otworzyło,
+              napisz bezpośrednio na <a href="mailto:biuro@vologis.com">biuro@vologis.com</a>.
+            </p>
+          </div>
+        </div>
+
+        <h2 class="col-label" id="form-label">Wyślij zgłoszenie</h2>
+
+        <!-- Wysyłka przez mailto: po walidacji formularz otwiera klienta poczty
+             z gotowym tematem i treścią. Kandydat dołącza CV jako załącznik
+             w swoim programie pocztowym (mailto nie obsługuje załączników). -->
+        <form
+          id="partner-form"
+          class="coop-form"
+          novalidate
+        >
+          <div class="form-row">
+            <div class="field">
+              <label class="field-label" for="name">Imię i nazwisko <span class="req" aria-hidden="true">*</span></label>
+              <input
+                class="field-input"
+                type="text"
+                id="name"
+                name="name"
+                autocomplete="name"
+                required
+                aria-required="true"
+              />
+              <span class="field-error" aria-live="polite"></span>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="email">Adres e-mail <span class="req" aria-hidden="true">*</span></label>
+              <input
+                class="field-input"
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                required
+                aria-required="true"
+              />
+              <span class="field-error" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="phone">Numer telefonu <span class="optional">(opcjonalnie)</span></label>
+            <input
+              class="field-input"
+              type="tel"
+              id="phone"
+              name="phone"
+              autocomplete="tel"
+            />
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="specialization">Obszar specjalizacji <span class="req" aria-hidden="true">*</span></label>
+            <div class="select-wrap">
+              <select
+                class="field-input field-select"
+                id="specialization"
+                name="specialization"
+                required
+                aria-required="true"
+              >
+                <option value="" disabled selected>Wybierz obszar…</option>
+                <option value="logistyka-magazynowanie">Logistyka i magazynowanie</option>
+                <option value="transport-spedycja">Transport i spedycja</option>
+                <option value="scm">Łańcuch dostaw (SCM)</option>
+                <option value="it-wms-tms">IT / systemy WMS/TMS</option>
+                <option value="doradztwo-audyt">Doradztwo i audyt</option>
+                <option value="inne">Inne</option>
+              </select>
+              <span class="select-arrow" aria-hidden="true">›</span>
+            </div>
+            <span class="field-error" aria-live="polite"></span>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="about">Krótko o sobie <span class="req" aria-hidden="true">*</span></label>
+            <textarea
+              class="field-input field-textarea"
+              id="about"
+              name="about"
+              rows="5"
+              minlength="20"
+              required
+              aria-required="true"
+              placeholder="Opisz swoje doświadczenie, branże w których pracowałeś/aś i rodzaj projektów, przy których chcesz współpracować…"
+            ></textarea>
+            <span class="field-error" aria-live="polite"></span>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="attachment">Załącz CV lub portfolio <span class="req" aria-hidden="true">*</span></label>
+            <div class="file-field">
+              <input
+                class="file-input"
+                type="file"
+                id="attachment"
+                name="attachment"
+                accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                required
+                aria-required="true"
+                aria-describedby="file-hint"
+              />
+              <label for="attachment" class="file-button">Wybierz plik</label>
+              <span class="file-name" id="file-name" aria-live="polite">Nie wybrano pliku</span>
+            </div>
+            <span class="file-hint" id="file-hint">PDF, DOC lub DOCX — maksymalnie 10 MB. Plik dołączysz jako załącznik w programie pocztowym, który otworzy się po wysłaniu zgłoszenia.</span>
+            <span class="field-error" aria-live="polite"></span>
+          </div>
+
+          <div class="field field-checkbox">
+            <label class="checkbox-label">
+              <input
+                class="checkbox-input"
+                type="checkbox"
+                name="consent"
+                required
+                aria-required="true"
+              />
+              <span class="checkbox-text">
+                Wyrażam zgodę na przetwarzanie moich danych osobowych przez Vologis sp. z o.o.
+                w celu rozpatrzenia zgłoszenia współpracy. Dane będą przetwarzane zgodnie
+                z <a href="/pl/polityka-prywatnosci">Polityką Prywatności</a>.
+                <span class="req" aria-hidden="true">*</span>
+              </span>
+            </label>
+            <span class="field-error" aria-live="polite"></span>
+          </div>
+
+          <p class="form-req-note"><span class="req" aria-hidden="true">*</span> Pola wymagane</p>
+
+          <span class="form-error" id="form-error" aria-live="assertive"></span>
+
+          <button type="submit" class="btn-submit" id="submit-btn">
+            Wyślij zgłoszenie →
+          </button>
+
+          <p class="mailto-note">
+            Po kliknięciu otworzy się Twój program pocztowy z gotową wiadomością —
+            dołącz CV jako załącznik i wyślij. Wolisz napisać bezpośrednio?
+            <a href="mailto:biuro@vologis.com">biuro@vologis.com</a>
+          </p>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* ── Breadcrumb ─────────────────────────────────── */
+  .breadcrumb {
+    margin-bottom: var(--space-lg);
+  }
+
+  .breadcrumb-list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    list-style: none;
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+  }
+
+  .breadcrumb-list a {
+    color: var(--color-muted);
+    text-decoration: none;
+    transition: color var(--dur-micro) var(--ease-out);
+  }
+
+  .breadcrumb-list a:hover { color: var(--color-ink); }
+
+  .breadcrumb-sep { color: var(--color-neutral); user-select: none; }
+
+  .breadcrumb-list [aria-current="page"] {
+    color: var(--color-ink);
+    font-weight: 500;
+  }
+
+  /* ── Hero ───────────────────────────────────────── */
+  .coop-hero {
+    padding-top: calc(var(--space-3xl) + 5rem);
+    padding-bottom: var(--space-2xl);
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: var(--color-accent);
+    margin-bottom: var(--space-md);
+    text-transform: uppercase;
+  }
+
+  .coop-h1 {
+    font-size: var(--text-display);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    color: var(--color-ink);
+    margin-bottom: var(--space-lg);
+  }
+
+  .coop-sub {
+    font-size: var(--text-md);
+    color: var(--color-muted);
+    max-width: 62ch;
+    line-height: 1.6;
+  }
+
+  /* ── Cards ──────────────────────────────────────── */
+  .coop-cards {
+    padding-bottom: var(--space-2xl);
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+  }
+
+  .coop-card {
+    background: var(--color-paper-2);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--space-xs);
+    padding: var(--space-xl);
+  }
+
+  .card-title {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+    margin-bottom: var(--space-sm);
+  }
+
+  .card-text {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.65;
+  }
+
+  /* ── Form body ──────────────────────────────────── */
+  .coop-body {
+    padding-bottom: var(--space-3xl);
+  }
+
+  .form-wrap {
+    max-width: 64ch;
+  }
+
+  .col-label {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+    margin-bottom: var(--space-xl);
+  }
+
+  .coop-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+  }
+
+  .field-label {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-ink);
+  }
+
+  .req {
+    color: var(--color-accent);
+    margin-left: 1px;
+  }
+
+  .optional {
+    font-size: var(--text-xs);
+    font-weight: 400;
+    color: var(--color-neutral);
+  }
+
+  .field-input {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--color-ink);
+    background: var(--color-paper);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--space-2xs);
+    padding: var(--space-sm) var(--space-md);
+    width: 100%;
+    outline: none;
+    transition:
+      border-color var(--dur-micro) var(--ease-out),
+      box-shadow var(--dur-micro) var(--ease-out);
+    appearance: none;
+  }
+
+  .field-input::placeholder { color: var(--color-neutral); }
+
+  .field-input:focus {
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 3px oklch(56% 0.078 238 / 0.20);
+  }
+
+  .field-input.is-invalid {
+    border-color: var(--color-accent);
+  }
+
+  .field-textarea {
+    resize: vertical;
+    min-height: 7rem;
+    line-height: 1.6;
+  }
+
+  /* Select */
+  .select-wrap {
+    position: relative;
+  }
+
+  .field-select {
+    cursor: pointer;
+    padding-right: var(--space-xl);
+  }
+
+  .select-arrow {
+    position: absolute;
+    right: var(--space-md);
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    pointer-events: none;
+  }
+
+  /* File upload */
+  .file-field {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .file-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .file-button {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-ink);
+    background: var(--color-paper);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--space-2xs);
+    padding: var(--space-sm) var(--space-lg);
+    cursor: pointer;
+    white-space: nowrap;
+    transition:
+      border-color var(--dur-micro) var(--ease-out),
+      background var(--dur-micro) var(--ease-out);
+  }
+
+  .file-button:hover {
+    border-color: var(--color-secondary);
+    background: var(--color-paper-2);
+  }
+
+  .file-input:focus-visible + .file-button {
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 3px oklch(56% 0.078 238 / 0.20);
+  }
+
+  .file-field.is-invalid .file-button {
+    border-color: var(--color-accent);
+  }
+
+  .file-name {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    overflow-wrap: anywhere;
+  }
+
+  .file-name.has-file {
+    color: var(--color-ink);
+    font-weight: 500;
+  }
+
+  .file-hint {
+    font-size: var(--text-xs);
+    color: var(--color-neutral);
+  }
+
+  /* Checkbox */
+  .field-checkbox {
+    gap: var(--space-xs);
+  }
+
+  .checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    cursor: pointer;
+  }
+
+  .checkbox-input {
+    width: 1.125rem;
+    height: 1.125rem;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+    accent-color: var(--color-ink);
+    cursor: pointer;
+  }
+
+  .checkbox-text {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.5;
+  }
+
+  .checkbox-text a {
+    color: var(--color-secondary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .checkbox-text a:hover { color: var(--color-ink); }
+
+  /* Validation errors */
+  .field-error {
+    font-size: var(--text-xs);
+    color: var(--color-accent);
+    min-height: 1em;
+    display: block;
+  }
+
+  .form-error {
+    font-size: var(--text-sm);
+    color: var(--color-accent);
+    min-height: 1em;
+  }
+
+  .form-error:empty { display: none; }
+
+  .mailto-note {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.6;
+    max-width: 52ch;
+  }
+
+  .mailto-note a {
+    color: var(--color-secondary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .mailto-note a:hover { color: var(--color-ink); }
+
+  /* Required note */
+  .form-req-note {
+    font-size: var(--text-xs);
+    color: var(--color-neutral);
+  }
+
+  /* Submit */
+  .btn-submit {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink-on-dark);
+    background: var(--color-ink);
+    border: none;
+    border-radius: 9999px;
+    padding: var(--space-sm) var(--space-xl);
+    cursor: pointer;
+    align-self: flex-start;
+    transition:
+      background var(--dur-micro) var(--ease-out),
+      transform var(--dur-micro) var(--ease-out);
+  }
+
+  .btn-submit:hover {
+    background: var(--color-secondary);
+    transform: translateY(-1px);
+  }
+
+  .btn-submit:active { transform: translateY(0); }
+
+  .btn-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  /* ── Success message ────────────────────────────── */
+  .success-msg {
+    border: 1px solid oklch(56% 0.078 238 / 0.30);
+    background: var(--color-blue-tint);
+    border-radius: var(--space-xs);
+    padding: var(--space-2xl);
+    text-align: center;
+  }
+
+  .success-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .success-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background: var(--color-secondary);
+    color: #fff;
+    border-radius: 9999px;
+    font-size: var(--text-xl);
+    font-weight: 700;
+  }
+
+  .success-title {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--color-ink);
+    letter-spacing: -0.02em;
+  }
+
+  .success-text {
+    font-size: var(--text-md);
+    color: var(--color-muted);
+    max-width: 50ch;
+  }
+
+  .success-text a {
+    color: var(--color-secondary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .success-text a:hover { color: var(--color-ink); }
+
+  .hidden { display: none; }
+
+  /* ── Responsive ─────────────────────────────────── */
+  @media (max-width: 60rem) {
+    .cards-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .btn-submit { width: 100%; justify-content: center; }
+  }
+
+  @media (max-width: 40rem) {
+    .coop-h1 { font-size: var(--text-display-s); }
+  }
+</style>
+
+<script>
+  const form = document.getElementById('partner-form') as HTMLFormElement | null;
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+  const formError = document.getElementById('form-error');
+  const successEl = document.getElementById('success-message');
+
+  const ALLOWED = [
+    'application/pdf',
+    'application/msword',
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  ];
+  const ALLOWED_EXT = ['pdf', 'doc', 'docx'];
+  const MAX_SIZE = 10 * 1024 * 1024; // 10 MB
+
+  const MESSAGES: Record<string, string> = {
+    valueMissing: 'To pole jest wymagane.',
+    typeMismatch: 'Podaj prawidłowy adres e-mail.',
+    tooShort: 'Opis musi mieć co najmniej 20 znaków.',
+  };
+
+  /* ── Per-field validation ─────────────────────────── */
+  function errorElFor(el: Element): HTMLElement | null {
+    return (el.closest('.field')?.querySelector('.field-error') as HTMLElement | null) ?? null;
+  }
+
+  function validateField(el: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement): boolean {
+    // Checkbox: required means "must be checked"
+    if (el instanceof HTMLInputElement && el.type === 'checkbox') {
+      const ok = el.checked;
+      const errorEl = errorElFor(el);
+      if (errorEl) errorEl.textContent = ok ? '' : MESSAGES.valueMissing;
+      return ok;
+    }
+
+    let msg = '';
+    if (!el.validity.valid) {
+      if (el.validity.valueMissing) msg = MESSAGES.valueMissing;
+      else if (el.validity.typeMismatch) msg = MESSAGES.typeMismatch;
+      else if (el.validity.tooShort) msg = MESSAGES.tooShort;
+      else msg = el.validationMessage;
+    }
+    el.classList.toggle('is-invalid', !el.validity.valid);
+    const errorEl = errorElFor(el);
+    if (errorEl) errorEl.textContent = msg;
+    return el.validity.valid;
+  }
+
+  /* ── File validation ──────────────────────────────── */
+  const fileInput = document.getElementById('attachment') as HTMLInputElement | null;
+  const fileName = document.getElementById('file-name');
+  const fileField = fileInput?.closest('.file-field') as HTMLElement | null;
+
+  function setFileError(msg: string) {
+    const errorEl = fileInput ? errorElFor(fileInput) : null;
+    if (errorEl) errorEl.textContent = msg;
+    fileField?.classList.toggle('is-invalid', Boolean(msg));
+  }
+
+  function validateFile(silent = false): boolean {
+    const file = fileInput?.files?.[0];
+    if (!file) {
+      if (!silent) setFileError(MESSAGES.valueMissing);
+      return false;
+    }
+    const ext = file.name.split('.').pop()?.toLowerCase() ?? '';
+    const typeOk = ALLOWED.includes(file.type) || ALLOWED_EXT.includes(ext);
+    if (!typeOk) {
+      setFileError('Dozwolone formaty: PDF, DOC, DOCX.');
+      if (fileInput) fileInput.value = '';
+      if (fileName) { fileName.textContent = 'Nie wybrano pliku'; fileName.classList.remove('has-file'); }
+      return false;
+    }
+    if (file.size > MAX_SIZE) {
+      setFileError('Plik nie może przekraczać 10 MB.');
+      if (fileInput) fileInput.value = '';
+      if (fileName) { fileName.textContent = 'Nie wybrano pliku'; fileName.classList.remove('has-file'); }
+      return false;
+    }
+    setFileError('');
+    if (fileName) { fileName.textContent = file.name; fileName.classList.add('has-file'); }
+    return true;
+  }
+
+  fileInput?.addEventListener('change', () => validateFile());
+
+  if (form) {
+    /* Validate text/select/textarea on blur + input; checkbox on change */
+    form.querySelectorAll('input:not([type="file"]):not([type="checkbox"]), textarea, select').forEach((el) => {
+      el.addEventListener('blur', () => validateField(el as HTMLInputElement));
+      el.addEventListener('input', () => validateField(el as HTMLInputElement));
+    });
+    form.querySelector('input[type="checkbox"]')
+      ?.addEventListener('change', (e) => validateField(e.target as HTMLInputElement));
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (formError) formError.textContent = '';
+
+      const fields = Array.from(
+        form.querySelectorAll('input:not([type="file"]), textarea, select')
+      ) as (HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement)[];
+      const fieldsValid = fields.map((el) => validateField(el)).every(Boolean);
+      const fileValid = validateFile();
+
+      if (!fieldsValid || !fileValid) {
+        const firstInvalid = form.querySelector('.is-invalid, .file-field.is-invalid') as HTMLElement | null;
+        (firstInvalid?.querySelector('input, textarea, select') as HTMLElement | null)?.focus();
+        firstInvalid?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      // Build a prefilled e-mail; the candidate attaches their CV in the mail client
+      // (mailto: cannot carry attachments).
+      const val = (id: string) =>
+        (document.getElementById(id) as HTMLInputElement | HTMLTextAreaElement | null)?.value.trim() ?? '';
+      const name = val('name');
+      const specEl = document.getElementById('specialization') as HTMLSelectElement;
+      const spec = specEl.options[specEl.selectedIndex]?.text ?? '';
+      const file = fileInput?.files?.[0];
+
+      const subject = `Zgłoszenie współpracy – ${name}`;
+      const body = [
+        `Imię i nazwisko: ${name}`,
+        `E-mail: ${val('email')}`,
+        `Telefon: ${val('phone') || '—'}`,
+        `Obszar specjalizacji: ${spec}`,
+        '',
+        'O sobie:',
+        val('about'),
+        '',
+        '────────────',
+        file
+          ? `⚠️ Pamiętaj, aby załączyć plik: ${file.name}`
+          : '⚠️ Pamiętaj, aby załączyć CV lub portfolio do tej wiadomości.',
+      ].join('\n');
+
+      window.location.href =
+        `mailto:biuro@vologis.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      // Show the instruction state.
+      form.classList.add('hidden');
+      document.getElementById('form-label')?.classList.add('hidden');
+      successEl?.classList.remove('hidden');
+      successEl?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  }
+</script>

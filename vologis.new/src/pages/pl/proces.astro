@@ -1,0 +1,579 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProcessStep from "../../components/ProcessStep.astro";
+import PricingCard from "../../components/PricingCard.astro";
+import ComparisonTable from "../../components/ComparisonTable.astro";
+import FaqAccordion from "../../components/FaqAccordion.astro";
+
+const SITE = "https://vologis.com";
+
+const heroSteps = [
+  { num: "01", name: "Analiza i identyfikacja potrzeb" },
+  { num: "02", name: "Quick Wins" },
+  { num: "03", name: "Wybór lokalizacji i partnerów" },
+  { num: "04", name: "Wdrożenie operacyjne" },
+  { num: "05", name: "Optymalizacja i KPI" },
+];
+
+const steps = [
+  {
+    number: "01",
+    title: "Analiza i identyfikacja potrzeb",
+    hook: "Zaczynamy od słuchania, nie od prezentacji.",
+    description:
+      "Przychodzimy na miejsce, obserwujemy procesy, rozmawiamy z ludźmi na każdym szczeblu. Nie zakładamy niczego z góry — sprawdzamy. W przypadku większych projektów przygotowujemy pełną analizę biznesową lub dokumentację przedinwestycyjną.",
+    deliverables: [
+      "Precyzyjna definicja problemu i jego skali",
+      "Dokumentacja przedinwestycyjna (duże projekty)",
+      "Plan działania z priorytetyzacją obszarów",
+      "Realistyczny harmonogram i model rozliczenia",
+    ],
+    callout:
+      "Na tym etapie często okazuje się, że prawdziwy problem leży zupełnie gdzie indziej niż klient sądził. Dlatego nie przysyłamy ankiety — przychodzimy osobiście.",
+  },
+  {
+    number: "02",
+    title: "Quick Wins / Optymalizacja doraźna",
+    hook: "Pierwsze efekty — zanim skończymy główny projekt.",
+    description:
+      "Większość firm doradczych ten etap pomija. Dla nas to standard. Na bazie wstępnej analizy natychmiast wdrażamy niskokosztowe zmiany procesowe — tzw. nisko wiszące owoce. Klient widzi efekty już po kilku tygodniach, nie po kilku miesiącach.",
+    deliverables: [
+      "Natychmiastowe uwolnienie zablokowanych zasobów",
+      "Eliminacja najbardziej palących błędów operacyjnych",
+      "Pierwsze, mierzalne poprawienie wskaźników",
+      "Dowód że współpraca działa — zanim zainwestujesz więcej",
+    ],
+    callout:
+      "Klient nie może czekać 6 miesięcy na efekty. Quick Wins to nasz sposób na zbudowanie zaufania poparte liczbami — nie obietnicami.",
+  },
+  {
+    number: "03",
+    title: "Wybór lokalizacji i partnerów",
+    hook: "Żaden operator nas nie opłaca. Żaden deweloper nas nie sponsoruje.",
+    description:
+      "Przeprowadzamy rygorystyczny research rynku — analizujemy infrastrukturę, porównujemy operatorów, dobieramy technologie i negocjujemy warunki w imieniu klienta. Nie jesteśmy powiązani z żadną siecią partnerską — rekomendujemy to co najlepsze dla Twojego ROI.",
+    deliverables: [
+      "Projekt koncepcyjny z wariantami",
+      "Obiektywne zestawienie lokalizacji lub operatorów",
+      "Twarde porównanie ofert i wynegocjowane warunki",
+      "Rekomendacja optymalnego rozwiązania z uzasadnieniem",
+    ],
+    callout:
+      "Agencja nieruchomości znajdzie halę. Dostawca WMS sprzeda oprogramowanie. My łączymy lokalizację, operacje, technologię i drony w jeden ekosystem — bez konfliktu interesów.",
+  },
+  {
+    number: "04",
+    title: "Wdrożenie operacyjne",
+    hook: "Koordynujemy wszystkich. Odpowiadamy za wszystko.",
+    description:
+      "Przejmujemy ciężar koordynacji projektu — od nadzoru nad przygotowaniem obiektu, przez wdrażanie systemów i infrastruktury, po szkolenia i rekrutację zespołu. Klient ma jednego rozmówcę zamiast dziesiątek dostawców.",
+    deliverables: [
+      "W pełni uruchomione operacje w ustalonym terminie",
+      "Wdrożone systemy (WMS, TMS) i infrastruktura",
+      "Przeszkolony i gotowy do pracy zespół",
+      "Dokumentacja procesów i standardów operacyjnych",
+    ],
+    callout:
+      "Większość projektów logistycznych opóźnia się o 30-50% przez brak koordynacji między dostawcami. My tę koordynację przejmujemy. To nie jest opcja — to standard naszej pracy.",
+  },
+  {
+    number: "05",
+    title: "Optymalizacja i rozwój operacji",
+    hook: "Projekt kończy się gdy KPI są osiągnięte — nie wcześniej.",
+    description:
+      "Po starcie operacyjnym monitorujemy procesy, mierzymy rzeczywiste KPI i zestawiamy z celami ustalonymi na starcie projektu. Jeśli coś nie działa jak powinno — korygujemy. Projekt kończy się dla nas wtedy gdy widać liczby: szybszą kompletację, niższy koszt pozycji, mniej zamrożonego kapitału.",
+    deliverables: [
+      "Zrealizowane KPI ustalone na początku współpracy",
+      "Wymierna redukcja kosztów operacyjnych",
+      "Stabilny, skalowalny proces gotowy na wzrost",
+      "Bieżące konsultacje i wsparcie po zamknięciu projektu",
+    ],
+    callout:
+      "Nie kończymy współpracy w dniu oddania projektu. Jesteśmy dostępni. Jeśli rynek się zmienia albo pojawiają się nowe wyzwania — wracamy.",
+  },
+];
+
+const valueProps = [
+  {
+    value: "Pewność że problem zostanie rozwiązany, nie opisany",
+    deliver: "Pełną odpowiedzialność za wdrożenie — nie tylko rekomendacje",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v5c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6l-8-3Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>`,
+  },
+  {
+    value: "Obiektywne decyzje bez nacisku dostawców",
+    deliver: "100% niezależność — żadnych ukrytych prowizji ani powiązań partnerskich",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7h14M6 7l-3 7a4 4 0 0 0 6 0L6 7Zm12 0-3 7a4 4 0 0 0 6 0l-3-7Z"/></svg>`,
+  },
+  {
+    value: "Pierwsze efekty jeszcze w trakcie trwania projektu",
+    deliver: "Quick Wins w fazie 2 — zanim skończymy główne prace",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg>`,
+  },
+];
+
+const pricing = [
+  { title: "Rozliczenie zadaniowe", desc: "Stała cena za zdefiniowany zakres. Idealne przy audytach i projektach z jasno określonym deliverable.", tag: "Audyty · Projekty Greenfield" },
+  { title: "Rozliczenie etapowe", desc: "Płatności powiązane z ukończeniem kolejnych faz. Transparentne kamienie milowe, zero niespodzianek.", tag: "Wdrożenia · Projekty wielofazowe" },
+  { title: "Success fee", desc: "Wynagrodzenie powiązane z wynikami. Dzielimy ryzyko — zarabiamy gdy projekt przynosi efekty.", tag: "Optymalizacja kosztów · Restrukturyzacje" },
+];
+
+const comparison = [
+  { feature: "Zakres pracy", vologis: "End-to-end: analiza → wdrożenie → KPI", other: "Raport lub fragment procesu" },
+  { feature: "Niezależność", vologis: "100% — zero prowizji od dostawców", other: "Często powiązani z operatorami lub vendorami" },
+  { feature: "Czas reakcji", vologis: "Wchodzimy od poniedziałku", other: "Tygodnie onboardingu" },
+  { feature: "Quick Wins", vologis: "Standardowo w fazie 2", other: "Rzadko lub brak" },
+  { feature: "Model kosztowy", vologis: "Projektowy / success fee — OPEX tylko gdy potrzebny", other: "Stały OPEX lub drogi retainer" },
+  { feature: "Perspektywa", vologis: "Zewnętrzna, obiektywna, bez firmowej polityki", other: "Uwikłana w wewnętrzne struktury" },
+  { feature: "Technologia", vologis: "Drony + WMS + operacje = zintegrowany ekosystem", other: "Wyspecjalizowane silosy" },
+];
+
+const faqs = [
+  { q: "Ile trwa typowy projekt?", a: "Każdy projekt jest inny. Szybki audyt z quick wins: 2–4 tygodnie. Pełny projekt Greenfield od analizy do startu: 3–12 miesięcy. Harmonogram ustalamy na pierwszym spotkaniu na bazie zakresu i zasobów po stronie klienta." },
+  { q: "Jak wygląda bezpłatna konsultacja?", a: "30 minut online lub telefonicznie. Słuchamy, pytamy, oceniamy czy możemy pomóc. Bez prezentacji sprzedażowych. Jeśli Twój problem leży poza naszymi kompetencjami — powiemy to wprost i skierujemy do właściwego partnera." },
+  { q: "Czy można zlecić tylko jeden etap, np. sam audyt?", a: "Tak. Każdy etap można zlecić osobno. Wielu klientów zaczyna od audytu i po zapoznaniu z wynikami decyduje o wdrożeniu rekomendacji. Nie ma obowiązku kontynuacji." },
+  { q: "Czy Vologis faworyzuje konkretnych dostawców WMS lub operatorów?", a: "Nie. Jesteśmy w 100% niezależni — zero prowizji od dostawców, zero powiązań partnerskich. Dobieramy rozwiązania wyłącznie pod kątem ROI dla klienta." },
+  { q: "Czym różnią się usługi dronowe od standardowego doradztwa?", a: "Usługi dronowe to narzędzie zintegrowane z projektami inwestycyjnymi — nie osobna usługa fotograficzna. Ortofotomapy, pomiary geodezyjne i materiały marketingowe z powietrza dostarczamy bezpośrednio w ramach projektów Greenfield i inwestycyjnych." },
+  { q: "Jak wygląda rozliczenie success fee?", a: "Definiujemy wspólnie metrykę bazową (np. koszt operacyjny na jednostkę) i docelowy poziom poprawy. Wynagrodzenie powiązane jest z rzeczywistą zmianą tej metryki mierzoną w ustalonym okresie. Szczegóły negocjujemy indywidualnie." },
+];
+
+const schemaBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": `${SITE}/pl/` },
+    { "@type": "ListItem", "position": 2, "name": "Jak pracujemy", "item": `${SITE}/pl/proces` },
+  ],
+};
+
+const schemaHowTo = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Proces współpracy Vologis — od analizy do KPI",
+  "description":
+    "Pięcioetapowy proces doradztwa i wdrożeń logistycznych Vologis: od analizy potrzeb, przez quick wins, wybór partnerów i wdrożenie, po optymalizację i osiągnięcie KPI.",
+  "step": steps.map((s, i) => ({
+    "@type": "HowToStep",
+    "position": i + 1,
+    "name": s.hook,
+    "text": s.description,
+    "supply": s.deliverables.map((d) => ({ "@type": "HowToSupply", "name": d })),
+    "url": `${SITE}/pl/proces#etap-${s.number}`,
+  })),
+};
+
+const schemaFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<BaseLayout
+  title="Jak pracujemy — proces współpracy end-to-end | Vologis"
+  description="5-etapowy proces Vologis — od analizy do wdrożenia. Nie zostawiamy Cię z raportem. Projekt kończy się gdy widać wyniki w KPI."
+  canonical="https://vologis.com/pl/proces"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaBreadcrumb)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaHowTo)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaFaq)} />
+
+  <!-- ── 1. Hero ─────────────────────────────────────── -->
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="container hero__grid">
+      <div class="hero__copy">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol class="breadcrumb-list" role="list">
+            <li><a href="/pl/">Strona główna</a></li>
+            <li aria-hidden="true" class="breadcrumb-sep">›</li>
+            <li aria-current="page">Jak pracujemy</li>
+          </ol>
+        </nav>
+        <p class="eyebrow">JAK PRACUJEMY</p>
+        <h1 id="hero-h" class="hero__h1">Projekt kończy się<br>gdy widać liczby —<br>nie gdy oddamy raport.</h1>
+        <p class="hero__sub">
+          Pięć etapów. Pełna odpowiedzialność. Od pierwszej analizy po osiągnięcie KPI —
+          bez zostawiania Cię w połowie drogi.
+        </p>
+        <div class="hero__cta">
+          <a href="/pl/kontakt" class="cta cta--primary">Umów bezpłatną konsultację <span aria-hidden="true">→</span></a>
+          <a href="/pl/uslugi" class="cta cta--ghost">Zobacz nasze usługi <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <ol class="hero__steps" aria-label="Etapy procesu">
+        {heroSteps.map((s) => (
+          <li class="hero__pill">
+            <span class="hero__pill-num tnum" aria-hidden="true">{s.num}</span>
+            <span class="hero__pill-name">{s.name}</span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- ── 2. Value proposition strip ──────────────────── -->
+  <section class="vps" aria-label="Co dostarczamy">
+    <div class="container">
+      <div class="vps__grid">
+        {valueProps.map((v) => (
+          <div class="vps__col">
+            <span class="vps__icon" aria-hidden="true" set:html={v.icon}></span>
+            <p class="vps__label">Wartość:</p>
+            <p class="vps__value">{v.value}</p>
+            <p class="vps__label vps__label--deliver">Dostarczamy:</p>
+            <p class="vps__deliver">{v.deliver}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 3. Process steps ────────────────────────────── -->
+  <section class="steps-section" aria-labelledby="steps-h">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow eyebrow--accent">Proces krok po kroku</p>
+        <h2 id="steps-h" class="section-title">Pięć etapów. Jedna odpowiedzialność.</h2>
+      </div>
+      <div class="psteps">
+        {steps.map((s, i) => (
+          <div id={`etap-${s.number}`}>
+            <ProcessStep
+              number={s.number}
+              title={s.title}
+              hook={s.hook}
+              description={s.description}
+              deliverables={s.deliverables}
+              callout={s.callout}
+              reverse={i % 2 === 1}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 4. Billing models ───────────────────────────── -->
+  <section class="pricing" aria-labelledby="pricing-h">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="pricing-h" class="section-title">Elastyczne modele współpracy</h2>
+        <p class="section-intro">
+          Rozliczenie ustalamy zawsze przed podpisaniem umowy. Dopasowujemy model
+          do charakteru projektu — nie odwrotnie.
+        </p>
+      </div>
+      <div class="pricing__grid">
+        {pricing.map((p) => (
+          <PricingCard title={p.title} desc={p.desc} tag={p.tag} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 5. Comparison ───────────────────────────────── -->
+  <section class="compare" aria-labelledby="compare-h">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="compare-h" class="section-title">Vologis vs. alternatywy</h2>
+        <p class="section-intro">
+          Dlaczego zewnętrzny partner jest lepszy niż własny dział — i czym różnimy się
+          od dużego konsultingu.
+        </p>
+      </div>
+      <ComparisonTable rows={comparison} />
+    </div>
+  </section>
+
+  <!-- ── 6. FAQ ──────────────────────────────────────── -->
+  <section class="faq-section" aria-labelledby="faq-h">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="faq-h" class="section-title">Najczęstsze pytania o współpracę</h2>
+      </div>
+      <FaqAccordion items={faqs} single />
+    </div>
+  </section>
+
+  <!-- ── 7. CTA ──────────────────────────────────────── -->
+  <section class="cta-section" aria-labelledby="cta-h">
+    <div class="container">
+      <div class="cta-section__inner">
+        <h2 id="cta-h" class="cta-section__title">Gotowy żeby zacząć?</h2>
+        <p class="cta-section__sub">
+          Powiedz nam czego potrzebujesz. 30 minut, zero zobowiązań, bezpłatna pierwsza rozmowa.
+        </p>
+        <div class="cta-section__actions">
+          <a href="/pl/kontakt" class="cta cta--primary">Umów konsultację <span aria-hidden="true">→</span></a>
+          <a href="/pl/uslugi" class="cta cta--ghost-light">Zobacz nasze usługi <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* shared bits */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-md);
+  }
+  .eyebrow--accent { color: oklch(50% 0.210 22); } /* darkened for 4.5:1 contrast on light bg */
+
+  .section-head { margin-bottom: var(--space-2xl); max-width: 60ch; }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--color-ink);
+  }
+  .section-intro {
+    margin-top: var(--space-md);
+    font-size: var(--text-md);
+    color: var(--color-muted);
+    line-height: 1.6;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2xs);
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    border-radius: var(--radius-pill);
+    padding: var(--space-sm) var(--space-xl);
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: background var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out), color var(--dur-micro) var(--ease-out), transform var(--dur-micro) var(--ease-out);
+  }
+  .cta span { display: inline-block; transition: transform var(--dur-short) var(--ease-out); }
+  .cta:hover span { transform: translateX(4px); }
+  .cta--primary { background: var(--color-blue); color: #fff; }
+  .cta--primary:hover { background: var(--color-secondary); transform: translateY(-1px); }
+  .cta--ghost { color: var(--color-ink-on-dark); border-color: var(--color-glass-border); }
+  .cta--ghost:hover { background: var(--color-ink-on-dark); color: var(--color-ink); }
+  .cta--ghost-light { color: var(--color-ink-on-dark); border-color: var(--color-glass-border); }
+  .cta--ghost-light:hover { background: var(--color-ink-on-dark); color: var(--color-ink); }
+
+  /* ── 1. Hero ─────────────────────────────────────── */
+  .hero {
+    background: var(--color-paper-dark);
+    color: var(--color-ink-on-dark);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: calc(var(--space-3xl) + 5rem);
+    padding-bottom: var(--space-3xl);
+  }
+
+  .hero__grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: var(--space-3xl);
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero .eyebrow { color: var(--color-blue-on-dark); }
+
+  .hero__h1 {
+    font-family: var(--font-display);
+    font-size: var(--text-display);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.04;
+    color: var(--color-ink-on-dark);
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero__sub {
+    font-size: var(--text-md);
+    color: var(--color-muted-on-dark);
+    line-height: 1.6;
+    max-width: 34rem;
+    margin-bottom: var(--space-xl);
+  }
+
+  .hero__cta { display: flex; gap: var(--space-md); flex-wrap: wrap; }
+
+  .hero__steps {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+
+  .hero__pill {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-lg);
+    background: oklch(100% 0 0 / 0.04);
+    border: 1px solid var(--color-glass-border);
+    border-radius: var(--radius-md);
+    position: relative;
+  }
+
+  .hero__pill + .hero__pill { margin-top: var(--space-md); }
+
+  /* thin connecting line between pills */
+  .hero__pill:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: calc(var(--space-lg) + 0.75rem);
+    top: 100%;
+    height: var(--space-md);
+    border-left: 2px solid var(--color-glass-border);
+  }
+
+  .hero__pill-num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--text-md);
+    color: var(--color-blue-on-dark);
+    flex-shrink: 0;
+  }
+
+  .hero__pill-name {
+    font-size: var(--text-base);
+    font-weight: 500;
+    color: var(--color-ink-on-dark);
+  }
+
+  /* ── 2. Value proposition ────────────────────────── */
+  .vps {
+    background: var(--color-paper-2);
+    padding-block: var(--space-3xl);
+  }
+  .vps__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-2xl);
+  }
+  .vps__icon {
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: var(--radius-md);
+    background: var(--color-paper);
+    color: var(--color-blue);
+    margin-bottom: var(--space-lg);
+  }
+  .vps__icon :global(svg) { width: 1.5rem; height: 1.5rem; }
+  .vps__label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--space-2xs);
+  }
+  .vps__label--deliver { color: var(--color-blue); margin-top: var(--space-md); }
+  .vps__value {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: var(--color-ink);
+  }
+  .vps__deliver {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.6;
+  }
+
+  /* ── 3. Steps ────────────────────────────────────── */
+  .steps-section { padding-block: var(--space-3xl); }
+
+  .psteps {
+    position: relative;
+    max-width: 64rem;
+    margin-inline: auto;
+  }
+
+  /* center dashed connector (desktop) */
+  .psteps::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 2rem;
+    bottom: 2rem;
+    border-left: 2px dashed var(--color-blue);
+    opacity: 0.4;
+    transform: translateX(-50%);
+  }
+
+  .psteps > div { position: relative; }
+  .psteps > div + div { margin-top: var(--space-3xl); }
+
+  /* ── 4. Pricing ──────────────────────────────────── */
+  .pricing { background: var(--color-paper-2); padding-block: var(--space-3xl); }
+  .pricing .section-head { text-align: center; margin-inline: auto; }
+  .pricing__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+  }
+
+  /* ── 5. Comparison ───────────────────────────────── */
+  .compare { padding-block: var(--space-3xl); }
+
+  /* ── 6. FAQ ──────────────────────────────────────── */
+  .faq-section { background: var(--color-paper-2); padding-block: var(--space-3xl); }
+
+  /* ── 7. CTA ──────────────────────────────────────── */
+  .cta-section { background: var(--color-paper-dark); padding-block: var(--space-3xl); }
+  .cta-section__inner { text-align: center; max-width: 44rem; margin-inline: auto; }
+  .cta-section__title {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--color-ink-on-dark);
+    margin-bottom: var(--space-md);
+  }
+  .cta-section__sub {
+    font-size: var(--text-md);
+    color: var(--color-muted-on-dark);
+    line-height: 1.6;
+    margin-bottom: var(--space-xl);
+  }
+  .cta-section__actions { display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap; }
+
+  /* ── breadcrumb (dark hero) ──────────────────────── */
+  .breadcrumb { margin-bottom: var(--space-lg); }
+  .breadcrumb-list {
+    display: flex; align-items: center; gap: var(--space-xs);
+    list-style: none; font-size: var(--text-sm); color: var(--color-muted-on-dark);
+  }
+  .breadcrumb-list a { color: var(--color-muted-on-dark); text-decoration: none; transition: color var(--dur-micro) var(--ease-out); }
+  .breadcrumb-list a:hover { color: var(--color-ink-on-dark); }
+  .breadcrumb-sep { color: var(--color-muted-on-dark); opacity: 0.6; user-select: none; }
+  .breadcrumb-list [aria-current="page"] { color: var(--color-ink-on-dark); font-weight: 500; }
+
+  /* ── Responsive ──────────────────────────────────── */
+  @media (max-width: 60rem) {
+    .hero { min-height: 0; }
+    .hero__grid { grid-template-columns: 1fr; gap: var(--space-2xl); }
+    .hero__steps { order: 2; }
+    .vps__grid { grid-template-columns: 1fr; gap: var(--space-2xl); }
+    .pricing__grid { grid-template-columns: 1fr; }
+    .psteps::before { display: none; }
+  }
+</style>

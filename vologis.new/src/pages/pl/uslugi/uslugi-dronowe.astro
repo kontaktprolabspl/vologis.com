@@ -1,0 +1,695 @@
+---
+import ServicePageLayout from "../../../layouts/ServicePageLayout.astro";
+import FaqAccordion from "../../../components/FaqAccordion.astro";
+import CalloutBox from "../../../components/CalloutBox.astro";
+
+const SITE = "https://vologis.com";
+
+/* ── Data ────────────────────────────────────────────────── */
+
+const trustItems = [
+  "Pomiary geodezyjne i ortofotomapy",
+  "Inspekcje terenów inwestycyjnych",
+  "Monitoring postępu prac budowlanych",
+  "Pomiary objętości i hałd materiałów",
+  "Materiały marketingowe foto/wideo z powietrza",
+  "Integracja z projektami logistycznymi i Greenfield",
+];
+
+const forWhom = [
+  {
+    title: "Deweloperzy logistyczni",
+    text: "Gdy potrzebujesz dokumentacji terenu, monitoringu budowy i materiałów do komercjalizacji obiektu.",
+  },
+  {
+    title: "Inwestorzy i fundusze",
+    text: "Gdy chcesz obiektywnie ocenić działkę inwestycyjną lub kontrolować postęp realizacji niezależnie od wykonawcy.",
+  },
+  {
+    title: "Firmy budowlane",
+    text: "Gdy potrzebujesz pomiarów objętości, dokumentacji prac ziemnych i regularnego monitoringu placu budowy.",
+  },
+  {
+    title: "Agencje nieruchomości komercyjnych",
+    text: "Gdy chcesz wyróżnić ofertę obiektu profesjonalnymi materiałami z powietrza.",
+  },
+  {
+    title: "Firmy realizujące projekty Greenfield",
+    text: "Gdy potrzebujesz danych geodezyjnych i monitoringu zintegrowanych z prowadzeniem całej inwestycji.",
+  },
+];
+
+const scopeCards = [
+  {
+    title: "Pomiary geodezyjne",
+    text: "Precyzyjne pomiary terenu z dokładnością do centymetrów. Dane gotowe do wykorzystania w projektowaniu i analizach inwestycyjnych.",
+  },
+  {
+    title: "Ortofotomapy",
+    text: "Wysokorozdzielcze, skalibrowane mapy fotograficzne terenu. Rzeczywisty stan działki w formie gotowej do analizy i projektowania.",
+  },
+  {
+    title: "Inspekcje terenów inwestycyjnych",
+    text: "Ocena działek pod inwestycję logistyczną — ukształtowanie terenu, dostępność, otoczenie, infrastruktura. Obiektywny obraz przed decyzją o zakupie.",
+  },
+  {
+    title: "Monitoring postępu budowy",
+    text: "Regularna dokumentacja postępu prac z powietrza. Obiektywny, datowany obraz dla inwestora i raportowania — niezależny od deklaracji wykonawcy.",
+  },
+  {
+    title: "Pomiary objętości i inwentaryzacja",
+    text: "Pomiary hałd materiałów, prac ziemnych i objętości składowanych surowców. Kontrola ilościowa bez ręcznych pomiarów w terenie.",
+  },
+  {
+    title: "Materiały marketingowe",
+    text: "Profesjonalne zdjęcia i wideo obiektów logistycznych z powietrza — do komercjalizacji, prezentacji dla najemców i materiałów sprzedażowych deweloperów.",
+  },
+];
+
+const faqs = [
+  {
+    q: "Czy wykonujecie usługi dronowe niezależnie, czy tylko w ramach większych projektów?",
+    a: "Oba modele. Usługi dronowe możesz zlecić jako samodzielną usługę — pomiar, ortofotomapę czy monitoring — lub jako element większego projektu logistycznego czy inwestycyjnego prowadzonego przez Vologis.",
+  },
+  {
+    q: "Jaka jest dokładność pomiarów z drona?",
+    a: "Przy zastosowaniu odpowiednich procedur i punktów referencyjnych osiągamy dokładność do kilku centymetrów. Konkretny poziom dokładności ustalamy w zależności od celu pomiaru i wymagań projektu.",
+  },
+  {
+    q: "Czy posiadacie wymagane uprawnienia do lotów?",
+    a: "Tak. Loty wykonujemy zgodnie z obowiązującymi przepisami lotniczymi i posiadanymi uprawnieniami operatorskimi. Dla lotów wymagających dodatkowych zezwoleń zapewniamy odpowiednie zgody.",
+  },
+  {
+    q: "W jakim formacie dostarczacie dane?",
+    a: "Dane dostarczamy w formatach gotowych do wykorzystania w projektowaniu i analizie — ortofotomapy, modele terenu, raporty z pomiarów. Format dopasowujemy do potrzeb projektu i narzędzi klienta.",
+  },
+  {
+    q: "Czy monitoring budowy jest jednorazowy czy cykliczny?",
+    a: "Najczęściej cykliczny — regularne loty w ustalonych odstępach dają obiektywny obraz postępu prac w czasie. Możliwy jest też pojedynczy pomiar lub dokumentacja na konkretnym etapie.",
+  },
+];
+
+/* ── Schema ───────────────────────────────────────────────── */
+
+const schemaService = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Usługi dronowe dla logistyki i inwestycji",
+  "provider": {
+    "@type": "Organization",
+    "name": "Vologis Sp. z o.o.",
+    "url": SITE,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Jarocin",
+      "addressRegion": "Wielkopolska",
+      "addressCountry": "PL",
+    },
+  },
+  "areaServed": ["Polska", "Europa"],
+  "serviceType": "Drone services for logistics and construction",
+  "description": "Pomiary geodezyjne, ortofotomapy, inspekcje terenów i monitoring budowy z drona. Vologis integruje usługi dronowe z projektami logistycznymi i inwestycyjnymi — dla deweloperów, inwestorów i firm budowlanych.",
+  "url": `${SITE}/pl/uslugi/uslugi-dronowe`,
+};
+
+const schemaWebPage = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Usługi dronowe dla logistyki i inwestycji | Vologis",
+  "description": "Pomiary geodezyjne, ortofotomapy, inspekcje terenów i monitoring budowy z drona. Vologis integruje usługi dronowe z projektami logistycznymi i inwestycyjnymi — dla deweloperów, inwestorów i firm budowlanych.",
+  "url": `${SITE}/pl/uslugi/uslugi-dronowe`,
+  "inLanguage": "pl-PL",
+};
+
+const schemaFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ServicePageLayout
+  title="Usługi dronowe dla logistyki i inwestycji | Vologis"
+  description="Pomiary geodezyjne, ortofotomapy, inspekcje terenów i monitoring budowy z drona. Vologis integruje usługi dronowe z projektami logistycznymi i inwestycyjnymi — dla deweloperów, inwestorów i firm budowlanych."
+  canonical="https://vologis.com/pl/uslugi/uslugi-dronowe"
+  heroImage="/services/uslugi-dronowe.webp"
+  eyebrow="Usługi logistyczne / Usługi dronowe"
+  h1="Usługi dronowe — dane i obraz z powietrza dla logistyki i inwestycji"
+  lead="Dron to nie gadżet — to narzędzie pomiarowe i analityczne, które skraca czas inwestycji i ogranicza ryzyko. Vologis wykonuje precyzyjne pomiary geodezyjne, ortofotomapy, inspekcje terenów inwestycyjnych oraz monitoring postępu prac budowlanych. W odróżnieniu od typowych firm dronowych, integrujemy te usługi bezpośrednio z projektami logistycznymi — dostarczając dane, które realnie wpływają na decyzje inwestycyjne, a nie tylko efektowne ujęcia."
+  trustItems={trustItems}
+  ctaPrimaryLabel="Zapytaj o usługi dronowe"
+  ctaPrimaryHref="/pl/kontakt"
+  ctaSecondaryLabel="Zobacz projekty Greenfield"
+  ctaSecondaryHref="/pl/uslugi/projekty-greenfield"
+  breadcrumbs={[{ name: "Usługi dronowe" }]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaService)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaWebPage)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaFaq)} />
+
+  <!-- ─── 1. Problem / Wartość ──────────────────────────────── -->
+  <section class="ps-problem" aria-labelledby="h-problem">
+    <div class="container">
+      <div class="ps-problem__grid">
+        <div class="ps-problem__copy">
+          <h2 class="h2" id="h-problem">
+            Precyzyjne dane szybciej i taniej niż metodami tradycyjnymi
+          </h2>
+          <p class="body">
+            Tradycyjny pomiar geodezyjny dużej działki inwestycyjnej zajmuje dni i angażuje zespół w terenie. Dron robi to w godziny, z dokładnością do centymetrów, dostarczając dane w formie, którą można od razu wykorzystać do projektowania i analizy.
+          </p>
+          <p class="body">
+            Na etapie inwestycji logistycznej te dane są bezcenne: ortofotomapa pokazuje rzeczywisty stan działki, pomiary objętości pozwalają kontrolować prace ziemne, a regularny monitoring z powietrza daje obiektywny obraz postępu budowy — niezależny od raportów wykonawcy.
+          </p>
+          <p class="body">
+            Vologis łączy te możliwości z wiedzą logistyczną. Nie tylko latamy i robimy zdjęcia — interpretujemy dane w kontekście projektu inwestycyjnego i operacyjnego, do którego są potrzebne.
+          </p>
+        </div>
+        <aside class="ps-brief" aria-label="W skrócie">
+          <p class="ps-brief__label">W skrócie</p>
+          <p class="ps-brief__text">
+            Usługi dronowe Vologis obejmują pomiary geodezyjne, ortofotomapy, inspekcje terenów inwestycyjnych, monitoring postępu budowy, pomiary objętości oraz materiały marketingowe foto/wideo z powietrza. W odróżnieniu od typowych firm dronowych, Vologis integruje te usługi z projektami logistycznymi i inwestycyjnymi — interpretując dane w kontekście konkretnych decyzji biznesowych. Usługi kierowane są do deweloperów, inwestorów, firm budowlanych i agencji nieruchomości.
+          </p>
+          <hr class="ps-brief__rule" />
+          <p class="ps-brief__sub">
+            Vologis &middot; Jarocin, Polska &middot; Obsługa rynku PL i EU
+          </p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 2. Co obejmują usługi ─────────────────────────────── -->
+  <section class="ps-scope" aria-labelledby="h-scope">
+    <div class="container">
+      <h2 class="h2" id="h-scope">Co obejmują usługi dronowe?</h2>
+      <p class="body">
+        Realizujemy zarówno pojedyncze zlecenia, jak i kompleksową obsługę całego projektu inwestycyjnego — od pierwszego lotu nad działką po dokumentację gotowego obiektu.
+      </p>
+      <div class="scope-grid">
+        {scopeCards.map((c) => (
+          <div class="scope-card">
+            <h3 class="scope-card__title">{c.title}</h3>
+            <p class="scope-card__text">{c.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 3. Dla kogo ───────────────────────────────────────── -->
+  <section class="ps-forwho" aria-labelledby="h-forwho">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-forwho">Dla kogo są usługi dronowe?</h2>
+      <p class="section-intro">
+        Pracujemy wszędzie tam, gdzie precyzyjne dane z powietrza mają realny wpływ na decyzje inwestycyjne i operacyjne.
+      </p>
+      <div class="fw-grid">
+        {forWhom.map((p) => (
+          <div class="fw-card">
+            <h3 class="fw-card__title">{p.title}</h3>
+            <p class="fw-card__text">{p.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 4. Przewaga: drony + logistyka (dark) ────────────── -->
+  <section class="ps-advantage" aria-labelledby="h-advantage">
+    <div class="container">
+      <div class="adv-grid">
+        <div class="adv-copy">
+          <p class="dark-eyebrow">Unikalna integracja</p>
+          <h2 class="h2 h2--dark" id="h-advantage">
+            Czym różnimy się od typowej firmy dronowej
+          </h2>
+          <p class="adv-text">
+            Firma dronowa dostarczy Ci zdjęcia. My dostarczamy dane w kontekście Twojego projektu. Wiemy, co oznacza ortofotomapa dla layoutu magazynu, jak pomiar objętości przekłada się na harmonogram prac ziemnych i które ujęcia faktycznie pomagają skomercjalizować obiekt.
+          </p>
+          <p class="adv-text">
+            Usługi dronowe to u nas element większej całości — doradztwa logistycznego i prowadzenia inwestycji end-to-end. Dane z drona trafiają bezpośrednio do procesu decyzyjnego, nie do folderu z plikami.
+          </p>
+          <a href="/pl/uslugi/projekty-greenfield" class="adv-link">
+            Zobacz jak prowadzimy projekty Greenfield <span aria-hidden="true">→</span>
+          </a>
+        </div>
+        <div class="adv-stats">
+          <div class="adv-stat">
+            <span class="adv-stat__val">cm</span>
+            <span class="adv-stat__label">Dokładność pomiarów geodezyjnych</span>
+          </div>
+          <div class="adv-stat">
+            <span class="adv-stat__val">h</span>
+            <span class="adv-stat__label">Czas pomiaru zamiast dni tradycyjnych metod</span>
+          </div>
+          <div class="adv-stat">
+            <span class="adv-stat__val">360°</span>
+            <span class="adv-stat__label">Dokumentacja postępu budowy niezależna od wykonawcy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 5. FAQ ────────────────────────────────────────────── -->
+  <section class="ps-faq" aria-labelledby="h-faq">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-faq">FAQ — najczęściej zadawane pytania</h2>
+      <FaqAccordion items={faqs} single />
+    </div>
+  </section>
+
+  <!-- ─── CTA końcowe ───────────────────────────────────────── -->
+  <section class="ps-endcta" aria-labelledby="h-endcta">
+    <div class="container">
+      <div class="endcta-inner">
+        <h2 class="endcta__h2" id="h-endcta">
+          Potrzebujesz danych z powietrza?
+        </h2>
+        <p class="endcta__text">
+          Pomiar, ortofotomapa, monitoring budowy lub materiały marketingowe. Powiedz czego potrzebujesz.
+        </p>
+        <div class="endcta__actions">
+          <a href="/pl/kontakt" class="endcta__btn endcta__btn--primary">
+            Zapytaj o usługi dronowe <span aria-hidden="true">→</span>
+          </a>
+          <a href="/pl/uslugi" class="endcta__btn endcta__btn--ghost">
+            Zobacz nasze usługi →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Related services ─────────────────────────────────── -->
+  <section class="ps-related" aria-labelledby="h-related">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-related">Inne usługi Vologis</h2>
+      <div class="related-grid">
+        <a class="related-card" href="/pl/uslugi/projekty-greenfield">
+          <span class="related-card__title">Projekty Greenfield</span>
+          <span class="related-card__desc">Od analizy lokalizacji do uruchomienia operacji. Jeden partner.</span>
+          <span class="related-card__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="related-card" href="/pl/uslugi/doradztwo-operacyjne">
+          <span class="related-card__title">Doradztwo operacyjne i audyt</span>
+          <span class="related-card__desc">Identyfikacja wąskich gardeł, optymalizacja procesów, quick wins.</span>
+          <span class="related-card__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="related-card" href="/pl/uslugi/posrednictwo-logistyczne">
+          <span class="related-card__title">Pośrednictwo logistyczne</span>
+          <span class="related-card__desc">Dobór i weryfikacja operatorów magazynowych, fulfillment i przewoźników.</span>
+          <span class="related-card__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</ServicePageLayout>
+
+<style>
+  /* ─── Shared section primitives ─────────────────────────── */
+  .h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    color: var(--color-ink);
+    margin-bottom: var(--space-lg);
+  }
+
+  .h2--center { text-align: center; }
+
+  .h2--dark { color: var(--color-ink-on-dark); }
+
+  .body {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.75;
+    margin-bottom: var(--space-md);
+  }
+
+  .section-intro {
+    font-size: var(--text-md);
+    color: var(--color-muted);
+    line-height: 1.65;
+    max-width: 60ch;
+    margin-inline: auto;
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  .dark-eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-blue-on-dark);
+    margin-bottom: var(--space-md);
+  }
+
+  /* ─── 1. Problem ─────────────────────────────────────────── */
+  .ps-problem {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper);
+  }
+
+  .ps-problem__grid {
+    display: grid;
+    grid-template-columns: 1fr 20rem;
+    gap: var(--space-3xl);
+    align-items: start;
+  }
+
+  .ps-brief {
+    border: 1px solid var(--color-blue);
+    border-radius: var(--radius-lg);
+    background: var(--color-blue-tint);
+    padding: var(--space-lg) var(--space-xl);
+    position: sticky;
+    top: calc(4.25rem + 3px + var(--space-lg));
+  }
+
+  .ps-brief__label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    margin-bottom: var(--space-md);
+  }
+
+  .ps-brief__text {
+    font-size: var(--text-base);
+    color: var(--color-ink);
+    line-height: 1.7;
+  }
+
+  .ps-brief__rule {
+    border: none;
+    border-top: 1px solid var(--color-blue);
+    margin-block: var(--space-md);
+    opacity: 0.3;
+  }
+
+  .ps-brief__sub {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.5;
+  }
+
+  /* ─── 2. Co obejmują ─────────────────────────────────────── */
+  .ps-scope {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper-dark);
+  }
+
+  .ps-scope .h2 { color: var(--color-ink-on-dark); }
+  .ps-scope .body { color: var(--color-muted-on-dark); }
+
+  .scope-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+  }
+
+  .scope-card {
+    border: 1px solid var(--color-glass-border);
+    border-top: 3px solid var(--color-blue-on-dark);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    background: var(--color-glass-dark);
+    transition: border-color var(--dur-micro) var(--ease-out), background var(--dur-short) var(--ease-out);
+  }
+
+  .scope-card:hover {
+    background: oklch(100% 0 0 / 0.08);
+  }
+
+  .scope-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink-on-dark);
+    margin-bottom: var(--space-sm);
+  }
+
+  .scope-card__text {
+    font-size: var(--text-sm);
+    color: var(--color-muted-on-dark);
+    line-height: 1.65;
+  }
+
+  /* ─── 3. Dla kogo ────────────────────────────────────────── */
+  .ps-forwho {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper-2);
+  }
+
+  .fw-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-md);
+  }
+
+  .fw-card {
+    border: 1px solid var(--color-rule);
+    border-left: 4px solid var(--color-secondary);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    background: var(--color-paper);
+  }
+
+  .fw-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+    margin-bottom: var(--space-sm);
+  }
+
+  .fw-card__text {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.65;
+  }
+
+  /* ─── 4. Przewaga (darker navy) ─────────────────────────── */
+  .ps-advantage {
+    padding-block: var(--space-3xl);
+    background: var(--color-primary);
+  }
+
+  .adv-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--space-3xl);
+    align-items: center;
+  }
+
+  .adv-text {
+    font-size: var(--text-base);
+    color: var(--color-muted-on-dark);
+    line-height: 1.75;
+    margin-bottom: var(--space-lg);
+  }
+
+  .adv-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-blue-on-dark);
+    text-decoration: none;
+    transition: color var(--dur-micro) var(--ease-out);
+  }
+
+  .adv-link:hover { color: var(--color-ink-on-dark); }
+
+  .adv-stats {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    min-width: 16rem;
+  }
+
+  .adv-stat {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+    padding: var(--space-lg);
+    border: 1px solid var(--color-glass-border);
+    border-radius: var(--radius-md);
+    background: var(--color-glass-dark);
+  }
+
+  .adv-stat__val {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl, 2rem);
+    font-weight: 700;
+    color: var(--color-blue-on-dark);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  .adv-stat__label {
+    font-size: var(--text-sm);
+    color: var(--color-muted-on-dark);
+    line-height: 1.4;
+  }
+
+  /* ─── 5. FAQ ─────────────────────────────────────────────── */
+  .ps-faq {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper-2);
+  }
+
+  /* ─── CTA końcowe ────────────────────────────────────────── */
+  .ps-endcta {
+    padding-block: var(--space-3xl);
+    background: var(--gradient-cta);
+  }
+
+  .endcta-inner {
+    max-width: 52rem;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .endcta__h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    color: var(--color-ink-on-dark);
+    margin-bottom: var(--space-md);
+  }
+
+  .endcta__text {
+    font-size: var(--text-base);
+    color: var(--color-muted-on-dark);
+    line-height: 1.7;
+    margin-bottom: var(--space-xl);
+  }
+
+  .endcta__actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .endcta__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 600;
+    padding: var(--space-md) var(--space-2xl);
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out);
+  }
+
+  .endcta__btn--primary {
+    background: var(--color-accent);
+    color: #fff;
+  }
+
+  .endcta__btn--primary:hover { background: var(--color-accent-hover); }
+
+  .endcta__btn--ghost {
+    background: var(--color-glass-dark);
+    color: var(--color-ink-on-dark);
+    border-color: var(--color-glass-border);
+  }
+
+  .endcta__btn--ghost:hover { background: oklch(100% 0 0 / 0.12); }
+
+  /* ─── Related services ───────────────────────────────────── */
+  .ps-related {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper);
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+  }
+
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    background: var(--color-paper);
+    text-decoration: none;
+    transition: border-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out);
+  }
+
+  .related-card:hover {
+    border-color: var(--color-blue);
+    transform: translateY(-3px);
+  }
+
+  .related-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+  }
+
+  .related-card__desc {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.55;
+    flex: 1;
+  }
+
+  .related-card__arrow {
+    font-size: var(--text-md);
+    color: var(--color-secondary);
+    transition: transform var(--dur-short) var(--ease-out);
+    align-self: flex-start;
+    margin-top: auto;
+  }
+
+  .related-card:hover .related-card__arrow { transform: translateX(4px); }
+
+  /* ─── Responsive ─────────────────────────────────────────── */
+  @media (max-width: 60rem) {
+    .ps-problem__grid { grid-template-columns: 1fr; }
+    .ps-brief { position: static; }
+    .adv-grid { grid-template-columns: 1fr; }
+    .adv-stats { flex-direction: row; flex-wrap: wrap; min-width: 0; }
+    .adv-stat { flex: 1; min-width: 10rem; }
+    .related-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 48rem) {
+    .fw-grid { grid-template-columns: 1fr; }
+    .scope-grid { grid-template-columns: 1fr; }
+    .endcta__actions { flex-direction: column; align-items: stretch; }
+    .endcta__btn { width: 100%; justify-content: center; }
+  }
+</style>

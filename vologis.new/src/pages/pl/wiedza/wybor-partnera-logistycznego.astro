@@ -1,0 +1,707 @@
+---
+import KnowledgeArticleLayout from "../../../layouts/KnowledgeArticleLayout.astro";
+import FaqAccordion from "../../../components/FaqAccordion.astro";
+import CalloutBox from "../../../components/CalloutBox.astro";
+import { articleSchema, speakableSchema } from "../../../utils/schema";
+
+const toc = [
+  { id: "najnizsza-cena",        label: "Pulapka najnizszej ceny" },
+  { id: "kryteria-wyboru",       label: "Co odroznia dobrego partnera" },
+  { id: "jak-zweryfikowac",      label: "Jak zweryfikowac przed podpisaniem" },
+  { id: "branze-specjalistyczne",label: "Branze specjalistyczne" },
+  { id: "rola-doradcy",          label: "Rola niezaleznego doradcy" },
+  { id: "faq",                   label: "FAQ" },
+];
+
+const scopeCards = [
+  {
+    title: "Doswiadczenie w branzy i typie ladunku",
+    text: "Operator, ktory nigdy nie obslugiwal farmacji, ADR lub e-commerce z wysoka rotacja zwrotow, nie nauczy sie Twojej specyfiki na Twoj koszt. Branzowe doswiadczenie skraca krzywa uczenia i redukuje ryzyko kosztownych bledow na starcie.",
+  },
+  {
+    title: "Realne mozliwosci operacyjne",
+    text: "Certyfikaty, prezentacje i referencje mowia co operator deklaruje. Wizyta na obiekcie, rozmowa z operatorami i przeglad rzeczywistych KPI mowia co potrafi. Zawsze weryfikuj zdolnosci operacyjne w praktyce, nie na papierze.",
+  },
+  {
+    title: "Jakosc i stabilnosc zespolu",
+    text: "Wysoka rotacja personelu to sygnal ostrzegawczy. Niedoswiadczony, zmieniajacy sie team podnosi liczbe bledow i wydluza czas obslugi. Pytaj o rotacje na stanowiskach kluczowych i staz kierownikow operacyjnych.",
+  },
+  {
+    title: "Elastycznosc przy zmianach wolumenu",
+    text: "Dobry partner rosnie razem z Toba. Sprawdz, jak operator radzi sobie ze szczytami sezonowymi — czy ma zasoby buforowe, czy w sezonie jakosc spada, bo brakuje ludzi i miejsca.",
+  },
+  {
+    title: "Transparentnosc rozliczen i SLA",
+    text: "Zrozumialy cennik bez ukrytych doplat i czytelne SLA z mierzalnymi karami to standard u dobrego operatora. Nieprzejrzyste rozliczenia sa sygnalem — cos jest ukryte.",
+  },
+  {
+    title: "Mozliwosci IT i integracji",
+    text: "Integracja z Twoim ERP/WMS, automatyczne raportowanie stanow magazynowych, EDI lub API — to nie luksus, ale wymog przy kazdej skali e-commerce i produkcji. Sprawdz, co operator realnie oferuje, a nie co deklaruje w pitch decku.",
+  },
+];
+
+const verificationSteps = [
+  {
+    num: "01",
+    title: "Wizyta na obiekcie",
+    text: "Jedz na magazyn nieumowiony lub krotko po umowieniu. Patrz na porzadek, oznaczenia, sprawnosc procesow i zachowanie zespolu. Balagan, stres i nieznajomosci procedur przez pracownikow to sygnaly.",
+  },
+  {
+    num: "02",
+    title: "Rozmowa z obecnymi klientami operatora",
+    text: "Propos o referencje z Twojej branzy lub zblozonego profilu ladunku. Rozmawiaj z osobami z poziomu operacyjnego, nie tylko zarzadu. Zapytaj co nie dziala, nie tylko co dziala dobrze.",
+  },
+  {
+    num: "03",
+    title: "Audyt dokumentacji i procesow",
+    text: "Sprawdz procedury przyjec, kompletacji i zwrotow, certyfikaty (ISO, GDP, ADR), historie incydentow i sposob ich rozwiazywania. Dobry operator ma to przygotowane, slaby — nie.",
+  },
+  {
+    num: "04",
+    title: "Analiza SLA i kar umownych",
+    text: "Czytaj umowe pod katem kar za niedotrzymanie SLA, warunkow reklamacji, terminow wypowiedzenia i klauzul ograniczajacych odpowiedzialnosc. Operator, ktory nie chce SLA z karami, nie wierzy we wlasne deklaracje.",
+  },
+  {
+    num: "05",
+    title: "Test na malym wolumenie",
+    text: "Jesli czas pozwala — zacznij od pilotazu z ograniczonym asortymentem lub ograniczona geografia. 4-8 tygodni pilotazu pokaze wiecej niz rok rozmow.",
+  },
+  {
+    num: "06",
+    title: "Weryfikacja stabilnosci finansowej",
+    text: "Sprawdz KRS, sprawozdania finansowe, historie sadowa. Operator w zlej kondycji finansowej to ryzyko naglego zamkniecia operacji lub zastawu na Twoim towarze.",
+  },
+];
+
+const specialistCards = [
+  {
+    title: "Chlodnie i cold chain",
+    text: "Certyfikat GMP+/HACCP, dokumentacja walidacji temperatur, ciagly monitoring, procedury odchylen. Operator, ktory 'obsluguje chodnie' bez tych elementow, to ryzyko niezgodnosci i strat towaru.",
+  },
+  {
+    title: "Magazyny ADR",
+    text: "Decyzja wlasciwego organu, wymagania budowlane (separacja, wentylacja, oswietlenie), przeszkolony personel (ADR), aktualne zezwolenia. Sprawdz dokumenty, nie tylko deklaracje.",
+  },
+  {
+    title: "Farmacja i GDP",
+    text: "Certyfikat Good Distribution Practice, procedury kwalifikacji dostawcow, historia audytow przez klientow farmaceutycznych. W farmacji liczy sie dokumentacja sladu i zdolnosc do odtworzenia historii kazdej przesylki.",
+  },
+];
+
+const advisorTagList = [
+  "Analiza wymagan i specyfikacja",
+  "Przeglad i kwalifikacja rynku",
+  "Weryfikacja operacyjna kandydatow",
+  "Porownanie ofert i rekomendacja",
+  "Negocjacje SLA i warunkow",
+  "Koordynacja uruchomienia",
+];
+
+const faqs = [
+  {
+    q: "Czym rozni sie broker logistyczny od niezaleznego doradcy?",
+    a: "Broker lub agent logistyczny zarabia prowizje od operatora, do ktorego kieruje klienta — stad ma interes w poleceniu konkretnych firm. Niezalezny doradca (jak Vologis) jest oplacany przez klienta i reprezentuje wylacznie jego interesy. Roznica jest prosta: kto placi wynagrodzenie, ten dostaje lojalnosc. W przypadku brokera to operator; w przypadku niezaleznego doradcy — Ty.",
+  },
+  {
+    q: "Jak sprawdzic wiarygodnosc operatora logistycznego?",
+    a: "Kluczowe elementy to: wizyta na obiekcie (najlepiej nieumowiona lub krotko po umowieniu), rozmowy z obecnymi klientami z Twojej branzy, analiza SLA i kar umownych w umowie, weryfikacja certyfikatow, przeglad sprawozdan finansowych i KRS. Sam pitch deck i prezentacja handlowa nie wystarczaja — zawsze sprawdzaj operacje w praktyce, nie tylko na papierze.",
+  },
+  {
+    q: "Czy warto wybierac operatora tylko na podstawie ceny?",
+    a: "Cena jest wazna, ale jest jednym z kilku kluczowych parametrow. Nizsza stawka bazowa czesto idzie w parze z nizsza jakoscia SLA, mniejsza elastycznoscia przy szczytach i wyzszym poziomem bledow operacyjnych. Koszt reklamacji, zwrotow z winy operatora, przestojow i migracji do nowego partnera jest trudny do policzenia z gory — ale bywa wielokrotnie wyzszy niz oszczednosc na stawce. Przelicz Total Cost of Ownership, nie tylko stawke za palete.",
+  },
+  {
+    q: "Na co zwrocic uwage w umowie z operatorem (SLA)?",
+    a: "Najwazniejsze elementy to: mierzalne wskazniki jakosci (accuracy, on-time delivery, czas przyecia), kary za niedotrzymanie SLA — proporcjonalne i egzekwowalne, procedury reklamacyjne z terminami, warunki zmiany stawek i okres wypowiedzenia, zakres odpowiedzialnosci operatora za utrate lub uszkodzenie towaru, warunki wyjscia i procedura transferu danych. Umowa bez SLA z karami jest umowa, ktora nie gwarantuje niczego.",
+  },
+  {
+    q: "Jak znalezc magazyn dla branzy wymagajacej (chodnia, ADR)?",
+    a: "Rynek jest waski i weryfikacja jest trudna, bo wielu operatorow deklaruje mozliwosci, ktorych nie maja lub maja je ponizej wymagan. Kluczowe jest sprawdzenie dokumentow: certyfikatow, decyzji administracyjnych, historii audytow. Dla farmacji (GDP) i ADR — zapytaj o historie audytow klientow i inspekcji regulacyjnych, nie tylko o certyfikaty. Niezalezny doradca logistyczny znajacy ten segment rynku moze skrocic poszukiwania i uniknac kosztownych bledow.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const schemaArticle = articleSchema({
+  headline: "Jak wybrac partnera logistycznego — i dlaczego najnizsza cena prawie zawsze jest pulapka",
+  description: "Wybor operatora logistycznego, firmy fulfillment lub przewoznika: na co patrzec poza cena, jak weryfikowac partnera i dlaczego najtansza oferta czesto kosztuje najwiecej.",
+  url: "/pl/wiedza/wybor-partnera-logistycznego",
+  datePublished: "2026-06-18",
+  dateModified: "2026-06-18",
+  inLanguage: "pl-PL",
+  image: "/knowledge/wybor-partnera.webp",
+});
+
+const schemaSpeakable = speakableSchema("/pl/wiedza/wybor-partnera-logistycznego", [
+  "[data-speakable='headline']",
+  "[data-speakable='summary']",
+]);
+---
+
+<KnowledgeArticleLayout
+  title="Jak wybrać partnera logistycznego — dlaczego najniższa cena to pułapka | Vologis"
+  description="Wybór operatora logistycznego, firmy fulfillment lub przewoźnika: na co patrzeć poza ceną, jak weryfikować partnera i dlaczego najtańsza oferta często kosztuje najwięcej."
+  canonical="https://vologis.com/pl/wiedza/wybor-partnera-logistycznego"
+  heroImage="/knowledge/wybor-partnera.webp"
+  category="Wiedza"
+  readTime="8–10 min"
+  updatedAt="czerwiec 2026"
+  datePublished="2026-06-18"
+  dateModified="2026-06-18"
+  h1="Jak wybrać partnera logistycznego — i dlaczego najniższa cena prawie zawsze jest pułapką"
+  lead="Wybór operatora logistycznego, partnera fulfillment czy przewoźnika to decyzja, która waży na kosztach i jakości obsługi przez lata. A mimo to wiele firm podejmuje ją głównie na podstawie ceny — i przekonuje się boleśnie, że najtańsza oferta okazała się najdroższa operacyjnie. Ten artykuł pokazuje, na co naprawdę patrzeć przy wyborze partnera logistycznego i jak go zweryfikować zanim podpiszesz umowę."
+  toc={toc}
+  ctaPrimaryLabel="Porozmawiaj o wyborze partnera"
+  ctaSecondary={{ label: "Sprawdź jak weryfikujemy operatorów", href: "#jak-zweryfikowac" }}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaArticle)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaSpeakable)} />
+
+  <!-- ─── 1. Najniższa cena ─────────────────────────────────── -->
+  <section class="s" id="najnizsza-cena" aria-labelledby="h-najnizsza-cena">
+    <h2 class="h2" id="h-najnizsza-cena">Dlaczego najniższa cena to fałszywy sygnał</h2>
+
+    <p class="body">
+      Stawka bazowa operatora często wygląda atrakcyjnie — aż do momentu, gdy do rachunku dochodzą dopłaty: fuel surcharge, opłaty za paletowanie i etykietowanie, peak season surcharge, obsługa zwrotów, dodatkowe ruchy magazynowe. Koszt końcowy bywa 20–40% wyższy niż wynikałoby z oferty cenowej. Operator, który wygrał przetarg najniższą stawką, nie zawsze jest najtańszą opcją w praktyce.
+    </p>
+    <p class="body">
+      Niska cena często idzie w parze z kompromisami operacyjnymi: niższą jakością kompletacji, wolniejszym czasem przyjęć, mniejszą elastycznością przy zmianach. Każdy błąd kompletacji to reklamacja, koszt obsługi zwrotu i ryzyko utraty klienta. Jedno opóźnienie w szczycie sezonu może wygenerować straty wielokrotnie przekraczające oszczędność na stawce za miesiąc.
+    </p>
+    <p class="body">
+      Tani operatorzy mają też tendencję do wysokiej rotacji personelu. Stale zmieniający się zespół nie zna Twojego asortymentu, specyfiki ładunku ani klientów. Krzywa uczenia kosztuje — w czasie, błędach i Twojej cierpliwości wobec zespołu.
+    </p>
+
+    <div class="three-q">
+      <p class="three-q__label">Trzy pytania, które warto zadać zanim przyjmiesz ofertę:</p>
+      <ol class="three-q__list">
+        <li><strong>Co NIE jest wliczone w tę stawkę bazową?</strong></li>
+        <li><strong>Jak wygląda SLA w szczycie sezonu i co się dzieje gdy nie jest dotrzymane?</strong></li>
+        <li><strong>Ile klientów odeszło od tego operatora w ostatnich 12 miesiącach?</strong></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ─── 2. Kryteria wyboru ────────────────────────────────── -->
+  <section class="s" id="kryteria-wyboru" aria-labelledby="h-kryteria">
+    <h2 class="h2" id="h-kryteria">Co naprawdę odróżnia dobrego partnera logistycznego</h2>
+
+    <p class="body">
+      Dobry operator logistyczny to długoterminowy partner. Zmiana partnera — migracja danych, przestój operacyjny, rekrutacja nowego zespołu — kosztuje znacznie więcej niż dodatkowe kilka procent w stawce przez rok. Warto zainwestować czas w wybór zamiast w późniejszą zmianę.
+    </p>
+
+    <div class="scope-grid">
+      {scopeCards.map((card) => (
+        <div class="scope-card">
+          <h3 class="scope-card__title">{card.title}</h3>
+          <p class="scope-card__text">{card.text}</p>
+        </div>
+      ))}
+    </div>
+
+    <CalloutBox>
+      Dobry operator logistyczny to długoterminowy partner, nie dostawca usługi. Koszt zmiany operatora — migracja danych, przestój, rekrutacja — jest zawsze wysoki. Warto poświęcić więcej czasu na wybór niż na późniejszą zmianę.
+    </CalloutBox>
+  </section>
+
+  <!-- ─── 3. Weryfikacja ────────────────────────────────────── -->
+  <section class="s" id="jak-zweryfikowac" aria-labelledby="h-weryfikacja">
+    <h2 class="h2" id="h-weryfikacja">Jak zweryfikować partnera przed podpisaniem umowy</h2>
+
+    <p class="body">
+      Prezentacja handlowa pokazuje co operator chce, żebyś zobaczył. Weryfikacja przed umową pokazuje co jest naprawdę.
+    </p>
+
+    <div class="steps">
+      {verificationSteps.map((step, i) => (
+        <div class="step">
+          <div class="step__rail">
+            <span class="step__badge tnum" aria-label={`Krok ${step.num}`}>{step.num}</span>
+            {i < verificationSteps.length - 1 && <span class="step__line" aria-hidden="true" />}
+          </div>
+          <div class="step__body">
+            <h3 class="step__title">{step.title}</h3>
+            <p class="step__text">{step.text}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="inline-cta">
+      <p class="inline-cta__text">
+        Szukasz operatora magazynowego, partnera fulfillment lub przewoźnika? Pomożemy znaleźć i zweryfikować właściwego — niezależnie, bez prowizji od dostawców.
+      </p>
+      <a href="/pl/kontakt" class="inline-cta__btn">
+        Umów konsultację →
+      </a>
+    </div>
+  </section>
+
+  <!-- ─── 4. Branże specjalistyczne ────────────────────────── -->
+  <section class="s" id="branze-specjalistyczne" aria-labelledby="h-branze">
+    <h2 class="h2" id="h-branze">Branże specjalistyczne — weryfikacja ponad deklaracjami</h2>
+
+    <p class="body">
+      W branżach wymagających — chłodnie, ADR, farmacja — deklaracja "obsługujemy" to zdecydowanie za mało. Operator musi mieć konkretne certyfikaty, decyzje administracyjne i realne procedury. Ich brak to nie tylko ryzyko operacyjne — to ryzyko niezgodności z przepisami prawa, które może skończyć się utratą towaru, karami i odpowiedzialnością Twojej firmy.
+    </p>
+    <p class="body">
+      Weryfikacja specjalistycznych możliwości wymaga sprawdzenia dokumentów — nie tylko pytania. Poproś o kopię certyfikatu, sprawdź datę ważności, zapytaj o historię audytów i inspekcji regulacyjnych. Dobry operator w tych segmentach jest do tego przyzwyczajony i bez problemu udostępni dokumentację.
+    </p>
+
+    <div class="when-grid">
+      {specialistCards.map((card) => (
+        <div class="when-card">
+          <svg class="check-ico" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m4 10.5 4 4 8-9" />
+          </svg>
+          <div>
+            <p class="when-card__title">{card.title}</p>
+            <p class="when-card__text">{card.text}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ─── 5. Rola doradcy ──────────────────────────────────── -->
+  <section class="s" id="rola-doradcy" aria-labelledby="h-doradca">
+    <h2 class="h2" id="h-doradca">Rola niezależnego doradcy w wyborze partnera</h2>
+
+    <p class="body">
+      Na rynku działają brokerzy logistyczni i agencje nieruchomości magazynowych. Ich wynagrodzenie pochodzi od operatora, któremu polecają klienta — co tworzy oczywisty konflikt interesów. Broker zaproponuje Ci partnera, który płaci mu prowizję, niekoniecznie tego, który najlepiej pasuje do Twoich wymagań.
+    </p>
+    <p class="body">
+      Niezależny doradca logistyczny (jak Vologis) reprezentuje wyłącznie klienta. Wynagrodzenie pochodzi od firmy zlecającej poszukiwanie, nie od operatora. Oznacza to pełną niezależność w ocenie rynku, weryfikacji operatorów i negocjacjach warunków SLA — bez konfliktu interesów i bez ukrytych prowizji.
+    </p>
+
+    <div class="tag-list" role="list">
+      {advisorTagList.map((item) => (
+        <span class="tag" role="listitem">{item}</span>
+      ))}
+    </div>
+  </section>
+
+  <!-- ─── 6. FAQ ────────────────────────────────────────────── -->
+  <section class="s" id="faq" aria-labelledby="h-faq">
+    <h2 class="h2" id="h-faq">FAQ — najczęściej zadawane pytania</h2>
+    <FaqAccordion items={faqs} />
+  </section>
+
+  <!-- ─── Related links ────────────────────────────────────── -->
+  <section class="s" id="powiazane" aria-label="Powiązane usługi">
+    <p class="related-label">Powiązane usługi Vologis</p>
+    <div class="related-grid">
+      <a class="related-card" href="/pl/uslugi/posrednictwo-logistyczne">
+        <span class="related-card__title">Pośrednictwo logistyczne</span>
+        <span class="related-card__desc">Dobór i weryfikacja operatorów magazynowych, partnerów fulfillment i przewoźników — w 100% niezależnie.</span>
+        <span class="related-card__arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="related-card" href="/pl/uslugi/doradztwo-operacyjne">
+        <span class="related-card__title">Doradztwo operacyjne i audyt</span>
+        <span class="related-card__desc">Identyfikacja wąskich gardeł, optymalizacja procesów i ocena operatorów przed i po wyborze partnera.</span>
+        <span class="related-card__arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ─── CTA końcowe ──────────────────────────────────────── -->
+  <div class="end-cta">
+    <h2 class="end-cta__h2">Szukasz właściwego partnera logistycznego?</h2>
+    <p class="end-cta__text">
+      Vologis pomaga firmom znaleźć i zweryfikować operatorów magazynowych, partnerów fulfillment i przewoźników — niezależnie, bez prowizji od dostawców. Reprezentujemy Twój interes przez cały proces.
+    </p>
+    <a href="/pl/kontakt" class="end-cta__btn">
+      Zapytaj o pośrednictwo →
+    </a>
+  </div>
+</KnowledgeArticleLayout>
+
+<style>
+  /* ─── Section shell ─────────────────────────────────────── */
+  .s {
+    padding-block: var(--space-2xl);
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .s:first-of-type {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    color: var(--color-ink);
+    margin-bottom: var(--space-lg);
+  }
+
+  .body {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.75;
+    margin-bottom: var(--space-md);
+  }
+
+  /* Shared check icon */
+  .check-ico {
+    flex-shrink: 0;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-top: 0.15rem;
+    color: var(--color-blue);
+  }
+
+  /* ─── Three questions box ───────────────────────────────── */
+  .three-q {
+    margin-top: var(--space-lg);
+    border: 1px solid var(--color-blue);
+    border-radius: var(--radius-lg);
+    background: var(--color-blue-tint);
+    padding: var(--space-lg) var(--space-xl);
+  }
+
+  .three-q__label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    margin-bottom: var(--space-md);
+  }
+
+  .three-q__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding-left: var(--space-lg);
+  }
+
+  .three-q__list li {
+    font-size: var(--text-base);
+    color: var(--color-ink);
+    line-height: 1.6;
+  }
+
+  /* ─── When-cards grid ───────────────────────────────────── */
+  .when-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+    margin-top: var(--space-lg);
+  }
+
+  .when-card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    background: var(--color-paper);
+    transition: border-color var(--dur-micro) var(--ease-out);
+  }
+
+  .when-card:hover { border-color: var(--color-blue); }
+
+  .when-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+    margin-bottom: var(--space-xs);
+  }
+
+  .when-card__text {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.55;
+  }
+
+  /* ─── Internal CTA strip ────────────────────────────────── */
+  .inline-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-lg);
+    background: var(--color-paper-dark);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg) var(--space-xl);
+    flex-wrap: wrap;
+    margin-top: var(--space-xl);
+  }
+
+  .inline-cta__text {
+    font-size: var(--text-base);
+    color: var(--color-muted-on-dark);
+    line-height: 1.6;
+    flex: 1;
+    min-width: 180px;
+  }
+
+  .inline-cta__btn {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-pill);
+    background: var(--color-accent);
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background var(--dur-micro) var(--ease-out);
+    flex-shrink: 0;
+  }
+
+  .inline-cta__btn:hover { background: var(--color-accent-hover); }
+
+  /* ─── Scope areas ───────────────────────────────────────── */
+  .scope-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-xl);
+  }
+
+  .scope-card {
+    border: 1px solid var(--color-rule);
+    border-left: 4px solid var(--color-secondary);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    background: var(--color-paper);
+  }
+
+  .scope-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+    margin-bottom: var(--space-sm);
+  }
+
+  .scope-card__text {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.6;
+  }
+
+  /* ─── Process timeline ──────────────────────────────────── */
+  .steps {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--space-xl);
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 2.75rem 1fr;
+    gap: var(--space-lg);
+  }
+
+  .step__rail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step__badge {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    flex-shrink: 0;
+    border-radius: var(--radius-pill);
+    background: var(--color-ink);
+    color: var(--color-ink-on-dark);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--text-sm);
+  }
+
+  .step__line {
+    width: 2px;
+    flex: 1;
+    min-height: var(--space-lg);
+    background: var(--color-rule);
+    margin-block: var(--space-xs);
+  }
+
+  .step__body {
+    padding-bottom: var(--space-xl);
+  }
+
+  .step:last-child .step__body { padding-bottom: 0; }
+
+  .step__title {
+    font-family: var(--font-display);
+    font-size: var(--text-md);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: var(--color-ink);
+    margin-bottom: var(--space-sm);
+    padding-top: var(--space-2xs);
+  }
+
+  .step__text {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.7;
+  }
+
+  /* ─── Tag list ──────────────────────────────────────────── */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+  }
+
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-xs) var(--space-md);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-pill);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-ink);
+    background: var(--color-paper);
+  }
+
+  /* ─── Related links ─────────────────────────────────────── */
+  .related-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-neutral);
+    margin-bottom: var(--space-lg);
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    background: var(--color-paper);
+    text-decoration: none;
+    transition: border-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out);
+  }
+
+  .related-card:hover {
+    border-color: var(--color-blue);
+    transform: translateY(-2px);
+  }
+
+  .related-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+  }
+
+  .related-card__desc {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.55;
+    flex: 1;
+  }
+
+  .related-card__arrow {
+    font-size: var(--text-md);
+    color: var(--color-secondary);
+    transition: transform var(--dur-short) var(--ease-out);
+    align-self: flex-start;
+    margin-top: auto;
+  }
+
+  .related-card:hover .related-card__arrow { transform: translateX(4px); }
+
+  /* ─── Final CTA block ───────────────────────────────────── */
+  .end-cta {
+    margin-top: var(--space-3xl);
+    background: var(--gradient-cta);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl) var(--space-2xl);
+    text-align: center;
+  }
+
+  .end-cta__h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    color: var(--color-ink-on-dark);
+    margin-bottom: var(--space-md);
+  }
+
+  .end-cta__text {
+    font-size: var(--text-base);
+    color: var(--color-muted-on-dark);
+    line-height: 1.7;
+    max-width: 52ch;
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+  }
+
+  .end-cta__btn {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    padding: var(--space-md) var(--space-2xl);
+    border-radius: var(--radius-pill);
+    background: var(--color-accent);
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background var(--dur-micro) var(--ease-out);
+  }
+
+  .end-cta__btn:hover { background: var(--color-accent-hover); }
+
+  /* ─── Responsive ─────────────────────────────────────────── */
+  @media (max-width: 48rem) {
+    .when-grid { grid-template-columns: 1fr; }
+    .scope-grid { grid-template-columns: 1fr; }
+    .related-grid { grid-template-columns: 1fr; }
+
+    .inline-cta {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: var(--space-lg);
+    }
+    .inline-cta__btn { width: 100%; text-align: center; justify-content: center; }
+
+    .end-cta { padding: var(--space-xl) var(--space-lg); }
+    .end-cta__h2 { font-size: var(--text-lg); }
+    .end-cta__btn { width: 100%; text-align: center; }
+  }
+</style>

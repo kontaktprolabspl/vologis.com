@@ -1,0 +1,1353 @@
+---
+import ServicePageLayout from "../../../layouts/ServicePageLayout.astro";
+import FaqAccordion from "../../../components/FaqAccordion.astro";
+import CalloutBox from "../../../components/CalloutBox.astro";
+
+const SITE = "https://vologis.com";
+
+/* ── Data ────────────────────────────────────────────────── */
+
+const trustItems = [
+  "Magazyny, fulfillment i przestrzeń składowa",
+  "Sprawdzeni operatorzy 3PL i partnerzy logistyczni",
+  "Branże specjalistyczne: chłodnie, ADR, farmacja, FMCG",
+  "Transport krajowy i międzynarodowy",
+  "100% niezależność — bez prowizji od operatorów",
+];
+
+const forWhom = [
+  {
+    title: "Firmy produkcyjne",
+    text: "Gdy potrzebujesz przestrzeni magazynowej na surowce, komponenty i wyroby gotowe, oraz transportu dopasowanego do rytmu produkcji.",
+  },
+  {
+    title: "Firmy handlowe i dystrybucyjne",
+    text: "Gdy potrzebujesz magazynu, kompletacji i dystrybucji dla wielu klientów i kierunków jednocześnie.",
+  },
+  {
+    title: "E-commerce i D2C",
+    text: "Gdy szukasz partnera fulfillment: składowanie, kompletacja, pakowanie, zwroty i integracje z marketplace'ami.",
+  },
+  {
+    title: "Branże specjalistyczne",
+    text: "Gdy potrzebujesz chłodni, magazynu ADR lub składowania zgodnego z wymaganiami farmaceutycznymi (GDP).",
+  },
+  {
+    title: "Importerzy i eksporterzy",
+    text: "Gdy potrzebujesz magazynu buforowego, obsługi celnej i transportu międzynarodowego w jednym miejscu.",
+  },
+];
+
+const scopeCards = [
+  {
+    title: "Dobór magazynu i przestrzeni składowej",
+    text: "Znajdujemy i weryfikujemy przestrzeń magazynową dopasowaną do Twojego ładunku, lokalizacji i wymagań — od standardowego składowania po magazyny wysokiego składowania, chłodnie i magazyny ADR.",
+  },
+  {
+    title: "Partnerzy fulfillment",
+    text: "Dobieramy operatorów fulfillment do obsługi e-commerce i D2C: kompletacja, pakowanie, zwroty, integracje z marketplace'ami i systemami sprzedaży. Porównujemy modele rozliczeń i SLA.",
+  },
+  {
+    title: "Operatorzy logistyczni 3PL/4PL",
+    text: "Weryfikujemy i rekomendujemy operatorów logistycznych do stałej obsługi. Sprawdzamy procesy, referencje, możliwości operacyjne i negocjujemy warunki SLA w Twoim imieniu.",
+  },
+  {
+    title: "Branże specjalistyczne",
+    text: "Obsługujemy wymagające kategorie: chłodnie i łańcuch chłodniczy, magazyny ADR dla materiałów niebezpiecznych, farmacja i wymagania GDP, FMCG z wysoką rotacją.",
+  },
+  {
+    title: "Organizacja transportu",
+    text: "Dobieramy przewoźników i koordynujemy transport krajowy i międzynarodowy — FTL, LTL i drobnicowy — jako uzupełnienie obsługi magazynowej i fulfillment.",
+  },
+  {
+    title: "Negocjacje i koordynacja",
+    text: "Negocjujemy warunki i SLA w imieniu klienta, koordynujemy komunikację między operatorami i pilnujemy dokumentacji przez cały czas trwania procesu.",
+  },
+];
+
+const comparisonRows = [
+  {
+    feature: "Rola",
+    transport: "Wynajmuje lub sprzedaje przestrzeń magazynową.",
+    spedycja: "Oferuje własne usługi logistyczne w swoich obiektach.",
+    vologis: "Dobiera najlepsze rozwiązanie niezależnie od operatora — reprezentuje klienta, nie dostawcę.",
+  },
+  {
+    feature: "Główne pytanie",
+    transport: "Czy mam halę w tej lokalizacji?",
+    spedycja: "Czy klient mieści się w naszych procesach i stawkach?",
+    vologis: "Który operator lub partner fulfillment najlepiej pasuje do potrzeb i budżetu klienta?",
+  },
+  {
+    feature: "Zakres",
+    transport: "Najem lub sprzedaż powierzchni.",
+    spedycja: "Własna oferta: składowanie, obsługa, transport.",
+    vologis: "Analiza potrzeb, przegląd rynku, weryfikacja operatorów, negocjacje, koordynacja uruchomienia.",
+  },
+  {
+    feature: "Dla kogo",
+    transport: "Firmy szukające hali lub gruntu.",
+    spedycja: "Firmy gotowe na konkretnego operatora.",
+    vologis: "Firmy, które chcą najlepszego dopasowania do specyfiki ładunku bez stronniczości i bez miesięcy własnego researchu.",
+  },
+];
+
+const processSteps = [
+  {
+    num: "01",
+    title: "Analiza potrzeb magazynowych i fulfillment",
+    text: "Zaczynamy od ustalenia specyfiki ładunku, wolumenu, wymagań branżowych i oczekiwanego poziomu usług. Pytamy o wszystko: od wymagań temperaturowych i certyfikatów po integracje z systemami sprzedaży i modele rozliczeń.",
+  },
+  {
+    num: "02",
+    title: "Przegląd rynku i kwalifikacja operatorów",
+    text: "Na podstawie zebranych danych identyfikujemy operatorów magazynowych, fulfillment i 3PL/4PL, którzy realnie mogą obsłużyć dane wymagania. Odfiltrujemy tych, którzy nie spełniają kluczowych kryteriów.",
+  },
+  {
+    num: "03",
+    title: "Weryfikacja operatorów",
+    text: "Sprawdzamy procesy, referencje, możliwości operacyjne, certyfikaty i infrastrukturę. Nie polegamy wyłącznie na deklaracjach — weryfikujemy, czy operator faktycznie spełnia wymagania Twojego ładunku i branży.",
+  },
+  {
+    num: "04",
+    title: "Porównanie ofert i rekomendacja",
+    text: "Zbieramy oferty, porównujemy modele rozliczeń, SLA, warunki umów i dopasowanie operacyjne. Przygotowujemy przejrzystą rekomendację z uzasadnieniem — bez żargonu i bez stronniczości.",
+  },
+  {
+    num: "05",
+    title: "Negocjacje warunków i SLA",
+    text: "Negocjujemy stawki, wolumeny, kary i zobowiązania w Twoim imieniu. Mamy doświadczenie po obu stronach stołu negocjacyjnego — wiemy, co można wynegocjować i gdzie jest realny margines.",
+  },
+  {
+    num: "06",
+    title: "Koordynacja uruchomienia i nadzór",
+    text: "Po decyzji koordynujemy onboarding, uruchomienie operacji i pierwsze tygodnie współpracy. Jeśli potrzebujesz, pozostajemy jako partner nadzorujący jakość i wspierający w eskalacjach.",
+  },
+];
+
+const specialistAreas = [
+  {
+    title: "Chłodnie i łańcuch chłodniczy",
+    text: "Dobieramy magazyny chłodnicze i operatorów cold chain do składowania i dystrybucji produktów wymagających kontrolowanej temperatury — od +2/+8°C po głębokie zamrożenie.",
+  },
+  {
+    title: "Magazyny ADR",
+    text: "Weryfikujemy operatorów posiadających odpowiednie zezwolenia i infrastrukturę do składowania materiałów niebezpiecznych zgodnie z przepisami ADR.",
+  },
+  {
+    title: "Farmacja i GDP",
+    text: "Dobieramy partnerów magazynowych spełniających wymagania Good Distribution Practice. Sprawdzamy certyfikaty, procedury i warunki składowania produktów leczniczych i suplementów.",
+  },
+  {
+    title: "FMCG z wysoką rotacją",
+    text: "Dla branży spożywczej, kosmetycznej i FMCG dobieramy operatorów zdolnych do obsługi dużych wolumenów z krótkim terminem ważności, FIFO/FEFO i wymaganiami jakości.",
+  },
+  {
+    title: "E-commerce i fulfillment D2C",
+    text: "Dobieramy partnerów fulfillment do obsługi zamówień online: składowanie SKU, kompletacja, pakowanie, obsługa zwrotów i integracje z platformami sprzedażowymi.",
+  },
+  {
+    title: "Automotive i produkcja",
+    text: "Weryfikujemy operatorów do obsługi komponentów automotive i przemysłowych: magazynowanie JIT, zarządzanie sekwencją, wymagania jakościowe i certyfikaty IATF/ISO.",
+  },
+];
+
+const benefits = [
+  {
+    title: "Oszczędność miesięcy researchu",
+    text: "Nie musisz samodzielnie przeszukiwać rynku, porównywać dziesiątek ofert i weryfikować operatorów. Przejmujemy cały ten ciężar.",
+  },
+  {
+    title: "Niezależna ocena rynku",
+    text: "Vologis nie jest powiązany z żadnym operatorem magazynowym ani fulfillment. Rekomendujemy wyłącznie to, co realnie pasuje do Twoich potrzeb i budżetu.",
+  },
+  {
+    title: "Weryfikacja, nie tylko oferty",
+    text: "Sprawdzamy procesy, referencje i możliwości — nie tylko deklaracje. Operator, który wygląda dobrze na papierze, może nie spełniać wymagań Twojego ładunku.",
+  },
+  {
+    title: "Skuteczniejsze negocjacje",
+    text: "Mamy doświadczenie po obu stronach stołu. Wiemy, co można wynegocjować w stawkach, SLA i warunkach umów — i robimy to w Twoim imieniu.",
+  },
+  {
+    title: "Dostęp do specjalistycznych operatorów",
+    text: "Chłodnie, ADR, farmacja — znamy rynek i wiemy, którzy operatorzy realnie obsługują wymagające branże i spełniają niezbędne certyfikaty.",
+  },
+  {
+    title: "Magazyn i transport w jednym procesie",
+    text: "Koordynujemy magazynowanie, fulfillment i transport razem — bez konieczności zarządzania wieloma niezależnymi dostawcami.",
+  },
+];
+
+const whenItems = [
+  "gdy firma szuka magazynu lub operatora, ale nie ma czasu na miesiące researchu",
+  "gdy potrzebujesz partnera fulfillment do obsługi e-commerce lub D2C",
+  "gdy ładunek wymaga specjalistycznych warunków: chłodnia, ADR lub farmacja (GDP)",
+  "gdy obecny operator nie spełnia rosnących wymagań operacyjnych",
+  "gdy rośniesz i potrzebujesz większej lub lepiej zlokalizowanej przestrzeni",
+  "gdy wchodzisz na nowe rynki i potrzebujesz nowego operatora logistycznego",
+  "gdy chcesz niezależnie porównać rynek bez angażowania własnego zespołu",
+  "gdy potrzebujesz oceny oferty, którą już otrzymałeś od operatora",
+  "gdy magazyn i transport muszą działać razem, a nie jako osobne silosy",
+  "gdy negocjacje z operatorem wymagają doświadczenia logistycznego",
+];
+
+const quoteChecklist = [
+  "lokalizacja lub preferowany region Polski / Europy",
+  "wolumen składowania: m², palety lub m³",
+  "rodzaj towaru i jego charakterystyka",
+  "wymagania branżowe: temperatura, ADR, farmacja (GDP), FMCG",
+  "oczekiwane usługi dodatkowe: kompletacja, pakowanie, etykietowanie, zwroty",
+  "szacowana liczba wysyłek miesięcznie (dla fulfillment)",
+  "oczekiwany termin uruchomienia współpracy",
+  "wymagania certyfikacyjne lub normy jakości",
+];
+
+const whyCards = [
+  "Praktyczne doświadczenie w operacjach logistycznych",
+  "100% niezależność — brak powiązań z operatorami",
+  "Weryfikacja faktycznych możliwości, nie tylko deklaracji",
+  "Obsługa branż specjalistycznych: chłodnie, ADR, farmacja",
+  "Negocjacje warunków i SLA w imieniu klienta",
+  "Magazyn, fulfillment i transport koordynowane razem",
+];
+
+const scenarios = [
+  {
+    label: "E-commerce / D2C",
+    title: "Partner fulfillment dla rosnącej sprzedaży online",
+    text: "Firma e-commerce z kilkoma tysiącami aktywnych SKU potrzebuje zewnętrznego partnera fulfillment. Vologis dobiera operatora, porównuje modele rozliczeń i SLA, negocjuje warunki i koordynuje uruchomienie.",
+  },
+  {
+    label: "Firma produkcyjna",
+    title: "Magazyn buforowy na komponenty i wyroby gotowe",
+    text: "Producent potrzebuje przestrzeni składowej w pobliżu zakładu — ze względu na rytm produkcji i dostawy do klientów. Vologis identyfikuje operatorów, weryfikuje możliwości i negocjuje warunki SLA.",
+  },
+  {
+    label: "Importer / farmacja",
+    title: "Chłodnia spełniająca wymagania GDP",
+    text: "Importer produktów farmaceutycznych potrzebuje partnera magazynowego z certyfikowanymi warunkami chłodniczymi i procedurami GDP. Vologis weryfikuje operatorów pod kątem rzeczywistej zgodności z wymaganiami.",
+  },
+];
+
+const faqs = [
+  {
+    q: "Czy pomagacie znaleźć magazyn pod konkretne wymagania (chłodnia, ADR)?",
+    a: "Tak. Specjalizujemy się w doborze przestrzeni magazynowej pod wymagające kategorie — chłodnie i łańcuch chłodniczy, magazyny ADR dla materiałów niebezpiecznych oraz składowanie zgodne z wymaganiami farmaceutycznymi (GDP). Weryfikujemy, czy operator faktycznie spełnia wymagania, a nie tylko je deklaruje.",
+  },
+  {
+    q: "Czym różni się pośrednictwo Vologis od agencji nieruchomości magazynowych?",
+    a: "Agencja znajdzie halę i na tym kończy. My weryfikujemy operatora, jego procesy i możliwości, negocjujemy SLA, dobieramy fulfillment i transport, i koordynujemy całość. Nie reprezentujemy wynajmującego — reprezentujemy Twój interes.",
+  },
+  {
+    q: "Czy obsługujecie fulfillment dla e-commerce?",
+    a: "Tak. Dobieramy partnerów fulfillment do obsługi e-commerce i D2C: składowanie, kompletacja, pakowanie, obsługa zwrotów oraz integracje z marketplace'ami i platformami sprzedażowymi. Porównujemy modele rozliczeń i poziomy SLA.",
+  },
+  {
+    q: "Czy Vologis organizuje też transport?",
+    a: "Tak. Transport jest częścią naszej oferty — jako uzupełnienie obsługi magazynowej i fulfillment. Dobieramy przewoźników i koordynujemy transport krajowy i międzynarodowy: FTL, LTL i drobnicowy.",
+  },
+  {
+    q: "Czy Vologis jest niezależny od operatorów magazynowych?",
+    a: "Tak, w 100%. Nie reprezentujemy żadnego operatora magazynowego, przewoźnika ani dostawcy fulfillment. Nasze wynagrodzenie pochodzi wyłącznie od klienta — dlatego możemy obiektywnie oceniać rynek i negocjować w Twoim imieniu.",
+  },
+  {
+    q: "Jak długo trwa znalezienie odpowiedniego operatora lub magazynu?",
+    a: "To zależy od specyfiki wymagań. Standardowy dobór operatora 3PL lub przestrzeni składowej zajmuje zwykle 2–4 tygodnie od zebrania pełnych danych. W przypadku wymagających branż (chłodnia, ADR, farmacja) czas może być dłuższy ze względu na konieczność weryfikacji certyfikatów i procedur.",
+  },
+];
+
+/* ── Schema ───────────────────────────────────────────────── */
+
+const schemaService = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Pośrednictwo logistyczne",
+  "provider": {
+    "@type": "Organization",
+    "name": "Vologis Sp. z o.o.",
+    "url": SITE,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Jarocin",
+      "addressRegion": "Wielkopolska",
+      "addressCountry": "PL",
+    },
+  },
+  "areaServed": ["Polska", "Europa"],
+  "serviceType": "Pośrednictwo logistyczne, magazynowanie i fulfillment",
+  "description": "Vologis dobiera i weryfikuje operatorów magazynowych, partnerów fulfillment oraz przewoźników — dopasowanych do specyfiki ładunku i branży klienta, w tym chłodnie, ADR i farmacja.",
+  "url": `${SITE}/pl/uslugi/posrednictwo-logistyczne`,
+};
+
+const schemaWebPage = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Pośrednictwo logistyczne — magazyny, fulfillment, transport | Vologis",
+  "description": "Vologis dobiera sprawdzonych operatorów magazynowych, partnerów fulfillment i przewoźników. Niezależne pośrednictwo logistyczne dla firm produkcyjnych, e-commerce i handlowych — w tym chłodnie, ADR i farmacja.",
+  "url": `${SITE}/pl/uslugi/posrednictwo-logistyczne`,
+  "inLanguage": "pl-PL",
+};
+
+const schemaFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ServicePageLayout
+  title="Pośrednictwo logistyczne — magazyny, fulfillment, transport | Vologis"
+  description="Vologis dobiera sprawdzonych operatorów magazynowych, partnerów fulfillment i przewoźników. Niezależne pośrednictwo logistyczne dla firm produkcyjnych, e-commerce i handlowych — w tym chłodnie, ADR i farmacja."
+  canonical="https://vologis.com/pl/uslugi/posrednictwo-logistyczne"
+  heroImage="/services/posrednictwo-logistyczne.webp"
+  eyebrow="Usługi logistyczne / Pośrednictwo logistyczne"
+  h1="Pośrednictwo logistyczne — magazyn, fulfillment i transport od jednego partnera"
+  lead="Vologis pomaga firmom znaleźć i zweryfikować przestrzeń magazynową, partnerów fulfillment oraz sprawdzonych przewoźników — bez angażowania własnego zespołu w miesiące researchu i negocjacji. Przejmujemy ciężar porównania ofert, weryfikacji operatorów i doboru rozwiązania dopasowanego do specyfiki ładunku, w tym dla wymagających branż jak chłodnie, ADR czy farmacja. Jesteśmy w 100% niezależni — nie reprezentujemy żadnego operatora, tylko Twój interes."
+  trustItems={trustItems}
+  ctaPrimaryLabel="Zapytaj o pośrednictwo logistyczne"
+  ctaPrimaryHref="/pl/kontakt"
+  ctaSecondaryLabel="Sprawdź, jak działamy"
+  ctaSecondaryHref="/pl/proces"
+  breadcrumbs={[{ name: "Pośrednictwo logistyczne" }]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaService)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaWebPage)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaFaq)} />
+
+  <!-- ─── 1. Problem ───────────────────────────────────────── -->
+  <section class="ps-problem" aria-labelledby="h-problem">
+    <div class="container">
+      <div class="ps-problem__grid">
+        <div class="ps-problem__copy">
+          <h2 class="h2" id="h-problem">
+            Znalezienie odpowiedniego magazynu lub partnera fulfillment to miesiące pracy — jeśli robisz to samodzielnie
+          </h2>
+          <p class="body">
+            W wielu firmach wybór operatora logistycznego wygląda tak samo: kilka zapytań do znanych z rynku nazw, porównanie PDF-ów z ofertami, negocjacje prowadzone bez znajomości rynkowych stawek i standardów SLA. Na końcu decyzja oparta na tym, kto odpowiedział najszybciej — niekoniecznie na tym, kto jest najlepiej dopasowany.
+          </p>
+          <p class="body">
+            Problem narasta, gdy ładunek ma specyficzne wymagania: chłodnia, ADR, farmacja, wysoka rotacja SKU, integracje z marketplace'ami. Liczba operatorów, którzy naprawdę spełniają te wymagania — a nie tylko deklarują — jest znacznie mniejsza niż wynikałoby z pierwszego przeglądu rynku.
+          </p>
+          <p class="body">
+            Pośrednictwo logistyczne Vologis przejmuje cały ten ciężar. Nie tylko wskazujemy operatora — weryfikujemy go, negocjujemy warunki i koordynujemy uruchomienie współpracy, pozostając po Twojej stronie przez cały proces.
+          </p>
+        </div>
+        <aside class="ps-brief" aria-label="W skrócie">
+          <p class="ps-brief__label">W skrócie</p>
+          <p class="ps-brief__text">
+            Pośrednictwo logistyczne to usługa, w której Vologis dobiera i weryfikuje operatorów magazynowych, partnerów fulfillment oraz przewoźników — dopasowanych do specyfiki Twojego ładunku i branży. Przejmujemy research, porównanie ofert i negocjacje, pozostając w 100% niezależni. Obsługujemy też branże specjalistyczne: chłodnie, ADR, farmacja.
+          </p>
+          <hr class="ps-brief__rule" />
+          <p class="ps-brief__sub">
+            Vologis &middot; Jarocin, Polska &middot; Obsługa rynku PL i EU
+          </p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 2. Dla kogo ───────────────────────────────────────── -->
+  <section class="ps-forwho" aria-labelledby="h-forwho">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-forwho">Dla kogo jest pośrednictwo logistyczne?</h2>
+      <p class="section-intro">
+        Ta usługa jest dla firm, które potrzebują sprawnego doboru operatora lub przestrzeni magazynowej bez angażowania własnego zespołu w długotrwały research.
+      </p>
+      <div class="fw-grid">
+        {forWhom.map((p) => (
+          <div class="fw-card">
+            <h3 class="fw-card__title">{p.title}</h3>
+            <p class="fw-card__text">{p.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 3. Co obejmuje ────────────────────────────────────── -->
+  <section class="ps-scope" aria-labelledby="h-scope">
+    <div class="container">
+      <h2 class="h2" id="h-scope">Co obejmuje usługa pośrednictwa logistycznego?</h2>
+      <p class="body">
+        Zakres współpracy może obejmować dobór magazynu lub operatora fulfillment, stałą obsługę logistyczną albo szersze wsparcie — razem z organizacją transportu i koordynacją dostawców.
+      </p>
+      <div class="scope-grid">
+        {scopeCards.map((c) => (
+          <div class="scope-card">
+            <h3 class="scope-card__title">{c.title}</h3>
+            <p class="scope-card__text">{c.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 4. Porownanie ─────────────────────────────────────── -->
+  <section class="ps-cmp" aria-labelledby="h-cmp">
+    <div class="container">
+      <h2 class="h2" id="h-cmp">Pośrednictwo Vologis, agencja nieruchomości i operator 3PL — czym się różnią?</h2>
+      <div class="cmp3" role="table" aria-label="Porównanie modeli doboru operatora logistycznego">
+        <div class="cmp3__head" role="row">
+          <span class="cmp3__cell cmp3__feat" role="columnheader">Obszar</span>
+          <span class="cmp3__cell" role="columnheader">Agencja nieruchomości</span>
+          <span class="cmp3__cell" role="columnheader">Zapytanie bezpośrednio do 3PL</span>
+          <span class="cmp3__cell cmp3__cell--ours" role="columnheader">Pośrednictwo logistyczne Vologis</span>
+        </div>
+        {comparisonRows.map((r) => (
+          <div class="cmp3__row" role="row">
+            <span class="cmp3__cell cmp3__feat cmp3__feat--body" role="rowheader">{r.feature}</span>
+            <span class="cmp3__cell cmp3__cell--body" role="cell">{r.transport}</span>
+            <span class="cmp3__cell cmp3__cell--body" role="cell">{r.spedycja}</span>
+            <span class="cmp3__cell cmp3__cell--ours cmp3__cell--body" role="cell">{r.vologis}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 5. Proces (dark) ──────────────────────────────────── -->
+  <section class="ps-process" aria-labelledby="h-process">
+    <div class="container">
+      <p class="dark-eyebrow">Jak pracujemy</p>
+      <h2 class="h2 h2--dark" id="h-process">Jak wygląda współpraca krok po kroku?</h2>
+      <div class="proc-steps">
+        {processSteps.map((step, i) => (
+          <div class="proc-step">
+            <div class="proc-step__rail">
+              <span class="proc-step__badge tnum">{step.num}</span>
+              {i < processSteps.length - 1 && <span class="proc-step__line" aria-hidden="true" />}
+            </div>
+            <div class="proc-step__body">
+              <h3 class="proc-step__title">{step.title}</h3>
+              <p class="proc-step__text">{step.text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 6. Branże specjalistyczne ────────────────────────── -->
+  <section class="ps-types" aria-labelledby="h-types">
+    <div class="container">
+      <h2 class="h2" id="h-types">Branże i specjalizacje, które obsługujemy</h2>
+      <div class="types-grid">
+        {specialistAreas.map((t) => (
+          <div class="type-card">
+            <h3 class="type-card__title">{t.title}</h3>
+            <p class="type-card__text">{t.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 7. Co zyskuje firma ───────────────────────────────── -->
+  <section class="ps-benefits" aria-labelledby="h-benefits">
+    <div class="container">
+      <h2 class="h2" id="h-benefits">Co zyskuje firma?</h2>
+      <div class="ben-grid">
+        {benefits.map((b) => (
+          <div class="ben-card">
+            <h3 class="ben-card__title">{b.title}</h3>
+            <p class="ben-card__text">{b.text}</p>
+          </div>
+        ))}
+      </div>
+      <CalloutBox>
+        Najtańszy operator nie zawsze jest najlepszym wyborem. W logistyce koszt pojawia się też w opóźnieniach, błędnych wysyłkach, brakach w SLA i czasie ludzi, którzy muszą naprawiać skutki złego doboru partnera.
+      </CalloutBox>
+    </div>
+  </section>
+
+  <!-- ─── 8. Kiedy warto ────────────────────────────────────── -->
+  <section class="ps-when" aria-labelledby="h-when">
+    <div class="container">
+      <h2 class="h2" id="h-when">Kiedy warto skorzystać z pośrednictwa logistycznego?</h2>
+      <ul class="when-list" role="list">
+        {whenItems.map((item) => (
+          <li class="when-item">
+            <svg class="when-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m4 10.5 4 4 8-9" />
+            </svg>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ─── 9. Co przygotowac ─────────────────────────────────── -->
+  <section class="ps-quote" aria-labelledby="h-quote">
+    <div class="container">
+      <h2 class="h2" id="h-quote">Co przygotować do pierwszego zapytania?</h2>
+      <div class="quote-box">
+        <p class="quote-box__label">Podstawowe informacje do wstępnego doboru operatora</p>
+        <ul class="quote-list" role="list">
+          {quoteChecklist.map((item) => (
+            <li class="quote-item">
+              <svg class="quote-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m4 10.5 4 4 8-9" />
+              </svg>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <a href="/pl/kontakt" class="quote-cta">
+          Masz już informacje? Wyślij zapytanie do Vologis <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 10. Dlaczego Vologis (dark) ──────────────────────── -->
+  <section class="ps-why" aria-labelledby="h-why">
+    <div class="container">
+      <h2 class="h2 h2--dark" id="h-why">Dlaczego Vologis?</h2>
+      <div class="why-grid">
+        <div class="why-copy">
+          <p class="why-text">
+            Vologis łączy praktyczne doświadczenie w operacjach logistycznych z podejściem czysto doradczym. Oznacza to, że nie jesteśmy powiązani z żadnym operatorem — nie mamy halowych portfeli do wynajęcia ani kontraktów wolumenowych z konkretnymi 3PL. Naszym jedynym interesem jest dobór rozwiązania, które pasuje do Ciebie.
+          </p>
+          <p class="why-text">
+            Weryfikujemy operatorów, nie tylko porównujemy ich oferty. Negocjujemy warunki SLA i stawki z wiedzą o rynkowych standardach. I zostajemy z Tobą przez cały proces — od pierwszego zapytania po uruchomienie operacji.
+          </p>
+          <a href="/pl/kontakt" class="why-btn">Porozmawiaj z Vologis <span aria-hidden="true">→</span></a>
+        </div>
+        <ul class="why-cards" role="list">
+          {whyCards.map((card) => (
+            <li class="why-card">
+              <svg class="why-card__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m4 10.5 4 4 8-9" />
+              </svg>
+              {card}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 11. Scenariusze ───────────────────────────────────── -->
+  <section class="ps-scenarios" aria-labelledby="h-scenarios">
+    <div class="container">
+      <h2 class="h2" id="h-scenarios">Przykładowe scenariusze współpracy</h2>
+      <div class="sc-grid">
+        {scenarios.map((s) => (
+          <div class="sc-card">
+            <p class="sc-card__label">{s.label}</p>
+            <h3 class="sc-card__title">{s.title}</h3>
+            <p class="sc-card__text">{s.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 12. FAQ ───────────────────────────────────────────── -->
+  <section class="ps-faq" aria-labelledby="h-faq">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-faq">FAQ — najczęściej zadawane pytania</h2>
+      <FaqAccordion items={faqs} single />
+    </div>
+  </section>
+
+  <!-- ─── CTA końcowe ───────────────────────────────────────── -->
+  <section class="ps-endcta" aria-labelledby="h-endcta">
+    <div class="container">
+      <div class="endcta-inner">
+        <h2 class="endcta__h2" id="h-endcta">
+          Potrzebujesz magazynu, partnera fulfillment lub sprawdzonego operatora 3PL?
+        </h2>
+        <p class="endcta__text">
+          Opowiedz nam, czego szukasz: przestrzeń magazynowa, fulfillment dla e-commerce, transport, chłodnia, ADR — a może całość razem. Vologis przeprowadzi research, zweryfikuje operatorów i dobierze rozwiązanie dopasowane do Twojego ładunku i branży.
+        </p>
+        <div class="endcta__actions">
+          <a href="/pl/kontakt" class="endcta__btn endcta__btn--primary">
+            Wyślij zapytanie do Vologis <span aria-hidden="true">→</span>
+          </a>
+          <a
+            href="#calendly"
+            class="endcta__btn endcta__btn--ghost"
+            onclick="Calendly && Calendly.initPopupWidget({url:'https://calendly.com/vologis/30min'}); return false;"
+          >
+            Umów konsultację
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Related services ─────────────────────────────────── -->
+  <section class="ps-related" aria-labelledby="h-related">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-related">Inne usługi Vologis</h2>
+      <div class="related-grid">
+        <a class="related-card" href="/pl/uslugi/doradztwo-operacyjne">
+          <span class="related-card__title">Doradztwo operacyjne i audyt</span>
+          <span class="related-card__desc">Identyfikacja wąskich gardeł, optymalizacja procesów, quick wins.</span>
+          <span class="related-card__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="related-card" href="/pl/uslugi/interim-management">
+          <span class="related-card__title">Interim management</span>
+          <span class="related-card__desc">Wsparcie zarządcze i stabilizacja operacji w trudnych momentach.</span>
+          <span class="related-card__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="related-card" href="/pl/uslugi/projekty-greenfield">
+          <span class="related-card__title">Projekty Greenfield</span>
+          <span class="related-card__desc">Od analizy lokalizacji do uruchomienia operacji. Jeden partner.</span>
+          <span class="related-card__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</ServicePageLayout>
+
+<style>
+  /* ─── Shared section primitives ─────────────────────────── */
+  .h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    color: var(--color-ink);
+    margin-bottom: var(--space-lg);
+  }
+
+  .h2--center { text-align: center; }
+
+  .h2--dark { color: var(--color-ink-on-dark); }
+
+  .body {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.75;
+    margin-bottom: var(--space-md);
+  }
+
+  .section-intro {
+    font-size: var(--text-md);
+    color: var(--color-muted);
+    line-height: 1.65;
+    max-width: 60ch;
+    margin-inline: auto;
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  .dark-eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-blue-on-dark);
+    margin-bottom: var(--space-md);
+  }
+
+  /* ─── 1. Problem ─────────────────────────────────────────── */
+  .ps-problem {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper);
+  }
+
+  .ps-problem__grid {
+    display: grid;
+    grid-template-columns: 1fr 20rem;
+    gap: var(--space-3xl);
+    align-items: start;
+  }
+
+  .ps-brief {
+    border: 1px solid var(--color-blue);
+    border-radius: var(--radius-lg);
+    background: var(--color-blue-tint);
+    padding: var(--space-lg) var(--space-xl);
+    position: sticky;
+    top: calc(4.25rem + 3px + var(--space-lg));
+  }
+
+  .ps-brief__label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    margin-bottom: var(--space-md);
+  }
+
+  .ps-brief__text {
+    font-size: var(--text-base);
+    color: var(--color-ink);
+    line-height: 1.7;
+  }
+
+  .ps-brief__rule {
+    border: none;
+    border-top: 1px solid var(--color-blue);
+    margin-block: var(--space-md);
+    opacity: 0.3;
+  }
+
+  .ps-brief__sub {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.5;
+  }
+
+  /* ─── 2. Dla kogo ────────────────────────────────────────── */
+  .ps-forwho {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper-2);
+  }
+
+  .fw-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-md);
+  }
+
+  .fw-card {
+    border: 1px solid var(--color-rule);
+    border-left: 4px solid var(--color-secondary);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    background: var(--color-paper);
+  }
+
+  .fw-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+    margin-bottom: var(--space-sm);
+  }
+
+  .fw-card__text {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.65;
+  }
+
+  /* ─── 3. Co obejmuje ─────────────────────────────────────── */
+  .ps-scope {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper);
+  }
+
+  .scope-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+  }
+
+  .scope-card {
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    background: var(--color-paper);
+    transition: border-color var(--dur-micro) var(--ease-out), box-shadow var(--dur-short) var(--ease-out);
+  }
+
+  .scope-card:hover {
+    border-color: var(--color-blue);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .scope-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+    margin-bottom: var(--space-sm);
+  }
+
+  .scope-card__text {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.65;
+  }
+
+  /* ─── 4. Porownanie ──────────────────────────────────────── */
+  .ps-cmp {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper-2);
+  }
+
+  .cmp3 {
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--color-paper);
+    margin-top: var(--space-lg);
+  }
+
+  .cmp3__head,
+  .cmp3__row {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr 1.3fr 1.6fr;
+    border-bottom: 1px solid var(--color-rule);
+  }
+
+  .cmp3__row:last-child { border-bottom: none; }
+
+  .cmp3__head {
+    background: var(--color-paper-dark);
+  }
+
+  .cmp3__cell {
+    padding: var(--space-md) var(--space-lg);
+    font-size: var(--text-sm);
+    line-height: 1.5;
+    color: var(--color-muted);
+  }
+
+  .cmp3__head .cmp3__cell {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--text-sm);
+    color: var(--color-muted-on-dark);
+    display: flex;
+    align-items: center;
+  }
+
+  .cmp3__feat {
+    font-weight: 600;
+    color: var(--color-ink);
+    background: var(--color-paper-2);
+  }
+
+  .cmp3__head .cmp3__feat {
+    background: var(--color-paper-dark-2);
+    color: var(--color-ink-on-dark);
+  }
+
+  .cmp3__cell--ours {
+    background: var(--color-paper-dark);
+    color: var(--color-ink-on-dark);
+    font-weight: 500;
+  }
+
+  .cmp3__head .cmp3__cell--ours {
+    font-weight: 700;
+    color: var(--color-blue-on-dark);
+  }
+
+  .cmp3__cell--body { display: flex; align-items: flex-start; }
+
+  @media (max-width: 56rem) {
+    .cmp3 { overflow-x: auto; }
+    .cmp3__head, .cmp3__row {
+      grid-template-columns: 6rem 10rem 10rem 14rem;
+      min-width: 40rem;
+    }
+    .cmp3__feat { position: sticky; left: 0; z-index: 1; }
+  }
+
+  /* ─── 5. Proces (dark) ───────────────────────────────────── */
+  .ps-process {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper-dark);
+  }
+
+  .proc-steps {
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--space-xl);
+  }
+
+  .proc-step {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: var(--space-xl);
+  }
+
+  .proc-step__rail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .proc-step__badge {
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    flex-shrink: 0;
+    border-radius: var(--radius-pill);
+    background: var(--color-glass-dark);
+    border: 1px solid var(--color-glass-border);
+    color: var(--color-blue-on-dark);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--text-sm);
+  }
+
+  .proc-step__line {
+    width: 1px;
+    flex: 1;
+    min-height: var(--space-lg);
+    background: var(--color-glass-border);
+    margin-block: var(--space-xs);
+  }
+
+  .proc-step__body {
+    padding-bottom: var(--space-2xl);
+  }
+
+  .proc-step:last-child .proc-step__body { padding-bottom: 0; }
+
+  .proc-step__title {
+    font-family: var(--font-display);
+    font-size: var(--text-md);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: var(--color-ink-on-dark);
+    margin-bottom: var(--space-sm);
+    padding-top: var(--space-xs);
+  }
+
+  .proc-step__text {
+    font-size: var(--text-base);
+    color: var(--color-muted-on-dark);
+    line-height: 1.7;
+  }
+
+  /* ─── 6. Branże specjalistyczne ──────────────────────────── */
+  .ps-types {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper);
+  }
+
+  .types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+  }
+
+  .type-card {
+    border: 1px solid var(--color-rule);
+    border-top: 3px solid var(--color-secondary);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    background: var(--color-paper);
+  }
+
+  .type-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+    margin-bottom: var(--space-sm);
+  }
+
+  .type-card__text {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.65;
+  }
+
+  /* ─── 7. Korzysci ────────────────────────────────────────── */
+  .ps-benefits {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper-2);
+  }
+
+  .ben-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+
+  .ben-card {
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    background: var(--color-paper);
+  }
+
+  .ben-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+    margin-bottom: var(--space-sm);
+  }
+
+  .ben-card__text {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.65;
+  }
+
+  /* ─── 8. Kiedy warto ─────────────────────────────────────── */
+  .ps-when {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper);
+  }
+
+  .when-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+  }
+
+  .when-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    font-size: var(--text-base);
+    color: var(--color-ink);
+    line-height: 1.55;
+  }
+
+  .when-icon {
+    flex-shrink: 0;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-top: 0.15rem;
+    color: var(--color-blue);
+  }
+
+  /* ─── 9. Co przygotowac ──────────────────────────────────── */
+  .ps-quote {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper-2);
+  }
+
+  .quote-box {
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-lg);
+    background: var(--color-paper);
+    padding: var(--space-xl);
+    margin-top: var(--space-lg);
+  }
+
+  .quote-box__label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-neutral);
+    margin-bottom: var(--space-lg);
+  }
+
+  .quote-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xl);
+  }
+
+  .quote-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    font-size: var(--text-base);
+    color: var(--color-ink);
+    line-height: 1.5;
+  }
+
+  .quote-icon {
+    flex-shrink: 0;
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-top: 0.2rem;
+    color: var(--color-blue);
+  }
+
+  .quote-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-secondary);
+    text-decoration: none;
+    border-top: 1px solid var(--color-rule);
+    padding-top: var(--space-lg);
+    width: 100%;
+    transition: color var(--dur-micro) var(--ease-out);
+  }
+
+  .quote-cta:hover { color: var(--color-ink); }
+
+  /* ─── 10. Dlaczego Vologis (dark) ────────────────────────── */
+  .ps-why {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper-dark);
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+    align-items: start;
+    margin-top: var(--space-xl);
+  }
+
+  .why-text {
+    font-size: var(--text-base);
+    color: var(--color-muted-on-dark);
+    line-height: 1.75;
+    margin-bottom: var(--space-lg);
+  }
+
+  .why-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 600;
+    padding: var(--space-sm) var(--space-xl);
+    border-radius: var(--radius-pill);
+    background: var(--color-accent);
+    color: #fff;
+    text-decoration: none;
+    transition: background var(--dur-micro) var(--ease-out);
+    margin-top: var(--space-sm);
+  }
+
+  .why-btn:hover { background: var(--color-accent-hover); }
+
+  .why-cards {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .why-card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    font-size: var(--text-base);
+    color: var(--color-ink-on-dark);
+    line-height: 1.5;
+    padding: var(--space-md);
+    border: 1px solid var(--color-glass-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-glass-dark);
+  }
+
+  .why-card__icon {
+    flex-shrink: 0;
+    width: 1.15rem;
+    height: 1.15rem;
+    margin-top: 0.15rem;
+    color: var(--color-blue-on-dark);
+  }
+
+  /* ─── 11. Scenariusze ────────────────────────────────────── */
+  .ps-scenarios {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper);
+  }
+
+  .sc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+  }
+
+  .sc-card {
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    background: var(--color-paper);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .sc-card__label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+  }
+
+  .sc-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-md);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: var(--color-ink);
+    line-height: 1.2;
+  }
+
+  .sc-card__text {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.65;
+    margin-top: var(--space-2xs);
+  }
+
+  /* ─── 12. FAQ ────────────────────────────────────────────── */
+  .ps-faq {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper-2);
+  }
+
+  /* ─── CTA koncowe ────────────────────────────────────────── */
+  .ps-endcta {
+    padding-block: var(--space-3xl);
+    background: var(--gradient-cta);
+  }
+
+  .endcta-inner {
+    max-width: 52rem;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .endcta__h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    color: var(--color-ink-on-dark);
+    margin-bottom: var(--space-md);
+  }
+
+  .endcta__text {
+    font-size: var(--text-base);
+    color: var(--color-muted-on-dark);
+    line-height: 1.7;
+    margin-bottom: var(--space-xl);
+  }
+
+  .endcta__actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .endcta__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 600;
+    padding: var(--space-md) var(--space-2xl);
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out);
+  }
+
+  .endcta__btn--primary {
+    background: var(--color-accent);
+    color: #fff;
+  }
+
+  .endcta__btn--primary:hover { background: var(--color-accent-hover); }
+
+  .endcta__btn--ghost {
+    background: var(--color-glass-dark);
+    color: var(--color-ink-on-dark);
+    border-color: var(--color-glass-border);
+  }
+
+  .endcta__btn--ghost:hover { background: oklch(100% 0 0 / 0.12); }
+
+  /* ─── Related services ───────────────────────────────────── */
+  .ps-related {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper);
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+  }
+
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    background: var(--color-paper);
+    text-decoration: none;
+    transition: border-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out);
+    position: relative;
+  }
+
+  .related-card:hover {
+    border-color: var(--color-blue);
+    transform: translateY(-3px);
+  }
+
+  .related-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+  }
+
+  .related-card__desc {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.55;
+    flex: 1;
+  }
+
+  .related-card__arrow {
+    font-size: var(--text-md);
+    color: var(--color-secondary);
+    transition: transform var(--dur-short) var(--ease-out);
+    align-self: flex-start;
+    margin-top: auto;
+  }
+
+  .related-card:hover .related-card__arrow { transform: translateX(4px); }
+
+  /* ─── Responsive ─────────────────────────────────────────── */
+  @media (max-width: 60rem) {
+    .ps-problem__grid { grid-template-columns: 1fr; }
+    .ps-brief { position: static; }
+    .why-grid { grid-template-columns: 1fr; }
+    .sc-grid { grid-template-columns: 1fr; }
+    .related-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 48rem) {
+    .fw-grid { grid-template-columns: 1fr; }
+    .scope-grid { grid-template-columns: 1fr; }
+    .types-grid { grid-template-columns: 1fr; }
+    .ben-grid { grid-template-columns: 1fr; }
+    .when-list { grid-template-columns: 1fr; }
+    .quote-list { grid-template-columns: 1fr; }
+    .endcta__actions { flex-direction: column; align-items: stretch; }
+    .endcta__btn { width: 100%; justify-content: center; }
+  }
+</style>

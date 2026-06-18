@@ -1,0 +1,840 @@
+---
+import ServicePageLayout from "../../../layouts/ServicePageLayout.astro";
+import FaqAccordion from "../../../components/FaqAccordion.astro";
+import CalloutBox from "../../../components/CalloutBox.astro";
+
+const SITE = "https://vologis.com";
+
+/* ── Data ────────────────────────────────────────────────── */
+
+const trustItems = [
+  "Audyt procesów magazynowych i transportowych",
+  "Identyfikacja wąskich gardeł i quick wins",
+  "Projektowanie layoutów i przepływów magazynowych",
+  "Dobór systemów WMS, automatyki i robotyki",
+  "Policzalne rekomendacje z roadmapą wdrożenia",
+  "Wdrożenie zmian, nie tylko raport",
+];
+
+const forWhom = [
+  {
+    title: "Firmy produkcyjne",
+    text: "Gdy logistyka produkcji spowalnia wydajność, a zasilanie hal i śledzenie partii wymaga uporządkowania.",
+  },
+  {
+    title: "Firmy handlowe i dystrybucyjne prowadzące własny magazyn",
+    text: "Gdy koszty magazynowania i kompletacji rosną szybciej niż obroty.",
+  },
+  {
+    title: "E-commerce i D2C",
+    text: "Gdy rosnący wolumen zamówień obniża wydajność kompletacji i jakość obsługi zwrotów.",
+  },
+  {
+    title: "Operatorzy logistyczni 3PL/4PL",
+    text: "Gdy potrzebujesz zewnętrznej oceny procesów i benchmarku przed renegocjacją kontraktów.",
+  },
+  {
+    title: "Firmy przed inwestycją w IT lub automatykę",
+    text: "Gdy chcesz mieć pewność, że inwestycja w WMS lub automatykę zwróci się i rozwiąże właściwy problem.",
+  },
+];
+
+const scopeCards = [
+  {
+    title: "Audyt procesów magazynowych",
+    text: "Analizujemy przyjęcia, składowanie, kompletację, pakowanie i wysyłkę. Identyfikujemy wąskie gardła, marnotrawstwo i obszary o najwyższym potencjale poprawy.",
+  },
+  {
+    title: "Audyt logistyki produkcji",
+    text: "Oceniamy zasilanie produkcji, przepływy na halach, śledzenie partii i kompletację pod montaż. Wskazujemy gdzie procesy spowalniają wydajność produkcyjną.",
+  },
+  {
+    title: "Identyfikacja wąskich gardeł i Quick Wins",
+    text: "Wskazujemy zarówno niskokosztowe zmiany do natychmiastowego wdrożenia, jak i działania długofalowe. Każda rekomendacja z oszacowanym efektem i priorytetem.",
+  },
+  {
+    title: "Projektowanie layoutów i przepływów",
+    text: "Projektujemy układ magazynu i przepływy materiałowe pod konkretny profil rotacji, wolumen i plany rozwoju. Eliminujemy zbędne przemieszczenia i puste przebiegi.",
+  },
+  {
+    title: "Dobór systemów WMS i automatyki",
+    text: "Pomagamy wybrać i skonfigurować system WMS, automatykę magazynową i robotykę — obiektywnie, bez powiązań z dostawcami. Dobieramy technologię do skali i budżetu, nie odwrotnie.",
+  },
+  {
+    title: "Roadmapa i wdrożenie",
+    text: "Dostarczamy konkretną roadmapę krótko- i długoterminowych działań. Rekomendacje możesz wdrożyć samodzielnie lub z naszym wsparciem — aż do osiągnięcia założonych KPI.",
+  },
+];
+
+const whenItems = [
+  "Rosnące koszty operacyjne bez jasnej przyczyny",
+  "Opóźnienia w realizacji zamówień i kompletacji",
+  "Niedobory miejsca w magazynie",
+  "Zespół traci czas na gaszenie pożarów zamiast rozwoju",
+  "Przed zakupem lub wymianą systemu WMS",
+  "Przed inwestycją w automatykę magazynową",
+  "Konieczność redukcji średnich stanów zapasów",
+  "Skala biznesu przerosła obecne procesy",
+  "Planowana relokacja lub rozbudowa magazynu",
+  "Spadająca wydajność mimo zwiększania zatrudnienia",
+];
+
+const deliverables = [
+  {
+    title: "Trafna diagnoza",
+    text: "Pewność gdzie naprawdę leży problem — nie przypuszczenia, lecz twarde liczby.",
+  },
+  {
+    title: "Policzalne rekomendacje z oszacowanym efektem",
+    text: "Każde działanie opatrzone priorytetem i szacunkową korzyścią — finansową lub operacyjną.",
+  },
+  {
+    title: "Roadmapa działań krótko- i długoterminowych",
+    text: "Konkretny plan: co zrobić najpierw, co wymaga inwestycji i kiedy spodziewać się wyników.",
+  },
+  {
+    title: "Priorytetyzacja według zwrotu",
+    text: "Skupienie na działaniach o największym zwrocie — nie na tych, które wyglądają najatrakcyjniej.",
+  },
+  {
+    title: "Redukcja ryzyka błędnej decyzji inwestycyjnej",
+    text: "Audyt przed zakupem WMS lub automatyki pozwala uniknąć drogich pomyłek wynikających z błędnej diagnozy.",
+  },
+  {
+    title: "Benchmark względem rynku i dobrych praktyk",
+    text: "Wiedza gdzie jesteś na tle branży i co robią najefektywniejsi operatorzy w Twoim segmencie.",
+  },
+  {
+    title: "Prezentacja wyników dla zarządu",
+    text: "Dokument ułatwiający decyzje: gotowy do prezentacji, bez żargonu operacyjnego.",
+  },
+];
+
+const whyCards = [
+  "Wchodzimy na halę — nie analizujemy z biurka",
+  "100% niezależność — brak powiązań z dostawcami WMS i automatyki",
+  "Rekomendujemy wdrożenie, nie tylko diagnozę",
+  "Doświadczenie po stronie operatora, nie tylko konsultanta",
+  "Benchmark względem rynku i dobrych praktyk",
+  "Policzalne wyniki — nie ogólne obserwacje",
+];
+
+const faqs = [
+  {
+    q: "Ile trwa audyt logistyczny?",
+    a: "Szybki audyt (Quick Check) wybranego obszaru: 1–2 tygodnie. Pełny audyt operacyjny przedsiębiorstwa: 3–6 tygodni, w zależności od skali i liczby lokalizacji. Zakres i harmonogram ustalamy na pierwszym spotkaniu.",
+  },
+  {
+    q: "Czym różni się audyt Vologis od analizy dostawcy WMS?",
+    a: "Dostawca WMS analizuje procesy pod kątem sprzedaży swojego systemu. My jesteśmy w 100% niezależni — nie mamy interesu w konkretnym rozwiązaniu. Często rekomendujemy najpierw uporządkowanie procesów, zanim w ogóle warto inwestować w nowy system.",
+  },
+  {
+    q: "Czy po audycie muszę zlecić wam wdrożenie?",
+    a: "Nie. Rekomendacje z roadmapą możesz wdrożyć samodzielnie lub z innym partnerem. Wielu klientów zaczyna od audytu, a o wdrożeniu decyduje po zapoznaniu się z wynikami. Nie ma obowiązku kontynuacji.",
+  },
+  {
+    q: "Czy audyt obejmuje koszty transportu?",
+    a: "Tak. Audyt może obejmować analizę kosztów transportu, doboru przewoźników i optymalizacji tras jako część szerszej oceny operacyjnej — lub jako samodzielny obszar, jeśli to główny problem.",
+  },
+  {
+    q: "Co dostaję na koniec audytu?",
+    a: "Dokument z diagnozą, policzalnymi rekomendacjami i roadmapą działań krótko- i długoterminowych, uszeregowanych według priorytetu i potencjalnego efektu. Plus prezentacja wyników dla zarządu.",
+  },
+  {
+    q: "Czy robicie audyt logistyki produkcji?",
+    a: "Tak. Audyt logistyki produkcji obejmuje planowanie cykli, zasilanie surowcami, przepływy na halach, śledzenie partii produkcyjnych i raportowanie. To częsty punkt wyjścia przed decyzją o automatyzacji lub zmianie systemu.",
+  },
+];
+
+/* ── Schema ───────────────────────────────────────────────── */
+
+const schemaService = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Doradztwo operacyjne i audyt logistyczny",
+  "provider": {
+    "@type": "Organization",
+    "name": "Vologis Sp. z o.o.",
+    "url": SITE,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Jarocin",
+      "addressRegion": "Wielkopolska",
+      "addressCountry": "PL",
+    },
+  },
+  "areaServed": ["Polska", "Europa"],
+  "serviceType": "Operational consulting and logistics audit",
+  "description": "Vologis przeprowadza niezależny audyt procesów magazynowych, transportowych i całego łańcucha dostaw — identyfikuje wąskie gardła i dostarcza policzalne rekomendacje z roadmapą wdrożenia.",
+  "url": `${SITE}/pl/uslugi/doradztwo-operacyjne`,
+};
+
+const schemaWebPage = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Doradztwo operacyjne i audyt logistyczny | Vologis",
+  "description": "Audyt logistyczny i doradztwo operacyjne Vologis — identyfikujemy wąskie gardła, projektujemy procesy magazynowe, dobieramy WMS i automatykę. Rekomendacje, które wdrażamy, nie zostawiamy na papierze.",
+  "url": `${SITE}/pl/uslugi/doradztwo-operacyjne`,
+  "inLanguage": "pl-PL",
+};
+
+const schemaFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ServicePageLayout
+  title="Doradztwo operacyjne i audyt logistyczny | Vologis"
+  description="Audyt logistyczny i doradztwo operacyjne Vologis — identyfikujemy wąskie gardła, projektujemy procesy magazynowe, dobieramy WMS i automatykę. Rekomendacje, które wdrażamy, nie zostawiamy na papierze."
+  canonical="https://vologis.com/pl/uslugi/doradztwo-operacyjne"
+  heroImage="/services/doradztwo-operacyjne.webp"
+  eyebrow="Usługi logistyczne / Doradztwo operacyjne"
+  h1="Doradztwo operacyjne i audyt — znajdujemy gdzie tracisz pieniądze, czas i ludzi"
+  lead="Większość firm wie, że ich logistyka mogłaby działać lepiej — ale nie wie dokładnie gdzie leży problem ani od czego zacząć. Vologis przeprowadza niezależny audyt procesów magazynowych, transportowych i całego łańcucha dostaw, identyfikuje wąskie gardła i dostarcza policzalne rekomendacje. Nie kończymy na raporcie — wdrażamy zmiany aż do osiągnięcia mierzalnych wyników. Działamy w oparciu o twarde doświadczenie operacyjne, nie teorię z podręcznika."
+  trustItems={trustItems}
+  ctaPrimaryLabel="Zamów audyt logistyczny"
+  ctaPrimaryHref="/pl/kontakt"
+  ctaSecondaryLabel="Zobacz jak pracujemy"
+  ctaSecondaryHref="/pl/proces"
+  breadcrumbs={[{ name: "Doradztwo operacyjne i audyt" }]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaService)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaWebPage)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaFaq)} />
+
+  <!-- ─── 1. Problem ───────────────────────────────────────── -->
+  <section class="ps-problem" aria-labelledby="h-problem">
+    <div class="container">
+      <div class="ps-problem__grid">
+        <div class="ps-problem__copy">
+          <h2 class="h2" id="h-problem">
+            Gdy logistyka zaczyna kosztować więcej niż zarabiać
+          </h2>
+          <p class="body">
+            Wąskie gardła rzadko są tam, gdzie się ich spodziewasz. Firma widzi rosnące koszty, opóźnienia i frustrację zespołu — ale przyczyna często leży głębiej: w źle zaprojektowanym layoucie, nieoptymalnych procesach kompletacji, błędnej konfiguracji systemu WMS albo w strukturze, która nie nadąża za skalą biznesu.
+          </p>
+          <p class="body">
+            Wewnętrzne zespoły z czasem zamykają się w perspektywie własnej organizacji — trudno dostrzec problem, gdy patrzy się na niego codziennie. Zewnętrzne, obiektywne spojrzenie pozwala zidentyfikować ukryte rezerwy i ominąć firmową politykę, która często blokuje zmiany.
+          </p>
+          <p class="body">
+            Audyt operacyjny Vologis to nie teoretyczna analiza. Wchodzimy na magazyn, liczymy rotacje, obserwujemy procesy, rozmawiamy z operatorami. Pokazujemy konkretnie gdzie utknął kapitał i co zrobić, żeby go uwolnić.
+          </p>
+        </div>
+        <aside class="ps-brief" aria-label="W skrócie">
+          <p class="ps-brief__label">W skrócie</p>
+          <p class="ps-brief__text">
+            Doradztwo operacyjne i audyt to usługa, w której Vologis analizuje procesy magazynowe, transportowe i produkcyjne, identyfikuje wąskie gardła i dostarcza policzalne rekomendacje wraz z roadmapą wdrożenia. W odróżnieniu od teoretycznych analiz, wdrażamy rekomendowane zmiany aż do osiągnięcia mierzalnych KPI. Audyt obejmuje też dobór i konfigurację systemów WMS oraz automatyki — w 100% niezależnie od dostawców.
+          </p>
+          <hr class="ps-brief__rule" />
+          <p class="ps-brief__sub">
+            Vologis &middot; Jarocin, Polska &middot; Obsługa rynku PL i EU
+          </p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 2. Dla kogo ───────────────────────────────────────── -->
+  <section class="ps-forwho" aria-labelledby="h-forwho">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-forwho">Dla kogo jest doradztwo operacyjne?</h2>
+      <p class="section-intro">
+        Audyt ma sens wszędzie tam, gdzie logistyka stała się hamulcem wzrostu albo źródłem kosztów, których nie widać na pierwszy rzut oka.
+      </p>
+      <div class="fw-grid">
+        {forWhom.map((p) => (
+          <div class="fw-card">
+            <h3 class="fw-card__title">{p.title}</h3>
+            <p class="fw-card__text">{p.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 3. Co obejmuje ────────────────────────────────────── -->
+  <section class="ps-scope" aria-labelledby="h-scope">
+    <div class="container">
+      <h2 class="h2" id="h-scope">Co obejmuje doradztwo operacyjne i audyt?</h2>
+      <p class="body">
+        Zakres audytu dopasowujemy do problemu — od szybkiego przeglądu jednego obszaru po pełne badanie operacyjne obejmujące magazyn, produkcję i transport.
+      </p>
+      <div class="scope-grid">
+        {scopeCards.map((c) => (
+          <div class="scope-card">
+            <h3 class="scope-card__title">{c.title}</h3>
+            <p class="scope-card__text">{c.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 4. Kiedy warto ────────────────────────────────────── -->
+  <section class="ps-when" aria-labelledby="h-when">
+    <div class="container">
+      <h2 class="h2" id="h-when">Kiedy warto zamówić audyt operacyjny?</h2>
+      <p class="body">
+        Audyt ma sens, gdy rozpoznajesz przynajmniej jeden z poniższych sygnałów:
+      </p>
+      <ul class="when-list when-list--2col" role="list">
+        {whenItems.map((item) => (
+          <li class="when-item">
+            <svg class="when-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m4 10.5 4 4 8-9" />
+            </svg>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ─── 5. Co dostajesz ───────────────────────────────────── -->
+  <section class="ps-benefits" aria-labelledby="h-benefits">
+    <div class="container">
+      <h2 class="h2" id="h-benefits">Co otrzymujesz po audycie?</h2>
+      <div class="ben-grid">
+        {deliverables.map((d) => (
+          <div class="ben-card">
+            <h3 class="ben-card__title">{d.title}</h3>
+            <p class="ben-card__text">{d.text}</p>
+          </div>
+        ))}
+      </div>
+      <CalloutBox>
+        Najdroższy audyt to ten, który nie prowadzi do żadnych zmian. W Vologis każda analiza kończy się konkretną roadmapą z priorytetami — i możliwością jej wdrożenia z naszym wsparciem.
+      </CalloutBox>
+    </div>
+  </section>
+
+  <!-- ─── 6. Dlaczego Vologis (dark) ───────────────────────── -->
+  <section class="ps-why" aria-labelledby="h-why">
+    <div class="container">
+      <h2 class="h2 h2--dark" id="h-why">Dlaczego Vologis?</h2>
+      <div class="why-grid">
+        <div class="why-copy">
+          <p class="why-text">
+            Vologis nie jest firmą doradczą, która przygotowuje raporty i odchodzi. Mamy bezpośrednie doświadczenie operacyjne — zarządzanie magazynami, produkcją, logistyką 3PL. Wiemy, jak wygląda problem od środka, nie tylko z perspektywy danych.
+          </p>
+          <p class="why-text">
+            Jesteśmy w 100% niezależni od dostawców WMS, automatyki i systemów magazynowych. Nie rekomendujemy technologii dlatego, że mamy z nią kontrakt — rekomendujemy to, co faktycznie pasuje do skali, budżetu i specyfiki operacji klienta. Czasem najlepszą decyzją jest odkładanie inwestycji w IT do momentu, gdy procesy są gotowe.
+          </p>
+          <a href="/pl/kontakt" class="why-btn">Porozmawiaj z Vologis <span aria-hidden="true">→</span></a>
+        </div>
+        <ul class="why-cards" role="list">
+          {whyCards.map((card) => (
+            <li class="why-card">
+              <svg class="why-card__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m4 10.5 4 4 8-9" />
+              </svg>
+              {card}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 7. FAQ ────────────────────────────────────────────── -->
+  <section class="ps-faq" aria-labelledby="h-faq">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-faq">FAQ — najczęściej zadawane pytania</h2>
+      <FaqAccordion items={faqs} single />
+    </div>
+  </section>
+
+  <!-- ─── CTA końcowe ───────────────────────────────────────── -->
+  <section class="ps-endcta" aria-labelledby="h-endcta">
+    <div class="container">
+      <div class="endcta-inner">
+        <h2 class="endcta__h2" id="h-endcta">
+          Sprawdź gdzie Twoja logistyka traci pieniądze
+        </h2>
+        <p class="endcta__text">
+          Bezpłatna pierwsza rozmowa. Powiemy wprost czy i jak możemy pomóc.
+        </p>
+        <div class="endcta__actions">
+          <a href="/pl/kontakt" class="endcta__btn endcta__btn--primary">
+            Zamów audyt <span aria-hidden="true">→</span>
+          </a>
+          <a href="/pl/proces" class="endcta__btn endcta__btn--ghost">
+            Zobacz nasz proces →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Related services ─────────────────────────────────── -->
+  <section class="ps-related" aria-labelledby="h-related">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-related">Inne usługi Vologis</h2>
+      <div class="related-grid">
+        <a class="related-card" href="/pl/uslugi/posrednictwo-logistyczne">
+          <span class="related-card__title">Pośrednictwo logistyczne</span>
+          <span class="related-card__desc">Dobór i weryfikacja operatorów magazynowych, fulfillment i przewoźników.</span>
+          <span class="related-card__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="related-card" href="/pl/uslugi/interim-management">
+          <span class="related-card__title">Interim management</span>
+          <span class="related-card__desc">Wsparcie zarządcze i stabilizacja operacji w trudnych momentach.</span>
+          <span class="related-card__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="related-card" href="/pl/uslugi/projekty-greenfield">
+          <span class="related-card__title">Projekty Greenfield</span>
+          <span class="related-card__desc">Od analizy lokalizacji do uruchomienia operacji. Jeden partner.</span>
+          <span class="related-card__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</ServicePageLayout>
+
+<style>
+  /* ─── Shared section primitives ─────────────────────────── */
+  .h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    color: var(--color-ink);
+    margin-bottom: var(--space-lg);
+  }
+
+  .h2--center { text-align: center; }
+
+  .h2--dark { color: var(--color-ink-on-dark); }
+
+  .body {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.75;
+    margin-bottom: var(--space-md);
+  }
+
+  .section-intro {
+    font-size: var(--text-md);
+    color: var(--color-muted);
+    line-height: 1.65;
+    max-width: 60ch;
+    margin-inline: auto;
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  /* ─── 1. Problem ─────────────────────────────────────────── */
+  .ps-problem {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper);
+  }
+
+  .ps-problem__grid {
+    display: grid;
+    grid-template-columns: 1fr 20rem;
+    gap: var(--space-3xl);
+    align-items: start;
+  }
+
+  .ps-brief {
+    border: 1px solid var(--color-blue);
+    border-radius: var(--radius-lg);
+    background: var(--color-blue-tint);
+    padding: var(--space-lg) var(--space-xl);
+    position: sticky;
+    top: calc(4.25rem + 3px + var(--space-lg));
+  }
+
+  .ps-brief__label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    margin-bottom: var(--space-md);
+  }
+
+  .ps-brief__text {
+    font-size: var(--text-base);
+    color: var(--color-ink);
+    line-height: 1.7;
+  }
+
+  .ps-brief__rule {
+    border: none;
+    border-top: 1px solid var(--color-blue);
+    margin-block: var(--space-md);
+    opacity: 0.3;
+  }
+
+  .ps-brief__sub {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.5;
+  }
+
+  /* ─── 2. Dla kogo ────────────────────────────────────────── */
+  .ps-forwho {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper-2);
+  }
+
+  .fw-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-md);
+  }
+
+  .fw-card {
+    border: 1px solid var(--color-rule);
+    border-left: 4px solid var(--color-secondary);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    background: var(--color-paper);
+  }
+
+  .fw-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+    margin-bottom: var(--space-sm);
+  }
+
+  .fw-card__text {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.65;
+  }
+
+  /* ─── 3. Co obejmuje ─────────────────────────────────────── */
+  .ps-scope {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper);
+  }
+
+  .scope-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+  }
+
+  .scope-card {
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    background: var(--color-paper);
+    transition: border-color var(--dur-micro) var(--ease-out), box-shadow var(--dur-short) var(--ease-out);
+  }
+
+  .scope-card:hover {
+    border-color: var(--color-blue);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .scope-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+    margin-bottom: var(--space-sm);
+  }
+
+  .scope-card__text {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.65;
+  }
+
+  /* ─── 4. Kiedy warto ─────────────────────────────────────── */
+  .ps-when {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper-2);
+  }
+
+  .when-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+  }
+
+  .when-list--2col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .when-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    font-size: var(--text-base);
+    color: var(--color-ink);
+    line-height: 1.55;
+  }
+
+  .when-icon {
+    flex-shrink: 0;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-top: 0.15rem;
+    color: var(--color-blue);
+  }
+
+  /* ─── 5. Co dostajesz ────────────────────────────────────── */
+  .ps-benefits {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper);
+  }
+
+  .ben-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+
+  .ben-card {
+    border: 1px solid var(--color-rule);
+    border-top: 3px solid var(--color-secondary);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    background: var(--color-paper);
+  }
+
+  .ben-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+    margin-bottom: var(--space-sm);
+  }
+
+  .ben-card__text {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.65;
+  }
+
+  /* ─── 6. Dlaczego Vologis (dark) ─────────────────────────── */
+  .ps-why {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper-dark);
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+    align-items: start;
+    margin-top: var(--space-xl);
+  }
+
+  .why-text {
+    font-size: var(--text-base);
+    color: var(--color-muted-on-dark);
+    line-height: 1.75;
+    margin-bottom: var(--space-lg);
+  }
+
+  .why-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 600;
+    padding: var(--space-sm) var(--space-xl);
+    border-radius: var(--radius-pill);
+    background: var(--color-accent);
+    color: #fff;
+    text-decoration: none;
+    transition: background var(--dur-micro) var(--ease-out);
+    margin-top: var(--space-sm);
+  }
+
+  .why-btn:hover { background: var(--color-accent-hover); }
+
+  .why-cards {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .why-card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    font-size: var(--text-base);
+    color: var(--color-ink-on-dark);
+    line-height: 1.5;
+    padding: var(--space-md);
+    border: 1px solid var(--color-glass-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-glass-dark);
+  }
+
+  .why-card__icon {
+    flex-shrink: 0;
+    width: 1.15rem;
+    height: 1.15rem;
+    margin-top: 0.15rem;
+    color: var(--color-blue-on-dark);
+  }
+
+  /* ─── 7. FAQ ─────────────────────────────────────────────── */
+  .ps-faq {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper-2);
+  }
+
+  /* ─── CTA końcowe ────────────────────────────────────────── */
+  .ps-endcta {
+    padding-block: var(--space-3xl);
+    background: var(--gradient-cta);
+  }
+
+  .endcta-inner {
+    max-width: 52rem;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .endcta__h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    color: var(--color-ink-on-dark);
+    margin-bottom: var(--space-md);
+  }
+
+  .endcta__text {
+    font-size: var(--text-base);
+    color: var(--color-muted-on-dark);
+    line-height: 1.7;
+    margin-bottom: var(--space-xl);
+  }
+
+  .endcta__actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .endcta__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 600;
+    padding: var(--space-md) var(--space-2xl);
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out);
+  }
+
+  .endcta__btn--primary {
+    background: var(--color-accent);
+    color: #fff;
+  }
+
+  .endcta__btn--primary:hover { background: var(--color-accent-hover); }
+
+  .endcta__btn--ghost {
+    background: var(--color-glass-dark);
+    color: var(--color-ink-on-dark);
+    border-color: var(--color-glass-border);
+  }
+
+  .endcta__btn--ghost:hover { background: oklch(100% 0 0 / 0.12); }
+
+  /* ─── Related services ───────────────────────────────────── */
+  .ps-related {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper);
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+  }
+
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    background: var(--color-paper);
+    text-decoration: none;
+    transition: border-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out);
+  }
+
+  .related-card:hover {
+    border-color: var(--color-blue);
+    transform: translateY(-3px);
+  }
+
+  .related-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+  }
+
+  .related-card__desc {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.55;
+    flex: 1;
+  }
+
+  .related-card__arrow {
+    font-size: var(--text-md);
+    color: var(--color-secondary);
+    transition: transform var(--dur-short) var(--ease-out);
+    align-self: flex-start;
+    margin-top: auto;
+  }
+
+  .related-card:hover .related-card__arrow { transform: translateX(4px); }
+
+  /* ─── Responsive ─────────────────────────────────────────── */
+  @media (max-width: 60rem) {
+    .ps-problem__grid { grid-template-columns: 1fr; }
+    .ps-brief { position: static; }
+    .why-grid { grid-template-columns: 1fr; }
+    .related-grid { grid-template-columns: 1fr; }
+    .when-list--2col { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 48rem) {
+    .fw-grid { grid-template-columns: 1fr; }
+    .scope-grid { grid-template-columns: 1fr; }
+    .ben-grid { grid-template-columns: 1fr; }
+    .when-list { grid-template-columns: 1fr; }
+    .endcta__actions { flex-direction: column; align-items: stretch; }
+    .endcta__btn { width: 100%; justify-content: center; }
+  }
+</style>

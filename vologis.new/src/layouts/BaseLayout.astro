@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import { SITE } from "../config/site";
+import { orgSchema } from "../utils/schema";
 
 interface Props {
   title?: string;
@@ -7,14 +9,20 @@ interface Props {
   ogImage?: string;
   canonical?: string;
   noIndex?: boolean;
+  /** Pass an absolute EN URL when this page has an English equivalent. */
+  hreflangEN?: string;
+  /** Above-fold image to preload — pass per-page hero path here */
+  preloadImage?: string;
 }
 
 const {
-  title = "Vologis — Doradztwo Logistyczne | Transport i Spedycja | SCM",
-  description = "Vologis: doradztwo logistyczne, transport i spedycja oraz zarządzanie łańcuchem dostaw dla firm produkcyjnych i e-commerce. Działamy od 2011, rynki PL i EU.",
-  ogImage = "/og/home.jpg",
+  title = SITE.defaults.pl.title,
+  description = SITE.defaults.pl.description,
+  ogImage = SITE.ogImage,
   canonical,
   noIndex = false,
+  hreflangEN,
+  preloadImage,
 } = Astro.props;
 
 const canonicalURL = canonical ?? new URL(Astro.url.pathname, "https://vologis.com").href;
@@ -25,28 +33,25 @@ const enPath = currentLang === "en" ? Astro.url.pathname : Astro.url.pathname.re
 const plURL = new URL(plPath, "https://vologis.com").href;
 const enURL = new URL(enPath, "https://vologis.com").href;
 
-const schemaOrg = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Vologis Sp. z o.o.",
-  "url": "https://vologis.com",
-  "foundingDate": "2011",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Jarocin",
-    "addressRegion": "Wielkopolska",
-    "addressCountry": "PL"
-  },
-  "areaServed": ["PL", "EU"],
-  "knowsAbout": [
-    "doradztwo logistyczne",
-    "transport i spedycja",
-    "zarządzanie łańcuchem dostaw"
-  ],
-  "sameAs": [
-    "https://www.linkedin.com/company/vologis"
-  ]
-};
+const serviceLinks = [
+  { label: "Pośrednictwo logistyczne i fulfillment", href: "/pl/uslugi/posrednictwo-logistyczne", desc: "Jeden partner zamiast dziesiątek rozmów z operatorami." },
+  { label: "Doradztwo operacyjne i audyt", href: "/pl/uslugi/doradztwo-operacyjne", desc: "Sprawdzimy gdzie tracisz pieniądze, czas i ludzi." },
+  { label: "Projekty Greenfield", href: "/pl/uslugi/projekty-greenfield", desc: "Od pustej działki do gotowej operacji." },
+  { label: "Usługi dronowe", href: "/pl/uslugi/uslugi-dronowe", desc: "Pomiary, ortofotomapy, inspekcje i materiały z powietrza." },
+  { label: "Interim Management", href: "/pl/uslugi/interim-management", desc: "Wsparcie zarządcze i gaszenie pożarów od zaraz." },
+];
+const navItems = [
+  { label: "Proces", href: "/pl/proces", match: "/pl/proces" },
+  { label: "Wiedza", href: "/pl/wiedza", match: "/pl/wiedza" },
+  { label: "O nas",  href: "/pl/o-nas",  match: "/pl/o-nas"  },
+];
+const navPath = Astro.url.pathname;
+const isActive = (m: string) => navPath === m || navPath.startsWith(m + "/");
+
+/* Organization schema uses SITE config as single source of truth */
+const schemaOrg = orgSchema();
+
+const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.pl.locale;
 ---
 
 <!doctype html>
@@ -64,11 +69,11 @@ const schemaOrg = {
   <title>{title}</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonicalURL} />
-  {noIndex && <meta name="robots" content="noindex, nofollow" />}
+  <meta name="robots" content={noIndex ? "noindex, follow" : "index, follow"} />
 
-  <!-- hreflang PL + EN -->
-  <link rel="alternate" hreflang="pl" href={plURL} />
-  <link rel="alternate" hreflang="en" href={enURL} />
+  <!-- hreflang — EN alternate only when the page has an English equivalent -->
+  <link rel="alternate" hreflang="pl-PL" href={plURL} />
+  {hreflangEN && <link rel="alternate" hreflang="en" href={hreflangEN} />}
   <link rel="alternate" hreflang="x-default" href={plURL} />
 
   <!-- GEO -->
@@ -81,22 +86,29 @@ const schemaOrg = {
   <meta property="og:type" content="website" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:image" content={ogImage} />
+  {ogImage && <meta property="og:image" content={new URL(ogImage, SITE.url).href} />}
   <meta property="og:url" content={canonicalURL} />
-  <meta property="og:locale" content="pl_PL" />
-  <meta property="og:site_name" content="Vologis" />
+  <meta property="og:locale" content={ogLocale} />
+  <meta property="og:site_name" content={SITE.name} />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  {ogImage && <meta name="twitter:image" content={new URL(ogImage, SITE.url).href} />}
+  {ogImage && <meta property="og:image:width" content="1200" />}
+  {ogImage && <meta property="og:image:height" content="630" />}
 
   <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/favicon.svg" />
+  <meta name="theme-color" content="#0d1b2a" />
 
-  <!-- Google Fonts: Geist -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap"
-    rel="stylesheet"
-  />
+  <!-- Fonts self-hosted via @fontsource-variable (no external requests, no render-blocking) -->
+
+  <!-- Preload critical above-fold image (page-specific, passed via preloadImage prop) -->
+  {preloadImage && <link rel="preload" as="image" href={preloadImage} fetchpriority="high" />}
 
   <!-- Schema: Organization -->
   <script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
@@ -111,90 +123,130 @@ const schemaOrg = {
   <!-- Google Search Console verification — replace content -->
   <!-- <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" /> -->
 
-  <!-- Calendly widget -->
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-
-  <!-- Microsoft Clarity — heatmaps & session recording -->
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "wyaq74tm7t");
+  <!-- Calendly widget — load on demand only (avoids third-party cookies and render-blocking) -->
+  <script>
+    function loadCalendly(cb) {
+      if (window.Calendly) { if (cb) cb(); return; }
+      var css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.href = 'https://assets.calendly.com/assets/external/widget.css';
+      document.head.appendChild(css);
+      var s = document.createElement('script');
+      s.src = 'https://assets.calendly.com/assets/external/widget.js';
+      s.onload = cb;
+      document.head.appendChild(s);
+    }
+    document.addEventListener('click', function(e) {
+      var t = e.target.closest('[data-calendly]');
+      if (!t) return;
+      e.preventDefault();
+      loadCalendly(function() {
+        Calendly.initPopupWidget({ url: 'https://calendly.com/vologis/30min' });
+      });
+    }, true);
   </script>
+
 </head>
 
 <body>
 
-  <!-- N5 Floating pill nav ─────────────────────────── -->
-  <header class="nav-wrap" role="banner">
-    <nav class="nav-pill" aria-label="Nawigacja główna">
-      <a href="/pl/" class="nav-wordmark" aria-label="Vologis — strona główna">
-        VOLOGIS
-      </a>
+  <!-- ════ Site header ════════════════════════════════ -->
+  <header class="hd" role="banner">
+    <div class="hd__bar container">
+      <a href="/pl/" class="hd__brand" aria-label="Vologis — strona główna">VOLOGIS</a>
 
-      <ul class="nav-links" role="list">
-        <li><a href="/pl/uslugi/doradztwo-logistyczne">Usługi</a></li>
-        <li><a href="/pl/proces">Proces</a></li>
-        <li><a href="/pl/wiedza">Wiedza</a></li>
-        <li><a href="/pl/kontakt">Kontakt</a></li>
-      </ul>
+      <nav class="hd__nav" aria-label="Nawigacja główna">
+        <ul class="hd__list" role="list">
+          <li class="hd__item has-mega">
+            <a
+              href="/pl/uslugi"
+              class="hd__link"
+              aria-current={navPath.startsWith("/pl/uslugi") ? "page" : undefined}
+              aria-haspopup="true"
+            >Usługi</a>
+            <div class="mega" role="menu" aria-label="Usługi">
+              <div class="mega__grid">
+                {serviceLinks.map((s) => (
+                  <a class="mega__card" href={s.href} role="menuitem" aria-current={navPath === s.href ? "page" : undefined}>
+                    <span class="mega__card-title">{s.label}</span>
+                    <span class="mega__card-desc">{s.desc}</span>
+                  </a>
+                ))}
+              </div>
+              <a class="mega__foot" href="/pl/uslugi">Zobacz wszystkie usługi <span aria-hidden="true">→</span></a>
+            </div>
+          </li>
+          {navItems.map((item) => (
+            <li class="hd__item">
+              <a class="hd__link" href={item.href} aria-current={isActive(item.match) ? "page" : undefined}>{item.label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
 
-      <div class="nav-lang" aria-label="Wybór języka / Language">
-        <a
-          href={plPath}
-          hreflang="pl"
-          title="Polski"
-          aria-current={currentLang === "pl" ? "true" : undefined}
-        >PL</a>
-        <span class="nav-lang-sep" aria-hidden="true">/</span>
-        <a
-          href={enPath}
-          hreflang="en"
-          title="English"
-          aria-current={currentLang === "en" ? "true" : undefined}
-        >EN</a>
+      <div class="hd__actions">
+        <div class="hd__lang" aria-label="Język / Language">
+          <a href={plPath} hreflang="pl" title="Polski" aria-current={currentLang === "pl" ? "true" : undefined}>PL</a>
+          <span aria-hidden="true">/</span>
+          <a href={enPath} hreflang="en" title="English" aria-current={currentLang === "en" ? "true" : undefined}>EN</a>
+        </div>
+
+        <a href="/pl/kontakt" class="btn btn--ghost hd__ghost">Kontakt</a>
+
+        <button
+          type="button"
+          class="btn btn--solid"
+          data-calendly="popup"
+        >Umów spotkanie</button>
+
+        <button class="burger" id="burger" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span>
+          <span></span>
+        </button>
       </div>
-
-      <a
-        href="#calendly"
-        class="nav-cta"
-        onclick="Calendly && Calendly.initPopupWidget({url:'https://calendly.com/vologis/konsultacja'}); return false;"
-      >
-        Umów spotkanie
-      </a>
-
-      <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobile-menu">
-        <span class="nav-hamburger__bar"></span>
-        <span class="nav-hamburger__bar"></span>
-      </button>
-    </nav>
-
-    <!-- Mobile menu -->
-    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-      <ul role="list">
-        <li><a href="/pl/uslugi/doradztwo-logistyczne">Usługi</a></li>
-        <li><a href="/pl/proces">Proces</a></li>
-        <li><a href="/pl/wiedza">Wiedza</a></li>
-        <li><a href="/pl/kontakt">Kontakt</a></li>
-        <li>
-          <a
-            href="#calendly"
-            class="mobile-cta"
-            onclick="Calendly && Calendly.initPopupWidget({url:'https://calendly.com/vologis/konsultacja'}); return false;"
-          >
-            Umów spotkanie →
-          </a>
-        </li>
-        <li class="mobile-lang" aria-label="Wybór języka / Language">
-          <a href={plPath} hreflang="pl" aria-current={currentLang === "pl" ? "true" : undefined}>Polski</a>
-          <span class="mobile-lang-sep" aria-hidden="true">/</span>
-          <a href={enPath} hreflang="en" aria-current={currentLang === "en" ? "true" : undefined}>English</a>
-        </li>
-      </ul>
     </div>
   </header>
+
+  <!-- ════ Mobile nav (full-screen) ═══════════════════ -->
+  <div class="mnav" id="mobile-nav" aria-hidden="true">
+    <div class="mnav__panel">
+      <div class="mnav__scroll">
+        <ul class="mnav__list" role="list">
+          <li class="mnav__item">
+            <button class="mnav__row mnav__row--toggle" aria-expanded="false" aria-controls="msub-uslugi">
+              Usługi
+              <svg class="mnav__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+            </button>
+            <ul class="mnav__sub" id="msub-uslugi" role="list">
+              <li><a class="mnav__sublink" href="/pl/uslugi">Wszystkie usługi</a></li>
+              {serviceLinks.map((s) => (
+                <li><a class="mnav__sublink" href={s.href}>{s.label}</a></li>
+              ))}
+            </ul>
+          </li>
+          <li class="mnav__item"><a class="mnav__row" href="/pl/proces">Proces</a></li>
+          <li class="mnav__item"><a class="mnav__row" href="/pl/wiedza">Wiedza</a></li>
+          <li class="mnav__item"><a class="mnav__row" href="/pl/o-nas">O nas</a></li>
+          <li class="mnav__item"><a class="mnav__row" href="/pl/kontakt">Kontakt</a></li>
+        </ul>
+
+        <div class="mnav__lang" aria-label="Język / Language">
+          <a href={plPath} hreflang="pl" aria-current={currentLang === "pl" ? "true" : undefined}>Polski</a>
+          <span aria-hidden="true">/</span>
+          <a href={enPath} hreflang="en" aria-current={currentLang === "en" ? "true" : undefined}>English</a>
+        </div>
+      </div>
+
+      <div class="mnav__foot">
+        <a href="/pl/kontakt" class="btn btn--ghost btn--block">Kontakt</a>
+        <button
+          type="button"
+          class="btn btn--solid btn--block"
+          data-calendly="popup"
+        >Umów spotkanie</button>
+      </div>
+    </div>
+  </div>
 
   <main id="main-content">
     <slot />
@@ -204,10 +256,33 @@ const schemaOrg = {
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-inner">
+
         <div class="footer-brand">
           <p class="footer-wordmark">VOLOGIS</p>
           <p class="footer-tagline">Doradztwo logistyczne dla firm z ambicjami.</p>
         </div>
+
+        <nav class="footer-col" aria-label="Usługi">
+          <h3 class="footer-col-title">Usługi</h3>
+          <ul class="footer-col-list" role="list">
+            {serviceLinks.map((s) => (
+              <li><a href={s.href}>{s.label}</a></li>
+            ))}
+            <li><a href="/pl/uslugi">Wszystkie usługi</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-label="Firma">
+          <h3 class="footer-col-title">Firma</h3>
+          <ul class="footer-col-list" role="list">
+            <li><a href="/pl/o-nas">O nas</a></li>
+            <li><a href="/pl/proces">Jak pracujemy</a></li>
+            <li><a href="/pl/wiedza">Wiedza</a></li>
+            <li><a href="/pl/wspolpraca">Współpraca</a></li>
+            <li><a href="/pl/kontakt">Kontakt</a></li>
+          </ul>
+        </nav>
+
         <div class="footer-meta">
           <address class="footer-nap">
             Vologis Sp. z o.o. &middot; Jarocin, Polska
@@ -215,212 +290,387 @@ const schemaOrg = {
           <nav class="footer-links" aria-label="Linki stopki">
             <a href="/pl/polityka-prywatnosci">Polityka prywatności</a>
             <a href="/pl/regulamin">Regulamin</a>
-            <a href="/pl/kontakt">Kontakt</a>
           </nav>
           <p class="footer-copy">&copy; 2026 Vologis Sp. z o.o.</p>
         </div>
+
       </div>
     </div>
   </footer>
 
+  <!-- Microsoft Clarity — heatmaps & session recording, deferred to after render -->
+  <script type="text/javascript" defer>
+    window.addEventListener('load', function() {
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "wyaq74tm7t");
+    });
+  </script>
 </body>
 </html>
 
 <style>
-  /* ── Nav N5 Floating pill ──────────────────────── */
-  .nav-wrap {
+  /* ════ Site header ════════════════════════════════ */
+  .hd {
     position: fixed;
-    top: var(--space-md);
+    top: 0;
     left: 0;
     right: 0;
     z-index: var(--z-sticky);
-    display: flex;
-    justify-content: center;
-    pointer-events: none;
-  }
-
-  .nav-pill {
-    display: flex;
-    align-items: center;
-    gap: var(--space-xl);
-    padding: var(--space-xs) var(--space-md);
     background: var(--color-paper-glass);
     backdrop-filter: blur(12px) saturate(1.4);
     -webkit-backdrop-filter: blur(12px) saturate(1.4);
-    border: 1px solid var(--color-rule);
-    border-radius: 9999px;
-    pointer-events: all;
-    box-shadow: 0 2px 12px oklch(14% 0.04 250 / 0.08);
+    border-top: 3px solid var(--color-accent);
+    border-bottom: 1px solid var(--color-rule);
+    transition:
+      background var(--dur-long) var(--ease-out),
+      border-bottom-color var(--dur-long) var(--ease-out),
+      backdrop-filter var(--dur-long) var(--ease-out);
   }
 
-  .nav-wordmark {
+  .hd__bar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+    height: 4.25rem;
+  }
+
+  .hd__brand {
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: var(--text-sm);
-    letter-spacing: 0.12em;
+    font-size: var(--text-md);
+    letter-spacing: 0.06em;
     color: var(--color-ink);
     text-decoration: none;
     white-space: nowrap;
   }
 
-  .nav-links {
+  /* Primary nav */
+  .hd__list {
     display: flex;
     align-items: center;
-    gap: var(--space-lg);
+    gap: var(--space-3xs);
     list-style: none;
   }
 
-  .nav-links a {
+  .hd__link {
+    display: block;
     font-size: var(--text-sm);
     font-weight: 500;
     color: var(--color-muted);
     text-decoration: none;
     white-space: nowrap;
+    padding: var(--space-2xs) var(--space-sm);
+    border-radius: var(--radius-pill);
     transition:
-      color var(--dur-micro) var(--ease-out);
+      color var(--dur-micro) var(--ease-out),
+      background var(--dur-micro) var(--ease-out);
   }
 
-  .nav-links a:hover {
+  .hd__link:hover,
+  .hd__link[aria-current="page"] {
+    color: var(--color-ink);
+    background: var(--color-paper-2);
+  }
+
+  /* Mega menu */
+  .has-mega { position: relative; }
+
+  /* invisible bridge so the panel stays open across the gap */
+  .has-mega::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: var(--space-sm);
+  }
+
+  .mega {
+    position: absolute;
+    top: calc(100% + var(--space-sm));
+    left: 0;
+    width: 42rem;
+    max-width: 92vw;
+    background: var(--color-paper);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: var(--space-sm);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition:
+      opacity var(--dur-short) var(--ease-out),
+      transform var(--dur-short) var(--ease-out),
+      visibility var(--dur-short);
+    z-index: var(--z-dropdown);
+  }
+
+  .has-mega:hover .mega,
+  .has-mega:focus-within .mega {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .mega__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xs);
+  }
+
+  .mega__card {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: background var(--dur-micro) var(--ease-out);
+  }
+
+  .mega__card:hover,
+  .mega__card[aria-current="page"] { background: var(--color-paper-2); }
+
+  .mega__card-title {
+    font-size: var(--text-sm);
+    font-weight: 600;
     color: var(--color-ink);
   }
 
-  .nav-lang {
+  .mega__card-desc {
+    font-size: var(--text-xs);
+    color: var(--color-muted);
+    line-height: 1.4;
+  }
+
+  .mega__foot {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2xs);
+    margin-top: var(--space-2xs);
+    padding: var(--space-sm) var(--space-md);
+    border-top: 1px solid var(--color-rule);
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-secondary);
+    text-decoration: none;
+  }
+
+  .mega__foot span { transition: transform var(--dur-short) var(--ease-out); }
+  .mega__foot:hover span { transform: translateX(4px); }
+
+  /* Right-side actions */
+  .hd__actions {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .hd__lang {
     display: flex;
     align-items: center;
     gap: var(--space-2xs);
     font-family: var(--font-mono);
     font-size: var(--text-xs);
-    letter-spacing: 0.06em;
-    white-space: nowrap;
+    letter-spacing: 0.04em;
+    margin-right: var(--space-2xs);
   }
 
-  .nav-lang a {
+  .hd__lang a {
     color: var(--color-muted);
     text-decoration: none;
-    padding: var(--space-3xs) var(--space-2xs);
-    border-radius: var(--space-2xs);
+    padding: 2px 4px;
+    border-radius: 4px;
     transition: color var(--dur-micro) var(--ease-out);
   }
 
-  .nav-lang a:hover { color: var(--color-ink); }
+  .hd__lang a:hover { color: var(--color-ink); }
+  .hd__lang a[aria-current="true"] { color: var(--color-ink); font-weight: 700; }
+  .hd__lang span { color: var(--color-neutral); user-select: none; }
 
-  .nav-lang a[aria-current="true"] {
-    color: var(--color-ink);
-    font-weight: 700;
-  }
-
-  .nav-lang-sep {
-    color: var(--color-neutral);
-    user-select: none;
-  }
-
-  .nav-cta {
+  /* ── Buttons (ghost + solid) ─────────────────────── */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2xs);
+    font-family: var(--font-display);
     font-size: var(--text-sm);
     font-weight: 600;
-    color: var(--color-ink-on-dark);
-    background: var(--color-ink);
+    line-height: 1;
+    border-radius: var(--radius-pill);
     padding: var(--space-xs) var(--space-md);
-    border-radius: 9999px;
-    white-space: nowrap;
     text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 1px solid transparent;
     transition:
       background var(--dur-micro) var(--ease-out),
-      transform var(--dur-micro) var(--ease-out);
-    cursor: pointer;
-    border: none;
+      border-color var(--dur-micro) var(--ease-out),
+      color var(--dur-micro) var(--ease-out);
   }
 
-  .nav-cta:hover {
-    background: var(--color-accent);
-    transform: translateY(-1px);
+  .btn--ghost {
+    color: var(--color-ink);
+    background: var(--color-paper-2);
   }
 
-  .nav-hamburger {
-    display: none;
+  .btn--ghost:hover {
+    background: var(--color-paper);
+    border-color: var(--color-rule);
+  }
+
+  .btn--solid {
+    color: var(--color-ink-on-dark);
+    background: var(--color-ink);
+  }
+
+  .btn--solid:hover { background: oklch(40% 0.06 257); }
+
+  .btn--block { flex: 1; padding-block: var(--space-sm); font-size: var(--text-base); }
+
+  /* ── Burger (mobile-first: visible by default, hidden on desktop) ── */
+  .burger {
+    display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 5px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
     background: none;
     border: none;
     cursor: pointer;
-    padding: var(--space-xs);
-    border-radius: var(--space-xs);
   }
 
-  .nav-hamburger__bar {
+  .burger span {
     display: block;
-    width: 20px;
+    width: 22px;
     height: 2px;
+    margin-inline: auto;
     background: var(--color-ink);
-    border-radius: 1px;
-    transition: transform var(--dur-short) var(--ease-out), opacity var(--dur-short) var(--ease-out);
+    border-radius: 2px;
+    transition: transform var(--dur-short) var(--ease-out);
   }
 
-  /* Mobile menu */
-  .mobile-menu {
+  .burger.is-open span:nth-child(1) { transform: translateY(3.5px) rotate(45deg); }
+  .burger.is-open span:nth-child(2) { transform: translateY(-3.5px) rotate(-45deg); }
+
+  /* ════ Mobile nav (full-screen) ═══════════════════ */
+  .mnav {
     position: fixed;
-    inset: 0;
-    background: var(--color-paper-dark);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: calc(4.25rem + 3px);
     z-index: calc(var(--z-sticky) - 1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: oklch(26% 0.060 257 / 0.55);
     opacity: 0;
-    pointer-events: none;
-    transition: opacity var(--dur-long) var(--ease-out);
+    visibility: hidden;
+    transition: opacity var(--dur-short) var(--ease-out), visibility var(--dur-short);
   }
 
-  .mobile-menu.is-open {
-    opacity: 1;
-    pointer-events: all;
-  }
+  .mnav.is-open { opacity: 1; visibility: visible; }
 
-  .mobile-menu ul {
-    list-style: none;
-    text-align: center;
+  .mnav__panel {
+    position: absolute;
+    inset: 0;
     display: flex;
     flex-direction: column;
-    gap: var(--space-xl);
+    background: var(--color-paper);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    transform: translateY(12px);
+    transition: transform var(--dur-long) var(--ease-out);
   }
 
-  .mobile-menu a {
-    font-size: var(--text-2xl);
-    font-weight: 700;
-    color: var(--color-ink-on-dark);
-    letter-spacing: -0.02em;
+  .mnav.is-open .mnav__panel { transform: translateY(0); }
+
+  .mnav__scroll {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--space-xs) var(--space-lg) var(--space-lg);
+  }
+
+  .mnav__list { list-style: none; }
+
+  .mnav__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    width: 100%;
+    padding: var(--space-md) 0;
+    font-family: var(--font-display);
+    font-size: var(--text-md);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--color-ink);
+    text-decoration: none;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--color-rule);
+    cursor: pointer;
+    text-align: left;
+  }
+
+  .mnav__chev {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+    color: var(--color-neutral);
+    transition: transform var(--dur-short) var(--ease-out);
+  }
+
+  .mnav__item.is-open .mnav__chev { transform: rotate(90deg); }
+
+  .mnav__sub {
+    list-style: none;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height var(--dur-long) var(--ease-out);
+  }
+
+  .mnav__item.is-open .mnav__sub { max-height: 32rem; }
+
+  .mnav__sublink {
+    display: block;
+    padding: var(--space-sm) 0 var(--space-sm) var(--space-md);
+    font-size: var(--text-base);
+    color: var(--color-muted);
     text-decoration: none;
     transition: color var(--dur-micro) var(--ease-out);
   }
 
-  .mobile-menu a:hover { color: var(--color-accent); }
+  .mnav__sublink:first-child { padding-top: var(--space-md); }
+  .mnav__sublink:last-child { padding-bottom: var(--space-md); }
+  .mnav__sublink:hover { color: var(--color-ink); }
 
-  .mobile-cta {
-    font-size: var(--text-xl) !important;
-    color: var(--color-accent) !important;
-  }
-
-  .mobile-lang {
+  .mnav__lang {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: var(--space-sm);
-    margin-top: var(--space-md);
+    padding: var(--space-lg) 0 var(--space-xs);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
   }
 
-  .mobile-lang a {
-    font-size: var(--text-md);
-    font-weight: 500;
-    color: var(--color-muted-on-dark, var(--color-neutral));
-  }
+  .mnav__lang a { color: var(--color-muted); text-decoration: none; }
+  .mnav__lang a[aria-current="true"] { color: var(--color-ink); font-weight: 700; }
+  .mnav__lang span { color: var(--color-neutral); }
 
-  .mobile-lang a[aria-current="true"] {
-    color: var(--color-ink-on-dark);
+  .mnav__foot {
+    display: flex;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-lg);
+    border-top: 1px solid var(--color-rule);
+    background: var(--color-paper);
   }
-
-  .mobile-lang-sep {
-    color: var(--color-neutral);
-    user-select: none;
-  }
-
   /* ── Footer Ft1 Mast-headed ──────────────────────── */
   .footer {
     background: var(--color-paper-2);
@@ -450,6 +700,37 @@ const schemaOrg = {
     color: var(--color-muted);
     max-width: 28ch;
   }
+
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .footer-col-title {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-neutral);
+  }
+
+  .footer-col-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+    list-style: none;
+  }
+
+  .footer-col-list a {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    text-decoration: none;
+    transition: color var(--dur-micro) var(--ease-out);
+  }
+
+  .footer-col-list a:hover { color: var(--color-ink); }
 
   .footer-meta {
     text-align: right;
@@ -488,16 +769,15 @@ const schemaOrg = {
 
   /* ── Responsive ──────────────────────────────────── */
   @media (max-width: 60rem) {
-    .nav-links { display: none; }
-    .nav-lang { display: none; }
-    .nav-cta { display: none; }
-    .nav-hamburger { display: flex; }
+    .hd__nav { display: none; }
+    .hd__lang { display: none; }
+    .hd__actions .btn { display: none; }
+    .hd__bar { gap: var(--space-md); }
+  }
 
-    .nav-pill {
-      justify-content: space-between;
-      width: calc(100% - 2 * var(--space-md));
-      border-radius: var(--space-sm);
-    }
+  @media (min-width: 60.0625rem) {
+    .burger { display: none; }
+    .mnav { display: none; }
   }
 
   @media (max-width: 40rem) {
@@ -514,26 +794,38 @@ const schemaOrg = {
 </style>
 
 <script>
-  const hamburger = document.querySelector('.nav-hamburger') as HTMLButtonElement | null;
-  const mobileMenu = document.querySelector('.mobile-menu') as HTMLElement | null;
+  const burger = document.getElementById('burger') as HTMLButtonElement | null;
+  const mnav = document.getElementById('mobile-nav') as HTMLElement | null;
 
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', () => {
-      const isOpen = mobileMenu.classList.toggle('is-open');
-      hamburger.setAttribute('aria-expanded', String(isOpen));
-      mobileMenu.setAttribute('aria-hidden', String(!isOpen));
-      hamburger.setAttribute('aria-label', isOpen ? 'Zamknij menu' : 'Otwórz menu');
-      document.body.style.overflow = isOpen ? 'hidden' : '';
+  if (burger && mnav) {
+    const setOpen = (open: boolean) => {
+      mnav.classList.toggle('is-open', open);
+      burger.classList.toggle('is-open', open);
+      burger.setAttribute('aria-expanded', String(open));
+      mnav.setAttribute('aria-hidden', String(!open));
+      burger.setAttribute('aria-label', open ? 'Zamknij menu' : 'Otwórz menu');
+      document.body.style.overflow = open ? 'hidden' : '';
+    };
+
+    burger.addEventListener('click', () => setOpen(!mnav.classList.contains('is-open')));
+
+    // Accordion (submenu rows)
+    mnav.querySelectorAll('.mnav__row--toggle').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.mnav__item');
+        const open = item?.classList.toggle('is-open') ?? false;
+        btn.setAttribute('aria-expanded', String(open));
+      });
     });
 
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('is-open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        mobileMenu.setAttribute('aria-hidden', 'true');
-        hamburger.setAttribute('aria-label', 'Otwórz menu');
-        document.body.style.overflow = '';
-      });
+    // Close on any navigational link click
+    mnav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => setOpen(false));
+    });
+
+    // Escape closes the menu
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mnav.classList.contains('is-open')) setOpen(false);
     });
   }
 </script>

@@ -1,0 +1,769 @@
+---
+import KnowledgeArticleLayout from "../../../layouts/KnowledgeArticleLayout.astro";
+import FaqAccordion from "../../../components/FaqAccordion.astro";
+import CalloutBox from "../../../components/CalloutBox.astro";
+import { articleSchema, speakableSchema } from "../../../utils/schema";
+
+const toc = [
+  { id: "czym-jest",       label: "Czym jest interim management" },
+  { id: "kiedy-ma-sens",   label: "Kiedy interim management ma sens" },
+  { id: "jak-wyglada",     label: "Jak wygląda współpraca" },
+  { id: "interim-vs-etat", label: "Interim vs zatrudnienie na etat" },
+  { id: "czego-oczekiwac", label: "Czego oczekiwać od managera" },
+  { id: "faq",             label: "FAQ" },
+];
+
+const whenCards = [
+  {
+    title: "Nagłe odejście kluczowego managera",
+    text: "Dyrektor logistyki odszedł z dnia na dzień. Rekrutacja następcy potrwa 3-4 miesiące. Operacja nie może stać. Interim manager wchodzi natychmiast i utrzymuje ciągłość.",
+  },
+  {
+    title: "Kryzys operacyjny",
+    text: "Magazyn sie koruje, koszty rosną, klienci dzwonią o opóźnienia. Potrzebujesz kogoś, kto wejdzie, zdiagnozuje w 48 godzin co sie dzieje i zacznie gasić pożary.",
+  },
+  {
+    title: "Restrukturyzacja lub naprawa",
+    text: "Przeprowadzasz trudne zmiany organizacyjne w logistyce: redukcje, zmiana modelu operacyjnego, reorganizacja procesów. Interim manager prowadzi projekt z doświadczeniem z dziesiątek podobnych wdrożeń.",
+  },
+  {
+    title: "Wdrożenie dużej zmiany",
+    text: "Relokacja, wdrożenie WMS, automatyzacja, zmiana operatora 3PL — zmiany wymagające kompetencji zarządczych, których nie masz wewnątrz na czas projektu.",
+  },
+  {
+    title: "Integracja po fuzji lub przejęciu",
+    text: "Przejmujesz spółkę z własną logistyką. Trzeba zintegrować dwie organizacje, dwa systemy, dwa sposoby pracy — bez przestoju operacji.",
+  },
+  {
+    title: "Kompetencje na czas, nie na lata",
+    text: "Potrzebujesz doświadczonego managera na 4-6 miesięcy, żeby przeprowadzić konkretny projekt. Stały etat jest nieopłacalny i ryzykowny.",
+  },
+];
+
+const processSteps = [
+  {
+    num: "01",
+    title: "Szybka diagnoza sytuacji",
+    text: "W pierwszych 48-72 godzinach interim manager zapoznaje sie z sytuacją: rozmowy z kluczowymi osobami, analiza dostępnych danych, obserwacja operacji. Wynikiem jest wstępna ocena priorytetów i plan działania.",
+  },
+  {
+    num: "02",
+    title: "Ustalenie celów i zakresu",
+    text: "Wspólnie z zarządem definiujemy konkretne, mierzalne cele: co ma być osiągnięte, w jakim czasie i jak zmierzymy sukces. To moment, który eliminuje nieporozumienia i daje jasną podstawę do rozliczenia.",
+  },
+  {
+    num: "03",
+    title: "Wejście i stabilizacja",
+    text: "Interim manager przejmuje stery operacyjne w uzgodnionym zakresie. Priorytetem jest szybka stabilizacja: identyfikacja najpilniejszych problemów, gaszenie pożarów, przywrócenie płynności operacyjnej i zbudowanie zaufania zespołu.",
+  },
+  {
+    num: "04",
+    title: "Realizacja celów naprawczych",
+    text: "Po stabilizacji następuje realizacja celów długoterminowych: restrukturyzacja procesów, redukcja kosztów, wdrożenie zmian, osiąganie KPI. Interim manager zarządza projektem i zespołem aż do osiągnięcia założonych wskaźników.",
+  },
+  {
+    num: "05",
+    title: "Przygotowanie do przekazania",
+    text: "Na 4-6 tygodni przed zakończeniem współpracy interim manager aktywnie przygotowuje organizację do przejęcia sterów: dokumentuje procesy, szkoli następcę lub stały zespół, porządkuje struktury odpowiedzialności.",
+  },
+  {
+    num: "06",
+    title: "Płynne przekazanie",
+    text: "Zakończenie współpracy jest zaplanowane i nadzorowane. Organizacja nie traci wiedzy ani ciągłości operacyjnej. Interim manager jest dostępny przez uzgodniony czas po formalnym zakończeniu.",
+  },
+];
+
+const comparisonRows = [
+  {
+    feature: "Czas uruchomienia",
+    interim: "Kilka dni",
+    etat: "2-4 miesiące rekrutacji",
+  },
+  {
+    feature: "Koszt",
+    interim: "OPEX na czas projektu",
+    etat: "Stały koszt + rekrutacja + benefity",
+  },
+  {
+    feature: "Ryzyko",
+    interim: "Brak ryzyka błędnego zatrudnienia",
+    etat: "Ryzyko kosztownej pomyłki rekrutacyjnej",
+  },
+  {
+    feature: "Doświadczenie",
+    interim: "Manager z wielu wdrożeń w różnych organizacjach",
+    etat: "Ograniczone do własnej organizacji",
+  },
+  {
+    feature: "Obiektywizm",
+    interim: "Niezależne spojrzenie bez firmowej polityki",
+    etat: "Uwikłanie w wewnętrzne relacje",
+  },
+  {
+    feature: "Elastyczność",
+    interim: "Skalowanie zaangażowania wg potrzeb",
+    etat: "Sztywny etat",
+  },
+];
+
+const expectList = [
+  "Doświadczenie z wielu wdrożeń i organizacji — wzorce, które działają w różnych kontekstach",
+  "Zdolność do szybkiej diagnozy — trafna ocena sytuacji w 48-72 godziny bez rozległego onboardingu",
+  "Umiejętność zarządzania trudnym zespołem w warunkach zmiany i stresu",
+  "Nastawienie na wynik i przekazanie — nie na budowanie pozycji ani zależności",
+  "Transparentna komunikacja z zarządem i raportowanie według ustalonych KPI",
+  "Zdolność do transferu wiedzy — organizacja po wyjściu managera powinna działać lepiej bez niego",
+];
+
+const faqs = [
+  {
+    q: "Czym różni sie interim manager od konsultanta?",
+    a: "Konsultant analizuje i rekomenduje — a decyzje i ich realizację pozostawia organizacji. Interim manager przejmuje realne stery operacyjne: zarządza zespołem, podejmuje decyzje i odpowiada za wyniki. Działa wewnątrz organizacji, nie z zewnątrz. W logistyce ta różnica jest szczególnie istotna: w kryzysie operacyjnym potrzebujesz kogoś, kto wejdzie i zarządza — nie kogoś, kto pisze raporty.",
+  },
+  {
+    q: "Jak szybko interim manager może wejść do firmy?",
+    a: "W sytuacjach kryzysowych jesteśmy w stanie zacząć w ciągu kilku dni — po wstępnej rozmowie i ustaleniu zakresu. To zasadnicza przewaga nad rekrutacją, która trwa miesiące. Pierwsze 48-72 godziny to diagnoza; w ciągu pierwszego tygodnia manager jest już operacyjnie zaangażowany.",
+  },
+  {
+    q: "Ile kosztuje interim management w logistyce?",
+    a: "Model rozliczeń jest elastyczny: dzienny lub miesięczny stawka, czasem z komponentem success fee powiązanym z osiągniętymi celami. Koszt jest wyższy niż ekwiwalent etatu miesięcznie, ale nie generuje kosztów stałych (rekrutacja, benefity, odprawy) i ogranicza sie do czasu rzeczywistego zaangażowania. Dla wielu firm jest tańszy w całkowitym rachunku niż miesiące niesprawnej operacji bez właściwego zarządzania.",
+  },
+  {
+    q: "Na jak długo angażuje sie interim managera?",
+    a: "Od kilku tygodni (gaszenie konkretnego pożaru, zarządzanie kryzysowe) po 6-12 miesięcy (restrukturyzacja, wdrożenie dużej zmiany, integracja po fuzji). Zakres i czas ustalamy na starcie i elastycznie dopasowujemy — nie ma sensu utrzymywać zaangażowania dłużej niż jest potrzebne.",
+  },
+  {
+    q: "Czy interim manager zarządza zespołem czy tylko doradza?",
+    a: "Zarządza. To fundamentalna cecha modelu interim: manager przejmuje realne stery w uzgodnionym zakresie — kieruje zespołem, podejmuje decyzje operacyjne i odpowiada za KPI. Nie jest obserwatorem ani doradcą z zewnątrz. Działa jako część Twojej organizacji na czas projektu, z pełnym zakresem kompetencji zarządczych.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const schemaArticle = articleSchema({
+  headline: "Interim Management w logistyce — kiedy warto wpuścić managera na czas określony",
+  description: "Interim management w logistyce: kiedy czasowe wsparcie zarządcze ma sens, jak wygląda współpraca i czym różni sie od zatrudnienia na etat. Praktyczny przewodnik dla zarządów.",
+  url: "/pl/wiedza/interim-management-logistyka",
+  datePublished: "2026-06-18",
+  dateModified: "2026-06-18",
+  inLanguage: "pl-PL",
+  image: "/knowledge/interim-management.webp",
+});
+
+const schemaSpeakable = speakableSchema("/pl/wiedza/interim-management-logistyka", [
+  "[data-speakable='headline']",
+  "[data-speakable='summary']",
+]);
+---
+
+<KnowledgeArticleLayout
+  title="Interim Management w logistyce — kiedy warto i jak to działa | Vologis"
+  description="Interim management w logistyce: kiedy czasowe wsparcie zarządcze ma sens, jak wygląda współpraca i czym różni sie od zatrudnienia na etat. Praktyczny przewodnik dla zarządów."
+  canonical="https://vologis.com/pl/wiedza/interim-management-logistyka"
+  heroImage="/knowledge/interim-management.webp"
+  category="Wiedza"
+  readTime="8–10 min"
+  updatedAt="czerwiec 2026"
+  datePublished="2026-06-18"
+  dateModified="2026-06-18"
+  h1="Interim Management w logistyce — kiedy warto wpuścić managera na czas określony"
+  lead="Gdy dyrektor logistyki odchodzi z dnia na dzień, gdy operacje wpadają w kryzys albo gdy firma przechodzi restrukturyzację — rekrutacja na etat trwa zbyt długo, a problemy nie czekają. Interim management to odpowiedź: doświadczony manager wchodzi w struktury firmy na czas określony, stabilizuje sytuację i realizuje konkretne cele. Ten artykuł wyjaśnia, kiedy ten model ma sens, jak wygląda współpraca i czym różni sie od zatrudnienia na stałe."
+  toc={toc}
+  ctaPrimaryLabel="Potrzebuję wsparcia teraz"
+  ctaSecondary={{ label: "Dowiedz sie więcej o interim", href: "/pl/uslugi/interim-management" }}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaArticle)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaSpeakable)} />
+
+  <!-- ─── 1. Czym jest interim management ─────────────────── -->
+  <section class="s" id="czym-jest" aria-labelledby="h-czym-jest">
+    <h2 class="h2" id="h-czym-jest">Czym jest interim management w logistyce?</h2>
+
+    <p class="body">
+      Interim management to czasowe objęcie roli zarządczej na poziomie C-level lub kierowniczym przez zewnętrznego, doświadczonego managera. Kluczowa różnica w stosunku do konsultanta: interim manager nie doradza z boku — przejmuje realne stery, zarządza zespołem, podejmuje decyzje i odpowiada za wyniki. Działa jako część organizacji, ale na czas określony i z konkretnym zakresem.
+    </p>
+    <p class="body">
+      W logistyce najczęściej oznacza to tymczasowe pełnienie funkcji Dyrektora Logistyki, Dyrektora Operacyjnego, Kierownika Magazynu lub Menedżera ds. Łańcucha Dostaw. Zakres zależy od sytuacji — od stabilizacji konkretnej operacji po nadzorowanie całego działu logistyki przez kilka miesięcy.
+    </p>
+    <p class="body">
+      Model ten jest popularny w krajach z dojrzałymi rynkami zarządzania operacyjnego (Niemcy, Wielka Brytania, Holandia) i coraz szerzej stosowany w Polsce, szczególnie w firmach produkcyjnych, dystrybucyjnych i logistycznych.
+    </p>
+
+    <div class="three-q">
+      <p class="three-q__label">Trzy cechy odróżniające interim managera od konsultanta:</p>
+      <ol class="three-q__list">
+        <li><strong>Przejmuje realne stery</strong> — zarządza zespołem, podejmuje decyzje operacyjne</li>
+        <li><strong>Odpowiada za konkretne KPI</strong> — nie za raport, ale za wynik</li>
+        <li><strong>Transferuje wiedzę</strong> — wychodzi i zostawia organizację sprawniejszą niż zastał</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ─── 2. Kiedy ma sens ─────────────────────────────────── -->
+  <section class="s" id="kiedy-ma-sens" aria-labelledby="h-kiedy-ma-sens">
+    <h2 class="h2" id="h-kiedy-ma-sens">Kiedy interim management ma sens — sytuacje, w których warto</h2>
+
+    <p class="body">
+      Nie każda sytuacja wymaga interim managera. Jest kilka kontekstów, w których ten model daje wyraźną przewagę nad innymi rozwiązaniami.
+    </p>
+
+    <div class="when-grid">
+      {whenCards.map((card) => (
+        <div class="when-card">
+          <svg class="check-ico" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m4 10.5 4 4 8-9" />
+          </svg>
+          <div>
+            <p class="when-card__title">{card.title}</p>
+            <p class="when-card__text">{card.text}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="inline-cta">
+      <p class="inline-cta__text">
+        Masz kryzys operacyjny lub lukę na kluczowym stanowisku? Interim manager może wejść w ciągu kilku dni, ustabilizować sytuację i zrealizować cele naprawcze.
+      </p>
+      <a href="/pl/kontakt" class="inline-cta__btn">
+        Potrzebuję wsparcia →
+      </a>
+    </div>
+  </section>
+
+  <!-- ─── 3. Jak wygląda współpraca ───────────────────────── -->
+  <section class="s" id="jak-wyglada" aria-labelledby="h-jak-wyglada">
+    <h2 class="h2" id="h-jak-wyglada">Jak wygląda współpraca krok po kroku?</h2>
+
+    <p class="body">
+      Każde angażowanie interim managera jest inne, ale schemat współpracy ma powtarzalną strukturę.
+    </p>
+
+    <div class="steps">
+      {processSteps.map((step, i) => (
+        <div class="step">
+          <div class="step__rail">
+            <span class="step__badge tnum" aria-label={`Krok ${step.num}`}>{step.num}</span>
+            {i < processSteps.length - 1 && <span class="step__line" aria-hidden="true" />}
+          </div>
+          <div class="step__body">
+            <h3 class="step__title">{step.title}</h3>
+            <p class="step__text">{step.text}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ─── 4. Interim vs etat ──────────────────────────────── -->
+  <section class="s" id="interim-vs-etat" aria-labelledby="h-vs-etat">
+    <h2 class="h2" id="h-vs-etat">Interim management vs zatrudnienie na etat — kiedy który model wygrywa</h2>
+
+    <p class="body">
+      Rekrutacja stałego pracownika na poziomie C-level jest właściwym rozwiązaniem wtedy, gdy mamy czas, gdy potrzeba kompetencji na długie lata i gdy organizacja jest stabilna. Interim management wygrywa w sytuacjach, gdzie czas, elastyczność i doświadczenie operacyjne mają wyższy priorytet.
+    </p>
+
+    <div class="cmp" role="table" aria-label="Porównanie interim management vs rekrutacja na etat">
+      <div class="cmp__head" role="row">
+        <span class="cmp__cell cmp__cell--feat" role="columnheader">Kryterium</span>
+        <span class="cmp__cell cmp__cell--a" role="columnheader">Interim Management</span>
+        <span class="cmp__cell cmp__cell--b" role="columnheader">Rekrutacja na etat</span>
+      </div>
+      {comparisonRows.map((row) => (
+        <div class="cmp__row" role="row">
+          <span class="cmp__cell cmp__cell--feat" role="rowheader">{row.feature}</span>
+          <span class="cmp__cell cmp__cell--a cmp__cell--body" role="cell">{row.interim}</span>
+          <span class="cmp__cell cmp__cell--b cmp__cell--body" role="cell">{row.etat}</span>
+        </div>
+      ))}
+    </div>
+
+    <CalloutBox>
+      Interim management nie jest alternatywą dla stałego etatu — jest alternatywą dla braku odpowiednich kompetencji wtedy, gdy ich brakuje i czas jest kluczowy. Dobrze przeprowadzony interim management zazwyczaj kończy sie rekrutacją stałego następcy na ustabilizowaną organizację.
+    </CalloutBox>
+  </section>
+
+  <!-- ─── 5. Czego oczekiwać ──────────────────────────────── -->
+  <section class="s" id="czego-oczekiwac" aria-labelledby="h-oczekiwac">
+    <h2 class="h2" id="h-oczekiwac">Czego oczekiwać od dobrego interim managera logistyki?</h2>
+
+    <p class="body">
+      Nie każdy doświadczony manager logistyki nadaje sie do pracy w modelu interim. To specyficzna rola, wymagająca specyficznych cech.
+    </p>
+
+    <ol class="prep-list" role="list">
+      {expectList.map((item) => (
+        <li class="prep-item">{item}</li>
+      ))}
+    </ol>
+  </section>
+
+  <!-- ─── 6. FAQ ───────────────────────────────────────────── -->
+  <section class="s" id="faq" aria-labelledby="h-faq">
+    <h2 class="h2" id="h-faq">FAQ — najczęściej zadawane pytania</h2>
+    <FaqAccordion items={faqs} />
+  </section>
+
+  <!-- ─── Related links ────────────────────────────────────── -->
+  <section class="s" id="powiazane" aria-label="Powiązane usługi">
+    <p class="related-label">Powiązane usługi Vologis</p>
+    <div class="related-grid">
+      <a class="related-card" href="/pl/uslugi/interim-management">
+        <span class="related-card__title">Interim Management</span>
+        <span class="related-card__desc">Czasowe wsparcie zarządcze w logistyce na poziomie C-level — od zaraz.</span>
+        <span class="related-card__arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="related-card" href="/pl/uslugi/doradztwo-operacyjne">
+        <span class="related-card__title">Doradztwo operacyjne i audyt</span>
+        <span class="related-card__desc">Identyfikacja wąskich gardeł, optymalizacja procesów i quick wins.</span>
+        <span class="related-card__arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ─── CTA końcowe ──────────────────────────────────────── -->
+  <div class="end-cta">
+    <h2 class="end-cta__h2">Masz kryzys w logistyce albo lukę zarządczą?</h2>
+    <p class="end-cta__text">
+      Im szybciej wejdziemy, tym mniej kosztuje stabilizacja. Skontaktuj sie — powiemy wprost czy interim management ma sens w Twojej sytuacji i jak moglibyśmy pomóc.
+    </p>
+    <a href="/pl/kontakt" class="end-cta__btn">
+      Potrzebuję wsparcia teraz →
+    </a>
+  </div>
+</KnowledgeArticleLayout>
+
+<style>
+  /* ─── Section shell ─────────────────────────────────────── */
+  .s {
+    padding-block: var(--space-2xl);
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .s:first-of-type {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    color: var(--color-ink);
+    margin-bottom: var(--space-lg);
+  }
+
+  .body {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.75;
+    margin-bottom: var(--space-md);
+  }
+
+  .check-ico {
+    flex-shrink: 0;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-top: 0.15rem;
+    color: var(--color-blue);
+  }
+
+  /* ─── Three-q box ───────────────────────────────────────── */
+  .three-q {
+    margin-top: var(--space-lg);
+    border: 1px solid var(--color-blue);
+    border-radius: var(--radius-lg);
+    background: var(--color-blue-tint);
+    padding: var(--space-lg) var(--space-xl);
+  }
+
+  .three-q__label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    margin-bottom: var(--space-md);
+  }
+
+  .three-q__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding-left: var(--space-lg);
+  }
+
+  .three-q__list li {
+    font-size: var(--text-base);
+    color: var(--color-ink);
+    line-height: 1.6;
+  }
+
+  /* ─── When-cards grid ───────────────────────────────────── */
+  .when-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+
+  .when-card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    background: var(--color-paper);
+    transition: border-color var(--dur-micro) var(--ease-out);
+  }
+
+  .when-card:hover { border-color: var(--color-blue); }
+
+  .when-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--color-ink);
+    margin-bottom: var(--space-2xs);
+  }
+
+  .when-card__text {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.55;
+  }
+
+  /* ─── Inline CTA ────────────────────────────────────────── */
+  .inline-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-lg);
+    background: var(--color-paper-dark);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg) var(--space-xl);
+    flex-wrap: wrap;
+  }
+
+  .inline-cta__text {
+    font-size: var(--text-base);
+    color: var(--color-muted-on-dark);
+    line-height: 1.6;
+    flex: 1;
+    min-width: 180px;
+  }
+
+  .inline-cta__btn {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-pill);
+    background: var(--color-accent);
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background var(--dur-micro) var(--ease-out);
+    flex-shrink: 0;
+  }
+
+  .inline-cta__btn:hover { background: var(--color-accent-hover); }
+
+  /* ─── Process timeline ──────────────────────────────────── */
+  .steps {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 2.75rem 1fr;
+    gap: var(--space-lg);
+  }
+
+  .step__rail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step__badge {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    flex-shrink: 0;
+    border-radius: var(--radius-pill);
+    background: var(--color-ink);
+    color: var(--color-ink-on-dark);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--text-sm);
+  }
+
+  .step__line {
+    width: 2px;
+    flex: 1;
+    min-height: var(--space-lg);
+    background: var(--color-rule);
+    margin-block: var(--space-xs);
+  }
+
+  .step__body {
+    padding-bottom: var(--space-xl);
+  }
+
+  .step:last-child .step__body { padding-bottom: 0; }
+
+  .step__title {
+    font-family: var(--font-display);
+    font-size: var(--text-md);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: var(--color-ink);
+    margin-bottom: var(--space-sm);
+    padding-top: var(--space-2xs);
+  }
+
+  .step__text {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.7;
+  }
+
+  /* ─── Comparison table ──────────────────────────────────── */
+  .cmp {
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--color-paper);
+    margin-top: var(--space-lg);
+  }
+
+  .cmp__head,
+  .cmp__row {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1.5fr;
+    border-bottom: 1px solid var(--color-rule);
+  }
+
+  .cmp__row:last-child { border-bottom: none; }
+
+  .cmp__cell {
+    display: flex;
+    align-items: flex-start;
+    padding: var(--space-md) var(--space-lg);
+    font-size: var(--text-sm);
+    line-height: 1.55;
+  }
+
+  .cmp__head .cmp__cell {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--text-sm);
+    align-items: center;
+    padding-block: var(--space-md);
+  }
+
+  .cmp__head { background: var(--color-paper-dark); }
+
+  .cmp__cell--feat {
+    font-weight: 600;
+    color: var(--color-ink);
+    background: var(--color-paper-2);
+  }
+
+  .cmp__head .cmp__cell--feat {
+    background: var(--color-paper-dark-2);
+    color: var(--color-ink-on-dark);
+  }
+
+  .cmp__cell--a {
+    color: var(--color-ink);
+    border-left: 2px solid var(--color-secondary);
+  }
+
+  .cmp__head .cmp__cell--a {
+    color: var(--color-ink-on-dark);
+    border-left-color: var(--color-blue-on-dark);
+  }
+
+  .cmp__cell--b { color: var(--color-muted); }
+  .cmp__head .cmp__cell--b { color: var(--color-muted-on-dark); }
+
+  @media (max-width: 48rem) {
+    .cmp { overflow-x: auto; }
+    .cmp__head, .cmp__row { grid-template-columns: 6rem 11rem 11rem; min-width: 28rem; }
+    .cmp__cell--feat { position: sticky; left: 0; z-index: 1; }
+  }
+
+  /* ─── Prep list ─────────────────────────────────────────── */
+  .prep-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    counter-reset: prep;
+  }
+
+  .prep-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    font-size: var(--text-base);
+    color: var(--color-ink);
+    line-height: 1.6;
+    counter-increment: prep;
+  }
+
+  .prep-item::before {
+    content: counter(prep);
+    display: grid;
+    place-items: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    flex-shrink: 0;
+    border-radius: var(--radius-pill);
+    background: var(--color-blue-tint);
+    color: var(--color-secondary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 700;
+  }
+
+  /* ─── Related links ─────────────────────────────────────── */
+  .related-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-neutral);
+    margin-bottom: var(--space-lg);
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    background: var(--color-paper);
+    text-decoration: none;
+    transition: border-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out);
+  }
+
+  .related-card:hover {
+    border-color: var(--color-blue);
+    transform: translateY(-2px);
+  }
+
+  .related-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+  }
+
+  .related-card__desc {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.55;
+    flex: 1;
+  }
+
+  .related-card__arrow {
+    font-size: var(--text-md);
+    color: var(--color-secondary);
+    transition: transform var(--dur-short) var(--ease-out);
+    align-self: flex-start;
+    margin-top: auto;
+  }
+
+  .related-card:hover .related-card__arrow { transform: translateX(4px); }
+
+  /* ─── Final CTA block ───────────────────────────────────── */
+  .end-cta {
+    margin-top: var(--space-3xl);
+    background: var(--gradient-cta);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl) var(--space-2xl);
+    text-align: center;
+  }
+
+  .end-cta__h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    color: var(--color-ink-on-dark);
+    margin-bottom: var(--space-md);
+  }
+
+  .end-cta__text {
+    font-size: var(--text-base);
+    color: var(--color-muted-on-dark);
+    line-height: 1.7;
+    max-width: 52ch;
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+  }
+
+  .end-cta__btn {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    padding: var(--space-md) var(--space-2xl);
+    border-radius: var(--radius-pill);
+    background: var(--color-accent);
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background var(--dur-micro) var(--ease-out);
+  }
+
+  .end-cta__btn:hover { background: var(--color-accent-hover); }
+
+  /* ─── Responsive ─────────────────────────────────────────── */
+  @media (max-width: 48rem) {
+    .when-grid { grid-template-columns: 1fr; }
+    .related-grid { grid-template-columns: 1fr; }
+
+    .inline-cta {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: var(--space-lg);
+    }
+    .inline-cta__btn { width: 100%; text-align: center; justify-content: center; }
+
+    .end-cta { padding: var(--space-xl) var(--space-lg); }
+    .end-cta__h2 { font-size: var(--text-lg); }
+    .end-cta__btn { width: 100%; text-align: center; }
+  }
+</style>

@@ -1,0 +1,176 @@
+---
+import CalloutBox from "./CalloutBox.astro";
+
+interface Props {
+  number: string;       // "01"–"05"
+  title: string;        // short name (eyebrow)
+  hook: string;         // declarative headline
+  description: string;
+  deliverables: string[];
+  callout: string;
+  reverse?: boolean;    // desktop: content on the right
+}
+
+const { number, title, hook, description, deliverables, callout, reverse = false } = Astro.props;
+---
+
+<article class:list={["pstep", { "pstep--reverse": reverse }]}>
+  <span class="pstep__ghost tnum" aria-hidden="true">{number}</span>
+
+  <div class="pstep__content">
+    <div class="pstep__head">
+      <span class="pstep__badge tnum" aria-hidden="true">{number}</span>
+      <p class="pstep__eyebrow">{title}</p>
+    </div>
+
+    <h3 class="pstep__hook">{hook}</h3>
+    <p class="pstep__desc">{description}</p>
+
+    <p class="pstep__deliv-label">Co dostaje klient:</p>
+    <ul class="pstep__deliv" role="list">
+      {deliverables.map((d) => (
+        <li>
+          <svg class="pstep__check" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg>
+          <span>{d}</span>
+        </li>
+      ))}
+    </ul>
+
+    <CalloutBox>{callout}</CalloutBox>
+  </div>
+</article>
+
+<style>
+  .pstep {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--space-2xl);
+  }
+
+  .pstep + .pstep { margin-top: var(--space-3xl); }
+
+  /* Decorative oversized number sitting in the empty column */
+  .pstep__ghost {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(8rem, 16vw, 13rem);
+    line-height: 0.8;
+    letter-spacing: -0.05em;
+    color: var(--color-ink);
+    opacity: 0.05;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .pstep__content {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  /* Zigzag: even steps put content on the right */
+  .pstep--reverse .pstep__content { grid-column: 2; }
+  .pstep--reverse .pstep__ghost { grid-column: 1; }
+
+  .pstep__head {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .pstep__badge {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    flex-shrink: 0;
+    border-radius: var(--radius-pill);
+    background: var(--color-blue);
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--text-base);
+  }
+
+  .pstep__eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-neutral);
+  }
+
+  .pstep__hook {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--color-ink);
+  }
+
+  .pstep__desc {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.7;
+  }
+
+  .pstep__deliv-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-ink);
+    margin-top: var(--space-2xs);
+  }
+
+  .pstep__deliv {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    list-style: none;
+  }
+
+  .pstep__deliv li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    font-size: var(--text-base);
+    color: var(--color-ink);
+    line-height: 1.5;
+  }
+
+  .pstep__check {
+    flex-shrink: 0;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-top: 0.15rem;
+    color: var(--color-blue);
+  }
+
+  /* ── Mobile: single column, ghost number behind ──── */
+  @media (max-width: 60rem) {
+    .pstep {
+      display: block;
+      position: relative;
+    }
+    .pstep + .pstep { margin-top: var(--space-2xl); }
+
+    .pstep__ghost {
+      position: absolute;
+      top: -1.5rem;
+      right: 0;
+      font-size: 7rem;
+    }
+    .pstep__content { position: relative; }
+  }
+</style>

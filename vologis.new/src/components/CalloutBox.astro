@@ -1,0 +1,16 @@
+---
+/** Insight / differentiator callout — blue left border, soft tint background. */
+---
+<aside class="callout"><slot /></aside>
+
+<style>
+  .callout {
+    border-left: 4px solid var(--color-blue);
+    background: var(--color-blue-tint);
+    padding: var(--space-md) var(--space-lg);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-size: var(--text-base);
+    color: var(--color-ink);
+    line-height: 1.6;
+  }
+</style>

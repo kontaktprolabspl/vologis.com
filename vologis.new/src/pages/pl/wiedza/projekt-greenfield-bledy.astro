@@ -1,0 +1,893 @@
+---
+import KnowledgeArticleLayout from "../../../layouts/KnowledgeArticleLayout.astro";
+import FaqAccordion from "../../../components/FaqAccordion.astro";
+import CalloutBox from "../../../components/CalloutBox.astro";
+import { articleSchema, speakableSchema } from "../../../utils/schema";
+
+const toc = [
+  { id: "blad-lokalizacji",      label: "Blad lokalizacji" },
+  { id: "bledy-layoutu",         label: "Bledy w projektowaniu layoutu" },
+  { id: "automatyzacja-bledy",   label: "Bledy w automatyzacji" },
+  { id: "brak-koordynacji",      label: "Brak koordynacji projektu" },
+  { id: "plan-uruchomienia",     label: "Brak planu uruchomienia" },
+  { id: "jak-uniknac",           label: "Jak uniknac tych bledow" },
+  { id: "faq",                   label: "FAQ" },
+];
+
+const scopeCards = [
+  {
+    title: "Projektowanie bez analizy profilu rotacji",
+    text: "Layout musi wynikac z danych o rotacji asortymentu (ABC/XYZ). Produkty kompletowane najczesciej powinny byc najblizej strefy kompletacji. Projektowanie bez tej analizy gwarantuje zbedne kilometry przebiegow dziennie.",
+  },
+  {
+    title: "Przewymiarowane strefy dla aktualnego wolumenu",
+    text: "Zbyt duze strefy przyjec lub wysylki to zamrozona powierzchnia i utrudniony przeplyw. Za male strefy to waskie gardlo od pierwszego dnia szczytu. Strefy musza byc projektowane pod prognozy, nie pod obecny stan.",
+  },
+  {
+    title: "Brak elastycznosci na wzrost",
+    text: "Magazyn projektowany pod dzisiejszy wolumen bedzie niedostosowany za 3-5 lat przy wzroscie. Dobry layout uwzglednia mozliwosc poszerzenia stref, dodania regalow i zmiany ukladu bez wylaczania operacji.",
+  },
+  {
+    title: "Ignorowanie ergonomii i bezpieczenstwa",
+    text: "Ciasne korytarze, krzyzujace sie trasy wozkow i pieszych, brak stref buforowych — to zrodlo wypadkow, przestojow i problemow z inspekcja pracy. Ergonomia wplywa tez na wydajnosc i rotacje pracownikow.",
+  },
+  {
+    title: "Zly dobor systemu regalowego",
+    text: "Regaly konwencjonalne, dryve-in, push-back, srodkowego dostepu — kazdy ma inne zastosowanie i prog oplacalnosci. Bledny dobor oznacza nieoptymalne wykorzystanie powierzchni lub ograniczenia operacyjne przez lata.",
+  },
+  {
+    title: "Layout bez integracji z systemem WMS",
+    text: "Uklad stref i lokalizacji musi byc zaprojektowany razem z logika systemu WMS. Layout, ktory nie wspolgra z logika slottingu i kompletacji w systemie, generuje bledy i nieefektywnosci niemozliwe do wyeliminowania bez fizycznej zmiany ukladu.",
+  },
+];
+
+const automationWarnings = [
+  "Zakup automatyki pod wolumen szczytowy przy niskiej bazie",
+  "Brak analizy TCO (Total Cost of Ownership) przez caly cykl zycia systemu",
+  "Wybor dostawcy wylacznie na podstawie ceny oferty, bez oceny kosztow utrzymania",
+  "Brak planu rozbudowy systemu przy wzroscie wolumenu",
+  "Ignorowanie kompetencji do utrzymania automatyki po odejsciu integratora",
+];
+
+const checklistItems = [
+  "Niezalezna analiza lokalizacji z porownaniem min. 3 alternatyw przed zakupem dzialki",
+  "Masterplan z analiza rotacji, kalkulacja ROI i scenariuszami wolumenu",
+  "Niezalezny dobor dostawcow regalow, automatyki i WMS — bez konfliktu interesow",
+  "Jeden partner koordynujacy calosc projektu z perspektywy logistyczno-operacyjnej",
+  "Plan uruchomienia z harmonogramem, rekrutacja i testami systemowymi",
+  "KPI operacyjne zdefiniowane przed startem — nie po",
+  "Budzet na optymalizacje po uruchomieniu — pierwsze 3-6 miesiecy to czas intensywnych korekt",
+];
+
+const prepItems = [
+  "Harmonogram uruchomienia — kto, co, kiedy, jakie zasoby",
+  "Plan rekrutacji i szkolenia zespolu z wyprzedzeniem minimum 6-8 tygodni",
+  "Plan testow systemowych i integracji WMS przed przejjeciem towaru",
+  "Dane pilotazowe do konfiguracji slottingu i kompletacji w WMS",
+  "Procedury operacyjne gotowe przed pierwszym dniem pracy",
+  "Plan eskalacji dla awarii i problemow w pierwszych tygodniach",
+  "KPI uruchomienia z harmonogramem przeglodow tygodniowych",
+];
+
+const faqs = [
+  {
+    q: "Ile trwa projekt Greenfield od dzialki do uruchomienia?",
+    a: "Pelny projekt od analizy przedinwestycyjnej do osiagniecia pelnej gotowosci operacyjnej trwa zwykle 12-24 miesiace, w zaleznosci od skali obiektu, poziomu automatyzacji i tempa realizacji budowlanej. Sam etap projektowania i masterplanu to 4-10 tygodni. Etap budowlany — zazwyczaj 9-15 miesiecy. Uruchomienie i osiagniecie zakladanych KPI — kolejne 2-4 miesiace.",
+  },
+  {
+    q: "Kiedy zaangazowac doradce w projekt Greenfield?",
+    a: "Jak najwczesniej — najlepiej przed wyborem dzialki. Wplyw doradcy na koszt projektu jest najwiekszy na poczatku: wybor lokalizacji, masterplan i decyzje o automatyzacji determinuja koszty eksploatacji przez cala dekade. Zaangazowanie doradcy po podpisaniu umowy na budowe oznacza, ze najwazniejsze decyzje sa juz podjete.",
+  },
+  {
+    q: "Jak wybrac lokalizacje pod magazyn?",
+    a: "Lokalizacja powinna wynikac z wielokryterialnej analizy: dostepnosc transportowa, rynek pracy (ilosc i koszt), odleglosc od klientow i dostawcow, koszty energii, potencjal rozbudowy, ryzyko srodowiskowe. Cena dzialki to jeden z mniej waznych parametrow w rachunku calkowitego kosztu eksploatacji. Warto zamowic niezalezna analize porownawcza kilku lokalizacji z twardymi danymi, zanim podejmiesz decyzje o zakupie.",
+  },
+  {
+    q: "Czy warto inwestowac w automatyke w nowym magazynie?",
+    a: "Zalezy od skali, wolumenu i stabilnosci operacji. Automatyka zwraca sie przy odpowiednim i stabilnym wolumenie — zazwyczaj powyzej 500-1000 kompletacji na godzine. Ponizej tego progu inwestycja generuje wyzszy koszt obslugi zamowienia niz operacja manualna z odpowiednio zaprojektowanym layoutem. Kluczem jest niezalezna kalkulacja ROI dla roznych scenariuszy wolumenu, z uwzglednieniem kosztow utrzymania systemu przez caly cykl zycia.",
+  },
+  {
+    q: "Co jest najczestszym bledem w projektach Greenfield?",
+    a: "Brak jednego partnera odpowiedzialnego za koordynacje calosci — to ten blad najczesciej przekklada sie na opoznienia, przekroczenia budzetu i obiekty, ktore od pierwszego dnia maja wbudowane nieefektywnosci. Kazdy dostawca optymalizuje wlasny zakres; nikt nie odpowiada za spojnosc calosci. Drugi najczestszy blad to wybor lokalizacji na podstawie ceny dzialki zamiast analizy calkowitego kosztu operacyjnego.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const schemaArticle = articleSchema({
+  headline: "Anatomia projektu Greenfield — najdrozsze bledy, ktore zostaja z firma na dekade",
+  description: "Budowa magazynu lub centrum dystrybucyjnego od podstaw: najczestsze bledy przy wyborze lokalizacji, projektowaniu layoutu i automatyzacji, ktore kosztuja przez lata eksploatacji.",
+  url: "/pl/wiedza/projekt-greenfield-bledy",
+  datePublished: "2026-06-18",
+  dateModified: "2026-06-18",
+  inLanguage: "pl-PL",
+  image: "/knowledge/greenfield-bledy.webp",
+});
+
+const schemaSpeakable = speakableSchema("/pl/wiedza/projekt-greenfield-bledy", [
+  "[data-speakable='headline']",
+  "[data-speakable='summary']",
+]);
+---
+
+<KnowledgeArticleLayout
+  title="Projekt Greenfield — najczęstsze i najdroższe błędy inwestycyjne | Vologis"
+  description="Budowa magazynu lub centrum dystrybucyjnego od podstaw: najczęstsze błędy przy wyborze lokalizacji, projektowaniu layoutu i automatyzacji, które kosztują przez lata eksploatacji."
+  canonical="https://vologis.com/pl/wiedza/projekt-greenfield-bledy"
+  heroImage="/knowledge/greenfield-bledy.webp"
+  category="Wiedza"
+  readTime="9–11 min"
+  updatedAt="czerwiec 2026"
+  datePublished="2026-06-18"
+  dateModified="2026-06-18"
+  h1="Anatomia projektu Greenfield — najdroższe błędy, które zostają z firmą na dekadę"
+  lead="Projekt Greenfield — budowa magazynu, centrum dystrybucyjnego lub zakładu od podstaw — to jedna z najbardziej kapitałochłonnych decyzji w firmie. Błędy popełnione na etapie planowania nie znikają po uruchomieniu obiektu. Zostają w kosztach operacyjnych, czasie kompletacji i ograniczeniach rozwoju przez całą, kilkunastoletnią eksploatację. Ten artykuł pokazuje, gdzie najczęściej popełnia się kosztowne błędy i jak ich uniknąć."
+  toc={toc}
+  ctaPrimaryLabel="Omów swój projekt"
+  ctaSecondary={{ label: "Poznaj nasze podejście do Greenfield", href: "/pl/uslugi/projekty-greenfield" }}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaArticle)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaSpeakable)} />
+
+  <!-- ─── 1. Błąd lokalizacji ──────────────────────────────── -->
+  <section class="s" id="blad-lokalizacji" aria-labelledby="h-lokalizacja">
+    <h2 class="h2" id="h-lokalizacja">Błąd lokalizacji — najdroższy z możliwych</h2>
+
+    <p class="body">
+      Zła lokalizacja to błąd, który kosztuje przez całą eksploatację obiektu — 15, 20, 30 lat. Wyższe koszty transportu, trudności z rekrutacją, ograniczona dostępność dostawców — każdy z tych czynników przekłada się na realne koszty każdego miesiąca przez dekady. A mimo to wiele firm wybiera działkę głównie na podstawie ceny gruntu — najtańszego z parametrów lokalizacji.
+    </p>
+    <p class="body">
+      Kluczowe kryteria lokalizacji to: dostępność transportowa (autostrady, węzły, granice), rynek pracy w promieniu 30 km (bezrobocie, stawki, dostępność operatorów wózków i pracowników magazynu), koszty energii i mediów, odległość od kluczowych dostawców i odbiorców, strefy ekonomiczne i zachęty inwestycyjne, ryzyko powodzi i katastrof naturalnych. Cena działki to jeden z mniej istotnych czynników w całkowitym rachunku eksploatacji.
+    </p>
+    <p class="body">
+      Przed zakupem działki warto zamówić niezależną analizę lokalizacji — z porównaniem co najmniej 3–5 alternatyw według twardych kryteriów operacyjnych i finansowych. Pomiary dronowe i ortofotomapy dają obiektywny obraz każdej z lokalizacji bez konieczności wielokrotnych wizyt terenowych.
+    </p>
+
+    <div class="three-q">
+      <p class="three-q__label">Trzy pytania, które warto zadać przed wyborem działki:</p>
+      <ol class="three-q__list">
+        <li><strong>Ile kosztuje mnie rocznie różnica w dostępności transportowej między lokalizacją A i B?</strong></li>
+        <li><strong>Czy w promieniu 30 km jest wystarczający rynek pracy dla planowanego zatrudnienia?</strong></li>
+        <li><strong>Jaki jest potencjał rozbudowy obiektu o 30–50% w ciągu 10 lat?</strong></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ─── 2. Błędy layoutu ──────────────────────────────────── -->
+  <section class="s" id="bledy-layoutu" aria-labelledby="h-layout">
+    <h2 class="h2" id="h-layout">Błędy w projektowaniu layoutu magazynu</h2>
+
+    <p class="body">
+      Projekt layoutu magazynu to decyzja, z którą firma żyje przez całą eksploatację obiektu. Każde zamówienie, każdy przebieg kompletatora, każda minuta przestoju przy wąskim gardle — to koszty generowane przez layout. Zły projekt layoutu na 20 000 m² oznacza dziesiątki złotych zmarnowanych na każde skompletowane zamówienie.
+    </p>
+
+    <div class="scope-grid">
+      {scopeCards.map((c) => (
+        <div class="scope-card">
+          <h3 class="scope-card__title">{c.title}</h3>
+          <p class="scope-card__text">{c.text}</p>
+        </div>
+      ))}
+    </div>
+
+    <CalloutBox>
+      Koszt korekty layoutu po uruchomieniu magazynu jest wielokrotnie wyższy niż koszt prawidłowego projektu na etapie planowania. Zainwestuj w masterplan przed pierwszym słupem.
+    </CalloutBox>
+  </section>
+
+  <!-- ─── 3. Błędy automatyzacji ───────────────────────────── -->
+  <section class="s" id="automatyzacja-bledy" aria-labelledby="h-automatyzacja">
+    <h2 class="h2" id="h-automatyzacja">Błędy w dobieraniu automatyki — przewymiarowanie i niedoszacowanie</h2>
+
+    <p class="body">
+      Automatyzacja magazynowa zwraca się przy odpowiednim wolumenie, powtarzalności i stabilności operacji. Instalacja sortera, systemu AutoStore lub linii kompletacyjnej przy zbyt niskim wolumenie to inwestycja, która nie osiągnie progu opłacalności — sprzęt pracuje poniżej zdolności projektowej, a koszty utrzymania i amortyzacji są stałe.
+    </p>
+    <p class="body">
+      Równie kosztowny jest błąd w drugą stronę: niedoszacowanie poziomu automatyzacji. Magazyn projektowany dziś powinien uwzględniać wzrost wolumenu przez 5–10 lat eksploatacji. Dołożenie automatyki do działającego obiektu jest kilkukrotnie droższe i wymaga przestoju lub ograniczenia operacji.
+    </p>
+    <p class="body">
+      Kluczem jest niezależna analiza ROI dla różnych scenariuszy automatyzacji — z uwzględnieniem pesymistycznego i optymistycznego scenariusza wolumenu. I niezależny dobór dostawców: integrator automatyki zawsze sprzeda Ci rozwiązanie, które zarabia dla niego, nie to, które optymalizuje Twój ROI.
+    </p>
+
+    <div class="timeline-box">
+      <p class="timeline-box__label">Typowe błędy przy automatyzacji</p>
+      <ul class="timeline-box__list" role="list">
+        {automationWarnings.map((w) => (
+          <li>{w}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ─── 4. Brak koordynacji ──────────────────────────────── -->
+  <section class="s" id="brak-koordynacji" aria-labelledby="h-koordynacja">
+    <h2 class="h2" id="h-koordynacja">Błąd koordynacji — nikt nie odpowiada za całość</h2>
+
+    <p class="body">
+      Projekt Greenfield angażuje dziesiątki podmiotów jednocześnie: dewelopera, generalnego wykonawcę, dostawcę regałów, integratora automatyki, dostawcę WMS, firmę rekrutacyjną, consultantów BHP, dostawcę instalacji elektrycznych i wielu innych. Każdy z nich patrzy na swój wycinek i optymalizuje własny zakres — niekoniecznie z perspektywą całości.
+    </p>
+    <p class="body">
+      Wynik jest przewidywalny: opóźnienia wynikające z niedosynchronizowanych etapów, problemy na styku między zakresami różnych dostawców, decyzje podjęte w jednym obszarze, które blokują inny, i koszty koordynacji, które spychane są na właściciela projektu. Statystyki mówią, że 30–50% opóźnień w projektach budowlano-logistycznych wynika z braku właściwej koordynacji.
+    </p>
+    <p class="body">
+      Rozwiązaniem jest jeden punkt odpowiedzialności przez cały projekt — partner, który rozumie wszystkie obszary i koordynuje je w spójną całość. Nie jako generalny wykonawca budowlany, ale jako zarządzający projektem od strony logistyczno-operacyjnej.
+    </p>
+
+    <div class="inline-cta">
+      <p class="inline-cta__text">
+        Planujesz inwestycję logistyczną? Im wcześniej zaangażujesz doświadczonego partnera, tym więcej kosztownych błędów uda się uniknąć — szczególnie na etapie lokalizacji i layoutu.
+      </p>
+      <a href="/pl/kontakt" class="inline-cta__btn">
+        Omów swój projekt →
+      </a>
+    </div>
+  </section>
+
+  <!-- ─── 5. Plan uruchomienia ─────────────────────────────── -->
+  <section class="s" id="plan-uruchomienia" aria-labelledby="h-uruchomienie">
+    <h2 class="h2" id="h-uruchomienie">Brak planu uruchomienia i optymalizacji po starcie</h2>
+
+    <p class="body">
+      Częsty błąd: inwestor skupia całą uwagę na projekcie budowlanym i zakupie wyposażenia, a plan uruchomienia operacji traktuje jako coś, co ułoży się samo. Tymczasem rozruch magazynu to projekt sam w sobie: testy systemów, szkolenia, rekrutacja i onboarding kilkudziesięciu lub kilkuset osób, konfiguracja WMS pod realne dane i walidacja procesów. Niedoszacowanie czasu i budżetu na uruchomienie to jeden z najczęstszych powodów opóźnień gotowości operacyjnej.
+    </p>
+    <p class="body">
+      Projekt Greenfield nie kończy się w dniu przekazania kluczy do budynku. Kończy się, gdy operacja osiąga założone wskaźniki — wydajność kompletacji, poziom błędów, koszt obsługi zamówienia. Pierwsze miesiące po uruchomieniu to czas intensywnej optymalizacji, korygowania procesów i dobierania zasobów. Bez planu na ten etap firma jest zdana na improwizację w momencie, gdy każdy dzień opóźnienia kosztuje.
+    </p>
+
+    <ol class="prep-list" role="list">
+      {prepItems.map((item) => (
+        <li class="prep-item">{item}</li>
+      ))}
+    </ol>
+  </section>
+
+  <!-- ─── 6. Jak uniknąć ───────────────────────────────────── -->
+  <section class="s" id="jak-uniknac" aria-labelledby="h-uniknac">
+    <h2 class="h2" id="h-uniknac">Jak uniknąć tych błędów — praktyczna lista kontrolna</h2>
+
+    <p class="body">
+      Większości błędów opisanych w tym artykule można uniknąć przez właściwą sekwencję i zaangażowanie niezależnego partnera na wczesnym etapie. Poniżej lista kontrolna kluczowych elementów.
+    </p>
+
+    <ul class="checklist" role="list">
+      {checklistItems.map((item) => (
+        <li class="checklist__item">
+          <svg class="check-ico" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m4 10.5 4 4 8-9" />
+          </svg>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- ─── 7. FAQ ────────────────────────────────────────────── -->
+  <section class="s" id="faq" aria-labelledby="h-faq">
+    <h2 class="h2" id="h-faq">FAQ — najczęściej zadawane pytania</h2>
+    <FaqAccordion items={faqs} />
+  </section>
+
+  <!-- ─── Related links ────────────────────────────────────── -->
+  <section class="s" id="powiazane" aria-label="Powiązane usługi">
+    <p class="related-label">Powiązane usługi Vologis</p>
+    <div class="related-grid">
+      <a class="related-card" href="/pl/uslugi/projekty-greenfield">
+        <span class="related-card__title">Projekty Greenfield</span>
+        <span class="related-card__desc">Kompleksowe prowadzenie inwestycji logistycznych od działki do uruchomienia operacji.</span>
+        <span class="related-card__arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="related-card" href="/pl/uslugi/uslugi-dronowe">
+        <span class="related-card__title">Usługi dronowe</span>
+        <span class="related-card__desc">Pomiary geodezyjne, ortofotomapy i monitoring budowy zintegrowane z projektem inwestycyjnym.</span>
+        <span class="related-card__arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ─── CTA końcowe ──────────────────────────────────────── -->
+  <div class="end-cta">
+    <h2 class="end-cta__h2">Planujesz inwestycję logistyczną?</h2>
+    <p class="end-cta__text">
+      Vologis prowadzi projekty Greenfield od analizy przedinwestycyjnej do uruchomienia operacji — łącząc doradztwo lokalizacyjne, masterplan, dobór technologii i koordynację realizacji. Im wcześniej wejdziemy, tym więcej błędów uda się uniknąć.
+    </p>
+    <a href="/pl/kontakt" class="end-cta__btn">
+      Omów swój projekt →
+    </a>
+  </div>
+</KnowledgeArticleLayout>
+
+<style>
+  /* ─── Section shell ─────────────────────────────────────── */
+  .s {
+    padding-block: var(--space-2xl);
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .s:first-of-type {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    color: var(--color-ink);
+    margin-bottom: var(--space-lg);
+  }
+
+  .body {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.75;
+    margin-bottom: var(--space-md);
+  }
+
+  /* Shared check icon */
+  .check-ico {
+    flex-shrink: 0;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-top: 0.15rem;
+    color: var(--color-blue);
+  }
+
+  /* ─── Three questions box ───────────────────────────────── */
+  .three-q {
+    margin-top: var(--space-lg);
+    border: 1px solid var(--color-blue);
+    border-radius: var(--radius-lg);
+    background: var(--color-blue-tint);
+    padding: var(--space-lg) var(--space-xl);
+  }
+
+  .three-q__label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    margin-bottom: var(--space-md);
+  }
+
+  .three-q__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding-left: var(--space-lg);
+  }
+
+  .three-q__list li {
+    font-size: var(--text-base);
+    color: var(--color-ink);
+    line-height: 1.6;
+  }
+
+  /* ─── When-cards grid ───────────────────────────────────── */
+  .when-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+
+  .when-card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    background: var(--color-paper);
+    transition: border-color var(--dur-micro) var(--ease-out);
+  }
+
+  .when-card:hover { border-color: var(--color-blue); }
+
+  .when-card__text {
+    font-size: var(--text-sm);
+    color: var(--color-ink);
+    line-height: 1.55;
+  }
+
+  /* ─── Internal CTA strip ────────────────────────────────── */
+  .inline-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-lg);
+    background: var(--color-paper-dark);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg) var(--space-xl);
+    flex-wrap: wrap;
+    margin-top: var(--space-xl);
+  }
+
+  .inline-cta__text {
+    font-size: var(--text-base);
+    color: var(--color-muted-on-dark);
+    line-height: 1.6;
+    flex: 1;
+    min-width: 180px;
+  }
+
+  .inline-cta__btn {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-pill);
+    background: var(--color-accent);
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background var(--dur-micro) var(--ease-out);
+    flex-shrink: 0;
+  }
+
+  .inline-cta__btn:hover { background: var(--color-accent-hover); }
+
+  /* ─── Scope areas ───────────────────────────────────────── */
+  .scope-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+  }
+
+  .scope-card {
+    border: 1px solid var(--color-rule);
+    border-left: 4px solid var(--color-secondary);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    background: var(--color-paper);
+  }
+
+  .scope-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+    margin-bottom: var(--space-sm);
+  }
+
+  .scope-card__text {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.6;
+  }
+
+  /* ─── Process timeline ──────────────────────────────────── */
+  .steps {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 2.75rem 1fr;
+    gap: var(--space-lg);
+  }
+
+  .step__rail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step__badge {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    flex-shrink: 0;
+    border-radius: var(--radius-pill);
+    background: var(--color-ink);
+    color: var(--color-ink-on-dark);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--text-sm);
+  }
+
+  .step__line {
+    width: 2px;
+    flex: 1;
+    min-height: var(--space-lg);
+    background: var(--color-rule);
+    margin-block: var(--space-xs);
+  }
+
+  .step__body {
+    padding-bottom: var(--space-xl);
+  }
+
+  .step:last-child .step__body { padding-bottom: 0; }
+
+  .step__title {
+    font-family: var(--font-display);
+    font-size: var(--text-md);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: var(--color-ink);
+    margin-bottom: var(--space-sm);
+    padding-top: var(--space-2xs);
+  }
+
+  .step__text {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.7;
+  }
+
+  /* ─── Checklist ─────────────────────────────────────────── */
+  .checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+  }
+
+  .checklist__item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    font-size: var(--text-base);
+    color: var(--color-ink);
+    line-height: 1.55;
+  }
+
+  /* ─── Comparison table ──────────────────────────────────── */
+  .cmp {
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--color-paper);
+    margin-top: var(--space-lg);
+  }
+
+  .cmp__head,
+  .cmp__row {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1.5fr;
+    border-bottom: 1px solid var(--color-rule);
+  }
+
+  .cmp__row:last-child { border-bottom: none; }
+
+  .cmp__cell {
+    display: flex;
+    align-items: flex-start;
+    padding: var(--space-md) var(--space-lg);
+    font-size: var(--text-sm);
+    line-height: 1.55;
+  }
+
+  .cmp__head .cmp__cell {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--text-sm);
+    align-items: center;
+    padding-block: var(--space-md);
+  }
+
+  .cmp__head { background: var(--color-paper-dark); }
+
+  .cmp__cell--feat {
+    font-weight: 600;
+    color: var(--color-ink);
+    background: var(--color-paper-2);
+  }
+
+  .cmp__head .cmp__cell--feat {
+    background: var(--color-paper-dark-2);
+    color: var(--color-ink-on-dark);
+  }
+
+  .cmp__cell--a {
+    color: var(--color-ink);
+    border-left: 2px solid var(--color-secondary);
+  }
+
+  .cmp__head .cmp__cell--a {
+    color: var(--color-ink-on-dark);
+    border-left-color: var(--color-blue-on-dark);
+  }
+
+  .cmp__cell--b { color: var(--color-muted); }
+  .cmp__head .cmp__cell--b { color: var(--color-muted-on-dark); }
+
+  @media (max-width: 48rem) {
+    .cmp { overflow-x: auto; }
+    .cmp__head, .cmp__row { grid-template-columns: 6rem 11rem 11rem; min-width: 28rem; }
+    .cmp__cell--feat { position: sticky; left: 0; z-index: 1; }
+  }
+
+  /* ─── Report grid ───────────────────────────────────────── */
+  .report-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--space-sm);
+    margin-top: var(--space-lg);
+  }
+
+  .report-card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-sm);
+    padding: var(--space-md);
+    background: var(--color-paper);
+  }
+
+  .report-card__text {
+    font-size: var(--text-sm);
+    color: var(--color-ink);
+    line-height: 1.5;
+  }
+
+  /* ─── Mistakes list ─────────────────────────────────────── */
+  .mistake-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    counter-reset: mistakes;
+  }
+
+  .mistake-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    font-size: var(--text-base);
+    color: var(--color-ink);
+    line-height: 1.6;
+    counter-increment: mistakes;
+  }
+
+  .mistake-item::before {
+    content: counter(mistakes, decimal-leading-zero);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    color: var(--color-accent);
+    padding-top: 0.25rem;
+    flex-shrink: 0;
+    min-width: 2rem;
+  }
+
+  /* ─── Timeline box ──────────────────────────────────────── */
+  .timeline-box {
+    margin-top: var(--space-lg);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg) var(--space-xl);
+    background: var(--color-paper-2);
+  }
+
+  .timeline-box__label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-neutral);
+    margin-bottom: var(--space-md);
+  }
+
+  .timeline-box__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    list-style: none;
+  }
+
+  .timeline-box__list li {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.6;
+    display: flex;
+    gap: var(--space-sm);
+  }
+
+  .timeline-box__list li::before {
+    content: "—";
+    color: var(--color-neutral);
+    flex-shrink: 0;
+  }
+
+  .timeline-box__list strong { color: var(--color-ink); }
+
+  /* ─── Tag list ──────────────────────────────────────────── */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+  }
+
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-xs) var(--space-md);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-pill);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-ink);
+    background: var(--color-paper);
+  }
+
+  /* ─── Preparation list ──────────────────────────────────── */
+  .prep-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    counter-reset: prep;
+  }
+
+  .prep-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    font-size: var(--text-base);
+    color: var(--color-ink);
+    line-height: 1.6;
+    counter-increment: prep;
+  }
+
+  .prep-item::before {
+    content: counter(prep);
+    display: grid;
+    place-items: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    flex-shrink: 0;
+    border-radius: var(--radius-pill);
+    background: var(--color-blue-tint);
+    color: var(--color-secondary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 700;
+  }
+
+  /* ─── Final CTA block ───────────────────────────────────── */
+  .end-cta {
+    margin-top: var(--space-3xl);
+    background: var(--gradient-cta);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl) var(--space-2xl);
+    text-align: center;
+  }
+
+  .end-cta__h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    color: var(--color-ink-on-dark);
+    margin-bottom: var(--space-md);
+  }
+
+  .end-cta__text {
+    font-size: var(--text-base);
+    color: var(--color-muted-on-dark);
+    line-height: 1.7;
+    max-width: 52ch;
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+  }
+
+  .end-cta__btn {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    padding: var(--space-md) var(--space-2xl);
+    border-radius: var(--radius-pill);
+    background: var(--color-accent);
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background var(--dur-micro) var(--ease-out);
+  }
+
+  .end-cta__btn:hover { background: var(--color-accent-hover); }
+
+  /* ─── Related links ─────────────────────────────────────── */
+  .related-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-neutral);
+    margin-bottom: var(--space-lg);
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    background: var(--color-paper);
+    text-decoration: none;
+    transition: border-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out);
+  }
+
+  .related-card:hover {
+    border-color: var(--color-blue);
+    transform: translateY(-2px);
+  }
+
+  .related-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+  }
+
+  .related-card__desc {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.55;
+    flex: 1;
+  }
+
+  .related-card__arrow {
+    font-size: var(--text-md);
+    color: var(--color-secondary);
+    transition: transform var(--dur-short) var(--ease-out);
+    align-self: flex-start;
+    margin-top: auto;
+  }
+
+  .related-card:hover .related-card__arrow { transform: translateX(4px); }
+
+  /* ─── Responsive ─────────────────────────────────────────── */
+  @media (max-width: 48rem) {
+    .when-grid { grid-template-columns: 1fr; }
+    .scope-grid { grid-template-columns: 1fr; }
+    .related-grid { grid-template-columns: 1fr; }
+
+    .inline-cta {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: var(--space-lg);
+    }
+    .inline-cta__btn { width: 100%; text-align: center; justify-content: center; }
+
+    .end-cta { padding: var(--space-xl) var(--space-lg); }
+    .end-cta__h2 { font-size: var(--text-lg); }
+    .end-cta__btn { width: 100%; text-align: center; }
+
+    .timeline-box { padding: var(--space-lg); }
+  }
+</style>

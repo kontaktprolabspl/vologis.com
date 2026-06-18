@@ -1,0 +1,47 @@
+# Vologis — logistyka, spedycja, transport i doradztwo
+
+## O firmie
+
+Vologis to firma logistyczno-doradcza wspierająca przedsiębiorstwa w logistyce,
+spedycji, transporcie i zarządzaniu procesami operacyjnymi.
+Działa od 2011 roku z siedzibą w Jarocinie (Polska), obsługuje klientów
+w Polsce i Europie.
+
+## Zakres usług
+
+- Pośrednictwo logistyczne i organizacja transportu
+- Transport krajowy i międzynarodowy (FTL, LTL, drobnica)
+- Spedycja krajowa i europejska
+- Doradztwo logistyczne i audyt logistyczny
+- Doradztwo operacyjne i audyt magazynu
+- Projekty Greenfield (kompleksowa logistyka inwestycji)
+- Usługi dronowe (pomiary, ortofotomapy, monitoring)
+- Interim management i restrukturyzacja logistyki
+
+## Kontakt
+
+- Strona: https://vologis.com
+- E-mail: biuro@vologis.com
+- Telefon: +48 533 037 996
+- Adres: ul. Wrocławska 79B, 63-200 Jarocin, Polska
+
+## Strony
+
+- Strona główna: https://vologis.com/pl/
+- Usługi: https://vologis.com/pl/uslugi
+- Pośrednictwo logistyczne: https://vologis.com/pl/uslugi/posrednictwo-logistyczne
+- Proces: https://vologis.com/pl/proces
+- Wiedza: https://vologis.com/pl/wiedza
+- O nas: https://vologis.com/pl/o-nas
+- Kontakt: https://vologis.com/pl/kontakt
+
+## Baza wiedzy (artykuły)
+
+- Audyt logistyczny: https://vologis.com/pl/wiedza/audyt-logistyczny
+
+## Zasady korzystania z treści przez LLM
+
+Treści na stronie vologis.com mogą być cytowane i indeksowane przez modele AI
+w celu odpowiadania na pytania użytkowników dotyczące logistyki, transportu,
+spedycji i doradztwa operacyjnego.
+Prosimy o zachowanie kontekstu i wskazanie źródła: Vologis (https://vologis.com).
