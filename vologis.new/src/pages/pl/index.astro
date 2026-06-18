@@ -169,12 +169,28 @@ const articles = [
 
 /* ── Schema ───────────────────────────────────────────────── */
 
-/* LocalBusiness and Speakable use SITE config via schema utils */
 const schemaLocalBusiness = localBusinessSchema();
 const schemaSpeakable = speakableSchema("/pl/", [
   "[data-speakable='headline']",
   "[data-speakable='summary']",
 ]);
+
+const schemaArticleList = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Najnowsze artykuły Vologis",
+  "itemListElement": articles.map((a, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "item": {
+      "@type": "Article",
+      "headline": a.title,
+      "url": `https://vologis.com${a.href}`,
+      "datePublished": a.date,
+      "publisher": { "@type": "Organization", "name": "Vologis Sp. z o.o.", "url": "https://vologis.com" },
+    },
+  })),
+};
 ---
 
 <BaseLayout
@@ -184,6 +200,7 @@ const schemaSpeakable = speakableSchema("/pl/", [
 >
   <script type="application/ld+json" set:html={JSON.stringify(schemaLocalBusiness)} />
   <script type="application/ld+json" set:html={JSON.stringify(schemaSpeakable)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaArticleList)} />
 
   <!-- ══════════════════════════════════════════════════════
        1. HERO
@@ -533,10 +550,11 @@ const schemaSpeakable = speakableSchema("/pl/", [
           <p class="cta-form-label">Wolisz napisać? Zostaw kontakt.</p>
           <form
             class="contact-form"
-            action="/pl/kontakt"
-            method="get"
+            action="https://formspree.io/f/mjgdvnav"
+            method="post"
             aria-label="Szybki formularz kontaktowy"
           >
+            <input type="hidden" name="_subject" value="Nowe zapytanie — Vologis (homepage)" />
             <input
               type="text"
               name="name"

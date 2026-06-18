@@ -49,24 +49,26 @@ export const SITE = {
   areaServed: ["Polska", "Europa"] as string[],
 
   knowsAbout: [
-    "logistyka",
-    "spedycja",
-    "transport krajowy i międzynarodowy",
     "pośrednictwo logistyczne",
-    "doradztwo logistyczne",
-    "optymalizacja procesów logistycznych",
-    "doradztwo w zakresie zarządzania",
+    "fulfillment i obsługa e-commerce",
+    "doradztwo operacyjne",
     "audyt logistyczny",
-    "audyt magazynu",
+    "projekty Greenfield",
+    "usługi dronowe",
+    "interim management",
+    "logistyka",
+    "transport krajowy i międzynarodowy",
+    "optymalizacja procesów logistycznych",
+    "zarządzanie łańcuchem dostaw",
   ] as string[],
 
   /* ── Per-language defaults ──────────────────────────────── */
   defaults: {
     pl: {
       title:
-        "Vologis — logistyka, spedycja, transport i doradztwo dla firm",
+        "Vologis — niezależne doradztwo logistyczne end-to-end",
       description:
-        "Vologis wspiera firmy w logistyce, spedycji, transporcie i doradztwie, pomagając porządkować procesy, ograniczać ryzyko i optymalizować koszty operacyjne.",
+        "Vologis: pośrednictwo logistyczne, doradztwo operacyjne, projekty Greenfield, usługi dronowe i interim management. Od analizy do wdrożenia — niezależnie, z odpowiedzialnością za efekt.",
       locale: "pl_PL",
       lang: "pl",
       hreflang: "pl-PL",
