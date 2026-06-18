@@ -3,6 +3,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import ServiceCard from "../../../components/ServiceCard.astro";
 import Eyebrow from "../../../components/Eyebrow.astro";
 import HeroCTAs from "../../../components/HeroCTAs.astro";
+import programmatic from "../../../data/programmatic.json";
 
 const icons = {
   route: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H15a3.5 3.5 0 0 0 0-7H9a3.5 3.5 0 0 1 0-7h6.5"/></svg>`,
@@ -175,6 +176,34 @@ const schemaItemList = {
     </div>
   </section>
 
+  <!-- ── 2b. Branże i specjalizacje ─────────────────── -->
+  <section class="branze-hub" aria-labelledby="branze-hub-h">
+    <div class="container">
+      <h2 class="branze-hub__title" id="branze-hub-h">Specjalizacje branżowe</h2>
+      <p class="branze-hub__lead">Każda usługa dostępna z dedykowaną wiedzą dla Twojej branży.</p>
+      <div class="branze-hub__groups">
+        {services.map((svc) => {
+          const children = programmatic.pages.filter((p) => p.parent === svc.href.split("/").pop());
+          if (children.length === 0) return null;
+          return (
+            <div class="branze-hub__group">
+              <a href={svc.href} class="branze-hub__parent">{svc.title}</a>
+              <ul class="branze-hub__list" role="list">
+                {children.map((c) => (
+                  <li>
+                    <a href={`/pl/uslugi/${c.slug}`} class="branze-hub__link">
+                      {c.industry.charAt(0).toUpperCase() + c.industry.slice(1)}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
   <!-- ── 3. How we work (process strip) ──────────────── -->
   <section class="proc-strip" aria-labelledby="proc-heading">
     <div class="container">
@@ -342,6 +371,77 @@ const schemaItemList = {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-lg);
   }
+
+  /* ── 2b. Branże hub ──────────────────────────────── */
+  .branze-hub {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper-2);
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .branze-hub__title {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: var(--color-ink);
+    margin-bottom: var(--space-sm);
+  }
+
+  .branze-hub__lead {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    margin-bottom: var(--space-xl);
+  }
+
+  .branze-hub__groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--space-xl);
+  }
+
+  .branze-hub__parent {
+    display: block;
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--color-ink);
+    text-decoration: none;
+    margin-bottom: var(--space-sm);
+    padding-bottom: var(--space-sm);
+    border-bottom: 2px solid var(--color-secondary);
+    transition: color var(--dur-micro) var(--ease-out);
+  }
+
+  .branze-hub__parent:hover { color: var(--color-secondary); }
+
+  .branze-hub__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .branze-hub__link {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    line-height: 1.4;
+    transition: color var(--dur-micro) var(--ease-out);
+  }
+
+  .branze-hub__link::before {
+    content: "→";
+    font-size: 0.7em;
+    color: var(--color-secondary);
+    flex-shrink: 0;
+    opacity: 0.7;
+  }
+
+  .branze-hub__link:hover { color: var(--color-ink); }
 
   /* ── 3. Process strip ────────────────────────────── */
   .proc-strip {

@@ -41,9 +41,10 @@ const serviceLinks = [
   { label: "Interim Management", href: "/pl/uslugi/interim-management", desc: "Wsparcie zarządcze i gaszenie pożarów od zaraz." },
 ];
 const navItems = [
-  { label: "Proces", href: "/pl/proces", match: "/pl/proces" },
-  { label: "Wiedza", href: "/pl/wiedza", match: "/pl/wiedza" },
-  { label: "O nas",  href: "/pl/o-nas",  match: "/pl/o-nas"  },
+  { label: "Proces",      href: "/pl/proces",      match: "/pl/proces"      },
+  { label: "Wiedza",      href: "/pl/wiedza",      match: "/pl/wiedza"      },
+  { label: "O nas",       href: "/pl/o-nas",       match: "/pl/o-nas"       },
+  { label: "Współpraca",  href: "/pl/wspolpraca",  match: "/pl/wspolpraca"  },
 ];
 const navPath = Astro.url.pathname;
 const isActive = (m: string) => navPath === m || navPath.startsWith(m + "/");
@@ -227,6 +228,7 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
           <li class="mnav__item"><a class="mnav__row" href="/pl/proces">Proces</a></li>
           <li class="mnav__item"><a class="mnav__row" href="/pl/wiedza">Wiedza</a></li>
           <li class="mnav__item"><a class="mnav__row" href="/pl/o-nas">O nas</a></li>
+          <li class="mnav__item"><a class="mnav__row" href="/pl/wspolpraca">Współpraca</a></li>
           <li class="mnav__item"><a class="mnav__row" href="/pl/kontakt">Kontakt</a></li>
         </ul>
 
