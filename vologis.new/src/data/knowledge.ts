@@ -34,8 +34,8 @@ export const knowledgeArticles: KnowledgeArticle[] = [
     slug: "wybor-partnera-logistycznego",
     description: "Wybór operatora logistycznego, firmy fulfillment lub przewoźnika: na co patrzeć poza ceną, jak weryfikować partnera i dlaczego najtańsza oferta często kosztuje najwięcej.",
     category: "Doradztwo logistyczne",
-    publishedAt: "2026-06-18",
-    updatedAt: "2026-06-18",
+    publishedAt: "2026-05-28",
+    updatedAt: "2026-05-28",
     readingTime: "8–10 min",
   },
   {
@@ -43,8 +43,8 @@ export const knowledgeArticles: KnowledgeArticle[] = [
     slug: "projekt-greenfield-bledy",
     description: "Budowa magazynu lub centrum dystrybucyjnego od podstaw: najczęstsze błędy przy wyborze lokalizacji, projektowaniu layoutu i automatyzacji, które kosztują przez lata eksploatacji.",
     category: "Optymalizacja logistyki",
-    publishedAt: "2026-06-18",
-    updatedAt: "2026-06-18",
+    publishedAt: "2026-04-30",
+    updatedAt: "2026-04-30",
     readingTime: "9–11 min",
   },
   {
@@ -52,8 +52,8 @@ export const knowledgeArticles: KnowledgeArticle[] = [
     slug: "drony-inwestycje-logistyczne",
     description: "Jak wykorzystać drony w projektach logistycznych i inwestycyjnych: pomiary geodezyjne, ortofotomapy, monitoring budowy i materiały marketingowe. Praktyczne zastosowania i realne korzyści.",
     category: "Doradztwo logistyczne",
-    publishedAt: "2026-06-18",
-    updatedAt: "2026-06-18",
+    publishedAt: "2026-04-16",
+    updatedAt: "2026-04-16",
     readingTime: "7–9 min",
   },
   {
@@ -61,8 +61,8 @@ export const knowledgeArticles: KnowledgeArticle[] = [
     slug: "interim-management-logistyka",
     description: "Interim management w logistyce: kiedy czasowe wsparcie zarządcze ma sens, jak wygląda współpraca i czym różni się od zatrudnienia na etat. Praktyczny przewodnik dla zarządów.",
     category: "Doradztwo logistyczne",
-    publishedAt: "2026-06-18",
-    updatedAt: "2026-06-18",
+    publishedAt: "2026-05-14",
+    updatedAt: "2026-05-14",
     readingTime: "8–10 min",
   },
 ];
