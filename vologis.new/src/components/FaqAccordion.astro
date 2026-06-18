@@ -19,15 +19,16 @@ const { items, single = false } = Astro.props;
 <style>
   .faq {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: var(--space-md);
     align-items: start;
+    max-width: 52rem;
+    margin-inline: auto;
   }
 
+  /* kept for backwards-compat — same as default now */
   .faq--single {
-    grid-template-columns: 1fr;
-    max-width: 46rem;
-    margin-inline: auto;
+    max-width: 52rem;
   }
 
   .faq__item {
@@ -84,7 +85,4 @@ const { items, single = false } = Astro.props;
     to { opacity: 1; transform: none; }
   }
 
-  @media (max-width: 48rem) {
-    .faq { grid-template-columns: 1fr; }
-  }
 </style>
