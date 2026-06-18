@@ -69,22 +69,10 @@ const schemaBreadcrumb = {
 
   <!-- ── Service hero (dark navy) ────────────────────────── -->
   <section
-    class:list={["spl-hero", { "spl-hero--has-bg": !!heroImage }]}
+    class:list={["spl-hero", { "spl-hero--has-img": !!heroImage }]}
+    style={heroImage ? `background-image: url('${heroImage}')` : undefined}
     aria-labelledby="spl-h1"
   >
-    {heroImage && (
-      <img
-        src={heroImage}
-        alt={heroImageAlt}
-        class="spl-hero__img"
-        fetchpriority="high"
-        loading="eager"
-        decoding="async"
-        width="1600"
-        height="640"
-      />
-    )}
-
     <div class="container">
 
       <nav class="spl-bc" aria-label="Breadcrumb">
@@ -150,19 +138,16 @@ const schemaBreadcrumb = {
     overflow: hidden;
   }
 
-  /* Hero image — absolutely positioned behind overlay */
-  .spl-hero__img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center right;
-    z-index: 0;
+  /* Background image — same technique as homepage hero */
+  .spl-hero--has-img {
+    background-size: cover;
+    background-position: bottom right;
+    background-repeat: no-repeat;
   }
 
-  /* Overlay keeps left-side text readable on dark bg */
-  .spl-hero--has-bg::before {
+  /* Gradient overlay: navy fully opaque left → transparent right.
+     Mirrors the homepage ::before pattern, keeps text readable. */
+  .spl-hero--has-img::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -170,15 +155,15 @@ const schemaBreadcrumb = {
       to right,
       oklch(26% 0.060 257 / 1.00)  0%,
       oklch(26% 0.060 257 / 1.00) 32%,
-      oklch(26% 0.060 257 / 0.80) 54%,
-      oklch(26% 0.060 257 / 0.20) 75%,
+      oklch(26% 0.060 257 / 0.88) 52%,
+      oklch(26% 0.060 257 / 0.30) 72%,
       oklch(26% 0.060 257 / 0.00) 100%
     );
     pointer-events: none;
   }
 
-  /* All direct children (except the bg img) above the overlay */
-  .spl-hero--has-bg > :not(.spl-hero__img) { position: relative; }
+  /* All direct children above the overlay */
+  .spl-hero--has-img > * { position: relative; }
 
   /* Breadcrumb */
   .spl-bc { margin-bottom: var(--space-xl); }
@@ -313,5 +298,13 @@ const schemaBreadcrumb = {
     .spl-lead { font-size: var(--text-base); }
     .spl-actions { flex-direction: column; }
     .spl-btn { width: 100%; justify-content: center; }
+    /* On mobile extend overlay to cover full width */
+    .spl-hero--has-img::before {
+      background: linear-gradient(
+        to right,
+        oklch(26% 0.060 257 / 1.00) 0%,
+        oklch(26% 0.060 257 / 0.92) 100%
+      );
+    }
   }
 </style>

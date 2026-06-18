@@ -457,23 +457,26 @@ const schemaFaq = {
   .kh-btn--dark:hover { background: oklch(40% 0.06 257); }
 
   .kh-btn--ghost {
-    background: var(--color-glass-dark);
-    color: var(--color-ink-on-dark);
-    border-color: var(--color-glass-border);
+    background: transparent;
+    color: var(--color-ink);
+    border-color: var(--color-ink);
   }
 
-  .kh-btn--ghost:hover { background: oklch(100% 0 0 / 0.12); }
+  .kh-btn--ghost:hover {
+    background: var(--color-ink);
+    color: var(--color-ink-on-dark);
+  }
 
   .kh-btn--accent { background: var(--color-accent); color: #fff; }
   .kh-btn--accent:hover { background: var(--color-accent-hover); }
 
   .kh-btn--ghost-light {
-    background: var(--color-glass-dark);
+    background: oklch(100% 0 0 / 0.10);
     color: var(--color-ink-on-dark);
-    border-color: var(--color-glass-border);
+    border-color: oklch(100% 0 0 / 0.35);
   }
 
-  .kh-btn--ghost-light:hover { background: oklch(100% 0 0 / 0.12); }
+  .kh-btn--ghost-light:hover { background: oklch(100% 0 0 / 0.18); }
 
   /* ─── 1. Hero ────────────────────────────────────────────── */
   .kh-hero {
