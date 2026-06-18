@@ -2,6 +2,7 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import FaqAccordion from "../../../components/FaqAccordion.astro";
 import KnowledgeCard from "../../../components/KnowledgeCard.astro";
+import Eyebrow from "../../../components/Eyebrow.astro";
 import { knowledgeArticles, knowledgeCategories } from "../../../data/knowledge";
 
 const SITE = "https://vologis.com";
@@ -125,7 +126,7 @@ const schemaFaq = {
         </ol>
       </nav>
 
-      <p class="kh-eyebrow">Wiedza Vologis</p>
+      <Eyebrow text="WIEDZA VOLOGIS" bg="light" />
       <h1 id="kh-h1" class="kh-h1">
         Wiedza logistyczna, która pomaga podejmować lepsze decyzje operacyjne
       </h1>

@@ -1,0 +1,116 @@
+---
+interface Props {
+  primaryLabel?: string;
+  primaryHref?: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+  /** 'dark' = dark navy hero (default); 'light' = light paper hero */
+  bg?: 'dark' | 'light';
+}
+
+const {
+  primaryLabel = 'Umów konsultację',
+  primaryHref = '/pl/kontakt',
+  secondaryLabel,
+  secondaryHref,
+  bg = 'dark',
+} = Astro.props;
+---
+
+<div class:list={["hcta", bg === 'light' ? "hcta--light" : "hcta--dark"]}>
+  <a href={primaryHref} class="hcta__primary">
+    {primaryLabel} <span aria-hidden="true">→</span>
+  </a>
+  {secondaryLabel && secondaryHref && (
+    <a href={secondaryHref} class="hcta__secondary">
+      {secondaryLabel} <span aria-hidden="true">→</span>
+    </a>
+  )}
+</div>
+
+<style>
+  .hcta {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-md);
+  }
+
+  /* ── Shared button base ──────────────────────────── */
+  .hcta__primary,
+  .hcta__secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 600;
+    padding: var(--space-sm) var(--space-xl);
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition:
+      background var(--dur-micro) var(--ease-out),
+      border-color var(--dur-micro) var(--ease-out),
+      color var(--dur-micro) var(--ease-out),
+      transform var(--dur-micro) var(--ease-out);
+  }
+
+  .hcta__primary span,
+  .hcta__secondary span {
+    display: inline-block;
+    transition: transform var(--dur-short) var(--ease-out);
+  }
+
+  .hcta__primary:hover span,
+  .hcta__secondary:hover span { transform: translateX(4px); }
+
+  /* ── Primary — navy on light bg, accent on dark bg ─ */
+  .hcta--light .hcta__primary {
+    background: var(--color-ink);
+    color: var(--color-ink-on-dark);
+  }
+  .hcta--light .hcta__primary:hover {
+    background: var(--color-secondary);
+    transform: translateY(-1px);
+  }
+
+  .hcta--dark .hcta__primary {
+    background: var(--color-accent);
+    color: #fff;
+  }
+  .hcta--dark .hcta__primary:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-1px);
+  }
+
+  /* ── Secondary ───────────────────────────────────── */
+  .hcta--dark .hcta__secondary {
+    background: var(--color-glass-dark);
+    color: var(--color-ink-on-dark);
+    border-color: var(--color-glass-border);
+  }
+  .hcta--dark .hcta__secondary:hover {
+    background: oklch(100% 0 0 / 0.12);
+    border-color: oklch(100% 0 0 / 0.22);
+  }
+
+  .hcta--light .hcta__secondary {
+    background: transparent;
+    color: var(--color-ink);
+    border-color: var(--color-ink);
+  }
+  .hcta--light .hcta__secondary:hover {
+    background: var(--color-ink);
+    color: var(--color-ink-on-dark);
+  }
+
+  /* ── Responsive ──────────────────────────────────── */
+  @media (max-width: 40rem) {
+    .hcta { flex-direction: column; }
+    .hcta__primary,
+    .hcta__secondary { width: 100%; justify-content: center; }
+  }
+</style>

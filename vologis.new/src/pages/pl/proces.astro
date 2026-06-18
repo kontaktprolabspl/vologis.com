@@ -4,6 +4,8 @@ import ProcessStep from "../../components/ProcessStep.astro";
 import PricingCard from "../../components/PricingCard.astro";
 import ComparisonTable from "../../components/ComparisonTable.astro";
 import FaqAccordion from "../../components/FaqAccordion.astro";
+import Eyebrow from "../../components/Eyebrow.astro";
+import HeroCTAs from "../../components/HeroCTAs.astro";
 
 const SITE = "https://vologis.com";
 
@@ -192,16 +194,18 @@ const schemaFaq = {
             <li aria-current="page">Jak pracujemy</li>
           </ol>
         </nav>
-        <p class="eyebrow">JAK PRACUJEMY</p>
+        <Eyebrow text="JAK PRACUJEMY" />
         <h1 id="hero-h" class="hero__h1">Projekt kończy się<br>gdy widać liczby —<br>nie gdy oddamy raport.</h1>
         <p class="hero__sub">
           Pięć etapów. Pełna odpowiedzialność. Od pierwszej analizy po osiągnięcie KPI —
           bez zostawiania Cię w połowie drogi.
         </p>
-        <div class="hero__cta">
-          <a href="/pl/kontakt" class="cta cta--primary">Umów bezpłatną konsultację <span aria-hidden="true">→</span></a>
-          <a href="/pl/uslugi" class="cta cta--ghost">Zobacz nasze usługi <span aria-hidden="true">→</span></a>
-        </div>
+        <HeroCTAs
+          primaryLabel="Umów konsultację"
+          primaryHref="/pl/kontakt"
+          secondaryLabel="Zobacz nasze usługi"
+          secondaryHref="/pl/uslugi"
+        />
       </div>
 
       <ol class="hero__steps" aria-label="Etapy procesu">

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import Eyebrow from "../components/Eyebrow.astro";
 
 interface BreadcrumbItem {
   name: string;
@@ -91,7 +92,7 @@ const schemaBreadcrumb = {
         </ol>
       </nav>
 
-      <p class="spl-eyebrow">{eyebrow}</p>
+      <Eyebrow text={eyebrow} />
       <h1 id="spl-h1" class="spl-h1">{h1}</h1>
       <p class="spl-lead">{lead}</p>
 

@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import ServiceCard from "../../../components/ServiceCard.astro";
+import Eyebrow from "../../../components/Eyebrow.astro";
+import HeroCTAs from "../../../components/HeroCTAs.astro";
 
 const icons = {
   route: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H15a3.5 3.5 0 0 0 0-7H9a3.5 3.5 0 0 1 0-7h6.5"/></svg>`,
@@ -137,7 +139,7 @@ const schemaItemList = {
           <li aria-current="page">Usługi</li>
         </ol>
       </nav>
-      <p class="eyebrow">NASZE USŁUGI</p>
+      <Eyebrow text="NASZE USŁUGI" />
       <h1 id="svc-heading" class="svc-hero__h1">
         Logistyka end-to-end.<br>Nie zostawiamy Cię z raportem.
       </h1>
@@ -145,6 +147,12 @@ const schemaItemList = {
         Pięć obszarów wsparcia — od pierwszej analizy po fizyczne wdrożenie
         i optymalizację. Działamy projektowo, rozliczamy się za efekty.
       </p>
+      <HeroCTAs
+        primaryLabel="Umów konsultację"
+        primaryHref="/pl/kontakt"
+        secondaryLabel="Zobacz jak pracujemy"
+        secondaryHref="/pl/proces"
+      />
     </div>
   </section>
 

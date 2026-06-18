@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import FaqAccordion from "../../components/FaqAccordion.astro";
+import Eyebrow from "../../components/Eyebrow.astro";
+import HeroCTAs from "../../components/HeroCTAs.astro";
 
 const SITE = "https://vologis.com";
 
@@ -305,7 +307,7 @@ const schemaFaq = {
         </ol>
       </nav>
 
-      <p class="on-eyebrow">O Vologis</p>
+      <Eyebrow text="O VOLOGIS" />
       <h1 id="on-h1" class="on-h1">
         Logistyka zaczyna się od dobrych decyzji.<br>Vologis pomaga je podejmować.
       </h1>
@@ -316,18 +318,12 @@ const schemaFaq = {
         podstawie doświadczenia, danych i dobrze zaprojektowanych procedur.
       </p>
 
-      <div class="on-hero-actions">
-        <a
-          href="/pl/kontakt"
-          class="on-btn on-btn--accent"
-          data-calendly="popup"
-        >
-          Porozmawiajmy o Twojej logistyce
-        </a>
-        <a href="/pl/proces" class="on-btn on-btn--glass">
-          Zobacz, jak pracujemy
-        </a>
-      </div>
+      <HeroCTAs
+        primaryLabel="Umów konsultację"
+        primaryHref="/pl/kontakt"
+        secondaryLabel="Zobacz jak pracujemy"
+        secondaryHref="/pl/proces"
+      />
 
       <ul class="on-trust" role="list" aria-label="Kluczowe fakty o Vologis">
         {trustItems.map((item) => (

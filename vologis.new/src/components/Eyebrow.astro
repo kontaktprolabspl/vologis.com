@@ -1,0 +1,40 @@
+---
+interface Props {
+  text: string;
+  /** 'dark' = blue accent on dark navy bg (default); 'light' = darkened accent on light bg */
+  bg?: 'dark' | 'light';
+}
+const { text, bg = 'dark' } = Astro.props;
+---
+
+<p class:list={["vl-ew", bg === 'light' ? "vl-ew--light" : "vl-ew--dark"]}>
+  {text}
+</p>
+
+<style>
+  .vl-ew {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-md);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+
+  /* Short line decorator before text */
+  .vl-ew::before {
+    content: "";
+    width: 1.5rem;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .vl-ew--dark  { color: var(--color-blue-on-dark); }
+  /* Darkened for 4.5:1 contrast on light paper backgrounds */
+  .vl-ew--light { color: oklch(50% 0.210 22); }
+</style>

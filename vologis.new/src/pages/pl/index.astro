@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { localBusinessSchema, speakableSchema } from "../../utils/schema";
+import Eyebrow from "../../components/Eyebrow.astro";
+import HeroCTAs from "../../components/HeroCTAs.astro";
 
 /* ── Data ────────────────────────────────────────────────── */
 
@@ -164,7 +166,7 @@ const schemaSpeakable = speakableSchema("/pl/", [
     <div class="container hero-grid">
 
       <div class="hero-copy">
-        <p class="eyebrow eyebrow--accent">Doradztwo logistyczne, end to end</p>
+        <Eyebrow text="DORADZTWO LOGISTYCZNE, END TO END" bg="light" />
         <h1 id="hero-h1" class="hero-h1" data-speakable="headline">
           Odzyskaj kontrolę<br>nad logistyką —<br>zanim zacznie zjadać marżę.
         </h1>
@@ -173,18 +175,13 @@ const schemaSpeakable = speakableSchema("/pl/", [
           dla firm produkcyjnych, e-commerce i TSL. Diagnozujemy koszty,
           projektujemy rozwiązania i wspieramy wdrożenie zmian.
         </p>
-        <div class="hero-actions">
-          <button
-            class="btn-primary"
-            onclick="Calendly && Calendly.initPopupWidget({url:'https://calendly.com/vologis/30min'}); return false;"
-            type="button"
-          >
-            Umów konsultację
-          </button>
-          <a href="/pl/proces" class="btn-secondary">
-            Zobacz jak pracujemy →
-          </a>
-        </div>
+        <HeroCTAs
+          bg="light"
+          primaryHref="/pl/kontakt"
+          primaryLabel="Umów konsultację"
+          secondaryHref="/pl/proces"
+          secondaryLabel="Zobacz jak pracujemy"
+        />
         <p class="hero-microproof">
           Audyt, rekomendacje i wdrożenie — bez raportów do szuflady.
         </p>
