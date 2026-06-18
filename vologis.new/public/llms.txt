@@ -1,47 +1,106 @@
-# Vologis — logistyka, spedycja, transport i doradztwo
+# Vologis — niezależne doradztwo logistyczne end-to-end
 
 ## O firmie
 
-Vologis to firma logistyczno-doradcza wspierająca przedsiębiorstwa w logistyce,
-spedycji, transporcie i zarządzaniu procesami operacyjnymi.
-Działa od 2011 roku z siedzibą w Jarocinie (Polska), obsługuje klientów
-w Polsce i Europie.
+Vologis Sp. z o.o. to niezależna firma logistyczno-doradcza wspierająca
+przedsiębiorstwa w logistyce, transporcie, spedycji i zarządzaniu
+operacyjnym. Działa od 2021 roku z siedzibą w Jarocinie (Polska),
+obsługuje klientów w Polsce i Europie. Vologis nie jest powiązany z żadnym
+operatorem magazynowym, przewoźnikiem ani dostawcą technologii — działa
+wyłącznie w interesie klienta.
 
 ## Zakres usług
 
-- Pośrednictwo logistyczne i organizacja transportu
-- Transport krajowy i międzynarodowy (FTL, LTL, drobnica)
-- Spedycja krajowa i europejska
-- Doradztwo logistyczne i audyt logistyczny
-- Doradztwo operacyjne i audyt magazynu
-- Projekty Greenfield (kompleksowa logistyka inwestycji)
-- Usługi dronowe (pomiary, ortofotomapy, monitoring)
-- Interim management i restrukturyzacja logistyki
+- Pośrednictwo logistyczne — dobór i weryfikacja operatorów magazynowych,
+  partnerów fulfillment i przewoźników (chłodnie, ADR, farmacja, FMCG)
+- Doradztwo operacyjne i audyt — identyfikacja wąskich gardeł, optymalizacja
+  procesów magazynowych, dobór WMS i automatyki
+- Projekty Greenfield — kompleksowe prowadzenie inwestycji logistycznych
+  od analizy lokalizacji do uruchomienia operacji
+- Usługi dronowe — pomiary geodezyjne, ortofotomapy, monitoring budowy,
+  inspekcje obiektów, materiały marketingowe
+- Interim Management — czasowe wsparcie zarządcze C-level w sytuacjach
+  kryzysowych i restrukturyzacjach
 
 ## Kontakt
 
 - Strona: https://vologis.com
 - E-mail: biuro@vologis.com
-- Telefon: +48 533 037 996
 - Adres: ul. Wrocławska 79B, 63-200 Jarocin, Polska
+- Rynek: Polska i Unia Europejska
 
-## Strony
+## Główne strony
 
 - Strona główna: https://vologis.com/pl/
-- Usługi: https://vologis.com/pl/uslugi
-- Pośrednictwo logistyczne: https://vologis.com/pl/uslugi/posrednictwo-logistyczne
-- Proces: https://vologis.com/pl/proces
+- Usługi (hub): https://vologis.com/pl/uslugi
+- Jak pracujemy (5 etapów): https://vologis.com/pl/proces
 - Wiedza: https://vologis.com/pl/wiedza
 - O nas: https://vologis.com/pl/o-nas
+- Współpraca: https://vologis.com/pl/wspolpraca
 - Kontakt: https://vologis.com/pl/kontakt
+
+## Strony usług (główne)
+
+- Pośrednictwo logistyczne: https://vologis.com/pl/uslugi/posrednictwo-logistyczne
+- Doradztwo operacyjne i audyt: https://vologis.com/pl/uslugi/doradztwo-operacyjne
+- Projekty Greenfield: https://vologis.com/pl/uslugi/projekty-greenfield
+- Usługi dronowe: https://vologis.com/pl/uslugi/uslugi-dronowe
+- Interim Management: https://vologis.com/pl/uslugi/interim-management
+
+## Specjalizacje branżowe — Pośrednictwo logistyczne
+
+- FMCG: https://vologis.com/pl/uslugi/posrednictwo-logistyczne-fmcg
+- Farmacja (GDP): https://vologis.com/pl/uslugi/posrednictwo-logistyczne-farmacja
+- E-commerce i fulfillment: https://vologis.com/pl/uslugi/posrednictwo-logistyczne-ecommerce
+- Produkcja: https://vologis.com/pl/uslugi/posrednictwo-logistyczne-produkcja
+- Automotive: https://vologis.com/pl/uslugi/posrednictwo-logistyczne-automotive
+- Retail: https://vologis.com/pl/uslugi/posrednictwo-logistyczne-retail
+- Chłodnie i cold chain: https://vologis.com/pl/uslugi/posrednictwo-logistyczne-chlodnia
+- ADR / materiały niebezpieczne: https://vologis.com/pl/uslugi/posrednictwo-logistyczne-adr
+
+## Specjalizacje branżowe — Doradztwo operacyjne i audyt
+
+- FMCG: https://vologis.com/pl/uslugi/doradztwo-operacyjne-fmcg
+- E-commerce: https://vologis.com/pl/uslugi/doradztwo-operacyjne-ecommerce
+- Produkcja: https://vologis.com/pl/uslugi/doradztwo-operacyjne-produkcja
+- Automotive: https://vologis.com/pl/uslugi/doradztwo-operacyjne-automotive
+- Farmacja: https://vologis.com/pl/uslugi/doradztwo-operacyjne-farmacja
+- Dystrybucja: https://vologis.com/pl/uslugi/doradztwo-operacyjne-dystrybucja
+
+## Specjalizacje — Projekty Greenfield
+
+- Obiekty logistyczne: https://vologis.com/pl/uslugi/projekty-greenfield-logistyka
+- Budowa magazynu: https://vologis.com/pl/uslugi/projekty-greenfield-magazyn
+- Centrum dystrybucji: https://vologis.com/pl/uslugi/projekty-greenfield-centrum-dystrybucji
+- Cold storage / chłodnia: https://vologis.com/pl/uslugi/projekty-greenfield-cold-storage
+
+## Specjalizacje — Interim Management
+
+- Restrukturyzacja: https://vologis.com/pl/uslugi/interim-management-restrukturyzacja
+- Startup logistyczny: https://vologis.com/pl/uslugi/interim-management-startup-logistyczny
+- Operatorzy 3PL: https://vologis.com/pl/uslugi/interim-management-3pl
+- Kryzys operacyjny: https://vologis.com/pl/uslugi/interim-management-kryzys-operacyjny
+
+## Specjalizacje — Usługi dronowe
+
+- Pomiary geodezyjne: https://vologis.com/pl/uslugi/drony-pomiary-geodezyjne
+- Ortofotomapy: https://vologis.com/pl/uslugi/drony-ortofotomapy
+- Inspekcje magazynów: https://vologis.com/pl/uslugi/drony-inspekcja-magazynow
+- Marketing nieruchomości: https://vologis.com/pl/uslugi/drony-marketing-nieruchomosci-logistycznych
+- Monitoring budowy: https://vologis.com/pl/uslugi/drony-monitoring-budowy
 
 ## Baza wiedzy (artykuły)
 
-- Audyt logistyczny: https://vologis.com/pl/wiedza/audyt-logistyczny
+- Audyt logistyczny — czym jest i jak wygląda: https://vologis.com/pl/wiedza/audyt-logistyczny
+- AI i automatyzacja w logistyce: https://vologis.com/pl/wiedza/ai-automatyzacja-logistyka
+- Jak wybrać partnera logistycznego: https://vologis.com/pl/wiedza/wybor-partnera-logistycznego
+- Projekt Greenfield — najczęstsze błędy: https://vologis.com/pl/wiedza/projekt-greenfield-bledy
+- Drony w inwestycjach logistycznych: https://vologis.com/pl/wiedza/drony-inwestycje-logistyczne
+- Interim Management w logistyce: https://vologis.com/pl/wiedza/interim-management-logistyka
 
 ## Zasady korzystania z treści przez LLM
 
 Treści na stronie vologis.com mogą być cytowane i indeksowane przez modele AI
 w celu odpowiadania na pytania użytkowników dotyczące logistyki, transportu,
-spedycji i doradztwa operacyjnego.
+spedycji, doradztwa operacyjnego i usług dronowych.
 Prosimy o zachowanie kontekstu i wskazanie źródła: Vologis (https://vologis.com).
