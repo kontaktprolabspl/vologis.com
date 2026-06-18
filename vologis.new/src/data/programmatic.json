@@ -1,0 +1,849 @@
+{
+  "_meta": {
+    "description": "Dane dla stron programmatic SEO Vologis. Każdy wpis = jedna podstrona /pl/uslugi/[slug]. Szablon: src/pages/pl/uslugi/[slug].astro renderuje te dane.",
+    "template_sections": ["hero", "intro", "problem", "scope_cards", "for_who", "summary_box", "faq", "cta", "related"]
+  },
+  "pages": [
+    {
+      "slug": "posrednictwo-logistyczne-fmcg",
+      "parent": "posrednictwo-logistyczne",
+      "parent_name": "Pośrednictwo logistyczne",
+      "category": "Pośrednictwo logistyczne",
+      "industry": "FMCG",
+      "title": "Pośrednictwo logistyczne dla FMCG — magazyn, fulfillment, dystrybucja | Vologis",
+      "description": "Dobór operatorów magazynowych i partnerów logistycznych dla branży FMCG. Vologis znajduje i weryfikuje magazyny o wysokiej rotacji, fulfillment i dystrybucję dla produktów szybkozbywalnych.",
+      "h1": "Pośrednictwo logistyczne dla branży FMCG",
+      "eyebrow": "POŚREDNICTWO LOGISTYCZNE · FMCG",
+      "intro": "Produkty szybkozbywalne wymagają logistyki o wysokiej rotacji, krótkich czasach realizacji i odporności na sezonowe szczyty. Vologis pomaga firmom FMCG znaleźć i zweryfikować operatorów magazynowych, partnerów fulfillment i przewoźników przygotowanych na duże wolumeny i szybki przepływ towaru. Działamy w 100% niezależnie — bez prowizji od operatorów, wyłącznie w interesie klienta.",
+      "problem_heading": "Logistyka FMCG nie wybacza wolnej rotacji",
+      "problem_text": "W FMCG marża jest cienka, a wolumen ogromny — każde opóźnienie w kompletacji, każdy błąd w prognozie i każdy nieoptymalny dobór magazynu odbija się na kosztach w skali tysięcy palet miesięcznie. Znalezienie operatora, który poradzi sobie z wysoką rotacją, sezonowością i wymaganiami sieci handlowych, wymaga znajomości rynku i twardych negocjacji.",
+      "scope": [
+        {"title": "Magazyny wysokiej rotacji", "text": "Dobór magazynów przygotowanych na duże wolumeny i szybki przepływ towaru, z elastycznością na szczyty sezonowe."},
+        {"title": "Fulfillment dla FMCG", "text": "Operatorzy obsługujący kompletację, pakowanie i dystrybucję produktów szybkozbywalnych z krótkim cyklem realizacji."},
+        {"title": "Dystrybucja do sieci handlowych", "text": "Partnerzy logistyczni spełniający wymagania sieci detalicznych: okna dostaw, EDI, paletyzacja, etykietowanie."},
+        {"title": "Obsługa sezonowych szczytów", "text": "Operatorzy z elastycznością mocy przerobowych na okresy wzmożonego popytu."}
+      ],
+      "for_who": [
+        {"title": "Producenci FMCG", "text": "Gdy potrzebujesz magazynu i dystrybucji nadążających za produkcją i rotacją."},
+        {"title": "Dystrybutorzy", "text": "Gdy obsługujesz wielu odbiorców i potrzebujesz sprawnej kompletacji i wysyłki."},
+        {"title": "Marki sprzedające do sieci", "text": "Gdy musisz spełnić rygorystyczne wymagania logistyczne sieci handlowych."}
+      ],
+      "summary": "Pośrednictwo logistyczne dla FMCG to usługa, w której Vologis dobiera i weryfikuje operatorów magazynowych, partnerów fulfillment i przewoźników przygotowanych na wysoką rotację i duże wolumeny charakterystyczne dla produktów szybkozbywalnych. Obejmuje magazyny wysokiej rotacji, obsługę sezonowych szczytów i dystrybucję zgodną z wymaganiami sieci handlowych — w 100% niezależnie od dostawców.",
+      "faq": [
+        {"q": "Czy znajdziecie magazyn obsługujący sezonowe szczyty FMCG?", "a": "Tak. Dobieramy operatorów z elastycznością mocy przerobowych, którzy radzą sobie z okresami wzmożonego popytu — od świątecznych szczytów po promocje sieci handlowych. Weryfikujemy realne możliwości operatora, nie tylko deklaracje."},
+        {"q": "Czy operator spełni wymagania sieci handlowych?", "a": "Weryfikujemy czy operator spełnia wymagania konkretnych sieci: okna dostaw, integracje EDI, paletyzację, etykietowanie i poziomy SLA. To kluczowe dla uniknięcia kar i odrzuconych dostaw."},
+        {"q": "Jak szybko można znaleźć magazyn dla FMCG?", "a": "Wstępne propozycje przedstawiamy zwykle w ciągu 1–2 tygodni. Czas zależy od lokalizacji, wymaganego wolumenu i specyfiki produktów. W sytuacjach pilnych działamy szybciej."}
+      ]
+    },
+    {
+      "slug": "posrednictwo-logistyczne-farmacja",
+      "parent": "posrednictwo-logistyczne",
+      "parent_name": "Pośrednictwo logistyczne",
+      "category": "Pośrednictwo logistyczne",
+      "industry": "farmacja",
+      "title": "Pośrednictwo logistyczne dla farmacji — magazyny GDP | Vologis",
+      "description": "Dobór magazynów i operatorów logistycznych zgodnych z GDP dla branży farmaceutycznej. Vologis weryfikuje partnerów pod kątem wymagań farmaceutycznych, łańcucha chłodniczego i dokumentacji.",
+      "h1": "Pośrednictwo logistyczne dla branży farmaceutycznej",
+      "eyebrow": "POŚREDNICTWO LOGISTYCZNE · FARMACJA",
+      "intro": "Logistyka farmaceutyczna to jedna z najbardziej wymagających kategorii — Dobra Praktyka Dystrybucyjna (GDP), kontrola temperatury, pełna identyfikowalność partii i rygorystyczna dokumentacja. Vologis pomaga firmom farmaceutycznym znaleźć i zweryfikować operatorów magazynowych spełniających te wymagania nie tylko na papierze, ale w realnej operacji.",
+      "problem_heading": "W farmacji deklaracja zgodności to za mało",
+      "problem_text": "Wielu operatorów deklaruje obsługę farmacji, ale realne spełnienie wymagań GDP, utrzymanie łańcucha chłodniczego i prowadzenie pełnej dokumentacji to zupełnie inny poziom. Błędny wybór operatora w farmacji to ryzyko utraty zgodności, zniszczenia produktu i odpowiedzialności prawnej.",
+      "scope": [
+        {"title": "Magazyny zgodne z GDP", "text": "Operatorzy spełniający wymagania Dobrej Praktyki Dystrybucyjnej, z udokumentowanymi procedurami i kwalifikacjami."},
+        {"title": "Łańcuch chłodniczy", "text": "Magazyny z kontrolowaną temperaturą i monitoringiem dla produktów wymagających przechowywania w określonych warunkach."},
+        {"title": "Identyfikowalność i serializacja", "text": "Operatorzy zapewniający pełną identyfikowalność partii, obsługę serializacji i zgodność z wymaganiami regulacyjnymi."},
+        {"title": "Dokumentacja i audyt", "text": "Weryfikacja procedur, kwalifikacji i gotowości operatora do audytów regulacyjnych."}
+      ],
+      "for_who": [
+        {"title": "Producenci farmaceutyczni", "text": "Gdy potrzebujesz dystrybucji zgodnej z GDP dla swoich produktów."},
+        {"title": "Hurtownie farmaceutyczne", "text": "Gdy szukasz operatora spełniającego wymagania regulacyjne i temperaturowe."},
+        {"title": "Firmy med-tech i wyrobów medycznych", "text": "Gdy Twoje produkty wymagają kontrolowanych warunków przechowywania."}
+      ],
+      "summary": "Pośrednictwo logistyczne dla farmacji to usługa, w której Vologis dobiera i weryfikuje operatorów magazynowych spełniających wymagania Dobrej Praktyki Dystrybucyjnej (GDP), zapewniających łańcuch chłodniczy, identyfikowalność partii i pełną dokumentację. Weryfikujemy realne spełnienie wymagań regulacyjnych, nie tylko deklaracje — w 100% niezależnie od operatorów.",
+      "faq": [
+        {"q": "Czy operator faktycznie spełnia wymagania GDP?", "a": "Weryfikujemy to dogłębnie — sprawdzamy udokumentowane procedury, kwalifikacje magazynu, monitoring temperatury i gotowość do audytów regulacyjnych. Deklaracja zgodności bez pokrycia w procedurach to dla nas sygnał ostrzegawczy."},
+        {"q": "Czy znajdziecie magazyn z kontrolą temperatury dla farmacji?", "a": "Tak. Dobieramy magazyny z kontrolowaną temperaturą i ciągłym monitoringiem, dopasowane do wymagań Twoich produktów — od chłodni po przechowywanie w temperaturze kontrolowanej z pełną dokumentacją."},
+        {"q": "Czy obsługujecie serializację i identyfikowalność partii?", "a": "Dobieramy operatorów zapewniających pełną identyfikowalność partii i obsługę serializacji zgodną z wymaganiami regulacyjnymi obowiązującymi w obrocie farmaceutycznym."}
+      ]
+    },
+    {
+      "slug": "posrednictwo-logistyczne-ecommerce",
+      "parent": "posrednictwo-logistyczne",
+      "parent_name": "Pośrednictwo logistyczne",
+      "category": "Pośrednictwo logistyczne",
+      "industry": "e-commerce",
+      "title": "Pośrednictwo logistyczne dla e-commerce — fulfillment i magazyn | Vologis",
+      "description": "Dobór partnerów fulfillment dla e-commerce i D2C. Vologis znajduje i weryfikuje operatorów obsługujących kompletację, pakowanie, zwroty i integracje z marketplace'ami.",
+      "h1": "Pośrednictwo logistyczne dla e-commerce i D2C",
+      "eyebrow": "POŚREDNICTWO LOGISTYCZNE · E-COMMERCE",
+      "intro": "W e-commerce logistyka jest częścią doświadczenia klienta — szybkość wysyłki, jakość pakowania i sprawna obsługa zwrotów wprost przekładają się na lojalność i opinie. Vologis pomaga sklepom internetowym i markom D2C znaleźć partnera fulfillment dopasowanego do skali, asortymentu i kanałów sprzedaży, z integracjami do platform i marketplace'ów.",
+      "problem_heading": "Zły partner fulfillment kosztuje klientów, nie tylko pieniądze",
+      "problem_text": "Opóźnione wysyłki, błędy w kompletacji i chaotyczna obsługa zwrotów odbijają się na opiniach i powracalności klientów. Wraz ze wzrostem wolumenu samodzielna obsługa logistyki przestaje się skalować, a wybór niewłaściwego operatora fulfillment blokuje rozwój i generuje ukryte koszty.",
+      "scope": [
+        {"title": "Partnerzy fulfillment", "text": "Operatorzy obsługujący składowanie, kompletację i pakowanie zamówień e-commerce z krótkim czasem realizacji."},
+        {"title": "Obsługa zwrotów", "text": "Operatorzy z efektywnym procesem zwrotów — kluczowym dla e-commerce i kosztów obsługi."},
+        {"title": "Integracje z platformami", "text": "Partnerzy z gotowymi integracjami do platform e-commerce, marketplace'ów i systemów sprzedaży."},
+        {"title": "Skalowalność i szczyty", "text": "Operatorzy nadążający za wzrostem i obsługujący szczyty sprzedażowe (Black Friday, święta)."}
+      ],
+      "for_who": [
+        {"title": "Sklepy internetowe", "text": "Gdy własna logistyka przestała nadążać za zamówieniami."},
+        {"title": "Marki D2C", "text": "Gdy chcesz oddać fulfillment w ręce profesjonalisty i skupić się na sprzedaży."},
+        {"title": "Sprzedawcy marketplace", "text": "Gdy potrzebujesz operatora z integracjami i obsługą wielokanałową."}
+      ],
+      "summary": "Pośrednictwo logistyczne dla e-commerce to usługa, w której Vologis dobiera i weryfikuje partnerów fulfillment obsługujących składowanie, kompletację, pakowanie, zwroty oraz integracje z platformami i marketplace'ami. Dobieramy operatorów dopasowanych do skali sklepu, asortymentu i kanałów sprzedaży, gotowych na szczyty sprzedażowe — w 100% niezależnie.",
+      "faq": [
+        {"q": "Czym różni się fulfillment od zwykłego magazynu?", "a": "Fulfillment to kompleksowa obsługa zamówień e-commerce: składowanie, kompletacja pojedynczych zamówień, pakowanie, wysyłka i obsługa zwrotów — często z integracją do platformy sprzedażowej. Zwykły magazyn to głównie składowanie. Dobieramy operatora pod konkretny model sprzedaży."},
+        {"q": "Czy operator zintegruje się z moim sklepem?", "a": "Dobieramy partnerów z gotowymi integracjami do popularnych platform e-commerce, marketplace'ów i systemów sprzedaży. Weryfikujemy czy integracja obejmuje automatyczny przepływ zamówień, statusów i stanów magazynowych."},
+        {"q": "Czy operator obsłuży szczyty sprzedażowe?", "a": "Tak. Dobieramy operatorów z elastycznością mocy przerobowych na okresy szczytów — Black Friday, święta, promocje. Weryfikujemy ich historyczną wydajność w takich okresach."}
+      ]
+    },
+    {
+      "slug": "posrednictwo-logistyczne-produkcja",
+      "parent": "posrednictwo-logistyczne",
+      "parent_name": "Pośrednictwo logistyczne",
+      "category": "Pośrednictwo logistyczne",
+      "industry": "produkcja",
+      "title": "Pośrednictwo logistyczne dla produkcji — magazyny i transport | Vologis",
+      "description": "Dobór magazynów i operatorów logistycznych dla firm produkcyjnych. Vologis znajduje partnerów do składowania surowców, komponentów i wyrobów gotowych oraz transportu dopasowanego do rytmu produkcji.",
+      "h1": "Pośrednictwo logistyczne dla firm produkcyjnych",
+      "eyebrow": "POŚREDNICTWO LOGISTYCZNE · PRODUKCJA",
+      "intro": "Logistyka w produkcji łączy zasilanie linii surowcami, składowanie komponentów i dystrybucję wyrobów gotowych — wszystko zsynchronizowane z rytmem produkcji. Vologis pomaga firmom produkcyjnym znaleźć operatorów magazynowych i przewoźników, którzy nadążają za harmonogramem produkcyjnym i eliminują ryzyko przestojów.",
+      "problem_heading": "Przestój produkcji kosztuje więcej niż cała logistyka",
+      "problem_text": "Gdy zabraknie miejsca na wyroby gotowe albo opóźni się dostawa surowca, staje cała linia produkcyjna — a koszt takiego przestoju często przewyższa miesięczne koszty logistyki. Dobór operatorów magazynowych i transportowych zsynchronizowanych z produkcją wymaga zrozumienia specyfiki przepływów produkcyjnych.",
+      "scope": [
+        {"title": "Składowanie surowców i komponentów", "text": "Magazyny buforowe zsynchronizowane z zasilaniem produkcji, minimalizujące ryzyko przestojów."},
+        {"title": "Magazynowanie wyrobów gotowych", "text": "Przestrzeń na wyroby gotowe z elastycznością na wahania produkcji i sprzedaży."},
+        {"title": "Transport zsynchronizowany z produkcją", "text": "Przewoźnicy dopasowani do rytmu produkcji — dostawy just-in-time i wywóz wyrobów gotowych."},
+        {"title": "Logistyka wewnętrzna i zewnętrzna", "text": "Koordynacja przepływów między magazynem zewnętrznym a halą produkcyjną."}
+      ],
+      "for_who": [
+        {"title": "Zakłady produkcyjne", "text": "Gdy potrzebujesz magazynu buforowego i transportu zsynchronizowanego z produkcją."},
+        {"title": "Firmy z sezonową produkcją", "text": "Gdy potrzebujesz elastycznej przestrzeni na wahania wolumenu."},
+        {"title": "Producenci eksportujący", "text": "Gdy potrzebujesz magazynu i transportu międzynarodowego w jednym."}
+      ],
+      "summary": "Pośrednictwo logistyczne dla produkcji to usługa, w której Vologis dobiera operatorów magazynowych i przewoźników zsynchronizowanych z rytmem produkcji — do składowania surowców, komponentów i wyrobów gotowych oraz transportu just-in-time. Eliminujemy ryzyko przestojów wynikających z wąskich gardeł logistycznych, działając w 100% niezależnie.",
+      "faq": [
+        {"q": "Czy znajdziecie magazyn buforowy blisko mojej produkcji?", "a": "Tak. Dobieramy magazyny buforowe w lokalizacji minimalizującej czas i koszt transportu do zakładu, dopasowane do wymaganego wolumenu surowców, komponentów lub wyrobów gotowych."},
+        {"q": "Czy operator obsłuży dostawy just-in-time?", "a": "Dobieramy operatorów i przewoźników zdolnych do obsługi dostaw zsynchronizowanych z harmonogramem produkcji. Weryfikujemy ich terminowość i elastyczność, bo to one decydują o ciągłości produkcji."},
+        {"q": "Czy pomożecie z logistyką eksportową wyrobów?", "a": "Tak. Dobieramy partnerów obsługujących zarówno składowanie, jak i transport międzynarodowy wyrobów gotowych, w tym obsługę celną i dystrybucję na rynki eksportowe."}
+      ]
+    },
+    {
+      "slug": "posrednictwo-logistyczne-automotive",
+      "parent": "posrednictwo-logistyczne",
+      "parent_name": "Pośrednictwo logistyczne",
+      "category": "Pośrednictwo logistyczne",
+      "industry": "automotive",
+      "title": "Pośrednictwo logistyczne dla automotive — magazyny i JIT | Vologis",
+      "description": "Dobór operatorów logistycznych dla branży automotive. Vologis znajduje magazyny i partnerów obsługujących dostawy just-in-time, just-in-sequence i wymagania jakościowe sektora motoryzacyjnego.",
+      "h1": "Pośrednictwo logistyczne dla branży automotive",
+      "eyebrow": "POŚREDNICTWO LOGISTYCZNE · AUTOMOTIVE",
+      "intro": "Logistyka w automotive to najwyższy poziom wymagań: dostawy just-in-time i just-in-sequence, rygorystyczne standardy jakości, pełna identyfikowalność i zero tolerancji dla przestojów linii. Vologis pomaga dostawcom i producentom z sektora motoryzacyjnego znaleźć operatorów logistycznych spełniających te standardy w praktyce.",
+      "problem_heading": "W automotive opóźnienie to kara umowna i utrata kontraktu",
+      "problem_text": "Sektor motoryzacyjny działa na zasadach, w których przestój linii u producenta OEM oznacza dotkliwe kary i ryzyko utraty kontraktu. Operator logistyczny obsługujący automotive musi gwarantować terminowość, jakość i identyfikowalność na poziomie, którego większość standardowych magazynów nie spełnia.",
+      "scope": [
+        {"title": "Dostawy JIT i JIS", "text": "Operatorzy zdolni do dostaw just-in-time i just-in-sequence zsynchronizowanych z linią produkcyjną OEM."},
+        {"title": "Standardy jakości automotive", "text": "Magazyny spełniające wymagania jakościowe sektora — procedury, identyfikowalność, kontrola."},
+        {"title": "Magazyny konsygnacyjne", "text": "Operatorzy obsługujący modele konsygnacyjne i bufory przy zakładach produkcyjnych."},
+        {"title": "Identyfikowalność komponentów", "text": "Pełne śledzenie partii i komponentów wymagane w łańcuchu dostaw motoryzacyjnych."}
+      ],
+      "for_who": [
+        {"title": "Dostawcy Tier 1 i Tier 2", "text": "Gdy obsługujesz OEM i potrzebujesz logistyki spełniającej ich standardy."},
+        {"title": "Producenci komponentów", "text": "Gdy potrzebujesz magazynu z identyfikowalnością i dostawami JIT."},
+        {"title": "Dystrybutorzy części", "text": "Gdy obsługujesz aftermarket i potrzebujesz sprawnej dystrybucji."}
+      ],
+      "summary": "Pośrednictwo logistyczne dla automotive to usługa, w której Vologis dobiera operatorów logistycznych spełniających najwyższe wymagania sektora motoryzacyjnego: dostawy just-in-time i just-in-sequence, standardy jakości, magazyny konsygnacyjne i pełną identyfikowalność komponentów. Weryfikujemy realną zdolność operatora do obsługi automotive, działając niezależnie.",
+      "faq": [
+        {"q": "Czy operator obsłuży dostawy just-in-sequence?", "a": "Dobieramy operatorów z udokumentowaną zdolnością do obsługi JIT i JIS zsynchronizowanych z linią OEM. Weryfikujemy ich systemy, procesy i historyczną terminowość, bo w automotive nie ma miejsca na błąd."},
+        {"q": "Czy magazyn spełni standardy jakościowe automotive?", "a": "Weryfikujemy czy operator posiada procedury, identyfikowalność i kontrolę jakości wymagane w łańcuchu dostaw motoryzacyjnych. Sprawdzamy realne wdrożenie standardów, nie tylko certyfikaty na ścianie."},
+        {"q": "Czy znajdziecie magazyn konsygnacyjny przy OEM?", "a": "Tak. Dobieramy operatorów obsługujących modele konsygnacyjne i magazyny buforowe zlokalizowane przy zakładach OEM, minimalizujące ryzyko przestojów linii."}
+      ]
+    },
+    {
+      "slug": "posrednictwo-logistyczne-retail",
+      "parent": "posrednictwo-logistyczne",
+      "parent_name": "Pośrednictwo logistyczne",
+      "category": "Pośrednictwo logistyczne",
+      "industry": "retail",
+      "title": "Pośrednictwo logistyczne dla retail — dystrybucja do sklepów | Vologis",
+      "description": "Dobór operatorów logistycznych dla handlu detalicznego. Vologis znajduje partnerów obsługujących dystrybucję do sieci sklepów, omnichannel i uzupełnianie zapasów.",
+      "h1": "Pośrednictwo logistyczne dla handlu detalicznego",
+      "eyebrow": "POŚREDNICTWO LOGISTYCZNE · RETAIL",
+      "intro": "Handel detaliczny wymaga logistyki obsługującej jednocześnie dystrybucję do sieci sklepów, kanał online i uzupełnianie zapasów — często w modelu omnichannel. Vologis pomaga sieciom i sprzedawcom detalicznym znaleźć operatorów logistycznych zdolnych zsynchronizować przepływy między magazynem centralnym, sklepami i klientem końcowym.",
+      "problem_heading": "Pusta półka to utracona sprzedaż, której nie odzyskasz",
+      "problem_text": "W retailu dostępność towaru na półce decyduje o sprzedaży. Zbyt wolne uzupełnianie zapasów, nieoptymalna dystrybucja do sklepów i brak synchronizacji między kanałami online i offline prowadzą do utraconej sprzedaży i nadmiernych zapasów jednocześnie. Dobór właściwego operatora wymaga zrozumienia specyfiki przepływów detalicznych.",
+      "scope": [
+        {"title": "Dystrybucja do sieci sklepów", "text": "Operatorzy obsługujący regularną dystrybucję do wielu punktów sprzedaży z optymalizacją tras."},
+        {"title": "Logistyka omnichannel", "text": "Partnerzy synchronizujący przepływy między magazynem, sklepami i kanałem online."},
+        {"title": "Uzupełnianie zapasów", "text": "Operatorzy zapewniający sprawne i przewidywalne uzupełnianie zapasów w punktach sprzedaży."},
+        {"title": "Obsługa zwrotów i przesunięć", "text": "Sprawna obsługa zwrotów oraz przesunięć międzysklepowych w sieci."}
+      ],
+      "for_who": [
+        {"title": "Sieci detaliczne", "text": "Gdy potrzebujesz dystrybucji do wielu punktów sprzedaży."},
+        {"title": "Sprzedawcy omnichannel", "text": "Gdy łączysz sprzedaż stacjonarną i online i potrzebujesz spójnej logistyki."},
+        {"title": "Marki własne retail", "text": "Gdy zarządzasz dystrybucją produktów do punktów sprzedaży."}
+      ],
+      "summary": "Pośrednictwo logistyczne dla retail to usługa, w której Vologis dobiera operatorów logistycznych obsługujących dystrybucję do sieci sklepów, logistykę omnichannel, uzupełnianie zapasów oraz obsługę zwrotów i przesunięć międzysklepowych. Dobieramy partnerów synchronizujących przepływy między magazynem, sklepami i klientem końcowym — w 100% niezależnie.",
+      "faq": [
+        {"q": "Czy operator obsłuży dystrybucję do wielu sklepów?", "a": "Tak. Dobieramy operatorów obsługujących regularną dystrybucję do wielu punktów sprzedaży z optymalizacją tras i okien dostaw, dopasowaną do rytmu uzupełniania zapasów Twojej sieci."},
+        {"q": "Czy znajdziecie operatora obsługującego omnichannel?", "a": "Dobieramy partnerów zdolnych synchronizować przepływy między magazynem centralnym, sklepami i kanałem online — kluczowe dla spójnego doświadczenia klienta i optymalnych zapasów w modelu omnichannel."},
+        {"q": "Czy operator obsłuży przesunięcia międzysklepowe?", "a": "Tak. Weryfikujemy zdolność operatora do obsługi przesunięć międzysklepowych i zwrotów, które są częstym wąskim gardłem w logistyce sieci detalicznych."}
+      ]
+    },
+    {
+      "slug": "posrednictwo-logistyczne-chlodnia",
+      "parent": "posrednictwo-logistyczne",
+      "parent_name": "Pośrednictwo logistyczne",
+      "category": "Pośrednictwo logistyczne",
+      "industry": "chłodnia / łańcuch chłodniczy",
+      "title": "Pośrednictwo logistyczne — magazyny chłodnicze i cold chain | Vologis",
+      "description": "Dobór magazynów chłodniczych i operatorów łańcucha chłodniczego. Vologis znajduje i weryfikuje chłodnie oraz partnerów transportu w kontrolowanej temperaturze dla żywności, farmacji i FMCG.",
+      "h1": "Pośrednictwo logistyczne — magazyny chłodnicze i łańcuch chłodniczy",
+      "eyebrow": "POŚREDNICTWO LOGISTYCZNE · CHŁODNIA",
+      "intro": "Produkty wymagające kontrolowanej temperatury — żywność, farmaceutyki, produkty wrażliwe — nie wybaczają przerwania łańcucha chłodniczego. Vologis pomaga firmom znaleźć i zweryfikować chłodnie oraz operatorów transportu w kontrolowanej temperaturze, którzy gwarantują ciągłość cold chain w każdym ogniwie.",
+      "problem_heading": "Jedno przerwanie łańcucha chłodniczego niszczy całą partię",
+      "problem_text": "W logistyce chłodniczej nie ma marginesu błędu — przerwanie łańcucha chłodniczego oznacza utratę całej partii towaru, ryzyko zdrowotne i odpowiedzialność prawną. Znalezienie chłodni i operatora transportu z udokumentowanym, ciągłym monitoringiem temperatury wymaga rygorystycznej weryfikacji.",
+      "scope": [
+        {"title": "Magazyny chłodnicze", "text": "Chłodnie i mroźnie z kontrolowaną temperaturą, dopasowane do wymagań przechowywanych produktów."},
+        {"title": "Transport w kontrolowanej temperaturze", "text": "Przewoźnicy zapewniający ciągłość łańcucha chłodniczego w transporcie."},
+        {"title": "Monitoring i dokumentacja temperatury", "text": "Operatorzy z ciągłym monitoringiem i pełną dokumentacją temperatury na każdym etapie."},
+        {"title": "Obsługa wielu zakresów temperatur", "text": "Magazyny obsługujące różne zakresy temperatur — od chłodzenia po głębokie mrożenie."}
+      ],
+      "for_who": [
+        {"title": "Producenci żywności", "text": "Gdy potrzebujesz chłodni i transportu chłodniczego dla produktów spożywczych."},
+        {"title": "Firmy farmaceutyczne", "text": "Gdy Twoje produkty wymagają przechowywania w kontrolowanej temperaturze zgodnie z GDP."},
+        {"title": "Dystrybutorzy produktów wrażliwych", "text": "Gdy obsługujesz produkty wymagające ciągłości łańcucha chłodniczego."}
+      ],
+      "summary": "Pośrednictwo logistyczne dla łańcucha chłodniczego to usługa, w której Vologis dobiera i weryfikuje chłodnie, mroźnie oraz operatorów transportu w kontrolowanej temperaturze. Zapewniamy dobór partnerów z ciągłym monitoringiem i pełną dokumentacją temperatury — kluczowych dla żywności, farmacji i produktów wrażliwych. Działamy w 100% niezależnie od operatorów.",
+      "faq": [
+        {"q": "Czy chłodnia zapewni ciągły monitoring temperatury?", "a": "Weryfikujemy czy operator prowadzi ciągły monitoring temperatury z pełną dokumentacją i systemem alarmowym. To absolutna podstawa w logistyce chłodniczej — sprawdzamy realne systemy, nie deklaracje."},
+        {"q": "Czy znajdziecie magazyn obsługujący różne zakresy temperatur?", "a": "Tak. Dobieramy magazyny obsługujące różne zakresy — od chłodzenia (np. 2–8°C) po głębokie mrożenie — dopasowane do wymagań konkretnych produktów i ich przechowywania."},
+        {"q": "Czy zapewniacie transport w kontrolowanej temperaturze?", "a": "Dobieramy przewoźników gwarantujących ciągłość łańcucha chłodniczego w transporcie, z monitoringiem temperatury i dokumentacją. Łączymy magazyn chłodniczy i transport w spójny, nieprzerwany cold chain."}
+      ]
+    },
+    {
+      "slug": "posrednictwo-logistyczne-adr",
+      "parent": "posrednictwo-logistyczne",
+      "parent_name": "Pośrednictwo logistyczne",
+      "category": "Pośrednictwo logistyczne",
+      "industry": "ADR / materiały niebezpieczne",
+      "title": "Pośrednictwo logistyczne ADR — magazyny materiałów niebezpiecznych | Vologis",
+      "description": "Dobór magazynów ADR i operatorów obsługujących materiały niebezpieczne. Vologis znajduje i weryfikuje partnerów spełniających wymagania składowania i transportu towarów niebezpiecznych.",
+      "h1": "Pośrednictwo logistyczne dla materiałów niebezpiecznych (ADR)",
+      "eyebrow": "POŚREDNICTWO LOGISTYCZNE · ADR",
+      "intro": "Składowanie i transport materiałów niebezpiecznych podlega rygorystycznym przepisom ADR i wymaga magazynów oraz operatorów z odpowiednimi pozwoleniami, infrastrukturą i procedurami bezpieczeństwa. Vologis pomaga firmom znaleźć i zweryfikować operatorów spełniających wymagania ADR — bo tu błąd oznacza ryzyko prawne i bezpieczeństwa.",
+      "problem_heading": "Materiały niebezpieczne nie wybaczają skrótów",
+      "problem_text": "Składowanie towarów niebezpiecznych bez właściwych pozwoleń, infrastruktury i procedur to ryzyko poważnych konsekwencji prawnych, finansowych i bezpieczeństwa. Niewielu operatorów realnie spełnia wszystkie wymagania ADR — a deklaracja obsługi materiałów niebezpiecznych bez pełnego zaplecza jest niewystarczająca.",
+      "scope": [
+        {"title": "Magazyny z pozwoleniami ADR", "text": "Operatorzy z odpowiednimi pozwoleniami i infrastrukturą do składowania materiałów niebezpiecznych."},
+        {"title": "Transport ADR", "text": "Przewoźnicy z uprawnieniami i wyposażeniem do transportu towarów niebezpiecznych."},
+        {"title": "Procedury bezpieczeństwa", "text": "Operatorzy z wdrożonymi procedurami bezpieczeństwa i przeszkolonym personelem (doradca ADR)."},
+        {"title": "Obsługa różnych klas ADR", "text": "Magazyny obsługujące odpowiednie klasy materiałów niebezpiecznych zgodnie z wymaganiami."}
+      ],
+      "for_who": [
+        {"title": "Producenci chemiczni", "text": "Gdy potrzebujesz składowania i transportu materiałów niebezpiecznych zgodnie z ADR."},
+        {"title": "Dystrybutorzy produktów ADR", "text": "Gdy obsługujesz produkty wymagające specjalnych pozwoleń."},
+        {"title": "Firmy z asortymentem mieszanym", "text": "Gdy część Twojego asortymentu podlega przepisom ADR."}
+      ],
+      "summary": "Pośrednictwo logistyczne ADR to usługa, w której Vologis dobiera i weryfikuje magazyny oraz operatorów transportu spełniających wymagania składowania i przewozu materiałów niebezpiecznych (ADR). Weryfikujemy pozwolenia, infrastrukturę, procedury bezpieczeństwa i obsługę odpowiednich klas towarów niebezpiecznych. Działamy w 100% niezależnie.",
+      "faq": [
+        {"q": "Czy operator ma wymagane pozwolenia ADR?", "a": "Weryfikujemy posiadane pozwolenia, infrastrukturę i procedury bezpieczeństwa operatora. Sprawdzamy też czy zatrudnia doradcę ADR i czy personel jest przeszkolony — to wymagania, których nie można pominąć przy materiałach niebezpiecznych."},
+        {"q": "Czy magazyn obsłuży moją klasę materiałów niebezpiecznych?", "a": "Materiały niebezpieczne dzielą się na klasy o różnych wymaganiach składowania. Weryfikujemy czy operator posiada pozwolenia i infrastrukturę dla konkretnej klasy Twoich produktów — nie każdy magazyn ADR obsługuje wszystkie klasy."},
+        {"q": "Czy obsłużycie firmę z asortymentem częściowo ADR?", "a": "Tak. Jeśli tylko część asortymentu podlega przepisom ADR, pomożemy dobrać rozwiązanie obsługujące zarówno towary standardowe, jak i niebezpieczne — w jednym magazynie lub w optymalnej kombinacji operatorów."}
+      ]
+    },
+
+    {
+      "slug": "doradztwo-operacyjne-fmcg",
+      "parent": "doradztwo-operacyjne",
+      "parent_name": "Doradztwo operacyjne i audyt",
+      "category": "Doradztwo operacyjne",
+      "industry": "FMCG",
+      "title": "Audyt i doradztwo operacyjne dla FMCG | Vologis",
+      "description": "Audyt logistyczny i optymalizacja procesów dla branży FMCG. Vologis identyfikuje wąskie gardła w magazynach wysokiej rotacji, optymalizuje kompletację i redukuje koszty operacyjne.",
+      "h1": "Doradztwo operacyjne i audyt dla branży FMCG",
+      "eyebrow": "DORADZTWO OPERACYJNE · FMCG",
+      "intro": "W FMCG przy cienkiej marży i ogromnym wolumenie nawet niewielka nieefektywność procesów mnoży się na tysiącach operacji dziennie. Vologis przeprowadza audyt operacyjny magazynów FMCG, identyfikuje wąskie gardła w kompletacji i przepływach o wysokiej rotacji oraz dostarcza policzalne rekomendacje — które wdrażamy aż do osiągnięcia KPI.",
+      "problem_heading": "Przy wysokiej rotacji każda sekunda kompletacji to realne pieniądze",
+      "problem_text": "W magazynach FMCG o dużym wolumenie nieoptymalne ścieżki kompletacji, źle zaprojektowany slotting i wąskie gardła w przepływie kosztują w skali setek tysięcy operacji miesięcznie. Problem często leży głębiej niż się wydaje — w layoucie, konfiguracji WMS albo organizacji pracy.",
+      "scope": [
+        {"title": "Audyt procesów wysokiej rotacji", "text": "Analiza kompletacji, slottingu i przepływów w magazynach o dużym wolumenie i szybkiej rotacji."},
+        {"title": "Optymalizacja kompletacji", "text": "Skrócenie ścieżek, optymalizacja slottingu i metod kompletacji pod profil rotacji FMCG."},
+        {"title": "Obsługa sezonowości", "text": "Projektowanie procesów elastycznych na szczyty sezonowe i promocje."},
+        {"title": "Redukcja kosztu operacji", "text": "Identyfikacja oszczędności w koszcie obsługi pojedynczej operacji i zamówienia."}
+      ],
+      "for_who": [
+        {"title": "Producenci FMCG", "text": "Gdy logistyka nie nadąża za produkcją i rotacją."},
+        {"title": "Dystrybutorzy FMCG", "text": "Gdy koszty kompletacji rosną szybciej niż wolumen."},
+        {"title": "Operatorzy obsługujący FMCG", "text": "Gdy potrzebujesz benchmarku i optymalizacji procesów."}
+      ],
+      "summary": "Doradztwo operacyjne dla FMCG to usługa, w której Vologis przeprowadza audyt magazynów wysokiej rotacji, identyfikuje wąskie gardła w kompletacji i przepływach, optymalizuje slotting i procesy pod specyfikę produktów szybkozbywalnych. Dostarczamy policzalne rekomendacje i wdrażamy je aż do osiągnięcia mierzalnych KPI.",
+      "faq": [
+        {"q": "Jak audyt pomoże magazynowi FMCG o dużym wolumenie?", "a": "W FMCG nawet drobna optymalizacja ścieżki kompletacji mnoży się na tysiącach operacji. Audyt identyfikuje gdzie tracisz czas i pieniądze — w slottingu, layoucie, metodzie kompletacji — i pokazuje konkretne, policzalne usprawnienia."},
+        {"q": "Czy uwzględnicie sezonowość i szczyty?", "a": "Tak. Projektujemy procesy elastyczne na szczyty sezonowe i promocje, które w FMCG potrafią wielokrotnie zwiększyć wolumen. Optymalizacja musi działać zarówno w okresie standardowym, jak i szczytowym."},
+        {"q": "Czy wdrażacie rekomendacje, czy tylko audytujecie?", "a": "Wdrażamy. Audyt to początek — kończymy gdy zmiany działają i widać efekt w KPI. Możemy wdrożyć rekomendacje z Twoim zespołem lub przejąć koordynację wdrożenia."}
+      ]
+    },
+    {
+      "slug": "doradztwo-operacyjne-ecommerce",
+      "parent": "doradztwo-operacyjne",
+      "parent_name": "Doradztwo operacyjne i audyt",
+      "category": "Doradztwo operacyjne",
+      "industry": "e-commerce",
+      "title": "Audyt i doradztwo operacyjne dla e-commerce | Vologis",
+      "description": "Audyt logistyczny i optymalizacja fulfillment dla e-commerce. Vologis analizuje procesy kompletacji, pakowania i zwrotów oraz redukuje koszt obsługi zamówienia.",
+      "h1": "Doradztwo operacyjne i audyt dla e-commerce",
+      "eyebrow": "DORADZTWO OPERACYJNE · E-COMMERCE",
+      "intro": "W e-commerce koszt obsługi zamówienia i czas realizacji decydują o rentowności i lojalności klientów. Vologis przeprowadza audyt procesów fulfillment, identyfikuje wąskie gardła w kompletacji, pakowaniu i obsłudze zwrotów oraz dostarcza rekomendacje obniżające koszt operacji i przyspieszające realizację.",
+      "problem_heading": "Rosnący wolumen obnaża każdą słabość procesu",
+      "problem_text": "To co działało przy 100 zamówieniach dziennie, przy 1000 staje się wąskim gardłem. Nieoptymalna kompletacja, chaotyczne pakowanie i kosztowna obsługa zwrotów obniżają marżę i jakość obsługi. Wraz ze wzrostem skali te problemy mnożą się — a klient odczuwa je jako opóźnienia i błędy.",
+      "scope": [
+        {"title": "Audyt procesów fulfillment", "text": "Analiza kompletacji, pakowania, wysyłki i obsługi zwrotów pod kątem kosztu i wydajności."},
+        {"title": "Optymalizacja kosztu zamówienia", "text": "Identyfikacja oszczędności w koszcie obsługi pojedynczego zamówienia."},
+        {"title": "Proces obsługi zwrotów", "text": "Usprawnienie obsługi zwrotów — częstego wąskiego gardła i źródła kosztów w e-commerce."},
+        {"title": "Skalowalność procesów", "text": "Projektowanie procesów nadążających za wzrostem i szczytami sprzedażowymi."}
+      ],
+      "for_who": [
+        {"title": "Sklepy internetowe z własną logistyką", "text": "Gdy procesy nie nadążają za wzrostem zamówień."},
+        {"title": "Marki D2C", "text": "Gdy koszt obsługi zamówienia zjada marżę."},
+        {"title": "Operatorzy fulfillment", "text": "Gdy potrzebujesz optymalizacji procesów i benchmarku."}
+      ],
+      "summary": "Doradztwo operacyjne dla e-commerce to usługa, w której Vologis przeprowadza audyt procesów fulfillment — kompletacji, pakowania, wysyłki i zwrotów — identyfikuje wąskie gardła i dostarcza rekomendacje obniżające koszt obsługi zamówienia. Projektujemy procesy skalowalne na wzrost i szczyty sprzedażowe, wdrażając zmiany aż do osiągnięcia KPI.",
+      "faq": [
+        {"q": "Jak obniżyć koszt obsługi zamówienia w e-commerce?", "a": "Audyt pokazuje gdzie tracisz w kompletacji, pakowaniu i obsłudze zwrotów. Optymalizujemy ścieżki, slotting, metody kompletacji i procesy pakowania — każda sekunda i każdy zbędny ruch mnoży się na wolumenie zamówień."},
+        {"q": "Czy zajmiecie się procesem zwrotów?", "a": "Tak. Obsługa zwrotów to częste wąskie gardło i ukryte źródło kosztów w e-commerce. Analizujemy i usprawniamy cały proces zwrotów — od przyjęcia po ponowne wprowadzenie towaru do sprzedaży."},
+        {"q": "Czy procesy wytrzymają wzrost i szczyty?", "a": "Projektujemy procesy z myślą o skalowaniu i szczytach sprzedażowych. Audyt uwzględnia nie tylko obecny wolumen, ale i prognozowany wzrost, żeby optymalizacja nie wymagała przeprojektowania za pół roku."}
+      ]
+    },
+    {
+      "slug": "doradztwo-operacyjne-produkcja",
+      "parent": "doradztwo-operacyjne",
+      "parent_name": "Doradztwo operacyjne i audyt",
+      "category": "Doradztwo operacyjne",
+      "industry": "produkcja",
+      "title": "Audyt logistyki produkcji i doradztwo operacyjne | Vologis",
+      "description": "Audyt logistyki produkcji i optymalizacja przepływów wewnętrznych. Vologis analizuje zasilanie produkcji, przepływy na halach i śledzenie partii, eliminując wąskie gardła.",
+      "h1": "Doradztwo operacyjne i audyt logistyki produkcji",
+      "eyebrow": "DORADZTWO OPERACYJNE · PRODUKCJA",
+      "intro": "Logistyka produkcji decyduje o wydajności całego zakładu — opóźnione zasilanie linii, chaotyczne przepływy na halach i nieoptymalne śledzenie partii spowalniają produkcję i podnoszą koszty. Vologis przeprowadza audyt logistyki produkcji, identyfikuje wąskie gardła w przepływach wewnętrznych i dostarcza rekomendacje podnoszące wydajność.",
+      "problem_heading": "Logistyka wewnętrzna decyduje o wydajności produkcji",
+      "problem_text": "Gdy zasilanie linii surowcami się opóźnia, gdy operatorzy szukają komponentów albo gdy śledzenie partii zawodzi — spada wydajność całej produkcji. Te problemy rzadko są widoczne na pierwszy rzut oka, bo rozpraszają się na dziesiątki drobnych opóźnień, które sumują się w realne straty.",
+      "scope": [
+        {"title": "Audyt zasilania produkcji", "text": "Analiza przepływu surowców i komponentów do linii produkcyjnych, identyfikacja opóźnień."},
+        {"title": "Optymalizacja przepływów wewnętrznych", "text": "Projektowanie przepływów materiałowych na halach minimalizujących przestoje i przemieszczenia."},
+        {"title": "Śledzenie partii produkcyjnych", "text": "Usprawnienie identyfikowalności i śledzenia partii w procesie produkcyjnym."},
+        {"title": "Integracja produkcji z magazynem", "text": "Synchronizacja logistyki wewnętrznej z magazynem surowców i wyrobów gotowych."}
+      ],
+      "for_who": [
+        {"title": "Zakłady produkcyjne", "text": "Gdy logistyka wewnętrzna spowalnia wydajność produkcji."},
+        {"title": "Firmy z montażem", "text": "Gdy zasilanie linii i kompletacja pod montaż wymaga uporządkowania."},
+        {"title": "Producenci przed automatyzacją", "text": "Gdy chcesz uporządkować procesy przed inwestycją w automatykę."}
+      ],
+      "summary": "Doradztwo operacyjne dla produkcji to usługa, w której Vologis przeprowadza audyt logistyki produkcji — zasilania linii, przepływów na halach, śledzenia partii i integracji z magazynem. Identyfikujemy wąskie gardła w logistyce wewnętrznej i dostarczamy rekomendacje podnoszące wydajność produkcji, wdrażając zmiany aż do osiągnięcia KPI.",
+      "faq": [
+        {"q": "Czym jest audyt logistyki produkcji?", "a": "To analiza przepływów materiałowych wewnątrz zakładu: zasilania linii surowcami, ruchu komponentów, kompletacji pod montaż i śledzenia partii. Pokazuje gdzie logistyka wewnętrzna spowalnia produkcję i jak to naprawić."},
+        {"q": "Czy audyt pomoże przed inwestycją w automatykę?", "a": "Zdecydowanie. Automatyzacja chaotycznych procesów tylko utrwala chaos. Audyt przed automatyzacją porządkuje przepływy i pokazuje co warto automatyzować, a co najpierw uprościć — chroniąc przed kosztowną, źle dopasowaną inwestycją."},
+        {"q": "Jak audyt wpłynie na wydajność produkcji?", "a": "Eliminacja opóźnień w zasilaniu linii, skrócenie przemieszczeń i sprawne śledzenie partii bezpośrednio przekładają się na wydajność. Drobne opóźnienia, które dziś się rozpraszają, sumują się w realne zyski wydajności po optymalizacji."}
+      ]
+    },
+    {
+      "slug": "doradztwo-operacyjne-automotive",
+      "parent": "doradztwo-operacyjne",
+      "parent_name": "Doradztwo operacyjne i audyt",
+      "category": "Doradztwo operacyjne",
+      "industry": "automotive",
+      "title": "Audyt i doradztwo operacyjne dla automotive | Vologis",
+      "description": "Audyt logistyczny i optymalizacja procesów dla branży automotive. Vologis analizuje logistykę JIT/JIS, identyfikowalność i przepływy zgodne ze standardami motoryzacyjnymi.",
+      "h1": "Doradztwo operacyjne i audyt dla branży automotive",
+      "eyebrow": "DORADZTWO OPERACYJNE · AUTOMOTIVE",
+      "intro": "Logistyka w automotive musi działać bezbłędnie — dostawy just-in-sequence, pełna identyfikowalność i standardy jakości nie pozostawiają miejsca na nieefektywność. Vologis przeprowadza audyt procesów logistycznych dla dostawców i producentów motoryzacyjnych, identyfikuje ryzyka i wąskie gardła oraz optymalizuje przepływy pod rygory sektora.",
+      "problem_heading": "W automotive nieefektywność to ryzyko kar i utraty kontraktu",
+      "problem_text": "Sektor motoryzacyjny wymaga niezawodności na poziomie, gdzie pojedyncze opóźnienie u OEM oznacza kary i zagrożenie kontraktu. Procesy logistyczne muszą gwarantować terminowość JIT/JIS, identyfikowalność i jakość — a każda nieefektywność jest jednocześnie ryzykiem operacyjnym i biznesowym.",
+      "scope": [
+        {"title": "Audyt procesów JIT/JIS", "text": "Analiza procesów just-in-time i just-in-sequence pod kątem niezawodności i terminowości."},
+        {"title": "Identyfikowalność i jakość", "text": "Weryfikacja systemów śledzenia partii i zgodności ze standardami jakości automotive."},
+        {"title": "Optymalizacja przepływów", "text": "Usprawnienie przepływów magazynowych i konsygnacyjnych zsynchronizowanych z OEM."},
+        {"title": "Redukcja ryzyka operacyjnego", "text": "Identyfikacja i eliminacja ryzyk mogących prowadzić do przestojów linii i kar."}
+      ],
+      "for_who": [
+        {"title": "Dostawcy Tier 1 i Tier 2", "text": "Gdy obsługujesz OEM i nie możesz pozwolić sobie na opóźnienia."},
+        {"title": "Producenci komponentów", "text": "Gdy potrzebujesz niezawodnych procesów z identyfikowalnością."},
+        {"title": "Operatorzy obsługujący automotive", "text": "Gdy potrzebujesz audytu zgodności ze standardami sektora."}
+      ],
+      "summary": "Doradztwo operacyjne dla automotive to usługa, w której Vologis przeprowadza audyt procesów logistycznych pod rygory sektora motoryzacyjnego: niezawodność JIT/JIS, identyfikowalność, standardy jakości i przepływy konsygnacyjne. Identyfikujemy ryzyka operacyjne mogące prowadzić do przestojów i kar, optymalizujemy procesy i wdrażamy zmiany aż do osiągnięcia KPI.",
+      "faq": [
+        {"q": "Czy audyt obejmie procesy just-in-sequence?", "a": "Tak. Analizujemy niezawodność i terminowość procesów JIT i JIS zsynchronizowanych z linią OEM. W automotive to procesy krytyczne — identyfikujemy wszelkie ryzyka mogące prowadzić do przestoju linii klienta."},
+        {"q": "Czy sprawdzicie zgodność ze standardami jakości?", "a": "Weryfikujemy systemy identyfikowalności, kontrolę jakości i procedury pod kątem wymagań sektora motoryzacyjnego. Wskazujemy luki, które mogą stanowić ryzyko przy audytach OEM lub reklamacjach."},
+        {"q": "Jak audyt zmniejszy ryzyko kar od OEM?", "a": "Identyfikujemy wąskie gardła i ryzyka operacyjne mogące prowadzić do opóźnień i przestojów linii u klienta. Eliminacja tych ryzyk bezpośrednio chroni przed karami umownymi i zagrożeniem kontraktu."}
+      ]
+    },
+    {
+      "slug": "doradztwo-operacyjne-farmacja",
+      "parent": "doradztwo-operacyjne",
+      "parent_name": "Doradztwo operacyjne i audyt",
+      "category": "Doradztwo operacyjne",
+      "industry": "farmacja",
+      "title": "Audyt i doradztwo operacyjne dla farmacji (GDP) | Vologis",
+      "description": "Audyt logistyczny i optymalizacja procesów dla branży farmaceutycznej. Vologis analizuje procesy zgodne z GDP, łańcuch chłodniczy i identyfikowalność, eliminując ryzyka i nieefektywności.",
+      "h1": "Doradztwo operacyjne i audyt dla branży farmaceutycznej",
+      "eyebrow": "DORADZTWO OPERACYJNE · FARMACJA",
+      "intro": "Logistyka farmaceutyczna łączy rygor regulacyjny GDP z presją na efektywność operacyjną. Vologis przeprowadza audyt procesów farmaceutycznych pod kątem zgodności, łańcucha chłodniczego i identyfikowalności, jednocześnie identyfikując nieefektywności i wąskie gardła — bo zgodność i wydajność nie muszą się wykluczać.",
+      "problem_heading": "Zgodność z GDP nie musi oznaczać nieefektywności",
+      "problem_text": "Wiele firm farmaceutycznych traktuje procesy jako kompromis: albo zgodność z GDP, albo wydajność. W rzeczywistości źle zaprojektowane procesy są jednocześnie niezgodne i nieefektywne. Audyt pokazuje jak spełnić wymagania regulacyjne i jednocześnie zoptymalizować koszty i przepływy.",
+      "scope": [
+        {"title": "Audyt zgodności z GDP", "text": "Weryfikacja procesów pod kątem Dobrej Praktyki Dystrybucyjnej i wymagań regulacyjnych."},
+        {"title": "Łańcuch chłodniczy", "text": "Analiza procesów temperaturowych i monitoringu w przechowywaniu i dystrybucji."},
+        {"title": "Identyfikowalność i serializacja", "text": "Weryfikacja systemów śledzenia partii i obsługi serializacji."},
+        {"title": "Optymalizacja w ramach zgodności", "text": "Identyfikacja nieefektywności, które można usunąć bez naruszania wymagań GDP."}
+      ],
+      "for_who": [
+        {"title": "Producenci farmaceutyczni", "text": "Gdy potrzebujesz procesów zgodnych z GDP i jednocześnie wydajnych."},
+        {"title": "Hurtownie farmaceutyczne", "text": "Gdy chcesz zoptymalizować koszty bez ryzyka utraty zgodności."},
+        {"title": "Firmy med-tech", "text": "Gdy obsługujesz produkty wymagające kontrolowanych warunków."}
+      ],
+      "summary": "Doradztwo operacyjne dla farmacji to usługa, w której Vologis przeprowadza audyt procesów farmaceutycznych pod kątem zgodności z GDP, łańcucha chłodniczego i identyfikowalności, jednocześnie identyfikując nieefektywności i możliwości optymalizacji. Pokazujemy jak spełnić wymagania regulacyjne i obniżyć koszty — wdrażając zmiany aż do osiągnięcia KPI.",
+      "faq": [
+        {"q": "Czy audyt sprawdzi zgodność z GDP?", "a": "Tak. Weryfikujemy procesy pod kątem Dobrej Praktyki Dystrybucyjnej — przechowywanie, łańcuch chłodniczy, identyfikowalność, dokumentację. Wskazujemy luki zgodności, zanim staną się problemem podczas inspekcji."},
+        {"q": "Czy można zoptymalizować koszty bez naruszania GDP?", "a": "Tak — i to częsty przypadek. Źle zaprojektowane procesy bywają jednocześnie nieefektywne i ryzykowne regulacyjnie. Pokazujemy gdzie można usprawnić przepływy i obniżyć koszty, pozostając w pełni zgodnym z wymaganiami."},
+        {"q": "Czy obejmujecie audyt łańcucha chłodniczego?", "a": "Tak. Analizujemy procesy temperaturowe, monitoring i dokumentację w przechowywaniu i dystrybucji produktów wymagających kontrolowanej temperatury, identyfikując zarówno ryzyka zgodności, jak i nieefektywności."}
+      ]
+    },
+    {
+      "slug": "doradztwo-operacyjne-dystrybucja",
+      "parent": "doradztwo-operacyjne",
+      "parent_name": "Doradztwo operacyjne i audyt",
+      "category": "Doradztwo operacyjne",
+      "industry": "dystrybucja",
+      "title": "Audyt i doradztwo operacyjne dla dystrybucji | Vologis",
+      "description": "Audyt logistyczny i optymalizacja sieci dystrybucji. Vologis analizuje przepływy, magazyny i transport w firmach dystrybucyjnych, redukując koszty i poprawiając poziom obsługi.",
+      "h1": "Doradztwo operacyjne i audyt dla firm dystrybucyjnych",
+      "eyebrow": "DORADZTWO OPERACYJNE · DYSTRYBUCJA",
+      "intro": "Firmy dystrybucyjne żyją z efektywności przepływu towaru — między dostawcami, magazynem a wieloma odbiorcami. Vologis przeprowadza audyt sieci dystrybucji, analizuje strukturę magazynów, przepływy i transport oraz dostarcza rekomendacje obniżające koszty i poprawiające poziom obsługi przy zachowaniu kontroli nad zapasami.",
+      "problem_heading": "W dystrybucji koszt obsługi i poziom zapasów ciągną w przeciwne strony",
+      "problem_text": "Firmy dystrybucyjne balansują między dostępnością towaru a kosztem jego utrzymania. Zbyt niskie zapasy to utracona sprzedaż, zbyt wysokie to zamrożony kapitał. Do tego dochodzi koszt obsługi wielu odbiorców i złożoność sieci dystrybucji. Bez obiektywnej analizy łatwo optymalizować jeden parametr kosztem drugiego.",
+      "scope": [
+        {"title": "Audyt sieci dystrybucji", "text": "Analiza struktury magazynów, przepływów i punktów dystrybucji pod kątem kosztu i poziomu obsługi."},
+        {"title": "Optymalizacja zapasów", "text": "Analiza poziomu i rotacji zapasów, struktury ABC/XYZ i polityki uzupełniania."},
+        {"title": "Koszt obsługi odbiorców", "text": "Optymalizacja kosztu obsługi przy wielu odbiorcach i kanałach dystrybucji."},
+        {"title": "Transport i trasy", "text": "Optymalizacja modelu transportowego i tras dystrybucji."}
+      ],
+      "for_who": [
+        {"title": "Firmy dystrybucyjne", "text": "Gdy koszty rosną szybciej niż obroty, a zapasy wymykają się spod kontroli."},
+        {"title": "Hurtownie", "text": "Gdy obsługujesz wielu odbiorców i potrzebujesz optymalizacji."},
+        {"title": "Dystrybutorzy wielokanałowi", "text": "Gdy łączysz różne kanały sprzedaży i dystrybucji."}
+      ],
+      "summary": "Doradztwo operacyjne dla dystrybucji to usługa, w której Vologis przeprowadza audyt sieci dystrybucji — struktury magazynów, przepływów, zapasów i transportu. Optymalizujemy koszt obsługi odbiorców i poziom zapasów jednocześnie, poprawiając poziom obsługi bez zamrażania kapitału. Wdrażamy rekomendacje aż do osiągnięcia mierzalnych KPI.",
+      "faq": [
+        {"q": "Jak zoptymalizować zapasy bez utraty dostępności?", "a": "Analizujemy rotację, strukturę ABC/XYZ i politykę uzupełniania, żeby obniżyć poziom zapasów tam gdzie to bezpieczne i podnieść tam gdzie brakuje. Cel to wyższa dostępność przy niższym zamrożonym kapitale — nie kompromis między nimi."},
+        {"q": "Czy audyt obejmie koszt obsługi wielu odbiorców?", "a": "Tak. Analizujemy koszt obsługi w podziale na odbiorców i kanały, identyfikując nierentowne ścieżki i możliwości konsolidacji. Często okazuje się, że część obsługi generuje koszty nieproporcjonalne do wartości."},
+        {"q": "Czy optymalizujecie trasy i transport?", "a": "Tak. Optymalizacja modelu transportowego i tras dystrybucji to częsty obszar realnych oszczędności w firmach dystrybucyjnych — analizujemy go jako część szerszego audytu sieci dystrybucji."}
+      ]
+    },
+
+    {
+      "slug": "projekty-greenfield-logistyka",
+      "parent": "projekty-greenfield",
+      "parent_name": "Projekty Greenfield",
+      "category": "Projekty Greenfield",
+      "industry": "obiekty logistyczne",
+      "title": "Projekty Greenfield — budowa obiektów logistycznych | Vologis",
+      "description": "Kompleksowe prowadzenie inwestycji w obiekty logistyczne od podstaw. Vologis prowadzi projekt od analizy lokalizacji, przez masterplan, po uruchomienie operacji.",
+      "h1": "Projekty Greenfield — budowa obiektów logistycznych od podstaw",
+      "eyebrow": "PROJEKTY GREENFIELD · LOGISTYKA",
+      "intro": "Budowa nowego obiektu logistycznego to inwestycja na dekadę — decyzje podjęte na etapie planowania ważą na kosztach operacyjnych przez cały okres eksploatacji. Vologis prowadzi projekty Greenfield obiektów logistycznych kompleksowo: od analizy przedinwestycyjnej i wyboru lokalizacji, przez masterplan i dobór technologii, po uruchomienie operacji i osiągnięcie KPI.",
+      "problem_heading": "Obiekt logistyczny projektuje się raz — na kilkanaście lat",
+      "problem_text": "Błędna lokalizacja, nieoptymalny layout czy źle dobrana technologia w obiekcie logistycznym to koszt, który zostaje w operacji przez całą eksploatację. A koordynacja dziesiątek dostawców bez jednego punktu odpowiedzialności prowadzi do opóźnień i kompromisów obniżających wartość inwestycji.",
+      "scope": [
+        {"title": "Analiza przedinwestycyjna", "text": "Definiowanie wymagań, prognoz i scenariuszy rozwoju jako fundament projektu."},
+        {"title": "Wybór lokalizacji", "text": "Analiza i rekomendacja lokalizacji z wykorzystaniem własnych usług dronowych."},
+        {"title": "Masterplan i projekt", "text": "Projektowanie layoutu, stref i technologii z kalkulacjami CAPEX/OPEX/ROI."},
+        {"title": "Uruchomienie operacji", "text": "Nadzór nad realizacją, dobór dostawców, start operacyjny i osiągnięcie KPI."}
+      ],
+      "for_who": [
+        {"title": "Inwestorzy logistyczni", "text": "Gdy potrzebujesz kompleksowego prowadzenia inwestycji w obiekt logistyczny."},
+        {"title": "Firmy budujące własny obiekt", "text": "Gdy stawiasz magazyn lub centrum od podstaw."},
+        {"title": "Deweloperzy", "text": "Gdy prowadzisz projekt pod konkretnego najemcę lub komercjalizację."}
+      ],
+      "summary": "Projekt Greenfield obiektu logistycznego to kompleksowe prowadzenie inwestycji od analizy przedinwestycyjnej i wyboru lokalizacji, przez masterplan, projekt i dobór technologii, po uruchomienie operacji. Vologis pełni rolę jednego partnera odpowiedzialnego za cały cykl projektu, integrując analizę biznesową, lokalizacyjną, techniczną i operacyjną wraz z usługami dronowymi.",
+      "faq": [
+        {"q": "Co obejmuje projekt Greenfield obiektu logistycznego?", "a": "Pełny cykl: analizę przedinwestycyjną, wybór lokalizacji, masterplan z layoutem i kalkulacją ROI, dobór dostawców i technologii, nadzór nad realizacją oraz uruchomienie operacji aż do osiągnięcia KPI. Jeden partner, jedna odpowiedzialność."},
+        {"q": "Kiedy zaangażować Vologis w projekt?", "a": "Im wcześniej, tym lepiej — najlepiej zanim wybierzesz działkę. Analiza lokalizacji to jeden z najważniejszych etapów, a błąd na tym poziomie kosztuje przez całą eksploatację obiektu."},
+        {"q": "Czy wykorzystujecie drony w projekcie?", "a": "Tak. Na etapie wyboru lokalizacji dostarczamy pomiary geodezyjne i ortofotomapy działek, a w trakcie realizacji prowadzimy monitoring postępu budowy z powietrza — to nasza przewaga technologiczna."}
+      ]
+    },
+    {
+      "slug": "projekty-greenfield-magazyn",
+      "parent": "projekty-greenfield",
+      "parent_name": "Projekty Greenfield",
+      "category": "Projekty Greenfield",
+      "industry": "magazyn",
+      "title": "Projekty Greenfield — budowa magazynu od podstaw | Vologis",
+      "description": "Kompleksowe prowadzenie budowy magazynu od podstaw. Vologis projektuje layout, dobiera technologię i automatykę oraz uruchamia operacje magazynowe.",
+      "h1": "Projekty Greenfield — budowa magazynu od podstaw",
+      "eyebrow": "PROJEKTY GREENFIELD · MAGAZYN",
+      "intro": "Layout magazynu, dobór regałów i poziom automatyzacji decydują o koszcie każdej operacji przez całą eksploatację obiektu. Vologis prowadzi budowę magazynu od podstaw: projektujemy layout pod profil rotacji, dobieramy technologię i automatykę niezależnie od dostawców oraz uruchamiamy operacje aż do osiągnięcia założonej wydajności.",
+      "problem_heading": "Layout magazynu to koszt każdej kompletacji przez lata",
+      "problem_text": "Magazyn zaprojektowany bez uwzględnienia profilu rotacji, ścieżek kompletacji i planów rozwoju generuje zbędne przemieszczenia i koszty przy każdej operacji — przez cały okres eksploatacji. Przewymiarowana automatyka to martwy kapitał, niedoszacowana to wąskie gardło od pierwszego dnia.",
+      "scope": [
+        {"title": "Projekt layoutu magazynu", "text": "Projektowanie układu, stref i ścieżek kompletacji pod konkretny profil rotacji i wolumen."},
+        {"title": "Dobór regałów i wyposażenia", "text": "Niezależny dobór systemów składowania i wyposażenia dopasowanego do potrzeb."},
+        {"title": "Dobór automatyki", "text": "Obiektywny dobór poziomu automatyzacji dopasowany do wolumenu i ROI."},
+        {"title": "Uruchomienie i optymalizacja", "text": "Nadzór nad realizacją, rozruch, szkolenia i osiągnięcie założonej wydajności."}
+      ],
+      "for_who": [
+        {"title": "Firmy budujące magazyn", "text": "Gdy stawiasz magazyn od podstaw i chcesz uniknąć kosztownych błędów."},
+        {"title": "Firmy w fazie wzrostu", "text": "Gdy obecny magazyn przestał wystarczać."},
+        {"title": "Inwestorzy", "text": "Gdy potrzebujesz magazynu pod konkretne wymagania operacyjne."}
+      ],
+      "summary": "Projekt Greenfield magazynu to kompleksowe prowadzenie budowy magazynu od podstaw: projektowanie layoutu pod profil rotacji, niezależny dobór regałów, wyposażenia i automatyki oraz uruchomienie operacji aż do osiągnięcia założonej wydajności. Vologis dba o to, by każda decyzja projektowa minimalizowała koszt operacyjny przez całą eksploatację obiektu.",
+      "faq": [
+        {"q": "Jak zaprojektować layout magazynu?", "a": "Layout projektujemy pod konkretny profil rotacji (ABC/XYZ), wolumen i plany rozwoju — minimalizując przemieszczenia i koszt kompletacji. Uwzględniamy nie tylko obecne potrzeby, ale i prognozowany wzrost, żeby magazyn nie wymagał przeprojektowania za kilka lat."},
+        {"q": "Ile automatyki potrzebuje mój magazyn?", "a": "Tyle, ile uzasadnia wolumen i ROI — ani więcej, ani mniej. Przewymiarowana automatyka to martwy kapitał, niedoszacowana to wąskie gardło. Dobieramy poziom automatyzacji obiektywnie, bez powiązań z dostawcami."},
+        {"q": "Czy dobieracie regały i automatykę niezależnie?", "a": "Tak, w 100% niezależnie. Nie mamy prowizji od dostawców ani umów partnerskich. Prowadzimy przetargi i porównujemy oferty wyłącznie pod kątem dopasowania do Twoich potrzeb i realnego zwrotu z inwestycji."}
+      ]
+    },
+    {
+      "slug": "projekty-greenfield-centrum-dystrybucji",
+      "parent": "projekty-greenfield",
+      "parent_name": "Projekty Greenfield",
+      "category": "Projekty Greenfield",
+      "industry": "centrum dystrybucji",
+      "title": "Projekty Greenfield — budowa centrum dystrybucji | Vologis",
+      "description": "Kompleksowe prowadzenie budowy centrum dystrybucyjnego. Vologis projektuje i uruchamia centra dystrybucji obsługujące wielu odbiorców i kanałów.",
+      "h1": "Projekty Greenfield — budowa centrum dystrybucyjnego",
+      "eyebrow": "PROJEKTY GREENFIELD · CENTRUM DYSTRYBUCJI",
+      "intro": "Centrum dystrybucyjne to serce sieci logistycznej — obsługuje wielu odbiorców, kanałów i przepływów jednocześnie. Vologis prowadzi budowę centrum dystrybucji od analizy lokalizacji optymalnej dla sieci odbiorców, przez projekt obsługujący złożone przepływy, po uruchomienie operacji gotowej na skalowanie.",
+      "problem_heading": "Centrum dystrybucji musi obsłużyć złożoność, nie tylko wolumen",
+      "problem_text": "Centrum dystrybucyjne obsługuje jednocześnie wiele kierunków, kanałów i typów zamówień — od palet do sieci handlowych po pojedyncze paczki e-commerce. Projekt, który nie uwzględnia tej złożoności i lokalizacji optymalnej dla całej sieci odbiorców, generuje koszty transportu i obsługi przez całą eksploatację.",
+      "scope": [
+        {"title": "Analiza lokalizacji dla sieci", "text": "Wybór lokalizacji optymalnej dla całej sieci odbiorców i kosztów dystrybucji."},
+        {"title": "Projekt pod złożone przepływy", "text": "Layout obsługujący wiele kanałów, typów zamówień i kierunków dystrybucji."},
+        {"title": "Dobór technologii i automatyki", "text": "Technologia dopasowana do złożoności i wolumenu przepływów dystrybucyjnych."},
+        {"title": "Uruchomienie i skalowanie", "text": "Start operacji gotowych na wzrost i obsługę szczytów."}
+      ],
+      "for_who": [
+        {"title": "Sieci dystrybucyjne", "text": "Gdy budujesz centrum obsługujące sieć odbiorców."},
+        {"title": "Firmy omnichannel", "text": "Gdy potrzebujesz centrum obsługującego wiele kanałów."},
+        {"title": "Operatorzy logistyczni", "text": "Gdy budujesz centrum pod obsługę wielu klientów."}
+      ],
+      "summary": "Projekt Greenfield centrum dystrybucyjnego to kompleksowe prowadzenie inwestycji od analizy lokalizacji optymalnej dla sieci odbiorców, przez projekt obsługujący złożone przepływy wielokanałowe, po uruchomienie operacji gotowej na skalowanie. Vologis projektuje centrum pod realną złożoność dystrybucji, nie tylko wolumen, integrując całość pod jedną odpowiedzialnością.",
+      "faq": [
+        {"q": "Czym różni się centrum dystrybucji od magazynu?", "a": "Centrum dystrybucyjne obsługuje złożone, wielokanałowe przepływy do wielu odbiorców jednocześnie — od palet do sieci po paczki e-commerce. Wymaga projektu uwzględniającego tę złożoność i lokalizacji optymalnej dla całej sieci, nie tylko pojedynczego punktu."},
+        {"q": "Jak wybrać lokalizację centrum dystrybucji?", "a": "Lokalizację analizujemy pod kątem całej sieci odbiorców i kosztów dystrybucji — punkt optymalny dla jednego odbiorcy rzadko jest optymalny dla całej sieci. Wykorzystujemy analizę danych i własne usługi dronowe do oceny działek."},
+        {"q": "Czy centrum będzie gotowe na wzrost?", "a": "Projektujemy centrum z myślą o skalowaniu i obsłudze szczytów. Uwzględniamy prognozowany wzrost wolumenu i liczby odbiorców, żeby centrum wspierało rozwój, a nie ograniczało go po kilku latach."}
+      ]
+    },
+    {
+      "slug": "projekty-greenfield-cold-storage",
+      "parent": "projekty-greenfield",
+      "parent_name": "Projekty Greenfield",
+      "category": "Projekty Greenfield",
+      "industry": "cold storage / chłodnia",
+      "title": "Projekty Greenfield — budowa chłodni i cold storage | Vologis",
+      "description": "Kompleksowe prowadzenie budowy magazynu chłodniczego od podstaw. Vologis projektuje i uruchamia obiekty cold storage z kontrolą temperatury i efektywnością energetyczną.",
+      "h1": "Projekty Greenfield — budowa chłodni i magazynu cold storage",
+      "eyebrow": "PROJEKTY GREENFIELD · COLD STORAGE",
+      "intro": "Magazyn chłodniczy to najbardziej wymagający i kapitałochłonny typ obiektu logistycznego — łączy rygory łańcucha chłodniczego z wysokimi kosztami energii i specyfiką technologiczną. Vologis prowadzi budowę chłodni od podstaw: projektujemy obiekt pod kontrolę temperatury i efektywność energetyczną, dobieramy technologię chłodniczą i uruchamiamy operacje zgodne z wymaganiami.",
+      "problem_heading": "W chłodni koszt energii i ciągłość temperatury decydują o wszystkim",
+      "problem_text": "Magazyn chłodniczy to nie tylko logistyka — to projekt, w którym efektywność energetyczna decyduje o kosztach operacyjnych przez całą eksploatację, a ciągłość łańcucha chłodniczego o bezpieczeństwie towaru. Błędy w projekcie technologicznym chłodni są wyjątkowo kosztowne i trudne do naprawienia po uruchomieniu.",
+      "scope": [
+        {"title": "Projekt obiektu chłodniczego", "text": "Projektowanie chłodni pod kontrolę temperatury, izolację i efektywność energetyczną."},
+        {"title": "Dobór technologii chłodniczej", "text": "Niezależny dobór systemów chłodzenia, monitoringu i automatyki temperaturowej."},
+        {"title": "Efektywność energetyczna", "text": "Optymalizacja kosztów energii — kluczowego kosztu operacyjnego chłodni."},
+        {"title": "Zgodność i uruchomienie", "text": "Zapewnienie zgodności z wymaganiami i uruchomienie operacji chłodniczych."}
+      ],
+      "for_who": [
+        {"title": "Producenci żywności", "text": "Gdy budujesz chłodnię pod własną produkcję i dystrybucję."},
+        {"title": "Operatorzy chłodniczy", "text": "Gdy budujesz obiekt pod obsługę klientów wymagających cold chain."},
+        {"title": "Firmy farmaceutyczne", "text": "Gdy potrzebujesz magazynu temperaturowego zgodnego z GDP."}
+      ],
+      "summary": "Projekt Greenfield chłodni to kompleksowe prowadzenie budowy magazynu cold storage od podstaw: projektowanie pod kontrolę temperatury i efektywność energetyczną, niezależny dobór technologii chłodniczej oraz uruchomienie operacji zgodnych z wymaganiami łańcucha chłodniczego. Vologis dba o to, by koszt energii i ciągłość temperatury były zoptymalizowane od fazy projektu.",
+      "faq": [
+        {"q": "Co jest najważniejsze w projekcie chłodni?", "a": "Efektywność energetyczna i ciągłość łańcucha chłodniczego. Energia to główny koszt operacyjny chłodni przez całą eksploatację, a ciągłość temperatury decyduje o bezpieczeństwie towaru. Oba parametry muszą być zoptymalizowane już na etapie projektu — naprawa po uruchomieniu jest bardzo kosztowna."},
+        {"q": "Czy dobieracie technologię chłodniczą niezależnie?", "a": "Tak, w 100% niezależnie. Dobieramy systemy chłodzenia, monitoringu i automatyki temperaturowej wyłącznie pod kątem dopasowania do Twoich wymagań i kosztu eksploatacji, bez powiązań z dostawcami technologii."},
+        {"q": "Czy obiekt spełni wymagania GDP lub żywnościowe?", "a": "Projektujemy obiekt zgodnie z wymaganiami dla przechowywanych produktów — farmaceutycznymi (GDP) lub żywnościowymi. Zapewniamy odpowiednią kontrolę temperatury, monitoring i dokumentację wymagane w danej branży."}
+      ]
+    },
+
+    {
+      "slug": "interim-management-restrukturyzacja",
+      "parent": "interim-management",
+      "parent_name": "Interim Management",
+      "category": "Interim Management",
+      "industry": "restrukturyzacja",
+      "title": "Interim Management w restrukturyzacji logistyki | Vologis",
+      "description": "Interim management wspierający restrukturyzację logistyki. Vologis wchodzi w struktury firmy, reorganizuje procesy i redukuje koszty w projektach restrukturyzacyjnych.",
+      "h1": "Interim Management w restrukturyzacji logistyki",
+      "eyebrow": "INTERIM MANAGEMENT · RESTRUKTURYZACJA",
+      "intro": "Restrukturyzacja logistyki wymaga doświadczonego zarządzania, zdolności do trudnych decyzji i niezależnego spojrzenia, którego brakuje wewnątrz organizacji w kryzysie. Vologis zapewnia interim managera, który wchodzi w struktury firmy, reorganizuje procesy, redukuje koszty i prowadzi zespół przez zmianę — z nastawieniem na konkretny wynik, nie budowanie zależności.",
+      "problem_heading": "Restrukturyzacja wymaga kogoś z zewnątrz, kto podejmie trudne decyzje",
+      "problem_text": "W restrukturyzacji wewnętrzni managerowie są często uwikłani w relacje, politykę i historię decyzji, co utrudnia trudne, ale konieczne zmiany. Brakuje też czasu na rekrutację i czasem konkretnych kompetencji restrukturyzacyjnych. Interim manager wnosi obiektywne spojrzenie, doświadczenie i zdolność do działania bez obciążeń.",
+      "scope": [
+        {"title": "Diagnoza i plan restrukturyzacji", "text": "Szybka ocena sytuacji i przygotowanie planu reorganizacji logistyki."},
+        {"title": "Reorganizacja procesów i struktur", "text": "Przebudowa procesów, struktur i odpowiedzialności w obszarze logistyki."},
+        {"title": "Redukcja kosztów", "text": "Identyfikacja i wdrożenie realnych oszczędności operacyjnych."},
+        {"title": "Zarządzanie zmianą", "text": "Prowadzenie zespołu przez restrukturyzację i przygotowanie do przejęcia sterów."}
+      ],
+      "for_who": [
+        {"title": "Firmy w restrukturyzacji", "text": "Gdy reorganizujesz logistykę i potrzebujesz doświadczonego zarządzania."},
+        {"title": "Firmy redukujące koszty", "text": "Gdy musisz szybko obniżyć koszty operacyjne logistyki."},
+        {"title": "Firmy po zmianach właścicielskich", "text": "Gdy nowy właściciel lub inwestor wymaga reorganizacji."}
+      ],
+      "summary": "Interim management w restrukturyzacji to usługa, w której Vologis zapewnia doświadczonego managera wchodzącego w struktury firmy na czas reorganizacji logistyki. Manager diagnozuje sytuację, reorganizuje procesy i struktury, redukuje koszty i prowadzi zespół przez zmianę — z obiektywnym spojrzeniem i nastawieniem na konkretny wynik oraz płynne przekazanie sterów.",
+      "faq": [
+        {"q": "Dlaczego interim manager, a nie wewnętrzny zespół?", "a": "W restrukturyzacji wewnętrzni managerowie bywają uwikłani w relacje, politykę i historię decyzji, co utrudnia trudne zmiany. Interim manager wnosi obiektywne spojrzenie, doświadczenie z wielu restrukturyzacji i zdolność do działania bez obciążeń."},
+        {"q": "Jak szybko interim manager może zacząć restrukturyzację?", "a": "W sytuacjach wymagających pilnej interwencji jesteśmy w stanie zacząć w ciągu kilku dni. Po wstępnej diagnozie ustalamy zakres i plan, i wchodzimy do firmy najszybciej jak to możliwe."},
+        {"q": "Co zostaje po zakończeniu restrukturyzacji?", "a": "Uporządkowane procesy, zredukowane koszty, nowa struktura i przeszkolony zespół gotowy przejąć stery. Przygotowujemy firmę do samodzielnego funkcjonowania — nie budujemy zależności od naszej obecności."}
+      ]
+    },
+    {
+      "slug": "interim-management-startup-logistyczny",
+      "parent": "interim-management",
+      "parent_name": "Interim Management",
+      "category": "Interim Management",
+      "industry": "startup",
+      "title": "Interim Management dla startupów logistycznych | Vologis",
+      "description": "Interim management dla startupów potrzebujących kompetencji logistycznych na start. Vologis zapewnia doświadczone wsparcie zarządcze bez kosztu stałego etatu.",
+      "h1": "Interim Management dla startupów i firm na starcie",
+      "eyebrow": "INTERIM MANAGEMENT · STARTUP",
+      "intro": "Startupy i firmy w fazie szybkiego wzrostu często potrzebują wysokiej klasy kompetencji logistycznych, zanim mogą sobie pozwolić na ich stałe zatrudnienie. Vologis zapewnia doświadczonego managera logistyki na czas określony — który buduje procesy od podstaw, wprowadza standardy i przygotowuje operacje na skalowanie, bez obciążania budżetu stałym etatem C-level.",
+      "problem_heading": "Potrzebujesz kompetencji seniora, a budżet na juniora",
+      "problem_text": "Startup w fazie wzrostu potrzebuje kogoś, kto zbuduje logistykę od podstaw i uniknie kosztownych błędów — ale zatrudnienie doświadczonego dyrektora logistyki na etat jest na tym etapie zbyt drogie i przedwczesne. Bez właściwych kompetencji startup popełnia błędy, które później kosztują wielokrotnie więcej.",
+      "scope": [
+        {"title": "Budowa procesów od podstaw", "text": "Zaprojektowanie i wdrożenie procesów logistycznych dopasowanych do modelu biznesowego."},
+        {"title": "Wprowadzenie standardów", "text": "Ustanowienie standardów operacyjnych i mierników skalowalnych z biznesem."},
+        {"title": "Przygotowanie na skalowanie", "text": "Zbudowanie logistyki gotowej na szybki wzrost wolumenu."},
+        {"title": "Transfer wiedzy", "text": "Przekazanie kompetencji i przygotowanie do zatrudnienia stałego zespołu we właściwym czasie."}
+      ],
+      "for_who": [
+        {"title": "Startupy e-commerce", "text": "Gdy potrzebujesz zbudować logistykę i fulfillment od podstaw."},
+        {"title": "Firmy w fazie wzrostu", "text": "Gdy szybki wzrost wyprzedził kompetencje logistyczne."},
+        {"title": "Firmy przed rundą lub ekspansją", "text": "Gdy potrzebujesz uporządkować operacje przed skalowaniem."}
+      ],
+      "summary": "Interim management dla startupów to usługa, w której Vologis zapewnia doświadczonego managera logistyki na czas określony — budującego procesy od podstaw, wprowadzającego standardy i przygotowującego operacje na skalowanie. Startup zyskuje kompetencje seniora bez kosztu stałego etatu C-level, z transferem wiedzy i przygotowaniem do zatrudnienia stałego zespołu we właściwym czasie.",
+      "faq": [
+        {"q": "Dlaczego interim, a nie zatrudnienie dyrektora logistyki?", "a": "Na wczesnym etapie zatrudnienie doświadczonego dyrektora logistyki na etat jest zbyt drogie i przedwczesne. Interim manager daje dostęp do kompetencji seniora wtedy, gdy są najbardziej potrzebne — przy budowie procesów — bez stałego obciążenia budżetu."},
+        {"q": "Czy interim manager zbuduje logistykę od zera?", "a": "Tak. To częsty scenariusz — manager projektuje i wdraża procesy logistyczne dopasowane do modelu biznesowego, wprowadza standardy i mierniki oraz przygotowuje operacje na skalowanie, zanim startup zatrudni stały zespół."},
+        {"q": "Co się dzieje gdy startup urośnie?", "a": "Przygotowujemy firmę do zatrudnienia stałego zespołu we właściwym momencie — z gotowymi procesami, standardami i transferem wiedzy. Interim manager buduje fundament, na którym stały zespół może dalej budować."}
+      ]
+    },
+    {
+      "slug": "interim-management-3pl",
+      "parent": "interim-management",
+      "parent_name": "Interim Management",
+      "category": "Interim Management",
+      "industry": "3PL / operator logistyczny",
+      "title": "Interim Management dla operatorów 3PL | Vologis",
+      "description": "Interim management dla operatorów logistycznych 3PL/4PL. Vologis zapewnia czasowe wsparcie zarządcze w operacjach, wdrożeniach i sytuacjach kryzysowych u operatorów logistycznych.",
+      "h1": "Interim Management dla operatorów logistycznych 3PL",
+      "eyebrow": "INTERIM MANAGEMENT · 3PL",
+      "intro": "Operatorzy logistyczni działają pod stałą presją terminowości, jakości i marży — a luka kompetencyjna na poziomie zarządczym, uruchomienie nowego kontraktu czy kryzys operacyjny wymagają natychmiastowego, doświadczonego wsparcia. Vologis zapewnia interim managera rozumiejącego specyfikę 3PL, który stabilizuje operacje, prowadzi wdrożenia kontraktów i podnosi efektywność.",
+      "problem_heading": "U operatora 3PL przestój w zarządzaniu to ryzyko utraty kontraktów",
+      "problem_text": "Operator logistyczny żyje z kontraktów, których jakość obsługi zależy od sprawnego zarządzania operacjami. Luka na kluczowym stanowisku, problematyczne uruchomienie nowego kontraktu czy kryzys operacyjny szybko przekładają się na ryzyko kar, reklamacji i utraty klientów — w branży o cienkich marżach.",
+      "scope": [
+        {"title": "Stabilizacja operacji 3PL", "text": "Czasowe przejęcie zarządzania operacjami u operatora logistycznego."},
+        {"title": "Uruchomienie nowych kontraktów", "text": "Prowadzenie wdrożenia i uruchomienia obsługi nowych klientów."},
+        {"title": "Podniesienie efektywności", "text": "Optymalizacja procesów i marży operacyjnej w obsłudze kontraktów."},
+        {"title": "Zarządzanie kryzysowe", "text": "Interwencja w sytuacjach zagrażających kontraktom i relacjom z klientami."}
+      ],
+      "for_who": [
+        {"title": "Operatorzy 3PL/4PL", "text": "Gdy potrzebujesz czasowego wsparcia zarządczego w operacjach."},
+        {"title": "Operatorzy uruchamiający kontrakty", "text": "Gdy wdrażasz dużego klienta i potrzebujesz doświadczenia."},
+        {"title": "Operatorzy w kryzysie", "text": "Gdy problemy operacyjne zagrażają kontraktom."}
+      ],
+      "summary": "Interim management dla operatorów 3PL to usługa, w której Vologis zapewnia doświadczonego managera rozumiejącego specyfikę logistyki kontraktowej. Manager stabilizuje operacje, prowadzi uruchomienia nowych kontraktów, podnosi efektywność i marżę oraz interweniuje w sytuacjach kryzysowych zagrażających relacjom z klientami — z nastawieniem na konkretny wynik i przekazanie sterów.",
+      "faq": [
+        {"q": "Czy interim manager rozumie specyfikę 3PL?", "a": "Tak. Zapewniamy managera z doświadczeniem w logistyce kontraktowej, rozumiejącego presję terminowości, jakości i marży charakterystyczną dla operatorów 3PL/4PL oraz specyfikę zarządzania obsługą wielu klientów jednocześnie."},
+        {"q": "Czy pomożecie uruchomić nowy kontrakt?", "a": "Tak. Uruchomienie obsługi dużego klienta to krytyczny moment dla operatora — interim manager z doświadczeniem we wdrożeniach prowadzi ten proces, minimalizując ryzyko problemów na starcie i chroniąc relację z nowym klientem."},
+        {"q": "Jak szybko możecie pomóc w kryzysie?", "a": "W sytuacjach zagrażających kontraktom działamy natychmiast — interim manager może wejść w ciągu kilku dni, ustabilizować operacje i ograniczyć ryzyko kar, reklamacji oraz utraty klienta."}
+      ]
+    },
+    {
+      "slug": "interim-management-kryzys-operacyjny",
+      "parent": "interim-management",
+      "parent_name": "Interim Management",
+      "category": "Interim Management",
+      "industry": "kryzys operacyjny",
+      "title": "Interim Management — zarządzanie kryzysem operacyjnym | Vologis",
+      "description": "Interim management w kryzysie operacyjnym logistyki. Vologis wchodzi natychmiast, gasi pożary, stabilizuje operacje i przywraca kontrolę nad logistyką.",
+      "h1": "Interim Management — zarządzanie kryzysem operacyjnym",
+      "eyebrow": "INTERIM MANAGEMENT · KRYZYS OPERACYJNY",
+      "intro": "Kryzys operacyjny w logistyce eskaluje z każdym dniem — korkujący się magazyn, narastające opóźnienia, dzwoniący klienci i tracący motywację zespół. Vologis zapewnia interim managera, który wchodzi natychmiast, identyfikuje źródła kryzysu, gasi najpilniejsze pożary i przywraca kontrolę nad operacjami — zanim sytuacja wymknie się spod kontroli.",
+      "problem_heading": "Kryzys operacyjny pogłębia się z każdym dniem bez sterności",
+      "problem_text": "Gdy logistyka wpada w kryzys — magazyn przestaje nadążać, opóźnienia się kumulują, klienci tracą cierpliwość, a zespół motywację — każdy dzień bez zdecydowanego zarządzania pogłębia problem. Rekrutacja trwa zbyt długo, a wewnętrzny zespół często jest zbyt blisko problemu, żeby go opanować.",
+      "scope": [
+        {"title": "Natychmiastowa interwencja", "text": "Wejście w ciągu kilku dni i przejęcie zarządzania kryzysem operacyjnym."},
+        {"title": "Diagnoza źródeł kryzysu", "text": "Szybka identyfikacja rzeczywistych przyczyn, nie tylko objawów kryzysu."},
+        {"title": "Gaszenie pożarów", "text": "Wdrożenie natychmiastowych działań stabilizujących najpilniejsze problemy."},
+        {"title": "Przywrócenie kontroli", "text": "Odbudowa płynności operacyjnej, sterności zespołu i przewidywalności procesów."}
+      ],
+      "for_who": [
+        {"title": "Firmy w kryzysie logistycznym", "text": "Gdy operacje się sypią i potrzebujesz natychmiastowej interwencji."},
+        {"title": "Firmy po nagłym odejściu managera", "text": "Gdy odszedł kluczowy manager i operacje tracą sterność."},
+        {"title": "Firmy z eskalującymi problemami", "text": "Gdy problemy operacyjne narastają szybciej niż zdolność ich rozwiązywania."}
+      ],
+      "summary": "Interim management w kryzysie operacyjnym to usługa, w której Vologis zapewnia managera wchodzącego natychmiast w struktury firmy, by opanować kryzys logistyczny. Manager diagnozuje rzeczywiste źródła kryzysu, gasi najpilniejsze pożary i przywraca kontrolę nad operacjami — płynność, sterność zespołu i przewidywalność procesów — zanim sytuacja wymknie się spod kontroli.",
+      "faq": [
+        {"q": "Jak szybko możecie wejść w sytuacji kryzysowej?", "a": "W kryzysie operacyjnym jesteśmy w stanie zacząć w ciągu kilku dni. Po szybkiej wstępnej rozmowie i zrozumieniu sytuacji interim manager wchodzi do firmy i przejmuje zarządzanie najpilniejszymi problemami."},
+        {"q": "Czy interim manager rozwiąże źródło, czy tylko objawy?", "a": "Oba — najpierw gasimy najpilniejsze pożary, żeby ustabilizować sytuację, a równolegle diagnozujemy rzeczywiste źródła kryzysu. Bez usunięcia przyczyn kryzys wróci, dlatego stabilizacja idzie w parze z naprawą fundamentów."},
+        {"q": "Co po opanowaniu kryzysu?", "a": "Po ustabilizowaniu operacji przygotowujemy firmę do przejęcia sterów przez stały zespół — z uporządkowanymi procesami, dokumentacją i przeszkolonymi ludźmi. Zostawiamy operacje stabilne i przewidywalne."}
+      ]
+    },
+
+    {
+      "slug": "drony-pomiary-geodezyjne",
+      "parent": "uslugi-dronowe",
+      "parent_name": "Usługi dronowe",
+      "category": "Usługi dronowe",
+      "industry": "pomiary geodezyjne",
+      "title": "Pomiary geodezyjne z drona dla inwestycji logistycznych | Vologis",
+      "description": "Precyzyjne pomiary geodezyjne z drona dla projektów logistycznych i inwestycyjnych. Vologis dostarcza dane z dokładnością do centymetrów, szybciej i taniej niż metody tradycyjne.",
+      "h1": "Pomiary geodezyjne z drona",
+      "eyebrow": "USŁUGI DRONOWE · POMIARY GEODEZYJNE",
+      "intro": "Pomiary geodezyjne z drona dostarczają precyzyjnych danych o terenie z dokładnością do centymetrów — w godziny zamiast dni, na dużych powierzchniach niedostępnych dla tradycyjnych metod. Vologis wykonuje pomiary geodezyjne dla projektów logistycznych i inwestycyjnych, dostarczając dane gotowe do wykorzystania w projektowaniu i analizie.",
+      "problem_heading": "Tradycyjny pomiar dużej działki to dni pracy i wysokie koszty",
+      "problem_text": "Pomiar geodezyjny dużej działki inwestycyjnej metodami tradycyjnymi zajmuje dni, angażuje zespół w terenie i generuje wysokie koszty — a na trudnym terenie bywa wręcz niewykonalny. Tymczasem precyzyjne dane są fundamentem każdej decyzji inwestycyjnej i projektowej.",
+      "scope": [
+        {"title": "Pomiary powierzchni i terenu", "text": "Precyzyjne pomiary dużych powierzchni z dokładnością do centymetrów."},
+        {"title": "Modele terenu i numeryczne", "text": "Numeryczne modele terenu gotowe do wykorzystania w projektowaniu."},
+        {"title": "Pomiary trudno dostępne", "text": "Pomiary terenów trudno dostępnych dla metod tradycyjnych."},
+        {"title": "Dane do projektowania", "text": "Dane w formatach gotowych do wykorzystania w narzędziach projektowych."}
+      ],
+      "for_who": [
+        {"title": "Inwestorzy logistyczni", "text": "Gdy potrzebujesz pomiarów działki przed decyzją inwestycyjną."},
+        {"title": "Deweloperzy", "text": "Gdy potrzebujesz precyzyjnych danych terenu do projektu."},
+        {"title": "Firmy budowlane", "text": "Gdy potrzebujesz pomiarów do prac ziemnych i projektowych."}
+      ],
+      "summary": "Pomiary geodezyjne z drona to usługa, w której Vologis dostarcza precyzyjne dane o terenie z dokładnością do centymetrów — szybciej, taniej i na większych powierzchniach niż metody tradycyjne. Pomiary obejmują modele terenu, dane do projektowania i pomiary terenów trudno dostępnych, dostarczane w formatach gotowych do wykorzystania w projektach logistycznych i inwestycyjnych.",
+      "faq": [
+        {"q": "Jaka jest dokładność pomiarów z drona?", "a": "Przy zastosowaniu odpowiednich procedur i punktów referencyjnych osiągamy dokładność do kilku centymetrów. Konkretny poziom dokładności ustalamy w zależności od celu pomiaru i wymagań projektu."},
+        {"q": "Czy pomiar dronem jest tańszy niż tradycyjny?", "a": "Przy dużych powierzchniach zwykle tak — dron mierzy działkę w godziny zamiast dni i nie wymaga rozległej pracy zespołu w terenie. Im większa i trudniej dostępna powierzchnia, tym większa przewaga kosztowa i czasowa."},
+        {"q": "W jakim formacie dostarczacie dane?", "a": "Dane dostarczamy w formatach gotowych do wykorzystania w projektowaniu i analizie — modele terenu, dane pomiarowe, raporty. Format dopasowujemy do narzędzi i potrzeb projektu."}
+      ]
+    },
+    {
+      "slug": "drony-ortofotomapy",
+      "parent": "uslugi-dronowe",
+      "parent_name": "Usługi dronowe",
+      "category": "Usługi dronowe",
+      "industry": "ortofotomapy",
+      "title": "Ortofotomapy z drona dla inwestycji i logistyki | Vologis",
+      "description": "Wysokorozdzielcze ortofotomapy z drona dla projektów inwestycyjnych i logistycznych. Vologis dostarcza skalibrowane mapy fotograficzne gotowe do analizy i projektowania.",
+      "h1": "Ortofotomapy z drona",
+      "eyebrow": "USŁUGI DRONOWE · ORTOFOTOMAPY",
+      "intro": "Ortofotomapa to skalibrowana, wysokorozdzielcza mapa fotograficzna terenu, która łączy dokładność pomiaru z czytelnością zdjęcia — pokazując rzeczywisty stan działki w formie gotowej do analizy. Vologis wykonuje ortofotomapy dla projektów inwestycyjnych i logistycznych, dostarczając materiał kluczowy dla oceny działki i projektowania.",
+      "problem_heading": "Mapa nie pokazuje rzeczywistego stanu działki",
+      "problem_text": "Standardowe mapy i plany nie pokazują aktualnego, rzeczywistego stanu działki — ukształtowania, zagospodarowania, otoczenia i zmian. Ortofotomapa wypełnia tę lukę, dostarczając precyzyjny, aktualny obraz terenu, niezbędny do trafnej oceny inwestycyjnej i projektowej.",
+      "scope": [
+        {"title": "Wysokorozdzielcze ortofotomapy", "text": "Skalibrowane mapy fotograficzne o wysokiej rozdzielczości i dokładności."},
+        {"title": "Aktualny stan terenu", "text": "Rzeczywisty, aktualny obraz działki gotowy do analizy."},
+        {"title": "Mapy do projektowania", "text": "Ortofotomapy w formatach gotowych do wykorzystania w projektach."},
+        {"title": "Dokumentacja zmian w czasie", "text": "Porównanie stanu terenu w różnych okresach."}
+      ],
+      "for_who": [
+        {"title": "Inwestorzy", "text": "Gdy potrzebujesz oceny rzeczywistego stanu działki."},
+        {"title": "Deweloperzy", "text": "Gdy potrzebujesz aktualnej mapy terenu do projektu."},
+        {"title": "Projektanci i architekci", "text": "Gdy potrzebujesz precyzyjnego podkładu do projektowania."}
+      ],
+      "summary": "Ortofotomapy z drona to usługa, w której Vologis dostarcza skalibrowane, wysokorozdzielcze mapy fotograficzne terenu, pokazujące rzeczywisty i aktualny stan działki. Ortofotomapy są kluczowe dla oceny inwestycyjnej i projektowania — dostarczamy je w formatach gotowych do wykorzystania w narzędziach projektowych, dla projektów logistycznych i inwestycyjnych.",
+      "faq": [
+        {"q": "Czym jest ortofotomapa?", "a": "To skalibrowana mapa fotograficzna terenu — łączy czytelność zdjęcia lotniczego z dokładnością pomiaru geodezyjnego. W odróżnieniu od zwykłego zdjęcia, ortofotomapa ma jednolitą skalę i można na niej wykonywać precyzyjne pomiary."},
+        {"q": "Do czego wykorzystać ortofotomapę działki?", "a": "Do oceny rzeczywistego stanu działki przed inwestycją, jako precyzyjny podkład do projektowania, do analizy zagospodarowania i otoczenia oraz do dokumentacji stanu terenu. To kluczowy materiał na etapie decyzji inwestycyjnej."},
+        {"q": "Jak aktualna jest ortofotomapa?", "a": "Ortofotomapa pokazuje stan terenu z dnia wykonania lotu — czyli rzeczywisty, aktualny obraz, w przeciwieństwie do map archiwalnych. Możemy też wykonywać ortofotomapy cyklicznie, by dokumentować zmiany w czasie."}
+      ]
+    },
+    {
+      "slug": "drony-inspekcja-magazynow",
+      "parent": "uslugi-dronowe",
+      "parent_name": "Usługi dronowe",
+      "category": "Usługi dronowe",
+      "industry": "inspekcje",
+      "title": "Inspekcje magazynów i obiektów dronem | Vologis",
+      "description": "Inspekcje magazynów, dachów i obiektów logistycznych z drona. Vologis wykonuje bezpieczne, szybkie inspekcje techniczne trudno dostępnych elementów obiektów.",
+      "h1": "Inspekcje magazynów i obiektów z drona",
+      "eyebrow": "USŁUGI DRONOWE · INSPEKCJE",
+      "intro": "Inspekcja dachów, elewacji i trudno dostępnych elementów dużych obiektów logistycznych metodami tradycyjnymi jest kosztowna, czasochłonna i ryzykowna. Vologis wykonuje inspekcje magazynów i obiektów z drona — szybko, bezpiecznie i z dokumentacją fotograficzną wysokiej rozdzielczości, bez konieczności rusztowań czy podnośników.",
+      "problem_heading": "Inspekcja dużego obiektu tradycyjnie to koszt, czas i ryzyko",
+      "problem_text": "Sprawdzenie stanu dachu, elewacji czy trudno dostępnych elementów dużego magazynu wymaga zwykle podnośników, rusztowań lub alpinistów — co generuje koszty, wymaga czasu i naraża ludzi na ryzyko. Tymczasem regularna inspekcja jest kluczowa dla utrzymania obiektu i zapobiegania kosztownym awariom.",
+      "scope": [
+        {"title": "Inspekcje dachów", "text": "Dokumentacja stanu dachów dużych obiektów bez wchodzenia na wysokość."},
+        {"title": "Inspekcje elewacji i konstrukcji", "text": "Ocena stanu elewacji i elementów konstrukcyjnych z powietrza."},
+        {"title": "Dokumentacja techniczna", "text": "Wysokorozdzielcza dokumentacja fotograficzna do oceny i archiwizacji."},
+        {"title": "Inspekcje trudno dostępne", "text": "Dostęp do elementów niedostępnych lub niebezpiecznych dla tradycyjnych metod."}
+      ],
+      "for_who": [
+        {"title": "Właściciele obiektów logistycznych", "text": "Gdy potrzebujesz inspekcji bez kosztownych podnośników."},
+        {"title": "Zarządcy nieruchomości", "text": "Gdy zarządzasz dużymi obiektami i potrzebujesz regularnych inspekcji."},
+        {"title": "Operatorzy magazynów", "text": "Gdy chcesz monitorować stan techniczny obiektu."}
+      ],
+      "summary": "Inspekcje magazynów z drona to usługa, w której Vologis wykonuje szybkie, bezpieczne inspekcje techniczne dachów, elewacji i trudno dostępnych elementów dużych obiektów logistycznych. Dostarczamy wysokorozdzielczą dokumentację fotograficzną bez konieczności rusztowań, podnośników czy pracy na wysokości — ograniczając koszt, czas i ryzyko inspekcji.",
+      "faq": [
+        {"q": "Dlaczego inspekcja dronem zamiast tradycyjnej?", "a": "Dron inspekuje dach czy elewację dużego obiektu w godziny, bez podnośników, rusztowań i narażania ludzi na pracę na wysokości. To szybsze, tańsze i bezpieczniejsze, a dokumentacja fotograficzna jest wysokiej rozdzielczości."},
+        {"q": "Co można sprawdzić dronem na magazynie?", "a": "Stan dachu, pokrycia, świetlików, elewacji, elementów konstrukcyjnych i innych trudno dostępnych części obiektu. Dron dociera do miejsc niebezpiecznych lub niedostępnych dla tradycyjnych metod inspekcji."},
+        {"q": "Czy dostanę dokumentację z inspekcji?", "a": "Tak. Dostarczamy wysokorozdzielczą dokumentację fotograficzną stanu obiektu, gotową do oceny technicznej, archiwizacji i porównań w czasie przy inspekcjach cyklicznych."}
+      ]
+    },
+    {
+      "slug": "drony-marketing-nieruchomosci-logistycznych",
+      "parent": "uslugi-dronowe",
+      "parent_name": "Usługi dronowe",
+      "category": "Usługi dronowe",
+      "industry": "marketing nieruchomości",
+      "title": "Materiały marketingowe z drona dla nieruchomości logistycznych | Vologis",
+      "description": "Profesjonalne zdjęcia i wideo z drona do komercjalizacji obiektów logistycznych. Vologis tworzy materiały marketingowe przyspieszające wynajem i sprzedaż nieruchomości.",
+      "h1": "Materiały marketingowe z drona dla nieruchomości logistycznych",
+      "eyebrow": "USŁUGI DRONOWE · MARKETING NIERUCHOMOŚCI",
+      "intro": "Profesjonalne ujęcia z powietrza pokazują skalę, lokalizację i otoczenie obiektu logistycznego w sposób, którego nie odda żadne zdjęcie z poziomu ziemi. Vologis tworzy materiały marketingowe z drona — zdjęcia i wideo — które przyspieszają komercjalizację, wyróżniają ofertę i ułatwiają prezentację obiektów najemcom i inwestorom.",
+      "problem_heading": "Zdjęcie z ziemi nie sprzeda obiektu o powierzchni hektarów",
+      "problem_text": "Obiekt logistyczny o powierzchni dziesiątek tysięcy metrów kwadratowych trudno pokazać z poziomu ziemi — nie widać skali, lokalizacji, dostępności transportowej ani otoczenia. A te elementy decydują o atrakcyjności oferty dla najemcy czy inwestora. Bez profesjonalnych materiałów komercjalizacja trwa dłużej.",
+      "scope": [
+        {"title": "Zdjęcia lotnicze obiektów", "text": "Profesjonalne ujęcia pokazujące skalę, lokalizację i otoczenie obiektu."},
+        {"title": "Wideo marketingowe", "text": "Dynamiczne materiały wideo z powietrza do prezentacji i kampanii."},
+        {"title": "Prezentacja lokalizacji", "text": "Ujęcia pokazujące dostępność transportową i otoczenie biznesowe."},
+        {"title": "Materiały do komercjalizacji", "text": "Kompletny zestaw materiałów wizualnych do oferty najmu lub sprzedaży."}
+      ],
+      "for_who": [
+        {"title": "Deweloperzy logistyczni", "text": "Gdy komercjalizujesz obiekt i potrzebujesz materiałów wyróżniających ofertę."},
+        {"title": "Agencje nieruchomości komercyjnych", "text": "Gdy chcesz wzmocnić prezentację obiektów w ofercie."},
+        {"title": "Właściciele obiektów", "text": "Gdy wynajmujesz lub sprzedajesz nieruchomość logistyczną."}
+      ],
+      "summary": "Materiały marketingowe z drona to usługa, w której Vologis tworzy profesjonalne zdjęcia i wideo z powietrza do komercjalizacji obiektów logistycznych. Ujęcia pokazują skalę, lokalizację, dostępność transportową i otoczenie obiektu — elementy decydujące o atrakcyjności oferty. Materiały przyspieszają wynajem i sprzedaż oraz wyróżniają ofertę wśród konkurencji.",
+      "faq": [
+        {"q": "Dlaczego materiały z drona przyspieszają komercjalizację?", "a": "Ujęcia z powietrza pokazują skalę obiektu, lokalizację, dostępność transportową i otoczenie — elementy kluczowe dla najemcy i inwestora, niewidoczne ze zdjęć z poziomu ziemi. Profesjonalna prezentacja wyróżnia ofertę i skraca czas decyzji."},
+        {"q": "Co obejmują materiały marketingowe z drona?", "a": "Profesjonalne zdjęcia lotnicze, dynamiczne wideo, ujęcia pokazujące lokalizację i otoczenie oraz kompletny zestaw materiałów wizualnych gotowych do wykorzystania w ofercie, na portalach nieruchomości i w prezentacjach."},
+        {"q": "Czy łączycie materiały marketingowe z monitoringiem budowy?", "a": "Tak. Jeśli obiekt jest w budowie, możemy łączyć monitoring postępu prac z tworzeniem materiałów marketingowych pod przyszłą komercjalizację — dostarczając zarówno dokumentację, jak i materiały sprzedażowe."}
+      ]
+    },
+    {
+      "slug": "drony-monitoring-budowy",
+      "parent": "uslugi-dronowe",
+      "parent_name": "Usługi dronowe",
+      "category": "Usługi dronowe",
+      "industry": "monitoring budowy",
+      "title": "Monitoring budowy z drona dla inwestycji logistycznych | Vologis",
+      "description": "Regularny monitoring postępu budowy z drona. Vologis dostarcza obiektywną, datowaną dokumentację postępu prac dla inwestorów i deweloperów.",
+      "h1": "Monitoring postępu budowy z drona",
+      "eyebrow": "USŁUGI DRONOWE · MONITORING BUDOWY",
+      "intro": "Regularny monitoring budowy z drona dostarcza obiektywny, datowany obraz postępu prac — niezależny od raportów wykonawcy. Vologis prowadzi monitoring inwestycji logistycznych z powietrza, dając inwestorom i deweloperom narzędzie do kontroli harmonogramu, dokumentacji i rozliczeń na każdym etapie realizacji.",
+      "problem_heading": "Raport wykonawcy to nie to samo co obiektywny obraz postępu",
+      "problem_text": "Inwestor polegający wyłącznie na raportach wykonawcy nie ma niezależnego potwierdzenia rzeczywistego postępu prac. Opóźnienia bywają komunikowane późno, a rozbieżności między raportem a rzeczywistością wychodzą na jaw zbyt późno, by zareagować. Regularny monitoring z powietrza daje obiektywny, niepodważalny obraz.",
+      "scope": [
+        {"title": "Cykliczny monitoring postępu", "text": "Regularne loty dokumentujące postęp prac w ustalonych odstępach."},
+        {"title": "Datowana dokumentacja", "text": "Obiektywna, datowana dokumentacja fotograficzna i wideo postępu budowy."},
+        {"title": "Kontrola harmonogramu", "text": "Niezależne potwierdzenie zgodności postępu z harmonogramem."},
+        {"title": "Dokumentacja do rozliczeń", "text": "Materiał wspierający rozliczenia z wykonawcami i raportowanie do inwestorów."}
+      ],
+      "for_who": [
+        {"title": "Inwestorzy", "text": "Gdy potrzebujesz niezależnej kontroli postępu inwestycji."},
+        {"title": "Deweloperzy", "text": "Gdy realizujesz projekt i chcesz dokumentować postęp."},
+        {"title": "Fundusze i finansujący", "text": "Gdy finansujesz inwestycję i potrzebujesz obiektywnego raportowania."}
+      ],
+      "summary": "Monitoring budowy z drona to usługa, w której Vologis prowadzi regularną, datowaną dokumentację postępu prac budowlanych z powietrza — niezależną od raportów wykonawcy. Monitoring daje inwestorom i deweloperom narzędzie do kontroli harmonogramu, dokumentacji i rozliczeń, z obiektywnym, niepodważalnym obrazem postępu na każdym etapie realizacji inwestycji logistycznej.",
+      "faq": [
+        {"q": "Jak często prowadzicie monitoring budowy?", "a": "Najczęściej cyklicznie — regularne loty w ustalonych odstępach (np. co tydzień lub co miesiąc) dają obiektywny obraz postępu w czasie. Częstotliwość dopasowujemy do tempa prac i potrzeb raportowania inwestora."},
+        {"q": "Czym monitoring z drona przewyższa raport wykonawcy?", "a": "Daje niezależny, datowany i niepodważalny obraz rzeczywistego postępu — bez polegania wyłącznie na deklaracjach wykonawcy. Rozbieżności między harmonogramem a rzeczywistością widać od razu, co pozwala reagować w porę."},
+        {"q": "Czy dokumentacja przyda się do rozliczeń?", "a": "Tak. Datowana dokumentacja postępu jest obiektywnym materiałem wspierającym rozliczenia z wykonawcami, raportowanie do inwestorów i finansujących oraz rozstrzyganie ewentualnych sporów co do zaawansowania prac."}
+      ]
+    }
+  ]
+}

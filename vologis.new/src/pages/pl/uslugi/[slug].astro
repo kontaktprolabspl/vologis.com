@@ -1,0 +1,478 @@
+---
+import ServicePageLayout from "../../../layouts/ServicePageLayout.astro";
+import FaqAccordion from "../../../components/FaqAccordion.astro";
+import programmatic from "../../../data/programmatic.json";
+
+const SITE = "https://vologis.com";
+
+export function getStaticPaths() {
+  return programmatic.pages.map((page) => ({
+    params: { slug: page.slug },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+
+/* ── Siblings (same parent, different slug, max 2) ─── */
+const siblings = programmatic.pages
+  .filter((p) => p.parent === page.parent && p.slug !== page.slug)
+  .slice(0, 2);
+
+/* ── Schema ─────────────────────────────────────────── */
+const schemaService = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": page.h1,
+  "description": page.description,
+  "serviceType": page.category,
+  "provider": {
+    "@type": "Organization",
+    "name": "Vologis Sp. z o.o.",
+    "url": SITE,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Jarocin",
+      "addressRegion": "Wielkopolska",
+      "addressCountry": "PL",
+    },
+  },
+  "areaServed": ["Polska", "Europa"],
+  "url": `${SITE}/pl/uslugi/${page.slug}`,
+};
+
+const schemaFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": page.faq.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ServicePageLayout
+  title={page.title}
+  description={page.description}
+  canonical={`${SITE}/pl/uslugi/${page.slug}`}
+  ogImage="/og/home.jpg"
+  eyebrow={page.eyebrow}
+  h1={page.h1}
+  lead={page.intro}
+  ctaPrimaryLabel="Umów konsultację"
+  ctaPrimaryHref="/pl/kontakt"
+  ctaSecondaryLabel={`Zobacz ${page.parent_name}`}
+  ctaSecondaryHref={`/pl/uslugi/${page.parent}`}
+  breadcrumbs={[
+    { name: page.parent_name, href: `${SITE}/pl/uslugi/${page.parent}` },
+    { name: page.industry },
+  ]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaService)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaFaq)} />
+
+  <!-- ─── 1. Problem ───────────────────────────────────── -->
+  <section class="pg-problem" aria-labelledby="h-problem">
+    <div class="container">
+      <h2 class="h2" id="h-problem">{page.problem_heading}</h2>
+      <p class="body">{page.problem_text}</p>
+    </div>
+  </section>
+
+  <!-- ─── 2. Scope cards ───────────────────────────────── -->
+  <section class="pg-scope" aria-labelledby="h-scope">
+    <div class="container">
+      <h2 class="h2" id="h-scope">Zakres usługi</h2>
+      <div class="scope-grid">
+        {page.scope.map((s) => (
+          <div class="scope-card">
+            <h3 class="scope-card__title">{s.title}</h3>
+            <p class="scope-card__text">{s.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 3. Dla kogo ──────────────────────────────────── -->
+  <section class="pg-forwho" aria-labelledby="h-forwho">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-forwho">Dla kogo?</h2>
+      <div class="fw-grid">
+        {page.for_who.map((fw) => (
+          <div class="fw-card">
+            <h3 class="fw-card__title">{fw.title}</h3>
+            <p class="fw-card__text">{fw.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 4. W skrócie (AEO summary) ──────────────────── -->
+  <section class="pg-summary" aria-label="W skrócie">
+    <div class="container">
+      <div class="pg-brief">
+        <p class="pg-brief__label">W skrócie</p>
+        <p class="pg-brief__text">{page.summary}</p>
+        <hr class="pg-brief__rule" />
+        <p class="pg-brief__sub">Vologis &middot; Jarocin, Polska &middot; Obsługa rynku PL i EU</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 5. FAQ ───────────────────────────────────────── -->
+  <section class="pg-faq" aria-labelledby="h-faq">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-faq">FAQ — najczęściej zadawane pytania</h2>
+      <FaqAccordion items={page.faq} single />
+    </div>
+  </section>
+
+  <!-- ─── End CTA ──────────────────────────────────────── -->
+  <section class="pg-endcta" aria-labelledby="h-endcta">
+    <div class="container">
+      <div class="endcta-inner">
+        <h2 class="endcta__h2" id="h-endcta">
+          Potrzebujesz wsparcia w obszarze: {page.industry}?
+        </h2>
+        <p class="endcta__text">
+          Bezpłatna pierwsza rozmowa. Powiemy wprost, czy i jak możemy pomóc.
+        </p>
+        <div class="endcta__actions">
+          <a href="/pl/kontakt" class="endcta__btn endcta__btn--primary">
+            Umów konsultację <span aria-hidden="true">→</span>
+          </a>
+          <a href={`/pl/uslugi/${page.parent}`} class="endcta__btn endcta__btn--ghost">
+            {page.parent_name} <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Related ──────────────────────────────────────── -->
+  <section class="pg-related" aria-labelledby="h-related">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-related">Powiązane strony</h2>
+      <div class="related-grid">
+        <a class="related-card" href={`/pl/uslugi/${page.parent}`}>
+          <span class="related-card__label">Usługa główna</span>
+          <span class="related-card__title">{page.parent_name}</span>
+          <span class="related-card__desc">Pełny zakres usługi i wszystkie specjalizacje branżowe.</span>
+          <span class="related-card__arrow" aria-hidden="true">→</span>
+        </a>
+        {siblings.map((s) => (
+          <a class="related-card" href={`/pl/uslugi/${s.slug}`}>
+            <span class="related-card__label">{s.industry}</span>
+            <span class="related-card__title">{s.h1}</span>
+            <span class="related-card__desc">{s.description.slice(0, 110)}&hellip;</span>
+            <span class="related-card__arrow" aria-hidden="true">→</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</ServicePageLayout>
+
+<style>
+  /* ─── Shared primitives ─────────────────────────────── */
+  .h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    color: var(--color-ink);
+    margin-bottom: var(--space-lg);
+  }
+
+  .h2--center { text-align: center; }
+
+  .body {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.75;
+    margin-bottom: var(--space-md);
+    max-width: 70ch;
+  }
+
+  /* ─── 1. Problem ─────────────────────────────────────── */
+  .pg-problem {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper);
+  }
+
+  /* ─── 2. Scope cards ─────────────────────────────────── */
+  .pg-scope {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper-2);
+  }
+
+  .scope-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+  }
+
+  .scope-card {
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    background: var(--color-paper);
+    transition: border-color var(--dur-micro) var(--ease-out),
+      box-shadow var(--dur-short) var(--ease-out);
+  }
+
+  .scope-card:hover {
+    border-color: var(--color-blue);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .scope-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+    margin-bottom: var(--space-sm);
+  }
+
+  .scope-card__text {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.65;
+  }
+
+  /* ─── 3. Dla kogo ────────────────────────────────────── */
+  .pg-forwho {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper);
+  }
+
+  .fw-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+  }
+
+  .fw-card {
+    border: 1px solid var(--color-rule);
+    border-left: 4px solid var(--color-secondary);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    background: var(--color-paper);
+  }
+
+  .fw-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+    margin-bottom: var(--space-sm);
+  }
+
+  .fw-card__text {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.65;
+  }
+
+  /* ─── 4. W skrócie (AEO) ─────────────────────────────── */
+  .pg-summary {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper-2);
+  }
+
+  .pg-brief {
+    border: 1px solid var(--color-blue);
+    border-radius: var(--radius-lg);
+    background: var(--color-blue-tint);
+    padding: var(--space-xl);
+    max-width: 60rem;
+    margin-inline: auto;
+  }
+
+  .pg-brief__label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    margin-bottom: var(--space-md);
+  }
+
+  .pg-brief__text {
+    font-size: var(--text-base);
+    color: var(--color-ink);
+    line-height: 1.7;
+  }
+
+  .pg-brief__rule {
+    border: none;
+    border-top: 1px solid var(--color-blue);
+    margin-block: var(--space-md);
+    opacity: 0.3;
+  }
+
+  .pg-brief__sub {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.5;
+  }
+
+  /* ─── 5. FAQ ─────────────────────────────────────────── */
+  .pg-faq {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper);
+  }
+
+  /* ─── End CTA ────────────────────────────────────────── */
+  .pg-endcta {
+    padding-block: var(--space-3xl);
+    background: var(--gradient-cta);
+  }
+
+  .endcta-inner {
+    max-width: 52rem;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .endcta__h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    color: var(--color-ink-on-dark);
+    margin-bottom: var(--space-md);
+  }
+
+  .endcta__text {
+    font-size: var(--text-base);
+    color: var(--color-muted-on-dark);
+    line-height: 1.7;
+    margin-bottom: var(--space-xl);
+  }
+
+  .endcta__actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .endcta__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 600;
+    padding: var(--space-md) var(--space-2xl);
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background var(--dur-micro) var(--ease-out),
+      border-color var(--dur-micro) var(--ease-out);
+  }
+
+  .endcta__btn--primary {
+    background: var(--color-accent);
+    color: #fff;
+  }
+
+  .endcta__btn--primary:hover { background: var(--color-accent-hover); }
+
+  .endcta__btn--ghost {
+    background: var(--color-glass-dark);
+    color: var(--color-ink-on-dark);
+    border-color: var(--color-glass-border);
+  }
+
+  .endcta__btn--ghost:hover { background: oklch(100% 0 0 / 0.12); }
+
+  /* ─── Related ────────────────────────────────────────── */
+  .pg-related {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper-2);
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+  }
+
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    background: var(--color-paper);
+    text-decoration: none;
+    transition: border-color var(--dur-short) var(--ease-out),
+      transform var(--dur-short) var(--ease-out);
+  }
+
+  .related-card:hover {
+    border-color: var(--color-blue);
+    transform: translateY(-3px);
+  }
+
+  .related-card__label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+  }
+
+  .related-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+    line-height: 1.3;
+  }
+
+  .related-card__desc {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.55;
+    flex: 1;
+  }
+
+  .related-card__arrow {
+    font-size: var(--text-md);
+    color: var(--color-secondary);
+    align-self: flex-start;
+    margin-top: auto;
+    transition: transform var(--dur-short) var(--ease-out);
+  }
+
+  .related-card:hover .related-card__arrow { transform: translateX(4px); }
+
+  /* ─── Responsive ─────────────────────────────────────── */
+  @media (max-width: 60rem) {
+    .related-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 48rem) {
+    .scope-grid { grid-template-columns: 1fr; }
+    .fw-grid { grid-template-columns: 1fr; }
+    .endcta__actions { flex-direction: column; align-items: stretch; }
+    .endcta__btn { width: 100%; justify-content: center; }
+  }
+</style>
