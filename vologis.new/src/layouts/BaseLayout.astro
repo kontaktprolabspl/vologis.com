@@ -743,8 +743,12 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
     line-height: 1.7;
   }
 
-  .footer-nap a { color: var(--color-muted); text-decoration: none; }
-  .footer-nap a:hover { color: var(--color-ink-on-dark); }
+  .footer-nap a {
+    color: var(--color-muted);
+    text-decoration: none;
+    transition: color var(--dur-micro) var(--ease-out);
+  }
+  .footer-nap a:hover { color: var(--color-ink); }
 
   .footer-nip {
     font-family: var(--font-mono);
