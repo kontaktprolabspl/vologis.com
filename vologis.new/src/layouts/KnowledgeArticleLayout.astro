@@ -467,10 +467,10 @@ const schemaBreadcrumb = {
     }
     .art-h1 { font-size: clamp(1.75rem, 5vw + 0.5rem, 2.5rem); }
     .art-lead { font-size: var(--text-base); }
-    .art-hero-actions {
-      flex-direction: column;
-    }
+    .art-hero-actions { flex-direction: column; }
     .kbtn { width: 100%; }
+    /* Hide hero image on mobile — dark bg stays, text remains on-dark */
+    .art-hero__img { display: none; }
   }
 </style>
 
