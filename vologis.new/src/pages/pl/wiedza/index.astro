@@ -126,7 +126,7 @@ const schemaFaq = {
         </ol>
       </nav>
 
-      <Eyebrow text="WIEDZA VOLOGIS" bg="light" />
+      <Eyebrow text="WIEDZA VOLOGIS" />
       <h1 id="kh-h1" class="kh-h1">
         Wiedza logistyczna, która pomaga podejmować lepsze decyzje operacyjne
       </h1>
@@ -454,18 +454,19 @@ const schemaFaq = {
       color var(--dur-micro) var(--ease-out);
   }
 
-  .kh-btn--dark { background: var(--color-ink); color: var(--color-ink-on-dark); }
-  .kh-btn--dark:hover { background: oklch(40% 0.06 257); }
+  /* Hero buttons on dark bg */
+  .kh-btn--dark { background: var(--color-accent); color: #fff; }
+  .kh-btn--dark:hover { background: var(--color-accent-hover); }
 
   .kh-btn--ghost {
-    background: transparent;
-    color: var(--color-ink);
-    border-color: var(--color-ink);
+    background: var(--color-glass-dark);
+    color: var(--color-ink-on-dark);
+    border-color: var(--color-glass-border);
   }
 
   .kh-btn--ghost:hover {
-    background: var(--color-secondary);
-    color: #fff;
+    background: oklch(100% 0 0 / 0.12);
+    color: var(--color-ink-on-dark);
     border-color: var(--color-secondary);
   }
 
@@ -482,8 +483,7 @@ const schemaFaq = {
 
   /* ─── 1. Hero ────────────────────────────────────────────── */
   .kh-hero {
-    background: var(--color-paper-2);
-    border-bottom: 1px solid var(--color-rule);
+    background: var(--color-paper-dark);
     padding-top: calc(4.25rem + 3px + var(--space-2xl));
     padding-bottom: var(--space-2xl);
   }
@@ -498,18 +498,18 @@ const schemaFaq = {
     list-style: none;
     flex-wrap: wrap;
     font-size: var(--text-sm);
-    color: var(--color-muted);
+    color: var(--color-muted-on-dark);
   }
 
   .kh-bc__list a {
-    color: var(--color-muted);
+    color: var(--color-muted-on-dark);
     text-decoration: none;
     transition: color var(--dur-micro) var(--ease-out);
   }
 
-  .kh-bc__list a:hover { color: var(--color-ink); }
-  .kh-bc__list [aria-current="page"] { color: var(--color-ink); }
-  .kh-bc__sep { color: var(--color-neutral); user-select: none; }
+  .kh-bc__list a:hover { color: var(--color-ink-on-dark); }
+  .kh-bc__list [aria-current="page"] { color: var(--color-ink-on-dark); font-weight: 500; }
+  .kh-bc__sep { color: var(--color-muted-on-dark); opacity: 0.5; user-select: none; }
 
   .kh-eyebrow {
     font-family: var(--font-mono);
@@ -526,14 +526,14 @@ const schemaFaq = {
     font-weight: 700;
     letter-spacing: -0.03em;
     line-height: 1.1;
-    color: var(--color-ink);
+    color: var(--color-ink-on-dark);
     margin-bottom: var(--space-lg);
     max-width: 22ch;
   }
 
   .kh-lead {
     font-size: var(--text-md);
-    color: var(--color-muted);
+    color: var(--color-muted-on-dark);
     line-height: 1.65;
     max-width: 60ch;
     margin-bottom: var(--space-xl);
@@ -548,9 +548,10 @@ const schemaFaq = {
 
   .kh-hero-note {
     font-size: var(--text-sm);
-    color: var(--color-neutral);
+    color: var(--color-muted-on-dark);
     max-width: 64ch;
     line-height: 1.65;
+    opacity: 0.8;
   }
 
   /* ─── 2. Intro + W skrócie ───────────────────────────────── */

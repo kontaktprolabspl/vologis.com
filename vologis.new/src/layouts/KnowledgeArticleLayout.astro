@@ -201,24 +201,63 @@ const schemaBreadcrumb = {
     z-index: 0;
   }
 
-  /* Left-to-right overlay keeps text readable */
+  /* Dark bg fallback when image is present */
+  .art-hero--has-bg {
+    background: var(--color-paper-dark);
+    border-bottom: none;
+  }
+
+  /* Dark navy overlay — same pattern as ServicePageLayout */
   .art-hero--has-bg::before {
     content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(
       to right,
-      oklch(94% 0.020 160 / 1.00)  0%,
-      oklch(94% 0.020 160 / 1.00) 30%,
-      oklch(94% 0.020 160 / 0.88) 52%,
-      oklch(94% 0.020 160 / 0.28) 72%,
-      oklch(94% 0.020 160 / 0.00) 100%
+      oklch(26% 0.060 257 / 1.00)  0%,
+      oklch(26% 0.060 257 / 1.00) 32%,
+      oklch(26% 0.060 257 / 0.88) 52%,
+      oklch(26% 0.060 257 / 0.30) 72%,
+      oklch(26% 0.060 257 / 0.00) 100%
     );
     pointer-events: none;
   }
 
   /* All direct children (except the bg img) above the overlay */
   .art-hero--has-bg > :not(.art-hero__img) { position: relative; }
+
+  /* ── On-dark colour overrides when hero has background image ── */
+  .art-hero--has-bg .bc-list,
+  .art-hero--has-bg .bc-list a   { color: var(--color-muted-on-dark); }
+  .art-hero--has-bg .bc-list a:hover,
+  .art-hero--has-bg .bc-list [aria-current="page"] { color: var(--color-ink-on-dark); }
+  .art-hero--has-bg .bc-sep     { color: var(--color-muted-on-dark); opacity: 0.5; }
+
+  .art-hero--has-bg .art-cat {
+    background: var(--color-glass-dark);
+    color: var(--color-blue-on-dark);
+  }
+  .art-hero--has-bg .art-sep,
+  .art-hero--has-bg .art-time,
+  .art-hero--has-bg .art-date   { color: var(--color-muted-on-dark); }
+
+  .art-hero--has-bg .art-h1     { color: var(--color-ink-on-dark); }
+  .art-hero--has-bg .art-lead   { color: var(--color-muted-on-dark); }
+
+  /* Primary button → accent (visible on dark) */
+  .art-hero--has-bg .kbtn--dark {
+    background: var(--color-accent);
+    color: #fff;
+  }
+  .art-hero--has-bg .kbtn--dark:hover { background: var(--color-accent-hover); }
+
+  /* Secondary button → glass dark */
+  .art-hero--has-bg .kbtn--ghost {
+    background: var(--color-glass-dark);
+    color: var(--color-ink-on-dark);
+    border-color: var(--color-glass-border);
+  }
+  .art-hero--has-bg .kbtn--ghost:hover { background: oklch(100% 0 0 / 0.12); }
 
   /* Breadcrumb */
   .bc-list {
