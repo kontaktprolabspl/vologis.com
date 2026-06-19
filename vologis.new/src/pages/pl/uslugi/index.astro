@@ -328,10 +328,33 @@ const schemaItemList = {
   /* ── 1. Hero ─────────────────────────────────────── */
   .svc-hero {
     background: var(--color-paper-dark);
+    background-image: url('/services/uslugi.png');
+    background-size: cover;
+    background-position: bottom right;
+    background-repeat: no-repeat;
     color: var(--color-ink-on-dark);
     padding-top: calc(var(--space-3xl) + 5rem);
     padding-bottom: var(--space-3xl);
+    position: relative;
+    overflow: hidden;
   }
+
+  .svc-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      oklch(26% 0.060 257 / 1.00)  0%,
+      oklch(26% 0.060 257 / 1.00) 32%,
+      oklch(26% 0.060 257 / 0.88) 52%,
+      oklch(26% 0.060 257 / 0.30) 72%,
+      oklch(26% 0.060 257 / 0.00) 100%
+    );
+    pointer-events: none;
+  }
+
+  .svc-hero > * { position: relative; }
 
   .eyebrow {
     font-family: var(--font-mono);
