@@ -1,0 +1,648 @@
+---
+import ServicePageLayout from "../../../layouts/ServicePageLayout.astro";
+import FaqAccordion from "../../../components/FaqAccordion.astro";
+
+const SITE = "https://vologis.com";
+
+const trustItems = [
+  "Komercjalizacja wolnych powierzchni magazynowych",
+  "Doradztwo lokalizacyjne i market entry dla rynku polskiego",
+  "Bezpłatny dobór operatora dla firm produkcyjnych",
+  "Operatorzy średniej wielkości — elastyczność i jakość",
+  "Success fee — płacisz za zakontraktowaną przestrzeń",
+];
+
+const filary = [
+  {
+    title: "Komercjalizacja wolnych powierzchni magazynowych",
+    subtitle: "Dla operatorów logistycznych z niewykorzystaną przestrzenią",
+    body: "Przejmujemy proces poszukiwania i pozyskiwania klientów na wolne wolumeny paletowe. Działamy jak Twój zewnętrzny, wyspecjalizowany dział handlowy — maksymalizujemy rentowność obiektu bez generowania dodatkowych kosztów operacyjnych po Twojej stronie.",
+    value: "Optymalizacja budżetu bez konieczności utrzymywania handlowca na pełen etat. Rozliczenie wyłącznie za faktyczne zakontraktowanie i wypełnienie przestrzeni.",
+    badge: null,
+  },
+  {
+    title: "Doradztwo lokalizacyjne i market entry",
+    subtitle: "Dla firm wchodzących na rynek polski",
+    body: "Występujemy w roli lokalnego przewodnika i reprezentanta dla podmiotów planujących ekspansję, otwarcie oddziału lub relokację procesów magazynowych w Polsce. Analizujemy potrzeby infrastrukturalne, badamy rynek i selekcjonujemy najlepsze dostępne opcje magazynowe.",
+    value: "Bezpieczne wejście na rynek bez przepłacania — z dostępem do realnych stawek rynkowych i bez pułapek wynikających z nieznajomości lokalnych uwarunkowań.",
+    badge: null,
+  },
+  {
+    title: "Audyt i dobór strategicznego partnera logistycznego",
+    subtitle: "Dla firm produkcyjnych szukających kompleksowej obsługi",
+    body: "Alternatywa dla nieefektywnych procedur przetargowych. Zamiast kierować zapytania do korporacyjnych gigantów, mapujemy Twoje procesy i łączymy Cię ze starannie wyselekcjonowanymi operatorami średniej wielkości — oferującymi większą elastyczność i często wyższą jakość obsługi.",
+    value: "Obsługa szyta na miarę i zauważalna redukcja kosztów względem ofert korporacyjnych.",
+    badge: "Dla firm produkcyjnych dobór operatora jest bezpłatny.",
+  },
+];
+
+const forWhom = [
+  { title: "Operatorzy logistyczni z wolną przestrzenią", text: "Zmaksymalizuj rentowność obiektu bez budowania własnego działu handlowego." },
+  { title: "Firmy zagraniczne wchodzące na rynek PL", text: "Wejdź na polski rynek logistyczny z lokalnym przewodnikiem po stawkach i dostawcach." },
+  { title: "Firmy produkcyjne szukające operatora", text: "Bezpłatny dobór starannie wyselekcjonowanego operatora — alternatywa dla korporacyjnego przetargu." },
+  { title: "Deweloperzy i właściciele obiektów", text: "Sprzedaj wolną przestrzeń magazynową bez budowania własnego team sprzedażowego." },
+  { title: "Firmy relokujące procesy magazynowe", text: "Analiza potrzeb, research rynku i wsparcie przy relokacji operacji logistycznych." },
+];
+
+const programmaticLinks = [
+  { href: "/pl/uslugi/komercjalizacja-powierzchni-magazynowej", title: "Komercjalizacja powierzchni magazynowej", desc: "Dla operatorów: sprzedaż wolnych wolumenów paletowych, model success fee." },
+  { href: "/pl/uslugi/komercjalizacja-powierzchni-3pl", title: "Komercjalizacja powierzchni 3PL", desc: "Maksymalizacja obłożenia dla operatorów 3PL i 4PL." },
+  { href: "/pl/uslugi/market-entry-polska", title: "Market entry na rynek polski", desc: "Wejście na polski rynek logistyczny — reprezentacja, analiza, negocjacje." },
+  { href: "/pl/uslugi/market-entry-producenci-zagraniczni", title: "Market entry dla producentów zagranicznych", desc: "Dla zagranicznych firm produkcyjnych otwierających magazyn w Polsce." },
+  { href: "/pl/uslugi/dobor-partnera-logistycznego-produkcja", title: "Dobór partnera logistycznego dla produkcji", desc: "Bezpłatny dobór operatora dla firm produkcyjnych." },
+  { href: "/pl/uslugi/optymalizacja-przetargowa-logistyka", title: "Optymalizacja przetargowa w logistyce", desc: "Alternatywa dla klasycznego przetargu — operatorzy średniej wielkości." },
+];
+
+const faqs = [
+  {
+    q: "Czym różni się ta usługa od pośrednictwa logistycznego?",
+    a: "Pośrednictwo logistyczne reprezentuje firmę szukającą magazynu — Ty zlecasz, Ty płacisz, dobieramy dowolnego operatora w pełnej niezależności. Komercjalizacja i sprzedaż obejmuje drugą stronę rynku: sprzedaż wolnej przestrzeni operatorów, wejście na rynek dla firm zagranicznych oraz bezpłatny dobór operatora dla firm produkcyjnych. Dwie uzupełniające się usługi — różne modele i różne grupy klientów.",
+  },
+  {
+    q: "Jak rozliczana jest komercjalizacja powierzchni?",
+    a: "Komercjalizacja powierzchni magazynowej rozliczana jest w modelu success fee — wynagrodzenie naliczane jest wyłącznie za faktyczne zakontraktowanie i wypełnienie przestrzeni. Brak efektu oznacza brak kosztu po stronie operatora.",
+  },
+  {
+    q: "Czy market entry obejmuje tylko dobór magazynu?",
+    a: "Nie tylko. Usługa market entry obejmuje pełne doradztwo lokalizacyjne: analizę potrzeb infrastrukturalnych, badanie rynku polskiego, selekcję dostępnych opcji magazynowych, negocjacje stawek oraz wsparcie przy relokacji procesów logistycznych. Działamy jako lokalny reprezentant i niezależny doradca.",
+  },
+  {
+    q: "Dlaczego dobór operatora jest bezpłatny dla firmy produkcyjnej?",
+    a: "To model partnerski — dla firmy produkcyjnej cały proces poszukiwania, weryfikacji i rekomendacji operatora jest bezpłatny. Firmy produkcyjne nie ponoszą kosztów obsługi, co czyni tę usługę realną alternatywą dla kosztownych wewnętrznych przetargów.",
+  },
+  {
+    q: "Czy obsługujecie branże specjalistyczne (chłodnie, ADR, e-commerce)?",
+    a: "Tak. Dobór operatora uwzględnia specjalistyczne wymagania branżowe — chłodnie i łańcuch chłodniczy, magazyny ADR, farmacja (GDP), FMCG, e-commerce. Weryfikujemy faktyczne możliwości operatora, nie tylko deklaracje.",
+  },
+];
+
+const schemaService = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Komercjalizacja i sprzedaż",
+  "provider": {
+    "@type": "Organization",
+    "name": "Vologis Sp. z o.o.",
+    "url": SITE,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Jarocin",
+      "addressRegion": "Wielkopolska",
+      "addressCountry": "PL",
+    },
+  },
+  "areaServed": ["Polska", "Europa"],
+  "serviceType": "Sales brokerage, warehouse commercialization, market entry",
+  "description": "Komercjalizacja wolnych powierzchni magazynowych, reprezentacja rynkowa dla firm wchodzących na rynek PL oraz dobór strategicznego partnera logistycznego — bezpłatnie dla firm produkcyjnych.",
+  "url": `${SITE}/pl/uslugi/komercjalizacja-i-sprzedaz`,
+};
+
+const schemaFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ServicePageLayout
+  title="Komercjalizacja, pośrednictwo sprzedaży i market entry | Vologis"
+  description="Komercjalizacja wolnych powierzchni magazynowych, reprezentacja rynkowa dla firm wchodzących na rynek PL oraz dobór strategicznego partnera logistycznego — bezpłatnie dla firm produkcyjnych."
+  canonical="https://vologis.com/pl/uslugi/komercjalizacja-i-sprzedaz"
+  heroImage="/services/komercjalizacja-i-sprzedaz.webp"
+  eyebrow="Usługi logistyczne / Komercjalizacja i sprzedaż"
+  h1="Komercjalizacja, pośrednictwo sprzedaży i market entry"
+  lead="Łączymy dwie strony rynku logistycznego: operatorów z wolną przestrzenią i firmy szukające najlepszego partnera. Działamy jak zewnętrzny dział handlowy — bez kosztów stałego etatu."
+  trustItems={trustItems}
+  ctaPrimaryLabel="Umów konsultację →"
+  ctaPrimaryHref="/pl/kontakt"
+  ctaSecondaryLabel="Zobacz pośrednictwo logistyczne →"
+  ctaSecondaryHref="/pl/uslugi/posrednictwo-logistyczne"
+  breadcrumbs={[{ name: "Komercjalizacja i sprzedaż" }]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaService)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaFaq)} />
+
+  <!-- ─── 1. Problem / W skrócie ───────────────────────── -->
+  <section class="ps-problem" aria-labelledby="h-problem">
+    <div class="container">
+      <div class="ps-problem__grid">
+        <div class="ps-problem__copy">
+          <h2 class="h2" id="h-problem">
+            Zewnętrzny dział handlowy i niezależny doradca w jednym — bez kosztów stałego etatu
+          </h2>
+          <p class="body">
+            Rynek logistyczny ma dwa bieguny trudności: operatorzy z wolną przestrzenią nie mają dedykowanego działu sprzedaży — i tracą rentowność obiektu. Firmy szukające partnera logistycznego toną w niezweryfikowanych ofertach — i tracą czas. Vologis łączy oba problemy w jedną usługę.
+          </p>
+          <p class="body">
+            Dla operatorów przejmujemy proces pozyskiwania klientów na wolne wolumeny paletowe. Dla firm zagranicznych działamy jako lokalny przewodnik i reprezentant na polskim rynku logistycznym. Dla firm produkcyjnych oferujemy bezpłatny dobór strategicznego partnera — alternatywę dla nieefektywnych przetargów i gigantów korporacyjnych.
+          </p>
+          <p class="body">
+            Efekt: wypełniona przestrzeń, bezpieczne wejście na rynek lub właściwy partner logistyczny — bez własnego działu handlowego i bez przepłacania.
+          </p>
+        </div>
+        <aside class="ps-brief" aria-label="W skrócie">
+          <p class="ps-brief__label">W skrócie</p>
+          <p class="ps-brief__text">
+            Komercjalizacja i pośrednictwo sprzedaży to usługa łącząca trzy obszary: komercjalizację wolnych powierzchni magazynowych dla operatorów (model success fee), reprezentację rynkową i doradztwo lokalizacyjne dla firm wchodzących na rynek polski (market entry) oraz dobór strategicznego partnera logistycznego dla firm produkcyjnych — bezpłatny dla firmy produkcyjnej. Vologis działa jak zewnętrzny dział handlowy i niezależny doradca jednocześnie.
+          </p>
+          <hr class="ps-brief__rule" />
+          <p class="ps-brief__sub">
+            Vologis &middot; Jarocin, Polska &middot; Obsługa rynku PL i EU
+          </p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 2. Trzy filary ───────────────────────────────── -->
+  <section class="ps-filary" aria-labelledby="h-filary">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-filary">Trzy filary usługi</h2>
+      <div class="filary-grid">
+        {filary.map((f) => (
+          <div class="filar-card">
+            <h3 class="filar-card__title">{f.title}</h3>
+            <p class="filar-card__subtitle">{f.subtitle}</p>
+            <p class="filar-card__body">{f.body}</p>
+            <div class="filar-card__value">
+              <p class="filar-card__value-text">{f.value}</p>
+            </div>
+            {f.badge && (
+              <p class="filar-card__badge">{f.badge}</p>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 3. Dla kogo ──────────────────────────────────── -->
+  <section class="ps-forwho" aria-labelledby="h-forwho">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-forwho">Dla kogo jest ta usługa?</h2>
+      <div class="fw-grid">
+        {forWhom.map((p) => (
+          <div class="fw-card">
+            <h3 class="fw-card__title">{p.title}</h3>
+            <p class="fw-card__text">{p.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 4. Rozwiązania szczegółowe ──────────────────── -->
+  <section class="ps-branze" aria-labelledby="h-branze">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-branze">Rozwiązania szczegółowe</h2>
+      <p class="section-intro">
+        Każdy obszar dostępny jako dedykowana usługa. Wybierz wariant dopasowany do Twojej sytuacji.
+      </p>
+      <div class="branze-grid">
+        {programmaticLinks.map((l) => (
+          <a class="branze-card" href={l.href}>
+            <span class="branze-card__title">{l.title}</span>
+            <span class="branze-card__desc">{l.desc}</span>
+            <span class="branze-card__arrow" aria-hidden="true">→</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 5. FAQ ───────────────────────────────────────── -->
+  <section class="ps-faq" aria-labelledby="h-faq">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-faq">FAQ — najczęściej zadawane pytania</h2>
+      <FaqAccordion items={faqs} single />
+    </div>
+  </section>
+
+  <!-- ─── 6. End CTA ───────────────────────────────────── -->
+  <section class="ps-endcta" aria-labelledby="h-endcta">
+    <div class="container">
+      <div class="endcta-inner">
+        <h2 class="endcta__h2" id="h-endcta">
+          Chcesz sprzedać wolną przestrzeń, wejść na rynek PL lub znaleźć partnera logistycznego?
+        </h2>
+        <p class="endcta__text">
+          Opowiedz nam o swojej sytuacji — operator z wolną przestrzenią, firma planująca ekspansję lub producent szukający operatora. Bezpłatna pierwsza rozmowa, odpowiadamy w 24 godziny.
+        </p>
+        <div class="endcta__actions">
+          <a href="/pl/kontakt" class="endcta__btn endcta__btn--primary">
+            Umów konsultację <span aria-hidden="true">→</span>
+          </a>
+          <a href="/pl/uslugi/posrednictwo-logistyczne" class="endcta__btn endcta__btn--ghost">
+            Zobacz pośrednictwo <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 7. Related ───────────────────────────────────── -->
+  <section class="ps-related" aria-labelledby="h-related">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-related">Inne usługi Vologis</h2>
+      <div class="related-grid">
+        <a class="related-card" href="/pl/uslugi/posrednictwo-logistyczne">
+          <span class="related-card__title">Pośrednictwo logistyczne i fulfillment</span>
+          <span class="related-card__desc">Dobór magazynu, fulfillment i transportu dla Twojej firmy.</span>
+          <span class="related-card__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="related-card" href="/pl/uslugi/projekty-greenfield">
+          <span class="related-card__title">Projekty Greenfield</span>
+          <span class="related-card__desc">Od pustej działki do gotowej operacji — jeden partner, pełna odpowiedzialność.</span>
+          <span class="related-card__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="related-card" href="/pl/uslugi/doradztwo-operacyjne">
+          <span class="related-card__title">Doradztwo operacyjne i audyt</span>
+          <span class="related-card__desc">Audyt procesów, wąskie gardła, quick wins i dobór WMS.</span>
+          <span class="related-card__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</ServicePageLayout>
+
+<style>
+  .h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    color: var(--color-ink);
+    margin-bottom: var(--space-lg);
+  }
+
+  .h2--center { text-align: center; }
+
+  .body {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.75;
+    margin-bottom: var(--space-md);
+  }
+
+  .section-intro {
+    font-size: var(--text-md);
+    color: var(--color-muted);
+    line-height: 1.65;
+    max-width: 60ch;
+    margin-inline: auto;
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  /* ─── 1. Problem ──────────────────────────────────── */
+  .ps-problem {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper);
+  }
+
+  .ps-problem__grid {
+    display: grid;
+    grid-template-columns: 1fr 20rem;
+    gap: var(--space-3xl);
+    align-items: start;
+  }
+
+  .ps-brief {
+    border: 1px solid var(--color-blue);
+    border-radius: var(--radius-lg);
+    background: var(--color-blue-tint);
+    padding: var(--space-lg) var(--space-xl);
+    position: sticky;
+    top: calc(4.25rem + 3px + var(--space-lg));
+  }
+
+  .ps-brief__label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    margin-bottom: var(--space-md);
+  }
+
+  .ps-brief__text {
+    font-size: var(--text-base);
+    color: var(--color-ink);
+    line-height: 1.7;
+  }
+
+  .ps-brief__rule {
+    border: none;
+    border-top: 1px solid var(--color-blue);
+    margin-block: var(--space-md);
+    opacity: 0.3;
+  }
+
+  .ps-brief__sub {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.5;
+  }
+
+  /* ─── 2. Filary ──────────────────────────────────── */
+  .ps-filary {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper-2);
+  }
+
+  .filary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+  }
+
+  .filar-card {
+    border: 1px solid var(--color-rule);
+    border-top: 3px solid var(--color-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    background: var(--color-paper);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .filar-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-md);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: var(--color-ink);
+    line-height: 1.2;
+  }
+
+  .filar-card__subtitle {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+  }
+
+  .filar-card__body {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.65;
+    flex: 1;
+  }
+
+  .filar-card__value {
+    border-top: 1px solid var(--color-rule);
+    padding-top: var(--space-md);
+    margin-top: var(--space-xs);
+  }
+
+  .filar-card__value-text {
+    font-size: var(--text-sm);
+    color: var(--color-ink);
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .filar-card__badge {
+    display: inline-block;
+    align-self: flex-start;
+    background: var(--color-secondary);
+    color: #fff;
+    font-family: var(--font-display);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: var(--space-2xs) var(--space-md);
+    border-radius: var(--radius-pill);
+    margin-top: var(--space-xs);
+  }
+
+  /* ─── 3. Dla kogo ────────────────────────────────── */
+  .ps-forwho {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper);
+  }
+
+  .fw-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+  }
+
+  .fw-card {
+    border: 1px solid var(--color-rule);
+    border-left: 4px solid var(--color-secondary);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    background: var(--color-paper);
+  }
+
+  .fw-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+    margin-bottom: var(--space-sm);
+  }
+
+  .fw-card__text {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.65;
+  }
+
+  /* ─── 4. Branze/programmatic ─────────────────────── */
+  .ps-branze {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper-2);
+  }
+
+  .branze-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+  }
+
+  .branze-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    background: var(--color-paper);
+    text-decoration: none;
+    transition: border-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out);
+  }
+
+  .branze-card:hover {
+    border-color: var(--color-blue);
+    transform: translateY(-2px);
+  }
+
+  .branze-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--color-ink);
+    line-height: 1.35;
+  }
+
+  .branze-card__desc {
+    font-size: var(--text-xs);
+    color: var(--color-muted);
+    line-height: 1.5;
+    flex: 1;
+  }
+
+  .branze-card__arrow {
+    font-size: var(--text-base);
+    color: var(--color-secondary);
+    transition: transform var(--dur-short) var(--ease-out);
+    align-self: flex-start;
+    margin-top: var(--space-xs);
+  }
+
+  .branze-card:hover .branze-card__arrow { transform: translateX(4px); }
+
+  /* ─── 5. FAQ ─────────────────────────────────────── */
+  .ps-faq {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper);
+  }
+
+  /* ─── 6. End CTA ─────────────────────────────────── */
+  .ps-endcta {
+    padding-block: var(--space-3xl);
+    background: var(--gradient-cta);
+  }
+
+  .endcta-inner {
+    max-width: 52rem;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .endcta__h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    color: var(--color-ink-on-dark);
+    margin-bottom: var(--space-md);
+  }
+
+  .endcta__text {
+    font-size: var(--text-base);
+    color: var(--color-muted-on-dark);
+    line-height: 1.7;
+    margin-bottom: var(--space-xl);
+  }
+
+  .endcta__actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .endcta__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 600;
+    padding: var(--space-md) var(--space-2xl);
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out);
+  }
+
+  .endcta__btn--primary { background: var(--color-accent); color: #fff; }
+  .endcta__btn--primary:hover { background: var(--color-accent-hover); }
+  .endcta__btn--ghost { background: var(--color-glass-dark); color: var(--color-ink-on-dark); border-color: var(--color-glass-border); }
+  .endcta__btn--ghost:hover { background: oklch(100% 0 0 / 0.12); }
+
+  /* ─── 7. Related ─────────────────────────────────── */
+  .ps-related {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper);
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+  }
+
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    background: var(--color-paper);
+    text-decoration: none;
+    transition: border-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out);
+  }
+
+  .related-card:hover { border-color: var(--color-blue); transform: translateY(-3px); }
+
+  .related-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+  }
+
+  .related-card__desc {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.55;
+    flex: 1;
+  }
+
+  .related-card__arrow {
+    font-size: var(--text-md);
+    color: var(--color-secondary);
+    transition: transform var(--dur-short) var(--ease-out);
+    align-self: flex-start;
+    margin-top: auto;
+  }
+
+  .related-card:hover .related-card__arrow { transform: translateX(4px); }
+
+  /* ─── Responsive ─────────────────────────────────── */
+  @media (max-width: 60rem) {
+    .ps-problem__grid { grid-template-columns: 1fr; }
+    .ps-brief { position: static; }
+    .related-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 48rem) {
+    .fw-grid { grid-template-columns: 1fr; }
+    .filary-grid { grid-template-columns: 1fr; }
+    .branze-grid { grid-template-columns: 1fr; }
+    .endcta__actions { flex-direction: column; align-items: stretch; }
+    .endcta__btn { width: 100%; justify-content: center; }
+  }
+</style>

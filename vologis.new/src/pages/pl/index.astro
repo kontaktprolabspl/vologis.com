@@ -99,6 +99,32 @@ const serviceCards = [
     effect: "Logistyka stabilna — bez miesięcy rekrutacji i ryzyka błędnego zatrudnienia.",
     href: "/pl/uslugi/interim-management",
   },
+  {
+    num: "06",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 12h-5M12 7v5"/><path d="M7 17h10a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2Z"/><path d="m15 21-3-3-3 3"/></svg>`,
+    title: "Komercjalizacja i sprzedaż",
+    desc: "Komercjalizacja powierzchni, market entry i dobór operatora — łączymy obie strony rynku logistycznego.",
+    bullets: [
+      "komercjalizacja wolnych wolumenów paletowych (success fee)",
+      "reprezentacja rynkowa i doradztwo lokalizacyjne (market entry)",
+      "bezpłatny dobór partnera logistycznego dla firm produkcyjnych",
+    ],
+    effect: "Sprzedajesz wolną przestrzeń lub znajdujesz partnera bez własnego działu handlowego.",
+    href: "/pl/uslugi/komercjalizacja-i-sprzedaz",
+  },
+  {
+    num: "07",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>`,
+    title: "Bezpieczeństwo operacyjne",
+    desc: "Loss Prevention, CCTV/KD/SWWiN i procesy antyfraudowe dla dużych obiektów logistycznych.",
+    bullets: [
+      "projektowanie systemów CCTV, kontroli dostępu i SWWiN",
+      "procesy Loss Prevention i audyt antyfraudowy",
+      "czynności śledcze i zabezpieczenie materiału dowodowego",
+    ],
+    effect: "Chronisz marżę przed stratami, zmowami i kradzieżami, których nie widać.",
+    href: "/pl/uslugi/bezpieczenstwo-operacyjne",
+  },
 ];
 
 const processSteps = [
@@ -148,6 +174,9 @@ const audienceChips = [
   "Operatorzy TSL",
   "Retail i FMCG",
   "Firmy w ekspansji PL + EU",
+  "Operatorzy z wolną przestrzenią",
+  "Firmy zagraniczne (market entry)",
+  "Obiekty wymagające Loss Prevention",
 ];
 
 const articles = [
@@ -199,7 +228,7 @@ const schemaArticleList = {
 
 <BaseLayout
   title="Vologis — Niezależne doradztwo logistyczne end-to-end"
-  description="Vologis: pośrednictwo logistyczne, doradztwo operacyjne, projekty Greenfield, usługi dronowe i interim management. Od analizy do wdrożenia — niezależnie, z odpowiedzialnością za efekt. Rynki PL i EU."
+  description="Vologis: pośrednictwo logistyczne, komercjalizacja powierzchni, doradztwo operacyjne, projekty Greenfield, bezpieczeństwo operacyjne, usługi dronowe i interim management. Od analizy do wdrożenia — niezależnie. Rynki PL i EU."
   preloadImage="/hero-bg.webp"
 >
   <script type="application/ld+json" set:html={JSON.stringify(schemaLocalBusiness)} />
@@ -218,10 +247,7 @@ const schemaArticleList = {
           Odzyskaj kontrolę<br>nad logistyką —<br>zanim zacznie zjadać marżę.
         </h1>
         <p class="hero-sub" data-speakable="summary">
-          Pośrednictwo logistyczne, doradztwo operacyjne, projekty Greenfield,
-          usługi dronowe i interim management — dla firm produkcyjnych,
-          handlowych i e-commerce. Od analizy do wdrożenia, z pełną
-          odpowiedzialnością za efekt.
+          Pośrednictwo logistyczne, komercjalizacja powierzchni, doradztwo operacyjne, projekty Greenfield, bezpieczeństwo operacyjne, usługi dronowe i interim management — dla firm produkcyjnych, handlowych i e-commerce. Od analizy do wdrożenia, z pełną odpowiedzialnością za efekt.
         </p>
         <HeroCTAs
           bg="light"
@@ -256,9 +282,9 @@ const schemaArticleList = {
           <span class="stat-qualifier">zakres projektów i operacji</span>
         </div>
         <div class="stat-item">
-          <span class="stat-number tnum">5</span>
+          <span class="stat-number tnum">7</span>
           <span class="stat-rule" aria-hidden="true"></span>
-          <span class="stat-qualifier">usług: pośrednictwo, doradztwo, Greenfield, drony, interim</span>
+          <span class="stat-qualifier">usług: pośrednictwo, doradztwo, Greenfield, drony, interim, komercjalizacja, bezpieczeństwo</span>
         </div>
         <div class="stat-item">
           <span class="stat-number tnum">5–10</span>
@@ -302,11 +328,11 @@ const schemaArticleList = {
       <div class="section-head section-head--center">
         <p class="eyebrow eyebrow--accent">Co robimy</p>
         <h2 id="services-heading" class="section-title">
-          Pięć obszarów, jeden cel:<br>logistyka, która napędza wzrost.
+          Siedem obszarów, jeden cel:<br>logistyka, która napędza wzrost.
         </h2>
         <p class="section-intro">
-          Od pośrednictwa logistycznego przez doradztwo operacyjne i projekty inwestycyjne
-          po usługi dronowe i interim management — łączymy je w jedną odpowiedzialność za efekt.
+          Od pośrednictwa logistycznego i komercjalizacji powierzchni przez doradztwo operacyjne i projekty Greenfield
+          po bezpieczeństwo operacyjne, drony i interim management — łączymy je w jedną odpowiedzialność za efekt.
         </p>
       </div>
       <div class="services-grid">

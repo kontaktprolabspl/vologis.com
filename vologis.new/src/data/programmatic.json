@@ -844,6 +844,192 @@
         {"q": "Czym monitoring z drona przewyższa raport wykonawcy?", "a": "Daje niezależny, datowany i niepodważalny obraz rzeczywistego postępu — bez polegania wyłącznie na deklaracjach wykonawcy. Rozbieżności między harmonogramem a rzeczywistością widać od razu, co pozwala reagować w porę."},
         {"q": "Czy dokumentacja przyda się do rozliczeń?", "a": "Tak. Datowana dokumentacja postępu jest obiektywnym materiałem wspierającym rozliczenia z wykonawcami, raportowanie do inwestorów i finansujących oraz rozstrzyganie ewentualnych sporów co do zaawansowania prac."}
       ]
+    },
+    {
+      "slug": "komercjalizacja-powierzchni-magazynowej",
+      "parent": "komercjalizacja-i-sprzedaz",
+      "parent_name": "Komercjalizacja i sprzedaż",
+      "category": "Komercjalizacja powierzchni magazynowej",
+      "industry": "komercjalizacja magazynów",
+      "title": "Komercjalizacja wolnych powierzchni magazynowych — model success fee | Vologis",
+      "description": "Komercjalizacja wolnych wolumenów paletowych dla operatorów logistycznych. Vologis działa jak zewnętrzny dział handlowy — rozliczenie wyłącznie za zakontraktowaną i wypełnioną przestrzeń.",
+      "h1": "Komercjalizacja wolnych powierzchni magazynowych",
+      "eyebrow": "KOMERCJALIZACJA I SPRZEDAŻ · POWIERZCHNIE MAGAZYNOWE",
+      "intro": "Wolna przestrzeń paletowa to bezpośredni koszt operacyjny. Vologis przejmuje proces poszukiwania i pozyskiwania klientów na Twoje wolne wolumeny — działając jak wyspecjalizowany, zewnętrzny dział handlowy. Rozliczamy się wyłącznie za zakontraktowaną i wypełnioną przestrzeń — żadnych kosztów stałych, żadnych opłat za sam proces poszukiwania.",
+      "problem_heading": "Wolna przestrzeń paletowa kosztuje — nawet gdy stoi pusta",
+      "problem_text": "Koszty stałe obiektu nie znikają wraz z wolumenem. Każda pusta paleta to marża, której nie ma — zamiast przychodu z obsługi, obiekt generuje koszty utrzymania, pracownicze i mediów. Budowanie własnego działu sprzedaży na potrzeby zapełnienia luki jest nieopłacalne przy niepewnym wolumenie i zmiennym popycie. Vologis jest odpowiedzią: zewnętrzna sprzedaż bez kosztów stałych, rozliczana za efekt.",
+      "scope": [
+        {"title": "Pozyskiwanie klientów na wolne wolumeny", "text": "Aktywne poszukiwanie i kwalifikowanie firm szukających przestrzeni magazynowej dopasowanej do profilu Twojego obiektu."},
+        {"title": "Weryfikacja i matchmaking", "text": "Selekcja klientów pod kątem zgodności wymagań z możliwościami obiektu — wolumen, branża, wymagania certyfikacyjne, czas trwania kontraktu."},
+        {"title": "Negocjacje warunków kontraktu", "text": "Wsparcie w negocjacjach i domknięciu kontraktu: stawki, SLA, warunki wejścia i wyjścia, kary umowne."},
+        {"title": "Model success fee", "text": "Wynagrodzenie naliczane wyłącznie za zakontraktowaną i faktycznie wypełnioną przestrzeń. Brak efektu = brak kosztu po stronie operatora."}
+      ],
+      "for_who": [
+        {"title": "Operatorzy 3PL z wolną przestrzenią", "text": "Gdy masz wolne wolumeny i chcesz je wypełnić bez budowania własnego team sprzedażowego."},
+        {"title": "Właściciele i deweloperzy obiektów", "text": "Gdy obiekt stoi pusty lub częściowo pusty i potrzebujesz sprawnego pozyskania najemcy operacyjnego."},
+        {"title": "Operatorzy wychodzący z kontraktu", "text": "Gdy zbliża się koniec umowy z kluczowym klientem i trzeba zawczasu wypełnić lukę."}
+      ],
+      "summary": "Komercjalizacja wolnych powierzchni magazynowych to usługa, w której Vologis działa jak zewnętrzny dział handlowy operatora — aktywnie pozyskuje klientów na wolne wolumeny paletowe, weryfikuje ich wymagania i wspiera domknięcie kontraktu. Model rozliczenia success fee oznacza, że operator nie ponosi kosztów stałych poszukiwania: wynagrodzenie naliczane jest wyłącznie za zakontraktowaną i faktycznie wypełnioną przestrzeń.",
+      "faq": [
+        {"q": "Jak działa model success fee przy komercjalizacji?", "a": "Wynagrodzenie Vologis naliczane jest wyłącznie za zakontraktowaną i faktycznie wypełnioną przestrzeń magazynową — po podpisaniu umowy przez obie strony i fizycznym zajęciu wolumenu. Brak efektu oznacza brak kosztu po stronie operatora."},
+        {"q": "Jak długo trwa znalezienie klienta na wolną przestrzeń?", "a": "Czas zależy od profilu obiektu, wolumenu, lokalizacji i wymagań branżowych. Standardowe wolumeny w atrakcyjnych lokalizacjach obsługujemy zwykle w ciągu 4–8 tygodni. W przypadku przestrzeni specjalistycznych (chłodnie, ADR) czas może być dłuższy ze względu na węższą grupę potencjalnych klientów."},
+        {"q": "Czy obsługujecie komercjalizację przestrzeni specjalistycznych?", "a": "Tak. Komercjalizujemy przestrzenie standardowe, chłodnicze, ADR i magazyny farmaceutyczne (GDP). Wymagania specjalistyczne zawężają grupę potencjalnych klientów, ale jednocześnie pozwalają osiągnąć wyższe stawki — znamy ten rynek i wiemy, gdzie szukać."}
+      ]
+    },
+    {
+      "slug": "komercjalizacja-powierzchni-3pl",
+      "parent": "komercjalizacja-i-sprzedaz",
+      "parent_name": "Komercjalizacja i sprzedaż",
+      "category": "Komercjalizacja powierzchni 3PL",
+      "industry": "operatorzy 3PL",
+      "title": "Komercjalizacja powierzchni dla operatorów 3PL i 4PL — maksymalizacja obłożenia | Vologis",
+      "description": "Komercjalizacja i pozyskiwanie klientów dla operatorów 3PL i 4PL. Vologis maksymalizuje obłożenie obiektu i pomaga pozyskać kontrakty długoterminowe — model success fee, bez kosztów stałych.",
+      "h1": "Komercjalizacja powierzchni dla operatorów 3PL i 4PL",
+      "eyebrow": "KOMERCJALIZACJA I SPRZEDAŻ · OPERATORZY 3PL",
+      "intro": "Operator 3PL lub 4PL z wolnymi wolumenami stoi przed podwójnym wyzwaniem: każda pusta paleta to realny koszt, a budowanie własnego działu sprzedaży jest kosztowne i czasochłonne. Vologis przejmuje ten ciężar — działamy jak zewnętrzny, wyspecjalizowany dział handlowy dla operatorów logistycznych, skupiając się na pozyskiwaniu klientów dopasowanych do profilu obiektu i możliwości operacyjnych.",
+      "problem_heading": "Operator 3PL bez efektywnej sprzedaży traci podwójnie",
+      "problem_text": "Wolny wolumen przy pełnych kosztach stałych to jedna strata. Poświęcenie zasobów operacyjnych na działania sprzedażowe — bez doświadczenia handlowego — to druga. Vologis rozwiązuje oba problemy: przejmuje proces pozyskiwania klientów, matchuje wymagania z możliwościami obiektu i wspiera domknięcie kontraktów długoterminowych. Operator może skupić się na operacjach.",
+      "scope": [
+        {"title": "Aktywna akwizycja klientów", "text": "Poszukiwanie firm szukających zewnętrznej obsługi logistycznej — dopasowanych pod kątem branży, wolumenu, wymagań certyfikacyjnych i czasu trwania kontraktu."},
+        {"title": "Pozycjonowanie oferty 3PL", "text": "Analiza profilu obiektu, wyróżników operacyjnych i docelowych segmentów klientów — budowanie propozycji wartości dopasowanej do rynku."},
+        {"title": "Wsparcie w negocjacjach kontraktowych", "text": "Asystowanie przy negocjacjach stawek, SLA, warunków wejścia/wyjścia i klauzul kontraktowych — z perspektywy rynkowej znajomości standardów."},
+        {"title": "Pozyskiwanie kontraktów długoterminowych", "text": "Skupiamy się na klientach z potencjałem wieloletnich relacji — stabilne obłożenie jest cenniejsze niż krótkoterminowe transakcje."}
+      ],
+      "for_who": [
+        {"title": "Operatorzy 3PL z wolnymi wolumenami", "text": "Gdy masz wolną przestrzeń i chcesz ją wypełnić kontraktami dopasowanymi do możliwości obiektu."},
+        {"title": "Operatorzy 4PL i integratorzy logistyczni", "text": "Gdy chcesz poszerzyć bazę klientów bez angażowania zasobów operacyjnych w sprzedaż."},
+        {"title": "Nowe obiekty wchodzące na rynek", "text": "Gdy otwierasz obiekt lub uruchamiasz nową lokalizację i potrzebujesz szybkiego zapełnienia wolumenu."}
+      ],
+      "summary": "Komercjalizacja powierzchni dla operatorów 3PL i 4PL to usługa, w której Vologis działa jak zewnętrzny dział handlowy — pozyskuje klientów na wolne wolumeny, pozycjonuje ofertę operatora i wspiera domknięcie kontraktów długoterminowych. Model success fee oznacza, że koszty po stronie operatora pojawiają się wyłącznie po zakontraktowaniu i faktycznym wypełnieniu przestrzeni.",
+      "faq": [
+        {"q": "Jakie obiekty 3PL obsługujecie w komercjalizacji?", "a": "Obsługujemy magazyny standardowe, chłodnicze, ADR oraz obiekty farmaceutyczne (GDP). Kluczowe jest określenie profilu operatora — branże, które może obsłużyć, certyfikaty i wolny wolumen — na tej podstawie dobieramy właściwy segment klientów."},
+        {"q": "Czy pomożecie z komercjalizacją nowego obiektu przed otwarciem?", "a": "Tak. Komercjalizacja może rozpocząć się jeszcze przed fizycznym otwarciem — pozyskiwanie klientów i wstępne rozmowy kontraktowe w fazie budowlanej skracają czas do pełnego obłożenia po uruchomieniu."},
+        {"q": "Czy 3PL traci kontrolę nad wyborem klientów?", "a": "Nie. Vologis matchuje klientów i przeprowadza wstępną kwalifikację, ale każdy potencjalny klient jest konsultowany z operatorem. To operator podejmuje finalną decyzję o nawiązaniu współpracy. Działamy jako wsparcie sprzedażowe, nie jako autonomiczny broker."}
+      ]
+    },
+    {
+      "slug": "market-entry-polska",
+      "parent": "komercjalizacja-i-sprzedaz",
+      "parent_name": "Komercjalizacja i sprzedaż",
+      "category": "Market entry Polska",
+      "industry": "wejście na rynek PL",
+      "title": "Market entry Polska — wejście na polski rynek logistyczny | Vologis",
+      "description": "Doradztwo lokalizacyjne i market entry dla firm wchodzących na polski rynek logistyczny. Vologis działa jako lokalny reprezentant i niezależny doradca — analiza rynku, negocjacje stawek, selekcja lokalizacji.",
+      "h1": "Market entry Polska — wejście na polski rynek logistyczny",
+      "eyebrow": "KOMERCJALIZACJA I SPRZEDAŻ · MARKET ENTRY POLSKA",
+      "intro": "Wejście na polski rynek logistyczny bez lokalnego partnera to ryzyko: nieznajomość stawek rynkowych, pułapki kontraktowe, nieoptymalne lokalizacje. Vologis działa jako Twój lokalny przewodnik i reprezentant — analizujemy potrzeby infrastrukturalne, badamy rynek, selekcjonujemy opcje i negocjujemy w Twoim imieniu. Bezpieczne wejście na rynek bez przepłacania.",
+      "problem_heading": "Polski rynek logistyczny ma swoje reguły — nieznajomość kosztuje",
+      "problem_text": "Polska jest atrakcyjnym rynkiem logistycznym — centralne położenie w UE, rozwinięta infrastruktura, rosnące rynki e-commerce i przemysłowe. Ale wejście bez lokalnej wiedzy to ryzyko: stawki rynkowe różnią się drastycznie od ofert wstępnych, standardy kontraktowe mają lokalne specyfiki, a wybór lokalizacji bez znajomości sieci drogowej i kosztów pracy może zaważyć na opłacalności operacji na lata.",
+      "scope": [
+        {"title": "Analiza potrzeb infrastrukturalnych", "text": "Określenie wymagań logistycznych: wolumen, typ towarów, zasięg dystrybucji, wymagania certyfikacyjne i oczekiwany poziom usług."},
+        {"title": "Badanie rynku i selekcja lokalizacji", "text": "Identyfikacja dostępnych opcji magazynowych dopasowanych do wymagań — z uwzględnieniem lokalizacji, kosztów, infrastruktury drogowej i dostępności pracowników."},
+        {"title": "Negocjacje stawek i warunków", "text": "Negocjacje stawek magazynowych i serwisowych z wiedzą o realnych poziomach rynkowych — eliminacja przepłacania wynikającego z braku lokalnych benchmarków."},
+        {"title": "Reprezentacja i wsparcie operacyjne", "text": "Wsparcie przez cały proces: od pierwszego kontaktu z rynkiem do podpisania umowy i uruchomienia operacji."}
+      ],
+      "for_who": [
+        {"title": "Firmy zagraniczne planujące ekspansję do Polski", "text": "Gdy chcesz otworzyć oddział, magazyn lub centrum dystrybucyjne w Polsce i potrzebujesz lokalnego doradcy."},
+        {"title": "Importerzy i dystrybutorzy", "text": "Gdy Twoje towary trafiają do Polski i szukasz efektywnego partnera do składowania i dystrybucji."},
+        {"title": "Firmy relokujące operacje do Polski", "text": "Gdy rozważasz przeniesienie lub uruchomienie operacji logistycznych w Polsce z innych rynków UE."}
+      ],
+      "summary": "Market entry Polska to usługa, w której Vologis działa jako lokalny przewodnik i niezależny doradca dla firm wchodzących na polski rynek logistyczny — analizuje potrzeby infrastrukturalne, bada rynek, selekcjonuje dostępne opcje magazynowe i negocjuje warunki kontraktowe z wiedzą o realnych stawkach rynkowych. Efekt: bezpieczne wejście na rynek bez przepłacania i bez pułapek wynikających z nieznajomości lokalnych uwarunkowań.",
+      "faq": [
+        {"q": "Jakie są kluczowe lokalizacje logistyczne w Polsce?", "a": "Polska ma kilka głównych hubów logistycznych: Śląsk (dostęp do Czech, Niemiec, Słowacji), Mazowsze (centrum kraju, autostrada A2), Wielkopolska (węzeł A2/A1) oraz Dolny Śląsk (bliskość Niemiec i Czech). Wybór lokalizacji zależy od profilu dystrybucji, branży i wymagań dotyczących czasu dostaw — analizujemy to indywidualnie."},
+        {"q": "Jak długo trwa proces market entry?", "a": "Wstępna analiza rynku i pierwsze propozycje zazwyczaj zajmują 2–3 tygodnie. Pełny proces — od analizy po podpisanie umowy — to zwykle 6–12 tygodni, w zależności od wymagań, dostępności powierzchni i złożoności negocjacji."},
+        {"q": "Czy pomagacie też z formalnościami prawnymi i podatkowymi?", "a": "Vologis koncentruje się na stronie logistycznej i operacyjnej market entry — lokalizacje, stawki, dobór operatora, negocjacje. Do aspektów prawnych, podatkowych i rejestracyjnych rekomendujemy współpracę z lokalną kancelarią prawną i doradcą podatkowym — możemy wskazać sprawdzonych partnerów."}
+      ]
+    },
+    {
+      "slug": "market-entry-producenci-zagraniczni",
+      "parent": "komercjalizacja-i-sprzedaz",
+      "parent_name": "Komercjalizacja i sprzedaż",
+      "category": "Market entry producenci zagraniczni",
+      "industry": "producenci zagraniczni",
+      "title": "Market entry Polska dla zagranicznych producentów — magazyn i dystrybucja | Vologis",
+      "description": "Market entry dla zagranicznych firm produkcyjnych otwierających magazyn lub centrum dystrybucyjne w Polsce. Vologis analizuje potrzeby, dobiera lokalizację i operatora — niezależnie, z wiedzą o realnych stawkach.",
+      "h1": "Market entry w Polsce dla zagranicznych firm produkcyjnych",
+      "eyebrow": "KOMERCJALIZACJA I SPRZEDAŻ · PRODUCENCI ZAGRANICZNI",
+      "intro": "Zagraniczna firma produkcyjna otwierająca magazyn lub centrum dystrybucji w Polsce napotyka specyficzne wyzwania: nieznajomość lokalnych stawek, trudność w ocenie operatorów bez polskiego rynkowego kontekstu i ryzyko wyboru lokalizacji niezgodnej z rzeczywistą siecią dystrybucji. Vologis działa jako Twój lokalny partner — od analizy przez wybór lokalizacji po uruchomienie operacji.",
+      "problem_heading": "Zagraniczna firma produkcyjna wchodząca do Polski potrzebuje lokalnych oczu",
+      "problem_text": "Różnica między stawką ofertową a stawką rynkową w Polsce może wynosić 20–40% — bez lokalnego benchmarku jest niewidoczna. Operatorzy dobrze znani w swoim segmencie mogą nie pasować do wymagań produkcyjnych (JIT, sekwencja, specyfika ładunku). Wybór lokalizacji bez analizy sieci dróg ekspresowych i dostępności kadr może zaważyć na logistyce na lata.",
+      "scope": [
+        {"title": "Analiza wymagań produkcyjnych i logistycznych", "text": "Mapowanie rytmu produkcji, wymagań dotyczących składowania surowców i wyrobów gotowych, standardów JIT i wymagań jakościowych."},
+        {"title": "Dobór lokalizacji magazynu lub centrum dystrybucji", "text": "Analiza dostępnych lokalizacji z uwzględnieniem sieci dróg, kosztów operacyjnych, dostępności pracowników i odległości od kluczowych rynków."},
+        {"title": "Selekcja i weryfikacja operatorów", "text": "Identyfikacja operatorów z doświadczeniem w branży producenta — weryfikacja możliwości, certyfikatów i referencji."},
+        {"title": "Negocjacje i wsparcie przy uruchomieniu", "text": "Negocjacje warunków kontraktowych z wiedzą o rynkowych standardach oraz wsparcie podczas onboardingu i uruchomienia operacji."}
+      ],
+      "for_who": [
+        {"title": "Producenci z Europy Zachodniej rozszerzający dystrybucję", "text": "Gdy Polska stała się kluczowym rynkiem i potrzebujesz lokalnego centrum dystrybucyjnego."},
+        {"title": "Producenci z Europy Środkowo-Wschodniej (np. Rumunia, Węgry)", "text": "Gdy przenosisz lub replikujesz procesy magazynowe bliżej rynków zachodnioeuropejskich."},
+        {"title": "Producenci automotive i przemysłowi", "text": "Gdy Twoje komponenty muszą trafiać do polskich fabryk w rygorystycznym rytmie JIT."}
+      ],
+      "summary": "Market entry dla zagranicznych firm produkcyjnych to usługa, w której Vologis analizuje wymagania logistyczne i produkcyjne, dobiera lokalizację i operatora magazynowego w Polsce — weryfikując faktyczne możliwości operatora i negocjując warunki z wiedzą o realnych stawkach rynkowych. Efekt: właściwy operator i lokalizacja bez ryzyka przepłacania i bez pułapek wynikających z braku lokalnego rynkowego kontekstu.",
+      "faq": [
+        {"q": "Czy pomagacie producentom automotive z wymaganiami JIT?", "a": "Tak. Automotive to jedna z naszych specjalizacji — dobieramy operatorów z doświadczeniem w obsłudze JIT, zarządzaniu sekwencją i certyfikatami IATF/ISO. Weryfikujemy faktyczne możliwości operacyjne, nie tylko deklaracje."},
+        {"q": "Jaka lokalizacja w Polsce jest optymalna dla producenta zagranicznego?", "a": "To zależy od rynków docelowych, rytmu dostaw i wymagań jakościowych. Producentom obsługującym rynki zachodnioeuropejskie rekomendujemy zazwyczaj Dolny Śląsk lub Wielkopolskę. Dla centralnej dystrybucji po Polsce — Mazowsze lub Łódź. Analizujemy indywidualnie."},
+        {"q": "Jak długo trwa znalezienie odpowiedniego operatora dla zagranicznego producenta?", "a": "Wstępne propozycje zazwyczaj przygotowujemy w ciągu 2–3 tygodni od zebrania pełnych danych o wymaganiach. Pełny proces selekcji, weryfikacji i negocjacji to standardowo 6–10 tygodni."}
+      ]
+    },
+    {
+      "slug": "dobor-partnera-logistycznego-produkcja",
+      "parent": "komercjalizacja-i-sprzedaz",
+      "parent_name": "Komercjalizacja i sprzedaż",
+      "category": "Dobór partnera logistycznego dla produkcji",
+      "industry": "firmy produkcyjne",
+      "title": "Bezpłatny dobór partnera logistycznego dla firm produkcyjnych | Vologis",
+      "description": "Bezpłatny dobór operatora logistycznego dla firm produkcyjnych — alternatywa dla nieefektywnych przetargów. Vologis weryfikuje operatorów średniej wielkości, negocjuje warunki i rekomenduje dopasowane rozwiązanie.",
+      "h1": "Bezpłatny dobór partnera logistycznego dla firm produkcyjnych",
+      "eyebrow": "KOMERCJALIZACJA I SPRZEDAŻ · FIRMY PRODUKCYJNE",
+      "intro": "Firmy produkcyjne szukające zewnętrznego operatora logistycznego mogą skorzystać z usługi Vologis bezpłatnie. Mapujemy Twoje procesy, identyfikujemy wymagania i łączymy Cię ze starannie wyselekcjonowanymi operatorami średniej wielkości — oferującymi większą elastyczność i często wyższą jakość obsługi niż korporacyjni giganci. To skuteczna alternatywa dla kosztownych i czasochłonnych procedur przetargowych.",
+      "problem_heading": "Klasyczny przetarg logistyczny: 3 miesiące pracy i oferty od operatorów, którzy nie pasują",
+      "problem_text": "Procedury przetargowe w logistyce często trafiają do tych samych kilku dużych nazw — bo tak jest łatwiej, bo jest audyt, bo tak było zawsze. Efektem są kontrakty z korporacyjnymi gigantami, które oferują standardową obsługę, słabą elastyczność i stawki optymalizowane pod marżę operatora, nie pod potrzeby klienta. Firmy produkcyjne trafiają do wielkich operatorów jak do fabryki — jako kolejna paleta, nie jako partner. Vologis mapuje wymagania produkcyjne i łączy z operatorami, dla których Twój kontrakt ma realne znaczenie.",
+      "scope": [
+        {"title": "Mapowanie wymagań produkcyjnych", "text": "Analiza specyfiki produkcji: rytm, wolumeny, wymagania dotyczące składowania surowców/komponentów/wyrobów gotowych, wymagania JIT i certyfikacyjne."},
+        {"title": "Selekcja operatorów średniej wielkości", "text": "Identyfikacja operatorów dopasowanych do profilu produkcji — zwykle średniej wielkości, gdzie kontrakt ma znaczenie i elastyczność jest realna, a nie tylko deklarowana."},
+        {"title": "Weryfikacja faktycznych możliwości", "text": "Sprawdzamy możliwości operacyjne, referencje i certyfikaty. Operatorzy są weryfikowani, nie tylko prezentują swoje oferty."},
+        {"title": "Rekomendacja i wsparcie negocjacyjne", "text": "Przejrzysta rekomendacja z uzasadnieniem — i wsparcie w negocjacjach warunków SLA, stawek i kontraktu."}
+      ],
+      "for_who": [
+        {"title": "Firmy produkcyjne szukające zewnętrznego operatora", "text": "Gdy chcesz zlecić logistykę na zewnątrz i szukasz operatora dopasowanego do specyfiki produkcji — bezpłatnie."},
+        {"title": "Producenci zmęczeni korporacyjnym przetargiem", "text": "Gdy klasyczny przetarg dał oferty od operatorów, którzy traktują Cię jak kolejną paletę, nie jak partnera."},
+        {"title": "Firmy rosnące ponad własne możliwości logistyczne", "text": "Gdy wewnętrzna logistyka przestała nadążać za skalą produkcji i czas na zewnętrznego partnera."}
+      ],
+      "summary": "Bezpłatny dobór partnera logistycznego dla firm produkcyjnych to usługa, w której Vologis mapuje wymagania produkcyjne, selekcjonuje operatorów średniej wielkości i rekomenduje dopasowane rozwiązanie — bez kosztu dla firmy produkcyjnej. To skuteczna alternatywa dla kosztownych procedur przetargowych trafiających do korporacyjnych gigantów: zamiast standardowej obsługi firma produkcyjna otrzymuje partnera, dla którego kontrakt ma realne znaczenie i który oferuje faktyczną elastyczność.",
+      "faq": [
+        {"q": "Dlaczego dobór operatora jest bezpłatny dla firmy produkcyjnej?", "a": "To model partnerski — dla firmy produkcyjnej cały proces: mapowanie wymagań, selekcja operatorów, weryfikacja, rekomendacja i wsparcie negocjacyjne jest bezpłatny. Firma produkcyjna nie ponosi żadnych kosztów obsługi."},
+        {"q": "Czym różni się ta usługa od pośrednictwa logistycznego Vologis?", "a": "Pośrednictwo logistyczne to usługa, w której klient płaci za dobór operatora i Vologis działa w pełnej niezależności. Bezpłatny dobór dla firm produkcyjnych skupia się na modelu partnerskim i selekcji operatorów średniej wielkości jako alternatywie dla korporacyjnych przetargów. Dwa różne modele dla różnych potrzeb i sytuacji."},
+        {"q": "Czy obsługujecie branże specjalistyczne (automotive, farmacja, ADR)?", "a": "Tak. Dobór operatora uwzględnia specjalistyczne wymagania: automotive (JIT, IATF/ISO), farmacja (GDP), ADR, FMCG. Weryfikujemy faktyczne możliwości operatora w danej specjalizacji."}
+      ]
+    },
+    {
+      "slug": "optymalizacja-przetargowa-logistyka",
+      "parent": "komercjalizacja-i-sprzedaz",
+      "parent_name": "Komercjalizacja i sprzedaż",
+      "category": "Optymalizacja przetargowa w logistyce",
+      "industry": "optymalizacja przetargów",
+      "title": "Alternatywa dla przetargu logistycznego — operatorzy średniej wielkości | Vologis",
+      "description": "Alternatywa dla klasycznego przetargu logistycznego — Vologis dobiera operatorów średniej wielkości, oferujących elastyczność i niższe koszty niż korporacyjni dostawcy. Bezpłatne dla firm produkcyjnych.",
+      "h1": "Alternatywa dla klasycznego przetargu logistycznego",
+      "eyebrow": "KOMERCJALIZACJA I SPRZEDAŻ · OPTYMALIZACJA PRZETARGOWA",
+      "intro": "Klasyczny przetarg logistyczny trafia do kilku tych samych dużych nazw — i kończy się kontraktem z korporacyjnym operatorem, który traktuje firmę jak kolejną paletę. Vologis oferuje alternatywę: mapowanie wymagań, selekcja operatorów średniej wielkości i rekomendacja dopasowanego rozwiązania — bez żmudnej procedury przetargowej i bez kosztów dla firm produkcyjnych.",
+      "problem_heading": "Klasyczny przetarg logistyczny jest kosztowny, czasochłonny i często trafia do złych operatorów",
+      "problem_text": "Procedura przetargowa zabiera tygodnie lub miesiące pracy wewnętrznych zespołów. Oferty trafiają do tych samych kilku globalnych nazw — bo tak jest bezpiecznie, bo tak wymagają korporacyjne procedury. Efekt: korporacyjna obsługa w korporacyjnej cenie, słaba elastyczność i kontrakt, w którym Twoja firma jest jednym z setek klientów. Operatorzy średniej wielkości — lepiej dopasowani, bardziej elastyczni, często oferujący wyższą jakość obsługi — są pomijani, bo nikt ich nie zna. Vologis ich zna.",
+      "scope": [
+        {"title": "Mapowanie wymagań bez RFP", "text": "Szybka analiza potrzeb logistycznych — zamiast miesięcy przygotowania dokumentacji przetargowej, kilka spotkań i zebranie kluczowych danych."},
+        {"title": "Selekcja operatorów poza korporacyjnym radarem", "text": "Identyfikacja operatorów średniej wielkości nieobecnych w standardowych przetargach, a posiadających idealne dopasowanie do profilu klienta."},
+        {"title": "Weryfikacja i porównanie ofert", "text": "Zebranie porównywalnych ofert, weryfikacja operatorów i przygotowanie przejrzystej analizy — zamiast stosu PDF-ów do samodzielnego porównania."},
+        {"title": "Wsparcie decyzyjne i negocjacyjne", "text": "Rekomendacja z uzasadnieniem i wsparcie w negocjacjach — z wiedzą o rynkowych stawkach i standardach SLA."}
+      ],
+      "for_who": [
+        {"title": "Firmy produkcyjne z procedurami przetargowymi", "text": "Gdy wewnętrzny przetarg jest wymogiem, ale chcesz mieć pewność, że trafia do właściwych operatorów, nie tylko do znanych nazw."},
+        {"title": "Firmy chcące wyjść poza korporacyjnych operatorów", "text": "Gdy korporacyjna obsługa nie pasuje do Twoich wymagań i szukasz bardziej elastycznego partnera."},
+        {"title": "Firmy optymalizujące koszty logistyczne", "text": "Gdy bieżące koszty outsourcingu logistyki wydają się za wysokie i chcesz sprawdzić, czy rynek oferuje lepsze opcje."}
+      ],
+      "summary": "Alternatywa dla klasycznego przetargu logistycznego to usługa, w której Vologis mapuje wymagania klienta, identyfikuje i weryfikuje operatorów średniej wielkości i rekomenduje dopasowane rozwiązanie — szybciej i skuteczniej niż tradycyjna procedura przetargowa. Dla firm produkcyjnych usługa jest bezpłatna. Operatorzy średniej wielkości oferują zazwyczaj wyższą elastyczność, lepsze dopasowanie operacyjne i niższe koszty niż korporacyjni giganci — ale są pomijani w standardowych przetargach ze względu na mniejszą rozpoznawalność.",
+      "faq": [
+        {"q": "Czym różni się to od pośrednictwa logistycznego?", "a": "Pośrednictwo logistyczne to pełna usługa doboru operatora płatna przez klienta — dla wszystkich firm, z pełną niezależnością i dowolnym operatorem. Optymalizacja przetargowa skupia się na firmach produkcyjnych, jest dla nich bezpłatna i celowo koncentruje się na operatorach średniej wielkości jako alternatywie dla korporacyjnych przetargów. Inne modele, inne grupy klientów."},
+        {"q": "Jak szybko można zastąpić przetarg procesem Vologis?", "a": "Standardowy przetarg logistyczny trwa 2–4 miesiące. Proces Vologis — od zebrania wymagań po rekomendację — zwykle 3–6 tygodni. To skrócenie czasu decyzji o połowę lub więcej, przy szerszym zakresie weryfikacji operatorów."},
+        {"q": "Czy możecie uczestniczyć w istniejącej procedurze przetargowej?", "a": "Tak. Możemy wspierać istniejący przetarg: pomoc w przygotowaniu kryteriów RFP, rozszerzenie listy zaproszonych operatorów o podmioty średniej wielkości, weryfikacja ofert i analiza porównawcza. Dostosowujemy zakres do potrzeb klienta."}
+      ]
     }
   ]
 }

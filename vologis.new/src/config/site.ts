@@ -60,6 +60,14 @@ export const SITE = {
     "transport krajowy i międzynarodowy",
     "optymalizacja procesów logistycznych",
     "zarządzanie łańcuchem dostaw",
+    "pośrednictwo sprzedaży",
+    "komercjalizacja powierzchni magazynowej",
+    "market entry",
+    "bezpieczeństwo operacyjne",
+    "loss prevention",
+    "projektowanie systemów CCTV",
+    "detektywistyka gospodarcza",
+    "procesy antyfraudowe",
   ] as string[],
 
   /* ── Per-language defaults ──────────────────────────────── */

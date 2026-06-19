@@ -11,6 +11,8 @@ const icons = {
   warehouse: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M3 21h18"/><path d="M8 21v-6h8v6"/><path d="M8 12h8"/></svg>`,
   drone: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M9 9 5 5M15 9l4-4M9 15l-4 4M15 15l4 4"/><circle cx="4" cy="4" r="2"/><circle cx="20" cy="4" r="2"/><circle cx="4" cy="20" r="2"/><circle cx="20" cy="20" r="2"/></svg>`,
   bolt: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg>`,
+  handshake: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 12h-5M12 7v5"/><path d="M7 17h10a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2Z"/><path d="m15 21-3-3-3 3"/></svg>`,
+  shield: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>`,
 };
 
 const services = [
@@ -84,6 +86,34 @@ const services = [
     ],
     href: "/pl/uslugi/interim-management",
   },
+  {
+    number: "06",
+    icon: icons.handshake,
+    title: "Komercjalizacja i sprzedaż",
+    subtitle: "Komercjalizacja powierzchni, market entry i bezpłatny dobór operatora dla produkcji.",
+    bullets: [
+      "Komercjalizacja wolnych wolumenów paletowych (success fee)",
+      "Reprezentacja rynkowa dla firm wchodzących na rynek PL",
+      "Bezpłatny dobór partnera logistycznego dla firm produkcyjnych",
+      "Alternatywa dla nieefektywnych procedur przetargowych",
+      "Operatorzy średniej wielkości — elastyczność i partnerstwo",
+    ],
+    href: "/pl/uslugi/komercjalizacja-i-sprzedaz",
+  },
+  {
+    number: "07",
+    icon: icons.shield,
+    title: "Bezpieczeństwo operacyjne i Loss Prevention",
+    subtitle: "Ochrona marży przed stratami, zmowami i kradzieżami, których standardowa ochrona nie widzi.",
+    bullets: [
+      "Projektowanie systemów CCTV, kontroli dostępu i SWWiN",
+      "Procesy Loss Prevention i zonowanie obiektu",
+      "Korelacja CCTV z WMS i detekcja anomalii",
+      "Licencjonowane czynności śledcze",
+      "Audyt dochodzeniowy i zabezpieczenie materiału dowodowego",
+    ],
+    href: "/pl/uslugi/bezpieczenstwo-operacyjne",
+  },
 ];
 
 const processSteps = [
@@ -123,8 +153,8 @@ const schemaItemList = {
 ---
 
 <BaseLayout
-  title="Usługi logistyczne end-to-end — Vologis"
-  description="Pięć sposobów na to, żeby Twoja logistyka przestała być kosztem, a zaczęła działać. Każda usługa oparta na praktyce operacyjnej, nie teorii."
+  title="Siedem usług logistycznych end-to-end — Vologis"
+  description="Siedem sposobów na to, żeby Twoja logistyka przestała być kosztem, a zaczęła działać. Każda usługa oparta na praktyce operacyjnej, nie teorii."
   canonical="https://vologis.com/pl/uslugi"
 >
   <script type="application/ld+json" set:html={JSON.stringify(schemaBreadcrumb)} />
@@ -145,7 +175,7 @@ const schemaItemList = {
         Logistyka end-to-end.<br>Nie zostawiamy Cię z raportem.
       </h1>
       <p class="svc-hero__sub">
-        Pięć obszarów wsparcia — od pierwszej analizy po fizyczne wdrożenie
+        Siedem obszarów wsparcia — od pierwszej analizy po fizyczne wdrożenie
         i optymalizację. Działamy projektowo, rozliczamy się za efekty.
       </p>
       <HeroCTAs

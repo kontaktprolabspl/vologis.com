@@ -39,6 +39,8 @@ const serviceLinks = [
   { label: "Projekty Greenfield", href: "/pl/uslugi/projekty-greenfield", desc: "Od pustej działki do gotowej operacji." },
   { label: "Usługi dronowe", href: "/pl/uslugi/uslugi-dronowe", desc: "Pomiary, ortofotomapy, inspekcje i materiały z powietrza." },
   { label: "Interim Management", href: "/pl/uslugi/interim-management", desc: "Wsparcie zarządcze i gaszenie pożarów od zaraz." },
+  { label: "Komercjalizacja i sprzedaż", href: "/pl/uslugi/komercjalizacja-i-sprzedaz", desc: "Komercjalizacja powierzchni, market entry i dobór partnera logistycznego." },
+  { label: "Bezpieczeństwo operacyjne", href: "/pl/uslugi/bezpieczenstwo-operacyjne", desc: "Loss Prevention, CCTV/KD/SWWiN i procesy antyfraudowe dla dużych obiektów." },
 ];
 const navItems = [
   { label: "Proces",      href: "/pl/proces",      match: "/pl/proces"      },
@@ -156,13 +158,40 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
               aria-haspopup="true"
             >Usługi</a>
             <div class="mega" role="menu" aria-label="Usługi">
-              <div class="mega__grid">
-                {serviceLinks.map((s) => (
-                  <a class="mega__card" href={s.href} role="menuitem" aria-current={navPath === s.href ? "page" : undefined}>
-                    <span class="mega__card-title">{s.label}</span>
-                    <span class="mega__card-desc">{s.desc}</span>
-                  </a>
-                ))}
+              <div class="mega__groups">
+                <div class="mega__group">
+                  <p class="mega__group-label">Doradztwo i operacje</p>
+                  <div class="mega__group-links">
+                    {[serviceLinks[1], serviceLinks[4], serviceLinks[6]].map((s) => (
+                      <a class="mega__card" href={s.href} role="menuitem" aria-current={navPath === s.href ? "page" : undefined}>
+                        <span class="mega__card-title">{s.label}</span>
+                        <span class="mega__card-desc">{s.desc}</span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+                <div class="mega__group">
+                  <p class="mega__group-label">Logistyka i rynek</p>
+                  <div class="mega__group-links">
+                    {[serviceLinks[0], serviceLinks[5]].map((s) => (
+                      <a class="mega__card" href={s.href} role="menuitem" aria-current={navPath === s.href ? "page" : undefined}>
+                        <span class="mega__card-title">{s.label}</span>
+                        <span class="mega__card-desc">{s.desc}</span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+                <div class="mega__group">
+                  <p class="mega__group-label">Inwestycje i technologia</p>
+                  <div class="mega__group-links">
+                    {[serviceLinks[2], serviceLinks[3]].map((s) => (
+                      <a class="mega__card" href={s.href} role="menuitem" aria-current={navPath === s.href ? "page" : undefined}>
+                        <span class="mega__card-title">{s.label}</span>
+                        <span class="mega__card-desc">{s.desc}</span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
               </div>
               <a class="mega__foot" href="/pl/uslugi">Zobacz wszystkie usługi <span aria-hidden="true">→</span></a>
             </div>
@@ -388,7 +417,7 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
     position: absolute;
     top: calc(100% + var(--space-sm));
     left: 0;
-    width: 42rem;
+    width: 56rem;
     max-width: 92vw;
     background: var(--color-paper);
     border: 1px solid var(--color-rule);
@@ -417,6 +446,29 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
     grid-template-columns: 1fr 1fr;
     gap: var(--space-3xs);
   }
+
+  /* Grouped mega-menu layout */
+  .mega__groups {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xs);
+  }
+
+  .mega__group { display: flex; flex-direction: column; }
+
+  .mega__group-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-neutral);
+    padding: var(--space-xs) var(--space-md) var(--space-2xs);
+    border-bottom: 1px solid var(--color-rule);
+    margin-bottom: var(--space-3xs);
+  }
+
+  .mega__group-links { display: flex; flex-direction: column; }
 
   .mega__card {
     display: flex;

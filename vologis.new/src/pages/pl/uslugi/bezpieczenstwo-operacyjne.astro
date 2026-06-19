@@ -1,0 +1,676 @@
+---
+import ServicePageLayout from "../../../layouts/ServicePageLayout.astro";
+import FaqAccordion from "../../../components/FaqAccordion.astro";
+import CalloutBox from "../../../components/CalloutBox.astro";
+
+const SITE = "https://vologis.com";
+
+const trustItems = [
+  "Projektowanie systemów CCTV, kontroli dostępu i SWWiN",
+  "Licencjonowane czynności śledcze",
+  "Procesy antyfraudowe i Loss Prevention",
+  "Korelacja CCTV z systemem WMS",
+  "Detekcja anomalii i audyty dochodzeniowe",
+];
+
+const mainAreas = [
+  {
+    title: "Czynności śledcze",
+    text: "Licencjonowana detektywistyka: legalne pozyskiwanie informacji, weryfikacja faktów, gromadzenie materiału dowodowego. Profesjonalne dokumentowanie nadużyć stanowiące dowód w postępowaniu karnym lub przed sądem pracy.",
+  },
+  {
+    title: "Projektowanie systemów zabezpieczeń",
+    text: "Planowanie i wdrażanie CCTV, kontroli dostępu (KD) oraz systemów sygnalizacji włamania i napadu (SWWiN) — dla powierzchni biurowych klasy A i obiektów magazynowych. Integracja systemów z procesami operacyjnymi.",
+  },
+];
+
+const lpGroups = [
+  {
+    title: "Prewencja i architektura uprawnień",
+    bullets: [
+      "Zonowanie obiektu — podział na strefy o różnym poziomie dostępu (przyjęcia, kompletacja, wysyłka, strefa towarów wysokiej wartości). Każde przejście rejestrowane przez KD — eliminacja 'turystyki magazynowej'.",
+      "Rozdział funkcji krytycznych (Segregation of Duties) — procedury uniemożliwiają realizację pełnego cyklu operacji przez jedną osobę (np. przyjmujący towar nie zatwierdza stanów w WMS).",
+      "Zarządzanie tożsamością i rotacją — anti-passback, śluzy biometryczne, rotacja na odcinkach najbardziej narażonych na ryzyko.",
+    ],
+  },
+  {
+    title: "Monitoring, detekcja i analityka",
+    bullets: [
+      "Korelacja CCTV z WMS — każda operacja systemowa generuje znacznik na nagraniu wideo; rozbieżność między operacją a obrazem flagowana jako anomalia.",
+      "Detekcja anomalii behawioralnych AI — algorytmy wykrywają nietypowe zachowania w czasie rzeczywistym (martwe strefy, chowanie przedmiotów, otwarte bramy dokowe bez nadzoru).",
+      "Weryfikacja integralności transportów — plombowanie naczep, OCR tablic i kontenerów, rygorystyczne procedury doków.",
+    ],
+  },
+  {
+    title: "Audyt i przeciwdziałanie zmowom",
+    bullets: [
+      "Cycle Counting — codzienne wyrywkowe liczenie wybranych lokacji; wykrycie braku w 24-48h pozwala zawęzić krąg podejrzanych i przeanalizować wideo zanim zostanie nadpisane.",
+      "Detekcja i rozbijanie zmów — losowy przydział zadań i zespołów przez WMS (brak stałych par), niezależne kontrole wyrywkowe.",
+    ],
+  },
+  {
+    title: "Dochodzenia i reagowanie",
+    bullets: [
+      "Audyt śledczy i analiza Root Cause — retrospektywna analiza danych (uprawnienia, logowania, billingi, wideo); identyfikacja sprawcy i luki procesowej.",
+      "Zabezpieczenie materiału dowodowego — profesjonalne dokumentowanie nadużyć (często z licencjonowanymi detektywami), by materiał stanowił dowód w postępowaniu karnym lub przed sądem pracy.",
+    ],
+  },
+];
+
+const forWhom = [
+  { title: "Centra dystrybucyjne i magazyny klasy A", text: "Duże wolumeny i masowe grupy pracownicze wymagają procesowego podejścia do bezpieczeństwa." },
+  { title: "Operatorzy logistyczni z dużą załogą", text: "Przy setkach pracowników samo zaufanie nie wystarczy — potrzebna jest architektura uprawnień i monitoring." },
+  { title: "Firmy z towarem wysokiej wartości", text: "Elektronika, farmaceutyki, alkohole — wymagają stref z podwyższoną kontrolą i ścisłą identyfikowalnością." },
+  { title: "Obiekty z wysokim ryzykiem manka", text: "Regularne niedobory inwentarzowe sygnalizują lukę procesową lub systemową. Diagnozujemy i zamykamy." },
+  { title: "Inwestorzy zabezpieczający nowe obiekty (Greenfield)", text: "Bezpieczeństwo projektowane od początku jest wielokrotnie tańsze niż retrofitting po incydentach." },
+];
+
+const faqs = [
+  {
+    q: "Czym Loss Prevention różni się od zwykłej ochrony fizycznej?",
+    a: "Ochrona fizyczna reaguje na incydenty — chroni wejścia i mienie. Loss Prevention działa prewencyjnie: projektuje architekturę uprawnień, wdraża procesy minimalizujące ryzyko zmów i kradzieży, koreluje dane z CCTV i WMS, wykrywa anomalie zanim staną się stratą. To ochrona marży, nie tylko mienia.",
+  },
+  {
+    q: "Czy projektujecie systemy CCTV i kontroli dostępu od podstaw?",
+    a: "Tak. Planujemy i wdrażamy systemy CCTV, kontroli dostępu (KD) i sygnalizacji włamania/napadu (SWWiN) — zarówno w nowych obiektach (Greenfield), jak i w istniejących. Projektujemy z myślą o integracji z procesami operacyjnymi i systemem WMS.",
+  },
+  {
+    q: "Jak działa korelacja CCTV z systemem WMS?",
+    a: "Każda operacja w WMS (przyjęcie, wydanie, korekta inwentaryzacyjna) generuje znacznik czasowy, który nakładamy na nagranie z kamer. Rozbieżność między zdarzeniem systemowym a obrazem — np. brak operatora przy terminalu w momencie transakcji — jest automatycznie flagowana jako anomalia do weryfikacji.",
+  },
+  {
+    q: "Czy prowadzicie czynności śledcze przy wykryciu nadużycia?",
+    a: "Tak, dysponujemy licencjonowanymi detektywami do legalnego pozyskiwania informacji, weryfikacji faktów i gromadzenia materiału dowodowego. Zabezpieczamy materiał w sposób umożliwiający jego wykorzystanie w postępowaniu karnym lub przed sądem pracy.",
+  },
+  {
+    q: "Czy usługa sprawdzi się przy bardzo dużej załodze (500+ pracowników)?",
+    a: "Szczególnie. Przy masowych grupach pracowniczych skuteczność samej ochrony fizycznej drastycznie spada — rośnie ryzyko zmów, nieautoryzowanych wyjść towaru i manipulacji danymi WMS. Procesy Loss Prevention są zaprojektowane właśnie do skalowania na duże organizacje: losowy przydział zadań, cycle counting, segmentacja stref dostępu i detekcja anomalii AI.",
+  },
+];
+
+const schemaService = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Bezpieczeństwo operacyjne i Loss Prevention",
+  "provider": {
+    "@type": "Organization",
+    "name": "Vologis Sp. z o.o.",
+    "url": SITE,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Jarocin",
+      "addressRegion": "Wielkopolska",
+      "addressCountry": "PL",
+    },
+  },
+  "areaServed": ["Polska", "Europa"],
+  "serviceType": "Operational security and loss prevention",
+  "description": "Bezpieczeństwo procesowe dużych obiektów logistycznych: projektowanie CCTV/KD/SWWiN, procesy antyfraudowe, Loss Prevention, czynności śledcze. Integracja technologii z procedurami operacyjnymi.",
+  "url": `${SITE}/pl/uslugi/bezpieczenstwo-operacyjne`,
+};
+
+const schemaFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ServicePageLayout
+  title="Bezpieczeństwo operacyjne i Loss Prevention w logistyce | Vologis"
+  description="Bezpieczeństwo procesowe dużych obiektów logistycznych: projektowanie CCTV/KD/SWWiN, procesy antyfraudowe, Loss Prevention, czynności śledcze. Integracja technologii z procedurami operacyjnymi."
+  canonical="https://vologis.com/pl/uslugi/bezpieczenstwo-operacyjne"
+  heroImage="/services/bezpieczenstwo-operacyjne.webp"
+  eyebrow="Usługi logistyczne / Bezpieczeństwo operacyjne"
+  h1="Bezpieczeństwo procesowe — chroń marżę przed stratami, których nie widać"
+  lead="W dużych obiektach standardowa ochrona fizyczna to za mało. Loss Prevention integruje technologię z procedurami operacyjnymi i kontrolą wewnętrzną — przeciwdziałając oszustwom, zmowom i kradzieżom."
+  trustItems={trustItems}
+  ctaPrimaryLabel="Umów konsultację →"
+  ctaPrimaryHref="/pl/kontakt"
+  ctaSecondaryLabel="Zobacz doradztwo operacyjne →"
+  ctaSecondaryHref="/pl/uslugi/doradztwo-operacyjne"
+  breadcrumbs={[{ name: "Bezpieczeństwo operacyjne" }]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaService)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaFaq)} />
+
+  <!-- ─── 1. Problem / W skrócie ───────────────────────── -->
+  <section class="ps-problem" aria-labelledby="h-problem">
+    <div class="container">
+      <div class="ps-problem__grid">
+        <div class="ps-problem__copy">
+          <h2 class="h2" id="h-problem">
+            Manko, zmowy i kradzieże nie biorą się z powietrza
+          </h2>
+          <p class="body">
+            W centrach dystrybucyjnych, magazynach klasy A i hubach przeładunkowych — przy masowych grupach pracowniczych — straty rzadko wynikają z pojedynczych incydentów. Najczęściej to luki w procesach: brak rozdziału funkcji, słaba kontrola dostępu, brak korelacji danych. Bezpieczeństwo procesowe zamyka te luki, zanim staną się kosztem.
+          </p>
+          <p class="body">
+            W skrócie: standardowa ochrona fizyczna pilnuje drzwi. Loss Prevention pilnuje marży.
+          </p>
+        </div>
+        <aside class="ps-brief" aria-label="W skrócie">
+          <p class="ps-brief__label">W skrócie</p>
+          <p class="ps-brief__text">
+            Bezpieczeństwo operacyjne (Loss Prevention) to ochrona dużych obiektów logistycznych wykraczająca poza ochronę fizyczną — integracja technologii (CCTV, kontrola dostępu, SWWiN) z procesami operacyjnymi i kontrolą wewnętrzną. Vologis projektuje systemy zabezpieczeń, wdraża procesy antyfraudowe (zonowanie, rozdział funkcji, korelacja CCTV z WMS, detekcja anomalii AI) oraz prowadzi czynności śledcze i audyty dochodzeniowe — przeciwdziałając oszustwom, zmowom i kradzieżom.
+          </p>
+          <hr class="ps-brief__rule" />
+          <p class="ps-brief__sub">
+            Vologis &middot; Jarocin, Polska &middot; Obsługa rynku PL i EU
+          </p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 2. Zakres — 2 główne obszary ─────────────────── -->
+  <section class="ps-scope" aria-labelledby="h-scope">
+    <div class="container">
+      <h2 class="h2" id="h-scope">Zakres usługi</h2>
+      <div class="scope-grid">
+        {mainAreas.map((a) => (
+          <div class="scope-card">
+            <h3 class="scope-card__title">{a.title}</h3>
+            <p class="scope-card__text">{a.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 3. Procesy Loss Prevention (dark) ────────────── -->
+  <section class="ps-lp" aria-labelledby="h-lp">
+    <div class="container">
+      <p class="dark-eyebrow">Loss Prevention</p>
+      <h2 class="h2 h2--dark" id="h-lp">Cztery obszary procesów antyfraudowych</h2>
+      <div class="lp-groups">
+        {lpGroups.map((g) => (
+          <div class="lp-group">
+            <h3 class="lp-group__title">{g.title}</h3>
+            <ul class="lp-group__list" role="list">
+              {g.bullets.map((b) => (
+                <li class="lp-group__item">
+                  <svg class="lp-group__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg>
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 4. Dla kogo ──────────────────────────────────── -->
+  <section class="ps-forwho" aria-labelledby="h-forwho">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-forwho">Dla kogo jest usługa?</h2>
+      <div class="fw-grid">
+        {forWhom.map((p) => (
+          <div class="fw-card">
+            <h3 class="fw-card__title">{p.title}</h3>
+            <p class="fw-card__text">{p.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 5. Cross-link: Greenfield ───────────────────── -->
+  <section class="ps-crosslink" aria-label="Powiązane usługi">
+    <div class="container">
+      <div class="crosslink-box">
+        <div class="crosslink-box__content">
+          <h2 class="crosslink-box__title">Budujesz nowy obiekt?</h2>
+          <p class="crosslink-box__text">Zaprojektujemy bezpieczeństwo już na etapie inwestycji — zanim betonowe ściany wyznaczą strefy, które trudno będzie potem zmienić.</p>
+          <a href="/pl/uslugi/projekty-greenfield" class="crosslink-box__link">
+            Projekty Greenfield <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 6. FAQ ───────────────────────────────────────── -->
+  <section class="ps-faq" aria-labelledby="h-faq">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-faq">FAQ — najczęściej zadawane pytania</h2>
+      <FaqAccordion items={faqs} single />
+    </div>
+  </section>
+
+  <!-- ─── 7. End CTA ───────────────────────────────────── -->
+  <section class="ps-endcta" aria-labelledby="h-endcta">
+    <div class="container">
+      <div class="endcta-inner">
+        <h2 class="endcta__h2" id="h-endcta">
+          Chcesz chronić marżę przed stratami, których nie widać?
+        </h2>
+        <p class="endcta__text">
+          Bezpłatna wstępna rozmowa o bezpieczeństwie operacyjnym Twojego obiektu. Powiemy wprost, gdzie są największe luki procesowe i jak je zamknąć.
+        </p>
+        <div class="endcta__actions">
+          <a href="/pl/kontakt" class="endcta__btn endcta__btn--primary">
+            Umów konsultację <span aria-hidden="true">→</span>
+          </a>
+          <a href="/pl/uslugi/doradztwo-operacyjne" class="endcta__btn endcta__btn--ghost">
+            Zobacz doradztwo <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 8. Related ───────────────────────────────────── -->
+  <section class="ps-related" aria-labelledby="h-related">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-related">Inne usługi Vologis</h2>
+      <div class="related-grid">
+        <a class="related-card" href="/pl/uslugi/doradztwo-operacyjne">
+          <span class="related-card__title">Doradztwo operacyjne i audyt</span>
+          <span class="related-card__desc">Audyt procesów magazynowych, identyfikacja wąskich gardeł i optymalizacja.</span>
+          <span class="related-card__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="related-card" href="/pl/uslugi/projekty-greenfield">
+          <span class="related-card__title">Projekty Greenfield</span>
+          <span class="related-card__desc">Bezpieczeństwo projektowane od początku inwestycji — taniej i skuteczniej.</span>
+          <span class="related-card__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="related-card" href="/pl/uslugi/interim-management">
+          <span class="related-card__title">Interim Management</span>
+          <span class="related-card__desc">Kryzys operacyjny? Wchodzimy od zaraz, stabilizujemy i naprawiamy.</span>
+          <span class="related-card__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</ServicePageLayout>
+
+<style>
+  .h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    color: var(--color-ink);
+    margin-bottom: var(--space-lg);
+  }
+
+  .h2--center { text-align: center; }
+  .h2--dark { color: var(--color-ink-on-dark); }
+
+  .body {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.75;
+    margin-bottom: var(--space-md);
+  }
+
+  .dark-eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-blue-on-dark);
+    margin-bottom: var(--space-md);
+  }
+
+  /* ─── 1. Problem ──────────────────────────────────── */
+  .ps-problem {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper);
+  }
+
+  .ps-problem__grid {
+    display: grid;
+    grid-template-columns: 1fr 20rem;
+    gap: var(--space-3xl);
+    align-items: start;
+  }
+
+  .ps-brief {
+    border: 1px solid var(--color-blue);
+    border-radius: var(--radius-lg);
+    background: var(--color-blue-tint);
+    padding: var(--space-lg) var(--space-xl);
+    position: sticky;
+    top: calc(4.25rem + 3px + var(--space-lg));
+  }
+
+  .ps-brief__label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    margin-bottom: var(--space-md);
+  }
+
+  .ps-brief__text {
+    font-size: var(--text-base);
+    color: var(--color-ink);
+    line-height: 1.7;
+  }
+
+  .ps-brief__rule {
+    border: none;
+    border-top: 1px solid var(--color-blue);
+    margin-block: var(--space-md);
+    opacity: 0.3;
+  }
+
+  .ps-brief__sub {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.5;
+  }
+
+  /* ─── 2. Zakres ──────────────────────────────────── */
+  .ps-scope {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper-2);
+  }
+
+  .scope-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+  }
+
+  .scope-card {
+    border: 1px solid var(--color-rule);
+    border-top: 3px solid var(--color-secondary);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl);
+    background: var(--color-paper);
+  }
+
+  .scope-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-md);
+    font-weight: 700;
+    color: var(--color-ink);
+    margin-bottom: var(--space-sm);
+  }
+
+  .scope-card__text {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.65;
+  }
+
+  /* ─── 3. Loss Prevention (dark) ─────────────────── */
+  .ps-lp {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper-dark);
+  }
+
+  .lp-groups {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+    margin-top: var(--space-xl);
+  }
+
+  .lp-group {
+    background: var(--color-glass-dark);
+    border: 1px solid var(--color-glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+  }
+
+  .lp-group__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink-on-dark);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--color-glass-border);
+  }
+
+  .lp-group__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .lp-group__item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    font-size: var(--text-sm);
+    color: var(--color-muted-on-dark);
+    line-height: 1.6;
+  }
+
+  .lp-group__icon {
+    flex-shrink: 0;
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-top: 0.15rem;
+    color: var(--color-blue-on-dark);
+  }
+
+  /* ─── 4. Dla kogo ────────────────────────────────── */
+  .ps-forwho {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper);
+  }
+
+  .fw-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+  }
+
+  .fw-card {
+    border: 1px solid var(--color-rule);
+    border-left: 4px solid var(--color-secondary);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    background: var(--color-paper);
+  }
+
+  .fw-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+    margin-bottom: var(--space-sm);
+  }
+
+  .fw-card__text {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.65;
+  }
+
+  /* ─── 5. Cross-link ──────────────────────────────── */
+  .ps-crosslink {
+    padding-block: var(--space-2xl);
+    background: var(--color-paper-2);
+  }
+
+  .crosslink-box {
+    border: 1px solid var(--color-blue);
+    border-left: 4px solid var(--color-secondary);
+    border-radius: var(--radius-lg);
+    background: var(--color-blue-tint);
+    padding: var(--space-xl);
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+  }
+
+  .crosslink-box__content { flex: 1; }
+
+  .crosslink-box__title {
+    font-family: var(--font-display);
+    font-size: var(--text-md);
+    font-weight: 700;
+    color: var(--color-ink);
+    margin-bottom: var(--space-sm);
+  }
+
+  .crosslink-box__text {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+  }
+
+  .crosslink-box__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: color var(--dur-micro) var(--ease-out);
+  }
+
+  .crosslink-box__link:hover { color: var(--color-ink); }
+
+  /* ─── 6. FAQ ─────────────────────────────────────── */
+  .ps-faq {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper-2);
+  }
+
+  /* ─── 7. End CTA ─────────────────────────────────── */
+  .ps-endcta {
+    padding-block: var(--space-3xl);
+    background: var(--gradient-cta);
+  }
+
+  .endcta-inner {
+    max-width: 52rem;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .endcta__h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    color: var(--color-ink-on-dark);
+    margin-bottom: var(--space-md);
+  }
+
+  .endcta__text {
+    font-size: var(--text-base);
+    color: var(--color-muted-on-dark);
+    line-height: 1.7;
+    margin-bottom: var(--space-xl);
+  }
+
+  .endcta__actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .endcta__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 600;
+    padding: var(--space-md) var(--space-2xl);
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out);
+  }
+
+  .endcta__btn--primary { background: var(--color-accent); color: #fff; }
+  .endcta__btn--primary:hover { background: var(--color-accent-hover); }
+  .endcta__btn--ghost { background: var(--color-glass-dark); color: var(--color-ink-on-dark); border-color: var(--color-glass-border); }
+  .endcta__btn--ghost:hover { background: oklch(100% 0 0 / 0.12); }
+
+  /* ─── 8. Related ─────────────────────────────────── */
+  .ps-related {
+    padding-block: var(--space-3xl);
+    background: var(--color-paper);
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+  }
+
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    background: var(--color-paper);
+    text-decoration: none;
+    transition: border-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out);
+  }
+
+  .related-card:hover { border-color: var(--color-blue); transform: translateY(-3px); }
+
+  .related-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+  }
+
+  .related-card__desc {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.55;
+    flex: 1;
+  }
+
+  .related-card__arrow {
+    font-size: var(--text-md);
+    color: var(--color-secondary);
+    transition: transform var(--dur-short) var(--ease-out);
+    align-self: flex-start;
+    margin-top: auto;
+  }
+
+  .related-card:hover .related-card__arrow { transform: translateX(4px); }
+
+  /* ─── Responsive ─────────────────────────────────── */
+  @media (max-width: 60rem) {
+    .ps-problem__grid { grid-template-columns: 1fr; }
+    .ps-brief { position: static; }
+    .lp-groups { grid-template-columns: 1fr; }
+    .related-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 48rem) {
+    .fw-grid { grid-template-columns: 1fr; }
+    .scope-grid { grid-template-columns: 1fr; }
+    .endcta__actions { flex-direction: column; align-items: stretch; }
+    .endcta__btn { width: 100%; justify-content: center; }
+  }
+</style>
