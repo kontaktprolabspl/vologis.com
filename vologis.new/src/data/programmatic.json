@@ -847,6 +847,7 @@
     },
     {
       "slug": "komercjalizacja-powierzchni-magazynowej",
+      "heroImage": "/services/vologis-uslugi-komercjalizacja-powierzchni-magazynowej.png",
       "parent": "komercjalizacja-i-sprzedaz",
       "parent_name": "Komercjalizacja i sprzedaż",
       "category": "Komercjalizacja powierzchni magazynowej",
@@ -878,6 +879,7 @@
     },
     {
       "slug": "komercjalizacja-powierzchni-3pl",
+      "heroImage": "/services/vologis-uslugi-komercjalizacja-powierzchni-3pl.png",
       "parent": "komercjalizacja-i-sprzedaz",
       "parent_name": "Komercjalizacja i sprzedaż",
       "category": "Komercjalizacja powierzchni 3PL",
@@ -909,6 +911,7 @@
     },
     {
       "slug": "market-entry-polska",
+      "heroImage": "/services/vologis-uslugi-market-entry-polska.png",
       "parent": "komercjalizacja-i-sprzedaz",
       "parent_name": "Komercjalizacja i sprzedaż",
       "category": "Market entry Polska",
@@ -940,6 +943,7 @@
     },
     {
       "slug": "market-entry-producenci-zagraniczni",
+      "heroImage": "/services/vologis-uslugi-market-entry-producenci-zagraniczni.png",
       "parent": "komercjalizacja-i-sprzedaz",
       "parent_name": "Komercjalizacja i sprzedaż",
       "category": "Market entry producenci zagraniczni",
@@ -971,6 +975,7 @@
     },
     {
       "slug": "dobor-partnera-logistycznego-produkcja",
+      "heroImage": "/services/vologis-uslugi-dobor-partnera-logistycznego-produkcja.png",
       "parent": "komercjalizacja-i-sprzedaz",
       "parent_name": "Komercjalizacja i sprzedaż",
       "category": "Dobór partnera logistycznego dla produkcji",
@@ -1002,6 +1007,7 @@
     },
     {
       "slug": "optymalizacja-przetargowa-logistyka",
+      "heroImage": "/services/vologis-uslugi-optymalizacja-przetargowa-logistyka.png",
       "parent": "komercjalizacja-i-sprzedaz",
       "parent_name": "Komercjalizacja i sprzedaż",
       "category": "Optymalizacja przetargowa w logistyce",
