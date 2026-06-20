@@ -81,20 +81,9 @@ const schemaBreadcrumb = {
   <!-- ── Article Hero ──────────────────────────────────────── -->
   <section
     class:list={["art-hero", { "art-hero--has-bg": !!heroImage }]}
+    style={heroImage ? `background-image: url('${heroImage}')` : undefined}
     aria-labelledby="art-h1"
   >
-    {heroImage && (
-      <img
-        src={heroImage}
-        alt={heroImageAlt}
-        class="art-hero__img"
-        fetchpriority="high"
-        loading="eager"
-        decoding="async"
-        width="1600"
-        height="640"
-      />
-    )}
 
     <div class="container">
       <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -190,20 +179,12 @@ const schemaBreadcrumb = {
     overflow: hidden;
   }
 
-  /* Hero image — absolutely positioned behind overlay */
-  .art-hero__img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center right;
-    z-index: 0;
-  }
-
   /* Dark bg fallback when image is present */
   .art-hero--has-bg {
-    background: var(--color-paper-dark);
+    background-color: var(--color-paper-dark);
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
     border-bottom: none;
   }
 
@@ -223,8 +204,8 @@ const schemaBreadcrumb = {
     pointer-events: none;
   }
 
-  /* All direct children (except the bg img) above the overlay */
-  .art-hero--has-bg > :not(.art-hero__img) { position: relative; }
+  /* All direct children above the overlay */
+  .art-hero--has-bg > * { position: relative; }
 
   /* ── On-dark colour overrides when hero has background image ── */
   .art-hero--has-bg .bc-list,
@@ -469,8 +450,9 @@ const schemaBreadcrumb = {
     .art-lead { font-size: var(--text-base); }
     .art-hero-actions { flex-direction: column; }
     .kbtn { width: 100%; }
-    /* Hide hero image on mobile — dark bg stays, text remains on-dark */
-    .art-hero__img { display: none; }
+    /* Skip downloading hero image on mobile — CSS background-image: none prevents the fetch entirely */
+    .art-hero--has-bg { background-image: none !important; }
+    .art-hero--has-bg::before { display: none; }
   }
 </style>
 

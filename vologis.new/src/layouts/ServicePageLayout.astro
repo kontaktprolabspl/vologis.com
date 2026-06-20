@@ -299,13 +299,8 @@ const schemaBreadcrumb = {
     .spl-lead { font-size: var(--text-base); }
     .spl-actions { flex-direction: column; }
     .spl-btn { width: 100%; justify-content: center; }
-    /* On mobile extend overlay to cover full width */
-    .spl-hero--has-img::before {
-      background: linear-gradient(
-        to right,
-        oklch(26% 0.060 257 / 1.00) 0%,
-        oklch(26% 0.060 257 / 0.92) 100%
-      );
-    }
+    /* On mobile: skip downloading the hero image entirely — gradient covers it 100% anyway */
+    .spl-hero--has-img { background-image: none !important; }
+    .spl-hero--has-img::before { display: none; }
   }
 </style>

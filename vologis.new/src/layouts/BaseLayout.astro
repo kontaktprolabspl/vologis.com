@@ -110,8 +110,8 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
 
   <!-- Fonts self-hosted via @fontsource-variable (no external requests, no render-blocking) -->
 
-  <!-- Preload critical above-fold image (page-specific, passed via preloadImage prop) -->
-  {preloadImage && <link rel="preload" as="image" href={preloadImage} fetchpriority="high" />}
+  <!-- Preload critical above-fold image — desktop only (mobile hides hero images under full-opacity gradient) -->
+  {preloadImage && <link rel="preload" as="image" href={preloadImage} fetchpriority="high" media="(min-width: 641px)" />}
 
   <!-- Schema: Organization -->
   <script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
