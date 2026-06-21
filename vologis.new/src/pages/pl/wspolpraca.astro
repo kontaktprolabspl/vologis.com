@@ -77,6 +77,7 @@ const schemaBreadcrumb = {
   <!-- ── Form ───────────────────────────────────────── -->
   <section class="coop-body" aria-label="Formularz zgłoszenia współpracy">
     <div class="container">
+      <div class="coop-grid">
       <div class="form-wrap">
 
         <!-- Success message (hidden by default, shown via JS) -->
@@ -236,6 +237,31 @@ const schemaBreadcrumb = {
         </form>
 
       </div>
+
+        <!-- RIGHT: CEO card -->
+        <aside class="ceo-sidebar">
+          <div class="ceo-card">
+            <img
+              src="/pawel-wojtczak.webp"
+              alt="Paweł Wojtczak — CEO i Prezes Zarządu Vologis"
+              width="120"
+              height="120"
+              class="ceo-card__photo"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="ceo-card__info">
+              <p class="ceo-card__name">Paweł Wojtczak</p>
+              <p class="ceo-card__role">CEO i Prezes Zarządu</p>
+              <p class="ceo-card__company">Vologis Sp. z o.o.</p>
+            </div>
+            <p class="ceo-card__note">
+              Zgłoszenia trafiają bezpośrednio do Pawła. Odpowiada osobiście — zwykle w ciągu 48 godzin.
+            </p>
+          </div>
+        </aside>
+
+      </div><!-- /coop-grid -->
     </div>
   </section>
 
@@ -341,8 +367,96 @@ const schemaBreadcrumb = {
     padding-bottom: var(--space-3xl);
   }
 
+  .coop-grid {
+    display: grid;
+    grid-template-columns: 1fr 18rem;
+    gap: var(--space-3xl);
+    align-items: start;
+  }
+
   .form-wrap {
-    max-width: 64ch;
+    min-width: 0;
+  }
+
+  /* ── CEO sidebar ─────────────────────────────────── */
+  .ceo-sidebar {
+    position: sticky;
+    top: calc(4.25rem + 3px + var(--space-lg));
+  }
+
+  .ceo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-xl);
+    background: var(--color-paper-2);
+    border: 1px solid var(--color-rule);
+    border-top: 4px solid var(--color-secondary);
+    border-radius: var(--radius-lg);
+    text-align: center;
+  }
+
+  .ceo-card__photo {
+    width: 7rem;
+    height: 7rem;
+    border-radius: var(--radius-pill);
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .ceo-card__info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .ceo-card__name {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-ink);
+  }
+
+  .ceo-card__role {
+    font-size: var(--text-sm);
+    color: var(--color-secondary);
+    font-weight: 500;
+  }
+
+  .ceo-card__company {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+  }
+
+  .ceo-card__note {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.55;
+    border-top: 1px solid var(--color-rule);
+    padding-top: var(--space-md);
+    margin-top: var(--space-xs);
+  }
+
+  @media (max-width: 52rem) {
+    .coop-grid {
+      grid-template-columns: 1fr;
+    }
+    .ceo-sidebar {
+      position: static;
+      order: -1;
+    }
+    .ceo-card {
+      flex-direction: row;
+      text-align: left;
+      align-items: flex-start;
+    }
+    .ceo-card__photo {
+      width: 4rem;
+      height: 4rem;
+      flex-shrink: 0;
+    }
+    .ceo-card__note { display: none; }
   }
 
   .col-label {
