@@ -51,6 +51,21 @@ const programmaticLinks = [
   { href: "/pl/uslugi/market-entry-producenci-zagraniczni", title: "Market entry dla producentów zagranicznych", desc: "Dla zagranicznych firm produkcyjnych otwierających magazyn w Polsce." },
   { href: "/pl/uslugi/dobor-partnera-logistycznego-produkcja", title: "Dobór partnera logistycznego dla produkcji", desc: "Bezpłatny dobór operatora dla firm produkcyjnych." },
   { href: "/pl/uslugi/optymalizacja-przetargowa-logistyka", title: "Optymalizacja przetargowa w logistyce", desc: "Alternatywa dla klasycznego przetargu — operatorzy średniej wielkości." },
+  { href: "/pl/uslugi/komercjalizacja-powierzchni-warszawa", title: "Komercjalizacja powierzchni — Warszawa", desc: "Pozyskujemy najemców na wolne wolumeny w aglomeracji warszawskiej — success fee." },
+  { href: "/pl/uslugi/komercjalizacja-powierzchni-wroclaw", title: "Komercjalizacja powierzchni — Wrocław", desc: "Aktywna komercjalizacja w rynku wysokiej podaży — wyróżniamy Twój obiekt." },
+  { href: "/pl/uslugi/komercjalizacja-powierzchni-poznan", title: "Komercjalizacja powierzchni — Poznań", desc: "Nearshoring i e-commerce przy A2 — pozyskujemy najemców dla Twojego obiektu." },
+  { href: "/pl/uslugi/komercjalizacja-powierzchni-katowice", title: "Komercjalizacja powierzchni — Katowice", desc: "Przemysł i automotive na Górnym Śląsku — dopasowujemy najemcę do profilu technicznego." },
+];
+
+const cityLinks = [
+  { href: "/pl/uslugi/magazyn-do-wynajecia-warszawa", title: "Magazyn do wynajęcia — Warszawa", desc: "Największy rynek PL, last-mile i e-commerce. Negocjujemy stawki w imieniu najemcy." },
+  { href: "/pl/uslugi/magazyn-do-wynajecia-wroclaw", title: "Magazyn do wynajęcia — Wrocław", desc: "Rynek najemcy z wysoką podażą — realne pole do negocjacji warunków." },
+  { href: "/pl/uslugi/magazyn-do-wynajecia-poznan", title: "Magazyn do wynajęcia — Poznań", desc: "Korytarz A2 Berlin–Warszawa. Nearshoring i dystrybucja wschód–zachód." },
+  { href: "/pl/uslugi/magazyn-do-wynajecia-lodz", title: "Magazyn do wynajęcia — Łódź", desc: "Centrum Polski, A1/A2 — najtańszy hub do dystrybucji krajowej." },
+  { href: "/pl/uslugi/magazyn-do-wynajecia-krakow", title: "Magazyn do wynajęcia — Kraków", desc: "Napięty rynek, niskie pustostany — doradca z dostępem do rynku off-market." },
+  { href: "/pl/uslugi/magazyn-do-wynajecia-gdansk", title: "Magazyn do wynajęcia — Gdańsk", desc: "Hub portowy i importowy Trójmiasta. Logistyka kontenerowa i re-eksport." },
+  { href: "/pl/uslugi/magazyn-do-wynajecia-szczecin", title: "Magazyn do wynajęcia — Szczecin", desc: "Zachodnia brama Polski, bliskość Berlina i portów szczecińskich." },
+  { href: "/pl/uslugi/magazyn-do-wynajecia-katowice", title: "Magazyn do wynajęcia — Katowice", desc: "Górny Śląsk, przemysł i automotive, węzeł A4/A1 południa." },
 ];
 
 const faqs = [
@@ -204,6 +219,25 @@ const schemaFaq = {
       </p>
       <div class="branze-grid">
         {programmaticLinks.map((l) => (
+          <a class="branze-card" href={l.href}>
+            <span class="branze-card__title">{l.title}</span>
+            <span class="branze-card__desc">{l.desc}</span>
+            <span class="branze-card__arrow" aria-hidden="true">→</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Magazyn wg miasta ─────────────────────────── -->
+  <section class="ps-branze" aria-labelledby="h-miasta">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-miasta">Magazyn do wynajęcia według miasta</h2>
+      <p class="section-intro">
+        Działamy na głównych rynkach logistycznych w Polsce — negocjujemy stawki i warunki najmu w imieniu najemcy, bez prowizji od wynajmujących.
+      </p>
+      <div class="branze-grid">
+        {cityLinks.map((l) => (
           <a class="branze-card" href={l.href}>
             <span class="branze-card__title">{l.title}</span>
             <span class="branze-card__desc">{l.desc}</span>
