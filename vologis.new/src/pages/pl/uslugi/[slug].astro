@@ -14,6 +14,18 @@ export function getStaticPaths() {
 
 const { page } = Astro.props;
 
+/* ── OG image: inherit from parent service ───────── */
+const OG_MAP: Record<string, string> = {
+  "posrednictwo-logistyczne":  "/og/og-posrednictwo.png",
+  "doradztwo-operacyjne":      "/og/og-doradztwo.png",
+  "projekty-greenfield":       "/og/og-greenfield.png",
+  "uslugi-dronowe":            "/og/og-drony.png",
+  "interim-management":        "/og/og-interim.png",
+  "komercjalizacja-i-sprzedaz":"/og/og-komercjalizacja.png",
+  "bezpieczenstwo-operacyjne": "/og/og-bezpieczenstwo.png",
+};
+const pageOgImage = OG_MAP[page.parent] ?? "/og/og-home.png";
+
 /* ── Siblings (same parent, different slug, max 2) ─── */
 const siblings = programmatic.pages
   .filter((p) => p.parent === page.parent && p.slug !== page.slug)
@@ -56,7 +68,7 @@ const schemaFaq = {
   title={page.title}
   description={page.description}
   canonical={`${SITE}/pl/uslugi/${page.slug}/`}
-  ogImage="/og/home.jpg"
+  ogImage={pageOgImage}
   heroImage={(page as any).heroImage ?? `/services/${page.slug}.webp`}
   eyebrow={page.eyebrow}
   h1={page.h1}

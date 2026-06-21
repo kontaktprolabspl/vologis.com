@@ -92,11 +92,7 @@ export const SITE = {
     },
   },
 
-  /**
-   * Default OG image path.
-   * TODO: Create /public/og/home.jpg (1200×630 px) and update this path.
-   */
-  ogImage: "/og/home.jpg",
+  ogImage: "/og/og-home.png",
 } as const;
 
 export type Lang = "pl" | "en";
