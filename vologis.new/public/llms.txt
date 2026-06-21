@@ -27,7 +27,7 @@ wyłącznie w interesie klienta.
 
 - [Strona główna](https://vologis.com/pl/)
 - [Usługi — hub wszystkich usług](https://vologis.com/pl/uslugi/)
-- [Jak pracujemy — 5 etapów](https://vologis.com/pl/proces/)
+- [Jak pracujemy — proces 5 etapów](https://vologis.com/pl/proces/) — Analiza i identyfikacja potrzeb → Quick Wins → Wybór lokalizacji i partnerów → Wdrożenie operacyjne → Optymalizacja i rozwój
 - [Wiedza — artykuły eksperckie](https://vologis.com/pl/wiedza/)
 - [O nas](https://vologis.com/pl/o-nas/)
 - [Współpraca](https://vologis.com/pl/wspolpraca/)
