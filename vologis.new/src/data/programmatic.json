@@ -981,31 +981,32 @@
       "heroImage": "/services/vologis-uslugi-dobor-partnera-logistycznego-produkcja.webp",
       "parent": "komercjalizacja-i-sprzedaz",
       "parent_name": "Komercjalizacja i sprzedaż",
-      "category": "Dobór partnera logistycznego dla produkcji",
-      "industry": "firmy produkcyjne",
-      "title": "Bezpłatny dobór partnera logistycznego dla firm produkcyjnych | Vologis",
-      "description": "Bezpłatny dobór operatora logistycznego dla firm produkcyjnych — alternatywa dla nieefektywnych przetargów. Vologis weryfikuje operatorów średniej wielkości, negocjuje warunki i rekomenduje dopasowane rozwiązanie.",
-      "h1": "Bezpłatny dobór partnera logistycznego dla firm produkcyjnych",
-      "eyebrow": "KOMERCJALIZACJA I SPRZEDAŻ · FIRMY PRODUKCYJNE",
-      "intro": "Firmy produkcyjne szukające zewnętrznego operatora logistycznego mogą skorzystać z usługi Vologis bezpłatnie. Mapujemy Twoje procesy, identyfikujemy wymagania i łączymy Cię ze starannie wyselekcjonowanymi operatorami średniej wielkości — oferującymi większą elastyczność i często wyższą jakość obsługi niż korporacyjni giganci. To skuteczna alternatywa dla kosztownych i czasochłonnych procedur przetargowych.",
-      "problem_heading": "Klasyczny przetarg logistyczny: 3 miesiące pracy i oferty od operatorów, którzy nie pasują",
-      "problem_text": "Procedury przetargowe w logistyce często trafiają do tych samych kilku dużych nazw — bo tak jest łatwiej, bo jest audyt, bo tak było zawsze. Efektem są kontrakty z korporacyjnymi gigantami, które oferują standardową obsługę, słabą elastyczność i stawki optymalizowane pod marżę operatora, nie pod potrzeby klienta. Firmy produkcyjne trafiają do wielkich operatorów jak do fabryki — jako kolejna paleta, nie jako partner. Vologis mapuje wymagania produkcyjne i łączy z operatorami, dla których Twój kontrakt ma realne znaczenie.",
+      "category": "Komercjalizacja i sprzedaż",
+      "industry": "firmy produkcyjne / dobór operatora",
+      "title": "Dobór partnera logistycznego dla firm produkcyjnych — bezpłatnie | Vologis",
+      "description": "Dla firm produkcyjnych dobór operatora logistycznego jest bezpłatny. Mapujemy procesy i łączymy Cię ze sprawdzonymi operatorami średniej wielkości — większa elastyczność, wyższa jakość, niższe koszty niż u korporacyjnych gigantów.",
+      "h1": "Dobór strategicznego partnera logistycznego dla firm produkcyjnych",
+      "eyebrow": "DOBÓR PARTNERA · PRODUKCJA",
+      "intro": "Szukasz kompleksowej obsługi logistycznej i dystrybucji dla swojej produkcji, ale nie chcesz przepłacać u korporacyjnych gigantów ani prowadzić wyczerpujących przetargów? Mapujemy Twoje procesy i łączymy Cię ze starannie wyselekcjonowanymi operatorami średniej wielkości — oferującymi większą elastyczność i często wyższą jakość obsługi. Dla firmy produkcyjnej dobór operatora jest bezpłatny.",
+      "problem_heading": "Klasyczny przetarg na operatora bywa kosztowny i nieefektywny",
+      "problem_text": "Firmy produkcyjne szukające obsługi logistycznej najczęściej kierują zapytania do największych graczy rynkowych — co kończy się sztywnymi warunkami, korporacyjnymi cennikami i obsługą daleką od szytej na miarę. Samodzielne prowadzenie przetargu pochłania czas i zasoby, a bez znajomości rynku trudno dotrzeć do elastycznych operatorów średniej wielkości, którzy często oferują lepszą jakość za niższą cenę.",
       "scope": [
-        {"title": "Mapowanie wymagań produkcyjnych", "text": "Analiza specyfiki produkcji: rytm, wolumeny, wymagania dotyczące składowania surowców/komponentów/wyrobów gotowych, wymagania JIT i certyfikacyjne."},
-        {"title": "Selekcja operatorów średniej wielkości", "text": "Identyfikacja operatorów dopasowanych do profilu produkcji — zwykle średniej wielkości, gdzie kontrakt ma znaczenie i elastyczność jest realna, a nie tylko deklarowana."},
-        {"title": "Weryfikacja faktycznych możliwości", "text": "Sprawdzamy możliwości operacyjne, referencje i certyfikaty. Operatorzy są weryfikowani, nie tylko prezentują swoje oferty."},
-        {"title": "Rekomendacja i wsparcie negocjacyjne", "text": "Przejrzysta rekomendacja z uzasadnieniem — i wsparcie w negocjacjach warunków SLA, stawek i kontraktu."}
+        {"title": "Mapowanie procesów", "text": "Analizujemy Twój łańcuch dostaw i dystrybucji, by precyzyjnie określić wymagania wobec operatora — nie szukamy w ciemno."},
+        {"title": "Selekcja operatorów średniej wielkości", "text": "Łączymy Cię ze sprawdzonymi operatorami spoza grona korporacyjnych gigantów — bardziej elastycznymi i zaangażowanymi."},
+        {"title": "Obsługa szyta na miarę", "text": "Dobieramy partnera pod konkretne potrzeby produkcji i dystrybucji, nie pod sztywny cennik korporacyjny."},
+        {"title": "Bezpłatne dla firmy produkcyjnej", "text": "Proces poszukiwania i weryfikacji operatora jest dla firmy produkcyjnej bezpłatny."}
       ],
       "for_who": [
-        {"title": "Firmy produkcyjne szukające zewnętrznego operatora", "text": "Gdy chcesz zlecić logistykę na zewnątrz i szukasz operatora dopasowanego do specyfiki produkcji — bezpłatnie."},
-        {"title": "Producenci zmęczeni korporacyjnym przetargiem", "text": "Gdy klasyczny przetarg dał oferty od operatorów, którzy traktują Cię jak kolejną paletę, nie jak partnera."},
-        {"title": "Firmy rosnące ponad własne możliwości logistyczne", "text": "Gdy wewnętrzna logistyka przestała nadążać za skalą produkcji i czas na zewnętrznego partnera."}
+        {"title": "Firmy produkcyjne", "text": "Gdy szukasz kompleksowej obsługi logistycznej i dystrybucji end-to-end."},
+        {"title": "Producenci rozwijający dystrybucję", "text": "Gdy skala rośnie i potrzebujesz operatora dopasowanego do realnych potrzeb."},
+        {"title": "Firmy rozczarowane gigantami", "text": "Gdy korporacyjna obsługa okazała się sztywna lub zbyt droga."}
       ],
-      "summary": "Bezpłatny dobór partnera logistycznego dla firm produkcyjnych to usługa, w której Vologis mapuje wymagania produkcyjne, selekcjonuje operatorów średniej wielkości i rekomenduje dopasowane rozwiązanie — bez kosztu dla firmy produkcyjnej. To skuteczna alternatywa dla kosztownych procedur przetargowych trafiających do korporacyjnych gigantów: zamiast standardowej obsługi firma produkcyjna otrzymuje partnera, dla którego kontrakt ma realne znaczenie i który oferuje faktyczną elastyczność.",
+      "summary": "Dobór partnera logistycznego dla firm produkcyjnych to usługa, w której Vologis mapuje procesy firmy produkcyjnej i łączy ją ze starannie wyselekcjonowanymi operatorami średniej wielkości — bardziej elastycznymi i często oferującymi wyższą jakość niż korporacyjni giganci. To alternatywa dla klasycznego, czasochłonnego przetargu. Dla firmy produkcyjnej dobór operatora jest bezpłatny.",
       "faq": [
-        {"q": "Dlaczego dobór operatora jest bezpłatny dla firmy produkcyjnej?", "a": "To model partnerski — dla firmy produkcyjnej cały proces: mapowanie wymagań, selekcja operatorów, weryfikacja, rekomendacja i wsparcie negocjacyjne jest bezpłatny. Firma produkcyjna nie ponosi żadnych kosztów obsługi."},
-        {"q": "Czym różni się ta usługa od pośrednictwa logistycznego Vologis?", "a": "Pośrednictwo logistyczne to usługa, w której klient płaci za dobór operatora i Vologis działa w pełnej niezależności. Bezpłatny dobór dla firm produkcyjnych skupia się na modelu partnerskim i selekcji operatorów średniej wielkości jako alternatywie dla korporacyjnych przetargów. Dwa różne modele dla różnych potrzeb i sytuacji."},
-        {"q": "Czy obsługujecie branże specjalistyczne (automotive, farmacja, ADR)?", "a": "Tak. Dobór operatora uwzględnia specjalistyczne wymagania: automotive (JIT, IATF/ISO), farmacja (GDP), ADR, FMCG. Weryfikujemy faktyczne możliwości operatora w danej specjalizacji."}
+        {"q": "Ile kosztuje dobór operatora dla firmy produkcyjnej?", "a": "Dla firmy produkcyjnej proces poszukiwania i weryfikacji operatora jest bezpłatny."},
+        {"q": "Czym to się różni od pośrednictwa logistycznego?", "a": "Pośrednictwo logistyczne to dobór operatora lub magazynu w pełnej niezależności, gdzie klient zleca i finansuje usługę. Dobór partnera dla produkcji to model bezpłatny dla firmy produkcyjnej, oparty na sieci sprawdzonych operatorów średniej wielkości i na alternatywie wobec klasycznego przetargu."},
+        {"q": "Dlaczego operatorzy średniej wielkości, a nie giganci?", "a": "Operatorzy średniej wielkości oferują większą elastyczność, bardziej zaangażowaną obsługę i często wyższą jakość za niższą cenę niż korporacyjni giganci, którzy działają na sztywnych cennikach i standardach."},
+        {"q": "Jak wygląda proces doboru?", "a": "Najpierw mapujemy Twoje procesy logistyczne i dystrybucyjne, by określić wymagania. Następnie selekcjonujemy operatorów dopasowanych do tych potrzeb i łączymy Cię z nimi — zamiast wysyłać zapytania w ciemno do największych graczy."}
       ]
     },
     {
@@ -1013,31 +1014,32 @@
       "heroImage": "/services/vologis-uslugi-optymalizacja-przetargowa-logistyka.webp",
       "parent": "komercjalizacja-i-sprzedaz",
       "parent_name": "Komercjalizacja i sprzedaż",
-      "category": "Optymalizacja przetargowa w logistyce",
-      "industry": "optymalizacja przetargów",
-      "title": "Alternatywa dla przetargu logistycznego — operatorzy średniej wielkości | Vologis",
-      "description": "Alternatywa dla klasycznego przetargu logistycznego — Vologis dobiera operatorów średniej wielkości, oferujących elastyczność i niższe koszty niż korporacyjni dostawcy. Bezpłatne dla firm produkcyjnych.",
-      "h1": "Alternatywa dla klasycznego przetargu logistycznego",
-      "eyebrow": "KOMERCJALIZACJA I SPRZEDAŻ · OPTYMALIZACJA PRZETARGOWA",
-      "intro": "Klasyczny przetarg logistyczny trafia do kilku tych samych dużych nazw — i kończy się kontraktem z korporacyjnym operatorem, który traktuje firmę jak kolejną paletę. Vologis oferuje alternatywę: mapowanie wymagań, selekcja operatorów średniej wielkości i rekomendacja dopasowanego rozwiązania — bez żmudnej procedury przetargowej i bez kosztów dla firm produkcyjnych.",
-      "problem_heading": "Klasyczny przetarg logistyczny jest kosztowny, czasochłonny i często trafia do złych operatorów",
-      "problem_text": "Procedura przetargowa zabiera tygodnie lub miesiące pracy wewnętrznych zespołów. Oferty trafiają do tych samych kilku globalnych nazw — bo tak jest bezpiecznie, bo tak wymagają korporacyjne procedury. Efekt: korporacyjna obsługa w korporacyjnej cenie, słaba elastyczność i kontrakt, w którym Twoja firma jest jednym z setek klientów. Operatorzy średniej wielkości — lepiej dopasowani, bardziej elastyczni, często oferujący wyższą jakość obsługi — są pomijani, bo nikt ich nie zna. Vologis ich zna.",
+      "category": "Komercjalizacja i sprzedaż",
+      "industry": "optymalizacja przetargowa",
+      "title": "Optymalizacja przetargowa w logistyce — alternatywa dla przetargu | Vologis",
+      "description": "Alternatywa dla klasycznego przetargu na operatora logistycznego. Zamiast zapytań do gigantów mapujemy procesy i łączymy Cię ze sprawdzonymi operatorami średniej wielkości — niższe koszty, wyższa jakość, mniej czasu.",
+      "h1": "Optymalizacja przetargowa w logistyce",
+      "eyebrow": "OPTYMALIZACJA PRZETARGOWA",
+      "intro": "Klasyczny przetarg na operatora logistycznego pochłania czas, angażuje zespół i często kończy się wyborem największego gracza z najsztywniejszymi warunkami. Proponujemy alternatywę: mapujemy Twoje procesy i łączymy Cię ze starannie wyselekcjonowanymi operatorami średniej wielkości — bardziej elastycznymi, oferującymi wyższą jakość i niższe koszty niż korporacyjni giganci.",
+      "problem_heading": "Przetarg premiuje największych, nie najlepszych",
+      "problem_text": "Tradycyjna procedura przetargowa faworyzuje dużych operatorów zdolnych obsłużyć formalności, a nie tych, którzy zaoferują najlepsze dopasowanie i jakość. Proces jest czasochłonny, sformalizowany i często prowadzi do sztywnych umów z korporacyjnymi cennikami. Elastyczni operatorzy średniej wielkości, którzy mogliby obsłużyć Cię lepiej i taniej, często w ogóle nie trafiają do takiego przetargu.",
       "scope": [
-        {"title": "Mapowanie wymagań bez RFP", "text": "Szybka analiza potrzeb logistycznych — zamiast miesięcy przygotowania dokumentacji przetargowej, kilka spotkań i zebranie kluczowych danych."},
-        {"title": "Selekcja operatorów poza korporacyjnym radarem", "text": "Identyfikacja operatorów średniej wielkości nieobecnych w standardowych przetargach, a posiadających idealne dopasowanie do profilu klienta."},
-        {"title": "Weryfikacja i porównanie ofert", "text": "Zebranie porównywalnych ofert, weryfikacja operatorów i przygotowanie przejrzystej analizy — zamiast stosu PDF-ów do samodzielnego porównania."},
-        {"title": "Wsparcie decyzyjne i negocjacyjne", "text": "Rekomendacja z uzasadnieniem i wsparcie w negocjacjach — z wiedzą o rynkowych stawkach i standardach SLA."}
+        {"title": "Mapowanie wymagań", "text": "Analizujemy procesy i realne potrzeby, by precyzyjnie zdefiniować kryteria wyboru operatora — zamiast ogólnego zapytania ofertowego."},
+        {"title": "Dotarcie do właściwych operatorów", "text": "Sięgamy po sprawdzonych operatorów średniej wielkości, którzy zwykle nie trafiają do klasycznych przetargów."},
+        {"title": "Porównanie i selekcja", "text": "Porównujemy oferty pod kątem realnego dopasowania, jakości i kosztu — nie tylko zdolności do obsługi formalności przetargowych."},
+        {"title": "Redukcja kosztów i czasu", "text": "Skracamy proces wyboru i docieramy do warunków lepszych niż korporacyjne cenniki gigantów."}
       ],
       "for_who": [
-        {"title": "Firmy produkcyjne z procedurami przetargowymi", "text": "Gdy wewnętrzny przetarg jest wymogiem, ale chcesz mieć pewność, że trafia do właściwych operatorów, nie tylko do znanych nazw."},
-        {"title": "Firmy chcące wyjść poza korporacyjnych operatorów", "text": "Gdy korporacyjna obsługa nie pasuje do Twoich wymagań i szukasz bardziej elastycznego partnera."},
-        {"title": "Firmy optymalizujące koszty logistyczne", "text": "Gdy bieżące koszty outsourcingu logistyki wydają się za wysokie i chcesz sprawdzić, czy rynek oferuje lepsze opcje."}
+        {"title": "Firmy planujące przetarg na operatora", "text": "Gdy chcesz wybrać operatora, ale klasyczny przetarg wydaje się czasochłonny i nieoptymalny."},
+        {"title": "Firmy produkcyjne i dystrybucyjne", "text": "Gdy szukasz lepszego dopasowania i kosztu niż oferty korporacyjnych gigantów."},
+        {"title": "Zespoły zakupowe i logistyczne", "text": "Gdy chcesz skrócić i usprawnić proces wyboru partnera logistycznego."}
       ],
-      "summary": "Alternatywa dla klasycznego przetargu logistycznego to usługa, w której Vologis mapuje wymagania klienta, identyfikuje i weryfikuje operatorów średniej wielkości i rekomenduje dopasowane rozwiązanie — szybciej i skuteczniej niż tradycyjna procedura przetargowa. Dla firm produkcyjnych usługa jest bezpłatna. Operatorzy średniej wielkości oferują zazwyczaj wyższą elastyczność, lepsze dopasowanie operacyjne i niższe koszty niż korporacyjni giganci — ale są pomijani w standardowych przetargach ze względu na mniejszą rozpoznawalność.",
+      "summary": "Optymalizacja przetargowa w logistyce to alternatywa dla klasycznego przetargu na operatora. Zamiast czasochłonnej procedury faworyzującej największych graczy, Vologis mapuje procesy klienta, dociera do sprawdzonych operatorów średniej wielkości i porównuje ich pod kątem realnego dopasowania, jakości i kosztu — skracając proces i prowadząc do warunków lepszych niż korporacyjne cenniki gigantów.",
       "faq": [
-        {"q": "Czym różni się to od pośrednictwa logistycznego?", "a": "Pośrednictwo logistyczne to pełna usługa doboru operatora płatna przez klienta — dla wszystkich firm, z pełną niezależnością i dowolnym operatorem. Optymalizacja przetargowa skupia się na firmach produkcyjnych, jest dla nich bezpłatna i celowo koncentruje się na operatorach średniej wielkości jako alternatywie dla korporacyjnych przetargów. Inne modele, inne grupy klientów."},
-        {"q": "Jak szybko można zastąpić przetarg procesem Vologis?", "a": "Standardowy przetarg logistyczny trwa 2–4 miesiące. Proces Vologis — od zebrania wymagań po rekomendację — zwykle 3–6 tygodni. To skrócenie czasu decyzji o połowę lub więcej, przy szerszym zakresie weryfikacji operatorów."},
-        {"q": "Czy możecie uczestniczyć w istniejącej procedurze przetargowej?", "a": "Tak. Możemy wspierać istniejący przetarg: pomoc w przygotowaniu kryteriów RFP, rozszerzenie listy zaproszonych operatorów o podmioty średniej wielkości, weryfikacja ofert i analiza porównawcza. Dostosowujemy zakres do potrzeb klienta."}
+        {"q": "Czym optymalizacja przetargowa różni się od klasycznego przetargu?", "a": "Klasyczny przetarg to sformalizowana procedura, która faworyzuje największych operatorów zdolnych obsłużyć formalności. Optymalizacja przetargowa to dotarcie do sprawdzonych operatorów średniej wielkości i porównanie ich pod kątem realnego dopasowania, jakości i kosztu — szybciej i z lepszym wynikiem."},
+        {"q": "Czy to to samo co dobór partnera logistycznego dla produkcji?", "a": "Są powiązane. Dobór partnera dla firm produkcyjnych koncentruje się na firmach produkcyjnych i ich łańcuchu dostaw. Optymalizacja przetargowa to szersze ujęcie samego procesu wyboru operatora jako alternatywy dla klasycznego przetargu — dla firm produkcyjnych i dystrybucyjnych."},
+        {"q": "Dlaczego operatorzy średniej wielkości bywają lepsi?", "a": "Oferują większą elastyczność, bardziej zaangażowaną obsługę i często wyższą jakość za niższą cenę niż korporacyjni giganci działający na sztywnych standardach i cennikach."},
+        {"q": "Czy oszczędzę czas względem własnego przetargu?", "a": "Tak. Przejmujemy mapowanie wymagań, dotarcie do operatorów i porównanie ofert, skracając proces, który prowadzony samodzielnie pochłania czas zespołu i często nie dociera do najlepszych operatorów."}
       ]
     }
   ]
