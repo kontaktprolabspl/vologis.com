@@ -38,7 +38,7 @@ const schemaService = {
     },
   },
   "areaServed": ["Polska", "Europa"],
-  "url": `${SITE}/pl/uslugi/${page.slug}`,
+  "url": `${SITE}/pl/uslugi/${page.slug}/`,
 };
 
 const schemaFaq = {
@@ -55,18 +55,18 @@ const schemaFaq = {
 <ServicePageLayout
   title={page.title}
   description={page.description}
-  canonical={`${SITE}/pl/uslugi/${page.slug}`}
+  canonical={`${SITE}/pl/uslugi/${page.slug}/`}
   ogImage="/og/home.jpg"
   heroImage={(page as any).heroImage ?? `/services/${page.slug}.webp`}
   eyebrow={page.eyebrow}
   h1={page.h1}
   lead={page.intro}
   ctaPrimaryLabel="Umów konsultację"
-  ctaPrimaryHref="/pl/kontakt"
+  ctaPrimaryHref="/pl/kontakt/"
   ctaSecondaryLabel={`Zobacz ${page.parent_name}`}
-  ctaSecondaryHref={`/pl/uslugi/${page.parent}`}
+  ctaSecondaryHref={`/pl/uslugi/${page.parent}/`}
   breadcrumbs={[
-    { name: page.parent_name, href: `${SITE}/pl/uslugi/${page.parent}` },
+    { name: page.parent_name, href: `${SITE}/pl/uslugi/${page.parent}/` },
     { name: page.industry.charAt(0).toUpperCase() + page.industry.slice(1) },
   ]}
 >

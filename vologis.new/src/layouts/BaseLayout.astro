@@ -34,19 +34,19 @@ const plURL = new URL(plPath, "https://vologis.com").href;
 const enURL = new URL(enPath, "https://vologis.com").href;
 
 const serviceLinks = [
-  { label: "Pośrednictwo logistyczne i fulfillment", href: "/pl/uslugi/posrednictwo-logistyczne", desc: "Jeden partner zamiast dziesiątek rozmów z operatorami." },
-  { label: "Doradztwo operacyjne i audyt", href: "/pl/uslugi/doradztwo-operacyjne", desc: "Sprawdzimy gdzie tracisz pieniądze, czas i ludzi." },
-  { label: "Projekty Greenfield", href: "/pl/uslugi/projekty-greenfield", desc: "Od pustej działki do gotowej operacji." },
-  { label: "Usługi dronowe", href: "/pl/uslugi/uslugi-dronowe", desc: "Pomiary, ortofotomapy, inspekcje i materiały z powietrza." },
-  { label: "Interim Management", href: "/pl/uslugi/interim-management", desc: "Wsparcie zarządcze i gaszenie pożarów od zaraz." },
-  { label: "Komercjalizacja i sprzedaż", href: "/pl/uslugi/komercjalizacja-i-sprzedaz", desc: "Komercjalizacja powierzchni, market entry i dobór partnera logistycznego." },
-  { label: "Bezpieczeństwo operacyjne", href: "/pl/uslugi/bezpieczenstwo-operacyjne", desc: "Loss Prevention, CCTV/KD/SWWiN i procesy antyfraudowe dla dużych obiektów." },
+  { label: "Pośrednictwo logistyczne i fulfillment", href: "/pl/uslugi/posrednictwo-logistyczne/", desc: "Jeden partner zamiast dziesiątek rozmów z operatorami." },
+  { label: "Doradztwo operacyjne i audyt", href: "/pl/uslugi/doradztwo-operacyjne/", desc: "Sprawdzimy gdzie tracisz pieniądze, czas i ludzi." },
+  { label: "Projekty Greenfield", href: "/pl/uslugi/projekty-greenfield/", desc: "Od pustej działki do gotowej operacji." },
+  { label: "Usługi dronowe", href: "/pl/uslugi/uslugi-dronowe/", desc: "Pomiary, ortofotomapy, inspekcje i materiały z powietrza." },
+  { label: "Interim Management", href: "/pl/uslugi/interim-management/", desc: "Wsparcie zarządcze i gaszenie pożarów od zaraz." },
+  { label: "Komercjalizacja i sprzedaż", href: "/pl/uslugi/komercjalizacja-i-sprzedaz/", desc: "Komercjalizacja powierzchni, market entry i dobór partnera logistycznego." },
+  { label: "Bezpieczeństwo operacyjne", href: "/pl/uslugi/bezpieczenstwo-operacyjne/", desc: "Loss Prevention, CCTV/KD/SWWiN i procesy antyfraudowe dla dużych obiektów." },
 ];
 const navItems = [
-  { label: "Proces",      href: "/pl/proces",      match: "/pl/proces"      },
-  { label: "Wiedza",      href: "/pl/wiedza",      match: "/pl/wiedza"      },
-  { label: "O nas",       href: "/pl/o-nas",       match: "/pl/o-nas"       },
-  { label: "Współpraca",  href: "/pl/wspolpraca",  match: "/pl/wspolpraca"  },
+  { label: "Proces",      href: "/pl/proces/",      match: "/pl/proces"      },
+  { label: "Wiedza",      href: "/pl/wiedza/",      match: "/pl/wiedza"      },
+  { label: "O nas",       href: "/pl/o-nas/",       match: "/pl/o-nas"       },
+  { label: "Współpraca",  href: "/pl/wspolpraca/",  match: "/pl/wspolpraca"  },
 ];
 const navPath = Astro.url.pathname;
 const isActive = (m: string) => navPath === m || navPath.startsWith(m + "/");
@@ -152,7 +152,7 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
         <ul class="hd__list" role="list">
           <li class="hd__item has-mega">
             <a
-              href="/pl/uslugi"
+              href="/pl/uslugi/"
               class="hd__link"
               aria-current={navPath.startsWith("/pl/uslugi") ? "page" : undefined}
               aria-haspopup="true"
@@ -193,7 +193,7 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
                   </div>
                 </div>
               </div>
-              <a class="mega__foot" href="/pl/uslugi">Zobacz wszystkie usługi <span aria-hidden="true">→</span></a>
+              <a class="mega__foot" href="/pl/uslugi/">Zobacz wszystkie usługi <span aria-hidden="true">→</span></a>
             </div>
           </li>
           {navItems.map((item) => (
@@ -211,7 +211,7 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
           <a href={enPath} hreflang="en" title="English" aria-current={currentLang === "en" ? "true" : undefined}>EN</a>
         </div>
 
-        <a href="/pl/kontakt" class="btn btn--ghost hd__ghost">Kontakt</a>
+        <a href="/pl/kontakt/" class="btn btn--ghost hd__ghost">Kontakt</a>
 
         <button
           type="button"
@@ -238,17 +238,17 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
               <svg class="mnav__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
             </button>
             <ul class="mnav__sub" id="msub-uslugi" role="list">
-              <li><a class="mnav__sublink" href="/pl/uslugi">Wszystkie usługi</a></li>
+              <li><a class="mnav__sublink" href="/pl/uslugi/">Wszystkie usługi</a></li>
               {serviceLinks.map((s) => (
                 <li><a class="mnav__sublink" href={s.href}>{s.label}</a></li>
               ))}
             </ul>
           </li>
-          <li class="mnav__item"><a class="mnav__row" href="/pl/proces">Proces</a></li>
-          <li class="mnav__item"><a class="mnav__row" href="/pl/wiedza">Wiedza</a></li>
-          <li class="mnav__item"><a class="mnav__row" href="/pl/o-nas">O nas</a></li>
-          <li class="mnav__item"><a class="mnav__row" href="/pl/wspolpraca">Współpraca</a></li>
-          <li class="mnav__item"><a class="mnav__row" href="/pl/kontakt">Kontakt</a></li>
+          <li class="mnav__item"><a class="mnav__row" href="/pl/proces/">Proces</a></li>
+          <li class="mnav__item"><a class="mnav__row" href="/pl/wiedza/">Wiedza</a></li>
+          <li class="mnav__item"><a class="mnav__row" href="/pl/o-nas/">O nas</a></li>
+          <li class="mnav__item"><a class="mnav__row" href="/pl/wspolpraca/">Współpraca</a></li>
+          <li class="mnav__item"><a class="mnav__row" href="/pl/kontakt/">Kontakt</a></li>
         </ul>
 
         <div class="mnav__lang" aria-label="Język / Language">
@@ -259,7 +259,7 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
       </div>
 
       <div class="mnav__foot">
-        <a href="/pl/kontakt" class="btn btn--ghost btn--block">Kontakt</a>
+        <a href="/pl/kontakt/" class="btn btn--ghost btn--block">Kontakt</a>
         <button
           type="button"
           class="btn btn--solid btn--block"
@@ -289,18 +289,18 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
             {serviceLinks.map((s) => (
               <li><a href={s.href}>{s.label}</a></li>
             ))}
-            <li><a href="/pl/uslugi">Wszystkie usługi</a></li>
+            <li><a href="/pl/uslugi/">Wszystkie usługi</a></li>
           </ul>
         </nav>
 
         <nav class="footer-col" aria-label="Firma">
           <h3 class="footer-col-title">Firma</h3>
           <ul class="footer-col-list" role="list">
-            <li><a href="/pl/o-nas">O nas</a></li>
-            <li><a href="/pl/proces">Jak pracujemy</a></li>
-            <li><a href="/pl/wiedza">Wiedza</a></li>
-            <li><a href="/pl/wspolpraca">Współpraca</a></li>
-            <li><a href="/pl/kontakt">Kontakt</a></li>
+            <li><a href="/pl/o-nas/">O nas</a></li>
+            <li><a href="/pl/proces/">Jak pracujemy</a></li>
+            <li><a href="/pl/wiedza/">Wiedza</a></li>
+            <li><a href="/pl/wspolpraca/">Współpraca</a></li>
+            <li><a href="/pl/kontakt/">Kontakt</a></li>
           </ul>
         </nav>
 
@@ -313,8 +313,8 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
             <span class="footer-nip">NIP: {SITE.nip}</span>
           </address>
           <nav class="footer-links" aria-label="Linki stopki">
-            <a href="/pl/polityka-prywatnosci">Polityka prywatności</a>
-            <a href="/pl/regulamin">Regulamin</a>
+            <a href="/pl/polityka-prywatnosci/">Polityka prywatności</a>
+            <a href="/pl/regulamin/">Regulamin</a>
           </nav>
           <p class="footer-copy">&copy; 2026 Vologis Sp. z o.o.</p>
         </div>

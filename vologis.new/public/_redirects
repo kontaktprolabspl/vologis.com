@@ -1,0 +1,52 @@
+# Vologis CF Pages redirects
+# Trailing slash enforcement — canonical URLs always end with /
+# CF Pages redirect rules (Netlify-compatible syntax)
+# Note: CF Pages serves index.html from directories, so /path/ works automatically.
+# These rules catch /path (no slash) and redirect 301 to /path/.
+
+/pl                           /pl/                          301
+/pl/uslugi                    /pl/uslugi/                   301
+/pl/kontakt                   /pl/kontakt/                  301
+/pl/proces                    /pl/proces/                   301
+/pl/wiedza                    /pl/wiedza/                   301
+/pl/o-nas                     /pl/o-nas/                    301
+/pl/wspolpraca                /pl/wspolpraca/               301
+/pl/regulamin                 /pl/regulamin/                301
+/pl/polityka-prywatnosci      /pl/polityka-prywatnosci/     301
+
+# Service pages
+/pl/uslugi/posrednictwo-logistyczne           /pl/uslugi/posrednictwo-logistyczne/           301
+/pl/uslugi/doradztwo-operacyjne               /pl/uslugi/doradztwo-operacyjne/               301
+/pl/uslugi/projekty-greenfield                /pl/uslugi/projekty-greenfield/                301
+/pl/uslugi/uslugi-dronowe                     /pl/uslugi/uslugi-dronowe/                     301
+/pl/uslugi/interim-management                 /pl/uslugi/interim-management/                 301
+/pl/uslugi/komercjalizacja-i-sprzedaz         /pl/uslugi/komercjalizacja-i-sprzedaz/         301
+/pl/uslugi/bezpieczenstwo-operacyjne          /pl/uslugi/bezpieczenstwo-operacyjne/          301
+
+# Programmatic — komercjalizacja
+/pl/uslugi/magazyn-do-wynajecia-warszawa      /pl/uslugi/magazyn-do-wynajecia-warszawa/      301
+/pl/uslugi/magazyn-do-wynajecia-wroclaw       /pl/uslugi/magazyn-do-wynajecia-wroclaw/       301
+/pl/uslugi/magazyn-do-wynajecia-poznan        /pl/uslugi/magazyn-do-wynajecia-poznan/        301
+/pl/uslugi/magazyn-do-wynajecia-lodz          /pl/uslugi/magazyn-do-wynajecia-lodz/          301
+/pl/uslugi/magazyn-do-wynajecia-krakow        /pl/uslugi/magazyn-do-wynajecia-krakow/        301
+/pl/uslugi/magazyn-do-wynajecia-gdansk        /pl/uslugi/magazyn-do-wynajecia-gdansk/        301
+/pl/uslugi/magazyn-do-wynajecia-szczecin      /pl/uslugi/magazyn-do-wynajecia-szczecin/      301
+/pl/uslugi/magazyn-do-wynajecia-katowice      /pl/uslugi/magazyn-do-wynajecia-katowice/      301
+/pl/uslugi/komercjalizacja-powierzchni-warszawa   /pl/uslugi/komercjalizacja-powierzchni-warszawa/   301
+/pl/uslugi/komercjalizacja-powierzchni-wroclaw    /pl/uslugi/komercjalizacja-powierzchni-wroclaw/    301
+/pl/uslugi/komercjalizacja-powierzchni-poznan     /pl/uslugi/komercjalizacja-powierzchni-poznan/     301
+/pl/uslugi/komercjalizacja-powierzchni-katowice   /pl/uslugi/komercjalizacja-powierzchni-katowice/   301
+/pl/uslugi/komercjalizacja-powierzchni-magazynowej  /pl/uslugi/komercjalizacja-powierzchni-magazynowej/  301
+/pl/uslugi/komercjalizacja-powierzchni-3pl    /pl/uslugi/komercjalizacja-powierzchni-3pl/    301
+/pl/uslugi/market-entry-polska                /pl/uslugi/market-entry-polska/                301
+/pl/uslugi/market-entry-producenci-zagraniczni  /pl/uslugi/market-entry-producenci-zagraniczni/  301
+/pl/uslugi/dobor-partnera-logistycznego-produkcja  /pl/uslugi/dobor-partnera-logistycznego-produkcja/  301
+/pl/uslugi/optymalizacja-przetargowa-logistyka  /pl/uslugi/optymalizacja-przetargowa-logistyka/  301
+
+# Wiedza
+/pl/wiedza/ai-automatyzacja-logistyka         /pl/wiedza/ai-automatyzacja-logistyka/         301
+/pl/wiedza/audyt-logistyczny                  /pl/wiedza/audyt-logistyczny/                  301
+/pl/wiedza/wybor-partnera-logistycznego       /pl/wiedza/wybor-partnera-logistycznego/       301
+/pl/wiedza/projekt-greenfield-bledy           /pl/wiedza/projekt-greenfield-bledy/           301
+/pl/wiedza/drony-inwestycje-logistyczne       /pl/wiedza/drony-inwestycje-logistyczne/       301
+/pl/wiedza/interim-management-logistyka       /pl/wiedza/interim-management-logistyka/       301
