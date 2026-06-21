@@ -916,31 +916,32 @@
       "heroImage": "/services/vologis-uslugi-market-entry-polska.webp",
       "parent": "komercjalizacja-i-sprzedaz",
       "parent_name": "Komercjalizacja i sprzedaż",
-      "category": "Market entry Polska",
-      "industry": "wejście na rynek PL",
-      "title": "Market entry Polska — wejście na polski rynek logistyczny | Vologis",
-      "description": "Doradztwo lokalizacyjne i market entry dla firm wchodzących na polski rynek logistyczny. Vologis działa jako lokalny reprezentant i niezależny doradca — analiza rynku, negocjacje stawek, selekcja lokalizacji.",
-      "h1": "Market entry Polska — wejście na polski rynek logistyczny",
-      "eyebrow": "KOMERCJALIZACJA I SPRZEDAŻ · MARKET ENTRY POLSKA",
-      "intro": "Wejście na polski rynek logistyczny bez lokalnego partnera to ryzyko: nieznajomość stawek rynkowych, pułapki kontraktowe, nieoptymalne lokalizacje. Vologis działa jako Twój lokalny przewodnik i reprezentant — analizujemy potrzeby infrastrukturalne, badamy rynek, selekcjonujemy opcje i negocjujemy w Twoim imieniu. Bezpieczne wejście na rynek bez przepłacania.",
-      "problem_heading": "Polski rynek logistyczny ma swoje reguły — nieznajomość kosztuje",
-      "problem_text": "Polska jest atrakcyjnym rynkiem logistycznym — centralne położenie w UE, rozwinięta infrastruktura, rosnące rynki e-commerce i przemysłowe. Ale wejście bez lokalnej wiedzy to ryzyko: stawki rynkowe różnią się drastycznie od ofert wstępnych, standardy kontraktowe mają lokalne specyfiki, a wybór lokalizacji bez znajomości sieci drogowej i kosztów pracy może zaważyć na opłacalności operacji na lata.",
+      "category": "Komercjalizacja i sprzedaż",
+      "industry": "market entry / wejście na rynek PL",
+      "title": "Market entry do Polski — logistyka i magazynowanie | Vologis",
+      "description": "Wsparcie dla firm wchodzących na polski rynek: analiza potrzeb infrastrukturalnych, dobór magazynu i operatora, negocjacje stawek. Lokalny przewodnik i reprezentant — bez przepłacania i bez pułapek.",
+      "h1": "Market entry do Polski — logistyka i magazynowanie",
+      "eyebrow": "MARKET ENTRY · POLSKA",
+      "intro": "Wchodzisz na polski rynek i potrzebujesz zaplecza logistycznego, ale nie znasz lokalnych realiów, stawek i operatorów? Występujemy jako Twój lokalny przewodnik i reprezentant — analizujemy potrzeby infrastrukturalne, badamy rynek i selekcjonujemy najlepsze dostępne opcje magazynowe. Wchodzisz bezpiecznie, bez przepłacania i bez pułapek wynikających z nieznajomości polskiego rynku.",
+      "problem_heading": "Wejście na obcy rynek bez lokalnej wiedzy kosztuje",
+      "problem_text": "Firma wchodząca na polski rynek logistyczny bez znajomości lokalnych uwarunkowań prawno-infrastrukturalnych łatwo przepłaca, podpisuje niekorzystne umowy lub wybiera nieodpowiednią lokalizację. Brak dostępu do realnych stawek rynkowych, nieznajomość operatorów i specyfiki regionów logistycznych to ryzyko, które na starcie ekspansji potrafi obciążyć cały biznes plan.",
       "scope": [
-        {"title": "Analiza potrzeb infrastrukturalnych", "text": "Określenie wymagań logistycznych: wolumen, typ towarów, zasięg dystrybucji, wymagania certyfikacyjne i oczekiwany poziom usług."},
-        {"title": "Badanie rynku i selekcja lokalizacji", "text": "Identyfikacja dostępnych opcji magazynowych dopasowanych do wymagań — z uwzględnieniem lokalizacji, kosztów, infrastruktury drogowej i dostępności pracowników."},
-        {"title": "Negocjacje stawek i warunków", "text": "Negocjacje stawek magazynowych i serwisowych z wiedzą o realnych poziomach rynkowych — eliminacja przepłacania wynikającego z braku lokalnych benchmarków."},
-        {"title": "Reprezentacja i wsparcie operacyjne", "text": "Wsparcie przez cały proces: od pierwszego kontaktu z rynkiem do podpisania umowy i uruchomienia operacji."}
+        {"title": "Analiza potrzeb infrastrukturalnych", "text": "Określamy realne wymagania magazynowe i logistyczne pod Twój model biznesowy i plany sprzedaży w Polsce."},
+        {"title": "Badanie rynku i dobór lokalizacji", "text": "Analizujemy polskie regiony logistyczne i selekcjonujemy lokalizacje optymalne dla Twojej dystrybucji i kosztów."},
+        {"title": "Reprezentacja i negocjacje", "text": "Występujemy jako Twój lokalny reprezentant — negocjujemy warunki i stawki, docierając do realnych cen rynkowych."},
+        {"title": "Dobór operatora i wsparcie wdrożenia", "text": "Selekcjonujemy operatorów i wspieramy uruchomienie operacji magazynowych w Polsce, w pełnej niezależności."}
       ],
       "for_who": [
-        {"title": "Firmy zagraniczne planujące ekspansję do Polski", "text": "Gdy chcesz otworzyć oddział, magazyn lub centrum dystrybucyjne w Polsce i potrzebujesz lokalnego doradcy."},
-        {"title": "Importerzy i dystrybutorzy", "text": "Gdy Twoje towary trafiają do Polski i szukasz efektywnego partnera do składowania i dystrybucji."},
-        {"title": "Firmy relokujące operacje do Polski", "text": "Gdy rozważasz przeniesienie lub uruchomienie operacji logistycznych w Polsce z innych rynków UE."}
+        {"title": "Firmy zagraniczne", "text": "Gdy wchodzisz na polski rynek i potrzebujesz lokalnego zaplecza logistycznego."},
+        {"title": "Producenci w ekspansji", "text": "Gdy planujesz dystrybucję lub relokację procesów magazynowych do Polski."},
+        {"title": "Marki rozwijające sprzedaż w PL", "text": "Gdy potrzebujesz magazynu i operatora dopasowanego do polskiego rynku."}
       ],
-      "summary": "Market entry Polska to usługa, w której Vologis działa jako lokalny przewodnik i niezależny doradca dla firm wchodzących na polski rynek logistyczny — analizuje potrzeby infrastrukturalne, bada rynek, selekcjonuje dostępne opcje magazynowe i negocjuje warunki kontraktowe z wiedzą o realnych stawkach rynkowych. Efekt: bezpieczne wejście na rynek bez przepłacania i bez pułapek wynikających z nieznajomości lokalnych uwarunkowań.",
+      "summary": "Market entry do Polski to usługa, w której Vologis wspiera firmy wchodzące na polski rynek jako lokalny przewodnik i reprezentant — analizuje potrzeby infrastrukturalne, bada rynek, dobiera lokalizację i operatora oraz negocjuje stawki. Firma wchodzi na rynek bezpiecznie, z dostępem do realnych cen rynkowych i bez pułapek wynikających z nieznajomości lokalnych uwarunkowań prawno-infrastrukturalnych.",
       "faq": [
-        {"q": "Jakie są kluczowe lokalizacje logistyczne w Polsce?", "a": "Polska ma kilka głównych hubów logistycznych: Śląsk (dostęp do Czech, Niemiec, Słowacji), Mazowsze (centrum kraju, autostrada A2), Wielkopolska (węzeł A2/A1) oraz Dolny Śląsk (bliskość Niemiec i Czech). Wybór lokalizacji zależy od profilu dystrybucji, branży i wymagań dotyczących czasu dostaw — analizujemy to indywidualnie."},
-        {"q": "Jak długo trwa proces market entry?", "a": "Wstępna analiza rynku i pierwsze propozycje zazwyczaj zajmują 2–3 tygodnie. Pełny proces — od analizy po podpisanie umowy — to zwykle 6–12 tygodni, w zależności od wymagań, dostępności powierzchni i złożoności negocjacji."},
-        {"q": "Czy pomagacie też z formalnościami prawnymi i podatkowymi?", "a": "Vologis koncentruje się na stronie logistycznej i operacyjnej market entry — lokalizacje, stawki, dobór operatora, negocjacje. Do aspektów prawnych, podatkowych i rejestracyjnych rekomendujemy współpracę z lokalną kancelarią prawną i doradcą podatkowym — możemy wskazać sprawdzonych partnerów."}
+        {"q": "Na czym polega wsparcie market entry?", "a": "Jesteśmy Twoim lokalnym przewodnikiem i reprezentantem przy wejściu na polski rynek: analizujemy potrzeby infrastrukturalne, badamy rynek, dobieramy lokalizację i operatora oraz negocjujemy stawki w Twoim imieniu — tak byś wszedł na rynek bez przepłacania i bez błędów wynikających z nieznajomości lokalnych realiów."},
+        {"q": "Czy market entry obejmuje tylko magazyn?", "a": "Nie tylko. Obejmuje analizę potrzeb, badanie rynku, dobór lokalizacji i operatora, negocjacje stawek oraz wsparcie przy uruchomieniu operacji i relokacji procesów magazynowych do Polski."},
+        {"q": "Dlaczego potrzebuję lokalnego reprezentanta?", "a": "Polski rynek logistyczny ma specyficzne uwarunkowania prawno-infrastrukturalne, stawki i operatorów. Lokalny reprezentant daje dostęp do realnych cen rynkowych i chroni przed pułapkami, które trudno przewidzieć bez znajomości rynku."},
+        {"q": "Czy działacie niezależnie przy doborze operatora?", "a": "Tak, w 100% niezależnie i bez prowizji od operatorów. Dobieramy rozwiązania wyłącznie w Twoim interesie, reprezentując Ciebie — nie operatorów magazynowych."}
       ]
     },
     {
