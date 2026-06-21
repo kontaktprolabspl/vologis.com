@@ -1662,6 +1662,798 @@
       ]
     },
     {
+      "slug": "magazyn-do-wynajecia-warszawa",
+      "heroImage": "/services/vologis-uslugi-komercjalizacja-i-sprzedaz.webp",
+      "parent": "komercjalizacja-i-sprzedaz",
+      "parent_name": "Komercjalizacja i sprzedaż",
+      "category": "Komercjalizacja i sprzedaż",
+      "industry": "powierzchnie magazynowe Warszawa",
+      "title": "Magazyn do wynajęcia Warszawa — dobór i negocjacje | Vologis",
+      "description": "Szukasz magazynu do wynajęcia w Warszawie? Niezależny doradca najemcy — dobieramy obiekt, negocjujemy stawki bez prowizji od wynajmującego. Largest wybór, optymalny koszt.",
+      "eyebrow": "MAGAZYN DO WYNAJĘCIA · WARSZAWA",
+      "h1": "Magazyn do wynajęcia — Warszawa",
+      "intro": "Warszawski rynek magazynowy to największy rynek w Polsce — ponad 1 mln m² wynajętej powierzchni, sieć obiektów wzdłuż A2, S2 i S8 oraz rozwijający się segment last-mile w granicach aglomeracji. To oznacza największy wybór w kraju, ale zarazem dużą rozpiętość stawek: magazyny miejskie i obiekty last-mile wyceniane są nawet 4–8,25 EUR/m²/mies., podczas gdy strefy zewnętrzne oferują znacznie niższe koszty. Bez znajomości rynku łatwo przepłacić lub wybrać obiekt, który nie pasuje do logistyki dostaw. Vologis działa wyłącznie po stronie najemcy — bez prowizji od wynajmujących — i negocjuje warunki, mając dostęp do rzeczywistych stawek rynkowych.",
+      "problem_heading": "Największy wybór, ale prime lokalizacje w Warszawie są drogie — bez doradcy można przepłacić",
+      "problem_text": "Warszawa to rynek, na którym magazyny klasy A w strefach miejskich osiągają stawki znacznie powyżej średniej krajowej, a lokalizacje last-mile w granicach aglomeracji są dostępne w ograniczonej liczbie. Firmy wchodzące na rynek lub zmieniające obiekt często operują na poziomie stawek ofertowych, nie rynkowych — co przy kontraktach wieloletnich przekłada się na realne nadpłaty. Doradca znający lokalne benchmarki i relacje z właścicielami obiektów negocjuje z pozycji wiedzy, nie deklaracji.",
+      "scope": [
+        {
+          "title": "Dobór magazynu pod wymagania",
+          "text": "Identyfikujemy obiekty dopasowane do Twojego profilu: typ składowania, wolumen, standard techniczny, lokalizacja w aglomeracji."
+        },
+        {
+          "title": "Weryfikacja obiektów i warunków",
+          "text": "Sprawdzamy stan techniczny, zgodność z deklaracjami, rzeczywiste koszty eksploatacji i elastyczność wynajmującego — zanim wejdziesz w negocjacje."
+        },
+        {
+          "title": "Negocjacje w imieniu najemcy — bez prowizji od wynajmującego",
+          "text": "Negocjujemy stawki, zachęty i warunki umowy w Twoim imieniu. Nie pobieramy prowizji od właściciela — zarabiamy na opłacie doradczej od Ciebie, co eliminuje konflikt interesów."
+        },
+        {
+          "title": "Znajomość rynku warszawskiego",
+          "text": "Orientujemy się w strefach Warszawa I, II i III, obiektach miejskich klasy A oraz dostępności w segmencie last-mile — i dobieramy lokalizację pod Twój model dystrybucji."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Firmy wchodzące do Warszawy",
+          "text": "Gdy potrzebujesz magazynu w centrum kraju lub w zasięgu największego rynku konsumenckiego w Polsce."
+        },
+        {
+          "title": "Sieci e-commerce i last-mile",
+          "text": "Gdy liczy się czas dostawy i lokalizacja w granicach aglomeracji, a nie tylko cena za metr."
+        },
+        {
+          "title": "Firmy relokujące magazyn",
+          "text": "Gdy obecny obiekt nie odpowiada już wolumenowi lub lokalizacji, a renegocjacja umowy nie jest możliwa."
+        }
+      ],
+      "summary": "Magazyn do wynajęcia w Warszawie — Vologis działa jako niezależny doradca najemcy na największym rynku magazynowym w Polsce. Dobieramy obiekty w strefach Warszawa I–III i segmencie last-mile, negocjujemy stawki z dostępem do rzeczywistych benchmarków rynkowych (orientacyjnie 4,0–8,25 EUR/m²/mies. w zależności od strefy i standardu) i nie pobieramy prowizji od wynajmujących — co eliminuje konflikt interesów.",
+      "faq": [
+        {
+          "q": "Jakie magazyny są dostępne w Warszawie?",
+          "a": "Warszawa oferuje magazyny klasy A wzdłuż A2, S2 i S8 (strefy Warszawa I, II i III), obiekty last-mile w granicach aglomeracji, a także mniejsze moduły w strefach podmiejskich. Standard techniczny i lokalizacja różnią się znacznie — od wielkoformatowych hal dystrybucyjnych po miejskie obiekty cross-dock. Dopasowujemy typ i lokalizację do Twoich wymagań operacyjnych."
+        },
+        {
+          "q": "Czy pobieracie prowizję od wynajmującego?",
+          "a": "Nie. Działamy jako niezależny doradca najemcy — nasza opłata pochodzi od Ciebie, nie od właściciela nieruchomości ani operatora. To eliminuje konflikt interesów: nasze zalecenie jest zawsze po Twojej stronie, nigdy po stronie wynajmującego."
+        },
+        {
+          "q": "Ile kosztuje wynajem magazynu w Warszawie?",
+          "a": "Orientacyjnie stawki w Warszawie wahają się od ok. 4,0 EUR/m²/mies. w strefach zewnętrznych do 8,25 EUR/m²/mies. w obiektach miejskich i last-mile — zależy od standardu, lokalizacji i wynegocjowanych warunków. Stawki ofertowe często odbiegają od rzeczywistych stawek transakcyjnych, które znamy z negocjacji."
+        },
+        {
+          "q": "Jak szybko znajdziecie magazyn w Warszawie?",
+          "a": "W zależności od wymagań — przy standardowych parametrach wstępne propozycje przygotowujemy zwykle w ciągu 1–2 tygodni. Weryfikacja i negocjacje zajmują kolejne 2–4 tygodnie. Przy pilnych potrzebach działamy szybciej."
+        }
+      ]
+    },
+    {
+      "slug": "magazyn-do-wynajecia-wroclaw",
+      "heroImage": "/services/vologis-uslugi-komercjalizacja-i-sprzedaz.webp",
+      "parent": "komercjalizacja-i-sprzedaz",
+      "parent_name": "Komercjalizacja i sprzedaż",
+      "category": "Komercjalizacja i sprzedaż",
+      "industry": "powierzchnie magazynowe Wrocław",
+      "title": "Magazyn do wynajęcia Wrocław — dobór i negocjacje | Vologis",
+      "description": "Szukasz magazynu do wynajęcia we Wrocławiu? Wysoka podaż daje realną siłę negocjacyjną — niezależny doradca najemcy, bez prowizji od wynajmującego. A4/A8, rynek DE i CZ.",
+      "eyebrow": "MAGAZYN DO WYNAJĘCIA · WROCŁAW",
+      "h1": "Magazyn do wynajęcia — Wrocław",
+      "intro": "Wrocław to trzeci co do wielkości regionalny rynek magazynowy w Polsce, z dynamicznie rosnącą podażą nowych obiektów w węźle A4/A8. Wysoki wskaźnik pustostanów w strefie Polska Zachodnia/Wrocław przekłada się na realną siłę negocjacyjną po stronie najemcy: właściciele obiektów są elastyczni, a rynek zachęt — rent-free, fit-out contributions — jest aktywny. Granica z Niemcami i Czechami czyni Wrocław kluczowym hubem dla dystrybucji do Europy Zachodniej. Vologis negocjuje w imieniu najemcy, bez prowizji od wynajmującego — i w obecnych warunkach rynkowych ma realne pole do uzyskania warunków lepszych niż stawki ofertowe.",
+      "problem_heading": "Wysoka podaż i duże pustostany oznaczają silną pozycję negocjacyjną — ale tylko jeśli ją właściwie wykorzystasz",
+      "problem_text": "Wrocławski rynek magazynowy jest aktualnie rynkiem najemcy: wysoka nowa podaż oznacza, że wynajmujący konkurują o kontrakty. To szansa na wynegocjowanie stawek poniżej stawek ofertowych, wydłużonego okresu rent-free lub wkładu właściciela w aranżację. Jednak bez znajomości lokalnego benchmarku łatwo wejść w negocjacje od złej pozycji — i wyjść z warunkami, które elastyczny właściciel mógłby poprawić.",
+      "scope": [
+        {
+          "title": "Dobór magazynu pod wymagania",
+          "text": "Identyfikujemy obiekty dopasowane do Twojego profilu: typ składowania, wolumen, standard techniczny, lokalizacja w aglomeracji."
+        },
+        {
+          "title": "Weryfikacja obiektów i warunków",
+          "text": "Sprawdzamy stan techniczny, zgodność z deklaracjami, rzeczywiste koszty eksploatacji i elastyczność wynajmującego — zanim wejdziesz w negocjacje."
+        },
+        {
+          "title": "Negocjacje w imieniu najemcy — bez prowizji od wynajmującego",
+          "text": "Negocjujemy stawki, zachęty i warunki umowy w Twoim imieniu. Nie pobieramy prowizji od właściciela — zarabiamy na opłacie doradczej od Ciebie, co eliminuje konflikt interesów."
+        },
+        {
+          "title": "Znajomość rynku wrocławskiego",
+          "text": "Znamy lokalne strefy, dostępne obiekty i standardy negocjacyjne. Wiemy, gdzie jest realne pole do uzyskania zachęt — i potrafimy je wynegocjować w Twoim imieniu."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Firmy wchodzące do strefy A4/A8",
+          "text": "Gdy potrzebujesz magazynu przy zachodniej bramie Polski — z dostępem do rynków DE i CZ."
+        },
+        {
+          "title": "Firmy szukające korzystnych warunków",
+          "text": "Gdy wiesz, że rynek jest elastyczny, ale chcesz negocjować z wiedzą, nie intuicją."
+        },
+        {
+          "title": "Firmy relokujące magazyn z innych regionów",
+          "text": "Gdy przenosisz operacje do Wrocławia i szukasz optymalnej lokalizacji w sieci A4/A8."
+        }
+      ],
+      "summary": "Magazyn do wynajęcia we Wrocławiu — Vologis działa jako niezależny doradca najemcy na rynku z jednym z najwyższych wskaźników pustostanów w Polsce. Wysoka nowa podaż oznacza realną siłę negocjacyjną po stronie najemcy: negocjujemy stawki, rent-free i warunki umowy w Twoim imieniu, bez prowizji od wynajmujących, z dostępem do obiektów w węźle A4/A8 i bliskości granicy DE/CZ.",
+      "faq": [
+        {
+          "q": "Jakie magazyny są dostępne we Wrocławiu?",
+          "a": "Wrocław dysponuje szeroką ofertą obiektów klasy A wzdłuż A4 i A8, w tym w Bielanach Wrocławskich i okolicach — oraz mniejszymi modułami w strefach przemysłowych. Wysoka nowa podaż oznacza realną dostępność i elastyczność właścicieli w zakresie warunków i zachęt."
+        },
+        {
+          "q": "Czy pobieracie prowizję od wynajmującego?",
+          "a": "Nie. Działamy jako niezależny doradca najemcy — nasza opłata pochodzi od Ciebie, nie od właściciela nieruchomości ani operatora. To eliminuje konflikt interesów: nasze zalecenie jest zawsze po Twojej stronie, nigdy po stronie wynajmującego."
+        },
+        {
+          "q": "Ile kosztuje wynajem magazynu we Wrocławiu?",
+          "a": "Orientacyjne stawki w regionie wrocławskim zależą od standardu obiektu i lokalizacji. Wysoka podaż sprawia, że stawki transakcyjne często odbiegają od ofertowych — realne pole do negocjacji jest jedno z największych wśród głównych rynków w Polsce."
+        },
+        {
+          "q": "Jak szybko znajdziecie magazyn we Wrocławiu?",
+          "a": "Przy dobrej dostępności obiektów na tym rynku wstępne propozycje przygotowujemy zwykle w ciągu 1–2 tygodni. Pełny proces — weryfikacja i negocjacje — zajmuje zwykle 3–5 tygodni."
+        }
+      ]
+    },
+    {
+      "slug": "magazyn-do-wynajecia-poznan",
+      "heroImage": "/services/vologis-uslugi-komercjalizacja-i-sprzedaz.webp",
+      "parent": "komercjalizacja-i-sprzedaz",
+      "parent_name": "Komercjalizacja i sprzedaż",
+      "category": "Komercjalizacja i sprzedaż",
+      "industry": "powierzchnie magazynowe Poznań",
+      "title": "Magazyn do wynajęcia Poznań — dobór i negocjacje | Vologis",
+      "description": "Szukasz magazynu do wynajęcia w Poznaniu? Korytarz A2 Berlin–Warszawa — niezależny doradca najemcy, nearshoring i e-commerce, dobór i negocjacje bez prowizji od wynajmującego.",
+      "eyebrow": "MAGAZYN DO WYNAJĘCIA · POZNAŃ",
+      "h1": "Magazyn do wynajęcia — Poznań",
+      "intro": "Poznań leży na korytarzu A2 Berlin–Warszawa — jednym z najbardziej uczęszczanych szlaków logistycznych w Polsce. To czyni go naturalnym hubem dla nearshoring'u, e-commerce z obsługą rynku zachodnioeuropejskiego i dystrybucji na linii wschód–zachód. Rosnąca aktywność najemców, szczególnie z sektora e-commerce i lekkiej produkcji, przekłada się na stałą aktywność rynku wynajmu. Vologis działa bez prowizji od wynajmujących i negocjuje warunki magazynu w Poznaniu wyłącznie w interesie najemcy — z dostępem do obiektów zarówno w strefach przemysłowych, jak i wzdłuż A2.",
+      "problem_heading": "Poznań jest atrakcyjny dla logistyki zachód–wschód — ale dobra lokalizacja przy A2 wymaga szybkiej decyzji",
+      "problem_text": "Lokalizacje bezpośrednio przy węźle A2 w okolicach Poznania cieszą się stałym zainteresowaniem, szczególnie ze strony firm e-commerce i nearshoringowych. Firmy wchodzące na rynek bez znajomości lokalnych stref i operatorów tracą czas na research, który doradca może skondensować do kilku rozmów — i wchodzą w negocjacje z pełnym obrazem dostępności i warunków rynkowych.",
+      "scope": [
+        {
+          "title": "Dobór magazynu pod wymagania",
+          "text": "Identyfikujemy obiekty dopasowane do Twojego profilu: typ składowania, wolumen, standard techniczny, lokalizacja w aglomeracji."
+        },
+        {
+          "title": "Weryfikacja obiektów i warunków",
+          "text": "Sprawdzamy stan techniczny, zgodność z deklaracjami, rzeczywiste koszty eksploatacji i elastyczność wynajmującego — zanim wejdziesz w negocjacje."
+        },
+        {
+          "title": "Negocjacje w imieniu najemcy — bez prowizji od wynajmującego",
+          "text": "Negocjujemy stawki, zachęty i warunki umowy w Twoim imieniu. Nie pobieramy prowizji od właściciela — zarabiamy na opłacie doradczej od Ciebie, co eliminuje konflikt interesów."
+        },
+        {
+          "title": "Znajomość rynku poznańskiego",
+          "text": "Znamy dostępność w strefach przemysłowych i wzdłuż A2 — od obiektów klasy A po mniejsze moduły dla firm wchodzących na rynek."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Firmy nearshoring'owe",
+          "text": "Gdy relokujesz procesy logistyczne z Europy Zachodniej i potrzebujesz bazy przy A2."
+        },
+        {
+          "title": "E-commerce z obsługą rynku DE/PL",
+          "text": "Gdy Twoja logistyka obsługuje równolegle rynek polski i zachodnioeuropejski."
+        },
+        {
+          "title": "Firmy rozwijające dystrybucję w Polsce zachodniej",
+          "text": "Gdy szukasz lokalizacji optymalnej dla obsługi klientów po obu stronach granicy DE/PL."
+        }
+      ],
+      "summary": "Magazyn do wynajęcia w Poznaniu — Vologis działa jako niezależny doradca najemcy na korytarzu A2 Berlin–Warszawa. Dobieramy obiekty w strefach przemysłowych i przy A2, negocjujemy warunki wyłącznie w interesie najemcy i nie pobieramy prowizji od wynajmujących. Poznań to naturalny hub dla nearshoring'u i dystrybucji wschód–zachód — znamy lokalny rynek i działamy szybko.",
+      "faq": [
+        {
+          "q": "Jakie magazyny są dostępne w Poznaniu?",
+          "a": "W Poznaniu i okolicach dostępne są obiekty klasy A wzdłuż A2 (m.in. Swadzim, Tarnowo Podgórne, Komorniki) oraz w strefach przemysłowych aglomeracji. Oferta obejmuje zarówno duże moduły dla e-commerce i nearshoring, jak i mniejsze powierzchnie dla firm wchodzących na rynek."
+        },
+        {
+          "q": "Czy pobieracie prowizję od wynajmującego?",
+          "a": "Nie. Działamy jako niezależny doradca najemcy — nasza opłata pochodzi od Ciebie, nie od właściciela nieruchomości ani operatora. To eliminuje konflikt interesów: nasze zalecenie jest zawsze po Twojej stronie, nigdy po stronie wynajmującego."
+        },
+        {
+          "q": "Ile kosztuje wynajem magazynu w Poznaniu?",
+          "a": "Stawki wynajmu w regionie poznańskim zależą od standardu obiektu, lokalizacji przy A2 i wynegocjowanych warunków. Orientacyjne poziomy stawek dla obiektów klasy A są konkurencyjne względem Warszawy — podamy aktualne widełki po wstępnej analizie Twoich wymagań."
+        },
+        {
+          "q": "Jak szybko znajdziecie magazyn w Poznaniu?",
+          "a": "Wstępne propozycje przygotowujemy zwykle w ciągu 1–2 tygodni. Pełny proces doboru i negocjacji zajmuje zazwyczaj 3–5 tygodni, w zależności od specyfiki wymagań."
+        }
+      ]
+    },
+    {
+      "slug": "magazyn-do-wynajecia-lodz",
+      "heroImage": "/services/vologis-uslugi-komercjalizacja-i-sprzedaz.webp",
+      "parent": "komercjalizacja-i-sprzedaz",
+      "parent_name": "Komercjalizacja i sprzedaż",
+      "category": "Komercjalizacja i sprzedaż",
+      "industry": "powierzchnie magazynowe Łódź",
+      "title": "Magazyn do wynajęcia Łódź — dobór i negocjacje | Vologis",
+      "description": "Szukasz magazynu do wynajęcia w Łodzi? Centrum Polski, przecięcie A1/A2 — niezależny doradca najemcy, orientacyjnie 3,6–4,6 EUR/m²/mies., bez prowizji od wynajmującego.",
+      "eyebrow": "MAGAZYN DO WYNAJĘCIA · ŁÓDŹ",
+      "h1": "Magazyn do wynajęcia — Łódź",
+      "intro": "Łódź to centrum Polski — dosłownie: przecięcie autostrad A1 (północ–południe) i A2 (wschód–zachód) daje możliwość dotarcia do niemal każdego miejsca w kraju w kilka godzin. To jeden z największych rynków magazynowych w Polsce, z łączną powierzchnią szacowaną na blisko 5 mln m², konkurencyjnymi stawkami wynajmu orientacyjnie w przedziale 3,6–4,6 EUR/m²/mies. i wskaźnikiem pustostanów (~9%), który daje realne pole do negocjacji. Dla firm szukających optymalnego kosztu dystrybucji krajowej Łódź jest trudna do pobicia. Vologis negocjuje wyłącznie w interesie najemcy — bez prowizji od wynajmujących.",
+      "problem_heading": "Łódź jest najtańszym hubem do dystrybucji krajowej — ale bez doradcy trudno ocenić, które warunki są naprawdę rynkowe",
+      "problem_text": "Rynek łódzki oferuje jedne z najniższych stawek magazynowych spośród głównych hubów logistycznych w Polsce, a wysoki wskaźnik pustostanów (~9%) oznacza, że właściciele obiektów mają motywację do negocjacji. Jednak rozpiętość stawek i jakości obiektów jest duża — obiekty klas A, B i B+ funkcjonują obok siebie, a stawki ofertowe nie zawsze odzwierciedlają rynek. Znajomość lokalnych benchmarków pozwala wynegocjować warunki znacznie poniżej stawki wyjściowej.",
+      "scope": [
+        {
+          "title": "Dobór magazynu pod wymagania",
+          "text": "Identyfikujemy obiekty dopasowane do Twojego profilu: typ składowania, wolumen, standard techniczny, lokalizacja w aglomeracji."
+        },
+        {
+          "title": "Weryfikacja obiektów i warunków",
+          "text": "Sprawdzamy stan techniczny, zgodność z deklaracjami, rzeczywiste koszty eksploatacji i elastyczność wynajmującego — zanim wejdziesz w negocjacje."
+        },
+        {
+          "title": "Negocjacje w imieniu najemcy — bez prowizji od wynajmującego",
+          "text": "Negocjujemy stawki, zachęty i warunki umowy w Twoim imieniu. Nie pobieramy prowizji od właściciela — zarabiamy na opłacie doradczej od Ciebie, co eliminuje konflikt interesów."
+        },
+        {
+          "title": "Znajomość rynku łódzkiego",
+          "text": "Znamy strefy przemysłowe Łodzi i okolicznych gmin, standardy obiektów i rzeczywiste poziomy stawek — i dobieramy obiekt, który optymalizuje koszt dystrybucji dla całej Polski."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Firmy szukające centralnej bazy dystrybucji krajowej",
+          "text": "Gdy priorytetem jest dotarcie do całej Polski przy optymalnym koszcie transportu i wynajmu."
+        },
+        {
+          "title": "Firmy wchodzące na rynek PL",
+          "text": "Gdy Łódź jest naturalną bazą dla magazynu ogólnopolskiego."
+        },
+        {
+          "title": "Firmy optymalizujące koszty logistyki",
+          "text": "Gdy obecna lokalizacja generuje za wysokie koszty w relacji do zasięgu dystrybucji."
+        }
+      ],
+      "summary": "Magazyn do wynajęcia w Łodzi — Vologis działa jako niezależny doradca najemcy na jednym z największych i najtańszych rynków magazynowych w Polsce. Łódź, z powierzchnią ~5 mln m² i orientacyjnymi stawkami 3,6–4,6 EUR/m²/mies., to optymalny hub dla dystrybucji ogólnopolskiej — a wskaźnik pustostanów (~9%) daje realne pole do negocjacji. Działamy bez prowizji od wynajmujących.",
+      "faq": [
+        {
+          "q": "Jakie magazyny są dostępne w Łodzi?",
+          "a": "Łódź oferuje szeroki wybór obiektów klasy A, B i B+ w strefach przemysłowych aglomeracji i wzdłuż A1 i A2. Wysoka dostępność i zróżnicowany standard oznaczają możliwość doboru obiektu optymalnego zarówno pod względem kosztów, jak i parametrów technicznych."
+        },
+        {
+          "q": "Czy pobieracie prowizję od wynajmującego?",
+          "a": "Nie. Działamy jako niezależny doradca najemcy — nasza opłata pochodzi od Ciebie, nie od właściciela nieruchomości ani operatora. To eliminuje konflikt interesów: nasze zalecenie jest zawsze po Twojej stronie, nigdy po stronie wynajmującego."
+        },
+        {
+          "q": "Ile kosztuje wynajem magazynu w Łodzi?",
+          "a": "Orientacyjnie stawki w Łodzi wahają się w przedziale 3,6–4,6 EUR/m²/mies. — zależnie od standardu obiektu, lokalizacji i wynegocjowanych warunków. To jedne z bardziej konkurencyjnych stawek wśród głównych hubów logistycznych w Polsce. Stawki ofertowe często można poprawić w negocjacjach przy znajomości rynkowych benchmarków."
+        },
+        {
+          "q": "Jak szybko znajdziecie magazyn w Łodzi?",
+          "a": "Przy dobrej dostępności obiektów w Łodzi wstępne propozycje przygotowujemy zwykle w ciągu 1–2 tygodni. Pełny proces — weryfikacja i negocjacje — zajmuje standardowo 3–5 tygodni."
+        }
+      ]
+    },
+    {
+      "slug": "magazyn-do-wynajecia-krakow",
+      "heroImage": "/services/vologis-uslugi-komercjalizacja-i-sprzedaz.webp",
+      "parent": "komercjalizacja-i-sprzedaz",
+      "parent_name": "Komercjalizacja i sprzedaż",
+      "category": "Komercjalizacja i sprzedaż",
+      "industry": "powierzchnie magazynowe Kraków",
+      "title": "Magazyn do wynajęcia Kraków — dobór i negocjacje | Vologis",
+      "description": "Szukasz magazynu do wynajęcia w Krakowie? Niskie pustostany (~4,3%) — niezależny doradca z dostępem do rynku off-market, dobór i negocjacje bez prowizji od wynajmującego.",
+      "eyebrow": "MAGAZYN DO WYNAJĘCIA · KRAKÓW",
+      "h1": "Magazyn do wynajęcia — Kraków",
+      "intro": "Kraków oferuje dostęp do silnego rynku konsumenckiego Małopolski i bliskość granicy słowackiej, ale pod względem dostępności powierzchni magazynowej jest jednym z najtrudniejszych rynków w Polsce. Wskaźnik pustostanów należy do najniższych w kraju (~4,3%), a stawki miejskie odzwierciedlają tę rzadkość. Znalezienie odpowiedniego magazynu w Krakowie lub bezpośredniej okolicy wymaga znajomości rynku i aktywnych kontaktów z właścicielami obiektów — portale ogłoszeniowe często nie odzwierciedlają rzeczywistej dostępności. Vologis działa wyłącznie po stronie najemcy, bez prowizji od wynajmujących.",
+      "problem_heading": "Niskie pustostany w Krakowie oznaczają, że najlepsze obiekty nie trafiają na portale — trzeba znać rynek",
+      "problem_text": "Krakowski rynek magazynowy jest rynkiem z ograniczoną dostępnością: przy pustostanach ~4,3% właściciele dobrych obiektów mogą sobie pozwolić na selektywność, a warunki rzadko są negocjowalne bez wiedzy o alternatywach. Firmy szukające samodzielnie ryzykują albo wydłużony czas poszukiwań, albo decyzję pod presją — bo 'dostępny jutro' niekoniecznie oznacza 'optymalny'. Doradca z dostępem do rynku off-market i znajomością bieżącej dostępności skraca ten proces i daje obiektywną ocenę ofert.",
+      "scope": [
+        {
+          "title": "Dobór magazynu pod wymagania",
+          "text": "Identyfikujemy obiekty dopasowane do Twojego profilu: typ składowania, wolumen, standard techniczny, lokalizacja w aglomeracji."
+        },
+        {
+          "title": "Weryfikacja obiektów i warunków",
+          "text": "Sprawdzamy stan techniczny, zgodność z deklaracjami, rzeczywiste koszty eksploatacji i elastyczność wynajmującego — zanim wejdziesz w negocjacje."
+        },
+        {
+          "title": "Negocjacje w imieniu najemcy — bez prowizji od wynajmującego",
+          "text": "Negocjujemy stawki, zachęty i warunki umowy w Twoim imieniu. Nie pobieramy prowizji od właściciela — zarabiamy na opłacie doradczej od Ciebie, co eliminuje konflikt interesów."
+        },
+        {
+          "title": "Znajomość rynku krakowskiego",
+          "text": "Mamy dostęp do obiektów w Krakowie i okolicznych strefach przemysłowych. W napiętym rynku lokalny dostęp jest kluczowy — to różnica między oczekiwaniem a działaniem."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Firmy obsługujące rynek Małopolski i południa PL",
+          "text": "Gdy potrzebujesz magazynu przy rynku krakowskim lub w korytarzu w stronę Śląska."
+        },
+        {
+          "title": "Firmy wchodzące do Krakowa",
+          "text": "Gdy rynek jest atrakcyjny, ale ograniczona dostępność wymaga szybkiego i sprawnego działania."
+        },
+        {
+          "title": "Firmy relokujące operacje z innych miast",
+          "text": "Gdy przenosisz magazyn do Krakowa i nie chcesz tracić czasu na samodzielny research w napiętym rynku."
+        }
+      ],
+      "summary": "Magazyn do wynajęcia w Krakowie — Vologis działa jako niezależny doradca najemcy na jednym z najtrudniejszych rynków magazynowych w Polsce pod względem dostępności. Niskie pustostany (~4,3%) oznaczają, że najlepsze obiekty nie trafiają na portale — działamy z dostępem do rynku off-market i negocjujemy wyłącznie w interesie najemcy, bez prowizji od wynajmujących.",
+      "faq": [
+        {
+          "q": "Jakie magazyny są dostępne w Krakowie?",
+          "a": "Kraków i okolice oferują obiekty klasy A w strefach przemysłowych (m.in. Kraków Nowa Huta, okolice obwodnicy A4) oraz mniejsze moduły w strefach podmiejskich. Przy niskich pustostanach dostępność jest ograniczona — kluczowe jest dotarcie do obiektów przed oficjalnym ogłoszeniem na rynku."
+        },
+        {
+          "q": "Czy pobieracie prowizję od wynajmującego?",
+          "a": "Nie. Działamy jako niezależny doradca najemcy — nasza opłata pochodzi od Ciebie, nie od właściciela nieruchomości ani operatora. To eliminuje konflikt interesów: nasze zalecenie jest zawsze po Twojej stronie, nigdy po stronie wynajmującego."
+        },
+        {
+          "q": "Ile kosztuje wynajem magazynu w Krakowie?",
+          "a": "Krakowski rynek charakteryzuje się wyższymi stawkami niż przeciętna w Polsce ze względu na niskie pustostany — orientacyjne poziomy podamy po wstępnej analizie wymagań. W napiętym rynku negocjacje rzadko przynoszą dużą obniżkę, ale właściwy wybór obiektu i warunków ma kluczowe znaczenie."
+        },
+        {
+          "q": "Jak szybko znajdziecie magazyn w Krakowie?",
+          "a": "W napiętym rynku czas poszukiwań jest dłuższy niż w miastach z wyższą dostępnością. Wstępne propozycje przygotowujemy zwykle w 2–3 tygodnie, a pełny proces zajmuje standardowo 4–6 tygodni. Działamy szybko — każdy tydzień ma znaczenie, gdy dostępność jest ograniczona."
+        }
+      ]
+    },
+    {
+      "slug": "magazyn-do-wynajecia-gdansk",
+      "heroImage": "/services/vologis-uslugi-komercjalizacja-i-sprzedaz.webp",
+      "parent": "komercjalizacja-i-sprzedaz",
+      "parent_name": "Komercjalizacja i sprzedaż",
+      "category": "Komercjalizacja i sprzedaż",
+      "industry": "powierzchnie magazynowe Gdańsk",
+      "title": "Magazyn do wynajęcia Gdańsk — dobór i negocjacje | Vologis",
+      "description": "Szukasz magazynu do wynajęcia w Gdańsku? Hub portowy i importowy Trójmiasta — niezależny doradca najemcy, logistyka kontenerowa, dobór i negocjacje bez prowizji od wynajmującego.",
+      "eyebrow": "MAGAZYN DO WYNAJĘCIA · GDAŃSK",
+      "h1": "Magazyn do wynajęcia — Gdańsk",
+      "intro": "Trójmiasto jest głównym hubem portowym i importowym Polski — magazyny w okolicach Gdańska obsługują logistykę kontenerową, import i re-eksport do krajów bałtyckich i skandynawskich. W pierwszym kwartale Trójmiasto odpowiadało za około 18% nowych umów najmu na głównych rynkach regionalnych, co świadczy o wysokiej aktywności najemców. Stawki prime osiągają do 5,50 EUR/m²/mies. Vologis negocjuje wyłącznie po stronie najemcy — bez prowizji od właścicieli — i zna specyfikę obiektów zarówno w strefach portowych, jak i wzdłuż trójmiejskiej obwodnicy.",
+      "problem_heading": "Trójmiejski rynek rośnie szybko — dobra lokalizacja blisko portu lub autostrady wymaga znajomości lokalnych stref",
+      "problem_text": "Gdańsk i Trójmiasto to rynek, gdzie lokalizacja ma szczególne znaczenie: bliskość Portu Gdańsk i terminali kontenerowych przekłada się na stawki i dostępność w strefach portowych. Firmy logistyczne, importerzy i operatorzy obsługujący towary kontenerowe muszą znać specyfikę lokalnych stref, by wybrać obiekt naprawdę dopasowany do profilu operacyjnego — a nie tylko geometrycznie blisko portu.",
+      "scope": [
+        {
+          "title": "Dobór magazynu pod wymagania",
+          "text": "Identyfikujemy obiekty dopasowane do Twojego profilu: typ składowania, wolumen, standard techniczny, lokalizacja w aglomeracji."
+        },
+        {
+          "title": "Weryfikacja obiektów i warunków",
+          "text": "Sprawdzamy stan techniczny, zgodność z deklaracjami, rzeczywiste koszty eksploatacji i elastyczność wynajmującego — zanim wejdziesz w negocjacje."
+        },
+        {
+          "title": "Negocjacje w imieniu najemcy — bez prowizji od wynajmującego",
+          "text": "Negocjujemy stawki, zachęty i warunki umowy w Twoim imieniu. Nie pobieramy prowizji od właściciela — zarabiamy na opłacie doradczej od Ciebie, co eliminuje konflikt interesów."
+        },
+        {
+          "title": "Znajomość rynku trójmiejskiego",
+          "text": "Znamy strefy portowe, obwodnicę trójmiejską i dostępność obiektów dla logistyki importowej i re-eksportu — i dobieramy lokalizację pod Twój profil operacyjny."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Importerzy i operatorzy kontenerowi",
+          "text": "Gdy logistyka portowa, obsługa kontenerów i re-eksport to rdzeń Twojej operacji."
+        },
+        {
+          "title": "Firmy obsługujące rynki bałtyckie i skandynawskie",
+          "text": "Gdy Trójmiasto to brama do Skandynawii i krajów bałtyckich dla Twojego łańcucha dostaw."
+        },
+        {
+          "title": "Firmy wchodzące na rynek trójmiejski",
+          "text": "Gdy planujesz magazyn w Gdańsku lub okolicach i potrzebujesz znać realia rynku przed podpisaniem umowy."
+        }
+      ],
+      "summary": "Magazyn do wynajęcia w Gdańsku — Vologis działa jako niezależny doradca najemcy na głównym rynku portowym i importowym Polski. Trójmiasto odpowiadało za ok. 18% nowych umów najmu na rynkach regionalnych — co świadczy o aktywności rynku, a stawki prime osiągają orientacyjnie do 5,50 EUR/m²/mies. Znamy specyfikę stref portowych i negocjujemy wyłącznie po stronie najemcy, bez prowizji od wynajmujących.",
+      "faq": [
+        {
+          "q": "Jakie magazyny są dostępne w Gdańsku?",
+          "a": "Trójmiasto oferuje obiekty klasy A wzdłuż obwodnicy trójmiejskiej i w strefach portowych (Gdańsk, Gdynia), a także w parkach logistycznych przy S7 i S6. Dobieramy typ obiektu pod profil operacyjny — inaczej wygląda logistyka portowa i kontenerowa, inaczej dystrybucja do regionu."
+        },
+        {
+          "q": "Czy pobieracie prowizję od wynajmującego?",
+          "a": "Nie. Działamy jako niezależny doradca najemcy — nasza opłata pochodzi od Ciebie, nie od właściciela nieruchomości ani operatora. To eliminuje konflikt interesów: nasze zalecenie jest zawsze po Twojej stronie, nigdy po stronie wynajmującego."
+        },
+        {
+          "q": "Ile kosztuje wynajem magazynu w Gdańsku?",
+          "a": "Stawki prime w Trójmieście osiągają orientacyjnie do 5,50 EUR/m²/mies. — zależnie od lokalizacji (strefa portowa vs. park logistyczny przy obwodnicy), standardu obiektu i wynegocjowanych warunków. Podamy aktualne widełki po analizie wymagań."
+        },
+        {
+          "q": "Jak szybko znajdziecie magazyn w Gdańsku?",
+          "a": "Przy aktywnym rynku trójmiejskim wstępne propozycje przygotowujemy zwykle w 1–2 tygodnie. Pełny proces doboru i negocjacji zajmuje standardowo 3–5 tygodni."
+        }
+      ]
+    },
+    {
+      "slug": "magazyn-do-wynajecia-szczecin",
+      "heroImage": "/services/vologis-uslugi-komercjalizacja-i-sprzedaz.webp",
+      "parent": "komercjalizacja-i-sprzedaz",
+      "parent_name": "Komercjalizacja i sprzedaż",
+      "category": "Komercjalizacja i sprzedaż",
+      "industry": "powierzchnie magazynowe Szczecin",
+      "title": "Magazyn do wynajęcia Szczecin — dobór i negocjacje | Vologis",
+      "description": "Szukasz magazynu do wynajęcia w Szczecinie? Zachodnia brama Polski, bliskość Berlina, niskie pustostany (~3,1%) — niezależny doradca najemcy, bez prowizji od wynajmującego.",
+      "eyebrow": "MAGAZYN DO WYNAJĘCIA · SZCZECIN",
+      "h1": "Magazyn do wynajęcia — Szczecin",
+      "intro": "Szczecin to zachodnia brama Polski — z bezpośrednim dostępem do portów szczecińskich i bliskością Berlina (mniej niż 150 km). Niskie pustostany (~3,1%) świadczą o tym, że rynek jest stabilny i ciągły popyt ze strony firm nearshoringowych i logistyki przygranicznej. To lokalizacja naturalna dla firm obsługujących jednocześnie rynek polski i północno-wschodnią część Niemiec. Vologis negocjuje bez prowizji od wynajmujących i zna dostępność w strefach przemysłowych Szczecina.",
+      "problem_heading": "Niskie pustostany w Szczecinie oznaczają ograniczoną dostępność — trzeba działać szybko i znać rynek",
+      "problem_text": "Szczecin to rynek z niską dostępnością wolnych powierzchni (~3,1% pustostanów) — co oznacza, że dobre obiekty są kontraktowane zanim trafią na portale. Firmy wchodzące bez znajomości lokalnego rynku tracą czas na research, a potem decydują pod presją dostępności. Doradca z aktywną siecią kontaktów w strefach przemysłowych Szczecina daje dostęp do rynku niedostępnego przez platformy ogłoszeniowe.",
+      "scope": [
+        {
+          "title": "Dobór magazynu pod wymagania",
+          "text": "Identyfikujemy obiekty dopasowane do Twojego profilu: typ składowania, wolumen, standard techniczny, lokalizacja w aglomeracji."
+        },
+        {
+          "title": "Weryfikacja obiektów i warunków",
+          "text": "Sprawdzamy stan techniczny, zgodność z deklaracjami, rzeczywiste koszty eksploatacji i elastyczność wynajmującego — zanim wejdziesz w negocjacje."
+        },
+        {
+          "title": "Negocjacje w imieniu najemcy — bez prowizji od wynajmującego",
+          "text": "Negocjujemy stawki, zachęty i warunki umowy w Twoim imieniu. Nie pobieramy prowizji od właściciela — zarabiamy na opłacie doradczej od Ciebie, co eliminuje konflikt interesów."
+        },
+        {
+          "title": "Znajomość rynku szczecińskiego",
+          "text": "Znamy dostępność w strefach przemysłowych Szczecina i Polic, specyfikę lokalnych obiektów i wymagania firm nearshoring'owych — i działamy szybko w napiętym rynku."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Firmy nearshoring'owe przy granicy DE",
+          "text": "Gdy szukasz bazy logistycznej przy zachodniej granicy z dostępem do rynku berlińskiego."
+        },
+        {
+          "title": "Importerzy i operatorzy portowi",
+          "text": "Gdy logistyka portów szczecińskich jest częścią Twojego łańcucha dostaw."
+        },
+        {
+          "title": "Firmy wchodzące do Polski północno-zachodniej",
+          "text": "Gdy Szczecin to naturalna baza dla obsługi regionu zachodniopomorskiego i rynku przygranicznego."
+        }
+      ],
+      "summary": "Magazyn do wynajęcia w Szczecinie — Vologis działa jako niezależny doradca najemcy przy zachodniej bramie Polski. Niskie pustostany (~3,1%) oznaczają ograniczoną dostępność i konieczność szybkiego działania — dysponujemy kontaktami w strefach przemysłowych Szczecina i Polic i negocjujemy bez prowizji od wynajmujących. To naturalna lokalizacja dla nearshoring'u i logistyki przygranicznej DE.",
+      "faq": [
+        {
+          "q": "Jakie magazyny są dostępne w Szczecinie?",
+          "a": "Szczecin oferuje obiekty w strefach przemysłowych Szczecina i Polic (Chempark), a także wzdłuż głównych tras komunikacyjnych. Przy niskich pustostanach dostępność jest ograniczona — kluczowe jest dotarcie do obiektów przed oficjalnym ogłoszeniem na rynku."
+        },
+        {
+          "q": "Czy pobieracie prowizję od wynajmującego?",
+          "a": "Nie. Działamy jako niezależny doradca najemcy — nasza opłata pochodzi od Ciebie, nie od właściciela nieruchomości ani operatora. To eliminuje konflikt interesów: nasze zalecenie jest zawsze po Twojej stronie, nigdy po stronie wynajmującego."
+        },
+        {
+          "q": "Ile kosztuje wynajem magazynu w Szczecinie?",
+          "a": "Stawki wynajmu w Szczecinie zależą od standardu obiektu, lokalizacji i wynegocjowanych warunków. Przy niskiej dostępności stawki są mniej elastyczne niż w rynkach z wyższą podażą — podamy aktualne widełki po wstępnej analizie wymagań."
+        },
+        {
+          "q": "Jak szybko znajdziecie magazyn w Szczecinie?",
+          "a": "W rynku z niską dostępnością działamy szybko — każdy tydzień ma znaczenie. Wstępne propozycje przygotowujemy zwykle w 1–2 tygodnie; pełny proces zajmuje standardowo 3–5 tygodni, choć dostępność może wydłużyć ten czas."
+        }
+      ]
+    },
+    {
+      "slug": "magazyn-do-wynajecia-katowice",
+      "heroImage": "/services/vologis-uslugi-komercjalizacja-i-sprzedaz.webp",
+      "parent": "komercjalizacja-i-sprzedaz",
+      "parent_name": "Komercjalizacja i sprzedaż",
+      "category": "Komercjalizacja i sprzedaż",
+      "industry": "powierzchnie magazynowe Katowice",
+      "title": "Magazyn do wynajęcia Katowice — dobór i negocjacje | Vologis",
+      "description": "Szukasz magazynu do wynajęcia w Katowicach? Hub przemysłowy i tranzytowy południa, A4/A1 — niezależny doradca najemcy, weryfikacja techniczna, bez prowizji od wynajmującego.",
+      "eyebrow": "MAGAZYN DO WYNAJĘCIA · KATOWICE",
+      "h1": "Magazyn do wynajęcia — Katowice",
+      "intro": "Katowice i Górny Śląsk to największy hub przemysłowy i tranzytowy południa Polski — rynek z łączną powierzchnią wynajętą przekraczającą 1 mln m², na przecięciu autostrad A4 (wschód–zachód) i A1 (północ–południe), z dostępem do Czech i Słowacji. Dominuje tu sektor automotive i przemysłowy, a firmy z branży produkcyjnej i logistyki kontraktowej potrzebują magazynów spełniających specyficzne wymagania techniczne i certyfikacyjne. Vologis działa wyłącznie po stronie najemcy — bez prowizji od wynajmujących — i zna rynek katowickiego węzła.",
+      "problem_heading": "Rynek katowickiego węzła jest aktywny, ale wybór obiektu dla przemysłu wymaga weryfikacji technicznej — nie tylko lokalizacyjnej",
+      "problem_text": "Górnośląski rynek magazynowy jest zdominowany przez sektor automotive, przemysłowy i logistyki kontraktowej, co oznacza, że obiekty mają zróżnicowane parametry techniczne — nośność podłogi, wysokość składowania, połączenia kolejowe, certyfikaty. Firma produkcyjna lub automotive, która wybiera magazyn tylko na podstawie lokalizacji i stawki, ryzykuje wyborem obiektu niespełniającego wymagań operacyjnych. Doradca z wiedzą o lokalnych obiektach weryfikuje parametry, zanim wejdziesz w negocjacje.",
+      "scope": [
+        {
+          "title": "Dobór magazynu pod wymagania",
+          "text": "Identyfikujemy obiekty dopasowane do Twojego profilu: typ składowania, wolumen, standard techniczny, lokalizacja w aglomeracji."
+        },
+        {
+          "title": "Weryfikacja obiektów i warunków",
+          "text": "Sprawdzamy stan techniczny, zgodność z deklaracjami, rzeczywiste koszty eksploatacji i elastyczność wynajmującego — zanim wejdziesz w negocjacje."
+        },
+        {
+          "title": "Negocjacje w imieniu najemcy — bez prowizji od wynajmującego",
+          "text": "Negocjujemy stawki, zachęty i warunki umowy w Twoim imieniu. Nie pobieramy prowizji od właściciela — zarabiamy na opłacie doradczej od Ciebie, co eliminuje konflikt interesów."
+        },
+        {
+          "title": "Znajomość rynku katowickiego",
+          "text": "Znamy specyfikę techniczną obiektów na Górnym Śląsku, wymagania sektora automotive i dostępność w strefach przemysłowych przy A4/A1 — i dobieramy obiekt pod realne potrzeby produkcji."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Firmy automotive i przemysłowe",
+          "text": "Gdy magazyn musi spełniać wymagania techniczne sektora produkcyjnego i certyfikaty branżowe."
+        },
+        {
+          "title": "Operatorzy tranzytowi południa",
+          "text": "Gdy A4/A1 i bliskość CZ/SK to kluczowe wyznaczniki lokalizacji."
+        },
+        {
+          "title": "Firmy wchodzące do strefy katowickiej",
+          "text": "Gdy Górny Śląsk to Twój docelowy hub logistyczny i potrzebujesz weryfikacji rynku."
+        }
+      ],
+      "summary": "Magazyn do wynajęcia w Katowicach — Vologis działa jako niezależny doradca najemcy na największym hubie przemysłowym południa Polski. Rynek katowickiego węzła (>1 mln m² wynajętej powierzchni przy A4/A1) zdominowany jest przez automotive i przemysł — dobieramy obiekty z weryfikacją parametrów technicznych i negocjujemy bez prowizji od wynajmujących.",
+      "faq": [
+        {
+          "q": "Jakie magazyny są dostępne w Katowicach?",
+          "a": "Górny Śląsk oferuje szeroką gamę obiektów przy A4 i A1 — od wielkoformatowych hal dla automotive i logistyki kontraktowej po mniejsze moduły produkcyjno-magazynowe. Parametry techniczne (nośność, wysokość, certyfikaty) są kluczowe — dopasowujemy obiekt do wymagań operacyjnych, nie tylko lokalizacyjnych."
+        },
+        {
+          "q": "Czy pobieracie prowizję od wynajmującego?",
+          "a": "Nie. Działamy jako niezależny doradca najemcy — nasza opłata pochodzi od Ciebie, nie od właściciela nieruchomości ani operatora. To eliminuje konflikt interesów: nasze zalecenie jest zawsze po Twojej stronie, nigdy po stronie wynajmującego."
+        },
+        {
+          "q": "Ile kosztuje wynajem magazynu w Katowicach?",
+          "a": "Stawki w regionie katowickim zależą od standardu, lokalizacji (strefa przemysłowa vs. park logistyczny przy A4/A1) i parametrów technicznych obiektu. Podamy aktualne widełki po analizie Twoich wymagań."
+        },
+        {
+          "q": "Jak szybko znajdziecie magazyn w Katowicach?",
+          "a": "W zależności od wymagań technicznych — przy standardowych parametrach wstępne propozycje w 1–2 tygodnie. Przy specjalistycznych wymaganiach automotive lub produkcji czas może być dłuższy — weryfikujemy, by nie tracić czasu na obiekty, które nie spełnią wymagań."
+        }
+      ]
+    },
+    {
+      "slug": "komercjalizacja-powierzchni-wroclaw",
+      "heroImage": "/services/vologis-uslugi-komercjalizacja-powierzchni-magazynowej.webp",
+      "parent": "komercjalizacja-i-sprzedaz",
+      "parent_name": "Komercjalizacja i sprzedaż",
+      "category": "Komercjalizacja i sprzedaż",
+      "industry": "komercjalizacja powierzchni Wrocław",
+      "title": "Komercjalizacja powierzchni magazynowych — Wrocław | Vologis",
+      "description": "Wysoka podaż nowych obiektów we Wrocławiu zwiększa konkurencję o najemców. Pomagamy operatorom wyróżnić się i zakontraktować wolną powierzchnię — model success fee, bez kosztów stałych.",
+      "eyebrow": "KOMERCJALIZACJA POWIERZCHNI · WROCŁAW",
+      "h1": "Komercjalizacja wolnych powierzchni magazynowych — Wrocław",
+      "intro": "Wrocław jest jednym z rynków z najwyższą nową podażą magazynową w Polsce — co dla najemców jest szansą, ale dla operatorów z wolnymi wolumenami oznacza rosnącą konkurencję o każdego najemcę. W rynku, gdzie podobnych obiektów jest dużo, wyróżnienie się i dotarcie do aktywnych poszukujących wymaga profesjonalnej, aktywnej sprzedaży — nie tylko wystawienia oferty na portalu. Przejmujemy proces komercjalizacji w modelu success fee: płacisz za zakontraktowaną i wypełnioną przestrzeń, nie za sam proces poszukiwania.",
+      "problem_heading": "Wysoka podaż we Wrocławiu = konkurencja o najemców. Operator bez aktywnej sprzedaży jest w słabszej pozycji",
+      "problem_text": "Gdy na rynku jest wiele podobnych obiektów, najemcy mają wybór — i wybierają tych, którzy do nich dotarli. Pasywne czekanie na zapytania z portali to strategia, która spowalnia zapełnianie pustostanów. Aktywna komercjalizacja — z wiedzą o tym, które firmy aktywnie szukają i jakich warunków oczekują — daje przewagę nad innymi operatorami rywalizującymi o tych samych najemców.",
+      "scope": [
+        {
+          "title": "Aktywna akwizycja najemców",
+          "text": "Docieramy do firm szukających magazynów w rejonie Wrocławia i A4/A8 — bez czekania na zapytania z portali."
+        },
+        {
+          "title": "Pozycjonowanie Twojej oferty",
+          "text": "Pomagamy wyróżnić obiekt w rynku z wysoką podażą — parametrami, lokalizacją i warunkami kontraktu."
+        },
+        {
+          "title": "Model success fee",
+          "text": "Wynagrodzenie wyłącznie za zakontraktowaną i wypełnioną przestrzeń."
+        },
+        {
+          "title": "Znajomość popytu wrocławskiego",
+          "text": "Znamy firmy aktywnie szukające magazynów w regionie i dopasowujemy profil najemcy do Twojego obiektu i jego lokalizacji przy A4/A8."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Operatorzy z wolnymi wolumenami przy A4/A8",
+          "text": "Gdy masz nieobsadzoną przestrzeń w obiekcie wrocławskim lub podmiejskim."
+        },
+        {
+          "title": "Właściciele obiektów w rynku wysokiej podaży",
+          "text": "Gdy wysokie pustostany w regionie oznaczają, że pasywna obecność na portalach to za mało."
+        },
+        {
+          "title": "Deweloperzy nowych obiektów",
+          "text": "Gdy nowy obiekt wchodzi na rynek wrocławski i wymaga szybkiej komercjalizacji."
+        }
+      ],
+      "summary": "Komercjalizacja wolnych powierzchni magazynowych we Wrocławiu to usługa, w której Vologis aktywnie pozyskuje najemców dla operatorów w warunkach wysokiej nowej podaży — gdzie konkurencja o najemców jest szczególnie intensywna. Działamy jak zewnętrzny dział handlowy w modelu success fee, docierając do firm szukających magazynów przy A4/A8 i wyróżniając Twój obiekt w rynku z wieloma dostępnymi opcjami.",
+      "faq": [
+        {
+          "q": "Dlaczego komercjalizacja jest szczególnie ważna we Wrocławiu?",
+          "a": "Wysoka nowa podaż oznacza, że operatorzy konkurują o tych samych najemców. Aktywna sprzedaż — dotarcie do poszukujących firm przed konkurencją — ma realną wartość w rynku z wieloma dostępnymi obiektami."
+        },
+        {
+          "q": "Jak rozliczana jest komercjalizacja?",
+          "a": "W modelu success fee — wynagrodzenie należne wyłącznie za zakontraktowaną i wypełnioną przestrzeń."
+        },
+        {
+          "q": "Jakie firmy szukają magazynów we Wrocławiu?",
+          "a": "Firmy nearshoring'owe, logistyczne i e-commerce z obsługą rynków DE i CZ, a także firmy przemysłowe przy A4/A8. Dobieramy najemcę pod profil Twojego obiektu."
+        },
+        {
+          "q": "Jak szybko można pozyskać najemcę we Wrocławiu?",
+          "a": "Przy aktywnej komercjalizacji pierwsze zainteresowanie pojawiamy się zwykle w ciągu kilku tygodni. Czas zależy od wolumenu, profilu obiektu i wymagań branżowych."
+        }
+      ]
+    },
+    {
+      "slug": "komercjalizacja-powierzchni-poznan",
+      "heroImage": "/services/vologis-uslugi-komercjalizacja-powierzchni-magazynowej.webp",
+      "parent": "komercjalizacja-i-sprzedaz",
+      "parent_name": "Komercjalizacja i sprzedaż",
+      "category": "Komercjalizacja i sprzedaż",
+      "industry": "komercjalizacja powierzchni Poznań",
+      "title": "Komercjalizacja powierzchni magazynowych — Poznań | Vologis",
+      "description": "Aktywny popyt nearshoring'owy i e-commerce przy A2 — pomagamy operatorom w Poznaniu pozyskiwać najemców na wolne wolumeny w modelu success fee.",
+      "eyebrow": "KOMERCJALIZACJA POWIERZCHNI · POZNAŃ",
+      "h1": "Komercjalizacja wolnych powierzchni magazynowych — Poznań",
+      "intro": "Poznań generuje stały popyt ze strony firm nearshoring'owych i e-commerce na korytarzu A2 Berlin–Warszawa. Dla operatorów z wolnymi wolumenami oznacza to aktywny rynek poszukujących — ale dotarcie do nich wymaga znajomości firm planujących wejście do regionu lub rozwijających operacje w Polsce zachodniej. Przejmujemy ten proces komercjalizacji w modelu success fee, docierając do najemców dopasowanych do profilu Twojego obiektu.",
+      "problem_heading": "Popyt nearshoring'owy w Poznaniu jest realny — ale nie pojawi się sam w skrzynce mailowej",
+      "problem_text": "Firmy nearshoring'owe i e-commerce rozbudowujące logistykę przy A2 rzadko trafiają przez portale ogłoszeniowe — decyzje o lokalizacji podejmują przez doradców, relacje i aktywne poszukiwania. Operator czekający na zapytania z portali może przegapić najemcę, który w tym samym czasie podpisał umowę z obiektem, który do niego aktywnie dotarł.",
+      "scope": [
+        {
+          "title": "Pozyskiwanie najemców nearshoring i e-commerce",
+          "text": "Docieramy do firm planujących ekspansję lub relokację na korytarz A2 — zanim wybiorą inny obiekt."
+        },
+        {
+          "title": "Zewnętrzny dział handlowy dla obiektu",
+          "text": "Działamy jak Twój wyspecjalizowany zespół sprzedaży, bez kosztu utrzymania etatu."
+        },
+        {
+          "title": "Model success fee",
+          "text": "Wynagrodzenie wyłącznie za zakontraktowaną i wypełnioną przestrzeń."
+        },
+        {
+          "title": "Znajomość popytu poznańskiego",
+          "text": "Znamy firmy aktywnie szukające magazynów wzdłuż A2 i dopasowujemy najemcę pod profil Twojego obiektu."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Operatorzy z wolnymi wolumenami przy A2",
+          "text": "Gdy masz nieobsadzoną przestrzeń w obiekcie poznańskim lub podmiejskim przy A2."
+        },
+        {
+          "title": "Właściciele obiektów szukający nearshoring'owych najemców",
+          "text": "Gdy Twój obiekt jest dobrze skonfigurowany dla firm z Europy Zachodniej, ale nie docierasz do nich samodzielnie."
+        },
+        {
+          "title": "Deweloperzy nowych obiektów",
+          "text": "Gdy nowy obiekt przy A2 wymaga sprawnej komercjalizacji."
+        }
+      ],
+      "summary": "Komercjalizacja wolnych powierzchni magazynowych w Poznaniu to usługa, w której Vologis aktywnie pozyskuje najemców dla operatorów przy korytarzu A2 Berlin–Warszawa — docierając do firm nearshoring'owych i e-commerce planujących ekspansję w Polsce zachodniej. Model success fee oznacza, że operator płaci wyłącznie za zakontraktowaną i faktycznie wypełnioną przestrzeń.",
+      "faq": [
+        {
+          "q": "Jaki profil najemców szukacie dla obiektów w Poznaniu?",
+          "a": "Firmy nearshoring'owe, e-commerce z obsługą rynku DE/PL, a także firmy logistyczne szukające bazy na korytarzu A2. Dobieramy najemcę pod profil obiektu i jego lokalizację."
+        },
+        {
+          "q": "Jak rozliczana jest komercjalizacja?",
+          "a": "W modelu success fee — wynagrodzenie należne wyłącznie za zakontraktowaną i wypełnioną przestrzeń."
+        },
+        {
+          "q": "Czy docieracie do firm z zagranicy szukających bazy w Poznaniu?",
+          "a": "Tak. Firmy zagraniczne planujące nearshoring lub dystrybucję przy A2 to jeden z kluczowych segmentów popytu w regionie poznańskim."
+        },
+        {
+          "q": "Jak szybko można pozyskać najemcę w Poznaniu?",
+          "a": "Przy profilu nearshoring/e-commerce zazwyczaj w ciągu kilku tygodni uzyskujemy pierwsze zainteresowanie. Czas zależy od wolumenu i profilu obiektu."
+        }
+      ]
+    },
+    {
+      "slug": "komercjalizacja-powierzchni-warszawa",
+      "heroImage": "/services/vologis-uslugi-komercjalizacja-powierzchni-magazynowej.webp",
+      "parent": "komercjalizacja-i-sprzedaz",
+      "parent_name": "Komercjalizacja i sprzedaż",
+      "category": "Komercjalizacja i sprzedaż",
+      "industry": "komercjalizacja powierzchni Warszawa",
+      "title": "Komercjalizacja powierzchni magazynowych — Warszawa | Vologis",
+      "description": "Masz wolne wolumeny paletowe w Warszawie lub okolicach? Pozyskujemy dla Ciebie najemców w modelu success fee — dostęp do aktywnych firm szukających magazynów w aglomeracji warszawskiej.",
+      "eyebrow": "KOMERCJALIZACJA POWIERZCHNI · WARSZAWA",
+      "h1": "Komercjalizacja wolnych powierzchni magazynowych — Warszawa",
+      "intro": "Warszawski rynek magazynowy generuje stały popyt ze strony firm e-commerce, logistyki last-mile i firm rozwijających dystrybucję na największy rynek konsumencki w Polsce. Jeśli masz wolne wolumeny paletowe w aglomeracji warszawskiej, jest do czego docierać — ale pozyskiwanie najemców wymaga aktywnej sprzedaży, znajomości poszukujących firm i czasu na negocjacje. Przejmujemy ten ciężar, działając jak Twój zewnętrzny dział handlowy w modelu success fee.",
+      "problem_heading": "Wolna przestrzeń w Warszawie to utracony przychód w najdroższym rynku w Polsce",
+      "problem_text": "Utrzymanie obiektu w aglomeracji warszawskiej generuje wysokie koszty stałe — mediów, pracownicze, ochrony — niezależnie od stopnia obłożenia. Każdy miesiąc z wolnym wolumenem to koszt, który nie wraca. Dotarcie do aktywnych najemców na rynku, gdzie większość transakcji odbywa się przez doradców lub relacje, wymaga czasu i sieci kontaktów. Vologis przejmuje ten proces w modelu success fee — płacisz wyłącznie za zakontraktowaną i wypełnioną przestrzeń.",
+      "scope": [
+        {
+          "title": "Pozyskiwanie najemców w aglomeracji",
+          "text": "Docieramy do firm aktywnie szukających magazynów w Warszawie i okolicznych strefach — e-commerce, logistyka, dystrybucja."
+        },
+        {
+          "title": "Zewnętrzny dział handlowy",
+          "text": "Działamy jak Twój wyspecjalizowany zespół sprzedaży, bez kosztu utrzymania etatu."
+        },
+        {
+          "title": "Model success fee",
+          "text": "Wynagrodzenie wyłącznie za zakontraktowaną i wypełnioną przestrzeń. Bez ryzyka stałego kosztu."
+        },
+        {
+          "title": "Znajomość popytu warszawskiego",
+          "text": "Znamy aktywne firmy szukające magazynów w aglomeracji i dopasowujemy najemcę do profilu Twojego obiektu."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Operatorzy z wolną przestrzenią w Warszawie",
+          "text": "Gdy masz nieobsadzone wolumeny w strefach Warszawa I, II lub III."
+        },
+        {
+          "title": "Właściciele obiektów magazynowych",
+          "text": "Gdy zarządzasz obiektem w aglomeracji warszawskiej i potrzebujesz sprawnego pozyskania najemcy."
+        },
+        {
+          "title": "Deweloperzy i zarządcy",
+          "text": "Gdy nowo oddany obiekt w okolicach Warszawy wymaga komercjalizacji."
+        }
+      ],
+      "summary": "Komercjalizacja wolnych powierzchni magazynowych w Warszawie to usługa, w której Vologis aktywnie pozyskuje najemców na wolne wolumeny w aglomeracji warszawskiej — docierając do firm e-commerce, logistycznych i dystrybucyjnych szukających przestrzeni na największym rynku konsumenckim w Polsce. Model success fee oznacza, że właściciel lub operator płaci wyłącznie za zakontraktowaną i faktycznie wypełnioną przestrzeń.",
+      "faq": [
+        {
+          "q": "Jaki profil najemców szukacie dla obiektów w Warszawie?",
+          "a": "W Warszawie dominują najemcy z segmentu e-commerce i last-mile, logistyki miejskiej oraz firm rozwijających dystrybucję na rynek stołeczny. Dobieramy najemcę pod profil obiektu — jego lokalizację, standard i możliwości operacyjne."
+        },
+        {
+          "q": "Jak rozliczana jest komercjalizacja?",
+          "a": "W modelu success fee — wynagrodzenie należne wyłącznie za faktycznie zakontraktowaną i wypełnioną przestrzeń. Nie ponosisz stałego kosztu ani ryzyka, jeśli powierzchnia nie zostanie zapełniona."
+        },
+        {
+          "q": "Czy obejmujecie obiekty poza centrum Warszawy?",
+          "a": "Tak. Działamy w całej aglomeracji warszawskiej, w tym w strefach wzdłuż A2, S2 i S8 — w Pruszkowie, Ożarowie, Grodzisku, Błoniu i innych lokalizacjach podmiejskich."
+        },
+        {
+          "q": "Jak długo trwa pozyskanie najemcy w Warszawie?",
+          "a": "Zależy od wolumenu, profilu obiektu i wymagań branżowych. Przy typowych wolumenach w atrakcyjnych lokalizacjach pierwsze zainteresowanie uzyskujemy zwykle w ciągu kilku tygodni."
+        }
+      ]
+    },
+    {
+      "slug": "komercjalizacja-powierzchni-katowice",
+      "heroImage": "/services/vologis-uslugi-komercjalizacja-powierzchni-magazynowej.webp",
+      "parent": "komercjalizacja-i-sprzedaz",
+      "parent_name": "Komercjalizacja i sprzedaż",
+      "category": "Komercjalizacja i sprzedaż",
+      "industry": "komercjalizacja powierzchni Katowice",
+      "title": "Komercjalizacja powierzchni magazynowych — Katowice | Vologis",
+      "description": "Rynek katowickiego węzła przemysłowego — pomagamy operatorom pozyskiwać najemców z sektora automotive, przemysłowego i logistyki tranzytowej na Górnym Śląsku. Model success fee.",
+      "eyebrow": "KOMERCJALIZACJA POWIERZCHNI · KATOWICE",
+      "h1": "Komercjalizacja wolnych powierzchni magazynowych — Katowice",
+      "intro": "Górny Śląsk to największy hub przemysłowy i tranzytowy południa Polski — z aktywnym rynkiem wynajmu powyżej 1 mln m² i dominującym sektorem automotive i produkcyjnym. Dla operatorów z wolnymi wolumenami oznacza to specyficzny rynek: najemcy z przemysłu i automotive mają precyzyjne wymagania techniczne, a dotarcie do nich wymaga znajomości branży i sieci kontaktów przemysłowych. Przejmujemy komercjalizację w modelu success fee, dobierając najemców pod profil Twojego obiektu i jego możliwości techniczne.",
+      "problem_heading": "Katowickie obiekty magazynowe obsługują przemysł — pozyskanie właściwego najemcy wymaga branżowej wiedzy",
+      "problem_text": "Na Górnym Śląsku właściwy najemca to nie każdy poszukujący — to firma, której wymagania techniczne (nośność podłogi, wysokość hali, certyfikaty) pasują do Twojego obiektu. Pozyskiwanie najemców przemysłowych i automotive wymaga aktywnego dotarcia do właściwego segmentu i weryfikacji wymagań przed negocjacjami. Podejście 'ogłoszenie na portalu' na tym rynku daje gorsze rezultaty niż na rynkach konsumenckich.",
+      "scope": [
+        {
+          "title": "Pozyskiwanie najemców przemysłowych i automotive",
+          "text": "Docieramy do firm z sektora automotive, produkcyjnego i logistyki kontraktowej szukających przestrzeni na Górnym Śląsku."
+        },
+        {
+          "title": "Weryfikacja dopasowania technicznego",
+          "text": "Przed rozmowami kwalifikujemy potencjalnych najemców pod wymagania techniczne Twojego obiektu — oszczędzamy czas obu stronom."
+        },
+        {
+          "title": "Model success fee",
+          "text": "Wynagrodzenie wyłącznie za zakontraktowaną i wypełnioną przestrzeń."
+        },
+        {
+          "title": "Znajomość popytu katowickiego",
+          "text": "Znamy specyfikę popytu przemysłowego w strefach Górnego Śląska przy A4/A1 i dopasowujemy najemcę do możliwości technicznych obiektu."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Operatorzy z wolną przestrzenią w strefach katowickich",
+          "text": "Gdy masz nieobsadzone wolumeny w obiekcie przy A4/A1 na Górnym Śląsku."
+        },
+        {
+          "title": "Właściciele obiektów przemysłowych",
+          "text": "Gdy obiekt ma parametry techniczne dla sektora automotive lub produkcyjnego i szukasz dopasowanego najemcy."
+        },
+        {
+          "title": "Deweloperzy przy A4/A1",
+          "text": "Gdy nowy obiekt w strefie śląskiej wymaga aktywnej komercjalizacji w sektorze przemysłowym."
+        }
+      ],
+      "summary": "Komercjalizacja wolnych powierzchni magazynowych w Katowicach to usługa, w której Vologis pozyskuje najemców z sektora automotive, przemysłowego i logistyki tranzytowej dla operatorów na Górnym Śląsku — dopasowując ich do profilu technicznego obiektu i jego lokalizacji przy A4/A1. Model success fee oznacza, że operator płaci wyłącznie za zakontraktowaną i faktycznie wypełnioną przestrzeń.",
+      "faq": [
+        {
+          "q": "Jaki profil najemców szukacie dla obiektów na Górnym Śląsku?",
+          "a": "Firmy z sektora automotive, produkcyjnego i logistyki kontraktowej — które mają specyficzne wymagania techniczne i szukają obiektów dopasowanych do ich profilu. Dobieramy najemcę pod parametry Twojego obiektu."
+        },
+        {
+          "q": "Jak rozliczana jest komercjalizacja?",
+          "a": "W modelu success fee — wynagrodzenie należne wyłącznie za zakontraktowaną i wypełnioną przestrzeń."
+        },
+        {
+          "q": "Czy specjalizujecie się w obiektach automotive?",
+          "a": "Tak. Znamy wymagania sektora automotive — nośność podłogi, certyfikaty, logistyka sekwencyjna — i dobieramy najemców, którzy faktycznie mogą korzystać z Twojego obiektu."
+        },
+        {
+          "q": "Jak szybko można pozyskać najemcę w Katowicach?",
+          "a": "Przy specjalistycznym profilu przemysłowym czas może być dłuższy niż w standardowych obiektach, bo kwalifikujemy wymagania techniczne. Aktywna komercjalizacja skraca ten czas w stosunku do pasywnego czekania na zapytania."
+        }
+      ]
+    },
+    {
       "slug": "market-entry-polska",
       "heroImage": "/services/vologis-uslugi-market-entry-polska.webp",
       "parent": "komercjalizacja-i-sprzedaz",
@@ -2051,402 +2843,6 @@
           "q": "Czy oszczędzę czas względem własnego przetargu?",
           "a": "Tak. Przejmujemy mapowanie wymagań, dotarcie do operatorów i porównanie ofert, skracając proces, który prowadzony samodzielnie pochłania czas zespołu i często nie dociera do najlepszych operatorów."
         }
-      ]
-    },
-    {
-      "slug": "magazyn-do-wynajecia-warszawa",
-      "heroImage": "/services/vologis-uslugi-komercjalizacja-i-sprzedaz.webp",
-      "parent": "komercjalizacja-i-sprzedaz",
-      "parent_name": "Komercjalizacja i sprzedaż",
-      "category": "Komercjalizacja i sprzedaż",
-      "industry": "powierzchnie magazynowe Warszawa",
-      "title": "Magazyn do wynajęcia Warszawa — dobór i negocjacje | Vologis",
-      "description": "Szukasz magazynu do wynajęcia w Warszawie? Niezależny doradca najemcy — dobieramy obiekt, negocjujemy stawki bez prowizji od wynajmującego. Largest wybór, optymalny koszt.",
-      "eyebrow": "MAGAZYN DO WYNAJĘCIA · WARSZAWA",
-      "h1": "Magazyn do wynajęcia — Warszawa",
-      "intro": "Warszawski rynek magazynowy to największy rynek w Polsce — ponad 1 mln m² wynajętej powierzchni, sieć obiektów wzdłuż A2, S2 i S8 oraz rozwijający się segment last-mile w granicach aglomeracji. To oznacza największy wybór w kraju, ale zarazem dużą rozpiętość stawek: magazyny miejskie i obiekty last-mile wyceniane są nawet 4–8,25 EUR/m²/mies., podczas gdy strefy zewnętrzne oferują znacznie niższe koszty. Bez znajomości rynku łatwo przepłacić lub wybrać obiekt, który nie pasuje do logistyki dostaw. Vologis działa wyłącznie po stronie najemcy — bez prowizji od wynajmujących — i negocjuje warunki, mając dostęp do rzeczywistych stawek rynkowych.",
-      "problem_heading": "Największy wybór, ale prime lokalizacje w Warszawie są drogie — bez doradcy można przepłacić",
-      "problem_text": "Warszawa to rynek, na którym magazyny klasy A w strefach miejskich osiągają stawki znacznie powyżej średniej krajowej, a lokalizacje last-mile w granicach aglomeracji są dostępne w ograniczonej liczbie. Firmy wchodzące na rynek lub zmieniające obiekt często operują na poziomie stawek ofertowych, nie rynkowych — co przy kontraktach wieloletnich przekłada się na realne nadpłaty. Doradca znający lokalne benchmarki i relacje z właścicielami obiektów negocjuje z pozycji wiedzy, nie deklaracji.",
-      "scope": [
-        {"title": "Dobór magazynu pod wymagania", "text": "Identyfikujemy obiekty dopasowane do Twojego profilu: typ składowania, wolumen, standard techniczny, lokalizacja w aglomeracji."},
-        {"title": "Weryfikacja obiektów i warunków", "text": "Sprawdzamy stan techniczny, zgodność z deklaracjami, rzeczywiste koszty eksploatacji i elastyczność wynajmującego — zanim wejdziesz w negocjacje."},
-        {"title": "Negocjacje w imieniu najemcy — bez prowizji od wynajmującego", "text": "Negocjujemy stawki, zachęty i warunki umowy w Twoim imieniu. Nie pobieramy prowizji od właściciela — zarabiamy na opłacie doradczej od Ciebie, co eliminuje konflikt interesów."},
-        {"title": "Znajomość rynku warszawskiego", "text": "Orientujemy się w strefach Warszawa I, II i III, obiektach miejskich klasy A oraz dostępności w segmencie last-mile — i dobieramy lokalizację pod Twój model dystrybucji."}
-      ],
-      "for_who": [
-        {"title": "Firmy wchodzące do Warszawy", "text": "Gdy potrzebujesz magazynu w centrum kraju lub w zasięgu największego rynku konsumenckiego w Polsce."},
-        {"title": "Sieci e-commerce i last-mile", "text": "Gdy liczy się czas dostawy i lokalizacja w granicach aglomeracji, a nie tylko cena za metr."},
-        {"title": "Firmy relokujące magazyn", "text": "Gdy obecny obiekt nie odpowiada już wolumenowi lub lokalizacji, a renegocjacja umowy nie jest możliwa."}
-      ],
-      "summary": "Magazyn do wynajęcia w Warszawie — Vologis działa jako niezależny doradca najemcy na największym rynku magazynowym w Polsce. Dobieramy obiekty w strefach Warszawa I–III i segmencie last-mile, negocjujemy stawki z dostępem do rzeczywistych benchmarków rynkowych (orientacyjnie 4,0–8,25 EUR/m²/mies. w zależności od strefy i standardu) i nie pobieramy prowizji od wynajmujących — co eliminuje konflikt interesów.",
-      "faq": [
-        {"q": "Jakie magazyny są dostępne w Warszawie?", "a": "Warszawa oferuje magazyny klasy A wzdłuż A2, S2 i S8 (strefy Warszawa I, II i III), obiekty last-mile w granicach aglomeracji, a także mniejsze moduły w strefach podmiejskich. Standard techniczny i lokalizacja różnią się znacznie — od wielkoformatowych hal dystrybucyjnych po miejskie obiekty cross-dock. Dopasowujemy typ i lokalizację do Twoich wymagań operacyjnych."},
-        {"q": "Czy pobieracie prowizję od wynajmującego?", "a": "Nie. Działamy jako niezależny doradca najemcy — nasza opłata pochodzi od Ciebie, nie od właściciela nieruchomości ani operatora. To eliminuje konflikt interesów: nasze zalecenie jest zawsze po Twojej stronie, nigdy po stronie wynajmującego."},
-        {"q": "Ile kosztuje wynajem magazynu w Warszawie?", "a": "Orientacyjnie stawki w Warszawie wahają się od ok. 4,0 EUR/m²/mies. w strefach zewnętrznych do 8,25 EUR/m²/mies. w obiektach miejskich i last-mile — zależy od standardu, lokalizacji i wynegocjowanych warunków. Stawki ofertowe często odbiegają od rzeczywistych stawek transakcyjnych, które znamy z negocjacji."},
-        {"q": "Jak szybko znajdziecie magazyn w Warszawie?", "a": "W zależności od wymagań — przy standardowych parametrach wstępne propozycje przygotowujemy zwykle w ciągu 1–2 tygodni. Weryfikacja i negocjacje zajmują kolejne 2–4 tygodnie. Przy pilnych potrzebach działamy szybciej."}
-      ]
-    },
-    {
-      "slug": "magazyn-do-wynajecia-wroclaw",
-      "heroImage": "/services/vologis-uslugi-komercjalizacja-i-sprzedaz.webp",
-      "parent": "komercjalizacja-i-sprzedaz",
-      "parent_name": "Komercjalizacja i sprzedaż",
-      "category": "Komercjalizacja i sprzedaż",
-      "industry": "powierzchnie magazynowe Wrocław",
-      "title": "Magazyn do wynajęcia Wrocław — dobór i negocjacje | Vologis",
-      "description": "Szukasz magazynu do wynajęcia we Wrocławiu? Wysoka podaż daje realną siłę negocjacyjną — niezależny doradca najemcy, bez prowizji od wynajmującego. A4/A8, rynek DE i CZ.",
-      "eyebrow": "MAGAZYN DO WYNAJĘCIA · WROCŁAW",
-      "h1": "Magazyn do wynajęcia — Wrocław",
-      "intro": "Wrocław to trzeci co do wielkości regionalny rynek magazynowy w Polsce, z dynamicznie rosnącą podażą nowych obiektów w węźle A4/A8. Wysoki wskaźnik pustostanów w strefie Polska Zachodnia/Wrocław przekłada się na realną siłę negocjacyjną po stronie najemcy: właściciele obiektów są elastyczni, a rynek zachęt — rent-free, fit-out contributions — jest aktywny. Granica z Niemcami i Czechami czyni Wrocław kluczowym hubem dla dystrybucji do Europy Zachodniej. Vologis negocjuje w imieniu najemcy, bez prowizji od wynajmującego — i w obecnych warunkach rynkowych ma realne pole do uzyskania warunków lepszych niż stawki ofertowe.",
-      "problem_heading": "Wysoka podaż i duże pustostany oznaczają silną pozycję negocjacyjną — ale tylko jeśli ją właściwie wykorzystasz",
-      "problem_text": "Wrocławski rynek magazynowy jest aktualnie rynkiem najemcy: wysoka nowa podaż oznacza, że wynajmujący konkurują o kontrakty. To szansa na wynegocjowanie stawek poniżej stawek ofertowych, wydłużonego okresu rent-free lub wkładu właściciela w aranżację. Jednak bez znajomości lokalnego benchmarku łatwo wejść w negocjacje od złej pozycji — i wyjść z warunkami, które elastyczny właściciel mógłby poprawić.",
-      "scope": [
-        {"title": "Dobór magazynu pod wymagania", "text": "Identyfikujemy obiekty dopasowane do Twojego profilu: typ składowania, wolumen, standard techniczny, lokalizacja w aglomeracji."},
-        {"title": "Weryfikacja obiektów i warunków", "text": "Sprawdzamy stan techniczny, zgodność z deklaracjami, rzeczywiste koszty eksploatacji i elastyczność wynajmującego — zanim wejdziesz w negocjacje."},
-        {"title": "Negocjacje w imieniu najemcy — bez prowizji od wynajmującego", "text": "Negocjujemy stawki, zachęty i warunki umowy w Twoim imieniu. Nie pobieramy prowizji od właściciela — zarabiamy na opłacie doradczej od Ciebie, co eliminuje konflikt interesów."},
-        {"title": "Znajomość rynku wrocławskiego", "text": "Znamy lokalne strefy, dostępne obiekty i standardy negocjacyjne. Wiemy, gdzie jest realne pole do uzyskania zachęt — i potrafimy je wynegocjować w Twoim imieniu."}
-      ],
-      "for_who": [
-        {"title": "Firmy wchodzące do strefy A4/A8", "text": "Gdy potrzebujesz magazynu przy zachodniej bramie Polski — z dostępem do rynków DE i CZ."},
-        {"title": "Firmy szukające korzystnych warunków", "text": "Gdy wiesz, że rynek jest elastyczny, ale chcesz negocjować z wiedzą, nie intuicją."},
-        {"title": "Firmy relokujące magazyn z innych regionów", "text": "Gdy przenosisz operacje do Wrocławia i szukasz optymalnej lokalizacji w sieci A4/A8."}
-      ],
-      "summary": "Magazyn do wynajęcia we Wrocławiu — Vologis działa jako niezależny doradca najemcy na rynku z jednym z najwyższych wskaźników pustostanów w Polsce. Wysoka nowa podaż oznacza realną siłę negocjacyjną po stronie najemcy: negocjujemy stawki, rent-free i warunki umowy w Twoim imieniu, bez prowizji od wynajmujących, z dostępem do obiektów w węźle A4/A8 i bliskości granicy DE/CZ.",
-      "faq": [
-        {"q": "Jakie magazyny są dostępne we Wrocławiu?", "a": "Wrocław dysponuje szeroką ofertą obiektów klasy A wzdłuż A4 i A8, w tym w Bielanach Wrocławskich i okolicach — oraz mniejszymi modułami w strefach przemysłowych. Wysoka nowa podaż oznacza realną dostępność i elastyczność właścicieli w zakresie warunków i zachęt."},
-        {"q": "Czy pobieracie prowizję od wynajmującego?", "a": "Nie. Działamy jako niezależny doradca najemcy — nasza opłata pochodzi od Ciebie, nie od właściciela nieruchomości ani operatora. To eliminuje konflikt interesów: nasze zalecenie jest zawsze po Twojej stronie, nigdy po stronie wynajmującego."},
-        {"q": "Ile kosztuje wynajem magazynu we Wrocławiu?", "a": "Orientacyjne stawki w regionie wrocławskim zależą od standardu obiektu i lokalizacji. Wysoka podaż sprawia, że stawki transakcyjne często odbiegają od ofertowych — realne pole do negocjacji jest jedno z największych wśród głównych rynków w Polsce."},
-        {"q": "Jak szybko znajdziecie magazyn we Wrocławiu?", "a": "Przy dobrej dostępności obiektów na tym rynku wstępne propozycje przygotowujemy zwykle w ciągu 1–2 tygodni. Pełny proces — weryfikacja i negocjacje — zajmuje zwykle 3–5 tygodni."}
-      ]
-    },
-    {
-      "slug": "komercjalizacja-powierzchni-wroclaw",
-      "heroImage": "/services/vologis-uslugi-komercjalizacja-powierzchni-magazynowej.webp",
-      "parent": "komercjalizacja-i-sprzedaz",
-      "parent_name": "Komercjalizacja i sprzedaż",
-      "category": "Komercjalizacja i sprzedaż",
-      "industry": "komercjalizacja powierzchni Wrocław",
-      "title": "Komercjalizacja powierzchni magazynowych — Wrocław | Vologis",
-      "description": "Wysoka podaż nowych obiektów we Wrocławiu zwiększa konkurencję o najemców. Pomagamy operatorom wyróżnić się i zakontraktować wolną powierzchnię — model success fee, bez kosztów stałych.",
-      "eyebrow": "KOMERCJALIZACJA POWIERZCHNI · WROCŁAW",
-      "h1": "Komercjalizacja wolnych powierzchni magazynowych — Wrocław",
-      "intro": "Wrocław jest jednym z rynków z najwyższą nową podażą magazynową w Polsce — co dla najemców jest szansą, ale dla operatorów z wolnymi wolumenami oznacza rosnącą konkurencję o każdego najemcę. W rynku, gdzie podobnych obiektów jest dużo, wyróżnienie się i dotarcie do aktywnych poszukujących wymaga profesjonalnej, aktywnej sprzedaży — nie tylko wystawienia oferty na portalu. Przejmujemy proces komercjalizacji w modelu success fee: płacisz za zakontraktowaną i wypełnioną przestrzeń, nie za sam proces poszukiwania.",
-      "problem_heading": "Wysoka podaż we Wrocławiu = konkurencja o najemców. Operator bez aktywnej sprzedaży jest w słabszej pozycji",
-      "problem_text": "Gdy na rynku jest wiele podobnych obiektów, najemcy mają wybór — i wybierają tych, którzy do nich dotarli. Pasywne czekanie na zapytania z portali to strategia, która spowalnia zapełnianie pustostanów. Aktywna komercjalizacja — z wiedzą o tym, które firmy aktywnie szukają i jakich warunków oczekują — daje przewagę nad innymi operatorami rywalizującymi o tych samych najemców.",
-      "scope": [
-        {"title": "Aktywna akwizycja najemców", "text": "Docieramy do firm szukających magazynów w rejonie Wrocławia i A4/A8 — bez czekania na zapytania z portali."},
-        {"title": "Pozycjonowanie Twojej oferty", "text": "Pomagamy wyróżnić obiekt w rynku z wysoką podażą — parametrami, lokalizacją i warunkami kontraktu."},
-        {"title": "Model success fee", "text": "Wynagrodzenie wyłącznie za zakontraktowaną i wypełnioną przestrzeń."},
-        {"title": "Znajomość popytu wrocławskiego", "text": "Znamy firmy aktywnie szukające magazynów w regionie i dopasowujemy profil najemcy do Twojego obiektu i jego lokalizacji przy A4/A8."}
-      ],
-      "for_who": [
-        {"title": "Operatorzy z wolnymi wolumenami przy A4/A8", "text": "Gdy masz nieobsadzoną przestrzeń w obiekcie wrocławskim lub podmiejskim."},
-        {"title": "Właściciele obiektów w rynku wysokiej podaży", "text": "Gdy wysokie pustostany w regionie oznaczają, że pasywna obecność na portalach to za mało."},
-        {"title": "Deweloperzy nowych obiektów", "text": "Gdy nowy obiekt wchodzi na rynek wrocławski i wymaga szybkiej komercjalizacji."}
-      ],
-      "summary": "Komercjalizacja wolnych powierzchni magazynowych we Wrocławiu to usługa, w której Vologis aktywnie pozyskuje najemców dla operatorów w warunkach wysokiej nowej podaży — gdzie konkurencja o najemców jest szczególnie intensywna. Działamy jak zewnętrzny dział handlowy w modelu success fee, docierając do firm szukających magazynów przy A4/A8 i wyróżniając Twój obiekt w rynku z wieloma dostępnymi opcjami.",
-      "faq": [
-        {"q": "Dlaczego komercjalizacja jest szczególnie ważna we Wrocławiu?", "a": "Wysoka nowa podaż oznacza, że operatorzy konkurują o tych samych najemców. Aktywna sprzedaż — dotarcie do poszukujących firm przed konkurencją — ma realną wartość w rynku z wieloma dostępnymi obiektami."},
-        {"q": "Jak rozliczana jest komercjalizacja?", "a": "W modelu success fee — wynagrodzenie należne wyłącznie za zakontraktowaną i wypełnioną przestrzeń."},
-        {"q": "Jakie firmy szukają magazynów we Wrocławiu?", "a": "Firmy nearshoring'owe, logistyczne i e-commerce z obsługą rynków DE i CZ, a także firmy przemysłowe przy A4/A8. Dobieramy najemcę pod profil Twojego obiektu."},
-        {"q": "Jak szybko można pozyskać najemcę we Wrocławiu?", "a": "Przy aktywnej komercjalizacji pierwsze zainteresowanie pojawiamy się zwykle w ciągu kilku tygodni. Czas zależy od wolumenu, profilu obiektu i wymagań branżowych."}
-      ]
-    },
-    {
-      "slug": "magazyn-do-wynajecia-poznan",
-      "heroImage": "/services/vologis-uslugi-komercjalizacja-i-sprzedaz.webp",
-      "parent": "komercjalizacja-i-sprzedaz",
-      "parent_name": "Komercjalizacja i sprzedaż",
-      "category": "Komercjalizacja i sprzedaż",
-      "industry": "powierzchnie magazynowe Poznań",
-      "title": "Magazyn do wynajęcia Poznań — dobór i negocjacje | Vologis",
-      "description": "Szukasz magazynu do wynajęcia w Poznaniu? Korytarz A2 Berlin–Warszawa — niezależny doradca najemcy, nearshoring i e-commerce, dobór i negocjacje bez prowizji od wynajmującego.",
-      "eyebrow": "MAGAZYN DO WYNAJĘCIA · POZNAŃ",
-      "h1": "Magazyn do wynajęcia — Poznań",
-      "intro": "Poznań leży na korytarzu A2 Berlin–Warszawa — jednym z najbardziej uczęszczanych szlaków logistycznych w Polsce. To czyni go naturalnym hubem dla nearshoring'u, e-commerce z obsługą rynku zachodnioeuropejskiego i dystrybucji na linii wschód–zachód. Rosnąca aktywność najemców, szczególnie z sektora e-commerce i lekkiej produkcji, przekłada się na stałą aktywność rynku wynajmu. Vologis działa bez prowizji od wynajmujących i negocjuje warunki magazynu w Poznaniu wyłącznie w interesie najemcy — z dostępem do obiektów zarówno w strefach przemysłowych, jak i wzdłuż A2.",
-      "problem_heading": "Poznań jest atrakcyjny dla logistyki zachód–wschód — ale dobra lokalizacja przy A2 wymaga szybkiej decyzji",
-      "problem_text": "Lokalizacje bezpośrednio przy węźle A2 w okolicach Poznania cieszą się stałym zainteresowaniem, szczególnie ze strony firm e-commerce i nearshoringowych. Firmy wchodzące na rynek bez znajomości lokalnych stref i operatorów tracą czas na research, który doradca może skondensować do kilku rozmów — i wchodzą w negocjacje z pełnym obrazem dostępności i warunków rynkowych.",
-      "scope": [
-        {"title": "Dobór magazynu pod wymagania", "text": "Identyfikujemy obiekty dopasowane do Twojego profilu: typ składowania, wolumen, standard techniczny, lokalizacja w aglomeracji."},
-        {"title": "Weryfikacja obiektów i warunków", "text": "Sprawdzamy stan techniczny, zgodność z deklaracjami, rzeczywiste koszty eksploatacji i elastyczność wynajmującego — zanim wejdziesz w negocjacje."},
-        {"title": "Negocjacje w imieniu najemcy — bez prowizji od wynajmującego", "text": "Negocjujemy stawki, zachęty i warunki umowy w Twoim imieniu. Nie pobieramy prowizji od właściciela — zarabiamy na opłacie doradczej od Ciebie, co eliminuje konflikt interesów."},
-        {"title": "Znajomość rynku poznańskiego", "text": "Znamy dostępność w strefach przemysłowych i wzdłuż A2 — od obiektów klasy A po mniejsze moduły dla firm wchodzących na rynek."}
-      ],
-      "for_who": [
-        {"title": "Firmy nearshoring'owe", "text": "Gdy relokujesz procesy logistyczne z Europy Zachodniej i potrzebujesz bazy przy A2."},
-        {"title": "E-commerce z obsługą rynku DE/PL", "text": "Gdy Twoja logistyka obsługuje równolegle rynek polski i zachodnioeuropejski."},
-        {"title": "Firmy rozwijające dystrybucję w Polsce zachodniej", "text": "Gdy szukasz lokalizacji optymalnej dla obsługi klientów po obu stronach granicy DE/PL."}
-      ],
-      "summary": "Magazyn do wynajęcia w Poznaniu — Vologis działa jako niezależny doradca najemcy na korytarzu A2 Berlin–Warszawa. Dobieramy obiekty w strefach przemysłowych i przy A2, negocjujemy warunki wyłącznie w interesie najemcy i nie pobieramy prowizji od wynajmujących. Poznań to naturalny hub dla nearshoring'u i dystrybucji wschód–zachód — znamy lokalny rynek i działamy szybko.",
-      "faq": [
-        {"q": "Jakie magazyny są dostępne w Poznaniu?", "a": "W Poznaniu i okolicach dostępne są obiekty klasy A wzdłuż A2 (m.in. Swadzim, Tarnowo Podgórne, Komorniki) oraz w strefach przemysłowych aglomeracji. Oferta obejmuje zarówno duże moduły dla e-commerce i nearshoring, jak i mniejsze powierzchnie dla firm wchodzących na rynek."},
-        {"q": "Czy pobieracie prowizję od wynajmującego?", "a": "Nie. Działamy jako niezależny doradca najemcy — nasza opłata pochodzi od Ciebie, nie od właściciela nieruchomości ani operatora. To eliminuje konflikt interesów: nasze zalecenie jest zawsze po Twojej stronie, nigdy po stronie wynajmującego."},
-        {"q": "Ile kosztuje wynajem magazynu w Poznaniu?", "a": "Stawki wynajmu w regionie poznańskim zależą od standardu obiektu, lokalizacji przy A2 i wynegocjowanych warunków. Orientacyjne poziomy stawek dla obiektów klasy A są konkurencyjne względem Warszawy — podamy aktualne widełki po wstępnej analizie Twoich wymagań."},
-        {"q": "Jak szybko znajdziecie magazyn w Poznaniu?", "a": "Wstępne propozycje przygotowujemy zwykle w ciągu 1–2 tygodni. Pełny proces doboru i negocjacji zajmuje zazwyczaj 3–5 tygodni, w zależności od specyfiki wymagań."}
-      ]
-    },
-    {
-      "slug": "komercjalizacja-powierzchni-poznan",
-      "heroImage": "/services/vologis-uslugi-komercjalizacja-powierzchni-magazynowej.webp",
-      "parent": "komercjalizacja-i-sprzedaz",
-      "parent_name": "Komercjalizacja i sprzedaż",
-      "category": "Komercjalizacja i sprzedaż",
-      "industry": "komercjalizacja powierzchni Poznań",
-      "title": "Komercjalizacja powierzchni magazynowych — Poznań | Vologis",
-      "description": "Aktywny popyt nearshoring'owy i e-commerce przy A2 — pomagamy operatorom w Poznaniu pozyskiwać najemców na wolne wolumeny w modelu success fee.",
-      "eyebrow": "KOMERCJALIZACJA POWIERZCHNI · POZNAŃ",
-      "h1": "Komercjalizacja wolnych powierzchni magazynowych — Poznań",
-      "intro": "Poznań generuje stały popyt ze strony firm nearshoring'owych i e-commerce na korytarzu A2 Berlin–Warszawa. Dla operatorów z wolnymi wolumenami oznacza to aktywny rynek poszukujących — ale dotarcie do nich wymaga znajomości firm planujących wejście do regionu lub rozwijających operacje w Polsce zachodniej. Przejmujemy ten proces komercjalizacji w modelu success fee, docierając do najemców dopasowanych do profilu Twojego obiektu.",
-      "problem_heading": "Popyt nearshoring'owy w Poznaniu jest realny — ale nie pojawi się sam w skrzynce mailowej",
-      "problem_text": "Firmy nearshoring'owe i e-commerce rozbudowujące logistykę przy A2 rzadko trafiają przez portale ogłoszeniowe — decyzje o lokalizacji podejmują przez doradców, relacje i aktywne poszukiwania. Operator czekający na zapytania z portali może przegapić najemcę, który w tym samym czasie podpisał umowę z obiektem, który do niego aktywnie dotarł.",
-      "scope": [
-        {"title": "Pozyskiwanie najemców nearshoring i e-commerce", "text": "Docieramy do firm planujących ekspansję lub relokację na korytarz A2 — zanim wybiorą inny obiekt."},
-        {"title": "Zewnętrzny dział handlowy dla obiektu", "text": "Działamy jak Twój wyspecjalizowany zespół sprzedaży, bez kosztu utrzymania etatu."},
-        {"title": "Model success fee", "text": "Wynagrodzenie wyłącznie za zakontraktowaną i wypełnioną przestrzeń."},
-        {"title": "Znajomość popytu poznańskiego", "text": "Znamy firmy aktywnie szukające magazynów wzdłuż A2 i dopasowujemy najemcę pod profil Twojego obiektu."}
-      ],
-      "for_who": [
-        {"title": "Operatorzy z wolnymi wolumenami przy A2", "text": "Gdy masz nieobsadzoną przestrzeń w obiekcie poznańskim lub podmiejskim przy A2."},
-        {"title": "Właściciele obiektów szukający nearshoring'owych najemców", "text": "Gdy Twój obiekt jest dobrze skonfigurowany dla firm z Europy Zachodniej, ale nie docierasz do nich samodzielnie."},
-        {"title": "Deweloperzy nowych obiektów", "text": "Gdy nowy obiekt przy A2 wymaga sprawnej komercjalizacji."}
-      ],
-      "summary": "Komercjalizacja wolnych powierzchni magazynowych w Poznaniu to usługa, w której Vologis aktywnie pozyskuje najemców dla operatorów przy korytarzu A2 Berlin–Warszawa — docierając do firm nearshoring'owych i e-commerce planujących ekspansję w Polsce zachodniej. Model success fee oznacza, że operator płaci wyłącznie za zakontraktowaną i faktycznie wypełnioną przestrzeń.",
-      "faq": [
-        {"q": "Jaki profil najemców szukacie dla obiektów w Poznaniu?", "a": "Firmy nearshoring'owe, e-commerce z obsługą rynku DE/PL, a także firmy logistyczne szukające bazy na korytarzu A2. Dobieramy najemcę pod profil obiektu i jego lokalizację."},
-        {"q": "Jak rozliczana jest komercjalizacja?", "a": "W modelu success fee — wynagrodzenie należne wyłącznie za zakontraktowaną i wypełnioną przestrzeń."},
-        {"q": "Czy docieracie do firm z zagranicy szukających bazy w Poznaniu?", "a": "Tak. Firmy zagraniczne planujące nearshoring lub dystrybucję przy A2 to jeden z kluczowych segmentów popytu w regionie poznańskim."},
-        {"q": "Jak szybko można pozyskać najemcę w Poznaniu?", "a": "Przy profilu nearshoring/e-commerce zazwyczaj w ciągu kilku tygodni uzyskujemy pierwsze zainteresowanie. Czas zależy od wolumenu i profilu obiektu."}
-      ]
-    },
-    {
-      "slug": "magazyn-do-wynajecia-lodz",
-      "heroImage": "/services/vologis-uslugi-komercjalizacja-i-sprzedaz.webp",
-      "parent": "komercjalizacja-i-sprzedaz",
-      "parent_name": "Komercjalizacja i sprzedaż",
-      "category": "Komercjalizacja i sprzedaż",
-      "industry": "powierzchnie magazynowe Łódź",
-      "title": "Magazyn do wynajęcia Łódź — dobór i negocjacje | Vologis",
-      "description": "Szukasz magazynu do wynajęcia w Łodzi? Centrum Polski, przecięcie A1/A2 — niezależny doradca najemcy, orientacyjnie 3,6–4,6 EUR/m²/mies., bez prowizji od wynajmującego.",
-      "eyebrow": "MAGAZYN DO WYNAJĘCIA · ŁÓDŹ",
-      "h1": "Magazyn do wynajęcia — Łódź",
-      "intro": "Łódź to centrum Polski — dosłownie: przecięcie autostrad A1 (północ–południe) i A2 (wschód–zachód) daje możliwość dotarcia do niemal każdego miejsca w kraju w kilka godzin. To jeden z największych rynków magazynowych w Polsce, z łączną powierzchnią szacowaną na blisko 5 mln m², konkurencyjnymi stawkami wynajmu orientacyjnie w przedziale 3,6–4,6 EUR/m²/mies. i wskaźnikiem pustostanów (~9%), który daje realne pole do negocjacji. Dla firm szukających optymalnego kosztu dystrybucji krajowej Łódź jest trudna do pobicia. Vologis negocjuje wyłącznie w interesie najemcy — bez prowizji od wynajmujących.",
-      "problem_heading": "Łódź jest najtańszym hubem do dystrybucji krajowej — ale bez doradcy trudno ocenić, które warunki są naprawdę rynkowe",
-      "problem_text": "Rynek łódzki oferuje jedne z najniższych stawek magazynowych spośród głównych hubów logistycznych w Polsce, a wysoki wskaźnik pustostanów (~9%) oznacza, że właściciele obiektów mają motywację do negocjacji. Jednak rozpiętość stawek i jakości obiektów jest duża — obiekty klas A, B i B+ funkcjonują obok siebie, a stawki ofertowe nie zawsze odzwierciedlają rynek. Znajomość lokalnych benchmarków pozwala wynegocjować warunki znacznie poniżej stawki wyjściowej.",
-      "scope": [
-        {"title": "Dobór magazynu pod wymagania", "text": "Identyfikujemy obiekty dopasowane do Twojego profilu: typ składowania, wolumen, standard techniczny, lokalizacja w aglomeracji."},
-        {"title": "Weryfikacja obiektów i warunków", "text": "Sprawdzamy stan techniczny, zgodność z deklaracjami, rzeczywiste koszty eksploatacji i elastyczność wynajmującego — zanim wejdziesz w negocjacje."},
-        {"title": "Negocjacje w imieniu najemcy — bez prowizji od wynajmującego", "text": "Negocjujemy stawki, zachęty i warunki umowy w Twoim imieniu. Nie pobieramy prowizji od właściciela — zarabiamy na opłacie doradczej od Ciebie, co eliminuje konflikt interesów."},
-        {"title": "Znajomość rynku łódzkiego", "text": "Znamy strefy przemysłowe Łodzi i okolicznych gmin, standardy obiektów i rzeczywiste poziomy stawek — i dobieramy obiekt, który optymalizuje koszt dystrybucji dla całej Polski."}
-      ],
-      "for_who": [
-        {"title": "Firmy szukające centralnej bazy dystrybucji krajowej", "text": "Gdy priorytetem jest dotarcie do całej Polski przy optymalnym koszcie transportu i wynajmu."},
-        {"title": "Firmy wchodzące na rynek PL", "text": "Gdy Łódź jest naturalną bazą dla magazynu ogólnopolskiego."},
-        {"title": "Firmy optymalizujące koszty logistyki", "text": "Gdy obecna lokalizacja generuje za wysokie koszty w relacji do zasięgu dystrybucji."}
-      ],
-      "summary": "Magazyn do wynajęcia w Łodzi — Vologis działa jako niezależny doradca najemcy na jednym z największych i najtańszych rynków magazynowych w Polsce. Łódź, z powierzchnią ~5 mln m² i orientacyjnymi stawkami 3,6–4,6 EUR/m²/mies., to optymalny hub dla dystrybucji ogólnopolskiej — a wskaźnik pustostanów (~9%) daje realne pole do negocjacji. Działamy bez prowizji od wynajmujących.",
-      "faq": [
-        {"q": "Jakie magazyny są dostępne w Łodzi?", "a": "Łódź oferuje szeroki wybór obiektów klasy A, B i B+ w strefach przemysłowych aglomeracji i wzdłuż A1 i A2. Wysoka dostępność i zróżnicowany standard oznaczają możliwość doboru obiektu optymalnego zarówno pod względem kosztów, jak i parametrów technicznych."},
-        {"q": "Czy pobieracie prowizję od wynajmującego?", "a": "Nie. Działamy jako niezależny doradca najemcy — nasza opłata pochodzi od Ciebie, nie od właściciela nieruchomości ani operatora. To eliminuje konflikt interesów: nasze zalecenie jest zawsze po Twojej stronie, nigdy po stronie wynajmującego."},
-        {"q": "Ile kosztuje wynajem magazynu w Łodzi?", "a": "Orientacyjnie stawki w Łodzi wahają się w przedziale 3,6–4,6 EUR/m²/mies. — zależnie od standardu obiektu, lokalizacji i wynegocjowanych warunków. To jedne z bardziej konkurencyjnych stawek wśród głównych hubów logistycznych w Polsce. Stawki ofertowe często można poprawić w negocjacjach przy znajomości rynkowych benchmarków."},
-        {"q": "Jak szybko znajdziecie magazyn w Łodzi?", "a": "Przy dobrej dostępności obiektów w Łodzi wstępne propozycje przygotowujemy zwykle w ciągu 1–2 tygodni. Pełny proces — weryfikacja i negocjacje — zajmuje standardowo 3–5 tygodni."}
-      ]
-    },
-    {
-      "slug": "magazyn-do-wynajecia-krakow",
-      "heroImage": "/services/vologis-uslugi-komercjalizacja-i-sprzedaz.webp",
-      "parent": "komercjalizacja-i-sprzedaz",
-      "parent_name": "Komercjalizacja i sprzedaż",
-      "category": "Komercjalizacja i sprzedaż",
-      "industry": "powierzchnie magazynowe Kraków",
-      "title": "Magazyn do wynajęcia Kraków — dobór i negocjacje | Vologis",
-      "description": "Szukasz magazynu do wynajęcia w Krakowie? Niskie pustostany (~4,3%) — niezależny doradca z dostępem do rynku off-market, dobór i negocjacje bez prowizji od wynajmującego.",
-      "eyebrow": "MAGAZYN DO WYNAJĘCIA · KRAKÓW",
-      "h1": "Magazyn do wynajęcia — Kraków",
-      "intro": "Kraków oferuje dostęp do silnego rynku konsumenckiego Małopolski i bliskość granicy słowackiej, ale pod względem dostępności powierzchni magazynowej jest jednym z najtrudniejszych rynków w Polsce. Wskaźnik pustostanów należy do najniższych w kraju (~4,3%), a stawki miejskie odzwierciedlają tę rzadkość. Znalezienie odpowiedniego magazynu w Krakowie lub bezpośredniej okolicy wymaga znajomości rynku i aktywnych kontaktów z właścicielami obiektów — portale ogłoszeniowe często nie odzwierciedlają rzeczywistej dostępności. Vologis działa wyłącznie po stronie najemcy, bez prowizji od wynajmujących.",
-      "problem_heading": "Niskie pustostany w Krakowie oznaczają, że najlepsze obiekty nie trafiają na portale — trzeba znać rynek",
-      "problem_text": "Krakowski rynek magazynowy jest rynkiem z ograniczoną dostępnością: przy pustostanach ~4,3% właściciele dobrych obiektów mogą sobie pozwolić na selektywność, a warunki rzadko są negocjowalne bez wiedzy o alternatywach. Firmy szukające samodzielnie ryzykują albo wydłużony czas poszukiwań, albo decyzję pod presją — bo 'dostępny jutro' niekoniecznie oznacza 'optymalny'. Doradca z dostępem do rynku off-market i znajomością bieżącej dostępności skraca ten proces i daje obiektywną ocenę ofert.",
-      "scope": [
-        {"title": "Dobór magazynu pod wymagania", "text": "Identyfikujemy obiekty dopasowane do Twojego profilu: typ składowania, wolumen, standard techniczny, lokalizacja w aglomeracji."},
-        {"title": "Weryfikacja obiektów i warunków", "text": "Sprawdzamy stan techniczny, zgodność z deklaracjami, rzeczywiste koszty eksploatacji i elastyczność wynajmującego — zanim wejdziesz w negocjacje."},
-        {"title": "Negocjacje w imieniu najemcy — bez prowizji od wynajmującego", "text": "Negocjujemy stawki, zachęty i warunki umowy w Twoim imieniu. Nie pobieramy prowizji od właściciela — zarabiamy na opłacie doradczej od Ciebie, co eliminuje konflikt interesów."},
-        {"title": "Znajomość rynku krakowskiego", "text": "Mamy dostęp do obiektów w Krakowie i okolicznych strefach przemysłowych. W napiętym rynku lokalny dostęp jest kluczowy — to różnica między oczekiwaniem a działaniem."}
-      ],
-      "for_who": [
-        {"title": "Firmy obsługujące rynek Małopolski i południa PL", "text": "Gdy potrzebujesz magazynu przy rynku krakowskim lub w korytarzu w stronę Śląska."},
-        {"title": "Firmy wchodzące do Krakowa", "text": "Gdy rynek jest atrakcyjny, ale ograniczona dostępność wymaga szybkiego i sprawnego działania."},
-        {"title": "Firmy relokujące operacje z innych miast", "text": "Gdy przenosisz magazyn do Krakowa i nie chcesz tracić czasu na samodzielny research w napiętym rynku."}
-      ],
-      "summary": "Magazyn do wynajęcia w Krakowie — Vologis działa jako niezależny doradca najemcy na jednym z najtrudniejszych rynków magazynowych w Polsce pod względem dostępności. Niskie pustostany (~4,3%) oznaczają, że najlepsze obiekty nie trafiają na portale — działamy z dostępem do rynku off-market i negocjujemy wyłącznie w interesie najemcy, bez prowizji od wynajmujących.",
-      "faq": [
-        {"q": "Jakie magazyny są dostępne w Krakowie?", "a": "Kraków i okolice oferują obiekty klasy A w strefach przemysłowych (m.in. Kraków Nowa Huta, okolice obwodnicy A4) oraz mniejsze moduły w strefach podmiejskich. Przy niskich pustostanach dostępność jest ograniczona — kluczowe jest dotarcie do obiektów przed oficjalnym ogłoszeniem na rynku."},
-        {"q": "Czy pobieracie prowizję od wynajmującego?", "a": "Nie. Działamy jako niezależny doradca najemcy — nasza opłata pochodzi od Ciebie, nie od właściciela nieruchomości ani operatora. To eliminuje konflikt interesów: nasze zalecenie jest zawsze po Twojej stronie, nigdy po stronie wynajmującego."},
-        {"q": "Ile kosztuje wynajem magazynu w Krakowie?", "a": "Krakowski rynek charakteryzuje się wyższymi stawkami niż przeciętna w Polsce ze względu na niskie pustostany — orientacyjne poziomy podamy po wstępnej analizie wymagań. W napiętym rynku negocjacje rzadko przynoszą dużą obniżkę, ale właściwy wybór obiektu i warunków ma kluczowe znaczenie."},
-        {"q": "Jak szybko znajdziecie magazyn w Krakowie?", "a": "W napiętym rynku czas poszukiwań jest dłuższy niż w miastach z wyższą dostępnością. Wstępne propozycje przygotowujemy zwykle w 2–3 tygodnie, a pełny proces zajmuje standardowo 4–6 tygodni. Działamy szybko — każdy tydzień ma znaczenie, gdy dostępność jest ograniczona."}
-      ]
-    },
-    {
-      "slug": "magazyn-do-wynajecia-gdansk",
-      "heroImage": "/services/vologis-uslugi-komercjalizacja-i-sprzedaz.webp",
-      "parent": "komercjalizacja-i-sprzedaz",
-      "parent_name": "Komercjalizacja i sprzedaż",
-      "category": "Komercjalizacja i sprzedaż",
-      "industry": "powierzchnie magazynowe Gdańsk",
-      "title": "Magazyn do wynajęcia Gdańsk — dobór i negocjacje | Vologis",
-      "description": "Szukasz magazynu do wynajęcia w Gdańsku? Hub portowy i importowy Trójmiasta — niezależny doradca najemcy, logistyka kontenerowa, dobór i negocjacje bez prowizji od wynajmującego.",
-      "eyebrow": "MAGAZYN DO WYNAJĘCIA · GDAŃSK",
-      "h1": "Magazyn do wynajęcia — Gdańsk",
-      "intro": "Trójmiasto jest głównym hubem portowym i importowym Polski — magazyny w okolicach Gdańska obsługują logistykę kontenerową, import i re-eksport do krajów bałtyckich i skandynawskich. W pierwszym kwartale Trójmiasto odpowiadało za około 18% nowych umów najmu na głównych rynkach regionalnych, co świadczy o wysokiej aktywności najemców. Stawki prime osiągają do 5,50 EUR/m²/mies. Vologis negocjuje wyłącznie po stronie najemcy — bez prowizji od właścicieli — i zna specyfikę obiektów zarówno w strefach portowych, jak i wzdłuż trójmiejskiej obwodnicy.",
-      "problem_heading": "Trójmiejski rynek rośnie szybko — dobra lokalizacja blisko portu lub autostrady wymaga znajomości lokalnych stref",
-      "problem_text": "Gdańsk i Trójmiasto to rynek, gdzie lokalizacja ma szczególne znaczenie: bliskość Portu Gdańsk i terminali kontenerowych przekłada się na stawki i dostępność w strefach portowych. Firmy logistyczne, importerzy i operatorzy obsługujący towary kontenerowe muszą znać specyfikę lokalnych stref, by wybrać obiekt naprawdę dopasowany do profilu operacyjnego — a nie tylko geometrycznie blisko portu.",
-      "scope": [
-        {"title": "Dobór magazynu pod wymagania", "text": "Identyfikujemy obiekty dopasowane do Twojego profilu: typ składowania, wolumen, standard techniczny, lokalizacja w aglomeracji."},
-        {"title": "Weryfikacja obiektów i warunków", "text": "Sprawdzamy stan techniczny, zgodność z deklaracjami, rzeczywiste koszty eksploatacji i elastyczność wynajmującego — zanim wejdziesz w negocjacje."},
-        {"title": "Negocjacje w imieniu najemcy — bez prowizji od wynajmującego", "text": "Negocjujemy stawki, zachęty i warunki umowy w Twoim imieniu. Nie pobieramy prowizji od właściciela — zarabiamy na opłacie doradczej od Ciebie, co eliminuje konflikt interesów."},
-        {"title": "Znajomość rynku trójmiejskiego", "text": "Znamy strefy portowe, obwodnicę trójmiejską i dostępność obiektów dla logistyki importowej i re-eksportu — i dobieramy lokalizację pod Twój profil operacyjny."}
-      ],
-      "for_who": [
-        {"title": "Importerzy i operatorzy kontenerowi", "text": "Gdy logistyka portowa, obsługa kontenerów i re-eksport to rdzeń Twojej operacji."},
-        {"title": "Firmy obsługujące rynki bałtyckie i skandynawskie", "text": "Gdy Trójmiasto to brama do Skandynawii i krajów bałtyckich dla Twojego łańcucha dostaw."},
-        {"title": "Firmy wchodzące na rynek trójmiejski", "text": "Gdy planujesz magazyn w Gdańsku lub okolicach i potrzebujesz znać realia rynku przed podpisaniem umowy."}
-      ],
-      "summary": "Magazyn do wynajęcia w Gdańsku — Vologis działa jako niezależny doradca najemcy na głównym rynku portowym i importowym Polski. Trójmiasto odpowiadało za ok. 18% nowych umów najmu na rynkach regionalnych — co świadczy o aktywności rynku, a stawki prime osiągają orientacyjnie do 5,50 EUR/m²/mies. Znamy specyfikę stref portowych i negocjujemy wyłącznie po stronie najemcy, bez prowizji od wynajmujących.",
-      "faq": [
-        {"q": "Jakie magazyny są dostępne w Gdańsku?", "a": "Trójmiasto oferuje obiekty klasy A wzdłuż obwodnicy trójmiejskiej i w strefach portowych (Gdańsk, Gdynia), a także w parkach logistycznych przy S7 i S6. Dobieramy typ obiektu pod profil operacyjny — inaczej wygląda logistyka portowa i kontenerowa, inaczej dystrybucja do regionu."},
-        {"q": "Czy pobieracie prowizję od wynajmującego?", "a": "Nie. Działamy jako niezależny doradca najemcy — nasza opłata pochodzi od Ciebie, nie od właściciela nieruchomości ani operatora. To eliminuje konflikt interesów: nasze zalecenie jest zawsze po Twojej stronie, nigdy po stronie wynajmującego."},
-        {"q": "Ile kosztuje wynajem magazynu w Gdańsku?", "a": "Stawki prime w Trójmieście osiągają orientacyjnie do 5,50 EUR/m²/mies. — zależnie od lokalizacji (strefa portowa vs. park logistyczny przy obwodnicy), standardu obiektu i wynegocjowanych warunków. Podamy aktualne widełki po analizie wymagań."},
-        {"q": "Jak szybko znajdziecie magazyn w Gdańsku?", "a": "Przy aktywnym rynku trójmiejskim wstępne propozycje przygotowujemy zwykle w 1–2 tygodnie. Pełny proces doboru i negocjacji zajmuje standardowo 3–5 tygodni."}
-      ]
-    },
-    {
-      "slug": "magazyn-do-wynajecia-szczecin",
-      "heroImage": "/services/vologis-uslugi-komercjalizacja-i-sprzedaz.webp",
-      "parent": "komercjalizacja-i-sprzedaz",
-      "parent_name": "Komercjalizacja i sprzedaż",
-      "category": "Komercjalizacja i sprzedaż",
-      "industry": "powierzchnie magazynowe Szczecin",
-      "title": "Magazyn do wynajęcia Szczecin — dobór i negocjacje | Vologis",
-      "description": "Szukasz magazynu do wynajęcia w Szczecinie? Zachodnia brama Polski, bliskość Berlina, niskie pustostany (~3,1%) — niezależny doradca najemcy, bez prowizji od wynajmującego.",
-      "eyebrow": "MAGAZYN DO WYNAJĘCIA · SZCZECIN",
-      "h1": "Magazyn do wynajęcia — Szczecin",
-      "intro": "Szczecin to zachodnia brama Polski — z bezpośrednim dostępem do portów szczecińskich i bliskością Berlina (mniej niż 150 km). Niskie pustostany (~3,1%) świadczą o tym, że rynek jest stabilny i ciągły popyt ze strony firm nearshoringowych i logistyki przygranicznej. To lokalizacja naturalna dla firm obsługujących jednocześnie rynek polski i północno-wschodnią część Niemiec. Vologis negocjuje bez prowizji od wynajmujących i zna dostępność w strefach przemysłowych Szczecina.",
-      "problem_heading": "Niskie pustostany w Szczecinie oznaczają ograniczoną dostępność — trzeba działać szybko i znać rynek",
-      "problem_text": "Szczecin to rynek z niską dostępnością wolnych powierzchni (~3,1% pustostanów) — co oznacza, że dobre obiekty są kontraktowane zanim trafią na portale. Firmy wchodzące bez znajomości lokalnego rynku tracą czas na research, a potem decydują pod presją dostępności. Doradca z aktywną siecią kontaktów w strefach przemysłowych Szczecina daje dostęp do rynku niedostępnego przez platformy ogłoszeniowe.",
-      "scope": [
-        {"title": "Dobór magazynu pod wymagania", "text": "Identyfikujemy obiekty dopasowane do Twojego profilu: typ składowania, wolumen, standard techniczny, lokalizacja w aglomeracji."},
-        {"title": "Weryfikacja obiektów i warunków", "text": "Sprawdzamy stan techniczny, zgodność z deklaracjami, rzeczywiste koszty eksploatacji i elastyczność wynajmującego — zanim wejdziesz w negocjacje."},
-        {"title": "Negocjacje w imieniu najemcy — bez prowizji od wynajmującego", "text": "Negocjujemy stawki, zachęty i warunki umowy w Twoim imieniu. Nie pobieramy prowizji od właściciela — zarabiamy na opłacie doradczej od Ciebie, co eliminuje konflikt interesów."},
-        {"title": "Znajomość rynku szczecińskiego", "text": "Znamy dostępność w strefach przemysłowych Szczecina i Polic, specyfikę lokalnych obiektów i wymagania firm nearshoring'owych — i działamy szybko w napiętym rynku."}
-      ],
-      "for_who": [
-        {"title": "Firmy nearshoring'owe przy granicy DE", "text": "Gdy szukasz bazy logistycznej przy zachodniej granicy z dostępem do rynku berlińskiego."},
-        {"title": "Importerzy i operatorzy portowi", "text": "Gdy logistyka portów szczecińskich jest częścią Twojego łańcucha dostaw."},
-        {"title": "Firmy wchodzące do Polski północno-zachodniej", "text": "Gdy Szczecin to naturalna baza dla obsługi regionu zachodniopomorskiego i rynku przygranicznego."}
-      ],
-      "summary": "Magazyn do wynajęcia w Szczecinie — Vologis działa jako niezależny doradca najemcy przy zachodniej bramie Polski. Niskie pustostany (~3,1%) oznaczają ograniczoną dostępność i konieczność szybkiego działania — dysponujemy kontaktami w strefach przemysłowych Szczecina i Polic i negocjujemy bez prowizji od wynajmujących. To naturalna lokalizacja dla nearshoring'u i logistyki przygranicznej DE.",
-      "faq": [
-        {"q": "Jakie magazyny są dostępne w Szczecinie?", "a": "Szczecin oferuje obiekty w strefach przemysłowych Szczecina i Polic (Chempark), a także wzdłuż głównych tras komunikacyjnych. Przy niskich pustostanach dostępność jest ograniczona — kluczowe jest dotarcie do obiektów przed oficjalnym ogłoszeniem na rynku."},
-        {"q": "Czy pobieracie prowizję od wynajmującego?", "a": "Nie. Działamy jako niezależny doradca najemcy — nasza opłata pochodzi od Ciebie, nie od właściciela nieruchomości ani operatora. To eliminuje konflikt interesów: nasze zalecenie jest zawsze po Twojej stronie, nigdy po stronie wynajmującego."},
-        {"q": "Ile kosztuje wynajem magazynu w Szczecinie?", "a": "Stawki wynajmu w Szczecinie zależą od standardu obiektu, lokalizacji i wynegocjowanych warunków. Przy niskiej dostępności stawki są mniej elastyczne niż w rynkach z wyższą podażą — podamy aktualne widełki po wstępnej analizie wymagań."},
-        {"q": "Jak szybko znajdziecie magazyn w Szczecinie?", "a": "W rynku z niską dostępnością działamy szybko — każdy tydzień ma znaczenie. Wstępne propozycje przygotowujemy zwykle w 1–2 tygodnie; pełny proces zajmuje standardowo 3–5 tygodni, choć dostępność może wydłużyć ten czas."}
-      ]
-    },
-    {
-      "slug": "magazyn-do-wynajecia-katowice",
-      "heroImage": "/services/vologis-uslugi-komercjalizacja-i-sprzedaz.webp",
-      "parent": "komercjalizacja-i-sprzedaz",
-      "parent_name": "Komercjalizacja i sprzedaż",
-      "category": "Komercjalizacja i sprzedaż",
-      "industry": "powierzchnie magazynowe Katowice",
-      "title": "Magazyn do wynajęcia Katowice — dobór i negocjacje | Vologis",
-      "description": "Szukasz magazynu do wynajęcia w Katowicach? Hub przemysłowy i tranzytowy południa, A4/A1 — niezależny doradca najemcy, weryfikacja techniczna, bez prowizji od wynajmującego.",
-      "eyebrow": "MAGAZYN DO WYNAJĘCIA · KATOWICE",
-      "h1": "Magazyn do wynajęcia — Katowice",
-      "intro": "Katowice i Górny Śląsk to największy hub przemysłowy i tranzytowy południa Polski — rynek z łączną powierzchnią wynajętą przekraczającą 1 mln m², na przecięciu autostrad A4 (wschód–zachód) i A1 (północ–południe), z dostępem do Czech i Słowacji. Dominuje tu sektor automotive i przemysłowy, a firmy z branży produkcyjnej i logistyki kontraktowej potrzebują magazynów spełniających specyficzne wymagania techniczne i certyfikacyjne. Vologis działa wyłącznie po stronie najemcy — bez prowizji od wynajmujących — i zna rynek katowickiego węzła.",
-      "problem_heading": "Rynek katowickiego węzła jest aktywny, ale wybór obiektu dla przemysłu wymaga weryfikacji technicznej — nie tylko lokalizacyjnej",
-      "problem_text": "Górnośląski rynek magazynowy jest zdominowany przez sektor automotive, przemysłowy i logistyki kontraktowej, co oznacza, że obiekty mają zróżnicowane parametry techniczne — nośność podłogi, wysokość składowania, połączenia kolejowe, certyfikaty. Firma produkcyjna lub automotive, która wybiera magazyn tylko na podstawie lokalizacji i stawki, ryzykuje wyborem obiektu niespełniającego wymagań operacyjnych. Doradca z wiedzą o lokalnych obiektach weryfikuje parametry, zanim wejdziesz w negocjacje.",
-      "scope": [
-        {"title": "Dobór magazynu pod wymagania", "text": "Identyfikujemy obiekty dopasowane do Twojego profilu: typ składowania, wolumen, standard techniczny, lokalizacja w aglomeracji."},
-        {"title": "Weryfikacja obiektów i warunków", "text": "Sprawdzamy stan techniczny, zgodność z deklaracjami, rzeczywiste koszty eksploatacji i elastyczność wynajmującego — zanim wejdziesz w negocjacje."},
-        {"title": "Negocjacje w imieniu najemcy — bez prowizji od wynajmującego", "text": "Negocjujemy stawki, zachęty i warunki umowy w Twoim imieniu. Nie pobieramy prowizji od właściciela — zarabiamy na opłacie doradczej od Ciebie, co eliminuje konflikt interesów."},
-        {"title": "Znajomość rynku katowickiego", "text": "Znamy specyfikę techniczną obiektów na Górnym Śląsku, wymagania sektora automotive i dostępność w strefach przemysłowych przy A4/A1 — i dobieramy obiekt pod realne potrzeby produkcji."}
-      ],
-      "for_who": [
-        {"title": "Firmy automotive i przemysłowe", "text": "Gdy magazyn musi spełniać wymagania techniczne sektora produkcyjnego i certyfikaty branżowe."},
-        {"title": "Operatorzy tranzytowi południa", "text": "Gdy A4/A1 i bliskość CZ/SK to kluczowe wyznaczniki lokalizacji."},
-        {"title": "Firmy wchodzące do strefy katowickiej", "text": "Gdy Górny Śląsk to Twój docelowy hub logistyczny i potrzebujesz weryfikacji rynku."}
-      ],
-      "summary": "Magazyn do wynajęcia w Katowicach — Vologis działa jako niezależny doradca najemcy na największym hubie przemysłowym południa Polski. Rynek katowickiego węzła (>1 mln m² wynajętej powierzchni przy A4/A1) zdominowany jest przez automotive i przemysł — dobieramy obiekty z weryfikacją parametrów technicznych i negocjujemy bez prowizji od wynajmujących.",
-      "faq": [
-        {"q": "Jakie magazyny są dostępne w Katowicach?", "a": "Górny Śląsk oferuje szeroką gamę obiektów przy A4 i A1 — od wielkoformatowych hal dla automotive i logistyki kontraktowej po mniejsze moduły produkcyjno-magazynowe. Parametry techniczne (nośność, wysokość, certyfikaty) są kluczowe — dopasowujemy obiekt do wymagań operacyjnych, nie tylko lokalizacyjnych."},
-        {"q": "Czy pobieracie prowizję od wynajmującego?", "a": "Nie. Działamy jako niezależny doradca najemcy — nasza opłata pochodzi od Ciebie, nie od właściciela nieruchomości ani operatora. To eliminuje konflikt interesów: nasze zalecenie jest zawsze po Twojej stronie, nigdy po stronie wynajmującego."},
-        {"q": "Ile kosztuje wynajem magazynu w Katowicach?", "a": "Stawki w regionie katowickim zależą od standardu, lokalizacji (strefa przemysłowa vs. park logistyczny przy A4/A1) i parametrów technicznych obiektu. Podamy aktualne widełki po analizie Twoich wymagań."},
-        {"q": "Jak szybko znajdziecie magazyn w Katowicach?", "a": "W zależności od wymagań technicznych — przy standardowych parametrach wstępne propozycje w 1–2 tygodnie. Przy specjalistycznych wymaganiach automotive lub produkcji czas może być dłuższy — weryfikujemy, by nie tracić czasu na obiekty, które nie spełnią wymagań."}
-      ]
-    },
-    {
-      "slug": "komercjalizacja-powierzchni-warszawa",
-      "heroImage": "/services/vologis-uslugi-komercjalizacja-powierzchni-magazynowej.webp",
-      "parent": "komercjalizacja-i-sprzedaz",
-      "parent_name": "Komercjalizacja i sprzedaż",
-      "category": "Komercjalizacja i sprzedaż",
-      "industry": "komercjalizacja powierzchni Warszawa",
-      "title": "Komercjalizacja powierzchni magazynowych — Warszawa | Vologis",
-      "description": "Masz wolne wolumeny paletowe w Warszawie lub okolicach? Pozyskujemy dla Ciebie najemców w modelu success fee — dostęp do aktywnych firm szukających magazynów w aglomeracji warszawskiej.",
-      "eyebrow": "KOMERCJALIZACJA POWIERZCHNI · WARSZAWA",
-      "h1": "Komercjalizacja wolnych powierzchni magazynowych — Warszawa",
-      "intro": "Warszawski rynek magazynowy generuje stały popyt ze strony firm e-commerce, logistyki last-mile i firm rozwijających dystrybucję na największy rynek konsumencki w Polsce. Jeśli masz wolne wolumeny paletowe w aglomeracji warszawskiej, jest do czego docierać — ale pozyskiwanie najemców wymaga aktywnej sprzedaży, znajomości poszukujących firm i czasu na negocjacje. Przejmujemy ten ciężar, działając jak Twój zewnętrzny dział handlowy w modelu success fee.",
-      "problem_heading": "Wolna przestrzeń w Warszawie to utracony przychód w najdroższym rynku w Polsce",
-      "problem_text": "Utrzymanie obiektu w aglomeracji warszawskiej generuje wysokie koszty stałe — mediów, pracownicze, ochrony — niezależnie od stopnia obłożenia. Każdy miesiąc z wolnym wolumenem to koszt, który nie wraca. Dotarcie do aktywnych najemców na rynku, gdzie większość transakcji odbywa się przez doradców lub relacje, wymaga czasu i sieci kontaktów. Vologis przejmuje ten proces w modelu success fee — płacisz wyłącznie za zakontraktowaną i wypełnioną przestrzeń.",
-      "scope": [
-        {"title": "Pozyskiwanie najemców w aglomeracji", "text": "Docieramy do firm aktywnie szukających magazynów w Warszawie i okolicznych strefach — e-commerce, logistyka, dystrybucja."},
-        {"title": "Zewnętrzny dział handlowy", "text": "Działamy jak Twój wyspecjalizowany zespół sprzedaży, bez kosztu utrzymania etatu."},
-        {"title": "Model success fee", "text": "Wynagrodzenie wyłącznie za zakontraktowaną i wypełnioną przestrzeń. Bez ryzyka stałego kosztu."},
-        {"title": "Znajomość popytu warszawskiego", "text": "Znamy aktywne firmy szukające magazynów w aglomeracji i dopasowujemy najemcę do profilu Twojego obiektu."}
-      ],
-      "for_who": [
-        {"title": "Operatorzy z wolną przestrzenią w Warszawie", "text": "Gdy masz nieobsadzone wolumeny w strefach Warszawa I, II lub III."},
-        {"title": "Właściciele obiektów magazynowych", "text": "Gdy zarządzasz obiektem w aglomeracji warszawskiej i potrzebujesz sprawnego pozyskania najemcy."},
-        {"title": "Deweloperzy i zarządcy", "text": "Gdy nowo oddany obiekt w okolicach Warszawy wymaga komercjalizacji."}
-      ],
-      "summary": "Komercjalizacja wolnych powierzchni magazynowych w Warszawie to usługa, w której Vologis aktywnie pozyskuje najemców na wolne wolumeny w aglomeracji warszawskiej — docierając do firm e-commerce, logistycznych i dystrybucyjnych szukających przestrzeni na największym rynku konsumenckim w Polsce. Model success fee oznacza, że właściciel lub operator płaci wyłącznie za zakontraktowaną i faktycznie wypełnioną przestrzeń.",
-      "faq": [
-        {"q": "Jaki profil najemców szukacie dla obiektów w Warszawie?", "a": "W Warszawie dominują najemcy z segmentu e-commerce i last-mile, logistyki miejskiej oraz firm rozwijających dystrybucję na rynek stołeczny. Dobieramy najemcę pod profil obiektu — jego lokalizację, standard i możliwości operacyjne."},
-        {"q": "Jak rozliczana jest komercjalizacja?", "a": "W modelu success fee — wynagrodzenie należne wyłącznie za faktycznie zakontraktowaną i wypełnioną przestrzeń. Nie ponosisz stałego kosztu ani ryzyka, jeśli powierzchnia nie zostanie zapełniona."},
-        {"q": "Czy obejmujecie obiekty poza centrum Warszawy?", "a": "Tak. Działamy w całej aglomeracji warszawskiej, w tym w strefach wzdłuż A2, S2 i S8 — w Pruszkowie, Ożarowie, Grodzisku, Błoniu i innych lokalizacjach podmiejskich."},
-        {"q": "Jak długo trwa pozyskanie najemcy w Warszawie?", "a": "Zależy od wolumenu, profilu obiektu i wymagań branżowych. Przy typowych wolumenach w atrakcyjnych lokalizacjach pierwsze zainteresowanie uzyskujemy zwykle w ciągu kilku tygodni."}
-      ]
-    },
-    {
-      "slug": "komercjalizacja-powierzchni-katowice",
-      "heroImage": "/services/vologis-uslugi-komercjalizacja-powierzchni-magazynowej.webp",
-      "parent": "komercjalizacja-i-sprzedaz",
-      "parent_name": "Komercjalizacja i sprzedaż",
-      "category": "Komercjalizacja i sprzedaż",
-      "industry": "komercjalizacja powierzchni Katowice",
-      "title": "Komercjalizacja powierzchni magazynowych — Katowice | Vologis",
-      "description": "Rynek katowickiego węzła przemysłowego — pomagamy operatorom pozyskiwać najemców z sektora automotive, przemysłowego i logistyki tranzytowej na Górnym Śląsku. Model success fee.",
-      "eyebrow": "KOMERCJALIZACJA POWIERZCHNI · KATOWICE",
-      "h1": "Komercjalizacja wolnych powierzchni magazynowych — Katowice",
-      "intro": "Górny Śląsk to największy hub przemysłowy i tranzytowy południa Polski — z aktywnym rynkiem wynajmu powyżej 1 mln m² i dominującym sektorem automotive i produkcyjnym. Dla operatorów z wolnymi wolumenami oznacza to specyficzny rynek: najemcy z przemysłu i automotive mają precyzyjne wymagania techniczne, a dotarcie do nich wymaga znajomości branży i sieci kontaktów przemysłowych. Przejmujemy komercjalizację w modelu success fee, dobierając najemców pod profil Twojego obiektu i jego możliwości techniczne.",
-      "problem_heading": "Katowickie obiekty magazynowe obsługują przemysł — pozyskanie właściwego najemcy wymaga branżowej wiedzy",
-      "problem_text": "Na Górnym Śląsku właściwy najemca to nie każdy poszukujący — to firma, której wymagania techniczne (nośność podłogi, wysokość hali, certyfikaty) pasują do Twojego obiektu. Pozyskiwanie najemców przemysłowych i automotive wymaga aktywnego dotarcia do właściwego segmentu i weryfikacji wymagań przed negocjacjami. Podejście 'ogłoszenie na portalu' na tym rynku daje gorsze rezultaty niż na rynkach konsumenckich.",
-      "scope": [
-        {"title": "Pozyskiwanie najemców przemysłowych i automotive", "text": "Docieramy do firm z sektora automotive, produkcyjnego i logistyki kontraktowej szukających przestrzeni na Górnym Śląsku."},
-        {"title": "Weryfikacja dopasowania technicznego", "text": "Przed rozmowami kwalifikujemy potencjalnych najemców pod wymagania techniczne Twojego obiektu — oszczędzamy czas obu stronom."},
-        {"title": "Model success fee", "text": "Wynagrodzenie wyłącznie za zakontraktowaną i wypełnioną przestrzeń."},
-        {"title": "Znajomość popytu katowickiego", "text": "Znamy specyfikę popytu przemysłowego w strefach Górnego Śląska przy A4/A1 i dopasowujemy najemcę do możliwości technicznych obiektu."}
-      ],
-      "for_who": [
-        {"title": "Operatorzy z wolną przestrzenią w strefach katowickich", "text": "Gdy masz nieobsadzone wolumeny w obiekcie przy A4/A1 na Górnym Śląsku."},
-        {"title": "Właściciele obiektów przemysłowych", "text": "Gdy obiekt ma parametry techniczne dla sektora automotive lub produkcyjnego i szukasz dopasowanego najemcy."},
-        {"title": "Deweloperzy przy A4/A1", "text": "Gdy nowy obiekt w strefie śląskiej wymaga aktywnej komercjalizacji w sektorze przemysłowym."}
-      ],
-      "summary": "Komercjalizacja wolnych powierzchni magazynowych w Katowicach to usługa, w której Vologis pozyskuje najemców z sektora automotive, przemysłowego i logistyki tranzytowej dla operatorów na Górnym Śląsku — dopasowując ich do profilu technicznego obiektu i jego lokalizacji przy A4/A1. Model success fee oznacza, że operator płaci wyłącznie za zakontraktowaną i faktycznie wypełnioną przestrzeń.",
-      "faq": [
-        {"q": "Jaki profil najemców szukacie dla obiektów na Górnym Śląsku?", "a": "Firmy z sektora automotive, produkcyjnego i logistyki kontraktowej — które mają specyficzne wymagania techniczne i szukają obiektów dopasowanych do ich profilu. Dobieramy najemcę pod parametry Twojego obiektu."},
-        {"q": "Jak rozliczana jest komercjalizacja?", "a": "W modelu success fee — wynagrodzenie należne wyłącznie za zakontraktowaną i wypełnioną przestrzeń."},
-        {"q": "Czy specjalizujecie się w obiektach automotive?", "a": "Tak. Znamy wymagania sektora automotive — nośność podłogi, certyfikaty, logistyka sekwencyjna — i dobieramy najemców, którzy faktycznie mogą korzystać z Twojego obiektu."},
-        {"q": "Jak szybko można pozyskać najemcę w Katowicach?", "a": "Przy specjalistycznym profilu przemysłowym czas może być dłuższy niż w standardowych obiektach, bo kwalifikujemy wymagania techniczne. Aktywna komercjalizacja skraca ten czas w stosunku do pasywnego czekania na zapytania."}
       ]
     }
   ]
