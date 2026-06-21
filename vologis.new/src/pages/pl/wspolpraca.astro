@@ -254,6 +254,13 @@ const schemaBreadcrumb = {
               <p class="ceo-card__name">Paweł Wojtczak</p>
               <p class="ceo-card__role">CEO i Prezes Zarządu</p>
               <p class="ceo-card__company">Vologis Sp. z o.o.</p>
+              <a
+                href="https://www.linkedin.com/company/vologis/"
+                class="ceo-card__linkedin"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Vologis na LinkedIn"
+              >LinkedIn →</a>
             </div>
             <p class="ceo-card__note">
               Zgłoszenia trafiają bezpośrednio do Pawła. Odpowiada osobiście — zwykle w ciągu 48 godzin.
@@ -428,6 +435,17 @@ const schemaBreadcrumb = {
     font-size: var(--text-sm);
     color: var(--color-muted);
   }
+
+  .ceo-card__linkedin {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-secondary);
+    text-decoration: none;
+    margin-top: var(--space-2xs);
+    display: inline-block;
+    transition: color var(--dur-micro) var(--ease-out);
+  }
+  .ceo-card__linkedin:hover { color: var(--color-ink); }
 
   .ceo-card__note {
     font-size: var(--text-sm);

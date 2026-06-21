@@ -453,15 +453,23 @@ const schemaFaq = {
           />
 
           <div class="on-founder-bio">
-            <!-- TODO: Uzupełnić imię, nazwisko i stanowisko -->
             <p class="on-founder-name">Paweł Wojtczak</p>
             <p class="on-founder-role">CEO i Prezes Zarządu, Vologis</p>
             <p class="on-founder-bio-text">
-              <!-- TODO: Uzupełnić o konkretne bio Pawła Wojtczaka -->
               Wspiera firmy w obszarze logistyki, spedycji, transportu i zarządzania
               procesami operacyjnymi. Łączy perspektywę doradczą z praktycznym rozumieniem
               codziennych wyzwań firm produkcyjnych, handlowych, dystrybucyjnych i e-commerce.
             </p>
+            <a
+              href="https://www.linkedin.com/company/vologis/"
+              class="on-founder-linkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Vologis na LinkedIn"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+              Vologis na LinkedIn
+            </a>
           </div>
         </div>
 
@@ -976,6 +984,19 @@ const schemaFaq = {
     color: var(--color-muted);
     line-height: 1.65;
   }
+
+  .on-founder-linkedin {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    margin-top: var(--space-md);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: color var(--dur-micro) var(--ease-out);
+  }
+  .on-founder-linkedin:hover { color: var(--color-ink); }
 
   /* ─── 5. Philosophy (dark) ───────────────────────────────── */
   .on-philosophy { background: var(--color-paper-dark); }
