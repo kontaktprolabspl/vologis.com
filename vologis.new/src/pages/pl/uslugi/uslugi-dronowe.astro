@@ -10,84 +10,87 @@ const branze = programmatic.pages.filter((p) => p.parent === "uslugi-dronowe");
 /* ── Data ────────────────────────────────────────────────── */
 
 const trustItems = [
-  "Pomiary geodezyjne i ortofotomapy",
-  "Inspekcje terenów inwestycyjnych",
-  "Monitoring postępu prac budowlanych",
-  "Pomiary objętości i hałd materiałów",
-  "Materiały marketingowe foto/wideo z powietrza",
-  "Integracja z projektami logistycznymi i Greenfield",
+  "Pomiary geodezyjne i ortofotomapy działek inwestycyjnych",
+  "Fotogrametria, modele 3D i pomiary kubatury",
+  "Inwentaryzacja zapasów dronem (RFID/LiDAR) bez wstrzymywania operacji",
+  "Inspekcje dachów hal i instalacji PV z termowizją i AI",
+  "Monitoring inwestycji Greenfield z powietrza",
+  "Patrol i ochrona obiektów — Drone-in-a-Box",
 ];
 
 const forWhom = [
   {
-    title: "Deweloperzy logistyczni",
-    text: "Gdy potrzebujesz dokumentacji terenu, monitoringu budowy i materiałów do komercjalizacji obiektu.",
+    title: "Deweloperzy i właściciele obiektów logistycznych",
+    text: "Gdy potrzebujesz pomiarów terenu, monitoringu budowy, inspekcji stanu technicznego i dokumentacji gotowego obiektu.",
   },
   {
     title: "Inwestorzy i fundusze",
-    text: "Gdy chcesz obiektywnie ocenić działkę inwestycyjną lub kontrolować postęp realizacji niezależnie od wykonawcy.",
+    text: "Gdy chcesz obiektywnie ocenić działkę inwestycyjną lub niezależnie kontrolować postęp realizacji inwestycji Greenfield.",
   },
   {
-    title: "Firmy budowlane",
-    text: "Gdy potrzebujesz pomiarów objętości, dokumentacji prac ziemnych i regularnego monitoringu placu budowy.",
-  },
-  {
-    title: "Agencje nieruchomości komercyjnych",
-    text: "Gdy chcesz wyróżnić ofertę obiektu profesjonalnymi materiałami z powietrza.",
+    title: "Operatorzy magazynowi i 3PL",
+    text: "Gdy potrzebujesz dronowej inwentaryzacji zapasów w magazynie wysokiego składowania, inspekcji dachu hali lub autonomicznego patrolu obiektu.",
   },
   {
     title: "Firmy realizujące projekty Greenfield",
-    text: "Gdy potrzebujesz danych geodezyjnych i monitoringu zintegrowanych z prowadzeniem całej inwestycji.",
+    text: "Gdy drony mają być integralną częścią procesu inwestycyjnego — od pomiarów geodezyjnych po monitoring budowy i ochronę gotowego obiektu.",
+  },
+  {
+    title: "Firmy odpowiedzialne za bezpieczeństwo obiektów",
+    text: "Gdy szukasz technologicznego uzupełnienia systemu ochrony i Loss Prevention — autonomiczny patrol jako element całodobowego nadzoru.",
   },
 ];
 
-const scopeCards = [
+const scopeCards: Array<{title: string; text: string; link?: {href: string; label: string}}> = [
   {
-    title: "Pomiary geodezyjne",
-    text: "Precyzyjne pomiary terenu z dokładnością do centymetrów. Dane gotowe do wykorzystania w projektowaniu i analizach inwestycyjnych.",
+    title: "Pomiary geodezyjne i ortofotomapy",
+    text: "Precyzyjne pomiary działek inwestycyjnych i terenów pod logistykę — z dokładnością do centymetrów. Ortofotomapy dają rzeczywisty obraz terenu gotowy do projektowania layoutu, analizy dostępności i dokumentacji inwestycyjnej.",
   },
   {
-    title: "Ortofotomapy",
-    text: "Wysokorozdzielcze, skalibrowane mapy fotograficzne terenu. Rzeczywisty stan działki w formie gotowej do analizy i projektowania.",
+    title: "Modele 3D, fotogrametria i pomiary kubatury",
+    text: "Digital twins terenu i obiektów logistycznych: modele 3D powstałe ze zdjęć z drona (fotogrametria). Precyzyjny pomiar kubatury składowanych materiałów sypkich i hałd — kontrola ilościowa bez ręcznych pomiarów w terenie. Dane wspierają projekty Greenfield od etapu planowania.",
+    link: { href: "/pl/uslugi/projekty-greenfield/", label: "Zobacz projekty Greenfield" },
   },
   {
-    title: "Inspekcje terenów inwestycyjnych",
-    text: "Ocena działek pod inwestycję logistyczną — ukształtowanie terenu, dostępność, otoczenie, infrastruktura. Obiektywny obraz przed decyzją o zakupie.",
+    title: "Inwentaryzacja zapasów w magazynie",
+    text: "Drony z czytnikami kodów kreskowych, RFID i skanerami LiDAR autonomicznie liczą i lokalizują palety między regałami wysokiego składowania — także nocą, bez wstrzymywania operacji. Eliminują błędy ręcznych liczeń i zwalniają zasoby ludzkie z żmudnej inwentaryzacji.",
+  },
+  {
+    title: "Inspekcje obiektów logistycznych",
+    text: "Inspekcje dachów hal magazynowych, instalacji fotowoltaicznych i stanu technicznego obiektów. Kamery termowizyjne i algorytmy AI wykrywają mikrouszkodzenia, wady izolacji i awarie PV zanim staną się kosztownymi naprawami lub przerwami operacyjnymi.",
   },
   {
     title: "Monitoring postępu budowy",
-    text: "Regularna dokumentacja postępu prac z powietrza. Obiektywny, datowany obraz dla inwestora i raportowania — niezależny od deklaracji wykonawcy.",
+    text: "Regularna dokumentacja postępu prac z powietrza — od pierwszych prac ziemnych po odbiór obiektu. Obiektywny, datowany obraz dla inwestora, niezależny od raportów wykonawcy. Zintegrowany z prowadzeniem inwestycji Greenfield przez Vologis.",
+    link: { href: "/pl/uslugi/projekty-greenfield/", label: "Zobacz projekty Greenfield" },
   },
   {
-    title: "Pomiary objętości i inwentaryzacja",
-    text: "Pomiary hałd materiałów, prac ziemnych i objętości składowanych surowców. Kontrola ilościowa bez ręcznych pomiarów w terenie.",
-  },
-  {
-    title: "Materiały marketingowe",
-    text: "Profesjonalne zdjęcia i wideo obiektów logistycznych z powietrza — do komercjalizacji, prezentacji dla najemców i materiałów sprzedażowych deweloperów.",
+    title: "Patrol i ochrona obiektów — Drone-in-a-Box",
+    text: "Autonomiczne patrole wokół centrów logistycznych i magazynów. Dron startuje automatycznie przy naruszeniu strefy, przekazując wideo do centrum ochrony w czasie rzeczywistym. Uzupełnienie procesów Loss Prevention — element całodobowego systemu bezpieczeństwa operacyjnego.",
+    link: { href: "/pl/uslugi/bezpieczenstwo-operacyjne/", label: "Bezpieczeństwo operacyjne i Loss Prevention" },
   },
 ];
 
 const faqs = [
   {
-    q: "Czy wykonujecie usługi dronowe niezależnie, czy tylko w ramach większych projektów?",
-    a: "Oba modele. Usługi dronowe możesz zlecić jako samodzielną usługę — pomiar, ortofotomapę czy monitoring — lub jako element większego projektu logistycznego czy inwestycyjnego prowadzonego przez Vologis.",
+    q: "Czy drony mogą inwentaryzować zapasy bez wstrzymywania operacji magazynowej?",
+    a: "Tak. Drony wyposażone w czytniki RFID, kodów kreskowych i skanery LiDAR przeprowadzają autonomiczną inwentaryzację między regałami wysokiego składowania — często nocą lub w sekcjach poza aktywną operacją, bez konieczności zatrzymywania wózków widłowych ani ewakuacji personelu.",
   },
   {
-    q: "Jaka jest dokładność pomiarów z drona?",
+    q: "Jaka jest dokładność pomiarów geodezyjnych z drona?",
     a: "Przy zastosowaniu odpowiednich procedur i punktów referencyjnych osiągamy dokładność do kilku centymetrów. Konkretny poziom dokładności ustalamy w zależności od celu pomiaru i wymagań projektu.",
   },
   {
-    q: "Czy posiadacie wymagane uprawnienia do lotów?",
-    a: "Tak. Loty wykonujemy zgodnie z obowiązującymi przepisami lotniczymi i posiadanymi uprawnieniami operatorskimi. Dla lotów wymagających dodatkowych zezwoleń zapewniamy odpowiednie zgody.",
+    q: "Czym różni się inspekcja termowizyjna od standardowego przeglądu dachu?",
+    a: "Kamera termowizyjna na dronie wykrywa nieszczelności, wady izolacji i anomalie cieplne instalacji PV, których nie widać gołym okiem podczas standardowej inspekcji. Algorytmy AI automatycznie lokalizują i klasyfikują anomalie — skracając czas analizy i dokumentując stan obiektu w formie gotowej do przeglądu inżynierskiego.",
   },
   {
-    q: "W jakim formacie dostarczacie dane?",
-    a: "Dane dostarczamy w formatach gotowych do wykorzystania w projektowaniu i analizie — ortofotomapy, modele terenu, raporty z pomiarów. Format dopasowujemy do potrzeb projektu i narzędzi klienta.",
+    q: "Jak działa system Drone-in-a-Box?",
+    a: "Drone-in-a-Box to autonomiczna stacja dokująca z dronem, który startuje samoczynnie przy wykryciu naruszenia strefy przez system alarmowy lub na żądanie operatora. Dron transmituje wideo do centrum ochrony w czasie rzeczywistym i wraca automatycznie na stację po zakończeniu patrolu. Stanowi uzupełnienie systemu CCTV i fizycznej ochrony.",
   },
   {
     q: "Czy monitoring budowy jest jednorazowy czy cykliczny?",
-    a: "Najczęściej cykliczny — regularne loty w ustalonych odstępach dają obiektywny obraz postępu prac w czasie. Możliwy jest też pojedynczy pomiar lub dokumentacja na konkretnym etapie.",
+    a: "Najczęściej cykliczny — regularne loty w ustalonych odstępach dają obiektywny obraz postępu prac w czasie. Możliwy jest też pojedynczy pomiar lub dokumentacja na konkretnym etapie inwestycji.",
   },
 ];
 
@@ -109,16 +112,16 @@ const schemaService = {
     },
   },
   "areaServed": ["Polska", "Europa"],
-  "serviceType": "Drone services for logistics and construction",
-  "description": "Pomiary geodezyjne, ortofotomapy, inspekcje terenów i monitoring budowy z drona. Vologis integruje usługi dronowe z projektami logistycznymi i inwestycyjnymi — dla deweloperów, inwestorów i firm budowlanych.",
+  "serviceType": "Drone services for logistics: surveys, inspections, warehouse inventory, Drone-in-a-Box patrol",
+  "description": "Usługi dronowe wyłącznie dla logistyki: pomiary geodezyjne, modele 3D, autonomiczna inwentaryzacja zapasów, inspekcje obiektów z AI, monitoring Greenfield i patrol Drone-in-a-Box. Vologis integruje dane dronowe z projektami logistycznymi.",
   "url": `${SITE}/pl/uslugi/uslugi-dronowe/`,
 };
 
 const schemaWebPage = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Usługi dronowe dla logistyki i inwestycji | Vologis",
-  "description": "Pomiary geodezyjne, ortofotomapy, inspekcje terenów i monitoring budowy z drona. Vologis integruje usługi dronowe z projektami logistycznymi i inwestycyjnymi — dla deweloperów, inwestorów i firm budowlanych.",
+  "name": "Drony w logistyce — pomiary, inspekcje, inwentaryzacja i ochrona obiektów | Vologis",
+  "description": "Usługi dronowe wyłącznie dla logistyki: pomiary geodezyjne, modele 3D, autonomiczna inwentaryzacja zapasów, inspekcje obiektów z AI, monitoring Greenfield i patrol Drone-in-a-Box. Vologis integruje dane dronowe z projektami logistycznymi.",
   "url": `${SITE}/pl/uslugi/uslugi-dronowe/`,
   "inLanguage": "pl-PL",
 };
@@ -135,19 +138,19 @@ const schemaFaq = {
 ---
 
 <ServicePageLayout
-  title="Usługi dronowe dla logistyki i inwestycji | Vologis"
-  description="Pomiary geodezyjne, ortofotomapy, inspekcje terenów i monitoring budowy z drona. Vologis integruje usługi dronowe z projektami logistycznymi i inwestycyjnymi — dla deweloperów, inwestorów i firm budowlanych."
+  title="Drony w logistyce — pomiary, inspekcje, inwentaryzacja i ochrona obiektów | Vologis"
+  description="Usługi dronowe dla logistyki: ortofotomapy, modele 3D, autonomiczna inwentaryzacja zapasów, inspekcje obiektów z AI, monitoring Greenfield i Drone-in-a-Box. Zintegrowane z projektami logistycznymi."
   canonical="https://vologis.com/pl/uslugi/uslugi-dronowe/"
   ogImage="/og/og-drony.png"
   heroImage="/services/uslugi-dronowe.webp"
   eyebrow="Usługi logistyczne / Usługi dronowe"
-  h1="Usługi dronowe — dane i obraz z powietrza dla logistyki i inwestycji"
-  lead="Dron to nie gadżet — to narzędzie pomiarowe i analityczne, które skraca czas inwestycji i ogranicza ryzyko. Vologis wykonuje precyzyjne pomiary geodezyjne, ortofotomapy, inspekcje terenów inwestycyjnych oraz monitoring postępu prac budowlanych. W odróżnieniu od typowych firm dronowych, integrujemy te usługi bezpośrednio z projektami logistycznymi — dostarczając dane, które realnie wpływają na decyzje inwestycyjne, a nie tylko efektowne ujęcia."
+  h1="Drony w logistyce — pomiary, inspekcje, inwentaryzacja i ochrona obiektów"
+  lead="Dron w logistyce to precyzyjne narzędzie analityczne: skraca czas inwestycji, kontroluje zapasy bez wstrzymywania operacji i wzmacnia bezpieczeństwo obiektu. Vologis stosuje drony wyłącznie w zastosowaniach logistycznych — od pomiarów działek i fotogrametrii, przez autonomiczną inwentaryzację w magazynach wysokiego składowania, inspekcje hal z termowizją i AI, po autonomiczne patrole Drone-in-a-Box. Dane integrujemy bezpośrednio z projektami logistycznymi."
   trustItems={trustItems}
   ctaPrimaryLabel="Zapytaj o usługi dronowe"
-  ctaPrimaryHref="/pl/kontakt"
+  ctaPrimaryHref="/pl/kontakt/"
   ctaSecondaryLabel="Zobacz projekty Greenfield"
-  ctaSecondaryHref="/pl/uslugi/projekty-greenfield"
+  ctaSecondaryHref="/pl/uslugi/projekty-greenfield/"
   breadcrumbs={[{ name: "Usługi dronowe" }]}
 >
   <script type="application/ld+json" set:html={JSON.stringify(schemaService)} />
@@ -160,22 +163,22 @@ const schemaFaq = {
       <div class="ps-problem__grid">
         <div class="ps-problem__copy">
           <h2 class="h2" id="h-problem">
-            Precyzyjne dane szybciej i taniej niż metodami tradycyjnymi
+            Trzy problemy, które dron rozwiązuje szybciej i taniej niż metody tradycyjne
           </h2>
           <p class="body">
-            Tradycyjny pomiar geodezyjny dużej działki inwestycyjnej zajmuje dni i angażuje zespół w terenie. Dron robi to w godziny, z dokładnością do centymetrów, dostarczając dane w formie, którą można od razu wykorzystać do projektowania i analizy.
+            Tradycyjny pomiar geodezyjny dużej działki inwestycyjnej zajmuje dni i angażuje zespół w terenie. Dron robi to w godziny, z dokładnością do centymetrów — a ortofotomapa i model 3D trafiają od razu do projektantów layoutu i analityków inwestycyjnych.
           </p>
           <p class="body">
-            Na etapie inwestycji logistycznej te dane są bezcenne: ortofotomapa pokazuje rzeczywisty stan działki, pomiary objętości pozwalają kontrolować prace ziemne, a regularny monitoring z powietrza daje obiektywny obraz postępu budowy — niezależny od raportów wykonawcy.
+            W magazynach wysokiego składowania ręczna inwentaryzacja to dni przestoju i błędy sięgające kilku procent stanów. Drony z RFID i LiDAR autonomicznie skanują regały nocą, bez wstrzymywania operacji — i dostarczają dokładny obraz stanu zapasów gotowy do rana.
           </p>
           <p class="body">
-            Vologis łączy te możliwości z wiedzą logistyczną. Nie tylko latamy i robimy zdjęcia — interpretujemy dane w kontekście projektu inwestycyjnego i operacyjnego, do którego są potrzebne.
+            Patrol obiektu tradycyjnymi metodami ma martwe strefy i zależy od dostępności ochrony. Drone-in-a-Box startuje automatycznie przy naruszeniu strefy i natychmiast przekazuje obraz do centrum ochrony. To uzupełnienie Loss Prevention, które działa całą dobę bez dodatkowego etatu.
           </p>
         </div>
         <aside class="ps-brief" aria-label="W skrócie">
           <p class="ps-brief__label">W skrócie</p>
           <p class="ps-brief__text">
-            Usługi dronowe Vologis obejmują pomiary geodezyjne, ortofotomapy, inspekcje terenów inwestycyjnych, monitoring postępu budowy, pomiary objętości oraz materiały marketingowe foto/wideo z powietrza. W odróżnieniu od typowych firm dronowych, Vologis integruje te usługi z projektami logistycznymi i inwestycyjnymi — interpretując dane w kontekście konkretnych decyzji biznesowych. Usługi kierowane są do deweloperów, inwestorów, firm budowlanych i agencji nieruchomości.
+            Usługi dronowe Vologis obejmują 6 zastosowań logistycznych: pomiary geodezyjne i ortofotomapy działek, fotogrametrię i modele 3D z pomiarem kubatury, autonomiczną inwentaryzację zapasów (RFID/LiDAR), inspekcje obiektów z termowizją i AI, monitoring postępu budowy Greenfield oraz patrol i ochronę obiektów (Drone-in-a-Box). Vologis integruje dane dronowe bezpośrednio z projektami logistycznymi — interpretując je w kontekście konkretnych decyzji inwestycyjnych i operacyjnych.
           </p>
           <hr class="ps-brief__rule" />
           <p class="ps-brief__sub">
@@ -189,15 +192,20 @@ const schemaFaq = {
   <!-- ─── 2. Co obejmują usługi ─────────────────────────────── -->
   <section class="ps-scope" aria-labelledby="h-scope">
     <div class="container">
-      <h2 class="h2" id="h-scope">Co obejmują usługi dronowe?</h2>
+      <h2 class="h2" id="h-scope">6 zastosowań dronów w logistyce</h2>
       <p class="body">
-        Realizujemy zarówno pojedyncze zlecenia, jak i kompleksową obsługę całego projektu inwestycyjnego — od pierwszego lotu nad działką po dokumentację gotowego obiektu.
+        Wyłącznie logistyczne zastosowania — od pomiarów terenu pod inwestycję po autonomiczną inwentaryzację i ochronę gotowego obiektu.
       </p>
       <div class="scope-grid">
         {scopeCards.map((c) => (
           <div class="scope-card">
             <h3 class="scope-card__title">{c.title}</h3>
             <p class="scope-card__text">{c.text}</p>
+            {c.link && (
+              <a href={c.link.href} class="adv-link">
+                {c.link.label} <span aria-hidden="true">→</span>
+              </a>
+            )}
           </div>
         ))}
       </div>
@@ -232,12 +240,12 @@ const schemaFaq = {
             Czym różnimy się od typowej firmy dronowej
           </h2>
           <p class="adv-text">
-            Firma dronowa dostarczy Ci zdjęcia. My dostarczamy dane w kontekście Twojego projektu. Wiemy, co oznacza ortofotomapa dla layoutu magazynu, jak pomiar objętości przekłada się na harmonogram prac ziemnych i które ujęcia faktycznie pomagają skomercjalizować obiekt.
+            Firma dronowa dostarczy Ci zdjęcia. My dostarczamy dane w kontekście Twojego projektu logistycznego. Wiemy, co oznacza ortofotomapa dla layoutu magazynu, jak inwentaryzacja dronem przekłada się na ciągłość operacji i jak Drone-in-a-Box integruje się z systemem bezpieczeństwa obiektu.
           </p>
           <p class="adv-text">
-            Usługi dronowe to u nas element większej całości — doradztwa logistycznego i prowadzenia inwestycji end-to-end. Dane z drona trafiają bezpośrednio do procesu decyzyjnego, nie do folderu z plikami.
+            Usługi dronowe to u nas element większej całości — doradztwa logistycznego, projektów Greenfield i bezpieczeństwa operacyjnego. Dane z drona trafiają bezpośrednio do procesu decyzyjnego, nie do folderu z plikami.
           </p>
-          <a href="/pl/uslugi/projekty-greenfield" class="adv-link">
+          <a href="/pl/uslugi/projekty-greenfield/" class="adv-link">
             Zobacz jak prowadzimy projekty Greenfield <span aria-hidden="true">→</span>
           </a>
         </div>
@@ -272,17 +280,17 @@ const schemaFaq = {
     <div class="container">
       <div class="endcta-inner">
         <h2 class="endcta__h2" id="h-endcta">
-          Potrzebujesz danych z powietrza?
+          Potrzebujesz danych z powietrza dla projektu logistycznego?
         </h2>
         <p class="endcta__text">
-          Pomiar, ortofotomapa, monitoring budowy lub materiały marketingowe. Powiedz czego potrzebujesz.
+          Pomiar działki, inwentaryzacja zapasów, inspekcja dachu, monitoring budowy czy patrol obiektu. Powiedz czego potrzebujesz — dobierzemy właściwe zastosowanie.
         </p>
         <div class="endcta__actions">
-          <a href="/pl/kontakt" class="endcta__btn endcta__btn--primary">
+          <a href="/pl/kontakt/" class="endcta__btn endcta__btn--primary">
             Zapytaj o usługi dronowe <span aria-hidden="true">→</span>
           </a>
-          <a href="/pl/uslugi" class="endcta__btn endcta__btn--ghost">
-            Zobacz nasze usługi →
+          <a href="/pl/uslugi/" class="endcta__btn endcta__btn--ghost">
+            Zobacz nasze usługi <span aria-hidden="true">→</span>
           </a>
         </div>
       </div>
@@ -338,8 +346,8 @@ const schemaFaq = {
     <div class="container">
       <div class="crosslink-box">
         <div class="crosslink-box__content">
-          <h2 class="crosslink-box__title">Monitoring z powietrza jako element systemu bezpieczeństwa</h2>
-          <p class="crosslink-box__text">Drony do monitoringu budowy i inspekcji obiektów mogą być integralną częścią systemu bezpieczeństwa operacyjnego. Sprawdź jak łączymy obie usługi.</p>
+          <h2 class="crosslink-box__title">Drone-in-a-Box jako element Loss Prevention</h2>
+          <p class="crosslink-box__text">Autonomiczny patrol dronem to narzędzie w systemie bezpieczeństwa operacyjnego obiektu logistycznego. Łączymy Drone-in-a-Box z procesami Loss Prevention, kontrolą dostępu i monitoringiem CCTV.</p>
           <a href="/pl/uslugi/bezpieczenstwo-operacyjne" class="crosslink-box__link">
             Bezpieczeństwo operacyjne i Loss Prevention <span aria-hidden="true">→</span>
           </a>
