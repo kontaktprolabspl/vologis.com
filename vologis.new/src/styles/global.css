@@ -51,6 +51,9 @@
   --color-glass-dark:   oklch(100%  0      0 / 0.06);
   --color-glass-border: oklch(100%  0      0 / 0.12);
 
+  /* Metric accent — #d4a017 warm amber (ONLY for proof numbers) */
+  --color-metric:       oklch(70%   0.148  75);        /* #d4a017 */
+
   /* ─── Radius ────────────────────────────────────────── */
   --radius-xs:   0.5rem;
   --radius-sm:   0.75rem;

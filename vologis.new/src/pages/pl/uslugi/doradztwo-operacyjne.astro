@@ -728,7 +728,7 @@ const schemaFaq = {
     font-size: var(--text-2xl, 2rem);
     font-weight: 700;
     letter-spacing: -0.03em;
-    color: var(--color-ink);
+    color: var(--color-metric);
     line-height: 1.1;
   }
 
@@ -743,6 +743,11 @@ const schemaFaq = {
     color: var(--color-muted);
     font-style: italic;
     margin-top: var(--space-sm);
+  }
+
+  /* amber left-border scoped to exp callout only */
+  .ps-experience :global(.callout) {
+    border-left-color: var(--color-metric);
   }
 
   /* ─── 6. Dlaczego Vologis (dark) ─────────────────────────── */
