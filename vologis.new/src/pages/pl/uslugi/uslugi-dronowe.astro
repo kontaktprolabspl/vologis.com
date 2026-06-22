@@ -41,32 +41,44 @@ const forWhom = [
   },
 ];
 
-const scopeCards: Array<{title: string; text: string; link?: {href: string; label: string}}> = [
+const scopeCards: Array<{title: string; text: string; img: string; imgAlt: string; link?: {href: string; label: string}}> = [
   {
     title: "Pomiary geodezyjne i ortofotomapy",
     text: "Precyzyjne pomiary działek inwestycyjnych i terenów pod logistykę — z dokładnością do centymetrów. Ortofotomapy dają rzeczywisty obraz terenu gotowy do projektowania layoutu, analizy dostępności i dokumentacji inwestycyjnej.",
+    img: "/services/drony/drony-ortofotomapa.png",
+    imgAlt: "Ortofotomapa działki inwestycyjnej — widok z drona z punktami pomiarowymi",
   },
   {
     title: "Modele 3D, fotogrametria i pomiary kubatury",
     text: "Digital twins terenu i obiektów logistycznych: modele 3D powstałe ze zdjęć z drona (fotogrametria). Precyzyjny pomiar kubatury składowanych materiałów sypkich i hałd — kontrola ilościowa bez ręcznych pomiarów w terenie. Dane wspierają projekty Greenfield od etapu planowania.",
+    img: "/services/drony/drony-model-3d.png",
+    imgAlt: "Model fotogrametryczny 3D terenu z mapą wysokości DEM — gradient kolorów od niebieskiego do żółtego",
     link: { href: "/pl/uslugi/projekty-greenfield/", label: "Zobacz projekty Greenfield" },
   },
   {
     title: "Inwentaryzacja zapasów w magazynie",
     text: "Drony z czytnikami kodów kreskowych, RFID i skanerami LiDAR autonomicznie liczą i lokalizują palety między regałami wysokiego składowania — także nocą, bez wstrzymywania operacji. Eliminują błędy ręcznych liczeń i zwalniają zasoby ludzkie z żmudnej inwentaryzacji.",
+    img: "/services/drony/drony-inwentaryzacja.png",
+    imgAlt: "Wnętrze magazynu wysokiego składowania — widok drona między regałami z paletami",
   },
   {
     title: "Inspekcje obiektów logistycznych",
     text: "Inspekcje dachów hal magazynowych, instalacji fotowoltaicznych i stanu technicznego obiektów. Kamery termowizyjne i algorytmy AI wykrywają mikrouszkodzenia, wady izolacji i awarie PV zanim staną się kosztownymi naprawami lub przerwami operacyjnymi.",
+    img: "/services/drony/drony-inspekcja.png",
+    imgAlt: "Termowizyjna inspekcja dachu hali magazynowej z panelami PV — obraz z drona w palecie ciepła",
   },
   {
     title: "Monitoring postępu budowy",
     text: "Regularna dokumentacja postępu prac z powietrza — od pierwszych prac ziemnych po odbiór obiektu. Obiektywny, datowany obraz dla inwestora, niezależny od raportów wykonawcy. Zintegrowany z prowadzeniem inwestycji Greenfield przez Vologis.",
+    img: "/services/drony/drony-budowa.png",
+    imgAlt: "Aerial shot budowy centrum logistycznego — stalowa konstrukcja i fundamenty, widok z drona",
     link: { href: "/pl/uslugi/projekty-greenfield/", label: "Zobacz projekty Greenfield" },
   },
   {
     title: "Patrol i ochrona obiektów — Drone-in-a-Box",
     text: "Autonomiczne patrole wokół centrów logistycznych i magazynów. Dron startuje automatycznie przy naruszeniu strefy, przekazując wideo do centrum ochrony w czasie rzeczywistym. Uzupełnienie procesów Loss Prevention — element całodobowego systemu bezpieczeństwa operacyjnego.",
+    img: "/services/drony/drony-patrol.png",
+    imgAlt: "Nocny widok centrum logistycznego z lotu drona — ogrodzony teren z oświetlonym placem",
     link: { href: "/pl/uslugi/bezpieczenstwo-operacyjne/", label: "Bezpieczeństwo operacyjne i Loss Prevention" },
   },
 ];
@@ -199,13 +211,26 @@ const schemaFaq = {
       <div class="scope-grid">
         {scopeCards.map((c) => (
           <div class="scope-card">
-            <h3 class="scope-card__title">{c.title}</h3>
-            <p class="scope-card__text">{c.text}</p>
-            {c.link && (
-              <a href={c.link.href} class="adv-link">
-                {c.link.label} <span aria-hidden="true">→</span>
-              </a>
-            )}
+            <div class="scope-card__img-wrap">
+              <img
+                src={c.img}
+                alt={c.imgAlt}
+                width="1200"
+                height="800"
+                loading="lazy"
+                decoding="async"
+                class="scope-card__img"
+              />
+            </div>
+            <div class="scope-card__body">
+              <h3 class="scope-card__title">{c.title}</h3>
+              <p class="scope-card__text">{c.text}</p>
+              {c.link && (
+                <a href={c.link.href} class="adv-link">
+                  {c.link.label} <span aria-hidden="true">→</span>
+                </a>
+              )}
+            </div>
           </div>
         ))}
       </div>
@@ -463,22 +488,52 @@ const schemaFaq = {
 
   .scope-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: var(--space-md);
     margin-top: var(--space-lg);
   }
 
   .scope-card {
     border: 1px solid var(--color-glass-border);
-    border-top: 3px solid var(--color-blue-on-dark);
     border-radius: var(--radius-md);
-    padding: var(--space-lg);
     background: var(--color-glass-dark);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
     transition: border-color var(--dur-micro) var(--ease-out), background var(--dur-short) var(--ease-out);
   }
 
   .scope-card:hover {
     background: oklch(100% 0 0 / 0.08);
+    border-color: var(--color-blue-on-dark);
+  }
+
+  .scope-card__img-wrap {
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .scope-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s var(--ease-out);
+    filter: saturate(0.85) brightness(0.92);
+  }
+
+  .scope-card:hover .scope-card__img {
+    transform: scale(1.03);
+    filter: saturate(0.95) brightness(0.98);
+  }
+
+  .scope-card__body {
+    padding: var(--space-lg);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-top: 3px solid var(--color-blue-on-dark);
   }
 
   .scope-card__title {
@@ -493,6 +548,8 @@ const schemaFaq = {
     font-size: var(--text-sm);
     color: var(--color-muted-on-dark);
     line-height: 1.65;
+    flex: 1;
+    margin-bottom: var(--space-sm);
   }
 
   /* ─── 3. Dla kogo ────────────────────────────────────────── */
@@ -532,7 +589,7 @@ const schemaFaq = {
   /* ─── 4. Przewaga (darker navy) ─────────────────────────── */
   .ps-advantage {
     padding-block: var(--space-3xl);
-    background: var(--color-primary);
+    background: var(--color-paper-dark);
   }
 
   .adv-grid {

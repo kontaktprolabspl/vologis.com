@@ -328,6 +328,26 @@ const schemaFaq = {
     </div>
   </section>
 
+  <!-- ─── 5b. Z doświadczenia założyciela ─────────────────── -->
+  <section class="ps-experience" aria-labelledby="h-experience">
+    <div class="container">
+      <CalloutBox>
+        <p class="exp-eyebrow">Z doświadczenia założyciela Vologis</p>
+        <div class="exp-metrics">
+          <div class="exp-metric">
+            <span class="exp-metric__val tnum">62%</span>
+            <span class="exp-metric__label">redukcji błędów obsługi zamówień po restrukturyzacji procesów (projekt fulfillment B2B)</span>
+          </div>
+          <div class="exp-metric">
+            <span class="exp-metric__val tnum">50%</span>
+            <span class="exp-metric__label">redukcji zasobów przy jednoczesnej poprawie wskaźników jakości (wdrożenie LEAN w operacji magazynowej)</span>
+          </div>
+        </div>
+        <p class="exp-frame">Wyniki z projektów operacyjnych realizowanych przez założyciela Vologis w poprzednich rolach kierowniczych — nie wyniki klientów Vologis.</p>
+      </CalloutBox>
+    </div>
+  </section>
+
   <!-- ─── 6. Dlaczego Vologis (dark) ───────────────────────── -->
   <section class="ps-why" aria-labelledby="h-why">
     <div class="container">
@@ -673,6 +693,56 @@ const schemaFaq = {
     font-size: var(--text-sm);
     color: var(--color-muted);
     line-height: 1.65;
+  }
+
+  /* ─── 5b. Z doświadczenia ────────────────────────────────── */
+  .ps-experience { padding-block: var(--space-xl); background: var(--color-paper); }
+
+  .exp-eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--color-blue);
+    margin-bottom: var(--space-md);
+  }
+
+  .exp-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+
+  .exp-metric {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+    min-width: 14rem;
+  }
+
+  .exp-metric__val {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--color-ink);
+    line-height: 1.1;
+  }
+
+  .exp-metric__label {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.4;
+  }
+
+  .exp-frame {
+    font-size: var(--text-xs);
+    color: var(--color-muted);
+    font-style: italic;
+    margin-top: var(--space-sm);
   }
 
   /* ─── 6. Dlaczego Vologis (dark) ─────────────────────────── */

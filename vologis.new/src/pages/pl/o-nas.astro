@@ -479,6 +479,48 @@ const schemaFaq = {
     </div>
   </section>
 
+  <!-- ── 4b. W LICZBACH — track record założyciela ─────────── -->
+  <section class="on-section on-numbers" aria-labelledby="on-numbers-h">
+    <div class="container">
+      <p class="on-eyebrow">W liczbach</p>
+      <h2 class="on-h2" id="on-numbers-h">Doświadczenie, które stoi za Vologis</h2>
+      <p class="on-numbers-intro">
+        Za niezależnym doradztwem Vologis stoi 20 lat praktyki operacyjnej — zarządzanie sieciami oddziałów, relokacje obiektów, restrukturyzacje i projekty fulfillment realizowane przez założyciela w poprzednich rolach kierowniczych.
+      </p>
+      <div class="on-numbers-grid">
+        <div class="on-number-card">
+          <span class="on-number-val tnum">20 lat</span>
+          <span class="on-number-label">doświadczenia w logistyce i zarządzaniu operacyjnym</span>
+        </div>
+        <div class="on-number-card">
+          <span class="on-number-val tnum">100+</span>
+          <span class="on-number-label">zarządzanych oddziałów i lokalizacji</span>
+        </div>
+        <div class="on-number-card">
+          <span class="on-number-val tnum">400+</span>
+          <span class="on-number-label">osób w zarządzanych zespołach</span>
+        </div>
+        <div class="on-number-card">
+          <span class="on-number-val tnum">90 tys. m²</span>
+          <span class="on-number-label">zarządzanej powierzchni magazynowej</span>
+        </div>
+        <div class="on-number-card">
+          <span class="on-number-val tnum">200+</span>
+          <span class="on-number-label">dostawców w koordynacji</span>
+        </div>
+        <div class="on-number-card">
+          <span class="on-number-val tnum">15</span>
+          <span class="on-number-label">audytów i relokacji obiektów logistycznych</span>
+        </div>
+      </div>
+      {/* TODO: pending client validation — hold for confirmation before enabling:
+        - 45 mln EUR budżetów zarządzanych
+        - 99% projektów on-budget
+        - 72 kontrakty logistyczne
+      */}
+    </div>
+  </section>
+
   <!-- ── 5. FILOZOFIA LOGISTYKI (dark) ─────────────────────── -->
   <section class="on-section on-philosophy" aria-labelledby="on-phil-h">
     <div class="container">
@@ -999,6 +1041,49 @@ const schemaFaq = {
     transition: color var(--dur-micro) var(--ease-out);
   }
   .on-founder-linkedin:hover { color: var(--color-ink); }
+
+  /* ─── 4b. W liczbach ────────────────────────────────────── */
+  .on-numbers { background: var(--color-paper-2); }
+
+  .on-numbers-intro {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.65;
+    max-width: 65ch;
+    margin-bottom: var(--space-xl);
+  }
+
+  .on-numbers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--space-md);
+  }
+
+  .on-number-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+    padding: var(--space-lg);
+    border: 1px solid var(--color-rule);
+    border-top: 3px solid var(--color-secondary);
+    border-radius: var(--radius-md);
+    background: var(--color-paper);
+  }
+
+  .on-number-val {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--color-ink);
+    line-height: 1.1;
+  }
+
+  .on-number-label {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.4;
+  }
 
   /* ─── 5. Philosophy (dark) ───────────────────────────────── */
   .on-philosophy { background: var(--color-paper-dark); }

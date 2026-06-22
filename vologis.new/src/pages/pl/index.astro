@@ -155,16 +155,17 @@ const processSteps = [
 ];
 
 const caseScope = [
-  "audyt kosztów transportu",
-  "analiza dostawców",
-  "mapa ryzyk operacyjnych",
-  "rekomendacje i wsparcie wdrożenia",
+  "zaprojektowanie operacji fulfillment dla kanału B2B i e-commerce",
+  "wdrożenie systemu opakowań zwrotnych i zarządzanie cyklem zwrotów",
+  "restrukturyzacja procesów kompletacji i obsługi zamówień",
+  "optymalizacja kosztów łańcucha dostaw (3 lata)",
 ];
 
-const caseEffects = [
-  "większa kontrola nad kosztami logistycznymi",
-  "krótszy czas podejmowania decyzji",
-  "uporządkowany model współpracy z dostawcami",
+const caseMetrics = [
+  { val: "12+ mln PLN", label: "wygenerowanych oszczędności (3 lata)" },
+  { val: "62%", label: "redukcji błędów obsługi zamówień" },
+  { val: "< 6 mies.", label: "ROI z wdrożenia opakowań zwrotnych" },
+  { val: "0,5 mln PLN/rok", label: "stałych oszczędności na opakowaniach" },
 ];
 
 const audienceChips = [
@@ -268,30 +269,31 @@ const schemaArticleList = {
   <!-- ══════════════════════════════════════════════════════
        2. STATS BAR
        ══════════════════════════════════════════════════════ -->
-  <section class="stats-section" aria-label="Vologis w liczbach">
+  <section class="stats-section" aria-label="Doświadczenie zespołu Vologis">
     <div class="container">
       <div class="stats-strip">
         <div class="stat-item">
-          <span class="stat-number tnum">15+</span>
+          <span class="stat-number tnum">20 lat</span>
           <span class="stat-rule" aria-hidden="true"></span>
-          <span class="stat-qualifier">lat doświadczenia w logistyce</span>
+          <span class="stat-qualifier">doświadczenia w logistyce i restrukturyzacji</span>
         </div>
         <div class="stat-item">
-          <span class="stat-number">Unia Europejska</span>
+          <span class="stat-number tnum">90 tys. m²</span>
           <span class="stat-rule" aria-hidden="true"></span>
-          <span class="stat-qualifier">zakres projektów i operacji</span>
+          <span class="stat-qualifier">zarządzanej powierzchni magazynowej</span>
         </div>
         <div class="stat-item">
-          <span class="stat-number tnum">7</span>
+          <span class="stat-number tnum">12+ mln PLN</span>
           <span class="stat-rule" aria-hidden="true"></span>
-          <span class="stat-qualifier">usług: pośrednictwo, doradztwo, Greenfield, drony, interim, komercjalizacja, bezpieczeństwo</span>
+          <span class="stat-qualifier">wygenerowanych oszczędności w łańcuchu dostaw</span>
         </div>
         <div class="stat-item">
-          <span class="stat-number tnum">5–10</span>
+          <span class="stat-number tnum">100+</span>
           <span class="stat-rule" aria-hidden="true"></span>
-          <span class="stat-qualifier">dni roboczych do pierwszej diagnozy</span>
+          <span class="stat-qualifier">zarządzanych oddziałów i lokalizacji</span>
         </div>
       </div>
+      <p class="stats-frame">Doświadczenie zespołu Vologis z projektów logistycznych ostatnich 20 lat.</p>
     </div>
   </section>
 
@@ -359,6 +361,16 @@ const schemaArticleList = {
             <a class="svc-link" href={s.href}>Zobacz zakres <span aria-hidden="true">→</span></a>
           </article>
         ))}
+        <article class="hp-cta-tile" aria-label="Bezpłatna konsultacja — nie wiesz, od czego zacząć?">
+          <div class="hp-cta-tile__head">
+            <span class="hp-cta-tile__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+            </span>
+          </div>
+          <h3 class="hp-cta-tile__title">Nie wiesz, od czego zacząć?</h3>
+          <p class="hp-cta-tile__body">Powiedz nam, gdzie boli. Wskażemy, która usługa realnie rozwiąże Twój problem — albo czy potrzebujesz kilku połączonych w jeden projekt. Bezpłatna konsultacja, bez zobowiązań.</p>
+          <a class="btn-primary hp-cta-tile__btn" href="/pl/kontakt/">Umów konsultację <span aria-hidden="true">→</span></a>
+        </article>
       </div>
     </div>
   </section>
@@ -424,10 +436,11 @@ const schemaArticleList = {
       <div class="case-grid">
         <div class="case-card">
           <div class="case-card__header">
-            <p class="case-card__type">Firma produkcyjna</p>
-            <span class="case-badge">Case anonymized</span>
+            <p class="case-card__type">Operator B2B / e-commerce (międzynarodowy)</p>
+            <span class="case-badge">Anonymized</span>
           </div>
-          <h3 class="case-card__title">Reorganizacja łańcucha dostaw</h3>
+          <h3 class="case-card__title">European Fulfillment Hub — transformacja operacyjna</h3>
+          <p class="case-frame">Projekt zrealizowany przez założyciela Vologis w ramach wcześniejszej roli kierowniczej.</p>
           <div class="case-cols">
             <div>
               <p class="case-cols__label">Zakres</p>
@@ -441,12 +454,12 @@ const schemaArticleList = {
               </ul>
             </div>
             <div>
-              <p class="case-cols__label">Efekt</p>
-              <ul class="case-list" role="list">
-                {caseEffects.map((item) => (
-                  <li class="case-list__item">
-                    <svg class="case-list__icon case-list__icon--blue" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg>
-                    {item}
+              <p class="case-cols__label">Rezultaty</p>
+              <ul class="case-metrics" role="list">
+                {caseMetrics.map((m) => (
+                  <li class="case-metric">
+                    <span class="case-metric__val tnum">{m.val}</span>
+                    <span class="case-metric__label">{m.label}</span>
                   </li>
                 ))}
               </ul>
@@ -454,19 +467,24 @@ const schemaArticleList = {
           </div>
         </div>
 
-        <figure class="testimonial">
-          <svg class="testimonial__mark" viewBox="0 0 40 32" fill="currentColor" aria-hidden="true">
-            <path d="M0 32V19.2C0 8.32 6.4 2.133 19.2 0l2.4 3.733C14.4 5.333 10.4 9.067 9.6 14.4H16V32H0Zm24 0V19.2C24 8.32 30.4 2.133 43.2 0l2.4 3.733C38.4 5.333 34.4 9.067 33.6 14.4H40V32H24Z"/>
-          </svg>
-          <blockquote class="testimonial__text">
-            Vologis przeprowadził nas od diagnozy przez konkretne rekomendacje aż po wdrożenie.
-            Terminy dotrzymane, koszty pod kontrolą.
-          </blockquote>
-          <figcaption class="testimonial__attr">
-            <span class="testimonial__role">Dyrektor Operacyjny, firma produkcyjna</span>
-            <span class="testimonial__note">branża FMCG</span>
-          </figcaption>
-        </figure>
+        <div class="case-track" aria-label="Doświadczenie założyciela Vologis">
+          <p class="case-track__eyebrow">Doświadczenie za projektem</p>
+          <p class="case-track__intro">Projekt jest częścią 20-letniego doświadczenia operacyjnego założyciela Vologis — obejmującego zarządzanie sieciami oddziałów, projekty fulfillment i relokacje obiektów w całej UE.</p>
+          <ul class="case-track__stats" role="list">
+            <li class="case-track__stat">
+              <span class="case-track__val tnum">100+</span>
+              <span class="case-track__label">zarządzanych oddziałów i lokalizacji</span>
+            </li>
+            <li class="case-track__stat">
+              <span class="case-track__val tnum">400+</span>
+              <span class="case-track__label">osób w zarządzanych zespołach</span>
+            </li>
+            <li class="case-track__stat">
+              <span class="case-track__val tnum">15</span>
+              <span class="case-track__label">audytów i relokacji obiektów logistycznych</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -867,6 +885,14 @@ const schemaArticleList = {
     line-height: 1.4;
   }
 
+  .stats-frame {
+    font-size: var(--text-xs);
+    color: var(--color-muted);
+    text-align: center;
+    margin-top: var(--space-lg);
+    opacity: 0.8;
+  }
+
   /* ── 3. Problem ──────────────────────────────────────────── */
   .problem-section { background: var(--color-paper); }
 
@@ -902,6 +928,66 @@ const schemaArticleList = {
   }
 
   /* ── 4. Services ─────────────────────────────────────────── */
+  /* ── HP CTA tile (8th cell) ────────────────────── */
+  .hp-cta-tile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    background: var(--color-paper-dark);
+    border: 1px solid oklch(56% 0.078 238 / 0.35);
+    border-top: 3px solid var(--color-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-sm);
+    transition:
+      border-color var(--dur-short) var(--ease-out),
+      transform var(--dur-short) var(--ease-out),
+      box-shadow var(--dur-short) var(--ease-out);
+  }
+
+  .hp-cta-tile:hover {
+    border-color: var(--color-blue-on-dark);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .hp-cta-tile__head {
+    display: flex;
+    align-items: center;
+  }
+
+  .hp-cta-tile__icon {
+    display: grid;
+    place-items: center;
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: var(--radius-md);
+    background: oklch(56% 0.078 238 / 0.15);
+    color: var(--color-blue-on-dark);
+  }
+
+  .hp-cta-tile__title {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: var(--color-ink-on-dark);
+  }
+
+  .hp-cta-tile__body {
+    font-size: var(--text-base);
+    color: var(--color-muted-on-dark);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .hp-cta-tile__btn {
+    margin-top: auto;
+    align-self: flex-start;
+  }
+
   .services-section { background: var(--color-paper-2); }
 
   .services-grid {
@@ -1220,47 +1306,100 @@ const schemaArticleList = {
 
   .case-list__icon--blue { color: var(--color-blue); }
 
-  .testimonial {
+  .case-frame {
+    font-size: var(--text-xs);
+    color: var(--color-muted);
+    font-style: italic;
+    margin-top: calc(var(--space-sm) * -1);
+    margin-bottom: var(--space-xs);
+  }
+
+  .case-metrics {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .case-metric {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: var(--space-sm) var(--space-md);
+    background: var(--color-blue-tint);
+    border-left: 3px solid var(--color-blue);
+    border-radius: 0 var(--radius-xs) var(--radius-xs) 0;
+  }
+
+  .case-metric__val {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-ink);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .case-metric__label {
+    font-size: var(--text-xs);
+    color: var(--color-muted);
+    line-height: 1.4;
+  }
+
+  .case-track {
     background: var(--color-paper-dark);
     border-radius: var(--radius-lg);
     padding: var(--space-2xl);
     display: flex;
     flex-direction: column;
     gap: var(--space-lg);
-    margin: 0;
   }
 
-  .testimonial__mark {
-    width: 2rem;
-    height: auto;
+  .case-track__eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
     color: var(--color-blue-on-dark);
-    opacity: 0.5;
-    flex-shrink: 0;
   }
 
-  .testimonial__text {
-    font-size: var(--text-md);
-    color: var(--color-ink-on-dark);
-    line-height: 1.65;
-    font-style: normal;
+  .case-track__intro {
+    font-size: var(--text-sm);
+    color: var(--color-muted-on-dark);
+    line-height: 1.6;
   }
 
-  .testimonial__attr {
+  .case-track__stats {
+    list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: var(--space-md);
   }
 
-  .testimonial__role {
+  .case-track__stat {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-sm);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid oklch(100% 0 0 / 0.08);
+  }
+
+  .case-track__stat:last-child { border-bottom: none; }
+
+  .case-track__val {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-blue-on-dark);
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .case-track__label {
     font-size: var(--text-sm);
-    font-weight: 600;
     color: var(--color-muted-on-dark);
-  }
-
-  .testimonial__note {
-    font-size: var(--text-xs);
-    color: var(--color-neutral);
-    font-family: var(--font-mono);
+    line-height: 1.4;
   }
 
   /* ── 7. For whom ─────────────────────────────────────────── */

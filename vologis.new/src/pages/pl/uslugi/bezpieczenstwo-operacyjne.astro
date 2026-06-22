@@ -236,6 +236,22 @@ const schemaFaq = {
     </div>
   </section>
 
+  <!-- ─── 5b. Z doświadczenia założyciela ─────────────────── -->
+  <section class="ps-experience" aria-labelledby="h-experience">
+    <div class="container">
+      <CalloutBox>
+        <p class="exp-eyebrow">Z doświadczenia założyciela Vologis</p>
+        <div class="exp-metrics">
+          <div class="exp-metric">
+            <span class="exp-metric__val tnum">70 000 m²</span>
+            <span class="exp-metric__label">park intermodalny — konsolidacja zarządzania bezpieczeństwem z ochroną fizyczną obiektów i systemami CCTV/KD</span>
+          </div>
+        </div>
+        <p class="exp-frame">Projekt realizowany przez założyciela Vologis w poprzedniej roli kierowniczej.</p>
+      </CalloutBox>
+    </div>
+  </section>
+
   <!-- ─── 6. FAQ ───────────────────────────────────────── -->
   <section class="ps-faq" aria-labelledby="h-faq">
     <div class="container">
@@ -545,6 +561,15 @@ const schemaFaq = {
   }
 
   .crosslink-box__link:hover { color: var(--color-ink); }
+
+  /* ─── 5b. Z doświadczenia ────────────────────────────────── */
+  .ps-experience { padding-block: var(--space-xl); background: var(--color-paper); }
+  .exp-eyebrow { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; color: var(--color-blue); margin-bottom: var(--space-md); }
+  .exp-metrics { display: flex; flex-wrap: wrap; gap: var(--space-md); margin-bottom: var(--space-md); }
+  .exp-metric { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 14rem; }
+  .exp-metric__val { font-family: var(--font-display); font-size: var(--text-2xl, 2rem); font-weight: 700; letter-spacing: -0.03em; color: var(--color-ink); line-height: 1.1; }
+  .exp-metric__label { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.4; }
+  .exp-frame { font-size: var(--text-xs); color: var(--color-muted); font-style: italic; margin-top: var(--space-sm); }
 
   /* ─── 6. FAQ ─────────────────────────────────────── */
   .ps-faq {

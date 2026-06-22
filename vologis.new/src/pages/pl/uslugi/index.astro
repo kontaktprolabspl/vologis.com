@@ -202,6 +202,16 @@ const schemaItemList = {
             href={s.href}
           />
         ))}
+        <article class="svc-cta-tile" aria-label="Bezpłatna konsultacja — nie wiesz, od czego zacząć?">
+          <div class="svc-cta-tile__head">
+            <span class="svc-cta-tile__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+            </span>
+          </div>
+          <h3 class="svc-cta-tile__title">Nie wiesz, od czego zacząć?</h3>
+          <p class="svc-cta-tile__body">Powiedz nam, gdzie boli. Wskażemy, która usługa realnie rozwiąże Twój problem — albo czy potrzebujesz kilku połączonych w jeden projekt. Bezpłatna konsultacja, bez zobowiązań.</p>
+          <a class="cta-btn cta-btn--primary svc-cta-tile__btn" href="/pl/kontakt/">Umów konsultację <span aria-hidden="true">→</span></a>
+        </article>
       </div>
     </div>
   </section>
@@ -685,6 +695,66 @@ const schemaItemList = {
     background: var(--color-ink-on-dark);
     color: var(--color-ink);
     border-color: var(--color-ink-on-dark);
+  }
+
+  /* ── CTA tile (8th cell) ─────────────────────────── */
+  .svc-cta-tile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    background: var(--color-paper-dark);
+    border: 1px solid oklch(56% 0.078 238 / 0.35);
+    border-left: 4px solid var(--color-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-sm);
+    transition:
+      border-color var(--dur-short) var(--ease-out),
+      transform var(--dur-short) var(--ease-out),
+      box-shadow var(--dur-short) var(--ease-out);
+  }
+
+  .svc-cta-tile:hover {
+    border-color: var(--color-blue-on-dark);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .svc-cta-tile__head {
+    display: flex;
+    align-items: center;
+  }
+
+  .svc-cta-tile__icon {
+    display: grid;
+    place-items: center;
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: var(--radius-md);
+    background: oklch(56% 0.078 238 / 0.15);
+    color: var(--color-blue-on-dark);
+  }
+
+  .svc-cta-tile__title {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: var(--color-ink-on-dark);
+  }
+
+  .svc-cta-tile__body {
+    font-size: var(--text-base);
+    color: var(--color-muted-on-dark);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .svc-cta-tile__btn {
+    margin-top: auto;
+    align-self: flex-start;
   }
 
   /* ── Responsive ──────────────────────────────────── */

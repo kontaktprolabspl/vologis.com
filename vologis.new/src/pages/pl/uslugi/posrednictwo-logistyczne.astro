@@ -610,6 +610,25 @@ const schemaFaq = {
     </div>
   </section>
 
+  <!-- ─── Zasoby rynkowe ───────────────────────────────────── -->
+  <section class="ps-market-resources" aria-labelledby="h-market-resources">
+    <div class="container">
+      <p class="market-resources__label" id="h-market-resources">Portale rynkowe</p>
+      <div class="market-resources__grid">
+        <a class="market-resources__card" href="https://www.magazynyinfo.pl/" target="_blank" rel="noopener noreferrer">
+          <span class="market-resources__title">magazynyinfo.pl</span>
+          <span class="market-resources__desc">Baza ofert magazynowych w Polsce — przeglądaj dostępne powierzchnie według lokalizacji i parametrów.</span>
+          <span class="market-resources__ext" aria-label="zewnętrzna strona">↗</span>
+        </a>
+        <a class="market-resources__card" href="https://warehousemarket.pl/" target="_blank" rel="noopener noreferrer">
+          <span class="market-resources__title">warehousemarket.pl</span>
+          <span class="market-resources__desc">Portal rynku magazynowego — oferty powierzchni logistycznych i danych rynkowych dla najemców.</span>
+          <span class="market-resources__ext" aria-label="zewnętrzna strona">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ─── Cross-link: Komercjalizacja ──────────────────────── -->
   <section class="ps-crosslink" aria-labelledby="h-crosslink">
     <div class="container">
@@ -1437,6 +1456,75 @@ const schemaFaq = {
   }
 
   .branze-card:hover .branze-card__arrow { transform: translateX(4px); }
+
+  /* ─── Zasoby rynkowe ──────────────────────────────────────── */
+  .ps-market-resources {
+    padding-block: var(--space-xl);
+    background: var(--color-paper);
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .market-resources__label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin-bottom: var(--space-md);
+  }
+
+  .market-resources__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-sm);
+  }
+
+  .market-resources__card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-lg);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-md);
+    background: var(--color-paper);
+    text-decoration: none;
+    transition: border-color var(--dur-micro) var(--ease-out), background var(--dur-short) var(--ease-out);
+  }
+
+  .market-resources__card:hover {
+    border-color: var(--color-secondary);
+    background: var(--color-paper-2);
+  }
+
+  .market-resources__title {
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-secondary);
+    display: block;
+    margin-bottom: var(--space-2xs);
+  }
+
+  .market-resources__desc {
+    font-size: var(--text-xs);
+    color: var(--color-muted);
+    line-height: 1.55;
+    flex: 1;
+    display: block;
+  }
+
+  .market-resources__ext {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    flex-shrink: 0;
+    margin-top: 2px;
+    transition: color var(--dur-micro) var(--ease-out);
+  }
+
+  .market-resources__card:hover .market-resources__ext {
+    color: var(--color-secondary);
+  }
 
   /* ─── Cross-link ─────────────────────────────────────────── */
   .ps-crosslink {
