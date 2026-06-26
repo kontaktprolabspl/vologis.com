@@ -1,0 +1,419 @@
+---
+import ServicePageLayout from "../../../layouts/ServicePageLayout.astro";
+import FaqAccordion from "../../../components/FaqAccordion.astro";
+import CalloutBox from "../../../components/CalloutBox.astro";
+
+const SITE = "https://vologis.com";
+
+const trustItems = [
+  "Warehouse and transport process audit",
+  "Bottleneck identification and quick wins",
+  "Warehouse layout and flow design",
+  "WMS, automation and robotics selection",
+  "Quantified recommendations with an implementation roadmap",
+  "We implement changes — we don't just write reports",
+];
+
+const forWhom = [
+  { title: "Manufacturing companies",                      text: "When production logistics is slowing output and shop floor supply and batch tracking need restructuring." },
+  { title: "Trading and distribution companies",           text: "When warehousing and picking costs are growing faster than revenue." },
+  { title: "E-commerce and D2C",                           text: "When growing order volumes are reducing picking efficiency and returns handling quality." },
+  { title: "3PL/4PL logistics operators",                  text: "When you need an external process review and benchmark ahead of contract renegotiations." },
+  { title: "Companies before an IT or automation investment", text: "When you want certainty that the investment in WMS or automation will pay off and solve the right problem." },
+  { title: "Transport companies scaling a fleet (100+ vehicles)", text: "When you're managing a fleet of over 100 vehicles and growth is exposing bottlenecks: route planning, dispatch, empty runs, driver turnover. Operational consulting structures processes before the next scaling stage." },
+];
+
+const scopeCards = [
+  { title: "Warehouse process audit",          text: "We analyse inbound, storage, picking, packing and dispatch. We identify bottlenecks, waste and areas with the highest improvement potential." },
+  { title: "Production logistics audit",       text: "We assess shop floor supply, material flows, batch tracking and assembly picking. We pinpoint where processes are slowing production output." },
+  { title: "Bottleneck identification & Quick Wins", text: "We identify both low-cost immediate-impact changes and longer-term actions. Every recommendation comes with an estimated effect and priority rating." },
+  { title: "Layout and flow design",           text: "We design warehouse layout and material flows around a specific rotation profile, volume and growth plans. We eliminate unnecessary movements and empty runs." },
+  { title: "WMS and automation selection",     text: "We help select and configure WMS systems, warehouse automation and robotics — objectively, with no supplier ties. We match technology to scale and budget, not the other way round." },
+  { title: "Warehouse automation consulting",  text: "We advise on automation selection — from AutoStore, miniload and sorters to AMRs and internal transport systems. Independently, no vendor commissions. We select a scalable solution based on realistic volumes and investment horizon." },
+  { title: "Roadmap and implementation",       text: "We deliver a concrete short- and long-term action roadmap. You can implement the recommendations yourself or with our support — all the way to achieving the target KPIs." },
+];
+
+const whenItems = [
+  "Rising operational costs with no clear cause",
+  "Order fulfilment and picking delays",
+  "Running out of warehouse space",
+  "Team spending time firefighting instead of developing",
+  "Before purchasing or replacing a WMS",
+  "Before investing in warehouse automation",
+  "Need to reduce average stock levels",
+  "Business scale has outgrown current processes",
+  "Planned warehouse relocation or expansion",
+  "Declining throughput despite increased headcount",
+];
+
+const deliverables = [
+  { title: "Accurate diagnosis",                        text: "Certainty about where the real problem lies — hard numbers, not assumptions." },
+  { title: "Quantified recommendations",                text: "Every action prioritised and accompanied by an estimated financial or operational benefit." },
+  { title: "Short- and long-term action roadmap",       text: "A concrete plan: what to do first, what requires investment and when to expect results." },
+  { title: "Prioritised by return",                     text: "Focus on actions with the highest return — not those that look most appealing." },
+  { title: "Reduced risk of poor investment decisions", text: "An audit before buying WMS or automation helps avoid costly mistakes from misdiagnosis." },
+  { title: "Market and best-practice benchmark",        text: "Knowledge of where you stand against your industry and what the most efficient operators in your segment are doing." },
+  { title: "Board-ready results presentation",          text: "A decision-ready document: prepared for presentation, with no operational jargon." },
+];
+
+const whyCards = [
+  "We walk the floor — we don't analyse from a desk",
+  "100% independent — no ties to WMS or automation vendors",
+  "We recommend implementation, not just diagnosis",
+  "Experience from the operator side, not just consulting",
+  "Market and best-practice benchmark",
+  "Measurable results — not general observations",
+];
+
+const faqs = [
+  { q: "How long does a logistics audit take?",           a: "A quick audit (Quick Check) of a specific area: 1–2 weeks. A full operational audit of a business: 3–6 weeks, depending on scale and number of locations. Scope and timeline are agreed at the first meeting." },
+  { q: "How does a Vologis audit differ from a WMS vendor analysis?", a: "A WMS vendor analyses processes with a view to selling their system. We're 100% independent — we have no interest in any specific solution. We often recommend cleaning up processes first, before it even makes sense to invest in a new system." },
+  { q: "Do I have to commission you for implementation after the audit?", a: "No. You can implement the roadmap recommendations yourself or with another partner. Many clients start with an audit and decide on implementation after seeing the results. There is no obligation to continue." },
+  { q: "Does the audit cover transport costs?",           a: "Yes. The audit can include analysis of transport costs, carrier selection and route optimisation as part of a broader operational review — or as a standalone area if that's the primary issue." },
+  { q: "What do I get at the end of the audit?",          a: "A document with a diagnosis, quantified recommendations and a short- and long-term action roadmap prioritised by impact and potential effect. Plus a board-ready results presentation." },
+  { q: "Do you audit production logistics?",              a: "Yes. A production logistics audit covers production cycle planning, raw material supply, shop floor flows, production batch tracking and reporting. This is a frequent starting point before deciding on automation or a system change." },
+];
+
+const branze = [
+  { slug: "operational-consulting-fmcg",         industry: "FMCG",           h1: "Operational consulting for the FMCG sector",           description: "Process audit for high-turnover goods, seasonal peaks and retail network requirements." },
+  { slug: "operational-consulting-ecommerce",    industry: "E-commerce",     h1: "Operational consulting for e-commerce",                 description: "Picking optimisation, returns handling and fulfillment efficiency." },
+  { slug: "operational-consulting-manufacturing",industry: "Manufacturing",   h1: "Operational consulting for manufacturing",              description: "Production logistics audit, shop floor flows and WMS selection." },
+  { slug: "operational-consulting-automotive",   industry: "Automotive",     h1: "Operational consulting for automotive",                 description: "JIT processes, sequence management and IATF/ISO compliance." },
+  { slug: "operational-consulting-pharma",       industry: "Pharma",         h1: "Operational consulting for pharma",                     description: "GDP-compliant warehouse processes and serialisation audit." },
+  { slug: "operational-consulting-distribution", industry: "Distribution",   h1: "Operational consulting for distribution",               description: "Multi-client warehouse optimisation and transport cost analysis." },
+];
+
+const schemaService = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Operational consulting and logistics audit",
+  "provider": { "@type": "Organization", "name": "Vologis Sp. z o.o.", "url": SITE, "address": { "@type": "PostalAddress", "addressLocality": "Jarocin", "addressRegion": "Wielkopolska", "addressCountry": "PL" } },
+  "areaServed": ["Poland", "Europe"],
+  "serviceType": "Operational consulting and logistics audit",
+  "description": "Vologis conducts an independent audit of warehouse, transport and supply chain processes — identifies bottlenecks and delivers quantified recommendations with an implementation roadmap.",
+  "url": `${SITE}/en/services/operational-consulting/`,
+  "inLanguage": "en",
+};
+
+const schemaFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })),
+};
+---
+
+<ServicePageLayout
+  title="Operational Consulting & Logistics Audit | Vologis"
+  description="Independent logistics audit and warehouse automation consulting (AutoStore, AMR, WMS) — Vologis identifies bottlenecks and implements changes to hit KPIs."
+  canonical="https://vologis.com/en/services/operational-consulting/"
+  hreflangPL="/pl/uslugi/doradztwo-operacyjne/"
+  ogImage="/og/og-doradztwo.png"
+  heroImage="/services/doradztwo-operacyjne.webp"
+  eyebrow="Logistics services / Operational consulting"
+  h1="Operational Consulting & Audit — We Find Where You're Losing Money, Time and People"
+  lead="Most companies know their logistics could work better — but don't know exactly where the problem lies or where to start. Vologis conducts an independent audit of warehouse, transport and supply chain processes, identifies bottlenecks and delivers measurable recommendations. We don't stop at a report — we implement changes until measurable results are achieved. We operate from hard operational experience, not textbook theory."
+  trustItems={trustItems}
+  ctaPrimaryLabel="Order a logistics audit"
+  ctaPrimaryHref="/en/contact/"
+  ctaSecondaryLabel="See how we work"
+  ctaSecondaryHref="/en/process/"
+  breadcrumbs={[{ name: "Operational consulting & audit" }]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaService)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaFaq)} />
+
+  <!-- 1. Problem -->
+  <section class="ps-problem" aria-labelledby="h-problem">
+    <div class="container">
+      <div class="ps-problem__grid">
+        <div class="ps-problem__copy">
+          <h2 class="h2" id="h-problem">When logistics starts costing more than it earns</h2>
+          <p class="body">Bottlenecks are rarely where you expect them. The company sees rising costs, delays and team frustration — but the root cause often lies deeper: a poorly designed layout, suboptimal picking processes, a misconfigured WMS, or a structure that hasn't kept pace with business scale.</p>
+          <p class="body">Internal teams gradually lose perspective on their own organisation — it's hard to see a problem you're looking at every day. An external, objective view uncovers hidden reserves and bypasses the internal politics that often blocks change.</p>
+          <p class="body">Vologis operational audit is not theoretical analysis. We go on-site, count rotations, observe processes, talk to operators. We show exactly where capital is stuck — and what to do to free it.</p>
+          <p class="body"><strong>A bad automation investment costs you for 10 years.</strong> Warehouse automation is a multi-year investment — which is exactly why the wrong choice is so costly. We advise independently: we select automation for volumes, processes and the growth horizon — so the investment pays back across its full lifetime.</p>
+        </div>
+        <aside class="ps-brief" aria-label="In brief">
+          <p class="ps-brief__label">In brief</p>
+          <p class="ps-brief__text">Operational consulting and audit is a service in which Vologis analyses warehouse, transport and production processes, identifies bottlenecks and delivers quantified recommendations with an implementation roadmap. Unlike theoretical analyses, we implement recommended changes through to measurable KPIs. The audit covers WMS selection and independent automation advisory (AutoStore, AMR, sorters, miniload) — with no vendor commissions.</p>
+          <hr class="ps-brief__rule" />
+          <p class="ps-brief__sub">Vologis &middot; Jarocin, Poland &middot; Serving the PL and EU markets</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. For whom -->
+  <section class="ps-forwho" aria-labelledby="h-forwho">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-forwho">Who is operational consulting for?</h2>
+      <p class="section-intro">An audit makes sense wherever logistics has become a brake on growth or a source of costs that aren't visible at first glance.</p>
+      <div class="fw-grid">
+        {forWhom.map((p) => (
+          <div class="fw-card">
+            <h3 class="fw-card__title">{p.title}</h3>
+            <p class="fw-card__text">{p.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Scope -->
+  <section class="ps-scope" aria-labelledby="h-scope">
+    <div class="container">
+      <h2 class="h2" id="h-scope">What does operational consulting and audit cover?</h2>
+      <p class="body">We tailor the audit scope to the problem — from a rapid review of one area to a full operational assessment of the warehouse, production and transport.</p>
+      <div class="scope-grid">
+        {scopeCards.map((c) => (
+          <div class="scope-card">
+            <h3 class="scope-card__title">{c.title}</h3>
+            <p class="scope-card__text">{c.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. When -->
+  <section class="ps-when" aria-labelledby="h-when">
+    <div class="container">
+      <h2 class="h2" id="h-when">When is the right time for an operational audit?</h2>
+      <p class="body">An audit makes sense when you recognise at least one of the following signals:</p>
+      <ul class="when-list when-list--2col" role="list">
+        {whenItems.map((item) => (
+          <li class="when-item">
+            <svg class="when-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5. Deliverables -->
+  <section class="ps-benefits" aria-labelledby="h-benefits">
+    <div class="container">
+      <h2 class="h2" id="h-benefits">What do you get from the audit?</h2>
+      <div class="ben-grid">
+        {deliverables.map((d) => (
+          <div class="ben-card">
+            <h3 class="ben-card__title">{d.title}</h3>
+            <p class="ben-card__text">{d.text}</p>
+          </div>
+        ))}
+      </div>
+      <CalloutBox>
+        The most expensive audit is one that leads to no change. At Vologis, every analysis ends with a concrete prioritised roadmap — and the option to implement it with our support.
+      </CalloutBox>
+    </div>
+  </section>
+
+  <!-- 5b. Experience -->
+  <section class="ps-experience" aria-labelledby="h-experience">
+    <div class="container">
+      <CalloutBox>
+        <p class="exp-eyebrow">From Vologis founder's experience</p>
+        <div class="exp-metrics">
+          <div class="exp-metric">
+            <span class="exp-metric__val tnum">62%</span>
+            <span class="exp-metric__label">reduction in order processing errors after process restructuring (B2B fulfillment project)</span>
+          </div>
+          <div class="exp-metric">
+            <span class="exp-metric__val tnum">50%</span>
+            <span class="exp-metric__label">resource reduction with simultaneous quality metric improvement (LEAN implementation in warehouse operations)</span>
+          </div>
+        </div>
+        <p class="exp-frame">Results from operational projects carried out by the Vologis founder in previous management roles — not Vologis client results.</p>
+      </CalloutBox>
+    </div>
+  </section>
+
+  <!-- 6. Why Vologis -->
+  <section class="ps-why" aria-labelledby="h-why">
+    <div class="container">
+      <h2 class="h2 h2--dark" id="h-why">Why Vologis?</h2>
+      <div class="why-grid">
+        <div class="why-copy">
+          <p class="why-text">Vologis is not a consulting firm that writes reports and leaves. We have direct operational experience — managing warehouses, production and 3PL logistics. We know what a problem looks like from the inside, not just from a data perspective.</p>
+          <p class="why-text">We're 100% independent of WMS, automation and warehouse system vendors. We don't recommend technology because we have a contract with it — we recommend what genuinely fits the client's scale, budget and operational specifics. Sometimes the best decision is to delay IT investment until the processes are ready.</p>
+          <a href="/en/contact/" class="why-btn">Talk to Vologis <span aria-hidden="true">→</span></a>
+        </div>
+        <ul class="why-cards" role="list">
+          {whyCards.map((card) => (
+            <li class="why-card">
+              <svg class="why-card__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg>
+              {card}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FAQ -->
+  <section class="ps-faq" aria-labelledby="h-faq">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-faq">FAQ — frequently asked questions</h2>
+      <FaqAccordion items={faqs} single />
+    </div>
+  </section>
+
+  <!-- End CTA -->
+  <section class="ps-endcta" aria-labelledby="h-endcta">
+    <div class="container">
+      <div class="endcta-inner">
+        <h2 class="endcta__h2" id="h-endcta">Find out where your logistics is losing money</h2>
+        <p class="endcta__text">Free first conversation. We'll tell you straight whether and how we can help.</p>
+        <div class="endcta__actions">
+          <a href="/en/contact/" class="endcta__btn endcta__btn--primary">Order an audit <span aria-hidden="true">→</span></a>
+          <a href="/en/process/" class="endcta__btn endcta__btn--ghost">See our process →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed solutions -->
+  <section class="ps-branze" aria-labelledby="h-branze">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-branze">Detailed solutions</h2>
+      <p class="section-intro">Every industry has its own operational specifics. See how we audit specific sectors.</p>
+      <div class="branze-grid">
+        {branze.map((b) => (
+          <a class="branze-card" href={`/en/services/${b.slug}/`}>
+            <span class="branze-card__industry">{b.industry}</span>
+            <span class="branze-card__title">{b.h1}</span>
+            <span class="branze-card__desc">{b.description}</span>
+            <span class="branze-card__arrow" aria-hidden="true">→</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Related -->
+  <section class="ps-related" aria-labelledby="h-related">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-related">Other Vologis services</h2>
+      <div class="related-grid">
+        <a class="related-card" href="/en/services/logistics-brokerage/">
+          <span class="related-card__title">Logistics brokerage</span>
+          <span class="related-card__desc">Finding and verifying warehouse operators, fulfillment partners and carriers.</span>
+          <span class="related-card__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="related-card" href="/en/services/interim-management/">
+          <span class="related-card__title">Interim Management</span>
+          <span class="related-card__desc">Management support and operations stabilisation in difficult times.</span>
+          <span class="related-card__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="related-card" href="/en/services/greenfield-projects/">
+          <span class="related-card__title">Greenfield projects</span>
+          <span class="related-card__desc">From site analysis to operations launch. One partner.</span>
+          <span class="related-card__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-link -->
+  <section class="pg-crosslink" aria-label="Related services">
+    <div class="container">
+      <div class="crosslink-box">
+        <div class="crosslink-box__content">
+          <h2 class="crosslink-box__title">Operational audit also covers process security</h2>
+          <p class="crosslink-box__text">Process bottlenecks often go hand in hand with security and internal control gaps. Operational consulting and Loss Prevention are complementary areas.</p>
+          <a href="/en/services/operational-security/" class="crosslink-box__link">Operational security and Loss Prevention <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</ServicePageLayout>
+
+<style>
+  .h2 { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; letter-spacing: -0.025em; line-height: 1.15; color: var(--color-ink); margin-bottom: var(--space-lg); }
+  .h2--center { text-align: center; }
+  .h2--dark { color: var(--color-ink-on-dark); }
+  .body { font-size: var(--text-base); color: var(--color-muted); line-height: 1.75; margin-bottom: var(--space-md); }
+  .section-intro { font-size: var(--text-md); color: var(--color-muted); line-height: 1.65; max-width: 60ch; margin-inline: auto; text-align: center; margin-bottom: var(--space-xl); }
+  .ps-problem { padding-block: var(--space-3xl); background: var(--color-paper); }
+  .ps-problem__grid { display: grid; grid-template-columns: 1fr 20rem; gap: var(--space-3xl); align-items: start; }
+  .ps-brief { border: 1px solid var(--color-blue); border-radius: var(--radius-lg); background: var(--color-blue-tint); padding: var(--space-lg) var(--space-xl); position: sticky; top: calc(4.25rem + 3px + var(--space-lg)); }
+  .ps-brief__label { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-secondary); margin-bottom: var(--space-md); }
+  .ps-brief__text { font-size: var(--text-base); color: var(--color-ink); line-height: 1.7; }
+  .ps-brief__rule { border: none; border-top: 1px solid var(--color-blue); margin-block: var(--space-md); opacity: 0.3; }
+  .ps-brief__sub { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.5; }
+  .ps-forwho { padding-block: var(--space-3xl); background: var(--color-paper-2); }
+  .fw-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--space-md); }
+  .fw-card { border: 1px solid var(--color-rule); border-left: 4px solid var(--color-secondary); border-radius: var(--radius-md); padding: var(--space-lg); background: var(--color-paper); }
+  .fw-card__title { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; color: var(--color-ink); margin-bottom: var(--space-sm); }
+  .fw-card__text { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.65; }
+  .ps-scope { padding-block: var(--space-3xl); background: var(--color-paper); }
+  .scope-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--space-md); margin-top: var(--space-lg); }
+  .scope-card { border: 1px solid var(--color-rule); border-radius: var(--radius-md); padding: var(--space-lg); background: var(--color-paper); transition: border-color var(--dur-micro) var(--ease-out), box-shadow var(--dur-short) var(--ease-out); }
+  .scope-card:hover { border-color: var(--color-blue); box-shadow: var(--shadow-sm); }
+  .scope-card__title { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; color: var(--color-ink); margin-bottom: var(--space-sm); }
+  .scope-card__text { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.65; }
+  .ps-when { padding-block: var(--space-3xl); background: var(--color-paper-2); }
+  .when-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: var(--space-md); margin-top: var(--space-lg); }
+  .when-list--2col { grid-template-columns: repeat(2, 1fr); }
+  .when-item { display: flex; align-items: flex-start; gap: var(--space-sm); font-size: var(--text-base); color: var(--color-ink); line-height: 1.55; }
+  .when-icon { flex-shrink: 0; width: 1.2rem; height: 1.2rem; margin-top: 0.15rem; color: var(--color-blue); }
+  .ps-benefits { padding-block: var(--space-3xl); background: var(--color-paper); }
+  .ben-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--space-md); margin-bottom: var(--space-xl); }
+  .ben-card { border: 1px solid var(--color-rule); border-top: 3px solid var(--color-secondary); border-radius: var(--radius-md); padding: var(--space-lg); background: var(--color-paper); }
+  .ben-card__title { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; color: var(--color-ink); margin-bottom: var(--space-sm); }
+  .ben-card__text { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.65; }
+  .ps-experience { padding-block: var(--space-xl); background: var(--color-paper); }
+  .exp-eyebrow { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; color: var(--color-blue); margin-bottom: var(--space-md); }
+  .exp-metrics { display: flex; flex-wrap: wrap; gap: var(--space-md); margin-bottom: var(--space-md); }
+  .exp-metric { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 14rem; }
+  .exp-metric__val { font-family: var(--font-display); font-size: var(--text-2xl, 2rem); font-weight: 700; letter-spacing: -0.03em; color: var(--color-metric); line-height: 1.1; }
+  .exp-metric__label { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.4; }
+  .exp-frame { font-size: var(--text-xs); color: var(--color-muted); font-style: italic; margin-top: var(--space-sm); }
+  .ps-experience :global(.callout) { border-left-color: var(--color-metric); }
+  .ps-why { padding-block: var(--space-3xl); background: var(--color-paper-dark); }
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3xl); align-items: start; margin-top: var(--space-xl); }
+  .why-text { font-size: var(--text-base); color: var(--color-muted-on-dark); line-height: 1.75; margin-bottom: var(--space-lg); }
+  .why-btn { display: inline-flex; align-items: center; gap: var(--space-xs); font-family: var(--font-display); font-size: var(--text-base); font-weight: 600; padding: var(--space-sm) var(--space-xl); border-radius: var(--radius-pill); background: var(--color-accent); color: #fff; text-decoration: none; transition: background var(--dur-micro) var(--ease-out); margin-top: var(--space-sm); }
+  .why-btn:hover { background: var(--color-accent-hover); }
+  .why-cards { list-style: none; display: flex; flex-direction: column; gap: var(--space-sm); }
+  .why-card { display: flex; align-items: flex-start; gap: var(--space-sm); font-size: var(--text-base); color: var(--color-ink-on-dark); line-height: 1.5; padding: var(--space-md); border: 1px solid var(--color-glass-border); border-radius: var(--radius-sm); background: var(--color-glass-dark); }
+  .why-card__icon { flex-shrink: 0; width: 1.15rem; height: 1.15rem; margin-top: 0.15rem; color: var(--color-blue-on-dark); }
+  .ps-faq { padding-block: var(--space-3xl); background: var(--color-paper-2); }
+  .ps-endcta { padding-block: var(--space-3xl); background: var(--gradient-cta); }
+  .endcta-inner { max-width: 52rem; margin-inline: auto; text-align: center; }
+  .endcta__h2 { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; letter-spacing: -0.025em; line-height: 1.2; color: var(--color-ink-on-dark); margin-bottom: var(--space-md); }
+  .endcta__text { font-size: var(--text-base); color: var(--color-muted-on-dark); line-height: 1.7; margin-bottom: var(--space-xl); }
+  .endcta__actions { display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap; }
+  .endcta__btn { display: inline-flex; align-items: center; gap: var(--space-xs); font-family: var(--font-display); font-size: var(--text-base); font-weight: 600; padding: var(--space-md) var(--space-2xl); border-radius: var(--radius-pill); text-decoration: none; cursor: pointer; border: 1px solid transparent; transition: background var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out); }
+  .endcta__btn--primary { background: var(--color-accent); color: #fff; }
+  .endcta__btn--primary:hover { background: var(--color-accent-hover); }
+  .endcta__btn--ghost { background: var(--color-glass-dark); color: var(--color-ink-on-dark); border-color: var(--color-glass-border); }
+  .endcta__btn--ghost:hover { background: oklch(100% 0 0 / 0.12); }
+  .ps-related { padding-block: var(--space-3xl); background: var(--color-paper); border-top: 1px solid var(--color-rule); }
+  .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); margin-top: var(--space-xl); }
+  .related-card { display: flex; flex-direction: column; gap: var(--space-sm); border: 1px solid var(--color-rule); border-radius: var(--radius-lg); padding: var(--space-xl); background: var(--color-paper); text-decoration: none; transition: border-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out); }
+  .related-card:hover { border-color: var(--color-blue); transform: translateY(-3px); }
+  .related-card__title { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; color: var(--color-ink); }
+  .related-card__desc { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.55; flex: 1; }
+  .related-card__arrow { font-size: var(--text-md); color: var(--color-secondary); transition: transform var(--dur-short) var(--ease-out); align-self: flex-start; margin-top: auto; }
+  .related-card:hover .related-card__arrow { transform: translateX(4px); }
+  .ps-branze { padding-block: var(--space-3xl); background: var(--color-paper-2); border-top: 1px solid var(--color-rule); }
+  .branze-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--space-md); margin-top: var(--space-xl); }
+  .branze-card { display: flex; flex-direction: column; gap: var(--space-xs); border: 1px solid var(--color-rule); border-radius: var(--radius-md); padding: var(--space-lg); background: var(--color-paper); text-decoration: none; transition: border-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out); }
+  .branze-card:hover { border-color: var(--color-blue); transform: translateY(-2px); }
+  .branze-card__industry { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-secondary); }
+  .branze-card__title { font-family: var(--font-display); font-size: var(--text-sm); font-weight: 700; color: var(--color-ink); line-height: 1.35; }
+  .branze-card__desc { font-size: var(--text-xs); color: var(--color-muted); line-height: 1.5; flex: 1; }
+  .branze-card__arrow { font-size: var(--text-base); color: var(--color-secondary); transition: transform var(--dur-short) var(--ease-out); align-self: flex-start; margin-top: var(--space-xs); }
+  .branze-card:hover .branze-card__arrow { transform: translateX(4px); }
+  .pg-crosslink { padding-block: var(--space-2xl); background: var(--color-paper-2); border-top: 1px solid var(--color-rule); }
+  .crosslink-box { border: 1px solid var(--color-blue); border-left: 4px solid var(--color-secondary); border-radius: var(--radius-lg); background: var(--color-blue-tint); padding: var(--space-xl); }
+  .crosslink-box__title { font-family: var(--font-display); font-size: var(--text-md); font-weight: 700; color: var(--color-ink); margin-bottom: var(--space-sm); }
+  .crosslink-box__text { font-size: var(--text-base); color: var(--color-muted); line-height: 1.6; margin-bottom: var(--space-md); }
+  .crosslink-box__link { display: inline-flex; align-items: center; gap: var(--space-xs); font-family: var(--font-display); font-size: var(--text-base); font-weight: 600; color: var(--color-secondary); text-decoration: none; transition: color var(--dur-micro) var(--ease-out); }
+  .crosslink-box__link:hover { color: var(--color-ink); }
+  @media (max-width: 60rem) { .ps-problem__grid { grid-template-columns: 1fr; } .ps-brief { position: static; } .why-grid { grid-template-columns: 1fr; } .related-grid { grid-template-columns: 1fr; } .when-list--2col { grid-template-columns: 1fr; } }
+  @media (max-width: 48rem) { .fw-grid { grid-template-columns: 1fr; } .scope-grid { grid-template-columns: 1fr; } .ben-grid { grid-template-columns: 1fr; } .when-list { grid-template-columns: 1fr; } .endcta__actions { flex-direction: column; align-items: stretch; } .endcta__btn { width: 100%; justify-content: center; } }
+</style>

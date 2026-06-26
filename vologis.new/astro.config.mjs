@@ -11,7 +11,7 @@ export default defineConfig({
   compressHTML: true,
   integrations: [
     sitemap({
-      filter: (page) => page.includes('/pl/'),
+      filter: (page) => page.includes('/pl/') || page.includes('/en/'),
     }),
   ],
   vite: {

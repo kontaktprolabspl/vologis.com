@@ -1,0 +1,2832 @@
+{
+  "_meta": {
+    "description": "EN programmatic SEO pages for Vologis. Each entry = one subpage /en/services/[slug]. Template: src/pages/en/services/[slug].astro",
+    "generated": "2026-06-26"
+  },
+  "pages": [
+    {
+      "slug": "logistics-brokerage-fmcg",
+      "pl_slug": "posrednictwo-logistyczne-fmcg",
+      "parent": "logistics-brokerage",
+      "parent_name": "Logistics brokerage",
+      "category": "Logistics brokerage",
+      "industry": "FMCG",
+      "title": "Logistics Brokerage for FMCG — Warehouse, Fulfillment, Distribution | Vologis",
+      "description": "Vologis selects and vets warehouse operators and logistics partners for FMCG companies — high-turnover warehouses, fulfillment and retail distribution, 100% independent.",
+      "h1": "Logistics Brokerage for FMCG",
+      "eyebrow": "LOGISTICS BROKERAGE · FMCG",
+      "intro": "Fast-moving consumer goods demand high-turnover logistics, short lead times and resilience to seasonal peaks. Vologis helps FMCG companies find and vet warehouse operators, fulfillment partners and carriers ready for large volumes and fast goods flow. We work 100% independently — no supplier commissions, exclusively in the client's interest.",
+      "problem_heading": "FMCG logistics doesn't forgive slow turnover",
+      "problem_text": "In FMCG, margins are thin and volumes are enormous — every picking delay, every forecasting error and every suboptimal warehouse choice shows up in costs across thousands of pallets per month. Finding an operator who can handle high turnover, seasonality and retail chain requirements demands market knowledge and tough negotiations.",
+      "scope": [
+        {
+          "title": "High-turnover warehouses",
+          "text": "Warehouses built for large volumes and fast goods flow, with flexibility for seasonal peaks."
+        },
+        {
+          "title": "FMCG fulfillment",
+          "text": "Operators handling picking, packing and distribution of fast-moving goods with short fulfilment cycles."
+        },
+        {
+          "title": "Distribution to retail chains",
+          "text": "Logistics partners meeting retailer requirements: delivery windows, EDI, palletisation, labelling."
+        },
+        {
+          "title": "Seasonal peak management",
+          "text": "Operators with scalable throughput capacity for periods of high demand."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "FMCG manufacturers",
+          "text": "When you need warehousing and distribution that keeps up with production output and turnover."
+        },
+        {
+          "title": "Distributors",
+          "text": "When you serve multiple customers and need efficient picking and despatch."
+        },
+        {
+          "title": "Brands selling to retail chains",
+          "text": "When you need to meet the rigorous logistics requirements of retail networks."
+        }
+      ],
+      "summary": "Logistics brokerage for FMCG is a service in which Vologis selects and vets warehouse operators, fulfillment partners and carriers ready for the high turnover and large volumes typical of fast-moving goods. It covers high-turnover warehouses, seasonal peak handling and distribution compliant with retail chain requirements — 100% independent of suppliers.",
+      "faq": [
+        {
+          "q": "Can you find a warehouse that handles FMCG seasonal peaks?",
+          "a": "Yes. We select operators with scalable throughput capacity who can handle periods of high demand — from Christmas peaks to retail promotional events. We verify real operator capability, not just claims."
+        },
+        {
+          "q": "Will the operator meet retail chain requirements?",
+          "a": "We verify whether the operator meets the requirements of specific retail chains: delivery windows, EDI integrations, palletisation, labelling and SLA levels. This is essential to avoid penalties and rejected deliveries."
+        },
+        {
+          "q": "How quickly can you find a warehouse for FMCG?",
+          "a": "We typically present initial proposals within 1–2 weeks. Timing depends on location, required volume and product specifics. In urgent situations we move faster."
+        }
+      ]
+    },
+    {
+      "slug": "logistics-brokerage-pharma",
+      "pl_slug": "posrednictwo-logistyczne-farmacja",
+      "parent": "logistics-brokerage",
+      "parent_name": "Logistics brokerage",
+      "category": "Logistics brokerage",
+      "industry": "pharma",
+      "title": "Logistics Brokerage for Pharma — GDP-Compliant Warehouses | Vologis",
+      "description": "Vologis selects and vets warehouse operators and logistics partners for pharma companies — GDP compliance, cold chain and full documentation verified in practice, not on paper.",
+      "h1": "Logistics Brokerage for the Pharmaceutical Industry",
+      "eyebrow": "LOGISTICS BROKERAGE · PHARMA",
+      "intro": "Pharmaceutical logistics is one of the most demanding categories — Good Distribution Practice (GDP), temperature control, full batch traceability and rigorous documentation. Vologis helps pharma companies find and vet warehouse operators who meet these requirements not just on paper, but in real operations.",
+      "problem_heading": "In pharma, a compliance declaration isn't enough",
+      "problem_text": "Many operators claim to handle pharma, but genuinely meeting GDP requirements, maintaining the cold chain and keeping full documentation is a completely different level. Choosing the wrong operator in pharma means the risk of non-compliance, product loss and legal liability.",
+      "scope": [
+        {
+          "title": "GDP-compliant warehouses",
+          "text": "Operators meeting Good Distribution Practice requirements, with documented procedures and qualifications."
+        },
+        {
+          "title": "Cold chain",
+          "text": "Temperature-controlled warehouses with monitoring for products requiring specific storage conditions."
+        },
+        {
+          "title": "Traceability and serialisation",
+          "text": "Operators providing full batch traceability, serialisation handling and regulatory compliance."
+        },
+        {
+          "title": "Documentation and audit",
+          "text": "Verification of procedures, qualifications and operator readiness for regulatory audits."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Pharmaceutical manufacturers",
+          "text": "When you need GDP-compliant distribution for your products."
+        },
+        {
+          "title": "Pharmaceutical wholesalers",
+          "text": "When you're looking for an operator meeting regulatory and temperature requirements."
+        },
+        {
+          "title": "Med-tech and medical device companies",
+          "text": "When your products require controlled storage conditions."
+        }
+      ],
+      "summary": "Logistics brokerage for pharma is a service in which Vologis selects and vets warehouse operators meeting Good Distribution Practice (GDP) requirements, ensuring cold chain, batch traceability and full documentation. We verify genuine regulatory compliance, not just declarations — 100% independent of operators.",
+      "faq": [
+        {
+          "q": "Does the operator genuinely meet GDP requirements?",
+          "a": "We verify this thoroughly — checking documented procedures, warehouse qualifications, temperature monitoring and readiness for regulatory audits. A compliance declaration without procedural backing is a red flag for us."
+        },
+        {
+          "q": "Can you find a temperature-controlled warehouse for pharma?",
+          "a": "Yes. We select temperature-controlled warehouses with continuous monitoring, matched to your products' requirements — from refrigerated to controlled-temperature storage with full documentation."
+        },
+        {
+          "q": "Do you handle serialisation and batch traceability?",
+          "a": "We select operators providing full batch traceability and serialisation handling compliant with regulatory requirements applicable in pharmaceutical distribution."
+        }
+      ]
+    },
+    {
+      "slug": "logistics-brokerage-ecommerce",
+      "pl_slug": "posrednictwo-logistyczne-ecommerce",
+      "parent": "logistics-brokerage",
+      "parent_name": "Logistics brokerage",
+      "category": "Logistics brokerage",
+      "industry": "e-commerce",
+      "title": "Logistics Brokerage for E-commerce — Fulfillment & Warehouse | Vologis",
+      "description": "Vologis selects and vets fulfillment partners for e-commerce and D2C — picking, packing, returns and marketplace integrations, 100% independent.",
+      "h1": "Logistics Brokerage for E-commerce and D2C",
+      "eyebrow": "LOGISTICS BROKERAGE · E-COMMERCE",
+      "intro": "In e-commerce, logistics is part of the customer experience — shipping speed, packaging quality and smooth returns handling directly translate into loyalty and reviews. Vologis helps online stores and D2C brands find a fulfillment partner matched to their scale, assortment and sales channels, with platform and marketplace integrations.",
+      "problem_heading": "The wrong fulfillment partner costs customers, not just money",
+      "problem_text": "Delayed shipments, picking errors and chaotic returns handling show up in reviews and repeat purchase rates. As volume grows, handling logistics in-house stops scaling, and choosing the wrong fulfillment operator blocks growth and generates hidden costs.",
+      "scope": [
+        {
+          "title": "Fulfillment partners",
+          "text": "Operators handling storage, picking and packing of e-commerce orders with short lead times."
+        },
+        {
+          "title": "Returns handling",
+          "text": "Operators with an effective returns process — essential for e-commerce and service cost control."
+        },
+        {
+          "title": "Platform integrations",
+          "text": "Partners with ready integrations to e-commerce platforms, marketplaces and sales systems."
+        },
+        {
+          "title": "Scalability and peaks",
+          "text": "Operators that keep pace with growth and handle sales peaks (Black Friday, Christmas)."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Online stores",
+          "text": "When your own logistics can no longer keep up with orders."
+        },
+        {
+          "title": "D2C brands",
+          "text": "When you want to hand fulfillment to a professional and focus on sales."
+        },
+        {
+          "title": "Marketplace sellers",
+          "text": "When you need an operator with integrations and multi-channel handling."
+        }
+      ],
+      "summary": "Logistics brokerage for e-commerce is a service in which Vologis selects and vets fulfillment partners handling storage, picking, packing, returns and platform and marketplace integrations. We match operators to the store's scale, assortment and sales channels, ready for sales peaks — 100% independently.",
+      "faq": [
+        {
+          "q": "What's the difference between fulfillment and a regular warehouse?",
+          "a": "Fulfillment is full e-commerce order handling: storage, individual order picking, packing, shipping and returns — often with platform integration. A regular warehouse is mainly storage. We match the operator to your specific sales model."
+        },
+        {
+          "q": "Will the operator integrate with my store?",
+          "a": "We select partners with ready integrations to popular e-commerce platforms, marketplaces and sales systems. We verify whether the integration covers automated order, status and stock level flows."
+        },
+        {
+          "q": "Can the operator handle sales peaks?",
+          "a": "Yes. We select operators with scalable throughput capacity for peak periods — Black Friday, Christmas, promotions. We verify their historical performance during such periods."
+        }
+      ]
+    },
+    {
+      "slug": "logistics-brokerage-manufacturing",
+      "pl_slug": "posrednictwo-logistyczne-produkcja",
+      "parent": "logistics-brokerage",
+      "parent_name": "Logistics brokerage",
+      "category": "Logistics brokerage",
+      "industry": "manufacturing",
+      "title": "Logistics Brokerage for Manufacturing — Warehouses & Transport | Vologis",
+      "description": "Vologis selects and vets warehouse operators and carriers for manufacturing companies — buffer storage, transport synchronised with production and JIT deliveries.",
+      "h1": "Logistics Brokerage for Manufacturing Companies",
+      "eyebrow": "LOGISTICS BROKERAGE · MANUFACTURING",
+      "intro": "Manufacturing logistics combines supplying production lines with raw materials, storing components and distributing finished goods — all synchronised with the production schedule. Vologis helps manufacturing companies find warehouse operators and carriers who keep pace with the production schedule and eliminate the risk of costly stoppages.",
+      "problem_heading": "A production stoppage costs more than all of logistics",
+      "problem_text": "When finished goods space runs out or a raw material delivery is delayed, the entire production line stops — and the cost of that stoppage often exceeds a month's logistics spend. Selecting warehouse operators and carriers synchronised with production requires understanding production flow specifics.",
+      "scope": [
+        {
+          "title": "Raw material and component storage",
+          "text": "Buffer warehouses synchronised with production line supply, minimising stoppage risk."
+        },
+        {
+          "title": "Finished goods warehousing",
+          "text": "Flexible storage space for finished goods that adjusts to production and sales fluctuations."
+        },
+        {
+          "title": "Production-synchronised transport",
+          "text": "Carriers matched to the production schedule — just-in-time deliveries and finished goods collection."
+        },
+        {
+          "title": "Internal and external logistics",
+          "text": "Coordination of flows between the external warehouse and the production floor."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Manufacturing plants",
+          "text": "When you need a buffer warehouse and transport synchronised with production."
+        },
+        {
+          "title": "Companies with seasonal production",
+          "text": "When you need flexible space for volume fluctuations."
+        },
+        {
+          "title": "Exporting manufacturers",
+          "text": "When you need warehousing and international transport in one place."
+        }
+      ],
+      "summary": "Logistics brokerage for manufacturing is a service in which Vologis selects warehouse operators and carriers synchronised with the production schedule — for raw material, component and finished goods storage and just-in-time transport. We eliminate stoppage risk from logistics bottlenecks, acting 100% independently.",
+      "faq": [
+        {
+          "q": "Can you find a buffer warehouse close to my plant?",
+          "a": "Yes. We select buffer warehouses in locations minimising transport time and cost to the plant, matched to required volumes of raw materials, components or finished goods."
+        },
+        {
+          "q": "Will the operator handle just-in-time deliveries?",
+          "a": "We select operators and carriers capable of deliveries synchronised with the production schedule. We verify their on-time performance and flexibility, because those determine production continuity."
+        },
+        {
+          "q": "Can you help with export logistics for finished goods?",
+          "a": "Yes. We select partners handling both storage and international transport of finished goods, including customs handling and distribution to export markets."
+        }
+      ]
+    },
+    {
+      "slug": "logistics-brokerage-automotive",
+      "pl_slug": "posrednictwo-logistyczne-automotive",
+      "parent": "logistics-brokerage",
+      "parent_name": "Logistics brokerage",
+      "category": "Logistics brokerage",
+      "industry": "automotive",
+      "title": "Logistics Brokerage for Automotive — Warehouses & JIT | Vologis",
+      "description": "Vologis selects and vets logistics operators for automotive companies — just-in-time and just-in-sequence deliveries, quality standards and component traceability verified in practice.",
+      "h1": "Logistics Brokerage for the Automotive Industry",
+      "eyebrow": "LOGISTICS BROKERAGE · AUTOMOTIVE",
+      "intro": "Automotive logistics demands the highest standards: just-in-time and just-in-sequence deliveries, rigorous quality standards, full traceability and zero tolerance for line stoppages. Vologis helps automotive suppliers and manufacturers find logistics operators who meet these standards in practice, not just on paper.",
+      "problem_heading": "In automotive, a delay means a contractual penalty and contract risk",
+      "problem_text": "The automotive sector operates on principles where an OEM line stoppage means severe penalties and contract risk. A logistics operator serving automotive must guarantee on-time delivery, quality and traceability at a level most standard warehouses don't meet.",
+      "scope": [
+        {
+          "title": "JIT and JIS deliveries",
+          "text": "Operators capable of just-in-time and just-in-sequence deliveries synchronised with the OEM production line."
+        },
+        {
+          "title": "Automotive quality standards",
+          "text": "Warehouses meeting sector quality requirements — procedures, traceability, quality control."
+        },
+        {
+          "title": "Consignment warehouses",
+          "text": "Operators handling consignment models and buffer warehouses at production plants."
+        },
+        {
+          "title": "Component traceability",
+          "text": "Full batch and component tracking required in automotive supply chains."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Tier 1 and Tier 2 suppliers",
+          "text": "When you serve an OEM and need logistics meeting their standards."
+        },
+        {
+          "title": "Component manufacturers",
+          "text": "When you need a warehouse with traceability and JIT deliveries."
+        },
+        {
+          "title": "Parts distributors",
+          "text": "When you serve the aftermarket and need efficient distribution."
+        }
+      ],
+      "summary": "Logistics brokerage for automotive is a service in which Vologis selects logistics operators meeting the highest automotive sector requirements: just-in-time and just-in-sequence deliveries, quality standards, consignment warehouses and full component traceability. We verify real operator capability, acting independently.",
+      "faq": [
+        {
+          "q": "Will the operator handle just-in-sequence deliveries?",
+          "a": "We select operators with documented capability for JIT and JIS deliveries synchronised with the OEM line. In automotive there is no room for error — we identify all risks that could cause a line stoppage."
+        },
+        {
+          "q": "Will the warehouse meet automotive quality standards?",
+          "a": "We verify whether the operator has the procedures, traceability and quality controls required in the automotive supply chain. We check actual implementation, not just certificates on the wall."
+        },
+        {
+          "q": "Can you find a consignment warehouse near an OEM?",
+          "a": "Yes. We select operators handling consignment models and buffer warehouses at OEM plants, minimising the risk of line stoppages."
+        }
+      ]
+    },
+    {
+      "slug": "logistics-brokerage-retail",
+      "pl_slug": "posrednictwo-logistyczne-retail",
+      "parent": "logistics-brokerage",
+      "parent_name": "Logistics brokerage",
+      "category": "Logistics brokerage",
+      "industry": "retail",
+      "title": "Logistics Brokerage for Retail — Store Distribution | Vologis",
+      "description": "Vologis selects and vets logistics operators for retail — distribution to store networks, omnichannel logistics and stock replenishment.",
+      "h1": "Logistics Brokerage for Retail",
+      "eyebrow": "LOGISTICS BROKERAGE · RETAIL",
+      "intro": "Retail logistics must handle distribution to store networks, the online channel and stock replenishment simultaneously — often in an omnichannel model. Vologis helps retail chains and retailers find logistics operators capable of synchronising flows between the central warehouse, stores and the end customer.",
+      "problem_heading": "An empty shelf is lost sales you won't recover",
+      "problem_text": "In retail, product availability on the shelf determines sales. Slow stock replenishment, suboptimal store distribution and lack of synchronisation between online and offline channels leads to lost sales and excess inventory simultaneously. Selecting the right operator requires understanding the specifics of retail flows.",
+      "scope": [
+        {
+          "title": "Distribution to store networks",
+          "text": "Operators handling regular distribution to multiple sales points with route optimisation."
+        },
+        {
+          "title": "Omnichannel logistics",
+          "text": "Partners synchronising flows between the warehouse, stores and online channel."
+        },
+        {
+          "title": "Stock replenishment",
+          "text": "Operators ensuring efficient and predictable stock replenishment at sales points."
+        },
+        {
+          "title": "Returns and inter-store transfers",
+          "text": "Efficient returns handling and inter-store transfers within the network."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Retail chains",
+          "text": "When you need distribution to multiple sales points."
+        },
+        {
+          "title": "Omnichannel retailers",
+          "text": "When you combine physical and online sales and need consistent logistics."
+        },
+        {
+          "title": "Retail private label brands",
+          "text": "When you manage distribution of products to sales points."
+        }
+      ],
+      "summary": "Logistics brokerage for retail is a service in which Vologis selects logistics operators handling distribution to store networks, omnichannel logistics, stock replenishment and returns and inter-store transfer handling. We select partners synchronising flows between the warehouse, stores and end customer — 100% independently.",
+      "faq": [
+        {
+          "q": "Will the operator handle distribution to many stores?",
+          "a": "Yes. We select operators handling regular distribution to multiple sales points with route and delivery window optimisation, matched to your network's replenishment schedule."
+        },
+        {
+          "q": "Can you find an operator handling omnichannel?",
+          "a": "We select partners capable of synchronising flows between the central warehouse, stores and online channel — key for consistent customer experience and optimal stock in an omnichannel model."
+        },
+        {
+          "q": "Will the operator handle inter-store transfers?",
+          "a": "Yes. We verify the operator's capability for inter-store transfers and returns, which are a frequent bottleneck in retail chain logistics."
+        }
+      ]
+    },
+    {
+      "slug": "logistics-brokerage-cold-storage",
+      "pl_slug": "posrednictwo-logistyczne-chlodnia",
+      "parent": "logistics-brokerage",
+      "parent_name": "Logistics brokerage",
+      "category": "Logistics brokerage",
+      "industry": "chłodnia / łańcuch chłodniczy",
+      "title": "Logistics Brokerage — Cold Storage & Cold Chain | Vologis",
+      "description": "Vologis selects and vets cold storage warehouses and temperature-controlled transport operators — continuous monitoring and documentation verified, not just claimed.",
+      "h1": "Logistics Brokerage — Cold Storage and Cold Chain",
+      "eyebrow": "LOGISTICS BROKERAGE · COLD STORAGE",
+      "intro": "Products requiring temperature control — food, pharmaceuticals, sensitive goods — don't forgive any break in the cold chain. Vologis helps companies find and vet cold storage facilities and temperature-controlled transport operators who guarantee cold chain continuity at every stage.",
+      "problem_heading": "One cold chain break destroys an entire batch",
+      "problem_text": "In cold chain logistics there is no margin for error — a cold chain break means the loss of an entire product batch, health risk and legal liability. Finding a cold storage facility and transport operator with documented, continuous temperature monitoring requires rigorous verification.",
+      "scope": [
+        {
+          "title": "Cold storage facilities",
+          "text": "Cold rooms and freezers with temperature control, matched to the stored products' requirements."
+        },
+        {
+          "title": "Temperature-controlled transport",
+          "text": "Carriers guaranteeing cold chain continuity in transport."
+        },
+        {
+          "title": "Temperature monitoring and documentation",
+          "text": "Operators with continuous monitoring and full temperature documentation at every stage."
+        },
+        {
+          "title": "Multiple temperature range handling",
+          "text": "Warehouses handling different temperature ranges — from chilled to deep freeze."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Food manufacturers",
+          "text": "When you need cold storage and chilled transport for food products."
+        },
+        {
+          "title": "Pharmaceutical companies",
+          "text": "When your products require temperature-controlled storage compliant with GDP."
+        },
+        {
+          "title": "Sensitive goods distributors",
+          "text": "When you handle products requiring continuous cold chain integrity."
+        }
+      ],
+      "summary": "Logistics brokerage for the cold chain is a service in which Vologis selects and vets cold storage facilities, freezers and temperature-controlled transport operators. We ensure partners with continuous monitoring and full temperature documentation — essential for food, pharma and sensitive goods. Acting 100% independently.",
+      "faq": [
+        {
+          "q": "Does the cold storage facility provide continuous temperature monitoring?",
+          "a": "We verify whether the operator maintains continuous temperature monitoring with full documentation and an alarm system. This is the absolute baseline in cold chain logistics — we check real systems, not declarations."
+        },
+        {
+          "q": "Can you find a warehouse handling multiple temperature ranges?",
+          "a": "Yes. We select warehouses handling different ranges — from chilled (e.g. 2–8°C) to deep freeze — matched to the specific products and their storage requirements."
+        },
+        {
+          "q": "Do you provide temperature-controlled transport?",
+          "a": "We select carriers guaranteeing cold chain continuity in transport, with temperature monitoring and documentation. We combine cold storage and transport into a coherent, unbroken cold chain."
+        }
+      ]
+    },
+    {
+      "slug": "logistics-brokerage-adr",
+      "pl_slug": "posrednictwo-logistyczne-adr",
+      "parent": "logistics-brokerage",
+      "parent_name": "Logistics brokerage",
+      "category": "Logistics brokerage",
+      "industry": "ADR / materiały niebezpieczne",
+      "title": "ADR Logistics Brokerage — Hazardous Materials Warehouses | Vologis",
+      "description": "Vologis selects and vets ADR warehouses and operators handling hazardous materials — permits, infrastructure and safety procedures verified, not just claimed.",
+      "h1": "Logistics Brokerage for Hazardous Materials (ADR)",
+      "eyebrow": "LOGISTICS BROKERAGE · ADR",
+      "intro": "Storing and transporting hazardous materials is subject to rigorous ADR regulations and requires warehouses and operators with the appropriate permits, infrastructure and safety procedures. Vologis helps companies find and vet operators genuinely meeting ADR requirements — because here, a mistake means legal and safety risk.",
+      "problem_heading": "Hazardous materials don't forgive shortcuts",
+      "problem_text": "Storing dangerous goods without the proper permits, infrastructure and procedures carries the risk of serious legal, financial and safety consequences. Few operators genuinely meet all ADR requirements — and declaring hazardous materials handling without a full setup is insufficient.",
+      "scope": [
+        {
+          "title": "Warehouses with ADR permits",
+          "text": "Operators with the appropriate permits and infrastructure for storing hazardous materials."
+        },
+        {
+          "title": "ADR transport",
+          "text": "Carriers with the authorisations and equipment for transporting dangerous goods."
+        },
+        {
+          "title": "Safety procedures",
+          "text": "Operators with implemented safety procedures and trained personnel (ADR safety adviser)."
+        },
+        {
+          "title": "Handling different ADR classes",
+          "text": "Warehouses handling the relevant classes of dangerous materials to requirements."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Chemical manufacturers",
+          "text": "When you need storage and transport of hazardous materials compliant with ADR."
+        },
+        {
+          "title": "ADR product distributors",
+          "text": "When you handle products requiring special permits."
+        },
+        {
+          "title": "Companies with mixed assortments",
+          "text": "When part of your assortment is subject to ADR regulations."
+        }
+      ],
+      "summary": "ADR logistics brokerage is a service in which Vologis selects and vets warehouses and transport operators meeting the requirements for storing and transporting hazardous materials (ADR). We verify permits, infrastructure, safety procedures and handling of relevant dangerous goods classes. Acting 100% independently.",
+      "faq": [
+        {
+          "q": "Does the operator hold the required ADR permits?",
+          "a": "We verify the operator's permits, infrastructure and safety procedures. We also check whether they employ an ADR safety adviser and whether personnel are trained — requirements that cannot be skipped with hazardous materials."
+        },
+        {
+          "q": "Does the warehouse handle my class of hazardous materials?",
+          "a": "Hazardous materials are divided into classes with different storage requirements. We verify whether the operator has permits and infrastructure for the specific class of your products — not every ADR warehouse handles all classes."
+        },
+        {
+          "q": "Can you serve a company with a partially ADR assortment?",
+          "a": "Yes. If only part of your assortment is subject to ADR regulations, we'll help select a solution handling both standard and dangerous goods — in one warehouse or in the optimal combination of operators."
+        }
+      ]
+    },
+    {
+      "slug": "operational-consulting-fmcg",
+      "pl_slug": "doradztwo-operacyjne-fmcg",
+      "parent": "operational-consulting",
+      "parent_name": "Operational consulting & audit",
+      "category": "Doradztwo operacyjne",
+      "industry": "FMCG",
+      "title": "Operational Consulting & Audit for FMCG | Vologis",
+      "description": "Vologis conducts warehouse process audits for FMCG — identifies bottlenecks in high-turnover warehouses, optimises picking and reduces operational costs.",
+      "h1": "Operational Consulting & Audit for FMCG",
+      "eyebrow": "OPERATIONAL CONSULTING · FMCG",
+      "intro": "In FMCG, with thin margins and enormous volumes, even minor process inefficiencies multiply across thousands of operations per day. Vologis conducts operational audits of FMCG warehouses, identifies bottlenecks in picking and high-turnover flows, and delivers quantifiable recommendations — which we implement until KPIs are achieved.",
+      "problem_heading": "At high turnover, every second of picking is real money",
+      "problem_text": "In high-volume FMCG warehouses, suboptimal picking paths, poorly designed slotting and flow bottlenecks cost money across hundreds of thousands of operations per month. The problem often lies deeper than it appears — in the layout, WMS configuration or work organisation.",
+      "scope": [
+        {
+          "title": "High-turnover process audit",
+          "text": "Analysis of picking, slotting and flows in high-volume, fast-turnover warehouses."
+        },
+        {
+          "title": "Picking optimisation",
+          "text": "Shortening paths, optimising slotting and picking methods for the FMCG rotation profile."
+        },
+        {
+          "title": "Seasonality management",
+          "text": "Designing processes that flex for seasonal peaks and promotions."
+        },
+        {
+          "title": "Operational cost reduction",
+          "text": "Identifying savings in cost per single operation and per order."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "FMCG manufacturers",
+          "text": "When logistics can't keep up with production output and turnover."
+        },
+        {
+          "title": "FMCG distributors",
+          "text": "When picking costs are growing faster than volume."
+        },
+        {
+          "title": "Operators serving FMCG",
+          "text": "When you need a process benchmark and optimisation."
+        }
+      ],
+      "summary": "Operational consulting for FMCG is a service in which Vologis audits high-turnover warehouses, identifies bottlenecks in picking and flows, optimises slotting and processes for fast-moving goods. We deliver quantifiable recommendations and implement them until measurable KPIs are achieved.",
+      "faq": [
+        {
+          "q": "How will an audit help a high-volume FMCG warehouse?",
+          "a": "In FMCG, even minor picking path optimisation multiplies across thousands of operations. An audit identifies where you're losing time and money — in slotting, layout, picking method — and shows concrete, quantifiable improvements."
+        },
+        {
+          "q": "Will you account for seasonality and peaks?",
+          "a": "Yes. We design processes that flex for seasonal peaks and promotions, which in FMCG can multiply volume many times. Optimisation must work both in standard periods and at peak."
+        },
+        {
+          "q": "Do you implement recommendations or just audit?",
+          "a": "We implement. An audit is the starting point — we finish when changes work and the KPI impact is visible. We can implement recommendations with your team or take over implementation coordination."
+        }
+      ]
+    },
+    {
+      "slug": "operational-consulting-ecommerce",
+      "pl_slug": "doradztwo-operacyjne-ecommerce",
+      "parent": "operational-consulting",
+      "parent_name": "Operational consulting & audit",
+      "category": "Doradztwo operacyjne",
+      "industry": "e-commerce",
+      "title": "Operational Consulting & Audit for E-commerce | Vologis",
+      "description": "Vologis conducts fulfillment process audits for e-commerce — analyses picking, packing and returns, reduces cost per order.",
+      "h1": "Operational Consulting & Audit for E-commerce",
+      "eyebrow": "OPERATIONAL CONSULTING · E-COMMERCE",
+      "intro": "In e-commerce, cost per order and fulfilment time determine profitability and customer loyalty. Vologis audits fulfillment processes, identifies bottlenecks in picking, packing and returns handling, and delivers recommendations that reduce operational cost and speed up fulfilment.",
+      "problem_heading": "Growing volume exposes every process weakness",
+      "problem_text": "What worked at 100 orders per day becomes a bottleneck at 1,000. Suboptimal picking, chaotic packing and costly returns handling erode margin and service quality. As scale increases, these problems multiply — and the customer experiences them as delays and errors.",
+      "scope": [
+        {
+          "title": "Fulfillment process audit",
+          "text": "Analysis of picking, packing, despatch and returns handling for cost and efficiency."
+        },
+        {
+          "title": "Cost per order optimisation",
+          "text": "Identifying savings in the cost of handling a single order."
+        },
+        {
+          "title": "Returns process",
+          "text": "Improving returns handling — a frequent bottleneck and hidden cost source in e-commerce."
+        },
+        {
+          "title": "Process scalability",
+          "text": "Designing processes that scale with growth and sales peaks."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Online stores with own logistics",
+          "text": "When processes can't keep up with order growth."
+        },
+        {
+          "title": "D2C brands",
+          "text": "When cost per order is eating into margin."
+        },
+        {
+          "title": "Fulfillment operators",
+          "text": "When you need process optimisation and a benchmark."
+        }
+      ],
+      "summary": "Operational consulting for e-commerce is a service in which Vologis audits fulfillment processes — picking, packing, despatch and returns — identifies bottlenecks and delivers recommendations that reduce cost per order. We design processes scalable for growth and sales peaks, implementing changes until KPIs are achieved.",
+      "faq": [
+        {
+          "q": "How do you reduce cost per order in e-commerce?",
+          "a": "An audit shows where you're losing in picking, packing and returns handling. We optimise paths, slotting, picking methods and packing processes — every second and every unnecessary movement multiplies across order volume."
+        },
+        {
+          "q": "Will you address the returns process?",
+          "a": "Yes. Returns handling is a frequent bottleneck and hidden cost source in e-commerce. We analyse and improve the full returns process — from receipt to re-listing the item for sale."
+        },
+        {
+          "q": "Will processes withstand growth and peaks?",
+          "a": "We design processes with scaling and sales peaks in mind. An audit accounts not only for current volume but also forecast growth, so the optimisation doesn't need redesigning six months later."
+        }
+      ]
+    },
+    {
+      "slug": "operational-consulting-manufacturing",
+      "pl_slug": "doradztwo-operacyjne-produkcja",
+      "parent": "operational-consulting",
+      "parent_name": "Operational consulting & audit",
+      "category": "Doradztwo operacyjne",
+      "industry": "manufacturing",
+      "title": "Production Logistics Audit & Operational Consulting | Vologis",
+      "description": "Vologis audits production logistics and optimises internal flows — analyses production line supply, shop floor flows and batch tracking, eliminating bottlenecks.",
+      "h1": "Operational Consulting & Production Logistics Audit",
+      "eyebrow": "OPERATIONAL CONSULTING · MANUFACTURING",
+      "intro": "Production logistics determines the efficiency of the entire plant — delayed line supply, chaotic shop floor flows and suboptimal batch tracking slow production and raise costs. Vologis audits production logistics, identifies internal flow bottlenecks and delivers recommendations that increase production efficiency.",
+      "problem_heading": "Internal logistics determines production efficiency",
+      "problem_text": "When line supply with raw materials is delayed, when operators are searching for components, or when batch tracking fails — overall production efficiency drops. These problems are rarely visible at first glance, as they scatter across dozens of minor delays that add up to real losses.",
+      "scope": [
+        {
+          "title": "Production supply audit",
+          "text": "Analysis of raw material and component flows to production lines, identifying delays."
+        },
+        {
+          "title": "Internal flow optimisation",
+          "text": "Designing shop floor material flows that minimise stoppages and unnecessary movements."
+        },
+        {
+          "title": "Production batch tracking",
+          "text": "Improving traceability and batch tracking in the production process."
+        },
+        {
+          "title": "Production–warehouse integration",
+          "text": "Synchronising internal logistics with the raw materials and finished goods warehouse."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Manufacturing plants",
+          "text": "When internal logistics is slowing production output."
+        },
+        {
+          "title": "Assembly companies",
+          "text": "When line supply and assembly picking needs reorganising."
+        },
+        {
+          "title": "Manufacturers before automation",
+          "text": "When you want to order processes before investing in automation."
+        }
+      ],
+      "summary": "Operational consulting for manufacturing is a service in which Vologis audits production logistics — line supply, shop floor flows, batch tracking and warehouse integration. We identify internal logistics bottlenecks and deliver recommendations that increase production efficiency, implementing changes until KPIs are achieved.",
+      "faq": [
+        {
+          "q": "What is a production logistics audit?",
+          "a": "It's an analysis of material flows inside the plant: line supply with raw materials, component movement, assembly picking and batch tracking. It shows where internal logistics slows production and how to fix it."
+        },
+        {
+          "q": "Will an audit help before investing in automation?",
+          "a": "Definitely. Automating chaotic processes only entrenches the chaos. An audit before automation orders the flows and shows what's worth automating and what to simplify first — protecting against a costly, poorly matched investment."
+        },
+        {
+          "q": "How will the audit affect production output?",
+          "a": "Eliminating line supply delays, shortening movements and efficient batch tracking directly translate into output. Minor delays that scatter today add up to real efficiency gains after optimisation."
+        }
+      ]
+    },
+    {
+      "slug": "operational-consulting-automotive",
+      "pl_slug": "doradztwo-operacyjne-automotive",
+      "parent": "operational-consulting",
+      "parent_name": "Operational consulting & audit",
+      "category": "Doradztwo operacyjne",
+      "industry": "automotive",
+      "title": "Operational Consulting & Audit for Automotive | Vologis",
+      "description": "Vologis audits logistics processes for automotive companies — JIT/JIS processes, traceability and flows compliant with automotive standards.",
+      "h1": "Operational Consulting & Audit for the Automotive Industry",
+      "eyebrow": "OPERATIONAL CONSULTING · AUTOMOTIVE",
+      "intro": "Automotive logistics must work flawlessly — just-in-sequence deliveries, full traceability and quality standards leave no room for inefficiency. Vologis audits logistics processes for automotive suppliers and manufacturers, identifies risks and bottlenecks, and optimises flows to the sector's rigorous requirements.",
+      "problem_heading": "In automotive, inefficiency is a penalty and contract risk",
+      "problem_text": "The automotive sector demands reliability at a level where a single delay at an OEM means penalties and contract risk. Logistics processes must guarantee JIT/JIS on-time delivery, traceability and quality — and every inefficiency is simultaneously an operational and business risk.",
+      "scope": [
+        {
+          "title": "JIT/JIS process audit",
+          "text": "Analysis of just-in-time and just-in-sequence processes for reliability and on-time delivery."
+        },
+        {
+          "title": "Traceability and quality",
+          "text": "Verification of batch tracking systems and compliance with automotive quality standards."
+        },
+        {
+          "title": "Flow optimisation",
+          "text": "Improving warehouse and consignment flows synchronised with the OEM."
+        },
+        {
+          "title": "Operational risk reduction",
+          "text": "Identifying and eliminating risks that could cause line stoppages and penalties."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Tier 1 and Tier 2 suppliers",
+          "text": "When you serve an OEM and can't afford delays."
+        },
+        {
+          "title": "Component manufacturers",
+          "text": "When you need reliable processes with traceability."
+        },
+        {
+          "title": "Operators serving automotive",
+          "text": "When you need a sector standard compliance audit."
+        }
+      ],
+      "summary": "Operational consulting for automotive is a service in which Vologis audits logistics processes to the automotive sector's rigorous requirements: JIT/JIS reliability, traceability, quality standards and consignment flows. We identify operational risks that could lead to stoppages and penalties, optimise processes and implement changes until KPIs are achieved.",
+      "faq": [
+        {
+          "q": "Will the audit cover just-in-sequence processes?",
+          "a": "Yes. We analyse the reliability and on-time delivery of JIT and JIS processes synchronised with the OEM line. In automotive these are critical processes — we identify all risks that could cause a customer's line stoppage."
+        },
+        {
+          "q": "Will you verify compliance with quality standards?",
+          "a": "We verify traceability systems, quality controls and procedures against automotive sector requirements. We identify gaps that could be a risk during OEM audits or complaints."
+        },
+        {
+          "q": "How will the audit reduce OEM penalty risk?",
+          "a": "We identify bottlenecks and operational risks that could lead to delays and customer line stoppages. Eliminating these risks directly protects against contractual penalties and contract risk."
+        }
+      ]
+    },
+    {
+      "slug": "operational-consulting-pharma",
+      "pl_slug": "doradztwo-operacyjne-farmacja",
+      "parent": "operational-consulting",
+      "parent_name": "Operational consulting & audit",
+      "category": "Doradztwo operacyjne",
+      "industry": "pharma",
+      "title": "Operational Consulting & Audit for Pharma (GDP) | Vologis",
+      "description": "Vologis audits and optimises logistics processes for pharma — GDP compliance, cold chain and traceability analysed, eliminating risks and inefficiencies.",
+      "h1": "Operational Consulting & Audit for the Pharmaceutical Industry",
+      "eyebrow": "OPERATIONAL CONSULTING · PHARMA",
+      "intro": "Pharmaceutical logistics combines GDP regulatory rigour with operational efficiency pressure. Vologis audits pharmaceutical processes for compliance, cold chain and traceability, while simultaneously identifying inefficiencies and bottlenecks — because compliance and efficiency don't have to be mutually exclusive.",
+      "problem_heading": "GDP compliance doesn't have to mean inefficiency",
+      "problem_text": "Many pharma companies treat processes as a compromise: either GDP compliance or efficiency. In reality, poorly designed processes are simultaneously non-compliant and inefficient. An audit shows how to meet regulatory requirements while optimising costs and flows.",
+      "scope": [
+        {
+          "title": "GDP compliance audit",
+          "text": "Verification of processes against Good Distribution Practice and regulatory requirements."
+        },
+        {
+          "title": "Cold chain",
+          "text": "Analysis of temperature processes and monitoring in storage and distribution."
+        },
+        {
+          "title": "Traceability and serialisation",
+          "text": "Verification of batch tracking and serialisation handling systems."
+        },
+        {
+          "title": "Optimisation within compliance",
+          "text": "Identifying inefficiencies that can be removed without breaching GDP requirements."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Pharmaceutical manufacturers",
+          "text": "When you need GDP-compliant and efficient processes."
+        },
+        {
+          "title": "Pharmaceutical wholesalers",
+          "text": "When you want to optimise costs without risking non-compliance."
+        },
+        {
+          "title": "Med-tech companies",
+          "text": "When you handle products requiring controlled storage conditions."
+        }
+      ],
+      "summary": "Operational consulting for pharma is a service in which Vologis audits pharmaceutical processes for GDP compliance, cold chain and traceability, while simultaneously identifying inefficiencies and optimisation opportunities. We show how to meet regulatory requirements and reduce costs — implementing changes until KPIs are achieved.",
+      "faq": [
+        {
+          "q": "Will the audit verify GDP compliance?",
+          "a": "Yes. We verify processes against Good Distribution Practice — storage, cold chain, traceability, documentation. We identify compliance gaps before they become a problem during an inspection."
+        },
+        {
+          "q": "Can costs be optimised without breaching GDP?",
+          "a": "Yes — and this is a frequent scenario. Poorly designed processes can be simultaneously inefficient and regulatory risks. We show where flows can be improved and costs reduced while remaining fully compliant."
+        },
+        {
+          "q": "Do you cover cold chain auditing?",
+          "a": "Yes. We analyse temperature processes, monitoring and documentation in storage and distribution of temperature-sensitive products, identifying both compliance risks and inefficiencies."
+        }
+      ]
+    },
+    {
+      "slug": "operational-consulting-distribution",
+      "pl_slug": "doradztwo-operacyjne-dystrybucja",
+      "parent": "operational-consulting",
+      "parent_name": "Operational consulting & audit",
+      "category": "Doradztwo operacyjne",
+      "industry": "distribution",
+      "title": "Operational Consulting & Audit for Distribution | Vologis",
+      "description": "Vologis audits and optimises distribution networks — analyses flows, warehouses and transport for distribution companies, reducing costs and improving service levels.",
+      "h1": "Operational Consulting & Audit for Distribution Companies",
+      "eyebrow": "OPERATIONAL CONSULTING · DISTRIBUTION",
+      "intro": "Distribution companies live by the efficiency of goods flow — between suppliers, the warehouse and multiple customers. Vologis audits distribution networks, analyses warehouse structure, flows and transport, and delivers recommendations that reduce costs and improve service levels while maintaining inventory control.",
+      "problem_heading": "In distribution, service cost and stock levels pull in opposite directions",
+      "problem_text": "Distribution companies balance product availability against the cost of holding it. Too little stock means lost sales; too much means frozen capital. Add the cost of serving multiple customers and the complexity of a distribution network. Without objective analysis, it's easy to optimise one parameter at the cost of another.",
+      "scope": [
+        {
+          "title": "Distribution network audit",
+          "text": "Analysis of warehouse structure, flows and distribution points for cost and service level."
+        },
+        {
+          "title": "Inventory optimisation",
+          "text": "Analysis of stock levels and turnover, ABC/XYZ structure and replenishment policy."
+        },
+        {
+          "title": "Customer service cost",
+          "text": "Optimising the cost of serving multiple customers and distribution channels."
+        },
+        {
+          "title": "Transport and routing",
+          "text": "Optimising the transport model and distribution routes."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Distribution companies",
+          "text": "When costs are growing faster than revenues and inventory is getting out of control."
+        },
+        {
+          "title": "Wholesalers",
+          "text": "When you serve multiple customers and need optimisation."
+        },
+        {
+          "title": "Multi-channel distributors",
+          "text": "When you combine different sales and distribution channels."
+        }
+      ],
+      "summary": "Operational consulting for distribution is a service in which Vologis audits distribution networks — warehouse structure, flows, inventory and transport. We optimise customer service cost and inventory levels simultaneously, improving service levels without freezing capital. We implement recommendations until measurable KPIs are achieved.",
+      "faq": [
+        {
+          "q": "How do you optimise inventory without losing availability?",
+          "a": "We analyse turnover, ABC/XYZ structure and replenishment policy to reduce inventory where safe and increase it where needed. The goal is higher availability at lower frozen capital — not a compromise between them."
+        },
+        {
+          "q": "Will the audit cover the cost of serving multiple customers?",
+          "a": "Yes. We analyse service cost broken down by customer and channel, identifying unprofitable paths and consolidation opportunities. Often it turns out that part of the service generates costs disproportionate to its value."
+        },
+        {
+          "q": "Do you optimise routes and transport?",
+          "a": "Yes. Optimising the transport model and distribution routes is a frequent area of real savings for distribution companies — we analyse it as part of a broader distribution network audit."
+        }
+      ]
+    },
+    {
+      "slug": "greenfield-projects-logistics",
+      "pl_slug": "projekty-greenfield-logistyka",
+      "parent": "greenfield-projects",
+      "parent_name": "Greenfield projects",
+      "category": "Greenfield projects",
+      "industry": "logistics facilities",
+      "title": "Greenfield Projects — Building Logistics Facilities | Vologis",
+      "description": "Vologis manages logistics facility Greenfield investments end-to-end — from site analysis through masterplan to operations launch.",
+      "h1": "Greenfield Projects — Building Logistics Facilities from Scratch",
+      "eyebrow": "GREENFIELD PROJECTS · LOGISTICS",
+      "intro": "Building a new logistics facility is a decade-long investment — decisions made at the planning stage weigh on operational costs for the entire asset life. Vologis manages logistics facility Greenfield projects end-to-end: from pre-investment analysis and site selection, through masterplan and technology selection, to operations launch and KPI achievement.",
+      "problem_heading": "A logistics facility is designed once — for over a decade",
+      "problem_text": "A wrong location, suboptimal layout or poorly chosen technology in a logistics facility is a cost that stays in operations for the full asset life. And coordinating dozens of suppliers without a single point of accountability leads to delays and compromises that reduce the investment's value.",
+      "scope": [
+        {
+          "title": "Pre-investment analysis",
+          "text": "Defining requirements, forecasts and growth scenarios as the project foundation."
+        },
+        {
+          "title": "Site selection",
+          "text": "Site analysis and recommendation using integrated drone survey services."
+        },
+        {
+          "title": "Masterplan and design",
+          "text": "Layout, zone and technology design with CAPEX/OPEX/ROI calculations."
+        },
+        {
+          "title": "Operations launch",
+          "text": "Realisation oversight, supplier selection, operational start and KPI achievement."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Logistics investors",
+          "text": "When you need end-to-end management of a logistics facility investment."
+        },
+        {
+          "title": "Companies building their own facility",
+          "text": "When you're constructing a warehouse or distribution centre from scratch."
+        },
+        {
+          "title": "Developers",
+          "text": "When you're running a project for a specific tenant or for commercialisation."
+        }
+      ],
+      "summary": "A Greenfield logistics facility project is end-to-end investment management from pre-investment analysis and site selection, through masterplan and technology selection, to operations launch. Vologis acts as the single partner accountable for the full project lifecycle, integrating business, location, technical and operational analysis with drone services.",
+      "faq": [
+        {
+          "q": "What does a logistics facility Greenfield project cover?",
+          "a": "The full cycle: pre-investment analysis, site selection, masterplan with layout and ROI calculation, supplier and technology selection, realisation oversight and operations launch until KPIs are achieved. One partner, one accountability."
+        },
+        {
+          "q": "When should I bring Vologis into a project?",
+          "a": "As early as possible — ideally before selecting the site. Location choice is one of the most important stages, and an error at this level costs money for the entire asset life."
+        },
+        {
+          "q": "Do you use drones in the project?",
+          "a": "Yes. At the site selection stage we provide geodetic surveys and orthophotomaps, and during construction we conduct aerial construction progress monitoring — this is our technological advantage."
+        }
+      ]
+    },
+    {
+      "slug": "greenfield-projects-warehouse",
+      "pl_slug": "projekty-greenfield-magazyn",
+      "parent": "greenfield-projects",
+      "parent_name": "Greenfield projects",
+      "category": "Greenfield projects",
+      "industry": "warehouse",
+      "title": "Greenfield Projects — Building a Warehouse from Scratch | Vologis",
+      "description": "Vologis manages warehouse Greenfield projects — designs layout, selects technology and automation, and launches warehouse operations.",
+      "h1": "Greenfield Projects — Building a Warehouse from Scratch",
+      "eyebrow": "GREENFIELD PROJECTS · WAREHOUSE",
+      "intro": "Warehouse layout, racking selection and automation level determine the cost of every operation for the entire asset life. Vologis manages warehouse construction from scratch: we design the layout for the rotation profile, select technology and automation independently of suppliers, and launch operations until the target throughput is achieved.",
+      "problem_heading": "Warehouse layout is the cost of every pick for years",
+      "problem_text": "A warehouse designed without considering the rotation profile, picking paths and growth plans generates unnecessary movements and costs with every operation — for the entire asset life. Oversized automation is dead capital; undersized automation is a bottleneck from day one.",
+      "scope": [
+        {
+          "title": "Warehouse layout design",
+          "text": "Designing the layout, zones and picking paths for the specific rotation profile and volume."
+        },
+        {
+          "title": "Racking and equipment selection",
+          "text": "Independent selection of storage systems and equipment matched to requirements."
+        },
+        {
+          "title": "Automation selection",
+          "text": "Objective automation level selection matched to volume and ROI."
+        },
+        {
+          "title": "Launch and optimisation",
+          "text": "Realisation oversight, commissioning, training and achieving target throughput."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Companies building a warehouse",
+          "text": "When you're constructing a warehouse from scratch and want to avoid costly mistakes."
+        },
+        {
+          "title": "Fast-growing companies",
+          "text": "When the current warehouse is no longer sufficient."
+        },
+        {
+          "title": "Investors",
+          "text": "When you need a warehouse meeting specific operational requirements."
+        }
+      ],
+      "summary": "A warehouse Greenfield project is end-to-end management of warehouse construction from scratch: layout design for the rotation profile, independent selection of racking, equipment and automation, and operations launch until target throughput is achieved. Vologis ensures every design decision minimises operational cost for the full asset life.",
+      "faq": [
+        {
+          "q": "How do you design a warehouse layout?",
+          "a": "We design the layout for the specific rotation profile (ABC/XYZ), volume and growth plans — minimising movements and picking cost. We account for both current needs and forecast growth, so the warehouse doesn't need redesigning in a few years."
+        },
+        {
+          "q": "How much automation does my warehouse need?",
+          "a": "As much as volume and ROI justify — no more, no less. Oversized automation is dead capital; undersized automation is a bottleneck. We select the automation level objectively, with no supplier ties."
+        },
+        {
+          "q": "Do you select racking and automation independently?",
+          "a": "Yes, 100% independently. We have no supplier commissions or partnership agreements. We run tenders and compare offers solely on the basis of fit to your needs and genuine return on investment."
+        }
+      ]
+    },
+    {
+      "slug": "greenfield-projects-distribution-center",
+      "pl_slug": "projekty-greenfield-centrum-dystrybucji",
+      "parent": "greenfield-projects",
+      "parent_name": "Greenfield projects",
+      "category": "Greenfield projects",
+      "industry": "distribution centre",
+      "title": "Greenfield Projects — Building a Distribution Centre | Vologis",
+      "description": "Vologis manages distribution centre Greenfield projects — designs and launches distribution centres serving multiple customers and channels.",
+      "h1": "Greenfield Projects — Building a Distribution Centre",
+      "eyebrow": "GREENFIELD PROJECTS · DISTRIBUTION CENTRE",
+      "intro": "A distribution centre is the heart of a logistics network — handling multiple customers, channels and flows simultaneously. Vologis manages distribution centre construction from the analysis of a location optimal for the customer network, through a design handling complex multi-channel flows, to launching operations ready for scaling.",
+      "problem_heading": "A distribution centre must handle complexity, not just volume",
+      "problem_text": "A distribution centre simultaneously handles multiple directions, channels and order types — from retail chain pallets to individual e-commerce parcels. A design that doesn't account for this complexity and a location optimal for the entire customer network generates transport and service costs for the full asset life.",
+      "scope": [
+        {
+          "title": "Network location analysis",
+          "text": "Selecting the optimal location for the full customer network and distribution costs."
+        },
+        {
+          "title": "Design for complex flows",
+          "text": "Layout handling multiple channels, order types and distribution directions."
+        },
+        {
+          "title": "Technology and automation selection",
+          "text": "Technology matched to the complexity and volume of distribution flows."
+        },
+        {
+          "title": "Launch and scaling",
+          "text": "Operations start ready for growth and peak handling."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Distribution networks",
+          "text": "When you're building a centre serving a customer network."
+        },
+        {
+          "title": "Omnichannel companies",
+          "text": "When you need a centre handling multiple channels."
+        },
+        {
+          "title": "Logistics operators",
+          "text": "When you're building a centre for multiple client handling."
+        }
+      ],
+      "summary": "A distribution centre Greenfield project is end-to-end investment management from the analysis of a location optimal for the customer network, through a design handling complex multi-channel flows, to launching operations ready for scaling. Vologis designs the centre for the real complexity of distribution, not just volume, integrating everything under one accountability.",
+      "faq": [
+        {
+          "q": "What's the difference between a distribution centre and a warehouse?",
+          "a": "A distribution centre handles complex, multi-channel flows to multiple customers simultaneously — from retail chain pallets to e-commerce parcels. It requires a design accounting for this complexity and a location optimal for the full network, not just a single point."
+        },
+        {
+          "q": "How do you choose the location for a distribution centre?",
+          "a": "We analyse the location against the full customer network and distribution costs — the optimal point for one customer is rarely optimal for the whole network. We use data analysis and our own drone survey services to assess sites."
+        },
+        {
+          "q": "Will the centre be ready for growth?",
+          "a": "We design the centre with scaling and peak handling in mind. We account for forecast volume and customer number growth, so the centre supports development rather than limiting it after a few years."
+        }
+      ]
+    },
+    {
+      "slug": "greenfield-projects-cold-storage",
+      "pl_slug": "projekty-greenfield-cold-storage",
+      "parent": "greenfield-projects",
+      "parent_name": "Greenfield projects",
+      "category": "Greenfield projects",
+      "industry": "cold storage / chłodnia",
+      "title": "Greenfield Projects — Building Cold Storage | Vologis",
+      "description": "Vologis manages cold storage Greenfield projects — designs and launches cold storage facilities with temperature control and energy efficiency.",
+      "h1": "Greenfield Projects — Building Cold Storage",
+      "eyebrow": "GREENFIELD PROJECTS · COLD STORAGE",
+      "intro": "A cold storage warehouse is the most demanding and capital-intensive type of logistics facility — combining cold chain rigour with high energy costs and technological specifics. Vologis manages cold storage construction from scratch: we design the facility for temperature control and energy efficiency, select refrigeration technology independently and launch operations compliant with requirements.",
+      "problem_heading": "In cold storage, energy cost and temperature continuity determine everything",
+      "problem_text": "A cold storage warehouse isn't just logistics — it's a project where energy efficiency determines operational costs for the full asset life and cold chain continuity determines product safety. Design errors in a cold storage facility are exceptionally costly and difficult to correct after launch.",
+      "scope": [
+        {
+          "title": "Cold storage facility design",
+          "text": "Designing the cold room for temperature control, insulation and energy efficiency."
+        },
+        {
+          "title": "Refrigeration technology selection",
+          "text": "Independent selection of cooling systems, monitoring and temperature automation."
+        },
+        {
+          "title": "Energy efficiency",
+          "text": "Optimising energy costs — the key operational cost of cold storage."
+        },
+        {
+          "title": "Compliance and launch",
+          "text": "Ensuring compliance with requirements and launching cold storage operations."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Food manufacturers",
+          "text": "When you're building cold storage for your own production and distribution."
+        },
+        {
+          "title": "Cold storage operators",
+          "text": "When you're building a facility for cold chain customer service."
+        },
+        {
+          "title": "Pharmaceutical companies",
+          "text": "When you need a GDP-compliant temperature storage facility."
+        }
+      ],
+      "summary": "A cold storage Greenfield project is end-to-end management of cold storage construction from scratch: design for temperature control and energy efficiency, independent refrigeration technology selection and operations launch compliant with cold chain requirements. Vologis ensures energy cost and temperature continuity are optimised from the design phase.",
+      "faq": [
+        {
+          "q": "What's most important in a cold storage design?",
+          "a": "Energy efficiency and cold chain continuity. Energy is the main operational cost of cold storage for the full asset life, and temperature continuity determines product safety. Both parameters must be optimised at the design stage — correction after launch is very costly."
+        },
+        {
+          "q": "Do you select refrigeration technology independently?",
+          "a": "Yes, 100% independently. We select cooling, monitoring and temperature automation systems solely on fit to your requirements and operating cost, with no supplier ties."
+        },
+        {
+          "q": "Will the facility meet GDP or food requirements?",
+          "a": "We design the facility to comply with the requirements for the stored products — pharmaceutical (GDP) or food. We ensure appropriate temperature control, monitoring and documentation required in the relevant sector."
+        }
+      ]
+    },
+    {
+      "slug": "interim-management-restructuring",
+      "pl_slug": "interim-management-restrukturyzacja",
+      "parent": "interim-management",
+      "parent_name": "Interim Management",
+      "category": "Interim Management",
+      "industry": "restructuring",
+      "title": "Interim Management in Logistics Restructuring | Vologis",
+      "description": "Vologis provides interim management for logistics restructuring — enters company structures, reorganises processes and reduces costs in restructuring projects.",
+      "h1": "Interim Management in Logistics Restructuring",
+      "eyebrow": "INTERIM MANAGEMENT · RESTRUCTURING",
+      "intro": "Logistics restructuring requires experienced management, the ability to make difficult decisions and an independent perspective that's hard to find inside an organisation in crisis. Vologis provides an interim manager who enters the company's structure, reorganises processes, reduces costs and leads the team through change — with a focus on a concrete result, not building dependency.",
+      "problem_heading": "Restructuring requires an outsider who can make the tough calls",
+      "problem_text": "In restructuring, internal managers are often entangled in relationships, politics and the history of decisions — which makes difficult but necessary changes harder. There's also no time to recruit, and sometimes specific restructuring competencies are lacking. An interim manager brings an objective perspective, experience and the ability to act without that baggage.",
+      "scope": [
+        {
+          "title": "Diagnosis and restructuring plan",
+          "text": "Rapid situation assessment and preparation of a logistics reorganisation plan."
+        },
+        {
+          "title": "Process and structure reorganisation",
+          "text": "Rebuilding processes, structures and accountabilities in the logistics area."
+        },
+        {
+          "title": "Cost reduction",
+          "text": "Identifying and implementing real operational savings."
+        },
+        {
+          "title": "Change management",
+          "text": "Leading the team through restructuring and preparing for handover."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Companies in restructuring",
+          "text": "When you're reorganising logistics and need experienced management."
+        },
+        {
+          "title": "Cost-reduction programmes",
+          "text": "When you need to quickly reduce logistics operational costs."
+        },
+        {
+          "title": "Post-ownership change companies",
+          "text": "When a new owner or investor requires reorganisation."
+        }
+      ],
+      "summary": "Interim management in restructuring is a service in which Vologis provides an experienced manager who enters the company's structure for the duration of the logistics reorganisation. The manager diagnoses the situation, reorganises processes and structures, reduces costs and leads the team through change — with an objective perspective and a focus on concrete results and smooth handover.",
+      "faq": [
+        {
+          "q": "Why an interim manager rather than an internal team?",
+          "a": "In restructuring, internal managers can be entangled in relationships, politics and decision history, which makes difficult changes harder. An interim manager brings an objective perspective, experience from multiple restructurings and the ability to act without that baggage."
+        },
+        {
+          "q": "How quickly can an interim manager start a restructuring?",
+          "a": "In situations requiring urgent intervention we can start within days. After an initial diagnosis we agree scope and plan, and enter the company as quickly as possible."
+        },
+        {
+          "q": "What remains after the restructuring is complete?",
+          "a": "Ordered processes, reduced costs, a new structure and a trained team ready to take the reins. We prepare the company for independent operation — we don't build dependency on our presence."
+        }
+      ]
+    },
+    {
+      "slug": "interim-management-logistics-startup",
+      "pl_slug": "interim-management-startup-logistyczny",
+      "parent": "interim-management",
+      "parent_name": "Interim Management",
+      "category": "Interim Management",
+      "industry": "logistics startup",
+      "title": "Interim Management for Logistics Startups | Vologis",
+      "description": "Vologis provides interim management for startups needing logistics competencies at launch — experienced C-level support without the cost of a permanent hire.",
+      "h1": "Interim Management for Startups and Early-Stage Companies",
+      "eyebrow": "INTERIM MANAGEMENT · LOGISTICS STARTUP",
+      "intro": "Startups and fast-growing companies often need high-quality logistics competencies before they can afford to hire them permanently. Vologis provides an experienced logistics manager for a defined period — who builds processes from scratch, establishes standards and prepares operations for scaling, without burdening the budget with a permanent C-level hire.",
+      "problem_heading": "You need senior competencies on a junior budget",
+      "problem_text": "A startup in the growth phase needs someone who can build logistics from scratch and avoid costly mistakes — but hiring an experienced logistics director permanently is too expensive and premature at this stage. Without the right competencies, the startup makes mistakes that later cost many times more.",
+      "scope": [
+        {
+          "title": "Building processes from scratch",
+          "text": "Designing and implementing logistics processes matched to the business model."
+        },
+        {
+          "title": "Establishing standards",
+          "text": "Creating operational standards and metrics scalable with the business."
+        },
+        {
+          "title": "Preparing for scaling",
+          "text": "Building logistics ready for rapid volume growth."
+        },
+        {
+          "title": "Knowledge transfer",
+          "text": "Transferring competencies and preparing for the right time to hire a permanent team."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "E-commerce startups",
+          "text": "When you need to build logistics and fulfillment from scratch."
+        },
+        {
+          "title": "Fast-growing companies",
+          "text": "When rapid growth has outpaced logistics competencies."
+        },
+        {
+          "title": "Companies before a round or expansion",
+          "text": "When you need to order operations before scaling."
+        }
+      ],
+      "summary": "Interim management for startups is a service in which Vologis provides an experienced logistics manager for a defined period — building processes from scratch, establishing standards and preparing operations for scaling. The startup gains senior competencies without a permanent C-level cost, with knowledge transfer and preparation for hiring a permanent team at the right time.",
+      "faq": [
+        {
+          "q": "Why interim rather than hiring a logistics director?",
+          "a": "At an early stage, hiring an experienced logistics director permanently is too expensive and premature. An interim manager gives access to senior competencies when they're most needed — at process build time — without a fixed budget burden."
+        },
+        {
+          "q": "Will an interim manager build logistics from zero?",
+          "a": "Yes. This is a frequent scenario — the manager designs and implements logistics processes matched to the business model, establishes standards and metrics, and prepares operations for scaling, before the startup hires a permanent team."
+        },
+        {
+          "q": "What happens when the startup grows?",
+          "a": "We prepare the company for hiring a permanent team at the right moment — with ready processes, standards and knowledge transfer. The interim manager builds the foundation on which a permanent team can continue to build."
+        }
+      ]
+    },
+    {
+      "slug": "interim-management-3pl",
+      "pl_slug": "interim-management-3pl",
+      "parent": "interim-management",
+      "parent_name": "Interim Management",
+      "category": "Interim Management",
+      "industry": "3PL / operator logistyczny",
+      "title": "Interim Management for 3PL Operators | Vologis",
+      "description": "Vologis provides interim management for 3PL/4PL logistics operators — temporary management support in operations, contract launches and crisis situations.",
+      "h1": "Interim Management for 3PL Logistics Operators",
+      "eyebrow": "INTERIM MANAGEMENT · 3PL",
+      "intro": "Logistics operators work under constant pressure on timeliness, quality and margin — and a management competency gap, launching a new contract or an operational crisis requires immediate, experienced support. Vologis provides an interim manager who understands 3PL specifics, stabilises operations, manages contract launches and raises efficiency.",
+      "problem_heading": "For a 3PL operator, a management gap risks losing contracts",
+      "problem_text": "A logistics operator lives from contracts whose service quality depends on effective operations management. A gap in a key position, a problematic new contract launch or an operational crisis quickly translates into the risk of penalties, complaints and customer loss — in a sector with thin margins.",
+      "scope": [
+        {
+          "title": "3PL operations stabilisation",
+          "text": "Temporarily taking over operations management at the logistics operator."
+        },
+        {
+          "title": "New contract launches",
+          "text": "Managing the implementation and launch of service for new customers."
+        },
+        {
+          "title": "Efficiency improvement",
+          "text": "Optimising processes and operational margin in contract service delivery."
+        },
+        {
+          "title": "Crisis management",
+          "text": "Intervention in situations threatening contracts and customer relationships."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "3PL/4PL operators",
+          "text": "When you need temporary management support in operations."
+        },
+        {
+          "title": "Operators launching contracts",
+          "text": "When you're implementing a large customer and need experience."
+        },
+        {
+          "title": "Operators in crisis",
+          "text": "When operational problems are threatening contracts."
+        }
+      ],
+      "summary": "Interim management for 3PL operators is a service in which Vologis provides an experienced manager who understands contract logistics specifics. The manager stabilises operations, manages new contract launches, raises efficiency and margin, and intervenes in crisis situations threatening customer relationships — focused on concrete results and handover.",
+      "faq": [
+        {
+          "q": "Does the interim manager understand 3PL specifics?",
+          "a": "Yes. We provide a manager with experience in contract logistics, understanding the timeliness, quality and margin pressure typical of 3PL/4PL operators and the specifics of managing multiple customer service simultaneously."
+        },
+        {
+          "q": "Can you help launch a new contract?",
+          "a": "Yes. Launching a large customer's service is a critical moment for an operator — an interim manager with implementation experience manages this process, minimising the risk of start-up problems and protecting the relationship with the new customer."
+        },
+        {
+          "q": "How quickly can you help in a crisis?",
+          "a": "In situations threatening contracts we act immediately — an interim manager can enter within days, stabilise operations and limit the risk of penalties, complaints and customer loss."
+        }
+      ]
+    },
+    {
+      "slug": "interim-management-operational-crisis",
+      "pl_slug": "interim-management-kryzys-operacyjny",
+      "parent": "interim-management",
+      "parent_name": "Interim Management",
+      "category": "Interim Management",
+      "industry": "operational crisis",
+      "title": "Interim Management — Operational Crisis Management | Vologis",
+      "description": "Vologis provides interim management in operational logistics crises — enters immediately, firefights, stabilises operations and restores control.",
+      "h1": "Interim Management — Operational Crisis Management",
+      "eyebrow": "INTERIM MANAGEMENT · OPERATIONAL CRISIS",
+      "intro": "An operational crisis in logistics escalates every day — a backing-up warehouse, mounting delays, calling customers and a team losing motivation. Vologis provides an interim manager who enters immediately, identifies the sources of crisis, fights the most urgent fires and restores operational control — before the situation gets out of hand.",
+      "problem_heading": "An operational crisis deepens every day without leadership",
+      "problem_text": "When logistics falls into crisis — the warehouse can't keep up, delays accumulate, customers are losing patience and the team is losing motivation — every day without decisive management deepens the problem. Recruitment takes too long, and the internal team is often too close to the problem to get it under control.",
+      "scope": [
+        {
+          "title": "Immediate intervention",
+          "text": "Entry within days and taking over management of the operational crisis."
+        },
+        {
+          "title": "Crisis source diagnosis",
+          "text": "Rapid identification of the real root causes, not just the symptoms of crisis."
+        },
+        {
+          "title": "Firefighting",
+          "text": "Implementing immediate actions stabilising the most urgent problems."
+        },
+        {
+          "title": "Restoring control",
+          "text": "Rebuilding operational continuity, team direction and process predictability."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Companies in logistics crisis",
+          "text": "When operations are failing and you need immediate intervention."
+        },
+        {
+          "title": "Companies after a sudden manager departure",
+          "text": "When a key manager has left and operations are losing direction."
+        },
+        {
+          "title": "Companies with escalating problems",
+          "text": "When operational problems are growing faster than the ability to solve them."
+        }
+      ],
+      "summary": "Interim management in an operational crisis is a service in which Vologis provides a manager who enters the company's structure immediately to bring the logistics crisis under control. The manager diagnoses the real sources of crisis, fights the most urgent fires and restores operational control — continuity, team direction and process predictability — before the situation gets out of hand.",
+      "faq": [
+        {
+          "q": "How quickly can you enter in a crisis situation?",
+          "a": "In an operational crisis we can start within days. After a quick initial conversation and understanding of the situation, the interim manager enters the company and takes over management of the most urgent problems."
+        },
+        {
+          "q": "Will the interim manager address the source, not just the symptoms?",
+          "a": "Both — first we fight the most urgent fires to stabilise the situation, while simultaneously diagnosing the real sources of the crisis. Without removing root causes, the crisis will return — so stabilisation goes hand in hand with fixing the foundations."
+        },
+        {
+          "q": "What happens after the crisis is contained?",
+          "a": "After stabilising operations we prepare the company for the permanent team to take the reins — with ordered processes, documentation and trained people. We leave operations stable and predictable."
+        }
+      ]
+    },
+    {
+      "slug": "drone-services-land-surveying",
+      "pl_slug": "drony-pomiary-geodezyjne",
+      "parent": "drone-services",
+      "parent_name": "Drone services",
+      "category": "Drone services",
+      "industry": "land surveying",
+      "title": "Drone Geodetic Surveys for Logistics Investments | Vologis",
+      "description": "Vologis provides precise drone geodetic surveys for logistics and investment projects — centimetre-level accuracy, faster and cheaper than traditional methods.",
+      "h1": "Drone Geodetic Surveys",
+      "eyebrow": "DRONE SERVICES · LAND SURVEYING",
+      "intro": "Drone geodetic surveys deliver precise terrain data to centimetre accuracy — in hours rather than days, over large areas inaccessible to traditional methods. Vologis conducts geodetic surveys for logistics and investment projects, delivering data ready for use in design and analysis.",
+      "problem_heading": "Traditional surveying of a large site takes days and is expensive",
+      "problem_text": "A geodetic survey of a large investment site using traditional methods takes days, engages a field team and generates high costs — and on difficult terrain can be practically impossible. Yet precise data is the foundation of every investment and design decision.",
+      "scope": [
+        {
+          "title": "Area and terrain measurements",
+          "text": "Precise measurements of large areas to centimetre accuracy."
+        },
+        {
+          "title": "Terrain and digital models",
+          "text": "Digital terrain models ready for use in design."
+        },
+        {
+          "title": "Difficult-access measurements",
+          "text": "Measuring terrain inaccessible to traditional methods."
+        },
+        {
+          "title": "Design-ready data",
+          "text": "Data in formats ready for use in design tools."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Logistics investors",
+          "text": "When you need site measurements before an investment decision."
+        },
+        {
+          "title": "Developers",
+          "text": "When you need precise terrain data for your project."
+        },
+        {
+          "title": "Construction companies",
+          "text": "When you need measurements for earthworks and design."
+        }
+      ],
+      "summary": "Drone geodetic surveys is a service in which Vologis delivers precise terrain data to centimetre accuracy — faster, cheaper and over larger areas than traditional methods. Surveys include terrain models, design data and measurements of inaccessible terrain, delivered in formats ready for use in logistics and investment projects.",
+      "faq": [
+        {
+          "q": "How accurate are drone measurements?",
+          "a": "With appropriate procedures and reference points we achieve accuracy to a few centimetres. The specific accuracy level is agreed depending on the measurement purpose and project requirements."
+        },
+        {
+          "q": "Is a drone survey cheaper than a traditional one?",
+          "a": "For large areas, usually yes — a drone surveys a site in hours rather than days and doesn't require a large field team. The larger and more inaccessible the area, the greater the cost and time advantage."
+        },
+        {
+          "q": "What format do you deliver the data in?",
+          "a": "We deliver data in formats ready for use in design and analysis — terrain models, survey data, reports. We match the format to the project tools and requirements."
+        }
+      ]
+    },
+    {
+      "slug": "drone-services-orthophotomaps",
+      "pl_slug": "drony-ortofotomapy",
+      "parent": "drone-services",
+      "parent_name": "Drone services",
+      "category": "Drone services",
+      "industry": "orthophotomaps",
+      "title": "Drone Orthophotomaps for Investments & Logistics | Vologis",
+      "description": "Vologis delivers high-resolution drone orthophotomaps for investment and logistics projects — calibrated photographic maps ready for analysis and design.",
+      "h1": "Drone Orthophotomaps",
+      "eyebrow": "DRONE SERVICES · ORTHOPHOTOMAPS",
+      "intro": "An orthophotomap is a calibrated, high-resolution photographic map of terrain that combines measurement accuracy with image readability — showing the real state of a site in a form ready for analysis. Vologis produces orthophotomaps for investment and logistics projects, delivering material essential for site assessment and design.",
+      "problem_heading": "A map doesn't show the real state of the site",
+      "problem_text": "Standard maps and plans don't show the current, real state of a site — its topography, development, surroundings and changes. An orthophotomap fills this gap, delivering a precise, current picture of the terrain, essential for accurate investment and design assessment.",
+      "scope": [
+        {
+          "title": "High-resolution orthophotomaps",
+          "text": "Calibrated photographic maps with high resolution and accuracy."
+        },
+        {
+          "title": "Current terrain state",
+          "text": "Real, current picture of the site ready for analysis."
+        },
+        {
+          "title": "Design-ready maps",
+          "text": "Orthophotomaps in formats ready for use in projects."
+        },
+        {
+          "title": "Change documentation over time",
+          "text": "Comparison of terrain state at different periods."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Investors",
+          "text": "When you need an assessment of the real state of a site."
+        },
+        {
+          "title": "Developers",
+          "text": "When you need a current terrain map for your project."
+        },
+        {
+          "title": "Designers and architects",
+          "text": "When you need a precise base for design work."
+        }
+      ],
+      "summary": "Drone orthophotomaps is a service in which Vologis delivers calibrated, high-resolution photographic terrain maps showing the real and current state of a site. Orthophotomaps are essential for investment assessment and design — delivered in formats ready for use in design tools, for logistics and investment projects.",
+      "faq": [
+        {
+          "q": "What is an orthophotomap?",
+          "a": "It's a calibrated photographic map of terrain — combining the readability of an aerial photograph with the accuracy of a geodetic measurement. Unlike a regular photo, an orthophotomap has a uniform scale and precise measurements can be taken from it."
+        },
+        {
+          "q": "What can you use a site orthophotomap for?",
+          "a": "To assess the real state of a site before investment, as a precise design base, to analyse development and surroundings, and to document terrain condition. It's essential material at the investment decision stage."
+        },
+        {
+          "q": "How current is the orthophotomap?",
+          "a": "An orthophotomap shows the terrain state on the day of the flight — a real, current picture, unlike archival maps. We can also produce orthophotomaps cyclically to document changes over time."
+        }
+      ]
+    },
+    {
+      "slug": "drone-services-warehouse-inspection",
+      "pl_slug": "drony-inspekcja-magazynow",
+      "parent": "drone-services",
+      "parent_name": "Drone services",
+      "category": "Drone services",
+      "industry": "inspections",
+      "title": "Drone Warehouse and Facility Inspections | Vologis",
+      "description": "Vologis conducts warehouse, roof and logistics facility inspections by drone — safe, fast technical inspections of hard-to-access facility elements.",
+      "h1": "Drone Warehouse and Facility Inspections",
+      "eyebrow": "DRONE SERVICES · INSPECTIONS",
+      "intro": "Inspecting roofs, facades and hard-to-access elements of large logistics facilities using traditional methods is costly, time-consuming and risky. Vologis conducts warehouse and facility inspections by drone — quickly, safely and with high-resolution photographic documentation, without the need for scaffolding or platforms.",
+      "problem_heading": "Inspecting a large facility traditionally costs time, money and risk",
+      "problem_text": "Checking the condition of a roof, facade or hard-to-access elements of a large warehouse typically requires platforms, scaffolding or rope access — generating costs, taking time and exposing people to risk. Yet regular inspection is essential for facility maintenance and preventing costly failures.",
+      "scope": [
+        {
+          "title": "Roof inspections",
+          "text": "Documentation of roof condition on large facilities without working at height."
+        },
+        {
+          "title": "Facade and structural inspections",
+          "text": "Aerial assessment of facade and structural element condition."
+        },
+        {
+          "title": "Technical documentation",
+          "text": "High-resolution photographic documentation for assessment and archiving."
+        },
+        {
+          "title": "Hard-to-access inspections",
+          "text": "Access to elements inaccessible or dangerous for traditional inspection methods."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Logistics facility owners",
+          "text": "When you need inspections without expensive platforms."
+        },
+        {
+          "title": "Property managers",
+          "text": "When you manage large facilities and need regular inspections."
+        },
+        {
+          "title": "Warehouse operators",
+          "text": "When you want to monitor facility technical condition."
+        }
+      ],
+      "summary": "Drone warehouse inspections is a service in which Vologis conducts fast, safe technical inspections of roofs, facades and hard-to-access elements of large logistics facilities. We deliver high-resolution photographic documentation without scaffolding, platforms or working at height — reducing inspection cost, time and risk.",
+      "faq": [
+        {
+          "q": "Why a drone inspection rather than traditional?",
+          "a": "A drone inspects the roof or facade of a large facility in hours, without platforms, scaffolding or exposing people to working at height. It's faster, cheaper and safer, and the photographic documentation is high resolution."
+        },
+        {
+          "q": "What can be inspected by drone on a warehouse?",
+          "a": "Roof condition, roofing, skylights, facade, structural elements and other hard-to-access facility parts. A drone reaches locations dangerous or inaccessible to traditional inspection methods."
+        },
+        {
+          "q": "Will I get documentation from the inspection?",
+          "a": "Yes. We deliver high-resolution photographic documentation of the facility condition, ready for technical assessment, archiving and comparison over time at periodic inspections."
+        }
+      ]
+    },
+    {
+      "slug": "drone-services-logistics-real-estate-marketing",
+      "pl_slug": "drony-marketing-nieruchomosci-logistycznych",
+      "parent": "drone-services",
+      "parent_name": "Drone services",
+      "category": "Drone services",
+      "industry": "real estate marketing",
+      "title": "Drone Marketing Materials for Logistics Properties | Vologis",
+      "description": "Vologis creates professional drone photos and video for commercialising logistics properties — materials that speed up letting and sale of real estate.",
+      "h1": "Drone Marketing Materials for Logistics Properties",
+      "eyebrow": "DRONE SERVICES · LOGISTICS REAL ESTATE MARKETING",
+      "intro": "Professional aerial footage shows the scale, location and surroundings of a logistics property in a way no ground-level photograph can. Vologis creates drone marketing materials — photos and video — that speed up commercialisation, make the offering stand out and make it easier to present facilities to tenants and investors.",
+      "problem_heading": "A ground-level photo won't sell a facility spanning hectares",
+      "problem_text": "A logistics facility spanning tens of thousands of square metres is hard to show from ground level — scale, location, transport access and surroundings aren't visible. Yet these elements determine the attractiveness of an offering to a tenant or investor. Without professional materials, commercialisation takes longer.",
+      "scope": [
+        {
+          "title": "Aerial property photography",
+          "text": "Professional shots showing the facility's scale, location and surroundings."
+        },
+        {
+          "title": "Marketing video",
+          "text": "Dynamic aerial video footage for presentations and campaigns."
+        },
+        {
+          "title": "Location presentation",
+          "text": "Shots showing transport access and business surroundings."
+        },
+        {
+          "title": "Commercialisation materials",
+          "text": "Complete visual material set for a letting or sale offer."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Logistics developers",
+          "text": "When you're commercialising a facility and need materials that make your offer stand out."
+        },
+        {
+          "title": "Commercial real estate agencies",
+          "text": "When you want to strengthen the presentation of facilities in your portfolio."
+        },
+        {
+          "title": "Property owners",
+          "text": "When you're letting or selling a logistics property."
+        }
+      ],
+      "summary": "Drone marketing materials is a service in which Vologis creates professional aerial photos and video for commercialising logistics properties. The shots show the facility's scale, location, transport access and surroundings — elements that determine an offering's attractiveness. Materials speed up letting and sale and make an offer stand out.",
+      "faq": [
+        {
+          "q": "Why do drone materials speed up commercialisation?",
+          "a": "Aerial shots show the facility's scale, location, transport access and surroundings — elements key for a tenant or investor, invisible from ground-level photos. Professional presentation makes an offer stand out and shortens decision time."
+        },
+        {
+          "q": "What do drone marketing materials include?",
+          "a": "Professional aerial photography, dynamic aerial video, shots showing location and surroundings, and a complete visual material set ready for use in the offer, on property portals and in presentations."
+        },
+        {
+          "q": "Can you combine marketing materials with construction monitoring?",
+          "a": "Yes. If the facility is under construction, we can combine progress monitoring with creating marketing materials for future commercialisation — delivering both documentation and sales materials."
+        }
+      ]
+    },
+    {
+      "slug": "drone-services-construction-monitoring",
+      "pl_slug": "drony-monitoring-budowy",
+      "parent": "drone-services",
+      "parent_name": "Drone services",
+      "category": "Drone services",
+      "industry": "construction monitoring",
+      "title": "Drone Construction Monitoring for Logistics Investments | Vologis",
+      "description": "Vologis provides regular drone construction progress monitoring — objective, dated documentation for investors and developers.",
+      "h1": "Drone Construction Progress Monitoring",
+      "eyebrow": "DRONE SERVICES · CONSTRUCTION MONITORING",
+      "intro": "Regular drone construction monitoring delivers an objective, dated picture of work progress — independent of contractor reports. Vologis conducts aerial monitoring of logistics investments, giving investors and developers a tool for schedule control, documentation and settlement at every stage of construction.",
+      "problem_heading": "A contractor's report isn't the same as an objective picture of progress",
+      "problem_text": "An investor relying solely on contractor reports has no independent confirmation of real work progress. Delays are often communicated late, and discrepancies between reports and reality come to light too late to respond. Regular aerial monitoring gives an objective, undeniable picture.",
+      "scope": [
+        {
+          "title": "Cyclic progress monitoring",
+          "text": "Regular flights documenting work progress at set intervals."
+        },
+        {
+          "title": "Dated documentation",
+          "text": "Objective, dated photographic and video documentation of construction progress."
+        },
+        {
+          "title": "Schedule control",
+          "text": "Independent confirmation of progress compliance with schedule."
+        },
+        {
+          "title": "Settlement documentation",
+          "text": "Material supporting contractor settlements and investor reporting."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Investors",
+          "text": "When you need independent control of investment progress."
+        },
+        {
+          "title": "Developers",
+          "text": "When you're running a project and want to document progress."
+        },
+        {
+          "title": "Funds and financiers",
+          "text": "When you're financing an investment and need objective reporting."
+        }
+      ],
+      "summary": "Drone construction monitoring is a service in which Vologis conducts regular, dated aerial documentation of construction work progress — independent of contractor reports. Monitoring gives investors and developers a tool for schedule control, documentation and settlement, with an objective, undeniable picture of progress at every stage of a logistics investment.",
+      "faq": [
+        {
+          "q": "How often do you conduct construction monitoring?",
+          "a": "Most often cyclically — regular flights at set intervals (e.g. weekly or monthly) give an objective picture of progress over time. We match the frequency to the pace of works and investor reporting needs."
+        },
+        {
+          "q": "How does drone monitoring surpass a contractor's report?",
+          "a": "It gives an independent, dated and undeniable picture of real progress — without relying solely on contractor declarations. Discrepancies between schedule and reality are immediately visible, allowing a timely response."
+        },
+        {
+          "q": "Will the documentation help with settlements?",
+          "a": "Yes. Dated progress documentation is objective material supporting contractor settlements, investor and financier reporting and resolving any disputes about the level of work completion."
+        }
+      ]
+    },
+    {
+      "slug": "warehouse-for-rent-warsaw",
+      "pl_slug": "magazyn-do-wynajecia-warszawa",
+      "parent": "commercialization-and-sales",
+      "parent_name": "Commercialization & sales",
+      "category": "Commercialization & sales",
+      "industry": "powierzchnie warehouseowe Warszawa",
+      "heroImage": "/services/vologis-uslugi-komercjalizacja-i-sprzedaz.webp",
+      "title": "Warehouse for Rent Warsaw — Selection & Negotiation | Vologis",
+      "description": "Looking for a warehouse for rent in Warsaw? Independent tenant advisor — we select and negotiate on your behalf, no commission from the landlord. A2, S2 and S8.",
+      "h1": "Warehouse for Rent — Warsaw",
+      "eyebrow": "WAREHOUSE FOR RENT · WARSAW",
+      "intro": "Warsaw is a major logistics market on the A2, S2 and S8 corridor. Poland's largest logistics market. Last-mile locations within the agglomeration command a premium — an advisor with real market benchmarks negotiates from knowledge, not guesswork. Vologis acts exclusively on the tenant's side — without commission from landlords — and negotiates lease conditions with access to real market benchmarks.",
+      "problem_heading": "Finding the right warehouse in Warsaw requires local market knowledge",
+      "problem_text": "Companies entering Warsaw's market without knowing local zones, operators and benchmark rates risk overpaying or choosing a location that doesn't match their logistics model. An independent advisor condenses months of research into days and enters negotiations from a position of knowledge.",
+      "scope": [
+        {
+          "title": "Warehouse selection for your requirements",
+          "text": "We identify facilities matched to your profile: storage type, volume, technical standard and location within the agglomeration."
+        },
+        {
+          "title": "Facility and terms verification",
+          "text": "We check technical condition, compliance with stated specs, real operating costs and landlord flexibility — before you enter negotiations."
+        },
+        {
+          "title": "Tenant-side negotiation — no landlord commission",
+          "text": "We negotiate rates, incentives and contract terms on your behalf. We charge no commission from the landlord — our advisory fee comes from you, eliminating conflicts of interest."
+        },
+        {
+          "title": "Warsaw market knowledge",
+          "text": "We know the available facilities, local zones and market negotiating standards in Warsaw."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Companies entering Warsaw",
+          "text": "When you need a warehouse in this market and want local market knowledge on your side."
+        },
+        {
+          "title": "Companies relocating their warehouse",
+          "text": "When your current facility no longer meets volume or location requirements."
+        },
+        {
+          "title": "Foreign companies entering Poland",
+          "text": "When you need a local advisor who negotiates rates and terms in your interest."
+        }
+      ],
+      "summary": "Warehouse for rent in Warsaw — Vologis acts as an independent tenant advisor. We select facilities, negotiate rates and conditions exclusively in the tenant's interest, with no commission from landlords. We know the A2, S2 and S8 market and act fast.",
+      "faq": [
+        {
+          "q": "What warehouses are available in Warsaw?",
+          "a": "Warsaw offers a range of class A, B and B+ facilities in industrial zones and along the A2, S2 and S8. We know current availability and select the right option for your operational requirements."
+        },
+        {
+          "q": "Do you charge commission from the landlord?",
+          "a": "No. We act as an independent tenant advisor — our fee comes from you, not the property owner or operator. This eliminates conflicts of interest: our recommendation is always on your side, never the landlord's."
+        },
+        {
+          "q": "How quickly can you find a warehouse in Warsaw?",
+          "a": "For standard requirements, we typically present initial proposals within 1–2 weeks. Full selection and negotiation takes 3–5 weeks, depending on specific requirements."
+        }
+      ]
+    },
+    {
+      "slug": "warehouse-for-rent-wroclaw",
+      "pl_slug": "magazyn-do-wynajecia-wroclaw",
+      "parent": "commercialization-and-sales",
+      "parent_name": "Commercialization & sales",
+      "category": "Commercialization & sales",
+      "industry": "powierzchnie warehouseowe Wrocław",
+      "heroImage": "/services/vologis-uslugi-komercjalizacja-i-sprzedaz.webp",
+      "title": "Warehouse for Rent Wrocław — Selection & Negotiation | Vologis",
+      "description": "Looking for a warehouse for rent in Wrocław? Independent tenant advisor — we select and negotiate on your behalf, no commission from the landlord. A4/A8.",
+      "h1": "Warehouse for Rent — Wrocław",
+      "eyebrow": "WAREHOUSE FOR RENT · WROCŁAW",
+      "intro": "Wrocław is a major logistics market on the A4/A8 corridor. One of Poland's highest vacancy rates — giving real negotiating power to the tenant. Vologis negotiates rent-free periods and fit-out contributions on your behalf. Vologis acts exclusively on the tenant's side — without commission from landlords — and negotiates lease conditions with access to real market benchmarks.",
+      "problem_heading": "Finding the right warehouse in Wrocław requires local market knowledge",
+      "problem_text": "Companies entering Wrocław's market without knowing local zones, operators and benchmark rates risk overpaying or choosing a location that doesn't match their logistics model. An independent advisor condenses months of research into days and enters negotiations from a position of knowledge.",
+      "scope": [
+        {
+          "title": "Warehouse selection for your requirements",
+          "text": "We identify facilities matched to your profile: storage type, volume, technical standard and location within the agglomeration."
+        },
+        {
+          "title": "Facility and terms verification",
+          "text": "We check technical condition, compliance with stated specs, real operating costs and landlord flexibility — before you enter negotiations."
+        },
+        {
+          "title": "Tenant-side negotiation — no landlord commission",
+          "text": "We negotiate rates, incentives and contract terms on your behalf. We charge no commission from the landlord — our advisory fee comes from you, eliminating conflicts of interest."
+        },
+        {
+          "title": "Wrocław market knowledge",
+          "text": "We know the available facilities, local zones and market negotiating standards in Wrocław."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Companies entering Wrocław",
+          "text": "When you need a warehouse in this market and want local market knowledge on your side."
+        },
+        {
+          "title": "Companies relocating their warehouse",
+          "text": "When your current facility no longer meets volume or location requirements."
+        },
+        {
+          "title": "Foreign companies entering Poland",
+          "text": "When you need a local advisor who negotiates rates and terms in your interest."
+        }
+      ],
+      "summary": "Warehouse for rent in Wrocław — Vologis acts as an independent tenant advisor. We select facilities, negotiate rates and conditions exclusively in the tenant's interest, with no commission from landlords. We know the A4/A8 market and act fast.",
+      "faq": [
+        {
+          "q": "What warehouses are available in Wrocław?",
+          "a": "Wrocław offers a range of class A, B and B+ facilities in industrial zones and along the A4/A8. We know current availability and select the right option for your operational requirements."
+        },
+        {
+          "q": "Do you charge commission from the landlord?",
+          "a": "No. We act as an independent tenant advisor — our fee comes from you, not the property owner or operator. This eliminates conflicts of interest: our recommendation is always on your side, never the landlord's."
+        },
+        {
+          "q": "How quickly can you find a warehouse in Wrocław?",
+          "a": "For standard requirements, we typically present initial proposals within 1–2 weeks. Full selection and negotiation takes 3–5 weeks, depending on specific requirements."
+        }
+      ]
+    },
+    {
+      "slug": "warehouse-for-rent-poznan",
+      "pl_slug": "magazyn-do-wynajecia-poznan",
+      "parent": "commercialization-and-sales",
+      "parent_name": "Commercialization & sales",
+      "category": "Commercialization & sales",
+      "industry": "powierzchnie warehouseowe Poznań",
+      "heroImage": "/services/vologis-uslugi-komercjalizacja-i-sprzedaz.webp",
+      "title": "Warehouse for Rent Poznań — Selection & Negotiation | Vologis",
+      "description": "Looking for a warehouse for rent in Poznań? Independent tenant advisor — we select and negotiate on your behalf, no commission from the landlord. A2.",
+      "h1": "Warehouse for Rent — Poznań",
+      "eyebrow": "WAREHOUSE FOR RENT · POZNAŃ",
+      "intro": "Poznań is a major logistics market on the A2 corridor. Natural hub for nearshoring and east–west distribution. Strong demand from e-commerce and light manufacturing. Vologis acts exclusively on the tenant's side — without commission from landlords — and negotiates lease conditions with access to real market benchmarks.",
+      "problem_heading": "Finding the right warehouse in Poznań requires local market knowledge",
+      "problem_text": "Companies entering Poznań's market without knowing local zones, operators and benchmark rates risk overpaying or choosing a location that doesn't match their logistics model. An independent advisor condenses months of research into days and enters negotiations from a position of knowledge.",
+      "scope": [
+        {
+          "title": "Warehouse selection for your requirements",
+          "text": "We identify facilities matched to your profile: storage type, volume, technical standard and location within the agglomeration."
+        },
+        {
+          "title": "Facility and terms verification",
+          "text": "We check technical condition, compliance with stated specs, real operating costs and landlord flexibility — before you enter negotiations."
+        },
+        {
+          "title": "Tenant-side negotiation — no landlord commission",
+          "text": "We negotiate rates, incentives and contract terms on your behalf. We charge no commission from the landlord — our advisory fee comes from you, eliminating conflicts of interest."
+        },
+        {
+          "title": "Poznań market knowledge",
+          "text": "We know the available facilities, local zones and market negotiating standards in Poznań."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Companies entering Poznań",
+          "text": "When you need a warehouse in this market and want local market knowledge on your side."
+        },
+        {
+          "title": "Companies relocating their warehouse",
+          "text": "When your current facility no longer meets volume or location requirements."
+        },
+        {
+          "title": "Foreign companies entering Poland",
+          "text": "When you need a local advisor who negotiates rates and terms in your interest."
+        }
+      ],
+      "summary": "Warehouse for rent in Poznań — Vologis acts as an independent tenant advisor. We select facilities, negotiate rates and conditions exclusively in the tenant's interest, with no commission from landlords. We know the A2 market and act fast.",
+      "faq": [
+        {
+          "q": "What warehouses are available in Poznań?",
+          "a": "Poznań offers a range of class A, B and B+ facilities in industrial zones and along the A2. We know current availability and select the right option for your operational requirements."
+        },
+        {
+          "q": "Do you charge commission from the landlord?",
+          "a": "No. We act as an independent tenant advisor — our fee comes from you, not the property owner or operator. This eliminates conflicts of interest: our recommendation is always on your side, never the landlord's."
+        },
+        {
+          "q": "How quickly can you find a warehouse in Poznań?",
+          "a": "For standard requirements, we typically present initial proposals within 1–2 weeks. Full selection and negotiation takes 3–5 weeks, depending on specific requirements."
+        }
+      ]
+    },
+    {
+      "slug": "warehouse-for-rent-lodz",
+      "pl_slug": "magazyn-do-wynajecia-lodz",
+      "parent": "commercialization-and-sales",
+      "parent_name": "Commercialization & sales",
+      "category": "Commercialization & sales",
+      "industry": "powierzchnie warehouseowe Łódź",
+      "heroImage": "/services/vologis-uslugi-komercjalizacja-i-sprzedaz.webp",
+      "title": "Warehouse for Rent Łódź — Selection & Negotiation | Vologis",
+      "description": "Looking for a warehouse for rent in Łódź? Independent tenant advisor — we select and negotiate on your behalf, no commission from the landlord. A1/A2.",
+      "h1": "Warehouse for Rent — Łódź",
+      "eyebrow": "WAREHOUSE FOR RENT · ŁÓDŹ",
+      "intro": "Łódź is a major logistics market on the A1/A2 corridor. Poland's geographic centre — one of the most cost-competitive logistics hubs for national distribution. Estimated rates ~3.6–4.6 EUR/m²/month. Vologis acts exclusively on the tenant's side — without commission from landlords — and negotiates lease conditions with access to real market benchmarks.",
+      "problem_heading": "Finding the right warehouse in Łódź requires local market knowledge",
+      "problem_text": "Companies entering Łódź's market without knowing local zones, operators and benchmark rates risk overpaying or choosing a location that doesn't match their logistics model. An independent advisor condenses months of research into days and enters negotiations from a position of knowledge.",
+      "scope": [
+        {
+          "title": "Warehouse selection for your requirements",
+          "text": "We identify facilities matched to your profile: storage type, volume, technical standard and location within the agglomeration."
+        },
+        {
+          "title": "Facility and terms verification",
+          "text": "We check technical condition, compliance with stated specs, real operating costs and landlord flexibility — before you enter negotiations."
+        },
+        {
+          "title": "Tenant-side negotiation — no landlord commission",
+          "text": "We negotiate rates, incentives and contract terms on your behalf. We charge no commission from the landlord — our advisory fee comes from you, eliminating conflicts of interest."
+        },
+        {
+          "title": "Łódź market knowledge",
+          "text": "We know the available facilities, local zones and market negotiating standards in Łódź."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Companies entering Łódź",
+          "text": "When you need a warehouse in this market and want local market knowledge on your side."
+        },
+        {
+          "title": "Companies relocating their warehouse",
+          "text": "When your current facility no longer meets volume or location requirements."
+        },
+        {
+          "title": "Foreign companies entering Poland",
+          "text": "When you need a local advisor who negotiates rates and terms in your interest."
+        }
+      ],
+      "summary": "Warehouse for rent in Łódź — Vologis acts as an independent tenant advisor. We select facilities, negotiate rates and conditions exclusively in the tenant's interest, with no commission from landlords. We know the A1/A2 market and act fast.",
+      "faq": [
+        {
+          "q": "What warehouses are available in Łódź?",
+          "a": "Łódź offers a range of class A, B and B+ facilities in industrial zones and along the A1/A2. We know current availability and select the right option for your operational requirements."
+        },
+        {
+          "q": "Do you charge commission from the landlord?",
+          "a": "No. We act as an independent tenant advisor — our fee comes from you, not the property owner or operator. This eliminates conflicts of interest: our recommendation is always on your side, never the landlord's."
+        },
+        {
+          "q": "How quickly can you find a warehouse in Łódź?",
+          "a": "For standard requirements, we typically present initial proposals within 1–2 weeks. Full selection and negotiation takes 3–5 weeks, depending on specific requirements."
+        }
+      ]
+    },
+    {
+      "slug": "warehouse-for-rent-krakow",
+      "pl_slug": "magazyn-do-wynajecia-krakow",
+      "parent": "commercialization-and-sales",
+      "parent_name": "Commercialization & sales",
+      "category": "Commercialization & sales",
+      "industry": "powierzchnie warehouseowe Kraków",
+      "heroImage": "/services/vologis-uslugi-komercjalizacja-i-sprzedaz.webp",
+      "title": "Warehouse for Rent Kraków — Selection & Negotiation | Vologis",
+      "description": "Looking for a warehouse for rent in Kraków? Independent tenant advisor — we select and negotiate on your behalf, no commission from the landlord. A4.",
+      "h1": "Warehouse for Rent — Kraków",
+      "eyebrow": "WAREHOUSE FOR RENT · KRAKÓW",
+      "intro": "Kraków is a major logistics market on the A4 corridor. Tight market, low vacancy (~4.3%) — off-market access is key. An advisor with local contacts finds available space before it hits the portals. Vologis acts exclusively on the tenant's side — without commission from landlords — and negotiates lease conditions with access to real market benchmarks.",
+      "problem_heading": "Finding the right warehouse in Kraków requires local market knowledge",
+      "problem_text": "Companies entering Kraków's market without knowing local zones, operators and benchmark rates risk overpaying or choosing a location that doesn't match their logistics model. An independent advisor condenses months of research into days and enters negotiations from a position of knowledge.",
+      "scope": [
+        {
+          "title": "Warehouse selection for your requirements",
+          "text": "We identify facilities matched to your profile: storage type, volume, technical standard and location within the agglomeration."
+        },
+        {
+          "title": "Facility and terms verification",
+          "text": "We check technical condition, compliance with stated specs, real operating costs and landlord flexibility — before you enter negotiations."
+        },
+        {
+          "title": "Tenant-side negotiation — no landlord commission",
+          "text": "We negotiate rates, incentives and contract terms on your behalf. We charge no commission from the landlord — our advisory fee comes from you, eliminating conflicts of interest."
+        },
+        {
+          "title": "Kraków market knowledge",
+          "text": "We know the available facilities, local zones and market negotiating standards in Kraków."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Companies entering Kraków",
+          "text": "When you need a warehouse in this market and want local market knowledge on your side."
+        },
+        {
+          "title": "Companies relocating their warehouse",
+          "text": "When your current facility no longer meets volume or location requirements."
+        },
+        {
+          "title": "Foreign companies entering Poland",
+          "text": "When you need a local advisor who negotiates rates and terms in your interest."
+        }
+      ],
+      "summary": "Warehouse for rent in Kraków — Vologis acts as an independent tenant advisor. We select facilities, negotiate rates and conditions exclusively in the tenant's interest, with no commission from landlords. We know the A4 market and act fast.",
+      "faq": [
+        {
+          "q": "What warehouses are available in Kraków?",
+          "a": "Kraków offers a range of class A, B and B+ facilities in industrial zones and along the A4. We know current availability and select the right option for your operational requirements."
+        },
+        {
+          "q": "Do you charge commission from the landlord?",
+          "a": "No. We act as an independent tenant advisor — our fee comes from you, not the property owner or operator. This eliminates conflicts of interest: our recommendation is always on your side, never the landlord's."
+        },
+        {
+          "q": "How quickly can you find a warehouse in Kraków?",
+          "a": "For standard requirements, we typically present initial proposals within 1–2 weeks. Full selection and negotiation takes 3–5 weeks, depending on specific requirements."
+        }
+      ]
+    },
+    {
+      "slug": "warehouse-for-rent-gdansk",
+      "pl_slug": "magazyn-do-wynajecia-gdansk",
+      "parent": "commercialization-and-sales",
+      "parent_name": "Commercialization & sales",
+      "category": "Commercialization & sales",
+      "industry": "powierzchnie warehouseowe Gdańsk",
+      "heroImage": "/services/vologis-uslugi-komercjalizacja-i-sprzedaz.webp",
+      "title": "Warehouse for Rent Gdańsk — Selection & Negotiation | Vologis",
+      "description": "Looking for a warehouse for rent in Gdańsk? Independent tenant advisor — we select and negotiate on your behalf, no commission from the landlord. S7/S6.",
+      "h1": "Warehouse for Rent — Gdańsk",
+      "eyebrow": "WAREHOUSE FOR RENT · GDAŃSK",
+      "intro": "Gdańsk is a major logistics market on the S7/S6 corridor. Poland's main port and import hub. Essential for container logistics and Baltic/Scandinavian re-export. Prime rates up to ~5.50 EUR/m²/month. Vologis acts exclusively on the tenant's side — without commission from landlords — and negotiates lease conditions with access to real market benchmarks.",
+      "problem_heading": "Finding the right warehouse in Gdańsk requires local market knowledge",
+      "problem_text": "Companies entering Gdańsk's market without knowing local zones, operators and benchmark rates risk overpaying or choosing a location that doesn't match their logistics model. An independent advisor condenses months of research into days and enters negotiations from a position of knowledge.",
+      "scope": [
+        {
+          "title": "Warehouse selection for your requirements",
+          "text": "We identify facilities matched to your profile: storage type, volume, technical standard and location within the agglomeration."
+        },
+        {
+          "title": "Facility and terms verification",
+          "text": "We check technical condition, compliance with stated specs, real operating costs and landlord flexibility — before you enter negotiations."
+        },
+        {
+          "title": "Tenant-side negotiation — no landlord commission",
+          "text": "We negotiate rates, incentives and contract terms on your behalf. We charge no commission from the landlord — our advisory fee comes from you, eliminating conflicts of interest."
+        },
+        {
+          "title": "Gdańsk market knowledge",
+          "text": "We know the available facilities, local zones and market negotiating standards in Gdańsk."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Companies entering Gdańsk",
+          "text": "When you need a warehouse in this market and want local market knowledge on your side."
+        },
+        {
+          "title": "Companies relocating their warehouse",
+          "text": "When your current facility no longer meets volume or location requirements."
+        },
+        {
+          "title": "Foreign companies entering Poland",
+          "text": "When you need a local advisor who negotiates rates and terms in your interest."
+        }
+      ],
+      "summary": "Warehouse for rent in Gdańsk — Vologis acts as an independent tenant advisor. We select facilities, negotiate rates and conditions exclusively in the tenant's interest, with no commission from landlords. We know the S7/S6 market and act fast.",
+      "faq": [
+        {
+          "q": "What warehouses are available in Gdańsk?",
+          "a": "Gdańsk offers a range of class A, B and B+ facilities in industrial zones and along the S7/S6. We know current availability and select the right option for your operational requirements."
+        },
+        {
+          "q": "Do you charge commission from the landlord?",
+          "a": "No. We act as an independent tenant advisor — our fee comes from you, not the property owner or operator. This eliminates conflicts of interest: our recommendation is always on your side, never the landlord's."
+        },
+        {
+          "q": "How quickly can you find a warehouse in Gdańsk?",
+          "a": "For standard requirements, we typically present initial proposals within 1–2 weeks. Full selection and negotiation takes 3–5 weeks, depending on specific requirements."
+        }
+      ]
+    },
+    {
+      "slug": "warehouse-for-rent-szczecin",
+      "pl_slug": "magazyn-do-wynajecia-szczecin",
+      "parent": "commercialization-and-sales",
+      "parent_name": "Commercialization & sales",
+      "category": "Commercialization & sales",
+      "industry": "powierzchnie warehouseowe Szczecin",
+      "heroImage": "/services/vologis-uslugi-komercjalizacja-i-sprzedaz.webp",
+      "title": "Warehouse for Rent Szczecin — Selection & Negotiation | Vologis",
+      "description": "Looking for a warehouse for rent in Szczecin? Independent tenant advisor — we select and negotiate on your behalf, no commission from the landlord. A6/S3.",
+      "h1": "Warehouse for Rent — Szczecin",
+      "eyebrow": "WAREHOUSE FOR RENT · SZCZECIN",
+      "intro": "Szczecin is a major logistics market on the A6/S3 corridor. Western gateway to Poland, <150 km from Berlin. Low vacancy (~3.1%) — local contacts essential. Key for nearshoring and Polish–German cross-border logistics. Vologis acts exclusively on the tenant's side — without commission from landlords — and negotiates lease conditions with access to real market benchmarks.",
+      "problem_heading": "Finding the right warehouse in Szczecin requires local market knowledge",
+      "problem_text": "Companies entering Szczecin's market without knowing local zones, operators and benchmark rates risk overpaying or choosing a location that doesn't match their logistics model. An independent advisor condenses months of research into days and enters negotiations from a position of knowledge.",
+      "scope": [
+        {
+          "title": "Warehouse selection for your requirements",
+          "text": "We identify facilities matched to your profile: storage type, volume, technical standard and location within the agglomeration."
+        },
+        {
+          "title": "Facility and terms verification",
+          "text": "We check technical condition, compliance with stated specs, real operating costs and landlord flexibility — before you enter negotiations."
+        },
+        {
+          "title": "Tenant-side negotiation — no landlord commission",
+          "text": "We negotiate rates, incentives and contract terms on your behalf. We charge no commission from the landlord — our advisory fee comes from you, eliminating conflicts of interest."
+        },
+        {
+          "title": "Szczecin market knowledge",
+          "text": "We know the available facilities, local zones and market negotiating standards in Szczecin."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Companies entering Szczecin",
+          "text": "When you need a warehouse in this market and want local market knowledge on your side."
+        },
+        {
+          "title": "Companies relocating their warehouse",
+          "text": "When your current facility no longer meets volume or location requirements."
+        },
+        {
+          "title": "Foreign companies entering Poland",
+          "text": "When you need a local advisor who negotiates rates and terms in your interest."
+        }
+      ],
+      "summary": "Warehouse for rent in Szczecin — Vologis acts as an independent tenant advisor. We select facilities, negotiate rates and conditions exclusively in the tenant's interest, with no commission from landlords. We know the A6/S3 market and act fast.",
+      "faq": [
+        {
+          "q": "What warehouses are available in Szczecin?",
+          "a": "Szczecin offers a range of class A, B and B+ facilities in industrial zones and along the A6/S3. We know current availability and select the right option for your operational requirements."
+        },
+        {
+          "q": "Do you charge commission from the landlord?",
+          "a": "No. We act as an independent tenant advisor — our fee comes from you, not the property owner or operator. This eliminates conflicts of interest: our recommendation is always on your side, never the landlord's."
+        },
+        {
+          "q": "How quickly can you find a warehouse in Szczecin?",
+          "a": "For standard requirements, we typically present initial proposals within 1–2 weeks. Full selection and negotiation takes 3–5 weeks, depending on specific requirements."
+        }
+      ]
+    },
+    {
+      "slug": "warehouse-for-rent-katowice",
+      "pl_slug": "magazyn-do-wynajecia-katowice",
+      "parent": "commercialization-and-sales",
+      "parent_name": "Commercialization & sales",
+      "category": "Commercialization & sales",
+      "industry": "powierzchnie warehouseowe Katowice",
+      "heroImage": "/services/vologis-uslugi-komercjalizacja-i-sprzedaz.webp",
+      "title": "Warehouse for Rent Katowice — Selection & Negotiation | Vologis",
+      "description": "Looking for a warehouse for rent in Katowice? Independent tenant advisor — we select and negotiate on your behalf, no commission from the landlord. A4/A1.",
+      "h1": "Warehouse for Rent — Katowice",
+      "eyebrow": "WAREHOUSE FOR RENT · KATOWICE",
+      "intro": "Katowice is a major logistics market on the A4/A1 corridor. Industrial heartland of Poland — automotive, manufacturing, distribution. A4/A1 south junction gives excellent access to the Czech Republic and Slovakia. Vologis acts exclusively on the tenant's side — without commission from landlords — and negotiates lease conditions with access to real market benchmarks.",
+      "problem_heading": "Finding the right warehouse in Katowice requires local market knowledge",
+      "problem_text": "Companies entering Katowice's market without knowing local zones, operators and benchmark rates risk overpaying or choosing a location that doesn't match their logistics model. An independent advisor condenses months of research into days and enters negotiations from a position of knowledge.",
+      "scope": [
+        {
+          "title": "Warehouse selection for your requirements",
+          "text": "We identify facilities matched to your profile: storage type, volume, technical standard and location within the agglomeration."
+        },
+        {
+          "title": "Facility and terms verification",
+          "text": "We check technical condition, compliance with stated specs, real operating costs and landlord flexibility — before you enter negotiations."
+        },
+        {
+          "title": "Tenant-side negotiation — no landlord commission",
+          "text": "We negotiate rates, incentives and contract terms on your behalf. We charge no commission from the landlord — our advisory fee comes from you, eliminating conflicts of interest."
+        },
+        {
+          "title": "Katowice market knowledge",
+          "text": "We know the available facilities, local zones and market negotiating standards in Katowice."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Companies entering Katowice",
+          "text": "When you need a warehouse in this market and want local market knowledge on your side."
+        },
+        {
+          "title": "Companies relocating their warehouse",
+          "text": "When your current facility no longer meets volume or location requirements."
+        },
+        {
+          "title": "Foreign companies entering Poland",
+          "text": "When you need a local advisor who negotiates rates and terms in your interest."
+        }
+      ],
+      "summary": "Warehouse for rent in Katowice — Vologis acts as an independent tenant advisor. We select facilities, negotiate rates and conditions exclusively in the tenant's interest, with no commission from landlords. We know the A4/A1 market and act fast.",
+      "faq": [
+        {
+          "q": "What warehouses are available in Katowice?",
+          "a": "Katowice offers a range of class A, B and B+ facilities in industrial zones and along the A4/A1. We know current availability and select the right option for your operational requirements."
+        },
+        {
+          "q": "Do you charge commission from the landlord?",
+          "a": "No. We act as an independent tenant advisor — our fee comes from you, not the property owner or operator. This eliminates conflicts of interest: our recommendation is always on your side, never the landlord's."
+        },
+        {
+          "q": "How quickly can you find a warehouse in Katowice?",
+          "a": "For standard requirements, we typically present initial proposals within 1–2 weeks. Full selection and negotiation takes 3–5 weeks, depending on specific requirements."
+        }
+      ]
+    },
+    {
+      "slug": "space-commercialization-wroclaw",
+      "pl_slug": "komercjalizacja-powierzchni-wroclaw",
+      "parent": "commercialization-and-sales",
+      "parent_name": "Commercialization & sales",
+      "category": "Commercialization & sales",
+      "industry": "komercjalizacja powierzchni Wrocław",
+      "heroImage": "/services/vologis-uslugi-komercjalizacja-powierzchni-magazynowej.webp",
+      "title": "Warehouse Space Commercialisation — Wrocław | Vologis",
+      "description": "Vologis fills vacant pallet volumes and warehouse space in Wrocław — acting as your outsourced sales function on a success fee basis.",
+      "h1": "Warehouse Space Commercialisation — Wrocław",
+      "eyebrow": "SPACE COMMERCIALISATION · WROCŁAW",
+      "intro": "High supply and vacancy in the A4/A8 corridor means tenants have strong leverage. We position your facility competitively. Vologis acts as your outsourced sales function in Wrocław — sourcing and contracting tenants for your vacant pallet volumes on a success fee basis, without the cost of a permanent sales team.",
+      "problem_heading": "Vacant space in Wrocław needs active commercialisation",
+      "problem_text": "An unoccupied facility still generates fixed costs. Finding the right tenant requires market knowledge, active outreach and negotiation skills — resources most operators don't have in a dedicated sales function.",
+      "scope": [
+        {
+          "title": "Tenant sourcing",
+          "text": "We take over the full process of finding and contracting tenants for your vacant pallet volumes — from outreach to contract signature."
+        },
+        {
+          "title": "Outsourced sales function",
+          "text": "We act as your specialist sales team, without the cost of a permanent in-house salesperson."
+        },
+        {
+          "title": "Success fee model",
+          "text": "Our fee is charged only when space is contracted and filled. No result, no cost."
+        },
+        {
+          "title": "Tenant matching",
+          "text": "We match tenants to the specifics of your space — storage type, location, sector requirements."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Logistics operators",
+          "text": "When you have irregular or partial occupancy and want to stabilise it."
+        },
+        {
+          "title": "Property owners and managers",
+          "text": "When you manage warehouse space with vacant volumes to fill."
+        },
+        {
+          "title": "Developers",
+          "text": "When a completed facility needs commercialisation and tenant acquisition."
+        }
+      ],
+      "summary": "Space commercialisation in Wrocław — Vologis acts as an outsourced sales function, sourcing and contracting tenants for vacant pallet volumes on a success fee model. You pay only for space that's actually contracted and filled.",
+      "faq": [
+        {
+          "q": "How is commercialisation billed?",
+          "a": "On a success fee basis — our fee is charged only for space that is actually contracted and filled. No result means no cost to you."
+        },
+        {
+          "q": "Do I need my own sales team?",
+          "a": "No — that's the point of this service. We take over the sales function: tenant sourcing, negotiations and contracting, without requiring a permanent headcount on your side."
+        },
+        {
+          "q": "What types of space do you commercialise?",
+          "a": "Pallet volumes and warehouse space of various types. We match tenants to the specifics of your space — storage type, location and sector requirements."
+        }
+      ]
+    },
+    {
+      "slug": "space-commercialization-poznan",
+      "pl_slug": "komercjalizacja-powierzchni-poznan",
+      "parent": "commercialization-and-sales",
+      "parent_name": "Commercialization & sales",
+      "category": "Commercialization & sales",
+      "industry": "komercjalizacja powierzchni Poznań",
+      "heroImage": "/services/vologis-uslugi-komercjalizacja-powierzchni-magazynowej.webp",
+      "title": "Warehouse Space Commercialisation — Poznań | Vologis",
+      "description": "Vologis fills vacant pallet volumes and warehouse space in Poznań — acting as your outsourced sales function on a success fee basis.",
+      "h1": "Warehouse Space Commercialisation — Poznań",
+      "eyebrow": "SPACE COMMERCIALISATION · POZNAŃ",
+      "intro": "Active nearshoring and e-commerce demand on the A2 Berlin–Warsaw corridor. We target the right tenant profiles. Vologis acts as your outsourced sales function in Poznań — sourcing and contracting tenants for your vacant pallet volumes on a success fee basis, without the cost of a permanent sales team.",
+      "problem_heading": "Vacant space in Poznań needs active commercialisation",
+      "problem_text": "An unoccupied facility still generates fixed costs. Finding the right tenant requires market knowledge, active outreach and negotiation skills — resources most operators don't have in a dedicated sales function.",
+      "scope": [
+        {
+          "title": "Tenant sourcing",
+          "text": "We take over the full process of finding and contracting tenants for your vacant pallet volumes — from outreach to contract signature."
+        },
+        {
+          "title": "Outsourced sales function",
+          "text": "We act as your specialist sales team, without the cost of a permanent in-house salesperson."
+        },
+        {
+          "title": "Success fee model",
+          "text": "Our fee is charged only when space is contracted and filled. No result, no cost."
+        },
+        {
+          "title": "Tenant matching",
+          "text": "We match tenants to the specifics of your space — storage type, location, sector requirements."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Logistics operators",
+          "text": "When you have irregular or partial occupancy and want to stabilise it."
+        },
+        {
+          "title": "Property owners and managers",
+          "text": "When you manage warehouse space with vacant volumes to fill."
+        },
+        {
+          "title": "Developers",
+          "text": "When a completed facility needs commercialisation and tenant acquisition."
+        }
+      ],
+      "summary": "Space commercialisation in Poznań — Vologis acts as an outsourced sales function, sourcing and contracting tenants for vacant pallet volumes on a success fee model. You pay only for space that's actually contracted and filled.",
+      "faq": [
+        {
+          "q": "How is commercialisation billed?",
+          "a": "On a success fee basis — our fee is charged only for space that is actually contracted and filled. No result means no cost to you."
+        },
+        {
+          "q": "Do I need my own sales team?",
+          "a": "No — that's the point of this service. We take over the sales function: tenant sourcing, negotiations and contracting, without requiring a permanent headcount on your side."
+        },
+        {
+          "q": "What types of space do you commercialise?",
+          "a": "Pallet volumes and warehouse space of various types. We match tenants to the specifics of your space — storage type, location and sector requirements."
+        }
+      ]
+    },
+    {
+      "slug": "space-commercialization-warsaw",
+      "pl_slug": "komercjalizacja-powierzchni-warszawa",
+      "parent": "commercialization-and-sales",
+      "parent_name": "Commercialization & sales",
+      "category": "Commercialization & sales",
+      "industry": "komercjalizacja powierzchni Warszawa",
+      "heroImage": "/services/vologis-uslugi-komercjalizacja-powierzchni-magazynowej.webp",
+      "title": "Warehouse Space Commercialisation — Warsaw | Vologis",
+      "description": "Vologis fills vacant pallet volumes and warehouse space in Warsaw — acting as your outsourced sales function on a success fee basis.",
+      "h1": "Warehouse Space Commercialisation — Warsaw",
+      "eyebrow": "SPACE COMMERCIALISATION · WARSAW",
+      "intro": "Poland's most active logistics market — strong demand, but competition is high. Standing out requires professional commercialisation. Vologis acts as your outsourced sales function in Warsaw — sourcing and contracting tenants for your vacant pallet volumes on a success fee basis, without the cost of a permanent sales team.",
+      "problem_heading": "Vacant space in Warsaw needs active commercialisation",
+      "problem_text": "An unoccupied facility still generates fixed costs. Finding the right tenant requires market knowledge, active outreach and negotiation skills — resources most operators don't have in a dedicated sales function.",
+      "scope": [
+        {
+          "title": "Tenant sourcing",
+          "text": "We take over the full process of finding and contracting tenants for your vacant pallet volumes — from outreach to contract signature."
+        },
+        {
+          "title": "Outsourced sales function",
+          "text": "We act as your specialist sales team, without the cost of a permanent in-house salesperson."
+        },
+        {
+          "title": "Success fee model",
+          "text": "Our fee is charged only when space is contracted and filled. No result, no cost."
+        },
+        {
+          "title": "Tenant matching",
+          "text": "We match tenants to the specifics of your space — storage type, location, sector requirements."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Logistics operators",
+          "text": "When you have irregular or partial occupancy and want to stabilise it."
+        },
+        {
+          "title": "Property owners and managers",
+          "text": "When you manage warehouse space with vacant volumes to fill."
+        },
+        {
+          "title": "Developers",
+          "text": "When a completed facility needs commercialisation and tenant acquisition."
+        }
+      ],
+      "summary": "Space commercialisation in Warsaw — Vologis acts as an outsourced sales function, sourcing and contracting tenants for vacant pallet volumes on a success fee model. You pay only for space that's actually contracted and filled.",
+      "faq": [
+        {
+          "q": "How is commercialisation billed?",
+          "a": "On a success fee basis — our fee is charged only for space that is actually contracted and filled. No result means no cost to you."
+        },
+        {
+          "q": "Do I need my own sales team?",
+          "a": "No — that's the point of this service. We take over the sales function: tenant sourcing, negotiations and contracting, without requiring a permanent headcount on your side."
+        },
+        {
+          "q": "What types of space do you commercialise?",
+          "a": "Pallet volumes and warehouse space of various types. We match tenants to the specifics of your space — storage type, location and sector requirements."
+        }
+      ]
+    },
+    {
+      "slug": "space-commercialization-katowice",
+      "pl_slug": "komercjalizacja-powierzchni-katowice",
+      "parent": "commercialization-and-sales",
+      "parent_name": "Commercialization & sales",
+      "category": "Commercialization & sales",
+      "industry": "komercjalizacja powierzchni Katowice",
+      "heroImage": "/services/vologis-uslugi-komercjalizacja-powierzchni-magazynowej.webp",
+      "title": "Warehouse Space Commercialisation — Katowice | Vologis",
+      "description": "Vologis fills vacant pallet volumes and warehouse space in Katowice — acting as your outsourced sales function on a success fee basis.",
+      "h1": "Warehouse Space Commercialisation — Katowice",
+      "eyebrow": "SPACE COMMERCIALISATION · KATOWICE",
+      "intro": "Industrial and automotive demand in Upper Silesia. We match tenants to the specific technical profile of your facility. Vologis acts as your outsourced sales function in Katowice — sourcing and contracting tenants for your vacant pallet volumes on a success fee basis, without the cost of a permanent sales team.",
+      "problem_heading": "Vacant space in Katowice needs active commercialisation",
+      "problem_text": "An unoccupied facility still generates fixed costs. Finding the right tenant requires market knowledge, active outreach and negotiation skills — resources most operators don't have in a dedicated sales function.",
+      "scope": [
+        {
+          "title": "Tenant sourcing",
+          "text": "We take over the full process of finding and contracting tenants for your vacant pallet volumes — from outreach to contract signature."
+        },
+        {
+          "title": "Outsourced sales function",
+          "text": "We act as your specialist sales team, without the cost of a permanent in-house salesperson."
+        },
+        {
+          "title": "Success fee model",
+          "text": "Our fee is charged only when space is contracted and filled. No result, no cost."
+        },
+        {
+          "title": "Tenant matching",
+          "text": "We match tenants to the specifics of your space — storage type, location, sector requirements."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Logistics operators",
+          "text": "When you have irregular or partial occupancy and want to stabilise it."
+        },
+        {
+          "title": "Property owners and managers",
+          "text": "When you manage warehouse space with vacant volumes to fill."
+        },
+        {
+          "title": "Developers",
+          "text": "When a completed facility needs commercialisation and tenant acquisition."
+        }
+      ],
+      "summary": "Space commercialisation in Katowice — Vologis acts as an outsourced sales function, sourcing and contracting tenants for vacant pallet volumes on a success fee model. You pay only for space that's actually contracted and filled.",
+      "faq": [
+        {
+          "q": "How is commercialisation billed?",
+          "a": "On a success fee basis — our fee is charged only for space that is actually contracted and filled. No result means no cost to you."
+        },
+        {
+          "q": "Do I need my own sales team?",
+          "a": "No — that's the point of this service. We take over the sales function: tenant sourcing, negotiations and contracting, without requiring a permanent headcount on your side."
+        },
+        {
+          "q": "What types of space do you commercialise?",
+          "a": "Pallet volumes and warehouse space of various types. We match tenants to the specifics of your space — storage type, location and sector requirements."
+        }
+      ]
+    },
+    {
+      "slug": "market-entry-poland",
+      "pl_slug": "market-entry-polska",
+      "parent": "commercialization-and-sales",
+      "parent_name": "Commercialization & sales",
+      "category": "Commercialization & sales",
+      "industry": "market entry / wejście na rynek PL",
+      "heroImage": "/services/vologis-uslugi-market-entry-polska.webp",
+      "title": "Market Entry Poland — Logistics & Warehouse Advisory | Vologis",
+      "description": "Vologis supports foreign companies entering the Polish logistics market — location advisory, warehouse selection and logistics process setup.",
+      "h1": "Market Entry — Poland",
+      "eyebrow": "MARKET ENTRY · POLAND",
+      "intro": "Poland is the largest logistics market in Central and Eastern Europe — with over 30 million m² of modern warehouse space, a central EU location and a rapidly growing e-commerce sector. Vologis supports foreign companies entering the Polish market: from logistics requirements analysis and location advisory, through warehouse and operator selection, to supporting the full logistics process setup.",
+      "problem_heading": "Entering a new market without local knowledge is expensive",
+      "problem_text": "Foreign companies entering Poland often operate on offer-rate assumptions, unfamiliar local zones and an incomplete picture of available operators. Without a local advisor, they overpay, choose suboptimal locations or partner with operators who look good on paper but don't meet operational requirements.",
+      "scope": [
+        {
+          "title": "Logistics requirements analysis",
+          "text": "Defining warehouse, transport and service level requirements for the Polish market."
+        },
+        {
+          "title": "Location advisory",
+          "text": "Identifying optimal warehouse locations based on customer distribution, labour markets and infrastructure."
+        },
+        {
+          "title": "Warehouse and operator selection",
+          "text": "Independent selection and vetting of warehouse space and logistics operators — no commission from suppliers."
+        },
+        {
+          "title": "Logistics process setup support",
+          "text": "Supporting the setup of logistics operations in Poland: process design, system integrations and operational launch."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Foreign companies entering Poland",
+          "text": "When you're expanding to Poland and need a local logistics advisor."
+        },
+        {
+          "title": "Companies relocating logistics to Poland",
+          "text": "When you're moving warehousing or distribution to Poland (nearshoring)."
+        },
+        {
+          "title": "E-commerce companies serving the Polish market",
+          "text": "When you need a fulfillment partner or warehouse for Polish operations."
+        }
+      ],
+      "summary": "Market entry Poland is a service in which Vologis supports foreign companies entering the Polish logistics market — from logistics requirements analysis and location advisory through independent warehouse and operator selection to logistics process setup support. We act exclusively in the client's interest, with no commission from operators or landlords.",
+      "faq": [
+        {
+          "q": "What does market entry support in Poland include?",
+          "a": "We support the full process: logistics requirements analysis, location advisory, independent warehouse and operator selection, lease negotiation and logistics process setup support. We act as your local logistics partner throughout the entire entry process."
+        },
+        {
+          "q": "Why use a local advisor for entering Poland?",
+          "a": "Local knowledge of market zones, operators, real benchmark rates and negotiating standards is worth months of research. We condense this into a structured process and ensure you enter negotiations from a position of knowledge, not guesswork."
+        },
+        {
+          "q": "Do you work with companies from specific sectors?",
+          "a": "Yes. We support companies from manufacturing, trading, e-commerce and distribution — tailoring the scope to the specific logistics requirements of each sector and market entry model."
+        }
+      ]
+    },
+    {
+      "slug": "market-entry-foreign-manufacturers",
+      "pl_slug": "market-entry-producenci-zagraniczni",
+      "parent": "commercialization-and-sales",
+      "parent_name": "Commercialization & sales",
+      "category": "Market entry producenci zagraniczni",
+      "industry": "producenci zagraniczni",
+      "heroImage": "/services/vologis-uslugi-market-entry-producenci-zagraniczni.webp",
+      "title": "Market Entry Poland for Foreign Manufacturers | Vologis",
+      "description": "Vologis supports foreign manufacturing companies opening a warehouse or logistics base in Poland — site selection, operator selection and market entry support.",
+      "h1": "Market Entry Poland — Foreign Manufacturers",
+      "eyebrow": "MARKET ENTRY · FOREIGN MANUFACTURERS",
+      "intro": "Foreign manufacturers expanding their supply chain to Poland — setting up a production plant, assembly line or logistics base — need a local partner who understands both the logistics market and the specifics of manufacturing operations. Vologis provides end-to-end support: from site selection and warehouse advisory through independent operator selection to logistics process setup.",
+      "problem_heading": "Setting up a logistics base in a new country requires local knowledge and objectivity",
+      "problem_text": "Foreign manufacturers often face a choice between large logistics operators offering standardised services at premium prices, and a local market they don't know well enough to navigate independently. Without a local advisor, they overpay, choose suboptimal locations or miss operators who could better serve their specific manufacturing logistics requirements.",
+      "scope": [
+        {
+          "title": "Site and location analysis",
+          "text": "Identifying optimal locations for a production plant, assembly or logistics base — considering labour markets, transport access and supply chain economics."
+        },
+        {
+          "title": "Warehouse and logistics operator selection",
+          "text": "Independent selection of warehouse space and 3PL operators matched to manufacturing logistics requirements — no commission from suppliers."
+        },
+        {
+          "title": "Supply chain setup support",
+          "text": "Supporting the design and setup of the Polish supply chain: inbound, production supply and outbound distribution."
+        },
+        {
+          "title": "Local representation",
+          "text": "Acting as a local logistics advisor throughout the market entry process — from first site visit to operations launch."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Foreign manufacturers setting up in Poland",
+          "text": "When you're opening a production plant, assembly or logistics base in Poland."
+        },
+        {
+          "title": "Companies nearshoring to Poland",
+          "text": "When you're relocating manufacturing or supply chain operations from Western Europe to Poland."
+        },
+        {
+          "title": "Manufacturers expanding their EU distribution",
+          "text": "When Poland is a strategic logistics hub for serving Central and Eastern European markets."
+        }
+      ],
+      "summary": "Market entry Poland for foreign manufacturers is a service in which Vologis supports foreign manufacturing companies setting up a logistics base in Poland — from site and location analysis through independent warehouse and operator selection to supply chain setup support and local representation. We act exclusively in the client's interest, with no commission from operators or landlords.",
+      "faq": [
+        {
+          "q": "Why Poland as a manufacturing or logistics location?",
+          "a": "Poland offers competitive labour costs, a central EU location, well-developed logistics infrastructure, access to a large domestic market and proximity to major European markets. For manufacturers nearshoring from Western Europe, Poland is one of the most attractive destinations in the EU."
+        },
+        {
+          "q": "What makes manufacturing logistics different from standard warehousing?",
+          "a": "Manufacturing logistics requires synchronisation with production schedules, just-in-time supply, component traceability and often specific certifications (GDP, ADR, automotive standards). We select operators and locations that meet these specific requirements, not just standard storage."
+        },
+        {
+          "q": "Do you support the full market entry process?",
+          "a": "Yes. We support the full process from initial site analysis through warehouse and operator selection, lease negotiation and logistics process setup. We act as your local logistics partner throughout the entire market entry, providing continuity and local knowledge at every stage."
+        }
+      ]
+    },
+    {
+      "slug": "warehouse-space-commercialization",
+      "pl_slug": "komercjalizacja-powierzchni-magazynowej",
+      "parent": "commercialization-and-sales",
+      "parent_name": "Commercialization & sales",
+      "category": "Commercialization & sales",
+      "industry": "powierzchnie warehouseowe",
+      "heroImage": "/services/vologis-uslugi-komercjalizacja-powierzchni-magazynowej.webp",
+      "title": "Warehouse Space Commercialisation — Vacant Pallet Volumes | Vologis",
+      "description": "Vologis sources and contracts tenants for vacant warehouse space — acting as your outsourced sales function on a success fee model.",
+      "h1": "Warehouse Space Commercialisation",
+      "eyebrow": "SPACE COMMERCIALISATION · WAREHOUSE",
+      "intro": "Logistics operators with vacant pallet volumes or underutilised space need an active sales function to fill it. Vologis acts as your outsourced, specialist sales team — sourcing and contracting clients for your vacant warehouse capacity on a success fee basis, without the overhead of a permanent salesperson.",
+      "problem_heading": "Vacant space generates fixed costs — active commercialisation fills it",
+      "problem_text": "An unoccupied facility still carries costs: rent, rates, maintenance and staffing. Filling vacant pallet volumes requires market knowledge, active client outreach, qualifying prospects and negotiating contracts — a dedicated activity that most operators don't have a dedicated sales team for.",
+      "scope": [
+        {
+          "title": "Tenant sourcing",
+          "text": "We take over the full process of finding and contracting tenants for your vacant pallet volumes — from market outreach to contract signature."
+        },
+        {
+          "title": "Outsourced sales function",
+          "text": "We act as your specialist sales team, without the cost of a permanent in-house salesperson."
+        },
+        {
+          "title": "Success fee model",
+          "text": "Our fee is charged only when space is contracted and filled. No result, no cost on the operator's side."
+        },
+        {
+          "title": "Tenant matching to facility",
+          "text": "We match tenants to the specifics of your space — storage type, location and sector requirements — not randomly."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Logistics operators",
+          "text": "When you have irregular or partial occupancy and want to stabilise it."
+        },
+        {
+          "title": "Property owners and managers",
+          "text": "When you manage warehouse space with vacant volumes to fill."
+        },
+        {
+          "title": "Developers",
+          "text": "When a completed facility needs commercialisation and tenant acquisition."
+        }
+      ],
+      "summary": "Warehouse space commercialisation is a service in which Vologis acts as an outsourced sales function for a logistics operator — sourcing and contracting clients for vacant pallet volumes. The operator pays only for space actually contracted and filled, without the cost of maintaining a permanent in-house sales team.",
+      "faq": [
+        {
+          "q": "How is space commercialisation billed?",
+          "a": "On a success fee basis — our fee is charged only for space that is actually contracted and filled. No result, no cost to the operator."
+        },
+        {
+          "q": "Do I need a permanent salesperson?",
+          "a": "No — that's the point of this service. We take over the sales function: tenant sourcing, negotiations and contracting, without requiring a permanent headcount on your side."
+        },
+        {
+          "q": "What types of space do you commercialise?",
+          "a": "Pallet volumes and warehouse space of various types. We match tenants to the specifics of your space — storage type, location and sector requirements."
+        },
+        {
+          "q": "How does this differ from logistics brokerage?",
+          "a": "Logistics brokerage represents a company looking for a warehouse (demand side — client pays for finding space). Space commercialisation represents an operator with vacant space (supply side — operator pays for tenant acquisition). Two sides of the same market."
+        }
+      ]
+    },
+    {
+      "slug": "3pl-space-commercialization",
+      "pl_slug": "komercjalizacja-powierzchni-3pl",
+      "parent": "commercialization-and-sales",
+      "parent_name": "Commercialization & sales",
+      "category": "Commercialization & sales",
+      "industry": "3PL/4PL operators",
+      "heroImage": "/services/vologis-uslugi-komercjalizacja-powierzchni-3pl.webp",
+      "title": "Space Commercialisation for 3PL/4PL Operators | Vologis",
+      "description": "Vologis sources contracts and tenants for 3PL/4PL logistics operators — maximising network occupancy on a success fee model, without a permanent sales team.",
+      "h1": "Space Commercialisation for 3PL/4PL Operators",
+      "eyebrow": "SPACE COMMERCIALISATION · 3PL",
+      "intro": "Contract logistics operators live from occupancy — every unutilised metre and every vacant capacity unit erodes margin. Vologis sources contracts and tenants for your vacant capacity across your facility network, acting as an outsourced sales team. We operate on a success fee model, fully independently and without commission from other operators.",
+      "problem_heading": "In contract logistics, occupancy determines margin",
+      "problem_text": "A 3PL/4PL operator bears the costs of maintaining facilities and teams regardless of whether capacity is fully utilised. Vacant capacity in one network facility, seasonal troughs, a contract that has ended — every such gap reduces profitability. But selling contract services requires time, competencies and a contact network that operational teams typically don't have.",
+      "scope": [
+        {
+          "title": "3PL contract sourcing",
+          "text": "We reach companies seeking logistics services and contract them onto your network's vacant capacity."
+        },
+        {
+          "title": "Outsourced sales team",
+          "text": "We act as your sales department for contract services — without the cost of building and maintaining your own B2B sales team."
+        },
+        {
+          "title": "Success fee model",
+          "text": "Our fee is charged only for contracted volumes and signed agreements. You pay for genuinely acquired business."
+        },
+        {
+          "title": "Contract-to-network matching",
+          "text": "We match clients to your facilities' profiles and locations — sector, storage type, operational requirements — so the contract is profitable, not just filling metres."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "3PL/4PL operators",
+          "text": "When you have vacant capacity in your facility network and want to fill it with profitable contracts."
+        },
+        {
+          "title": "Contract logistics companies",
+          "text": "When you need a steady flow of new contracts without building a sales department."
+        },
+        {
+          "title": "Warehouse networks",
+          "text": "When you manage multiple facilities and want to optimise occupancy across the whole network."
+        }
+      ],
+      "summary": "Space commercialisation for 3PL/4PL operators is a service in which Vologis sources contracts and tenants for vacant capacity in a contract logistics operator's facility network. We act as an outsourced sales team on a success fee model — the operator pays only for genuinely contracted business, and we match clients to the profiles and locations of their facilities so contracts are profitable.",
+      "faq": [
+        {
+          "q": "How does this differ from warehouse space commercialisation?",
+          "a": "Warehouse space commercialisation covers filling vacant pallet volumes in a single facility. The 3PL/4PL version is broader — we source complete contract logistics contracts for an operator with a network of facilities and throughput capacity, not just warehouse space."
+        },
+        {
+          "q": "How is the service billed?",
+          "a": "On a success fee model — our fee is charged only for contracted volumes and signed agreements. You pay for genuinely acquired business, without the fixed cost of a sales team."
+        },
+        {
+          "q": "Do you source contracts for specific facilities in the network?",
+          "a": "Yes. We match clients to the profiles and locations of your facilities — sector, storage type, operational requirements — so the contract is profitable and operationally feasible, not just filling vacant metres."
+        },
+        {
+          "q": "Do you act independently?",
+          "a": "Yes, 100% independently and without commission from other operators. We represent exclusively the interests of the operator for whom we're sourcing contracts."
+        }
+      ]
+    },
+    {
+      "slug": "logistics-partner-selection-manufacturing",
+      "pl_slug": "dobor-partnera-logistycznego-produkcja",
+      "parent": "commercialization-and-sales",
+      "parent_name": "Commercialization & sales",
+      "category": "Commercialization & sales",
+      "industry": "manufacturing / operator selection",
+      "heroImage": "/services/vologis-uslugi-dobor-partnera-logistycznego-produkcja.webp",
+      "title": "Logistics Partner Selection for Manufacturing — Free | Vologis",
+      "description": "Vologis selects and vets the right logistics operator for manufacturing companies — free of charge. Process mapping, mid-size operators, real alternative to a corporate tender.",
+      "h1": "Strategic Logistics Partner Selection for Manufacturing Companies",
+      "eyebrow": "PARTNER SELECTION · MANUFACTURING",
+      "intro": "Looking for a comprehensive logistics service and distribution solution for your manufacturing operations, but don't want to overpay at corporate giants or run an exhausting tender? We map your processes and connect you with carefully selected mid-size operators — offering more flexibility and often higher service quality. For manufacturing companies, operator selection is free of charge.",
+      "problem_heading": "The classic logistics tender is often costly and inefficient",
+      "problem_text": "Manufacturing companies seeking logistics services typically approach the largest market players — which ends in rigid terms, corporate pricing and service far from bespoke. Running a tender in-house consumes time and resources, and without market knowledge it's hard to reach flexible mid-size operators who often offer better quality at lower cost.",
+      "scope": [
+        {
+          "title": "Process mapping",
+          "text": "We analyse your supply chain and distribution to precisely define operator requirements — we don't search blindly."
+        },
+        {
+          "title": "Mid-size operator selection",
+          "text": "We connect you with vetted operators outside the corporate giant pool — more flexible and committed."
+        },
+        {
+          "title": "Bespoke service",
+          "text": "We select a partner for your specific production and distribution needs, not a rigid corporate rate card."
+        },
+        {
+          "title": "Free for manufacturing companies",
+          "text": "The entire operator search and vetting process is free of charge for manufacturing companies."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Manufacturing companies",
+          "text": "When you're looking for end-to-end logistics and distribution service."
+        },
+        {
+          "title": "Manufacturers scaling distribution",
+          "text": "When scale is growing and you need an operator matched to real needs."
+        },
+        {
+          "title": "Companies disappointed by corporate operators",
+          "text": "When corporate service turned out to be rigid or too expensive."
+        }
+      ],
+      "summary": "Logistics partner selection for manufacturing companies is a service in which Vologis maps a manufacturing company's processes and connects it with carefully selected mid-size operators — more flexible and often offering higher quality than corporate giants. It's an alternative to a classic, time-consuming tender. For manufacturing companies, operator selection is free of charge.",
+      "faq": [
+        {
+          "q": "How much does operator selection cost for a manufacturing company?",
+          "a": "For manufacturing companies, the entire operator search and vetting process is free of charge."
+        },
+        {
+          "q": "How does this differ from logistics brokerage?",
+          "a": "Logistics brokerage is independent operator or warehouse selection where the client commissions and pays for the service. Partner selection for manufacturing is a free model for manufacturing companies, based on a network of vetted mid-size operators and as an alternative to a classic tender."
+        },
+        {
+          "q": "Why mid-size operators rather than the corporate giants?",
+          "a": "Mid-size operators offer more flexibility, more committed service and often higher quality at lower cost than corporate giants operating on rigid rate cards and standards."
+        },
+        {
+          "q": "What does the selection process look like?",
+          "a": "We first map your logistics and distribution processes to define the requirements. Then we select operators matched to those needs and connect you — rather than sending requests blindly to the largest players."
+        }
+      ]
+    },
+    {
+      "slug": "tender-optimization-logistics",
+      "pl_slug": "optymalizacja-przetargowa-logistyka",
+      "parent": "commercialization-and-sales",
+      "parent_name": "Commercialization & sales",
+      "category": "Commercialization & sales",
+      "industry": "tender optimisation",
+      "heroImage": "/services/vologis-uslugi-optymalizacja-przetargowa-logistyka.webp",
+      "title": "Tender Optimisation in Logistics — Alternative to a Classic Tender | Vologis",
+      "description": "Vologis offers an alternative to the classic logistics operator tender — process mapping, mid-size operator matching, lower costs and less time than a traditional RFP.",
+      "h1": "Tender Optimisation in Logistics",
+      "eyebrow": "TENDER OPTIMISATION",
+      "intro": "The classic logistics operator tender consumes time, ties up teams and often ends with choosing the largest player with the most rigid terms. We offer an alternative: we map your processes and connect you with carefully selected mid-size operators — more flexible, offering higher quality and lower costs than corporate giants.",
+      "problem_heading": "Tenders favour the largest, not the best",
+      "problem_text": "Traditional tender procedures favour large operators who can handle the formalities, not those who offer the best fit and quality. The process is time-consuming, formalised and often leads to rigid contracts with corporate pricing. Flexible mid-size operators who could serve you better and cheaper often don't make it into a tender at all.",
+      "scope": [
+        {
+          "title": "Requirements mapping",
+          "text": "We analyse processes and real needs to precisely define operator selection criteria — rather than a generic RFQ."
+        },
+        {
+          "title": "Reaching the right operators",
+          "text": "We target vetted mid-size operators who typically don't appear in classic tenders."
+        },
+        {
+          "title": "Comparison and selection",
+          "text": "We compare offers on real fit, quality and cost — not just ability to handle tender formalities."
+        },
+        {
+          "title": "Cost and time reduction",
+          "text": "We shorten the selection process and reach conditions better than corporate rate card pricing."
+        }
+      ],
+      "for_who": [
+        {
+          "title": "Companies planning a logistics tender",
+          "text": "When you want to select an operator but a classic tender seems time-consuming and suboptimal."
+        },
+        {
+          "title": "Manufacturing and distribution companies",
+          "text": "When you're looking for better fit and cost than corporate giants' offers."
+        },
+        {
+          "title": "Procurement and logistics teams",
+          "text": "When you want to shorten and streamline the logistics partner selection process."
+        }
+      ],
+      "summary": "Tender optimisation in logistics is an alternative to the classic operator tender. Instead of a time-consuming procedure favouring the largest players, Vologis maps the client's processes, reaches vetted mid-size operators and compares them on real fit, quality and cost — shortening the process and achieving conditions better than corporate pricing.",
+      "faq": [
+        {
+          "q": "How does tender optimisation differ from a classic tender?",
+          "a": "A classic tender is a formalised procedure that favours large operators who can handle the formalities. Tender optimisation is about reaching vetted mid-size operators and comparing them on real fit, quality and cost — faster and with better results."
+        },
+        {
+          "q": "Is this the same as logistics partner selection for manufacturing?",
+          "a": "They're related. Partner selection for manufacturing companies is specifically for manufacturing firms and their supply chains. Tender optimisation is a broader take on the operator selection process as an alternative to classic tendering — for manufacturing and distribution companies."
+        },
+        {
+          "q": "Why are mid-size operators sometimes better?",
+          "a": "They offer more flexibility, more committed service and often higher quality at lower cost than corporate giants operating on rigid standards and rate cards."
+        },
+        {
+          "q": "Will I save time compared to running my own tender?",
+          "a": "Yes. We take over requirements mapping, reaching out to operators and comparing offers, shortening a process that, run independently, consumes team time and often misses the best operators."
+        }
+      ]
+    }
+  ]
+}

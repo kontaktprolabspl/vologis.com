@@ -2,6 +2,7 @@
 import ServicePageLayout from "../../../layouts/ServicePageLayout.astro";
 import FaqAccordion from "../../../components/FaqAccordion.astro";
 import programmatic from "../../../data/programmatic.json";
+import programmaticEN from "../../../data/programmatic-en.json";
 
 const SITE = "https://vologis.com";
 
@@ -13,6 +14,12 @@ export function getStaticPaths() {
 }
 
 const { page } = Astro.props;
+
+/* ── EN alternate for hreflang ───────────────────── */
+const enPage = (programmaticEN as any).pages?.find(
+  (p: any) => p.pl_slug === page.slug
+);
+const hreflangEN = enPage ? `/en/services/${enPage.slug}/` : undefined;
 
 /* ── OG image: inherit from parent service ───────── */
 const OG_MAP: Record<string, string> = {
@@ -77,6 +84,7 @@ const schemaFaq = {
   ctaPrimaryHref="/pl/kontakt/"
   ctaSecondaryLabel={`Zobacz ${page.parent_name}`}
   ctaSecondaryHref={`/pl/uslugi/${page.parent}/`}
+  hreflangEN={hreflangEN}
   breadcrumbs={[
     { name: page.parent_name, href: `${SITE}/pl/uslugi/${page.parent}/` },
     { name: page.industry.charAt(0).toUpperCase() + page.industry.slice(1) },

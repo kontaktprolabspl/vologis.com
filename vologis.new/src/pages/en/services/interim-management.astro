@@ -1,0 +1,354 @@
+---
+import ServicePageLayout from "../../../layouts/ServicePageLayout.astro";
+import FaqAccordion from "../../../components/FaqAccordion.astro";
+import CalloutBox from "../../../components/CalloutBox.astro";
+import ComparisonTable from "../../../components/ComparisonTable.astro";
+
+const SITE = "https://vologis.com";
+
+const trustItems = [
+  "Temporary C-level management support",
+  "Rapid diagnosis and firefighting",
+  "Process restructuring and cost reduction",
+  "Operations stabilisation in crisis situations",
+  "Change management and improvement implementation",
+  "Flexible engagement models and billing",
+];
+
+const scopeCards = [
+  { title: "Rapid diagnosis",         text: "In the first days we identify the most urgent problems and the root causes of the crisis. We set priorities and a stabilisation plan." },
+  { title: "Operations stabilisation",text: "We take over day-to-day management, tackle the most pressing fires and restore operational continuity. The team regains direction and momentum." },
+  { title: "Process restructuring",   text: "We reorganise processes, structures and accountabilities. We eliminate bottlenecks and implement solutions that work long-term." },
+  { title: "Cost reduction",          text: "We identify and implement real operational savings — in transport, warehousing, staffing and processes, without compromising service quality." },
+  { title: "Change management",       text: "We lead teams through difficult changes — relocations, system implementations, reorganisations. We communicate, train and keep operations running." },
+  { title: "Handover and continuity", text: "After stabilisation we prepare the company to take back the reins with its permanent team — leaving behind structured processes, documentation and trained people." },
+];
+
+const whenItems = [
+  "The logistics director left and there's no successor",
+  "Operations are in crisis and require immediate intervention",
+  "A restructuring is underway requiring experienced management",
+  "You're implementing a new system or automation and lack the competency",
+  "You're relocating or consolidating logistics operations",
+  "You need C-level capability but not a permanent headcount",
+  "An acquisition or merger requires logistics operations integration",
+  "Costs are out of control and growing faster than revenue",
+];
+
+const comparisonRows = [
+  { feature: "Time to start",  vologis: "We're in immediately — days, not months",                        other: "Recruitment takes 2–4 months" },
+  { feature: "Cost",           vologis: "OPEX only for the project duration — no fixed costs",             other: "Fixed cost + recruitment + benefits + risk" },
+  { feature: "Risk",           vologis: "No risk of a bad hire",                                           other: "Risk of a costly recruitment mistake" },
+  { feature: "Experience",     vologis: "Manager with experience from multiple deployments in diverse organisations", other: "Limited to own organisation and industry" },
+  { feature: "Objectivity",    vologis: "External, independent perspective — no company politics",         other: "Entangled in internal relationships and politics" },
+  { feature: "Flexibility",    vologis: "Scaling engagement and budget to project needs",                  other: "Rigid employment contract hard to exit" },
+];
+
+const deliverables = [
+  { title: "An experienced logistics manager, available now",       text: "No months of recruitment — we're in within days of the decision." },
+  { title: "Rapid operations stabilisation in a crisis",           text: "Immediate takeover, firefighting and restoration of operational continuity." },
+  { title: "Concrete corrective targets delivered",                text: "We work to measurable KPIs, not general observations." },
+  { title: "Measurable operational cost reduction",                text: "Real savings in transport, warehousing and processes — with documented results." },
+  { title: "Structured processes and reporting lines",             text: "Clear roles, accountabilities and procedures ready for handover to the permanent team." },
+  { title: "Trained team ready to take over",                      text: "We transfer knowledge and capability — the organisation operates independently after engagement ends." },
+  { title: "Documentation and procedures ensuring continuity",     text: "Complete operational documentation — no knowledge locked in a single person's head." },
+];
+
+const forWhom = [
+  { title: "Companies in operational crisis",           text: "When logistics is failing and you need someone to take the wheel immediately and stabilise the situation." },
+  { title: "Companies without a logistics director",   text: "When a key manager has left and recruiting a successor will take months." },
+  { title: "Companies in restructuring",               text: "When you're making difficult changes and need experienced management for the duration of the project." },
+  { title: "Companies implementing major changes",     text: "When a relocation, system implementation or automation requires competencies you don't have internally." },
+  { title: "Companies post-acquisition or merger",     text: "When you need to integrate the logistics operations of two organisations." },
+];
+
+const faqs = [
+  { q: "How quickly can you enter a company?",          a: "In crisis situations we can start within days. After an initial conversation and understanding of the situation we agree the scope and engagement model, and enter as quickly as possible." },
+  { q: "How long is an interim manager engaged for?",   a: "It depends on the situation — from a few weeks for extinguishing a specific fire, to several months for a restructuring or system implementation. Scope and timeline are agreed at the start and flexibly adjusted during the engagement." },
+  { q: "Does the interim manager manage our team?",     a: "Yes. The interim manager takes real operational and managerial responsibility within the agreed scope — managing the team, making decisions and delivering on objectives, acting as part of your organisation for the duration of the project." },
+  { q: "How is interim management billed?",             a: "Flexibly — most often monthly or on a project basis, sometimes with a success fee component tied to objectives achieved. The model is agreed at the start based on the nature and duration of engagement." },
+  { q: "What happens after interim management ends?",   a: "We prepare the company to take back the reins with its permanent team — leaving behind structured processes, documentation, procedures and trained people. We ensure a smooth handover and operational continuity." },
+];
+
+const interimPages = [
+  { slug: "interim-management-restructuring",     industry: "Restructuring",       h1: "Interim Management — Restructuring",        description: "Experienced C-level management support through logistics restructuring — from rapid diagnosis to cost reduction and process reorganisation." },
+  { slug: "interim-management-logistics-startup", industry: "Logistics startup",   h1: "Interim Management — Logistics Startup",    description: "Management support for launching logistics operations from scratch — fast, structured and without costly trial and error." },
+  { slug: "interim-management-3pl",               industry: "3PL operators",       h1: "Interim Management for 3PL Operators",      description: "Temporary management support for 3PL and 4PL operators in operational crises, client loss and capacity expansion situations." },
+  { slug: "interim-management-operational-crisis",industry: "Operational crisis",  h1: "Interim Management — Operational Crisis",   description: "Immediate response to logistics crisis — operations stabilisation, firefighting and restoring KPI performance." },
+];
+
+const schemaService = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Interim Management in logistics",
+  "provider": { "@type": "Organization", "name": "Vologis Sp. z o.o.", "url": SITE, "address": { "@type": "PostalAddress", "addressLocality": "Jarocin", "addressRegion": "Wielkopolska", "addressCountry": "PL" } },
+  "areaServed": ["Poland", "Europe"],
+  "serviceType": "Interim management for logistics",
+  "description": "Interim management and restructuring support in logistics. Vologis steps into companies in crisis, stabilises operations and reduces costs — without permanent employment.",
+  "url": `${SITE}/en/services/interim-management/`,
+  "inLanguage": "en",
+};
+
+const schemaFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })),
+};
+---
+
+<ServicePageLayout
+  title="Interim Management in Logistics — Immediate Management Support | Vologis"
+  description="Interim management and restructuring support in logistics. Vologis steps into companies in crisis, stabilises operations and reduces costs — without permanent employment."
+  canonical="https://vologis.com/en/services/interim-management/"
+  hreflangPL="/pl/uslugi/interim-management/"
+  ogImage="/og/og-interim.png"
+  heroImage="/services/interim-management.webp"
+  eyebrow="Logistics services / Interim Management"
+  h1="Interim Management — An Experienced Logistics Manager, Available Now"
+  lead="Sometimes there's no time to recruit. A logistics director left overnight, operations are falling apart, costs are climbing and a restructuring project needs someone to step in and stabilise things — immediately. Vologis provides temporary C-level management support: we enter your structure, fight fires, deliver corrective targets and hit agreed KPIs — without the need to permanently hire an expert."
+  trustItems={trustItems}
+  ctaPrimaryLabel="I need support now"
+  ctaPrimaryHref="/en/contact/"
+  ctaSecondaryLabel="See how we work"
+  ctaSecondaryHref="/en/process/"
+  breadcrumbs={[{ name: "Interim Management" }]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaService)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaFaq)} />
+
+  <!-- 1. Problem -->
+  <section class="ps-problem" aria-labelledby="h-problem">
+    <div class="container">
+      <div class="ps-problem__grid">
+        <div class="ps-problem__copy">
+          <h2 class="h2" id="h-problem">When logistics needs someone now, not in three months</h2>
+          <p class="body">Recruiting a logistics director takes months. But problems won't wait — the warehouse is seizing up, costs are rising, clients are calling about delays, the team is losing motivation. Every week without management direction deepens the crisis.</p>
+          <p class="body">Sometimes a company needs competencies that aren't cost-effective to hire permanently. Restructuring, an acquisition, a new system rollout, a relocation — these are projects that need an experienced manager for a defined period, not for years.</p>
+          <p class="body">Vologis steps in at exactly these moments. An experienced logistics manager takes the wheel, stabilises operations and delivers specific objectives. You pay for the competency when it's needed — without the fixed cost of a permanent hire, recruitment and the risk of a bad employment decision.</p>
+        </div>
+        <aside class="ps-brief" aria-label="In brief">
+          <p class="ps-brief__label">In brief</p>
+          <p class="ps-brief__text">Interim management is temporary C-level management support in logistics. Vologis enters the company structure in crisis or project situations, conducts a rapid diagnosis, stabilises operations, reduces costs and delivers corrective targets — without the need to permanently hire an expert. The service targets companies in operational crisis, restructuring, after a key manager departure, or implementing major changes.</p>
+          <hr class="ps-brief__rule" />
+          <p class="ps-brief__sub">Vologis &middot; Jarocin, Poland &middot; Poland and EU</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Scope -->
+  <section class="ps-scope" aria-labelledby="h-scope">
+    <div class="container">
+      <h2 class="h2" id="h-scope">What does interim management cover?</h2>
+      <p class="body">We tailor the scope to the situation — from urgent crisis stabilisation through long-term restructuring to managing a specific implementation project.</p>
+      <div class="scope-grid">
+        {scopeCards.map((c) => (
+          <div class="scope-card">
+            <h3 class="scope-card__title">{c.title}</h3>
+            <p class="scope-card__text">{c.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. When it makes sense -->
+  <section class="ps-when" aria-labelledby="h-when">
+    <div class="container">
+      <h2 class="h2" id="h-when">When does interim management make sense?</h2>
+      <ul class="when-list when-list--2col" role="list">
+        {whenItems.map((item) => (
+          <li class="when-item">
+            <svg class="when-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4. Comparison (dark) -->
+  <section class="ps-cmp" aria-labelledby="h-cmp">
+    <div class="container">
+      <h2 class="h2 h2--dark" id="h-cmp">Interim Management vs permanent hire</h2>
+      <p class="cmp-intro">Permanent recruitment makes sense for stable, long-term needs. Interim Management — when weeks matter, not months.</p>
+      <ComparisonTable rows={comparisonRows} leftHeader="VOLOGIS INTERIM MANAGEMENT" rightHeader="PERMANENT HIRE" />
+    </div>
+  </section>
+
+  <!-- 5. What you get -->
+  <section class="ps-benefits" aria-labelledby="h-benefits">
+    <div class="container">
+      <h2 class="h2" id="h-benefits">What do you gain from interim management?</h2>
+      <div class="ben-grid">
+        {deliverables.map((d) => (
+          <div class="ben-card">
+            <h3 class="ben-card__title">{d.title}</h3>
+            <p class="ben-card__text">{d.text}</p>
+          </div>
+        ))}
+      </div>
+      <CalloutBox>
+        Every week without management direction in a crisis means real losses — in costs, clients and team morale. Getting an interim manager in fast often costs less than a month of unmanaged chaos.
+      </CalloutBox>
+    </div>
+  </section>
+
+  <!-- 6. For whom -->
+  <section class="ps-forwho" aria-labelledby="h-forwho">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-forwho">Who is interim management for?</h2>
+      <p class="section-intro">We work with companies where logistics requires urgent or project-based management support — regardless of scale or industry.</p>
+      <div class="fw-grid">
+        {forWhom.map((p) => (
+          <div class="fw-card">
+            <h3 class="fw-card__title">{p.title}</h3>
+            <p class="fw-card__text">{p.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 6b. Founder experience -->
+  <section class="ps-experience" aria-labelledby="h-experience">
+    <div class="container">
+      <CalloutBox>
+        <p class="exp-eyebrow">From Vologis founder's experience</p>
+        <div class="exp-metrics">
+          <div class="exp-metric"><span class="exp-metric__val tnum">100+</span><span class="exp-metric__label">branches and locations managed simultaneously during a logistics network restructuring</span></div>
+          <div class="exp-metric"><span class="exp-metric__val tnum">400+</span><span class="exp-metric__label">people in managed operational and warehouse teams</span></div>
+        </div>
+        <p class="exp-frame">Results from a restructuring project carried out by the Vologis founder in a previous management role — not Vologis client results.</p>
+      </CalloutBox>
+    </div>
+  </section>
+
+  <!-- 7. FAQ -->
+  <section class="ps-faq" aria-labelledby="h-faq">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-faq">FAQ — frequently asked questions</h2>
+      <FaqAccordion items={faqs} single />
+    </div>
+  </section>
+
+  <!-- End CTA -->
+  <section class="ps-endcta" aria-labelledby="h-endcta">
+    <div class="container">
+      <div class="endcta-inner">
+        <h2 class="endcta__h2" id="h-endcta">Logistics crisis on your hands?</h2>
+        <p class="endcta__text">The faster we step in, the less stabilisation costs. Free first conversation — we respond immediately.</p>
+        <div class="endcta__actions">
+          <a href="/en/contact/" class="endcta__btn endcta__btn--primary">I need support now <span aria-hidden="true">→</span></a>
+          <a href="/en/services/" class="endcta__btn endcta__btn--ghost">See our services →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed solutions -->
+  <section class="ps-branze" aria-labelledby="h-branze">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-branze">Detailed solutions</h2>
+      <p class="section-intro">Every situation requires a different approach. See detailed interim management scenarios.</p>
+      <div class="branze-grid">
+        {interimPages.map((b) => (
+          <a class="branze-card" href={`/en/services/${b.slug}/`}>
+            <span class="branze-card__industry">{b.industry}</span>
+            <span class="branze-card__title">{b.h1}</span>
+            <span class="branze-card__desc">{b.description}</span>
+            <span class="branze-card__arrow" aria-hidden="true">→</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Related services -->
+  <section class="ps-related" aria-labelledby="h-related">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-related">Other Vologis services</h2>
+      <div class="related-grid">
+        <a class="related-card" href="/en/services/operational-consulting/"><span class="related-card__title">Operational consulting &amp; audit</span><span class="related-card__desc">Bottleneck identification, process optimisation, quick wins.</span><span class="related-card__arrow" aria-hidden="true">→</span></a>
+        <a class="related-card" href="/en/services/greenfield-projects/"><span class="related-card__title">Greenfield projects</span><span class="related-card__desc">From site analysis to operations launch. One partner.</span><span class="related-card__arrow" aria-hidden="true">→</span></a>
+        <a class="related-card" href="/en/services/logistics-brokerage/"><span class="related-card__title">Logistics brokerage</span><span class="related-card__desc">Warehouse operator, fulfillment and carrier selection and verification.</span><span class="related-card__arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+</ServicePageLayout>
+
+<style>
+  .h2 { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; letter-spacing: -0.025em; line-height: 1.15; color: var(--color-ink); margin-bottom: var(--space-lg); }
+  .h2--center { text-align: center; }
+  .h2--dark { color: var(--color-ink-on-dark); }
+  .body { font-size: var(--text-base); color: var(--color-muted); line-height: 1.75; margin-bottom: var(--space-md); }
+  .section-intro { font-size: var(--text-md); color: var(--color-muted); line-height: 1.65; max-width: 60ch; margin-inline: auto; text-align: center; margin-bottom: var(--space-xl); }
+  .ps-problem { padding-block: var(--space-3xl); background: var(--color-paper); }
+  .ps-problem__grid { display: grid; grid-template-columns: 1fr 20rem; gap: var(--space-3xl); align-items: start; }
+  .ps-brief { border: 1px solid var(--color-blue); border-radius: var(--radius-lg); background: var(--color-blue-tint); padding: var(--space-lg) var(--space-xl); position: sticky; top: calc(4.25rem + 3px + var(--space-lg)); }
+  .ps-brief__label { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-secondary); margin-bottom: var(--space-md); }
+  .ps-brief__text { font-size: var(--text-base); color: var(--color-ink); line-height: 1.7; }
+  .ps-brief__rule { border: none; border-top: 1px solid var(--color-blue); margin-block: var(--space-md); opacity: 0.3; }
+  .ps-brief__sub { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.5; }
+  .ps-scope { padding-block: var(--space-3xl); background: var(--color-paper-2); }
+  .scope-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--space-md); margin-top: var(--space-lg); }
+  .scope-card { border: 1px solid var(--color-rule); border-radius: var(--radius-md); padding: var(--space-lg); background: var(--color-paper); transition: border-color var(--dur-micro) var(--ease-out), box-shadow var(--dur-short) var(--ease-out); }
+  .scope-card:hover { border-color: var(--color-blue); box-shadow: var(--shadow-sm); }
+  .scope-card__title { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; color: var(--color-ink); margin-bottom: var(--space-sm); }
+  .scope-card__text { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.65; }
+  .ps-when { padding-block: var(--space-3xl); background: var(--color-paper); }
+  .when-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: var(--space-md); margin-top: var(--space-lg); }
+  .when-list--2col { grid-template-columns: repeat(2, 1fr); }
+  .when-item { display: flex; align-items: flex-start; gap: var(--space-sm); font-size: var(--text-base); color: var(--color-ink); line-height: 1.55; }
+  .when-icon { flex-shrink: 0; width: 1.2rem; height: 1.2rem; margin-top: 0.15rem; color: var(--color-blue); }
+  .ps-cmp { padding-block: var(--space-3xl); background: var(--color-paper-dark); }
+  .cmp-intro { font-size: var(--text-base); color: var(--color-muted-on-dark); line-height: 1.7; max-width: 60ch; margin-bottom: var(--space-xl); }
+  .ps-benefits { padding-block: var(--space-3xl); background: var(--color-paper-2); }
+  .ben-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--space-md); margin-bottom: var(--space-xl); }
+  .ben-card { border: 1px solid var(--color-rule); border-top: 3px solid var(--color-secondary); border-radius: var(--radius-md); padding: var(--space-lg); background: var(--color-paper); }
+  .ben-card__title { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; color: var(--color-ink); margin-bottom: var(--space-sm); }
+  .ben-card__text { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.65; }
+  .ps-forwho { padding-block: var(--space-3xl); background: var(--color-paper); }
+  .fw-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--space-md); }
+  .fw-card { border: 1px solid var(--color-rule); border-left: 4px solid var(--color-secondary); border-radius: var(--radius-md); padding: var(--space-lg); background: var(--color-paper); }
+  .fw-card__title { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; color: var(--color-ink); margin-bottom: var(--space-sm); }
+  .fw-card__text { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.65; }
+  .ps-experience { padding-block: var(--space-xl); background: var(--color-paper); }
+  .exp-eyebrow { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; color: var(--color-blue); margin-bottom: var(--space-md); }
+  .exp-metrics { display: flex; flex-wrap: wrap; gap: var(--space-md); margin-bottom: var(--space-md); }
+  .exp-metric { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 14rem; }
+  .exp-metric__val { font-family: var(--font-display); font-size: var(--text-2xl, 2rem); font-weight: 700; letter-spacing: -0.03em; color: var(--color-metric); line-height: 1.1; }
+  .exp-metric__label { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.4; }
+  .exp-frame { font-size: var(--text-xs); color: var(--color-muted); font-style: italic; margin-top: var(--space-sm); } .ps-experience :global(.callout) { border-left-color: var(--color-metric); }
+  .ps-faq { padding-block: var(--space-3xl); background: var(--color-paper-2); }
+  .ps-endcta { padding-block: var(--space-3xl); background: var(--gradient-cta); }
+  .endcta-inner { max-width: 52rem; margin-inline: auto; text-align: center; }
+  .endcta__h2 { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; letter-spacing: -0.025em; line-height: 1.2; color: var(--color-ink-on-dark); margin-bottom: var(--space-md); }
+  .endcta__text { font-size: var(--text-base); color: var(--color-muted-on-dark); line-height: 1.7; margin-bottom: var(--space-xl); }
+  .endcta__actions { display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap; }
+  .endcta__btn { display: inline-flex; align-items: center; gap: var(--space-xs); font-family: var(--font-display); font-size: var(--text-base); font-weight: 600; padding: var(--space-md) var(--space-2xl); border-radius: var(--radius-pill); text-decoration: none; cursor: pointer; border: 1px solid transparent; transition: background var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out); }
+  .endcta__btn--primary { background: var(--color-accent); color: #fff; }
+  .endcta__btn--primary:hover { background: var(--color-accent-hover); }
+  .endcta__btn--ghost { background: var(--color-glass-dark); color: var(--color-ink-on-dark); border-color: var(--color-glass-border); }
+  .endcta__btn--ghost:hover { background: oklch(100% 0 0 / 0.12); }
+  .ps-related { padding-block: var(--space-3xl); background: var(--color-paper); border-top: 1px solid var(--color-rule); }
+  .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); margin-top: var(--space-xl); }
+  .related-card { display: flex; flex-direction: column; gap: var(--space-sm); border: 1px solid var(--color-rule); border-radius: var(--radius-lg); padding: var(--space-xl); background: var(--color-paper); text-decoration: none; transition: border-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out); }
+  .related-card:hover { border-color: var(--color-blue); transform: translateY(-3px); }
+  .related-card__title { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; color: var(--color-ink); }
+  .related-card__desc { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.55; flex: 1; }
+  .related-card__arrow { font-size: var(--text-md); color: var(--color-secondary); transition: transform var(--dur-short) var(--ease-out); align-self: flex-start; margin-top: auto; }
+  .related-card:hover .related-card__arrow { transform: translateX(4px); }
+  .ps-branze { padding-block: var(--space-3xl); background: var(--color-paper-2); border-top: 1px solid var(--color-rule); }
+  .branze-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--space-md); margin-top: var(--space-xl); }
+  .branze-card { display: flex; flex-direction: column; gap: var(--space-xs); border: 1px solid var(--color-rule); border-radius: var(--radius-md); padding: var(--space-lg); background: var(--color-paper); text-decoration: none; transition: border-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out); }
+  .branze-card:hover { border-color: var(--color-blue); transform: translateY(-2px); }
+  .branze-card__industry { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-secondary); }
+  .branze-card__title { font-family: var(--font-display); font-size: var(--text-sm); font-weight: 700; color: var(--color-ink); line-height: 1.35; }
+  .branze-card__desc { font-size: var(--text-xs); color: var(--color-muted); line-height: 1.5; flex: 1; }
+  .branze-card__arrow { font-size: var(--text-base); color: var(--color-secondary); transition: transform var(--dur-short) var(--ease-out); align-self: flex-start; margin-top: var(--space-xs); }
+  .branze-card:hover .branze-card__arrow { transform: translateX(4px); }
+  @media (max-width: 60rem) { .ps-problem__grid { grid-template-columns: 1fr; } .ps-brief { position: static; } .related-grid { grid-template-columns: 1fr; } .when-list--2col { grid-template-columns: 1fr; } }
+  @media (max-width: 48rem) { .fw-grid { grid-template-columns: 1fr; } .scope-grid { grid-template-columns: 1fr; } .ben-grid { grid-template-columns: 1fr; } .when-list { grid-template-columns: 1fr; } .endcta__actions { flex-direction: column; align-items: stretch; } .endcta__btn { width: 100%; justify-content: center; } }
+</style>

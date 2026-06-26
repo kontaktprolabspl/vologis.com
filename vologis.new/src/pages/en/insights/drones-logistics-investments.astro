@@ -1,0 +1,171 @@
+---
+import KnowledgeArticleLayout from "../../../layouts/KnowledgeArticleLayout.astro";
+import FaqAccordion from "../../../components/FaqAccordion.astro";
+import CalloutBox from "../../../components/CalloutBox.astro";
+import { articleSchema, speakableSchema } from "../../../utils/schema";
+
+const toc = [
+  { id: "land-surveying",          label: "Land surveying by drone" },
+  { id: "site-assessment",         label: "Investment site assessment" },
+  { id: "construction-monitoring", label: "Construction progress monitoring" },
+  { id: "volume-measurements",     label: "Volume measurements & earthworks" },
+  { id: "commercialisation",       label: "Commercialisation and marketing" },
+  { id: "drones-in-project",       label: "Drones as part of the project" },
+  { id: "faq",                     label: "FAQ" },
+];
+
+const siteAssessmentCards = [
+  { title: "Terrain profile and grading level", text: "Accurate analysis of elevation differences and earthwork volumes required for levelling. Surprises at the construction phase are among the most expensive." },
+  { title: "Surroundings and access",           text: "A real picture of access routes, neighbours, power lines, and underground infrastructure — data not visible on maps." },
+  { title: "Location comparison",               text: "Orthophotomaps of several alternative sites in a single format allow objective comparison — without multiple field visits." },
+];
+
+const volumeMeasurements = [
+  { title: "Stockpile and depot volume measurement", text: "Accurate measurement without manual measuring — just a flight and photogrammetry software." },
+  { title: "Excavation and embankment verification", text: "Compliance checking against the geodetic design at every stage of earthworks." },
+  { title: "Construction material inventory",        text: "Quantitative control of aggregate, concrete, and other material deliveries stored on site." },
+  { title: "Grading progress documentation",         text: "Timestamped record of site condition after each phase of works — for settlement and handover purposes." },
+];
+
+const tagItems = ["Site selection", "Terrain analysis", "Masterplan", "Construction monitoring", "Works settlement", "Commercialisation"];
+
+const faqs = [
+  { q: "What accuracy can you achieve with drone land surveying?", a: "Using GCP (Ground Control Points) or an RTK system, we achieve horizontal accuracy of 2–5 cm and vertical accuracy of 3–8 cm. For most investment applications (construction design, earthworks verification) this is sufficient accuracy. For surveys requiring higher precision (e.g., legal cadastral work), we tailor the methodology to project requirements." },
+  { q: "Do drone flights require special permits?", a: "Yes. We operate in compliance with EASA regulations and Polish aviation law (EU Regulation 2019/947). We hold the required operator authorisations. For flights in controlled airspace or requiring individual permits, we manage all the paperwork." },
+  { q: "How much does an orthophotomap of an investment site cost?", a: "Cost depends on site area, required accuracy, and data delivery format. As a rough guide: an orthophotomap of a 5–10 ha site costs roughly the equivalent of one day's work by a traditional survey team — with significantly shorter delivery time. We prepare detailed quotes after reviewing project requirements." },
+  { q: "How often should you run construction monitoring by drone?", a: "For an active warehouse construction, every 2–4 weeks is a good frequency — it lets you track progress by phase and respond to delays before they escalate. Just before disbursing the next financing tranche, it's worth flying just ahead of the bank or investor meeting. During quieter phases, monthly monitoring is sufficient." },
+  { q: "What can drones be used for on a warehouse project?", a: "Applications include: site analysis before purchase (terrain, surroundings, infrastructure), land surveying for the masterplan, construction progress monitoring and earthworks verification, documentation for phase-based settlement, and marketing materials for commercialising the completed facility. Drones can accompany the project from the first site visit to the finished warehouse handover." },
+];
+
+const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map((f) => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) };
+const schemaArticle = articleSchema({ headline: "Drones in Logistics Investments — From Site Survey to Property Commercialisation", description: "How to use drones in logistics and investment projects: land surveying, orthophotomaps, construction monitoring and marketing materials. Practical applications and real benefits.", url: "/en/insights/drones-logistics-investments/", datePublished: "2026-04-16", dateModified: "2026-04-16", inLanguage: "en" });
+const schemaSpeakable = speakableSchema("/en/insights/drones-logistics-investments/", ["[data-speakable='headline']", "[data-speakable='summary']"]);
+---
+
+<KnowledgeArticleLayout
+  title="Drones in Logistics Investments — Surveys, Monitoring, Commercialisation | Vologis"
+  description="How to use drones in logistics and investment projects: land surveying, orthophotomaps, construction monitoring and marketing materials. Practical applications and real benefits."
+  canonical="https://vologis.com/en/insights/drones-logistics-investments/"
+  heroImage="/knowledge/drony-inwestycje-logistyczne.webp"
+  category="Logistics consulting"
+  readTime="7–9 min"
+  updatedAt="April 16, 2026"
+  h1="Drones in Logistics Investments — From Site Survey to Property Commercialisation"
+  lead="Drones in logistics are most often associated with spectacular aerial footage. But their real value lies in precise data: land surveys, orthophotomaps, and objective construction progress monitoring. For logistics investors and developers, they're a tool that shortens timelines, reduces risk, and cuts documentation costs. This article shows concrete applications at every stage of an investment project."
+  toc={toc}
+  ctaPrimaryLabel="Ask about drone services"
+  ctaSecondary={{ label: "See drone applications", href: "#construction-monitoring" }}
+  hreflangPL="/pl/wiedza/drony-inwestycje-logistyczne/"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaArticle)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaSpeakable)} />
+
+  <section class="s" id="land-surveying" aria-labelledby="h-land-surveying">
+    <h2 class="h2" id="h-land-surveying">Land surveying by drone — faster and cheaper than traditional methods</h2>
+    <p class="body">A traditional geodetic survey of a large investment site takes days and engages a multi-person field team. A drone with the right equipment and GCP (Ground Control Points) surveys the same site in hours — with centimetre-level accuracy.</p>
+    <p class="body">The output is an orthophotomap (a calibrated aerial image in a cartographic coordinate system), a digital terrain model (DTM/DSM), and vector data ready for import into CAD and GIS software. This material directly feeds design and investment analyses — without manually redrawn geometry.</p>
+    <p class="body">The savings are concrete: surveying a 5–10 ha site using traditional methods takes 3–5 days. By drone — 4–8 hours of flight and data processing. Cost proportionally lower, accuracy comparable or higher when RTK is used.</p>
+    <div class="three-q">
+      <p class="three-q__label">Data delivered after a drone land survey:</p>
+      <ol class="three-q__list">
+        <li><strong>High-resolution terrain orthophotomap</strong></li>
+        <li><strong>Digital terrain model (DTM)</strong> and surface model (DSM)</li>
+        <li><strong>CAD/GIS-ready vectors</strong> with cartographic calibration</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="s" id="site-assessment" aria-labelledby="h-site-assessment">
+    <h2 class="h2" id="h-site-assessment">Investment site assessment and selection using drones</h2>
+    <p class="body">Before purchasing a logistics investment site, it's worth gathering as much objective data as possible. A drone orthophotomap and terrain model show the real terrain profile, tree cover, utilities, grading, and surroundings in a way that's impossible to obtain from a site visit alone or from low-resolution satellite maps.</p>
+    <p class="body">This data answers the key pre-purchase questions: what earthworks will be required and at what scale, whether the site is regular enough for the planned facility, what the actual neighbourhood and potential constraints are, how infrastructure is routed and whether there's a collision risk. An hour of drone flight can prevent months of construction surprises.</p>
+    <div class="scope-grid">
+      {siteAssessmentCards.map((c) => (
+        <div class="scope-card">
+          <h3 class="scope-card__title">{c.title}</h3>
+          <p class="scope-card__text">{c.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="s" id="construction-monitoring" aria-labelledby="h-construction-monitoring">
+    <h2 class="h2" id="h-construction-monitoring">Construction progress monitoring from the air</h2>
+    <p class="body">An investor or logistics developer overseeing construction of a warehouse worth PLN 50–200m needs objective, independent visibility into progress — independent of reports and photos supplied by the general contractor.</p>
+    <p class="body">Regular drone flights (weekly or monthly) provide a timestamped, calibrated aerial record of the construction state. Photos and 3D models allow you to track progress in every zone of the facility, detect delays before they escalate, and document works for phase-based settlement purposes.</p>
+    <p class="body">Drone documentation is an impartial record — no site manager argues with a GPS-timestamped photograph. For investors financing the project with a loan, this documentation is often required by the bank or fund as a condition of the next financing tranche.</p>
+    <div class="inline-cta">
+      <p class="inline-cta__text">Running a logistics investment? Integrated drone services will deliver precise data at every stage — from site assessment to construction monitoring.</p>
+      <a href="/en/services/drone-services/" class="inline-cta__btn">Ask about drone services →</a>
+    </div>
+  </section>
+
+  <section class="s" id="volume-measurements" aria-labelledby="h-volume-measurements">
+    <h2 class="h2" id="h-volume-measurements">Volume measurements and earthworks control</h2>
+    <p class="body">Earthworks are one of the harder scopes in a construction contract to verify. How much soil was actually removed? How much material was brought in? What is the volume of the aggregate stockpile? Traditional answers to these questions rely on contractor declarations or calculations that are difficult to verify.</p>
+    <p class="body">A drone with 3D terrain modelling measures the volume of stockpiles, slopes, and excavations to within a few percent — in a few dozen minutes of flight. It's a tool for verifying earthworks quantities, controlling material deliveries, and managing raw material stock on site.</p>
+    <div class="scope-grid">
+      {volumeMeasurements.map((m) => (
+        <div class="scope-card">
+          <h3 class="scope-card__title">{m.title}</h3>
+          <p class="scope-card__text">{m.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="s" id="commercialisation" aria-labelledby="h-commercialisation">
+    <h2 class="h2" id="h-commercialisation">Logistics facility commercialisation and marketing</h2>
+    <p class="body">A logistics developer selling or leasing a 30,000–100,000m² facility needs materials that let a potential tenant assess the location, access, connectivity, and scale of the asset — ideally without a site visit. Professional drone photos and video do this better than any paper floor plan.</p>
+    <p class="body">Drone marketing materials for commercialisation include: multi-angle and multi-altitude facility photography, video presenting access routes, surroundings, and scale, aerial maps with the facility and infrastructure overlaid, and interior photography (halls, operational zones). Professional video content shortens the time to lease and raises credibility of the offer in potential tenants' eyes.</p>
+    <CalloutBox>Drone materials aren't just aesthetics. A potential tenant sees the real road access, distance from the motorway junction, neighbourhood, and scale of the asset — all in a single video, without a site visit. That shortens the decision.</CalloutBox>
+    <div class="tag-list" role="list">
+      {tagItems.map((item) => <span class="tag" role="listitem">{item}</span>)}
+    </div>
+  </section>
+
+  <section class="s" id="drones-in-project" aria-labelledby="h-drones-in-project">
+    <h2 class="h2" id="h-drones-in-project">Drones as part of the project, not a standalone service</h2>
+    <p class="body">A drone company delivers photos. Vologis delivers data in the context of an investment project. We know what an orthophotomap means for a warehouse masterplan, how a volume measurement translates into the earthworks schedule, and which shots actually help commercialise a facility — because we're logistics advisors, not just drone operators.</p>
+    <p class="body">Drone services as part of managing a Greenfield project mean data continuity: the same site analysed at the location selection stage, monitored during construction, and documented after completion for marketing purposes. One partner, consistent documentation across the full investment cycle.</p>
+  </section>
+
+  <section class="s" id="faq" aria-labelledby="h-faq">
+    <h2 class="h2" id="h-faq">FAQ — frequently asked questions</h2>
+    <FaqAccordion items={faqs} />
+  </section>
+
+  <div class="end-cta">
+    <h2 class="end-cta__h2">Need aerial data for your investment?</h2>
+    <p class="end-cta__text">Vologis combines drone services with logistics advisory and investment project management. We deliver data that actually drives decisions — not just impressive footage.</p>
+    <a href="/en/services/drone-services/" class="end-cta__btn">Ask about drone services →</a>
+  </div>
+</KnowledgeArticleLayout>
+
+<style>
+  .s { padding-block: var(--space-2xl); border-top: 1px solid var(--color-rule); }
+  .s:first-of-type { border-top: none; padding-top: 0; }
+  .h2 { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; letter-spacing: -0.025em; line-height: 1.15; color: var(--color-ink); margin-bottom: var(--space-lg); }
+  .body { font-size: var(--text-base); color: var(--color-muted); line-height: 1.75; margin-bottom: var(--space-md); }
+  .three-q { margin-top: var(--space-lg); border: 1px solid var(--color-blue); border-radius: var(--radius-lg); background: var(--color-blue-tint); padding: var(--space-lg) var(--space-xl); }
+  .three-q__label { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-secondary); margin-bottom: var(--space-md); }
+  .three-q__list { display: flex; flex-direction: column; gap: var(--space-sm); padding-left: var(--space-lg); }
+  .three-q__list li { font-size: var(--text-base); color: var(--color-ink); line-height: 1.6; }
+  .scope-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--space-md); margin-top: var(--space-lg); }
+  .scope-card { border: 1px solid var(--color-rule); border-left: 4px solid var(--color-secondary); border-radius: var(--radius-md); padding: var(--space-lg); background: var(--color-paper); }
+  .scope-card__title { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; color: var(--color-ink); margin-bottom: var(--space-sm); }
+  .scope-card__text { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.6; }
+  .inline-cta { display: flex; align-items: center; justify-content: space-between; gap: var(--space-lg); background: var(--color-paper-dark); border-radius: var(--radius-lg); padding: var(--space-lg) var(--space-xl); flex-wrap: wrap; margin-top: var(--space-xl); }
+  .inline-cta__text { font-size: var(--text-base); color: var(--color-muted-on-dark); line-height: 1.6; flex: 1; min-width: 180px; }
+  .inline-cta__btn { display: inline-flex; align-items: center; font-family: var(--font-display); font-size: var(--text-sm); font-weight: 600; padding: var(--space-sm) var(--space-lg); border-radius: var(--radius-pill); background: var(--color-accent); color: #fff; text-decoration: none; white-space: nowrap; cursor: pointer; transition: background var(--dur-micro) var(--ease-out); flex-shrink: 0; }
+  .inline-cta__btn:hover { background: var(--color-accent-hover); }
+  .tag-list { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-lg); }
+  .tag { display: inline-flex; align-items: center; padding: var(--space-xs) var(--space-md); border: 1px solid var(--color-rule); border-radius: var(--radius-pill); font-size: var(--text-sm); font-weight: 500; color: var(--color-ink); background: var(--color-paper); }
+  .end-cta { margin-top: var(--space-3xl); background: var(--gradient-cta); border-radius: var(--radius-lg); padding: var(--space-2xl); text-align: center; }
+  .end-cta__h2 { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; letter-spacing: -0.025em; line-height: 1.2; color: var(--color-ink-on-dark); margin-bottom: var(--space-md); }
+  .end-cta__text { font-size: var(--text-base); color: var(--color-muted-on-dark); line-height: 1.7; max-width: 52ch; margin-inline: auto; margin-bottom: var(--space-xl); }
+  .end-cta__btn { display: inline-flex; align-items: center; font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; padding: var(--space-md) var(--space-2xl); border-radius: var(--radius-pill); background: var(--color-accent); color: #fff; text-decoration: none; cursor: pointer; transition: background var(--dur-micro) var(--ease-out); }
+  .end-cta__btn:hover { background: var(--color-accent-hover); }
+  @media (max-width: 48rem) { .scope-grid { grid-template-columns: 1fr; } .inline-cta { flex-direction: column; align-items: flex-start; padding: var(--space-lg); } .inline-cta__btn { width: 100%; justify-content: center; } .end-cta { padding: var(--space-xl) var(--space-lg); } .end-cta__btn { width: 100%; text-align: center; } }
+</style>

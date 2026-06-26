@@ -12,9 +12,7 @@ interface Props {
   description: string;
   canonical?: string;
   ogImage?: string;
-  /** Optional hero background image path, e.g. "/services/posrednictwo-logistyczne.png" */
   heroImage?: string;
-  /** Alt text for the hero image */
   heroImageAlt?: string;
   eyebrow?: string;
   h1: string;
@@ -25,6 +23,15 @@ interface Props {
   ctaSecondaryLabel?: string;
   ctaSecondaryHref?: string;
   breadcrumbs?: BreadcrumbItem[];
+  /** EN alternate URL — passed on PL service pages */
+  hreflangEN?: string;
+  /** PL alternate URL — passed on EN service pages */
+  hreflangPL?: string;
+  /** Override the "Services" breadcrumb root */
+  servicesRootName?: string;
+  servicesRootHref?: string;
+  homeRootName?: string;
+  homeRootHref?: string;
 }
 
 const {
@@ -34,22 +41,39 @@ const {
   ogImage,
   heroImage,
   heroImageAlt = "",
-  eyebrow = "Usługi",
+  eyebrow,
   h1,
   lead,
   trustItems = [],
-  ctaPrimaryLabel = "Zapytaj o usługę",
-  ctaPrimaryHref = "/pl/kontakt",
+  ctaPrimaryLabel,
+  ctaPrimaryHref,
   ctaSecondaryLabel,
   ctaSecondaryHref,
   breadcrumbs = [],
+  hreflangEN,
+  hreflangPL,
+  servicesRootName,
+  servicesRootHref,
+  homeRootName,
+  homeRootHref,
 } = Astro.props;
 
 const SITE = "https://vologis.com";
 
+const isEN = Astro.url.pathname.startsWith("/en");
+
+const resolvedEyebrow   = eyebrow       ?? (isEN ? "Services" : "Usługi");
+const resolvedCtaPrimary= ctaPrimaryLabel ?? (isEN ? "Book a consultation" : "Zapytaj o usługę");
+const resolvedCtaHref   = ctaPrimaryHref  ?? (isEN ? "/en/contact/" : "/pl/kontakt/");
+
+const homeBC   = homeRootName  ?? (isEN ? "Home"     : "Strona główna");
+const homeHref = homeRootHref  ?? (isEN ? `${SITE}/en/` : `${SITE}/pl/`);
+const svcBC    = servicesRootName ?? (isEN ? "Services" : "Usługi");
+const svcHref  = servicesRootHref ?? (isEN ? `${SITE}/en/services/` : `${SITE}/pl/uslugi/`);
+
 const allBreadcrumbs = [
-  { name: "Strona główna", href: `${SITE}/pl/` },
-  { name: "Usługi", href: `${SITE}/pl/uslugi` },
+  { name: homeBC, href: homeHref },
+  { name: svcBC,  href: svcHref  },
   ...breadcrumbs,
 ];
 
@@ -65,7 +89,7 @@ const schemaBreadcrumb = {
 };
 ---
 
-<BaseLayout {title} {description} {canonical} {ogImage} preloadImage={heroImage}>
+<BaseLayout {title} {description} {canonical} {ogImage} preloadImage={heroImage} {hreflangEN} {hreflangPL}>
   <script type="application/ld+json" set:html={JSON.stringify(schemaBreadcrumb)} />
 
   <!-- ── Service hero (dark navy) ────────────────────────── -->
@@ -92,13 +116,13 @@ const schemaBreadcrumb = {
         </ol>
       </nav>
 
-      <Eyebrow text={eyebrow} />
+      <Eyebrow text={resolvedEyebrow} />
       <h1 id="spl-h1" class="spl-h1">{h1}</h1>
       <p class="spl-lead">{lead}</p>
 
       <div class="spl-actions">
-        <a href={ctaPrimaryHref} class="spl-btn spl-btn--accent">
-          {ctaPrimaryLabel} <span aria-hidden="true">→</span>
+        <a href={resolvedCtaHref} class="spl-btn spl-btn--accent">
+          {resolvedCtaPrimary} <span aria-hidden="true">→</span>
         </a>
         {ctaSecondaryLabel && ctaSecondaryHref && (
           <a href={ctaSecondaryHref} class="spl-btn spl-btn--glass">
@@ -108,7 +132,7 @@ const schemaBreadcrumb = {
       </div>
 
       {trustItems.length > 0 && (
-        <ul class="spl-trust" role="list" aria-label="Zakres usługi">
+        <ul class="spl-trust" role="list" aria-label={isEN ? "Service scope" : "Zakres usługi"}>
           {trustItems.map((item) => (
             <li class="spl-trust__item">
               <svg class="spl-trust__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">

@@ -1,0 +1,513 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import FaqAccordion from "../../../components/FaqAccordion.astro";
+import Eyebrow from "../../../components/Eyebrow.astro";
+import { knowledgeArticlesEN, knowledgeCategoriesEN } from "../../../data/knowledge-en";
+
+const SITE = "https://vologis.com";
+
+const featured = knowledgeArticlesEN.find((a) => a.featured) ?? knowledgeArticlesEN[0];
+const allArticles = [...knowledgeArticlesEN].sort(
+  (a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()
+);
+
+const topics = [
+  "How to reduce logistics costs without compromising service quality?",
+  "When is the right time to conduct a logistics audit?",
+  "How to identify warehouse bottlenecks?",
+  "How to choose the right transport mode: FTL, LTL or groupage?",
+  "What should a good logistics audit report contain?",
+  "How to bring order to warehouse processes before implementing a WMS?",
+  "How to prepare a company for higher order volumes?",
+  "When does it pay to use an external logistics partner?",
+  "How to assess whether logistics supports or limits sales?",
+];
+
+const faqs = [
+  {
+    q: "What is the Vologis Insights section?",
+    a: "Vologis Insights is a library of practical articles on logistics, transport, forwarding, warehousing, audits and process optimisation. Its purpose is to help companies make better operational and cost decisions.",
+  },
+  {
+    q: "Who are the Vologis articles for?",
+    a: "Articles are written for business owners, CEOs, COOs, logistics directors, supply chain managers, warehouse managers, e-commerce managers and anyone responsible for transport, warehousing and operations.",
+  },
+  {
+    q: "What topics does the logistics knowledge base cover?",
+    a: "The knowledge base covers transport, forwarding, warehousing, logistics audits, process optimisation, logistics costs, supply chain, WMS and ERP systems, data and logistics consulting.",
+  },
+  {
+    q: "Where do I start if I want to bring order to my company's logistics?",
+    a: "It's best to start by identifying where the problem is most visible: in costs, delivery times, warehousing, inventory, transport, data or communication between departments. Then browse the relevant articles or speak with Vologis about a situation diagnosis.",
+  },
+  {
+    q: "When is knowledge alone not enough?",
+    a: "Knowledge alone may be insufficient when a problem affects costs, customer service, company scaling, investment decisions or requires data and process analysis. In such situations a logistics audit or consultation with a logistics partner can help.",
+  },
+  {
+    q: "Do the articles cover domestic and international transport?",
+    a: "Yes. The knowledge base includes material on domestic and international transport, shipment organisation, working with carriers, forwarding and transport cost optimisation.",
+  },
+  {
+    q: "Will I find knowledge relevant to e-commerce, manufacturing and distribution here?",
+    a: "Yes. Articles are written with manufacturing, trading, distribution, retail and e-commerce companies in mind — companies that want to better manage logistics and operational processes.",
+  },
+];
+
+const schemaBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home",     "item": `${SITE}/en/` },
+    { "@type": "ListItem", "position": 2, "name": "Insights", "item": `${SITE}/en/insights/` },
+  ],
+};
+
+const schemaCollectionPage = {
+  "@context": "https://schema.org",
+  "@type": ["CollectionPage", "WebPage"],
+  "name": "Logistics Insights for Companies | Transport, Warehousing & Optimisation — Vologis",
+  "description": "Practical knowledge on logistics, transport, forwarding, warehousing and process optimisation. Browse Vologis articles for manufacturing, trading and e-commerce companies.",
+  "url": `${SITE}/en/insights/`,
+  "inLanguage": "en",
+  "publisher": { "@type": "Organization", "name": "Vologis Sp. z o.o.", "url": SITE },
+  "hasPart": allArticles.map((a) => ({
+    "@type": "Article",
+    "name": a.title,
+    "url": `${SITE}/en/insights/${a.slug}/`,
+  })),
+};
+
+const schemaItemList = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Vologis Logistics Insights Articles",
+  "itemListElement": allArticles.map((a, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": a.title,
+    "url": `${SITE}/en/insights/${a.slug}/`,
+  })),
+};
+
+const schemaFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<BaseLayout
+  title="Logistics Insights for Companies | Transport, Warehousing &amp; Optimisation — Vologis"
+  description="Practical knowledge on logistics, transport, forwarding, warehousing and process optimisation. Browse Vologis articles for manufacturing, trading and e-commerce companies."
+  canonical="https://vologis.com/en/insights/"
+  hreflangPL="/pl/wiedza/"
+  ogImage="/og/og-wiedza.png"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaBreadcrumb)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaCollectionPage)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaItemList)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaFaq)} />
+
+  <!-- 1. Hero -->
+  <section class="kh-hero" aria-labelledby="kh-h1">
+    <div class="container">
+      <nav class="kh-bc" aria-label="Breadcrumb">
+        <ol class="kh-bc__list" role="list">
+          <li><a href="/en/">Home</a></li>
+          <li class="kh-bc__sep" aria-hidden="true">›</li>
+          <li aria-current="page">Insights</li>
+        </ol>
+      </nav>
+      <Eyebrow text="VOLOGIS INSIGHTS" />
+      <h1 id="kh-h1" class="kh-h1">
+        Logistics knowledge that drives better operational decisions
+      </h1>
+      <p class="kh-lead">
+        Practical articles on logistics, transport, forwarding, warehousing and process
+        optimisation — for companies that want to operate more efficiently, reduce costs
+        and make decisions based on facts, not gut feeling.
+      </p>
+      <div class="kh-hero-actions">
+        <a href="#articles" class="kh-btn kh-btn--dark">Browse articles</a>
+        <a href="#" class="kh-btn kh-btn--ghost" data-calendly="popup">
+          Talk to Vologis
+        </a>
+      </div>
+      <p class="kh-hero-note">
+        You'll find material here for manufacturing, trading, distribution and e-commerce
+        companies — from the basics of transport organisation to logistics audits, warehouse
+        processes and planning operational growth.
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. What you'll find + In brief -->
+  <section class="kh-intro" aria-labelledby="kh-intro-h">
+    <div class="container kh-intro-grid">
+      <div class="kh-intro-copy">
+        <h2 class="kh-h2" id="kh-intro-h">What's in the Vologis Insights library?</h2>
+        <p class="kh-body">
+          Vologis Insights is a collection of practical material created from the perspective of
+          operations, costs and real business decisions. We don't write about logistics in the
+          abstract — we show how transport, warehousing, inventory, forwarding, systems and
+          processes affect customer service, margin, scaling and operational security.
+        </p>
+        <p class="kh-body">
+          In this section you'll find articles that help you understand where unnecessary costs
+          arise in logistics, how to diagnose bottlenecks, when to run an audit, how to choose
+          a transport mode, and how to make decisions about changing logistics processes.
+        </p>
+      </div>
+      <aside class="kh-brief" aria-label="In brief">
+        <p class="kh-brief__label">In brief</p>
+        <ul class="kh-brief__list" role="list">
+          <li>
+            <span class="kh-brief__key">For whom:</span>
+            business owners, CEOs, COOs, logistics directors, supply chain managers,
+            warehouse managers and e-commerce managers.
+          </li>
+          <li>
+            <span class="kh-brief__key">Topics:</span>
+            transport, forwarding, warehousing, logistics audit, process optimisation,
+            costs, supply chain and consulting.
+          </li>
+          <li>
+            <span class="kh-brief__key">Goal:</span>
+            help companies diagnose problems faster and make better operational decisions.
+          </li>
+          <li>
+            <span class="kh-brief__key">When to contact Vologis:</span>
+            when a problem affects costs, delivery times, customer service quality or
+            company scaling.
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 3. Featured article -->
+  {featured && (
+    <section class="kh-featured" aria-labelledby="kh-featured-h">
+      <div class="container">
+        <h2 class="kh-h2" id="kh-featured-h">Featured article</h2>
+        <article class="kc kc--featured">
+          <div class="kc__meta">
+            <span class="kc__cat">{featured.category}</span>
+            <span class="kc__sep" aria-hidden="true">·</span>
+            <span class="kc__time">{featured.readingTime} read</span>
+          </div>
+          <h3 class="kc__title">
+            <a class="kc__link" href={`/en/insights/${featured.slug}/`}>{featured.title}</a>
+          </h3>
+          <p class="kc__desc">{featured.description}</p>
+          <div class="kc__footer">
+            <time class="kc__date" datetime={featured.updatedAt}>
+              Updated: {featured.updatedAt.split("-").reverse().join(".")}
+            </time>
+            <a class="kc__cta" href={`/en/insights/${featured.slug}/`}>Read article <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+  )}
+
+  <!-- 4. Categories (dark) -->
+  <section class="kh-categories" aria-labelledby="kh-cat-h">
+    <div class="container">
+      <h2 class="kh-h2 kh-h2--dark" id="kh-cat-h">
+        Choose the topic you want to tackle
+      </h2>
+      <p class="kh-section-intro kh-section-intro--dark">
+        Logistics rarely breaks down in one place. Problems with transport can stem from
+        planning, warehousing, inventory, suppliers, data or unclear accountabilities.
+        That's why we've divided the knowledge base into areas that most often affect
+        operational cost and quality.
+      </p>
+      <div class="kh-cat-grid">
+        {knowledgeCategoriesEN.map((cat) => (
+          <div class="kh-cat-card">
+            <h3 class="kh-cat-card__title">{cat.title}</h3>
+            <p class="kh-cat-card__desc">{cat.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. All articles -->
+  <section class="kh-articles" id="articles" aria-labelledby="kh-art-h">
+    <div class="container">
+      <div class="kh-articles-head">
+        <div>
+          <h2 class="kh-h2" id="kh-art-h">Latest articles</h2>
+          <p class="kh-section-intro">
+            Browse Vologis articles and guides. Each piece helps answer a specific question:
+            what to change, how to assess a problem, what to avoid and when it's worth
+            bringing in expert support.
+          </p>
+        </div>
+      </div>
+      {allArticles.length > 0 ? (
+        <div class="kh-art-grid">
+          {allArticles.map((art) => (
+            <article class="kc">
+              <div class="kc__meta">
+                <span class="kc__cat">{art.category}</span>
+                <span class="kc__sep" aria-hidden="true">·</span>
+                <span class="kc__time">{art.readingTime} read</span>
+              </div>
+              <h3 class="kc__title">
+                <a class="kc__link" href={`/en/insights/${art.slug}/`}>{art.title}</a>
+              </h3>
+              <p class="kc__desc">{art.description}</p>
+              <div class="kc__footer">
+                <time class="kc__date" datetime={art.updatedAt}>
+                  Updated: {art.updatedAt.split("-").reverse().join(".")}
+                </time>
+                <a class="kc__cta" href={`/en/insights/${art.slug}/`}>Read article <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
+          ))}
+        </div>
+      ) : (
+        <div class="kh-empty">
+          <h3 class="kh-empty__title">Articles coming soon</h3>
+          <p class="kh-empty__text">
+            We're building a library of practical material on logistics, transport,
+            warehousing and process optimisation. If you want to discuss a specific
+            operational challenge, contact Vologis.
+          </p>
+          <a href="/en/contact/" class="kh-btn kh-btn--dark">Contact Vologis</a>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- 6. Frequently covered topics -->
+  <section class="kh-topics" aria-labelledby="kh-topics-h">
+    <div class="container">
+      <h2 class="kh-h2" id="kh-topics-h">Frequently covered topics</h2>
+      <p class="kh-section-intro">
+        The highest-value topics are those that help you move quickly from a general problem
+        to a concrete decision. That's why Vologis Insights focuses on the areas that most
+        often affect costs, delivery times and customer service quality.
+      </p>
+      <ol class="kh-topics-list" role="list">
+        {topics.map((topic) => (
+          <li class="kh-topic-item">
+            <svg class="kh-topic-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m4 10.5 4 4 8-9" />
+            </svg>
+            <span>{topic}</span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- 7. From knowledge to action -->
+  <section class="kh-bridge" aria-labelledby="kh-bridge-h">
+    <div class="container">
+      <div class="kh-bridge-grid">
+        <div class="kh-bridge-copy">
+          <h2 class="kh-h2" id="kh-bridge-h">From knowledge to action</h2>
+          <p class="kh-body">
+            An article can help you name a problem and better understand the available solutions.
+            But when the decision involves costs, warehousing, transport, people, systems or
+            investment, knowledge alone is often not enough. That's when it's worth looking at
+            the company's logistics as a whole — through data, processes, accountabilities and
+            real operational constraints.
+          </p>
+          <p class="kh-body">
+            Vologis can help you move from diagnosis to action: from audit and recommendations
+            to transport organisation, forwarding support and bringing logistics processes into order.
+          </p>
+          <div class="kh-bridge-links">
+            <a href="/en/services/operational-consulting/" class="kh-link">
+              Operational consulting &amp; audit <span aria-hidden="true">→</span>
+            </a>
+            <a href="/en/services/logistics-brokerage/" class="kh-link">
+              Logistics brokerage <span aria-hidden="true">→</span>
+            </a>
+            <a href="/en/services/greenfield-projects/" class="kh-link">
+              Greenfield projects <span aria-hidden="true">→</span>
+            </a>
+            <a href="/en/services/interim-management/" class="kh-link">
+              Interim Management <span aria-hidden="true">→</span>
+            </a>
+            <a href="/en/services/drone-services/" class="kh-link">
+              Drone services <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+        <aside class="kh-cta-box">
+          <h3 class="kh-cta-box__title">Have a specific logistics challenge?</h3>
+          <p class="kh-cta-box__text">
+            Describe what's happening in your company: rising transport costs, delays,
+            an overloaded warehouse, missing data, carrier issues or a planned operational
+            change. We'll help identify where to start.
+          </p>
+          <a href="#" class="kh-btn kh-btn--accent" data-calendly="popup">
+            Talk to Vologis
+          </a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. FAQ -->
+  <section class="kh-faq" aria-labelledby="kh-faq-h">
+    <div class="container">
+      <h2 class="kh-h2 kh-h2--center" id="kh-faq-h">
+        FAQ — Vologis Insights
+      </h2>
+      <FaqAccordion items={faqs} />
+    </div>
+  </section>
+
+  <!-- 9. End CTA -->
+  <section class="kh-endcta" aria-labelledby="kh-endcta-h">
+    <div class="container">
+      <div class="kh-endcta-inner">
+        <h2 class="kh-endcta__h2" id="kh-endcta-h">
+          Questions about your logistics?
+        </h2>
+        <p class="kh-endcta__text">
+          If you're reading articles because a specific problem has emerged in your
+          company — with transport, warehousing, costs or processes — it's worth discussing
+          it directly. Vologis can help identify whether you need an audit, transport support,
+          consulting or order brought to a specific logistics area.
+        </p>
+        <div class="kh-endcta__actions">
+          <a href="/en/contact/" class="kh-btn kh-btn--accent">
+            Contact Vologis <span aria-hidden="true">→</span>
+          </a>
+          <a href="/en/services/" class="kh-btn kh-btn--ghost-light">
+            See our services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Shared */
+  .kh-h2 { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; letter-spacing: -0.025em; line-height: 1.15; color: var(--color-ink); margin-bottom: var(--space-lg); }
+  .kh-h2--dark { color: var(--color-ink-on-dark); }
+  .kh-h2--center { text-align: center; }
+  .kh-body { font-size: var(--text-base); color: var(--color-muted); line-height: 1.75; margin-bottom: var(--space-md); }
+  .kh-section-intro { font-size: var(--text-base); color: var(--color-muted); line-height: 1.65; max-width: 62ch; margin-bottom: var(--space-xl); }
+  .kh-section-intro--dark { color: var(--color-muted-on-dark); }
+
+  .kh-btn { display: inline-flex; align-items: center; gap: var(--space-xs); font-family: var(--font-display); font-size: var(--text-base); font-weight: 600; padding: var(--space-sm) var(--space-xl); border-radius: var(--radius-pill); text-decoration: none; cursor: pointer; border: 1px solid transparent; white-space: nowrap; transition: background var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out), color var(--dur-micro) var(--ease-out); }
+  .kh-btn--dark { background: var(--color-accent); color: #fff; }
+  .kh-btn--dark:hover { background: var(--color-accent-hover); }
+  .kh-btn--ghost { background: var(--color-glass-dark); color: var(--color-ink-on-dark); border-color: var(--color-glass-border); }
+  .kh-btn--ghost:hover { background: oklch(100% 0 0 / 0.12); color: var(--color-ink-on-dark); border-color: var(--color-secondary); }
+  .kh-btn--accent { background: var(--color-accent); color: #fff; }
+  .kh-btn--accent:hover { background: var(--color-accent-hover); }
+  .kh-btn--ghost-light { background: oklch(100% 0 0 / 0.10); color: var(--color-ink-on-dark); border-color: oklch(100% 0 0 / 0.35); }
+  .kh-btn--ghost-light:hover { background: oklch(100% 0 0 / 0.18); }
+
+  /* 1. Hero */
+  .kh-hero { background: var(--color-paper-dark); padding-top: calc(4.25rem + 3px + var(--space-2xl)); padding-bottom: var(--space-2xl); }
+  .kh-bc { margin-bottom: var(--space-xl); }
+  .kh-bc__list { display: flex; align-items: center; gap: var(--space-2xs); list-style: none; flex-wrap: wrap; font-size: var(--text-sm); color: var(--color-muted-on-dark); }
+  .kh-bc__list a { color: var(--color-muted-on-dark); text-decoration: none; transition: color var(--dur-micro) var(--ease-out); }
+  .kh-bc__list a:hover { color: var(--color-ink-on-dark); }
+  .kh-bc__list [aria-current="page"] { color: var(--color-ink-on-dark); font-weight: 500; }
+  .kh-bc__sep { color: var(--color-muted-on-dark); opacity: 0.5; user-select: none; }
+  .kh-h1 { font-size: var(--text-display-s); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; color: var(--color-ink-on-dark); margin-bottom: var(--space-lg); max-width: 22ch; }
+  .kh-lead { font-size: var(--text-md); color: var(--color-muted-on-dark); line-height: 1.65; max-width: 60ch; margin-bottom: var(--space-xl); }
+  .kh-hero-actions { display: flex; gap: var(--space-md); flex-wrap: wrap; margin-bottom: var(--space-lg); }
+  .kh-hero-note { font-size: var(--text-sm); color: var(--color-muted-on-dark); max-width: 64ch; line-height: 1.65; opacity: 0.8; }
+
+  /* 2. Intro */
+  .kh-intro { padding-block: var(--space-3xl); background: var(--color-paper); }
+  .kh-intro-grid { display: grid; grid-template-columns: 1fr 20rem; gap: var(--space-3xl); align-items: start; }
+  .kh-brief { border: 1px solid var(--color-blue); border-radius: var(--radius-lg); background: var(--color-blue-tint); padding: var(--space-lg) var(--space-xl); position: sticky; top: calc(4.25rem + 3px + var(--space-lg)); }
+  .kh-brief__label { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-secondary); margin-bottom: var(--space-md); }
+  .kh-brief__list { list-style: none; display: flex; flex-direction: column; gap: var(--space-md); }
+  .kh-brief__list li { font-size: var(--text-sm); color: var(--color-ink); line-height: 1.6; }
+  .kh-brief__key { font-weight: 700; display: block; margin-bottom: 2px; color: var(--color-ink); }
+
+  /* 3. Featured */
+  .kh-featured { padding-block: var(--space-3xl); background: var(--color-paper-2); }
+
+  /* Inline article card */
+  .kc { display: flex; flex-direction: column; gap: var(--space-md); border: 1px solid var(--color-rule); border-radius: var(--radius-lg); padding: var(--space-xl); background: var(--color-paper); transition: border-color var(--dur-short) var(--ease-out), box-shadow var(--dur-short) var(--ease-out); position: relative; }
+  .kc:hover { border-color: var(--color-blue); box-shadow: var(--shadow-md); }
+  .kc--featured { border-left: 4px solid var(--color-secondary); box-shadow: var(--shadow-sm); }
+  .kc__meta { display: flex; align-items: center; gap: var(--space-xs); flex-wrap: wrap; }
+  .kc__cat { display: inline-flex; align-items: center; padding: 2px var(--space-sm); border-radius: var(--radius-pill); background: var(--color-blue-tint); color: var(--color-ink); font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+  .kc__sep { color: var(--color-neutral); user-select: none; }
+  .kc__time { font-size: var(--text-sm); color: var(--color-muted); }
+  .kc__title { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; color: var(--color-ink); }
+  .kc--featured .kc__title { font-size: var(--text-xl); }
+  .kc:not(.kc--featured) .kc__title { font-size: var(--text-md); }
+  .kc__link { color: inherit; text-decoration: none; transition: color var(--dur-micro) var(--ease-out); }
+  .kc__link::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+  .kc:hover .kc__link { color: var(--color-secondary); }
+  .kc__desc { font-size: var(--text-base); color: var(--color-muted); line-height: 1.7; flex: 1; }
+  .kc__footer { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); flex-wrap: wrap; padding-top: var(--space-md); border-top: 1px solid var(--color-rule); margin-top: auto; }
+  .kc__date { font-family: var(--font-mono); font-size: var(--text-sm); color: var(--color-neutral); }
+  .kc__cta { font-family: var(--font-display); font-size: var(--text-sm); font-weight: 600; color: var(--color-secondary); text-decoration: none; position: relative; z-index: 1; transition: color var(--dur-micro) var(--ease-out); }
+  .kc:hover .kc__cta { color: var(--color-ink); }
+  .kc__cta span { display: inline-block; transition: transform var(--dur-short) var(--ease-out); }
+  .kc:hover .kc__cta span { transform: translateX(4px); }
+
+  /* 4. Categories */
+  .kh-categories { padding-block: var(--space-3xl); background: var(--color-paper-dark); }
+  .kh-cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--space-md); }
+  .kh-cat-card { border: 1px solid var(--color-glass-border); border-radius: var(--radius-md); padding: var(--space-lg); background: var(--color-glass-dark); transition: border-color var(--dur-micro) var(--ease-out), background var(--dur-micro) var(--ease-out); }
+  .kh-cat-card:hover { border-color: var(--color-blue-on-dark); background: oklch(100% 0 0 / 0.08); }
+  .kh-cat-card__title { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; color: var(--color-ink-on-dark); margin-bottom: var(--space-sm); }
+  .kh-cat-card__desc { font-size: var(--text-sm); color: var(--color-muted-on-dark); line-height: 1.6; }
+
+  /* 5. Articles */
+  .kh-articles { padding-block: var(--space-3xl); background: var(--color-paper); }
+  .kh-articles-head { margin-bottom: var(--space-xl); }
+  .kh-art-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: var(--space-lg); }
+  .kh-empty { border: 1px dashed var(--color-rule); border-radius: var(--radius-lg); padding: var(--space-3xl); text-align: center; display: flex; flex-direction: column; align-items: center; gap: var(--space-lg); }
+  .kh-empty__title { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 700; color: var(--color-ink); }
+  .kh-empty__text { font-size: var(--text-base); color: var(--color-muted); max-width: 48ch; line-height: 1.65; }
+
+  /* 6. Topics */
+  .kh-topics { padding-block: var(--space-3xl); background: var(--color-paper-2); }
+  .kh-topics-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: var(--space-md); }
+  .kh-topic-item { display: flex; align-items: flex-start; gap: var(--space-sm); font-size: var(--text-base); color: var(--color-ink); line-height: 1.5; padding: var(--space-md); border: 1px solid var(--color-rule); border-radius: var(--radius-md); background: var(--color-paper); }
+  .kh-topic-icon { flex-shrink: 0; width: 1.15rem; height: 1.15rem; margin-top: 0.15rem; color: var(--color-blue); }
+
+  /* 7. Bridge */
+  .kh-bridge { padding-block: var(--space-3xl); background: var(--color-paper); }
+  .kh-bridge-grid { display: grid; grid-template-columns: 1fr 22rem; gap: var(--space-3xl); align-items: start; }
+  .kh-bridge-links { display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-md); }
+  .kh-link { font-family: var(--font-display); font-size: var(--text-base); font-weight: 600; color: var(--color-secondary); text-decoration: none; transition: color var(--dur-micro) var(--ease-out); }
+  .kh-link:hover { color: var(--color-ink); }
+  .kh-link span { display: inline-block; transition: transform var(--dur-short) var(--ease-out); }
+  .kh-link:hover span { transform: translateX(4px); }
+  .kh-cta-box { border: 1px solid var(--color-rule); border-radius: var(--radius-lg); padding: var(--space-xl); background: var(--color-paper-dark); display: flex; flex-direction: column; gap: var(--space-lg); }
+  .kh-cta-box__title { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 700; color: var(--color-ink-on-dark); letter-spacing: -0.02em; line-height: 1.2; }
+  .kh-cta-box__text { font-size: var(--text-sm); color: var(--color-muted-on-dark); line-height: 1.65; }
+
+  /* 8. FAQ */
+  .kh-faq { padding-block: var(--space-3xl); background: var(--color-paper-2); }
+
+  /* 9. End CTA */
+  .kh-endcta { padding-block: var(--space-3xl); background: var(--gradient-cta); }
+  .kh-endcta-inner { max-width: 52rem; margin-inline: auto; text-align: center; }
+  .kh-endcta__h2 { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; letter-spacing: -0.025em; line-height: 1.2; color: var(--color-ink-on-dark); margin-bottom: var(--space-md); }
+  .kh-endcta__text { font-size: var(--text-base); color: var(--color-muted-on-dark); line-height: 1.7; margin-bottom: var(--space-xl); }
+  .kh-endcta__actions { display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap; }
+
+  /* Responsive */
+  @media (max-width: 64rem) { .kh-intro-grid { grid-template-columns: 1fr; } .kh-brief { position: static; } .kh-bridge-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 48rem) { .kh-h1 { font-size: clamp(1.75rem, 5vw + 0.5rem, 2.5rem); } .kh-lead { font-size: var(--text-base); } .kh-hero-actions { flex-direction: column; } .kh-btn { width: 100%; justify-content: center; } .kh-topics-list { grid-template-columns: 1fr; } .kh-art-grid { grid-template-columns: 1fr; } .kh-cat-grid { grid-template-columns: 1fr; } .kh-endcta__actions { flex-direction: column; align-items: stretch; } }
+</style>

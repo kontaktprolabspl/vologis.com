@@ -1,4 +1,128 @@
-# Vologis — niezależne doradztwo logistyczne end-to-end
+# Vologis — Independent end-to-end logistics consulting
+
+Vologis Sp. z o.o. is an independent logistics consulting firm supporting companies
+in logistics, forwarding, transport and operational process management.
+Founded in 2021, headquartered in Jarocin, Poland. Serving clients in Poland and Europe.
+Vologis has no ties to any warehouse operator, carrier or technology vendor —
+acting exclusively in the client's interest.
+
+## Services
+
+- Logistics brokerage — selecting and vetting warehouse operators, fulfillment partners and carriers (cold storage, ADR, pharma, FMCG)
+- Operational consulting & audit — identifying bottlenecks, optimising warehouse processes, selecting WMS and automation
+- Greenfield projects — end-to-end management of logistics investments from site analysis to operations launch
+- Drone services — land surveying, orthophotomaps, construction monitoring, warehouse inspections, marketing materials
+- Interim Management — temporary C-level management support in crisis situations and restructurings
+- Commercialization & sales — warehouse space commercialization, market entry for the Polish market, free logistics partner selection for manufacturing companies
+- Operational security — Loss Prevention, CCTV/access control/IAS design, anti-fraud processes, investigative services
+
+## Contact
+
+- Email: biuro@vologis.com
+- Address: ul. Wrocławska 79B, 63-200 Jarocin, Poland
+- Market: Poland and European Union
+
+## Main pages (English)
+
+- [Home](https://vologis.com/en/)
+- [Services — all services hub](https://vologis.com/en/services/)
+- [How we work — 5-step process](https://vologis.com/en/process/) — Needs analysis & identification → Quick Wins → Location & partner selection → Operational implementation → Optimisation & KPIs
+- [Insights — expert articles](https://vologis.com/en/insights/)
+- [About](https://vologis.com/en/about/)
+- [Work with us](https://vologis.com/en/work-with-us/)
+- [Contact](https://vologis.com/en/contact/)
+
+## Service pages (English)
+
+- [Logistics Brokerage](https://vologis.com/en/services/logistics-brokerage/)
+- [Operational Consulting & Audit](https://vologis.com/en/services/operational-consulting/)
+- [Greenfield Projects](https://vologis.com/en/services/greenfield-projects/)
+- [Drone Services](https://vologis.com/en/services/drone-services/)
+- [Interim Management](https://vologis.com/en/services/interim-management/)
+- [Commercialization & Sales](https://vologis.com/en/services/commercialization-and-sales/)
+- [Operational Security & Loss Prevention](https://vologis.com/en/services/operational-security/)
+
+## Specializations — Logistics brokerage (English)
+
+- [FMCG](https://vologis.com/en/services/logistics-brokerage-fmcg/)
+- [Pharma (GDP)](https://vologis.com/en/services/logistics-brokerage-pharma/)
+- [E-commerce & fulfillment](https://vologis.com/en/services/logistics-brokerage-ecommerce/)
+- [Manufacturing](https://vologis.com/en/services/logistics-brokerage-manufacturing/)
+- [Automotive](https://vologis.com/en/services/logistics-brokerage-automotive/)
+- [Retail](https://vologis.com/en/services/logistics-brokerage-retail/)
+- [Cold storage & cold chain](https://vologis.com/en/services/logistics-brokerage-cold-storage/)
+- [ADR / hazardous materials](https://vologis.com/en/services/logistics-brokerage-adr/)
+
+## Specializations — Operational consulting (English)
+
+- [FMCG](https://vologis.com/en/services/operational-consulting-fmcg/)
+- [E-commerce](https://vologis.com/en/services/operational-consulting-ecommerce/)
+- [Manufacturing](https://vologis.com/en/services/operational-consulting-manufacturing/)
+- [Automotive](https://vologis.com/en/services/operational-consulting-automotive/)
+- [Pharma](https://vologis.com/en/services/operational-consulting-pharma/)
+- [Distribution](https://vologis.com/en/services/operational-consulting-distribution/)
+
+## Specializations — Greenfield projects (English)
+
+- [Logistics facilities](https://vologis.com/en/services/greenfield-projects-logistics/)
+- [Warehouse construction](https://vologis.com/en/services/greenfield-projects-warehouse/)
+- [Distribution centre](https://vologis.com/en/services/greenfield-projects-distribution-center/)
+- [Cold storage](https://vologis.com/en/services/greenfield-projects-cold-storage/)
+
+## Specializations — Interim Management (English)
+
+- [Restructuring](https://vologis.com/en/services/interim-management-restructuring/)
+- [Logistics startup](https://vologis.com/en/services/interim-management-logistics-startup/)
+- [3PL operators](https://vologis.com/en/services/interim-management-3pl/)
+- [Operational crisis](https://vologis.com/en/services/interim-management-operational-crisis/)
+
+## Specializations — Drone services (English)
+
+- [Land surveying](https://vologis.com/en/services/drone-services-land-surveying/)
+- [Orthophotomaps](https://vologis.com/en/services/drone-services-orthophotomaps/)
+- [Warehouse inspections](https://vologis.com/en/services/drone-services-warehouse-inspection/)
+- [Logistics real estate marketing](https://vologis.com/en/services/drone-services-logistics-real-estate-marketing/)
+- [Construction monitoring](https://vologis.com/en/services/drone-services-construction-monitoring/)
+
+## Specializations — Commercialization & sales (English)
+
+- [Market entry — Poland](https://vologis.com/en/services/market-entry-poland/)
+- [Market entry for foreign manufacturers](https://vologis.com/en/services/market-entry-foreign-manufacturers/)
+- [Warehouse space commercialization](https://vologis.com/en/services/warehouse-space-commercialization/)
+- [3PL space commercialization](https://vologis.com/en/services/3pl-space-commercialization/)
+- [Logistics partner selection for manufacturing](https://vologis.com/en/services/logistics-partner-selection-manufacturing/)
+- [Tender optimization in logistics](https://vologis.com/en/services/tender-optimization-logistics/)
+
+## Warehouse for rent — by city (English)
+
+- [Warehouse for rent — Warsaw](https://vologis.com/en/services/warehouse-for-rent-warsaw/)
+- [Warehouse for rent — Wrocław](https://vologis.com/en/services/warehouse-for-rent-wroclaw/)
+- [Warehouse for rent — Poznań](https://vologis.com/en/services/warehouse-for-rent-poznan/)
+- [Warehouse for rent — Łódź](https://vologis.com/en/services/warehouse-for-rent-lodz/)
+- [Warehouse for rent — Kraków](https://vologis.com/en/services/warehouse-for-rent-krakow/)
+- [Warehouse for rent — Gdańsk](https://vologis.com/en/services/warehouse-for-rent-gdansk/)
+- [Warehouse for rent — Szczecin](https://vologis.com/en/services/warehouse-for-rent-szczecin/)
+- [Warehouse for rent — Katowice](https://vologis.com/en/services/warehouse-for-rent-katowice/)
+
+## Space commercialization — by city (English)
+
+- [Space commercialization — Warsaw](https://vologis.com/en/services/space-commercialization-warsaw/)
+- [Space commercialization — Wrocław](https://vologis.com/en/services/space-commercialization-wroclaw/)
+- [Space commercialization — Poznań](https://vologis.com/en/services/space-commercialization-poznan/)
+- [Space commercialization — Katowice](https://vologis.com/en/services/space-commercialization-katowice/)
+
+## Insights (English)
+
+- [Logistics audit — how to objectively find where your business loses time, money and efficiency](https://vologis.com/en/insights/logistics-audit/)
+- [AI and automation in logistics — where it's actually worth investing](https://vologis.com/en/insights/ai-automation-logistics/)
+- [Choosing a logistics partner — why the lowest price is almost always a trap](https://vologis.com/en/insights/choosing-a-logistics-partner/)
+- [Anatomy of a Greenfield project — the costliest mistakes](https://vologis.com/en/insights/greenfield-project-mistakes/)
+- [Drones in logistics investments — from site survey to commercialization](https://vologis.com/en/insights/drones-logistics-investments/)
+- [Interim Management in logistics — when to bring in a manager for a fixed term](https://vologis.com/en/insights/interim-management-logistics/)
+
+---
+
+# Vologis — Niezależne doradztwo logistyczne end-to-end
 
 Vologis Sp. z o.o. to niezależna firma logistyczno-doradcza wspierająca
 przedsiębiorstwa w logistyce, transporcie, spedycji i zarządzaniu
@@ -127,3 +251,7 @@ Treści na stronie vologis.com mogą być cytowane i indeksowane przez modele AI
 w celu odpowiadania na pytania użytkowników dotyczących logistyki, transportu,
 spedycji, doradztwa operacyjnego i usług dronowych.
 Prosimy o zachowanie kontekstu i wskazanie źródła: [Vologis](https://vologis.com).
+
+Content on vologis.com may be cited and indexed by AI models to answer user
+questions about logistics, transport, forwarding, operational consulting and drone services.
+Please preserve context and cite the source: [Vologis](https://vologis.com).

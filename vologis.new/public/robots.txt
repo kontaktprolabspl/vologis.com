@@ -1,5 +1,33 @@
 User-agent: *
 Allow: /
 
+# AI crawlers — explicitly allowed for GEO/AEO visibility
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
 # Sitemap
-Sitemap: https://vologis.com/sitemap.xml
+Sitemap: https://vologis.com/sitemap-index.xml
+
+# llms.txt — AI-friendly site description
+# https://vologis.com/llms.txt

@@ -12,22 +12,20 @@ interface Props {
   description: string;
   canonical?: string;
   ogImage?: string;
-  /** Optional hero background image path, e.g. "/knowledge/art-v1.png" */
   heroImage?: string;
-  /** Alt text for the hero image (required when heroImage is set) */
   heroImageAlt?: string;
   category?: string;
   readTime?: string;
   updatedAt?: string;
-  /** ISO 8601 date string for Article schema, e.g. "2025-01-15" */
   datePublished?: string;
-  /** ISO 8601 date string for Article schema; defaults to datePublished */
   dateModified?: string;
   h1: string;
   lead: string;
   toc?: TocItem[];
   ctaPrimaryLabel?: string;
   ctaSecondary?: { label: string; href: string };
+  hreflangEN?: string;
+  hreflangPL?: string;
 }
 
 const {
@@ -37,7 +35,7 @@ const {
   ogImage = "/og/og-wiedza.png",
   heroImage,
   heroImageAlt = "",
-  category = "Wiedza",
+  category,
   readTime,
   updatedAt,
   datePublished,
@@ -45,9 +43,15 @@ const {
   h1,
   lead,
   toc = [],
-  ctaPrimaryLabel = "Umów konsultację",
+  ctaPrimaryLabel,
   ctaSecondary,
+  hreflangEN,
+  hreflangPL,
 } = Astro.props;
+
+const isEN = Astro.url.pathname.startsWith("/en");
+const resolvedCategory    = category        ?? (isEN ? "Insights" : "Wiedza");
+const resolvedCtaLabel    = ctaPrimaryLabel ?? (isEN ? "Book a consultation" : "Umów konsultację");
 
 const pageUrl = canonical ?? `https://vologis.com${Astro.url.pathname}`;
 
@@ -58,7 +62,7 @@ const schemaArticle = datePublished
       url: pageUrl,
       datePublished,
       dateModified,
-      inLanguage: "pl-PL",
+      inLanguage: isEN ? "en" : "pl-PL",
       image: heroImage ?? ogImage,
     })
   : null;
@@ -67,14 +71,14 @@ const schemaBreadcrumb = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://vologis.com/pl/" },
-    { "@type": "ListItem", "position": 2, "name": "Wiedza", "item": "https://vologis.com/pl/wiedza" },
+    { "@type": "ListItem", "position": 1, "name": isEN ? "Home" : "Strona główna", "item": isEN ? "https://vologis.com/en/" : "https://vologis.com/pl/" },
+    { "@type": "ListItem", "position": 2, "name": isEN ? "Insights" : "Wiedza",    "item": isEN ? "https://vologis.com/en/insights/" : "https://vologis.com/pl/wiedza/" },
     { "@type": "ListItem", "position": 3, "name": h1, "item": pageUrl },
   ],
 };
 ---
 
-<BaseLayout {title} {description} {canonical} {ogImage} preloadImage={heroImage}>
+<BaseLayout {title} {description} {canonical} {ogImage} preloadImage={heroImage} {hreflangEN} {hreflangPL}>
   <script type="application/ld+json" set:html={JSON.stringify(schemaBreadcrumb)} />
   {schemaArticle && <script type="application/ld+json" set:html={JSON.stringify(schemaArticle)} />}
 
@@ -88,26 +92,26 @@ const schemaBreadcrumb = {
     <div class="container">
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <ol class="bc-list" role="list">
-          <li><a href="/pl/">Strona główna</a></li>
+          <li><a href={isEN ? "/en/" : "/pl/"}>{isEN ? "Home" : "Strona główna"}</a></li>
           <li class="bc-sep" aria-hidden="true">›</li>
-          <li><a href="/pl/wiedza">Wiedza</a></li>
+          <li><a href={isEN ? "/en/insights/" : "/pl/wiedza/"}>{isEN ? "Insights" : "Wiedza"}</a></li>
           <li class="bc-sep" aria-hidden="true">›</li>
-          <li aria-current="page">{category}</li>
+          <li aria-current="page">{resolvedCategory}</li>
         </ol>
       </nav>
 
       <div class="art-meta">
-        <span class="art-cat">{category}</span>
+        <span class="art-cat">{resolvedCategory}</span>
         {readTime && (
           <>
             <span class="art-sep" aria-hidden="true">·</span>
-            <span class="art-time">{readTime} czytania</span>
+            <span class="art-time">{readTime}{isEN ? " read" : " czytania"}</span>
           </>
         )}
         {updatedAt && (
           <>
             <span class="art-sep" aria-hidden="true">·</span>
-            <time class="art-date" datetime={dateModified ?? datePublished ?? updatedAt}>Aktualizacja: {updatedAt}</time>
+            <time class="art-date" datetime={dateModified ?? datePublished ?? updatedAt}>{isEN ? "Updated: " : "Aktualizacja: "}{updatedAt}</time>
           </>
         )}
       </div>
@@ -121,7 +125,7 @@ const schemaBreadcrumb = {
           class="kbtn kbtn--dark"
           data-calendly="popup"
         >
-          {ctaPrimaryLabel}
+          {resolvedCtaLabel}
         </a>
         {ctaSecondary && (
           <a href={ctaSecondary.href} class="kbtn kbtn--ghost">
@@ -139,10 +143,10 @@ const schemaBreadcrumb = {
     </article>
 
     {toc.length > 0 && (
-      <aside class="art-toc" id="art-toc" aria-label="Spis treści">
+      <aside class="art-toc" id="art-toc" aria-label={isEN ? "Table of contents" : "Spis treści"}>
         <div class="art-toc-box">
-          <p class="art-toc-label">Spis treści</p>
-          <nav aria-label="Nawigacja po artykule">
+          <p class="art-toc-label">{isEN ? "Table of contents" : "Spis treści"}</p>
+          <nav aria-label={isEN ? "Article navigation" : "Nawigacja po artykule"}>
             <ol class="art-toc-list" role="list">
               {toc.map((item) => (
                 <li>

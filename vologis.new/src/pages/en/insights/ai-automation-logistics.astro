@@ -1,0 +1,248 @@
+---
+import KnowledgeArticleLayout from "../../../layouts/KnowledgeArticleLayout.astro";
+import FaqAccordion from "../../../components/FaqAccordion.astro";
+import CalloutBox from "../../../components/CalloutBox.astro";
+import { articleSchema, speakableSchema } from "../../../utils/schema";
+
+const toc = [
+  { id: "automation-vs-ai",    label: "Automation vs AI — the key difference" },
+  { id: "where-ai-delivers",   label: "Where AI genuinely delivers ROI" },
+  { id: "physical-automation", label: "Physical automation — when it makes sense" },
+  { id: "common-mistakes",     label: "Most common implementation mistakes" },
+  { id: "where-to-start",      label: "Where to start — practical sequence" },
+  { id: "faq",                 label: "FAQ" },
+];
+
+const useCases = [
+  { title: "Demand forecasting and inventory planning", effect: "15–30% reduction in surpluses and stockouts", scale: "Companies with 500+ active SKUs and 12+ months of sales history.", text: "ML algorithms analyse sales history, seasonality, trends, and external signals to forecast demand with accuracy unavailable to spreadsheets. The result: less capital locked up in inventory and fewer stockouts." },
+  { title: "Transport route and schedule optimisation",  effect: "8–20% reduction in freight costs",           scale: "Own or contracted fleets with dozens of daily runs minimum.", text: "Route optimisation algorithms account for time windows, capacities, road constraints, and real-time data. Most cost-effective with high numbers of delivery points and variable volumes." },
+  { title: "Dynamic warehouse slotting",                 effect: "10–25% reduction in picking path length",    scale: "Warehouses with 1,000+ SKUs and varied turnover profiles.", text: "The system dynamically assigns product locations based on current rotation patterns, orders, and seasonality. Items often picked together end up close to each other — pickers walk shorter routes." },
+  { title: "Intelligent operational and fleet data analytics", effect: "Anomaly detection and predictive maintenance", scale: "Companies with vehicle fleets or production machinery.", text: "AI analyses sensor data, GPS, and management systems to detect patterns that predict failures and optimise service schedules. Reduces unplanned downtime, which is far costlier than scheduled maintenance." },
+  { title: "Automated document processing (OCR and classification)", effect: "Elimination of manual document handling", scale: "Companies processing hundreds of documents daily — invoices, CMRs, delivery notes.", text: "AI models read, classify, and structure data from paper and PDF documents. Eliminates manual re-entry, accelerates data import to ERP/WMS, and reduces human error." },
+];
+
+const automationTypes = [
+  "Conveyors and sorters — high-throughput distribution centres, e-commerce",
+  "AutoStore / shuttle systems — dense storage, limited space",
+  "AGVs and AMRs — horizontal transport, flexible routing",
+  "Pick robots — repetitive tasks, stable SKU profiles",
+  "Goods-to-Person (GTP) systems — reduced operator walking",
+];
+
+const automationWarnings = [
+  "ROI on warehouse automation typically only materialises above 500–1,000 picks/hour volume.",
+  "Below that threshold, the investment becomes dead capital — equipment operating below designed capacity.",
+  "High seasonality without a stable volume base distorts the return calculation.",
+  "Excessive SKU diversity, unstable pack dimensions, or irregular orders reduce automation effectiveness.",
+];
+
+const commonMistakes = [
+  "Investing in technology before cleaning up processes. AI doesn't fix a broken process — it accelerates the chaos.",
+  "No clean, structured data. ML models need good-quality historical data. Garbage in, garbage predictions out.",
+  "Oversizing automation relative to real volume. Installing a sorter for volumes below the breakeven threshold is the most expensive way possible to achieve no ROI.",
+  "Buying a solution for the hype, not the problem. If you don't know exactly what problem you're solving and how you'll measure success — don't buy.",
+  "No internal competence to maintain the system after go-live. The vendor implements and leaves. Who in your company will manage the algorithm — and what happens when the data breaks?",
+];
+
+const startSteps = [
+  { label: "Audit and process clean-up",                  text: "AI and automation amplify what works — they don't fix disorder. Identify bottlenecks and clean up processes before looking for technological solutions." },
+  { label: "Structure and validate your data",            text: "Check what data you have, in what quality, and over what time period. Demand forecasting without a year of sales history won't work. Dynamic slotting without rotation data is blind." },
+  { label: "Identify the specific problem to solve",      text: "Define a measurable problem: excessive transport costs, long picking times, too much inventory in specific categories. The technology should answer a concrete business question." },
+  { label: "Pilot on a selected area",                    text: "Don't roll out across the whole company at once. Pick one warehouse, one SKU category, one distribution region. A pilot reveals real ROI and problems before you commit a large budget." },
+  { label: "Scale after confirming ROI",                  text: "After the pilot you have hard data — what works, what needs adjustment, and what the actual return is. Only then decide on full deployment or expansion to additional areas." },
+];
+
+const faqs = [
+  { q: "Does warehouse automation make sense for a small company?", a: "Rarely. Warehouse automation pays off at the right volume and repeatability — typically above 500–1,000 picks per hour. A small company with low volume will pay more for installation and maintenance than it saves. Exceptions include niche solutions like small shuttle systems or AMRs, which have a lower entry threshold. Always start by calculating ROI, not browsing the vendor catalogue." },
+  { q: "How much does AI implementation in logistics cost?", a: "The range is enormous. Off-the-shelf demand forecasting modules in WMS/ERP systems can be activated for subscription fees starting in the tens of thousands per month. Custom ML systems with integration and data preparation are projects from PLN 200–500k upward. The key question isn't how much the technology costs — it's what specific problem it solves and how you'll measure the return." },
+  { q: "Will AI replace warehouse workers?", a: "In a 3–5 year horizon, for most companies — no. AI and automation take over repetitive, physical tasks with a fixed character, but human flexibility with variable orders, non-standard situations, and exception handling is difficult to automate. The realistic scenario is a change in work structure: less manual picking, more oversight of systems and exception management. Companies that implement automation typically don't lay people off — they redeploy them to tasks machines can't do." },
+  { q: "Where do you start with logistics automation?", a: "With a process and data audit — not a review of vendor offers. Automation that doesn't solve a specific, measured problem rarely pays off. Identify one area where the problem is well-defined, data is available, and ROI can be calculated. Run a pilot. Only after confirming results decide on broader deployment." },
+  { q: "Do I need a new WMS to implement AI?", a: "Not necessarily. Many AI solutions work as an analytics layer on top of an existing WMS — pulling data, processing it, and returning recommendations or decisions to the system. A new WMS is needed when the current one can't supply the required data or its architecture prevents integration. Often the better sequence is: clean up processes first, then assess whether the current WMS is sufficient, and only then decide on replacement or expansion." },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })),
+};
+
+const schemaArticle = articleSchema({
+  headline: "AI and Automation in Logistics — Where It's Actually Worth Investing, and Where It's Just Hype",
+  description: "Artificial intelligence and automation in logistics: real-world applications, where they deliver ROI, and where they're just hype. A practical guide for companies considering investment.",
+  url: "/en/insights/ai-automation-logistics/",
+  datePublished: "2026-06-18",
+  dateModified: "2026-06-18",
+  inLanguage: "en",
+});
+
+const schemaSpeakable = speakableSchema("/en/insights/ai-automation-logistics/", [
+  "[data-speakable='headline']",
+  "[data-speakable='summary']",
+]);
+---
+
+<KnowledgeArticleLayout
+  title="AI and Automation in Logistics — Where It's Actually Worth Investing | Vologis"
+  description="Artificial intelligence and automation in logistics: real-world applications, where they deliver ROI, and where they're just hype. A practical guide for companies considering investment."
+  canonical="https://vologis.com/en/insights/ai-automation-logistics/"
+  heroImage="/knowledge/ai-automatyzacja-logistyka.webp"
+  category="Systems & data"
+  readTime="9–11 min"
+  updatedAt="June 18, 2026"
+  h1="AI and Automation in Logistics — Where It's Actually Worth Investing, and Where It's Just Hype"
+  lead="Automation and artificial intelligence are the most-repeated buzzwords in logistics today — and also the most common source of wasted budgets. The problem isn't the technology. It's deploying it without understanding which problem it's supposed to solve. This article shows where AI and automation genuinely deliver ROI — and where companies most often burn money on solutions they don't need."
+  toc={toc}
+  ctaPrimaryLabel="Talk about a readiness audit"
+  ctaSecondary={{ label: "See the most common mistakes", href: "#common-mistakes" }}
+  hreflangPL="/pl/wiedza/ai-automatyzacja-logistyka/"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaArticle)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaSpeakable)} />
+
+  <section class="s" id="automation-vs-ai" aria-labelledby="h-automation-vs-ai">
+    <h2 class="h2" id="h-automation-vs-ai">Automation vs AI in logistics — what's the actual difference?</h2>
+    <p class="body">The two terms are often used interchangeably — and that's the source of most bad purchasing decisions. Automation and artificial intelligence are two different things, solving different problems.</p>
+    <p class="body"><strong>Automation</strong> means performing repetitive tasks according to predefined rules. A conveyor moves a parcel from A to B. A sorter routes it down the correct line based on a barcode. An AGV carries a pallet along a programmed route. The system makes no decisions — it executes instructions. When conditions change, automation is helpless.</p>
+    <p class="body"><strong>Artificial intelligence</strong> means making decisions based on data. A demand forecasting algorithm analyses sales history, seasonality, and external signals to predict what to order and when. A dynamic slotting system decides where to place a product in the warehouse to shorten picking paths. A route optimiser calculates the best delivery plan for 200 stops simultaneously. AI works under conditions of variability — exactly what rules can't handle.</p>
+    <div class="three-q">
+      <p class="three-q__label">The practical rule</p>
+      <ol class="three-q__list">
+        <li><strong>Repetitive physical task with a fixed character?</strong> Automation.</li>
+        <li><strong>Decision requiring analysis of variable data?</strong> AI.</li>
+        <li><strong>Not sure what your actual problem is?</strong> Start with a process audit.</li>
+      </ol>
+    </div>
+    <p class="body" style="margin-top: var(--space-lg)">Most companies implement automation where they need AI — and vice versa. A sorter won't solve a poor demand forecasting problem. And a forecasting algorithm won't replace the physical movement of pallets.</p>
+  </section>
+
+  <section class="s" id="where-ai-delivers" aria-labelledby="h-where-ai-delivers">
+    <h2 class="h2" id="h-where-ai-delivers">Where AI genuinely delivers ROI in logistics</h2>
+    <p class="body">Below are five applications where AI has proven its return on investment in practice — with information about the impact and the scale at which it makes sense.</p>
+    <div class="use-cases">
+      {useCases.map((uc) => (
+        <div class="use-case">
+          <div class="use-case__head">
+            <h3 class="use-case__title">{uc.title}</h3>
+            <span class="use-case__effect">{uc.effect}</span>
+          </div>
+          <p class="use-case__scale"><strong>When it makes sense:</strong> {uc.scale}</p>
+          <p class="use-case__text">{uc.text}</p>
+        </div>
+      ))}
+    </div>
+    <CalloutBox>AI without data doesn't exist. Each of the applications above requires structured, high-quality historical data. If your WMS doesn't collect this data — or collects it unreliably — fix that first, before investing in algorithms.</CalloutBox>
+  </section>
+
+  <section class="s" id="physical-automation" aria-labelledby="h-physical-automation">
+    <h2 class="h2" id="h-physical-automation">Where physical automation makes sense — and when not to buy it</h2>
+    <p class="body">Warehouse automation — sorters, AutoStore and shuttle systems, AGVs, AMRs, pick robots — are investments with long payback horizons. Typically 5–10 years, assuming volume is sufficient and stable. When volume is too low or too variable, automation becomes dead capital.</p>
+    <div class="scope-grid">
+      {automationTypes.map((type) => (
+        <div class="scope-card">
+          <p class="scope-card__text">{type}</p>
+        </div>
+      ))}
+    </div>
+    <div class="timeline-box" style="margin-top: var(--space-xl)">
+      <p class="timeline-box__label">When automation won't deliver ROI</p>
+      <ul class="timeline-box__list" role="list">
+        {automationWarnings.map((w) => <li>{w}</li>)}
+      </ul>
+    </div>
+    <p class="body" style="margin-top: var(--space-lg)">Before you sign with an automation integrator, answer one question: do I have sufficient, stable volume for the next 5 years? If the answer is uncertain — model ROI with a pessimistic volume scenario, not the optimistic one.</p>
+  </section>
+
+  <section class="s" id="common-mistakes" aria-labelledby="h-common-mistakes">
+    <h2 class="h2" id="h-common-mistakes">The most common mistakes when implementing AI and automation in logistics</h2>
+    <p class="body">Most failed AI and automation implementations share the same root causes. Not technical ones — organisational and decision-making ones.</p>
+    <ol class="mistake-list" role="list">
+      {commonMistakes.map((mistake) => (
+        <li class="mistake-item"><span class="mistake-item__text">{mistake}</span></li>
+      ))}
+    </ol>
+    <div class="inline-cta">
+      <p class="inline-cta__text">Considering an investment in automation or AI? Start with an audit that shows whether your processes and data are ready — and whether the investment will actually pay off.</p>
+      <a href="#" class="inline-cta__btn" data-calendly="popup">Book a consultation →</a>
+    </div>
+  </section>
+
+  <section class="s" id="where-to-start" aria-labelledby="h-where-to-start">
+    <h2 class="h2" id="h-where-to-start">Where to start — the practical sequence</h2>
+    <p class="body">Below is the sequence that works regardless of whether you're considering demand forecasting, warehouse automation, or route optimisation. The order matters — skipping the first steps is the most common cause of wasted budgets.</p>
+    <div class="steps">
+      {startSteps.map((step, i) => (
+        <div class="step">
+          <div class="step__rail">
+            <span class="step__badge tnum" aria-label={`Step ${i + 1}`}>{String(i + 1).padStart(2, "0")}</span>
+            {i < startSteps.length - 1 && <span class="step__line" aria-hidden="true" />}
+          </div>
+          <div class="step__body">
+            <h3 class="step__title">{step.label}</h3>
+            <p class="step__text">{step.text}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+    <p class="body" style="margin-top: var(--space-lg)">Companies that skip step 1 or 2 spend PLN 200–500k on a system that doesn't work — because the data is dirty or the processes are broken. Companies that skip step 4 discover problems during full rollout, when changes are costly.</p>
+  </section>
+
+  <section class="s" id="faq" aria-labelledby="h-faq">
+    <h2 class="h2" id="h-faq">FAQ — frequently asked questions</h2>
+    <FaqAccordion items={faqs} />
+  </section>
+
+  <div class="end-cta">
+    <h2 class="end-cta__h2">Not sure if your logistics is ready for AI or automation?</h2>
+    <p class="end-cta__text">Before you invest, check whether your processes and data are prepared. Vologis runs an independent readiness audit — with no ties to WMS vendors or automation integrators.</p>
+    <a href="/en/services/operational-consulting/" class="end-cta__btn">Request a readiness audit →</a>
+  </div>
+</KnowledgeArticleLayout>
+
+<style>
+  .s { padding-block: var(--space-2xl); border-top: 1px solid var(--color-rule); }
+  .s:first-of-type { border-top: none; padding-top: 0; }
+  .h2 { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; letter-spacing: -0.025em; line-height: 1.15; color: var(--color-ink); margin-bottom: var(--space-lg); }
+  .body { font-size: var(--text-base); color: var(--color-muted); line-height: 1.75; margin-bottom: var(--space-md); }
+  .check-ico { flex-shrink: 0; width: 1.2rem; height: 1.2rem; margin-top: 0.15rem; color: var(--color-blue); }
+  .three-q { margin-top: var(--space-lg); border: 1px solid var(--color-blue); border-radius: var(--radius-lg); background: var(--color-blue-tint); padding: var(--space-lg) var(--space-xl); }
+  .three-q__label { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-secondary); margin-bottom: var(--space-md); }
+  .three-q__list { display: flex; flex-direction: column; gap: var(--space-sm); padding-left: var(--space-lg); }
+  .three-q__list li { font-size: var(--text-base); color: var(--color-ink); line-height: 1.6; }
+  .use-cases { display: flex; flex-direction: column; gap: var(--space-lg); margin-top: var(--space-lg); }
+  .use-case { border: 1px solid var(--color-rule); border-radius: var(--radius-lg); padding: var(--space-xl); background: var(--color-paper); }
+  .use-case__head { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-md); margin-bottom: var(--space-md); flex-wrap: wrap; }
+  .use-case__title { font-family: var(--font-display); font-size: var(--text-md); font-weight: 700; color: var(--color-ink); line-height: 1.25; }
+  .use-case__effect { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.06em; color: var(--color-secondary); background: var(--color-blue-tint); padding: 4px var(--space-sm); border-radius: var(--radius-pill); white-space: nowrap; flex-shrink: 0; }
+  .use-case__scale { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.5; margin-bottom: var(--space-sm); }
+  .use-case__text { font-size: var(--text-base); color: var(--color-muted); line-height: 1.65; }
+  .scope-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--space-md); margin-top: var(--space-lg); }
+  .scope-card { border: 1px solid var(--color-rule); border-left: 4px solid var(--color-secondary); border-radius: var(--radius-md); padding: var(--space-lg); background: var(--color-paper); }
+  .scope-card__text { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.6; }
+  .inline-cta { display: flex; align-items: center; justify-content: space-between; gap: var(--space-lg); background: var(--color-paper-dark); border-radius: var(--radius-lg); padding: var(--space-lg) var(--space-xl); flex-wrap: wrap; margin-top: var(--space-lg); }
+  .inline-cta__text { font-size: var(--text-base); color: var(--color-muted-on-dark); line-height: 1.6; flex: 1; min-width: 180px; }
+  .inline-cta__btn { display: inline-flex; align-items: center; font-family: var(--font-display); font-size: var(--text-sm); font-weight: 600; padding: var(--space-sm) var(--space-lg); border-radius: var(--radius-pill); background: var(--color-accent); color: #fff; text-decoration: none; white-space: nowrap; cursor: pointer; transition: background var(--dur-micro) var(--ease-out); flex-shrink: 0; }
+  .inline-cta__btn:hover { background: var(--color-accent-hover); }
+  .steps { display: flex; flex-direction: column; }
+  .step { display: grid; grid-template-columns: 2.75rem 1fr; gap: var(--space-lg); }
+  .step__rail { display: flex; flex-direction: column; align-items: center; }
+  .step__badge { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; flex-shrink: 0; border-radius: var(--radius-pill); background: var(--color-ink); color: var(--color-ink-on-dark); font-family: var(--font-display); font-weight: 700; font-size: var(--text-sm); }
+  .step__line { width: 2px; flex: 1; min-height: var(--space-lg); background: var(--color-rule); margin-block: var(--space-xs); }
+  .step__body { padding-bottom: var(--space-xl); }
+  .step:last-child .step__body { padding-bottom: 0; }
+  .step__title { font-family: var(--font-display); font-size: var(--text-md); font-weight: 700; letter-spacing: -0.015em; color: var(--color-ink); margin-bottom: var(--space-sm); padding-top: var(--space-2xs); }
+  .step__text { font-size: var(--text-base); color: var(--color-muted); line-height: 1.7; }
+  .mistake-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-md); counter-reset: mistakes; }
+  .mistake-item { display: flex; align-items: flex-start; gap: var(--space-md); font-size: var(--text-base); color: var(--color-ink); line-height: 1.6; counter-increment: mistakes; }
+  .mistake-item::before { content: counter(mistakes, decimal-leading-zero); font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 700; color: var(--color-accent); padding-top: 0.25rem; flex-shrink: 0; min-width: 2rem; }
+  .timeline-box { border: 1px solid var(--color-rule); border-radius: var(--radius-lg); padding: var(--space-lg) var(--space-xl); background: var(--color-paper-2); }
+  .timeline-box__label { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-neutral); margin-bottom: var(--space-md); }
+  .timeline-box__list { display: flex; flex-direction: column; gap: var(--space-sm); list-style: none; }
+  .timeline-box__list li { font-size: var(--text-base); color: var(--color-muted); line-height: 1.6; }
+  .end-cta { margin-top: var(--space-3xl); background: var(--gradient-cta); border-radius: var(--radius-lg); padding: var(--space-2xl); text-align: center; }
+  .end-cta__h2 { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; letter-spacing: -0.025em; line-height: 1.2; color: var(--color-ink-on-dark); margin-bottom: var(--space-md); }
+  .end-cta__text { font-size: var(--text-base); color: var(--color-muted-on-dark); line-height: 1.7; max-width: 52ch; margin-inline: auto; margin-bottom: var(--space-xl); }
+  .end-cta__btn { display: inline-flex; align-items: center; font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; padding: var(--space-md) var(--space-2xl); border-radius: var(--radius-pill); background: var(--color-accent); color: #fff; text-decoration: none; cursor: pointer; transition: background var(--dur-micro) var(--ease-out); }
+  .end-cta__btn:hover { background: var(--color-accent-hover); }
+  @media (max-width: 48rem) { .scope-grid { grid-template-columns: 1fr; } .inline-cta { flex-direction: column; align-items: flex-start; padding: var(--space-lg); } .inline-cta__btn { width: 100%; text-align: center; justify-content: center; } .end-cta { padding: var(--space-xl) var(--space-lg); } .end-cta__h2 { font-size: var(--text-lg); } .end-cta__btn { width: 100%; text-align: center; } }
+</style>

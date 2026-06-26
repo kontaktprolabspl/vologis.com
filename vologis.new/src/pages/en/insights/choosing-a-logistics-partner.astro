@@ -1,0 +1,200 @@
+---
+import KnowledgeArticleLayout from "../../../layouts/KnowledgeArticleLayout.astro";
+import FaqAccordion from "../../../components/FaqAccordion.astro";
+import CalloutBox from "../../../components/CalloutBox.astro";
+import { articleSchema, speakableSchema } from "../../../utils/schema";
+
+const toc = [
+  { id: "lowest-price",          label: "The lowest-price trap" },
+  { id: "selection-criteria",    label: "What distinguishes a good partner" },
+  { id: "how-to-verify",         label: "How to verify before signing" },
+  { id: "specialist-industries", label: "Specialist industries" },
+  { id: "role-of-advisor",       label: "The role of an independent advisor" },
+  { id: "faq",                   label: "FAQ" },
+];
+
+const selectionCriteria = [
+  { title: "Experience in your industry and load type", text: "An operator who has never handled pharma, ADR, or e-commerce with high return volumes won't learn your specifics at your expense. Industry experience shortens the learning curve and reduces the risk of costly mistakes from day one." },
+  { title: "Real operational capabilities", text: "Certifications, presentations, and references tell you what the operator claims. A site visit, conversations with operators, and a review of actual KPIs tell you what they can deliver. Always verify operational capabilities in practice, not on paper." },
+  { title: "Team quality and stability", text: "High staff turnover is a warning signal. An inexperienced, constantly changing team increases error rates and extends handling times. Ask about turnover in key roles and the tenure of operational managers." },
+  { title: "Flexibility at volume changes", text: "A good partner grows with you. Check how the operator handles seasonal peaks — do they have buffer capacity, or does quality drop in season because they're short on people and space?" },
+  { title: "Billing transparency and SLA clarity", text: "A clear rate card without hidden surcharges and readable SLAs with measurable penalties are standard for a good operator. Opaque billing is a signal — something is being hidden." },
+  { title: "IT capabilities and integration", text: "Integration with your ERP/WMS, automated inventory reporting, EDI or API — these aren't luxuries but requirements at any scale of e-commerce or manufacturing. Check what the operator actually offers, not just what they claim in their pitch deck." },
+];
+
+const verificationSteps = [
+  { num: "01", title: "Site visit", text: "Visit the warehouse unannounced or shortly after giving notice. Look at cleanliness, signage, process efficiency, and team behaviour. Disorder, stress, and staff who don't know procedures are warning signs." },
+  { num: "02", title: "Conversations with current customers", text: "Ask for references from your industry or a similar load profile. Talk with people at the operational level, not just management. Ask what isn't working — not just what's going well." },
+  { num: "03", title: "Documentation and process audit", text: "Review inbound, picking, and returns procedures, certifications (ISO, GDP, ADR), incident history, and resolution approach. A good operator has this ready; a weak one doesn't." },
+  { num: "04", title: "SLA and penalty analysis", text: "Read the contract for SLA breach penalties, claims procedures, notice periods, and liability limitation clauses. An operator who won't agree to SLA penalties doesn't believe their own promises." },
+  { num: "05", title: "Small-volume test", text: "If time permits — start with a pilot on a limited assortment or geography. 4–8 weeks of piloting reveals more than a year of conversations." },
+  { num: "06", title: "Financial stability check", text: "Check company registration, financial statements, and litigation history. An operator in poor financial condition is a risk of sudden operational shutdown or a lien on your goods." },
+];
+
+const specialistCards = [
+  { title: "Cold storage and cold chain", text: "GMP+/HACCP certification, temperature validation documentation, continuous monitoring, deviation procedures. An operator who 'handles cold storage' without these elements is a compliance and product loss risk." },
+  { title: "ADR warehouses", text: "Competent authority decision, building requirements (separation, ventilation, lighting), trained staff (ADR), current permits. Check the documents, not just the claims." },
+  { title: "Pharma and GDP", text: "Good Distribution Practice certification, supplier qualification procedures, history of audits by pharmaceutical customers. In pharma, what counts is audit trail documentation and the ability to reconstruct the history of every shipment." },
+];
+
+const faqs = [
+  { q: "What's the difference between a logistics broker and an independent advisor?", a: "A logistics broker or agent earns a commission from the operator they send clients to — so they have a financial interest in recommending specific companies. An independent advisor (like Vologis) is paid by the client and represents only their interests. The difference is simple: whoever pays the fee gets the loyalty. For a broker, that's the operator; for an independent advisor — it's you." },
+  { q: "How do you verify a logistics operator's credibility?", a: "Key elements: a site visit (preferably unannounced or shortly after notice), conversations with current customers in your industry, analysis of SLA and contract penalties, certificate verification, and review of financial statements and company registry. A pitch deck and sales presentation aren't enough — always verify operations in practice, not on paper." },
+  { q: "Is it worth choosing an operator based on price alone?", a: "Price matters, but it's one of several key parameters. A lower base rate often comes with lower SLA quality, less peak flexibility, and higher operational error rates. The cost of complaints, returns caused by the operator, downtime, and migration to a new partner is hard to calculate upfront — but can be many times higher than the rate savings. Calculate Total Cost of Ownership, not just the per-pallet rate." },
+  { q: "What should you look for in an operator contract (SLA)?", a: "The most important elements: measurable quality indicators (accuracy, on-time delivery, inbound processing time), SLA breach penalties — proportionate and enforceable, claims procedures with timelines, terms for rate changes and notice period, scope of operator liability for lost or damaged goods, exit conditions and data transfer procedure. A contract without SLA penalties is a contract that guarantees nothing." },
+  { q: "How do you find a warehouse for a specialist industry (cold storage, ADR)?", a: "The market is narrow and verification is difficult, because many operators claim capabilities they don't have or have below requirements. The key is checking documents: certifications, administrative decisions, audit history. For pharma (GDP) and ADR — ask for customer and regulatory audit history, not just certificates. An independent logistics advisor familiar with this market segment can shorten the search and avoid costly mistakes." },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })),
+};
+
+const schemaArticle = articleSchema({
+  headline: "Choosing a Logistics Partner — Why the Lowest Price Is Almost Always a Trap",
+  description: "Selecting a logistics operator, fulfillment partner, or carrier: what to look for beyond price, how to verify a partner, and why the cheapest offer often costs the most.",
+  url: "/en/insights/choosing-a-logistics-partner/",
+  datePublished: "2026-05-28",
+  dateModified: "2026-05-28",
+  inLanguage: "en",
+});
+const schemaSpeakable = speakableSchema("/en/insights/choosing-a-logistics-partner/", ["[data-speakable='headline']", "[data-speakable='summary']"]);
+---
+
+<KnowledgeArticleLayout
+  title="Choosing a Logistics Partner — Why the Lowest Price Is Almost Always a Trap | Vologis"
+  description="Selecting a logistics operator, fulfillment partner or carrier: what to look for beyond price, how to verify a partner, and why the cheapest offer often costs the most."
+  canonical="https://vologis.com/en/insights/choosing-a-logistics-partner/"
+  heroImage="/knowledge/wybor-partnera-logistycznego.webp"
+  category="Logistics consulting"
+  readTime="8–10 min"
+  updatedAt="May 28, 2026"
+  h1="Choosing a Logistics Partner — Why the Lowest Price Is Almost Always a Trap"
+  lead="Choosing a logistics operator, fulfillment partner, or carrier is a decision that shapes your costs and service quality for years. Yet many companies make it primarily on price — and discover, painfully, that the cheapest offer turned out to be the most expensive in operational terms. This article shows what to really look for when selecting a logistics partner, and how to verify them before you sign."
+  toc={toc}
+  ctaPrimaryLabel="Talk about choosing a partner"
+  ctaSecondary={{ label: "See how we verify operators", href: "#how-to-verify" }}
+  hreflangPL="/pl/wiedza/wybor-partnera-logistycznego/"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaArticle)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaSpeakable)} />
+
+  <section class="s" id="lowest-price" aria-labelledby="h-lowest-price">
+    <h2 class="h2" id="h-lowest-price">Why the lowest price is a false signal</h2>
+    <p class="body">The operator's base rate often looks attractive — until the surcharges start arriving: fuel surcharge, palletising and labelling fees, peak season surcharge, return handling, additional warehouse movements. The final cost is often 20–40% higher than the quoted price. The operator that won the tender on the lowest rate isn't always the cheapest option in practice.</p>
+    <p class="body">A low price often comes with operational compromises: lower picking quality, slower inbound processing, less flexibility with changes. Every picking error is a complaint, a return handling cost, and a risk of losing a customer. One delay during peak season can generate losses many times greater than a month's rate savings.</p>
+    <p class="body">Cheap operators also tend to have high staff turnover. A constantly changing team doesn't know your assortment, load specifics, or customers. The learning curve costs — in time, errors, and your team's patience.</p>
+    <div class="three-q">
+      <p class="three-q__label">Three questions worth asking before accepting any offer:</p>
+      <ol class="three-q__list">
+        <li><strong>What is NOT included in this base rate?</strong></li>
+        <li><strong>What does the SLA look like at peak season, and what happens when it isn't met?</strong></li>
+        <li><strong>How many customers have left this operator in the last 12 months?</strong></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="s" id="selection-criteria" aria-labelledby="h-selection-criteria">
+    <h2 class="h2" id="h-selection-criteria">What really distinguishes a good logistics partner</h2>
+    <p class="body">A good logistics operator is a long-term partner. Changing partners — data migration, operational downtime, new team recruitment — costs far more than a few extra percentage points on the rate for a year. It's worth investing time in selection rather than in a later switch.</p>
+    <div class="scope-grid">
+      {selectionCriteria.map((c) => (
+        <div class="scope-card">
+          <h3 class="scope-card__title">{c.title}</h3>
+          <p class="scope-card__text">{c.text}</p>
+        </div>
+      ))}
+    </div>
+    <CalloutBox>A good logistics operator is a long-term partner, not a commodity supplier. The cost of switching — data migration, downtime, recruitment — is always high. It's worth taking more time on selection than on the subsequent change.</CalloutBox>
+  </section>
+
+  <section class="s" id="how-to-verify" aria-labelledby="h-how-to-verify">
+    <h2 class="h2" id="h-how-to-verify">How to verify a partner before signing</h2>
+    <p class="body">A sales presentation shows you what the operator wants you to see. Pre-contract verification shows you what's actually there.</p>
+    <div class="steps">
+      {verificationSteps.map((step, i) => (
+        <div class="step">
+          <div class="step__rail">
+            <span class="step__badge tnum">{step.num}</span>
+            {i < verificationSteps.length - 1 && <span class="step__line" aria-hidden="true" />}
+          </div>
+          <div class="step__body">
+            <h3 class="step__title">{step.title}</h3>
+            <p class="step__text">{step.text}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+    <div class="inline-cta">
+      <p class="inline-cta__text">Looking for a warehouse operator, fulfillment partner, or carrier? We'll help you find and verify the right one — independently, without commission from suppliers.</p>
+      <a href="#" class="inline-cta__btn" data-calendly="popup">Book a consultation →</a>
+    </div>
+  </section>
+
+  <section class="s" id="specialist-industries" aria-labelledby="h-specialist-industries">
+    <h2 class="h2" id="h-specialist-industries">Specialist industries — verification beyond declarations</h2>
+    <p class="body">In demanding industries — cold storage, ADR, pharma — a declaration of "we handle it" is nowhere near enough. The operator must have specific certifications, administrative authorisations, and real procedures. Without them, the risk isn't just operational — it's legal non-compliance that can result in product loss, fines, and your company's liability.</p>
+    <p class="body">Verifying specialist capabilities requires checking documents — not just asking. Request a copy of the certificate, check the expiry date, ask about audit and regulatory inspection history. A good operator in these segments is used to this and will provide documentation without hesitation.</p>
+    <div class="scope-grid">
+      {specialistCards.map((c) => (
+        <div class="scope-card">
+          <h3 class="scope-card__title">{c.title}</h3>
+          <p class="scope-card__text">{c.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="s" id="role-of-advisor" aria-labelledby="h-role-of-advisor">
+    <h2 class="h2" id="h-role-of-advisor">The role of an independent advisor in partner selection</h2>
+    <p class="body">Logistics brokers and warehouse property agencies operate in the market. Their fees come from the operator they recommend clients to — creating an obvious conflict of interest. A broker will propose a partner who pays them commission, not necessarily the one who best fits your requirements.</p>
+    <p class="body">An independent logistics advisor (like Vologis) represents only the client. The fee comes from the commissioning company, not the operator. This means full independence in market assessment, operator verification, and SLA negotiations — no conflict of interest, no hidden commissions.</p>
+  </section>
+
+  <section class="s" id="faq" aria-labelledby="h-faq">
+    <h2 class="h2" id="h-faq">FAQ — frequently asked questions</h2>
+    <FaqAccordion items={faqs} />
+  </section>
+
+  <div class="end-cta">
+    <h2 class="end-cta__h2">Looking for the right logistics partner?</h2>
+    <p class="end-cta__text">Vologis helps companies find and verify warehouse operators, fulfillment partners, and carriers — independently, without commission from suppliers. We represent your interests throughout the entire process.</p>
+    <a href="/en/services/logistics-brokerage/" class="end-cta__btn">Ask about brokerage →</a>
+  </div>
+</KnowledgeArticleLayout>
+
+<style>
+  .s { padding-block: var(--space-2xl); border-top: 1px solid var(--color-rule); }
+  .s:first-of-type { border-top: none; padding-top: 0; }
+  .h2 { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; letter-spacing: -0.025em; line-height: 1.15; color: var(--color-ink); margin-bottom: var(--space-lg); }
+  .body { font-size: var(--text-base); color: var(--color-muted); line-height: 1.75; margin-bottom: var(--space-md); }
+  .three-q { margin-top: var(--space-lg); border: 1px solid var(--color-blue); border-radius: var(--radius-lg); background: var(--color-blue-tint); padding: var(--space-lg) var(--space-xl); }
+  .three-q__label { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-secondary); margin-bottom: var(--space-md); }
+  .three-q__list { display: flex; flex-direction: column; gap: var(--space-sm); padding-left: var(--space-lg); }
+  .three-q__list li { font-size: var(--text-base); color: var(--color-ink); line-height: 1.6; }
+  .scope-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--space-md); margin-top: var(--space-lg); }
+  .scope-card { border: 1px solid var(--color-rule); border-left: 4px solid var(--color-secondary); border-radius: var(--radius-md); padding: var(--space-lg); background: var(--color-paper); }
+  .scope-card__title { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; color: var(--color-ink); margin-bottom: var(--space-sm); }
+  .scope-card__text { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.6; }
+  .steps { display: flex; flex-direction: column; }
+  .step { display: grid; grid-template-columns: 2.75rem 1fr; gap: var(--space-lg); }
+  .step__rail { display: flex; flex-direction: column; align-items: center; }
+  .step__badge { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; flex-shrink: 0; border-radius: var(--radius-pill); background: var(--color-ink); color: var(--color-ink-on-dark); font-family: var(--font-display); font-weight: 700; font-size: var(--text-sm); }
+  .step__line { width: 2px; flex: 1; min-height: var(--space-lg); background: var(--color-rule); margin-block: var(--space-xs); }
+  .step__body { padding-bottom: var(--space-xl); }
+  .step:last-child .step__body { padding-bottom: 0; }
+  .step__title { font-family: var(--font-display); font-size: var(--text-md); font-weight: 700; letter-spacing: -0.015em; color: var(--color-ink); margin-bottom: var(--space-sm); padding-top: var(--space-2xs); }
+  .step__text { font-size: var(--text-base); color: var(--color-muted); line-height: 1.7; }
+  .inline-cta { display: flex; align-items: center; justify-content: space-between; gap: var(--space-lg); background: var(--color-paper-dark); border-radius: var(--radius-lg); padding: var(--space-lg) var(--space-xl); flex-wrap: wrap; margin-top: var(--space-xl); }
+  .inline-cta__text { font-size: var(--text-base); color: var(--color-muted-on-dark); line-height: 1.6; flex: 1; min-width: 180px; }
+  .inline-cta__btn { display: inline-flex; align-items: center; font-family: var(--font-display); font-size: var(--text-sm); font-weight: 600; padding: var(--space-sm) var(--space-lg); border-radius: var(--radius-pill); background: var(--color-accent); color: #fff; text-decoration: none; white-space: nowrap; cursor: pointer; transition: background var(--dur-micro) var(--ease-out); flex-shrink: 0; }
+  .inline-cta__btn:hover { background: var(--color-accent-hover); }
+  .end-cta { margin-top: var(--space-3xl); background: var(--gradient-cta); border-radius: var(--radius-lg); padding: var(--space-2xl); text-align: center; }
+  .end-cta__h2 { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; letter-spacing: -0.025em; line-height: 1.2; color: var(--color-ink-on-dark); margin-bottom: var(--space-md); }
+  .end-cta__text { font-size: var(--text-base); color: var(--color-muted-on-dark); line-height: 1.7; max-width: 52ch; margin-inline: auto; margin-bottom: var(--space-xl); }
+  .end-cta__btn { display: inline-flex; align-items: center; font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; padding: var(--space-md) var(--space-2xl); border-radius: var(--radius-pill); background: var(--color-accent); color: #fff; text-decoration: none; cursor: pointer; transition: background var(--dur-micro) var(--ease-out); }
+  .end-cta__btn:hover { background: var(--color-accent-hover); }
+  @media (max-width: 48rem) { .scope-grid { grid-template-columns: 1fr; } .inline-cta { flex-direction: column; align-items: flex-start; padding: var(--space-lg); } .inline-cta__btn { width: 100%; justify-content: center; } .end-cta { padding: var(--space-xl) var(--space-lg); } .end-cta__btn { width: 100%; text-align: center; } }
+</style>

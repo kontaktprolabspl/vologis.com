@@ -1,0 +1,606 @@
+---
+import ServicePageLayout from "../../../layouts/ServicePageLayout.astro";
+import FaqAccordion from "../../../components/FaqAccordion.astro";
+import CalloutBox from "../../../components/CalloutBox.astro";
+
+const SITE = "https://vologis.com";
+
+const trustItems = [
+  "Warehouses, fulfillment and storage space",
+  "Vetted 3PL operators and logistics partners",
+  "Specialist sectors: cold storage, ADR, pharma, FMCG, bulk feed transport (GMP+)",
+  "Domestic and international transport",
+  "100% independent — no commissions from operators",
+];
+
+const forWhom = [
+  { title: "Manufacturing companies",            text: "When you need warehouse space for raw materials, components and finished goods — plus transport that matches your production rhythm." },
+  { title: "Trading and distribution companies", text: "When you need warehousing, order picking and distribution across multiple customers and lanes simultaneously." },
+  { title: "E-commerce and D2C",                 text: "When you're looking for a fulfillment partner: storage, picking, packing, returns and marketplace integrations." },
+  { title: "Specialist industries",              text: "When you need cold storage, ADR-compliant warehousing or GDP-certified pharmaceutical storage." },
+  { title: "Importers and exporters",            text: "When you need buffer storage, customs handling and international transport in one place." },
+];
+
+const scopeCards = [
+  { title: "Warehouse and storage selection",    text: "We find and vet warehouse space matched to your cargo, location and requirements — from standard storage to high-bay, cold storage and ADR warehouses." },
+  { title: "Fulfillment partners",               text: "We select fulfillment operators for e-commerce and D2C: picking, packing, returns, marketplace integrations and sales platform connections. We compare pricing models and SLAs." },
+  { title: "3PL/4PL logistics operators",        text: "We vet and recommend logistics operators for ongoing service. We review processes, references, operational capability and negotiate SLA terms on your behalf." },
+  { title: "Specialist industries",              text: "We handle demanding categories: cold storage and cold chain, ADR warehouses for hazardous materials, pharma and GDP requirements, high-turnover FMCG. We also verify GMP+ carriers for bulk feed and loose goods transport." },
+  { title: "Transport coordination",             text: "We select carriers and coordinate domestic and international transport — FTL, LTL and groupage — as a complement to warehousing and fulfillment services." },
+  { title: "Negotiations and coordination",      text: "We negotiate terms and SLAs on the client's behalf, coordinate communication between operators and manage documentation throughout the entire process." },
+];
+
+const comparisonRows = [
+  { feature: "Role",          transport: "Rents or sells warehouse space.",                           spedycja: "Offers its own logistics services in its own facilities.",          vologis: "Selects the best solution independently of any operator — represents the client, not the supplier." },
+  { feature: "Key question",  transport: "Do I have a building in this location?",                   spedycja: "Does this client fit our processes and rates?",                    vologis: "Which operator or fulfillment partner best matches the client's needs and budget?" },
+  { feature: "Scope",         transport: "Space rental or sale.",                                    spedycja: "Own services: storage, handling, transport.",                      vologis: "Needs analysis, market review, operator vetting, negotiations, launch coordination." },
+  { feature: "For whom",      transport: "Companies seeking a building or land.",                    spedycja: "Companies committed to a specific operator.",                      vologis: "Companies that want the best fit for their cargo type — without bias and without months of internal research." },
+];
+
+const processSteps = [
+  { num: "01", title: "Warehousing and fulfillment needs analysis",    text: "We start by defining cargo specifics, volumes, industry requirements and expected service levels. We ask everything: from temperature requirements and certifications to sales system integrations and billing models." },
+  { num: "02", title: "Market review and operator qualification",      text: "Based on the gathered data we identify warehouse, fulfillment and 3PL/4PL operators who can realistically handle your requirements. We filter out those who don't meet the key criteria." },
+  { num: "03", title: "Operator verification",                         text: "We check processes, references, operational capabilities, certifications and infrastructure. We don't rely solely on declarations — we verify whether the operator genuinely meets the requirements of your cargo and industry." },
+  { num: "04", title: "Offer comparison and recommendation",           text: "We collect offers, compare pricing models, SLAs, contract terms and operational fit. We prepare a clear recommendation with reasoning — no jargon, no bias." },
+  { num: "05", title: "Terms and SLA negotiation",                     text: "We negotiate rates, volumes, penalties and commitments on your behalf. We have experience on both sides of the negotiating table — we know what's negotiable and where the real margin lies." },
+  { num: "06", title: "Launch coordination and oversight",             text: "After the decision, we coordinate onboarding, operations launch and the first weeks of cooperation. If needed, we stay on as a quality oversight partner and escalation support." },
+];
+
+const specialistAreas = [
+  { title: "Cold storage and cold chain",      text: "We select cold storage and cold chain operators for products requiring controlled temperature — from +2/+8°C to deep freeze." },
+  { title: "ADR warehouses",                   text: "We vet operators with the appropriate permits and infrastructure for storing hazardous materials in compliance with ADR regulations." },
+  { title: "Pharma and GDP",                   text: "We select warehouse partners meeting Good Distribution Practice requirements. We verify certificates, procedures and storage conditions for medicinal products and supplements." },
+  { title: "High-turnover FMCG",               text: "For food, cosmetics and FMCG we select operators capable of handling large volumes with short shelf lives, FIFO/FEFO and quality requirements." },
+  { title: "E-commerce and D2C fulfillment",   text: "We select fulfillment partners for online order handling: SKU storage, picking, packing, returns management and e-commerce platform integrations." },
+  { title: "Automotive and manufacturing",     text: "We vet operators for automotive and industrial component handling: JIT warehousing, sequence management, quality requirements and IATF/ISO certifications." },
+  { title: "Bulk feed transport (GMP+)",       text: "We select carriers and operators meeting the GMP+ standard for safe transport of animal feed and bulk loose goods. Vologis holds a certified GMP/GMP+ compliance competency (DEKRA Certification)." },
+];
+
+const benefits = [
+  { title: "Save months of research",           text: "You don't need to search the market yourself, compare dozens of offers and vet operators. We take on that entire burden." },
+  { title: "Independent market assessment",     text: "Vologis has no ties to any warehouse or fulfillment operator. We recommend only what genuinely fits your needs and budget." },
+  { title: "Verification, not just offers",     text: "We check processes, references and capabilities — not just declarations. An operator that looks good on paper may not meet your cargo requirements." },
+  { title: "More effective negotiations",       text: "We have experience on both sides of the table. We know what can be negotiated on rates, SLAs and contract terms — and we do it on your behalf." },
+  { title: "Access to specialist operators",    text: "Cold storage, ADR, pharma — we know the market and which operators genuinely serve demanding industries and hold the necessary certifications." },
+  { title: "Warehouse and transport in one",    text: "We coordinate warehousing, fulfillment and transport together — without having to manage multiple independent suppliers." },
+];
+
+const whenItems = [
+  "when your company is looking for a warehouse or operator but has no time for months of research",
+  "when you need a fulfillment partner for e-commerce or D2C",
+  "when your cargo requires specialist conditions: cold storage, ADR or pharma (GDP)",
+  "when your current operator no longer meets growing operational requirements",
+  "when you're scaling and need larger or better-located space",
+  "when you're entering new markets and need a new logistics operator",
+  "when you want to compare the market independently without tying up your own team",
+  "when you want an assessment of an offer you've already received from an operator",
+  "when warehouse and transport need to work together, not as separate silos",
+  "when negotiations with an operator require logistics expertise",
+];
+
+const quoteChecklist = [
+  "location or preferred region in Poland / Europe",
+  "storage volume: sqm, pallets or cbm",
+  "cargo type and characteristics",
+  "industry requirements: temperature, ADR, pharma (GDP), FMCG",
+  "expected additional services: picking, packing, labelling, returns",
+  "estimated number of shipments per month (for fulfillment)",
+  "expected start date of cooperation",
+  "certification requirements or quality standards",
+];
+
+const whyCards = [
+  "Hands-on experience in logistics operations",
+  "100% independent — no ties to operators",
+  "Verifying actual capabilities, not just declarations",
+  "Handling specialist industries: cold storage, ADR, pharma",
+  "Negotiating terms and SLAs on the client's behalf",
+  "Warehouse, fulfillment and transport coordinated together",
+];
+
+const scenarios = [
+  { label: "E-commerce / D2C",      title: "Fulfillment partner for growing online sales",     text: "An e-commerce company with several thousand active SKUs needs an external fulfillment partner. Vologis selects an operator, compares pricing models and SLAs, negotiates terms and coordinates the launch." },
+  { label: "Manufacturing company", title: "Buffer warehouse for components and finished goods", text: "A manufacturer needs storage space near its plant — to match its production rhythm and customer delivery schedule. Vologis identifies operators, verifies capabilities and negotiates SLA terms." },
+  { label: "Importer / pharma",     title: "Cold storage meeting GDP requirements",             text: "A pharmaceutical importer needs a warehouse partner with certified cold storage conditions and GDP procedures. Vologis verifies operators for genuine compliance, not just stated compliance." },
+];
+
+const faqs = [
+  { q: "Can you find a warehouse for specific requirements (cold storage, ADR)?",           a: "Yes. We specialise in selecting warehouse space for demanding categories — cold storage and cold chain, ADR warehouses for hazardous materials and GDP-compliant pharmaceutical storage. We verify that the operator genuinely meets requirements, not just states they do." },
+  { q: "How does Vologis brokerage differ from a real estate agency?",                      a: "An agency finds you a building and stops there. We verify the operator's processes and capabilities, negotiate SLAs, select fulfillment and transport, and coordinate the whole thing. We don't represent the landlord — we represent your interests." },
+  { q: "Do you handle fulfillment for e-commerce?",                                         a: "Yes. We select fulfillment partners for e-commerce and D2C: storage, picking, packing, returns handling and marketplace and e-commerce platform integrations. We compare pricing models and SLA levels." },
+  { q: "Does Vologis also arrange transport?",                                               a: "Yes. Transport is part of our offering — as a complement to warehousing and fulfillment. We select carriers and coordinate domestic and international transport: FTL, LTL and groupage." },
+  { q: "Is Vologis independent of warehouse operators?",                                    a: "Yes, 100%. We don't represent any warehouse operator, carrier or fulfillment provider. Our fee comes exclusively from the client — which is why we can objectively assess the market and negotiate on your behalf." },
+  { q: "How long does it take to find the right operator or warehouse?",                    a: "It depends on the complexity of the requirements. A standard 3PL operator or storage space search typically takes 2–4 weeks from the point of receiving complete data. For specialist industries (cold storage, ADR, pharma) it may take longer due to the need to verify certifications and procedures." },
+];
+
+const branze = [
+  { slug: "logistics-brokerage-fmcg",         industry: "FMCG",          h1: "Logistics brokerage for the FMCG sector",          description: "Warehouse selection for high-turnover goods, seasonal peaks and retail network requirements." },
+  { slug: "logistics-brokerage-pharma",        industry: "Pharma",        h1: "Logistics brokerage for the pharmaceutical sector", description: "GDP-compliant warehouse and operator selection for pharma companies." },
+  { slug: "logistics-brokerage-ecommerce",     industry: "E-commerce",    h1: "Logistics brokerage for e-commerce",                description: "Fulfillment partner selection for online sales, returns and marketplace integrations." },
+  { slug: "logistics-brokerage-manufacturing", industry: "Manufacturing",  h1: "Logistics brokerage for manufacturing companies",   description: "Warehouse and transport selection tailored to production schedules." },
+  { slug: "logistics-brokerage-automotive",    industry: "Automotive",    h1: "Logistics brokerage for the automotive sector",     description: "JIT warehouse operators with IATF/ISO certifications and sequence management." },
+  { slug: "logistics-brokerage-retail",        industry: "Retail",        h1: "Logistics brokerage for retail",                    description: "Operators meeting retail network SLA and EDI requirements." },
+  { slug: "logistics-brokerage-cold-storage",  industry: "Cold storage",  h1: "Logistics brokerage — cold storage",                description: "Selecting cold chain operators for temperature-controlled goods." },
+  { slug: "logistics-brokerage-adr",           industry: "ADR",           h1: "Logistics brokerage — ADR warehouses",              description: "Operators licensed to store and handle hazardous materials." },
+];
+
+const schemaService = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Logistics brokerage",
+  "provider": { "@type": "Organization", "name": "Vologis Sp. z o.o.", "url": SITE, "address": { "@type": "PostalAddress", "addressLocality": "Jarocin", "addressRegion": "Wielkopolska", "addressCountry": "PL" } },
+  "areaServed": ["Poland", "Europe"],
+  "serviceType": "Logistics brokerage, warehousing and fulfillment",
+  "description": "Vologis finds and vets warehouse operators, fulfillment partners and carriers — matched to cargo type and industry, including cold storage, ADR and pharma.",
+  "url": `${SITE}/en/services/logistics-brokerage/`,
+  "inLanguage": "en",
+};
+
+const schemaWebPage = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Logistics Brokerage — Warehouse, Fulfillment & Transport | Vologis",
+  "description": "Vologis finds and vets warehouse operators, fulfillment partners and carriers. Independent logistics brokerage for manufacturing, e-commerce and trading companies — including cold storage, ADR and pharma.",
+  "url": `${SITE}/en/services/logistics-brokerage/`,
+  "inLanguage": "en",
+};
+
+const schemaFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })),
+};
+---
+
+<ServicePageLayout
+  title="Logistics Brokerage — Warehouse, Fulfillment & Transport | Vologis"
+  description="Vologis finds and vets warehouse operators, fulfillment partners and carriers. Independent logistics brokerage for manufacturing, e-commerce and trading companies — including cold storage, ADR and pharma."
+  canonical="https://vologis.com/en/services/logistics-brokerage/"
+  hreflangPL="/pl/uslugi/posrednictwo-logistyczne/"
+  ogImage="/og/og-posrednictwo.png"
+  heroImage="/services/posrednictwo-logistyczne.webp"
+  eyebrow="Logistics services / Logistics brokerage"
+  h1="Logistics Brokerage — Warehouse, Fulfillment & Transport, One Partner"
+  lead="Vologis helps companies find and vet warehouse space, fulfillment partners and reliable carriers — without tying up your own team in months of research and negotiations. We take on the full burden of comparing offers, verifying operators and selecting the right fit for your cargo type, including demanding sectors like cold storage, ADR and pharma. We're 100% independent — we represent your interests, not any operator's."
+  trustItems={trustItems}
+  ctaPrimaryLabel="Enquire about logistics brokerage"
+  ctaPrimaryHref="/en/contact/"
+  ctaSecondaryLabel="See how we work"
+  ctaSecondaryHref="/en/process/"
+  breadcrumbs={[{ name: "Logistics brokerage" }]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaService)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaWebPage)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaFaq)} />
+
+  <!-- 1. Problem -->
+  <section class="ps-problem" aria-labelledby="h-problem">
+    <div class="container">
+      <div class="ps-problem__grid">
+        <div class="ps-problem__copy">
+          <h2 class="h2" id="h-problem">Finding the right warehouse or fulfillment partner takes months — if you do it alone</h2>
+          <p class="body">In many companies, choosing a logistics operator looks the same: a few enquiries to well-known market names, comparing PDF offers, and negotiations conducted without knowing market rates and SLA standards. The decision ends up being based on who responded fastest — not necessarily the best fit.</p>
+          <p class="body">The problem compounds when cargo has specific requirements: cold storage, ADR, pharma, high SKU turnover, marketplace integrations. The number of operators who genuinely meet those requirements — not just claim to — is far smaller than an initial market scan suggests.</p>
+          <p class="body">Vologis logistics brokerage takes on this entire burden. We don't just point to an operator — we verify them, negotiate terms and coordinate the launch, staying on your side throughout the whole process.</p>
+        </div>
+        <aside class="ps-brief" aria-label="In brief">
+          <p class="ps-brief__label">In brief</p>
+          <p class="ps-brief__text">Logistics brokerage is a service in which Vologis selects and vets warehouse operators, fulfillment partners and carriers — matched to your cargo type and industry. We take over the research, offer comparison and negotiations, remaining 100% independent. We also cover specialist sectors: cold storage, ADR and pharma.</p>
+          <hr class="ps-brief__rule" />
+          <p class="ps-brief__sub">Vologis &middot; Jarocin, Poland &middot; Serving the PL and EU markets</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. For whom -->
+  <section class="ps-forwho" aria-labelledby="h-forwho">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-forwho">Who is logistics brokerage for?</h2>
+      <p class="section-intro">This service is for companies that need efficient operator or warehouse selection without committing their own team to a lengthy research process.</p>
+      <div class="fw-grid">
+        {forWhom.map((p) => (
+          <div class="fw-card">
+            <h3 class="fw-card__title">{p.title}</h3>
+            <p class="fw-card__text">{p.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Scope -->
+  <section class="ps-scope" aria-labelledby="h-scope">
+    <div class="container">
+      <h2 class="h2" id="h-scope">What does logistics brokerage cover?</h2>
+      <p class="body">The scope can cover warehouse or fulfillment operator selection, ongoing logistics service, or broader support — including transport coordination and supplier management.</p>
+      <div class="scope-grid">
+        {scopeCards.map((c) => (
+          <div class="scope-card">
+            <h3 class="scope-card__title">{c.title}</h3>
+            <p class="scope-card__text">{c.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Comparison -->
+  <section class="ps-cmp" aria-labelledby="h-cmp">
+    <div class="container">
+      <h2 class="h2" id="h-cmp">Vologis brokerage, a real estate agency, and a direct 3PL enquiry — what's the difference?</h2>
+      <div class="cmp3" role="table" aria-label="Comparison of logistics operator selection models">
+        <div class="cmp3__head" role="row">
+          <span class="cmp3__cell cmp3__feat" role="columnheader">Area</span>
+          <span class="cmp3__cell" role="columnheader">Real estate agency</span>
+          <span class="cmp3__cell" role="columnheader">Direct enquiry to 3PL</span>
+          <span class="cmp3__cell cmp3__cell--ours" role="columnheader">Vologis Logistics Brokerage</span>
+        </div>
+        {comparisonRows.map((r) => (
+          <div class="cmp3__row" role="row">
+            <span class="cmp3__cell cmp3__feat cmp3__feat--body" role="rowheader">{r.feature}</span>
+            <span class="cmp3__cell cmp3__cell--body" role="cell">{r.transport}</span>
+            <span class="cmp3__cell cmp3__cell--body" role="cell">{r.spedycja}</span>
+            <span class="cmp3__cell cmp3__cell--ours cmp3__cell--body" role="cell">{r.vologis}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Process -->
+  <section class="ps-process" aria-labelledby="h-process">
+    <div class="container">
+      <p class="dark-eyebrow">How we work</p>
+      <h2 class="h2 h2--dark" id="h-process">How does the engagement work, step by step?</h2>
+      <div class="proc-steps">
+        {processSteps.map((step, i) => (
+          <div class="proc-step">
+            <div class="proc-step__rail">
+              <span class="proc-step__badge tnum">{step.num}</span>
+              {i < processSteps.length - 1 && <span class="proc-step__line" aria-hidden="true" />}
+            </div>
+            <div class="proc-step__body">
+              <h3 class="proc-step__title">{step.title}</h3>
+              <p class="proc-step__text">{step.text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Specialist areas -->
+  <section class="ps-types" aria-labelledby="h-types">
+    <div class="container">
+      <h2 class="h2" id="h-types">Industries and specialisations we cover</h2>
+      <div class="types-grid">
+        {specialistAreas.map((t) => (
+          <div class="type-card">
+            <h3 class="type-card__title">{t.title}</h3>
+            <p class="type-card__text">{t.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Benefits -->
+  <section class="ps-benefits" aria-labelledby="h-benefits">
+    <div class="container">
+      <h2 class="h2" id="h-benefits">What does your company gain?</h2>
+      <div class="ben-grid">
+        {benefits.map((b) => (
+          <div class="ben-card">
+            <h3 class="ben-card__title">{b.title}</h3>
+            <p class="ben-card__text">{b.text}</p>
+          </div>
+        ))}
+      </div>
+      <CalloutBox>
+        The cheapest operator isn't always the best choice. In logistics, cost also shows up in delays, incorrect shipments, SLA failures and the time your team spends fixing the consequences of a poor partner selection.
+      </CalloutBox>
+    </div>
+  </section>
+
+  <!-- 8. When to use -->
+  <section class="ps-when" aria-labelledby="h-when">
+    <div class="container">
+      <h2 class="h2" id="h-when">When does logistics brokerage make sense?</h2>
+      <ul class="when-list" role="list">
+        {whenItems.map((item) => (
+          <li class="when-item">
+            <svg class="when-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- 9. What to prepare -->
+  <section class="ps-quote" aria-labelledby="h-quote">
+    <div class="container">
+      <h2 class="h2" id="h-quote">What to prepare for the first enquiry?</h2>
+      <div class="quote-box">
+        <p class="quote-box__label">Basic information for an initial operator shortlist</p>
+        <ul class="quote-list" role="list">
+          {quoteChecklist.map((item) => (
+            <li class="quote-item">
+              <svg class="quote-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <a href="/en/contact/" class="quote-cta">Have the information ready? Send your enquiry to Vologis <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Why Vologis -->
+  <section class="ps-why" aria-labelledby="h-why">
+    <div class="container">
+      <h2 class="h2 h2--dark" id="h-why">Why Vologis?</h2>
+      <div class="why-grid">
+        <div class="why-copy">
+          <p class="why-text">Vologis combines hands-on logistics operations experience with a purely advisory approach. That means we have no ties to any operator — we don't have warehouse portfolios to rent out or volume contracts with specific 3PLs. Our only interest is finding the solution that works for you.</p>
+          <p class="why-text">We verify operators, not just compare their offers. We negotiate SLAs and rates with knowledge of market benchmarks. And we stay with you throughout the entire process — from the first enquiry to operations launch.</p>
+          <a href="/en/contact/" class="why-btn">Talk to Vologis <span aria-hidden="true">→</span></a>
+        </div>
+        <ul class="why-cards" role="list">
+          {whyCards.map((card) => (
+            <li class="why-card">
+              <svg class="why-card__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg>
+              {card}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. Scenarios -->
+  <section class="ps-scenarios" aria-labelledby="h-scenarios">
+    <div class="container">
+      <h2 class="h2" id="h-scenarios">Example engagement scenarios</h2>
+      <div class="sc-grid">
+        {scenarios.map((s) => (
+          <div class="sc-card">
+            <p class="sc-card__label">{s.label}</p>
+            <h3 class="sc-card__title">{s.title}</h3>
+            <p class="sc-card__text">{s.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. FAQ -->
+  <section class="ps-faq" aria-labelledby="h-faq">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-faq">FAQ — frequently asked questions</h2>
+      <FaqAccordion items={faqs} single />
+    </div>
+  </section>
+
+  <!-- End CTA -->
+  <section class="ps-endcta" aria-labelledby="h-endcta">
+    <div class="container">
+      <div class="endcta-inner">
+        <h2 class="endcta__h2" id="h-endcta">Need a warehouse, a fulfillment partner or a vetted 3PL operator?</h2>
+        <p class="endcta__text">Tell us what you're looking for: warehouse space, e-commerce fulfillment, transport, cold storage, ADR — or all of the above. Vologis will do the research, vet the operators and find the solution that fits your cargo and industry.</p>
+        <div class="endcta__actions">
+          <a href="/en/contact/" class="endcta__btn endcta__btn--primary">Send your enquiry to Vologis <span aria-hidden="true">→</span></a>
+          <a href="#" class="endcta__btn endcta__btn--ghost" data-calendly="popup">Book a consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed solutions -->
+  <section class="ps-branze" aria-labelledby="h-branze">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-branze">Detailed solutions</h2>
+      <p class="section-intro">Every industry has its own logistics specifics. See how we help specific sectors.</p>
+      <div class="branze-grid">
+        {branze.map((b) => (
+          <a class="branze-card" href={`/en/services/${b.slug}/`}>
+            <span class="branze-card__industry">{b.industry}</span>
+            <span class="branze-card__title">{b.h1}</span>
+            <span class="branze-card__desc">{b.description}</span>
+            <span class="branze-card__arrow" aria-hidden="true">→</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Market resources -->
+  <section class="ps-market-resources" aria-labelledby="h-market-resources">
+    <div class="container">
+      <p class="market-resources__label" id="h-market-resources">Market portals</p>
+      <div class="market-resources__grid">
+        <a class="market-resources__card" href="https://www.magazynyinfo.pl/" target="_blank" rel="noopener noreferrer">
+          <span class="market-resources__title">magazynyinfo.pl</span>
+          <span class="market-resources__desc">Database of warehouse listings in Poland — browse available space by location and parameters.</span>
+          <span class="market-resources__ext" aria-label="external site">↗</span>
+        </a>
+        <a class="market-resources__card" href="https://warehousemarket.pl/" target="_blank" rel="noopener noreferrer">
+          <span class="market-resources__title">warehousemarket.pl</span>
+          <span class="market-resources__desc">Warehouse market portal — logistics space listings and market data for tenants.</span>
+          <span class="market-resources__ext" aria-label="external site">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-link -->
+  <section class="ps-crosslink" aria-labelledby="h-crosslink">
+    <div class="container">
+      <div class="crosslink-box">
+        <div class="crosslink-box__content">
+          <h2 class="crosslink-box__title" id="h-crosslink">Looking for an operator at no cost, or want to sell vacant space?</h2>
+          <p class="crosslink-box__text">If you're a manufacturing company looking for a logistics partner at no charge, or an operator with vacant space to fill — this service is for you.</p>
+          <a href="/en/services/commercialization-and-sales/" class="crosslink-box__link">See Commercialisation &amp; Sales <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related -->
+  <section class="ps-related" aria-labelledby="h-related">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-related">Other Vologis services</h2>
+      <div class="related-grid">
+        <a class="related-card" href="/en/services/operational-consulting/">
+          <span class="related-card__title">Operational consulting &amp; audit</span>
+          <span class="related-card__desc">Bottleneck identification, process optimisation, quick wins.</span>
+          <span class="related-card__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="related-card" href="/en/services/interim-management/">
+          <span class="related-card__title">Interim Management</span>
+          <span class="related-card__desc">Management support and operations stabilisation in difficult times.</span>
+          <span class="related-card__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="related-card" href="/en/services/greenfield-projects/">
+          <span class="related-card__title">Greenfield projects</span>
+          <span class="related-card__desc">From site analysis to operations launch. One partner.</span>
+          <span class="related-card__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</ServicePageLayout>
+
+<style>
+  .h2 { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; letter-spacing: -0.025em; line-height: 1.15; color: var(--color-ink); margin-bottom: var(--space-lg); }
+  .h2--center { text-align: center; }
+  .h2--dark { color: var(--color-ink-on-dark); }
+  .body { font-size: var(--text-base); color: var(--color-muted); line-height: 1.75; margin-bottom: var(--space-md); }
+  .section-intro { font-size: var(--text-md); color: var(--color-muted); line-height: 1.65; max-width: 60ch; margin-inline: auto; text-align: center; margin-bottom: var(--space-xl); }
+  .dark-eyebrow { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-blue-on-dark); margin-bottom: var(--space-md); }
+  .ps-problem { padding-block: var(--space-3xl); background: var(--color-paper); }
+  .ps-problem__grid { display: grid; grid-template-columns: 1fr 20rem; gap: var(--space-3xl); align-items: start; }
+  .ps-brief { border: 1px solid var(--color-blue); border-radius: var(--radius-lg); background: var(--color-blue-tint); padding: var(--space-lg) var(--space-xl); position: sticky; top: calc(4.25rem + 3px + var(--space-lg)); }
+  .ps-brief__label { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-secondary); margin-bottom: var(--space-md); }
+  .ps-brief__text { font-size: var(--text-base); color: var(--color-ink); line-height: 1.7; }
+  .ps-brief__rule { border: none; border-top: 1px solid var(--color-blue); margin-block: var(--space-md); opacity: 0.3; }
+  .ps-brief__sub { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.5; }
+  .ps-forwho { padding-block: var(--space-3xl); background: var(--color-paper-2); }
+  .fw-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--space-md); }
+  .fw-card { border: 1px solid var(--color-rule); border-left: 4px solid var(--color-secondary); border-radius: var(--radius-md); padding: var(--space-lg); background: var(--color-paper); }
+  .fw-card__title { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; color: var(--color-ink); margin-bottom: var(--space-sm); }
+  .fw-card__text { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.65; }
+  .ps-scope { padding-block: var(--space-3xl); background: var(--color-paper); }
+  .scope-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--space-md); margin-top: var(--space-lg); }
+  .scope-card { border: 1px solid var(--color-rule); border-radius: var(--radius-md); padding: var(--space-lg); background: var(--color-paper); transition: border-color var(--dur-micro) var(--ease-out), box-shadow var(--dur-short) var(--ease-out); }
+  .scope-card:hover { border-color: var(--color-blue); box-shadow: var(--shadow-sm); }
+  .scope-card__title { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; color: var(--color-ink); margin-bottom: var(--space-sm); }
+  .scope-card__text { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.65; }
+  .ps-cmp { padding-block: var(--space-3xl); background: var(--color-paper-2); }
+  .cmp3 { border: 1px solid var(--color-rule); border-radius: var(--radius-lg); overflow: hidden; background: var(--color-paper); margin-top: var(--space-lg); }
+  .cmp3__head, .cmp3__row { display: grid; grid-template-columns: 1fr 1.3fr 1.3fr 1.6fr; border-bottom: 1px solid var(--color-rule); }
+  .cmp3__row:last-child { border-bottom: none; }
+  .cmp3__head { background: var(--color-paper-dark); }
+  .cmp3__cell { padding: var(--space-md) var(--space-lg); font-size: var(--text-sm); line-height: 1.5; color: var(--color-muted); }
+  .cmp3__head .cmp3__cell { font-family: var(--font-display); font-weight: 700; font-size: var(--text-sm); color: var(--color-muted-on-dark); display: flex; align-items: center; }
+  .cmp3__feat { font-weight: 600; color: var(--color-ink); background: var(--color-paper-2); }
+  .cmp3__head .cmp3__feat { background: var(--color-paper-dark-2); color: var(--color-ink-on-dark); }
+  .cmp3__cell--ours { background: var(--color-paper-dark); color: var(--color-ink-on-dark); font-weight: 500; }
+  .cmp3__head .cmp3__cell--ours { font-weight: 700; color: var(--color-blue-on-dark); }
+  .cmp3__cell--body { display: flex; align-items: flex-start; }
+  @media (max-width: 56rem) { .cmp3 { overflow-x: auto; } .cmp3__head, .cmp3__row { grid-template-columns: 6rem 10rem 10rem 14rem; min-width: 40rem; } .cmp3__feat { position: sticky; left: 0; z-index: 1; } }
+  .ps-process { padding-block: var(--space-3xl); background: var(--color-paper-dark); }
+  .proc-steps { display: flex; flex-direction: column; margin-top: var(--space-xl); }
+  .proc-step { display: grid; grid-template-columns: 3rem 1fr; gap: var(--space-xl); }
+  .proc-step__rail { display: flex; flex-direction: column; align-items: center; }
+  .proc-step__badge { display: grid; place-items: center; width: 3rem; height: 3rem; flex-shrink: 0; border-radius: var(--radius-pill); background: var(--color-glass-dark); border: 1px solid var(--color-glass-border); color: var(--color-blue-on-dark); font-family: var(--font-display); font-weight: 700; font-size: var(--text-sm); }
+  .proc-step__line { width: 1px; flex: 1; min-height: var(--space-lg); background: var(--color-glass-border); margin-block: var(--space-xs); }
+  .proc-step__body { padding-bottom: var(--space-2xl); }
+  .proc-step:last-child .proc-step__body { padding-bottom: 0; }
+  .proc-step__title { font-family: var(--font-display); font-size: var(--text-md); font-weight: 700; letter-spacing: -0.015em; color: var(--color-ink-on-dark); margin-bottom: var(--space-sm); padding-top: var(--space-xs); }
+  .proc-step__text { font-size: var(--text-base); color: var(--color-muted-on-dark); line-height: 1.7; }
+  .ps-types { padding-block: var(--space-3xl); background: var(--color-paper); }
+  .types-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--space-md); margin-top: var(--space-lg); }
+  .type-card { border: 1px solid var(--color-rule); border-top: 3px solid var(--color-secondary); border-radius: var(--radius-md); padding: var(--space-lg); background: var(--color-paper); }
+  .type-card__title { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; color: var(--color-ink); margin-bottom: var(--space-sm); }
+  .type-card__text { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.65; }
+  .ps-benefits { padding-block: var(--space-3xl); background: var(--color-paper-2); }
+  .ben-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--space-md); margin-bottom: var(--space-xl); }
+  .ben-card { border: 1px solid var(--color-rule); border-radius: var(--radius-md); padding: var(--space-lg); background: var(--color-paper); }
+  .ben-card__title { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; color: var(--color-ink); margin-bottom: var(--space-sm); }
+  .ben-card__text { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.65; }
+  .ps-when { padding-block: var(--space-3xl); background: var(--color-paper); }
+  .when-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: var(--space-md); margin-top: var(--space-lg); }
+  .when-item { display: flex; align-items: flex-start; gap: var(--space-sm); font-size: var(--text-base); color: var(--color-ink); line-height: 1.55; }
+  .when-icon { flex-shrink: 0; width: 1.2rem; height: 1.2rem; margin-top: 0.15rem; color: var(--color-blue); }
+  .ps-quote { padding-block: var(--space-3xl); background: var(--color-paper-2); }
+  .quote-box { border: 1px solid var(--color-rule); border-radius: var(--radius-lg); background: var(--color-paper); padding: var(--space-xl); margin-top: var(--space-lg); }
+  .quote-box__label { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-neutral); margin-bottom: var(--space-lg); }
+  .quote-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--space-sm); margin-bottom: var(--space-xl); }
+  .quote-item { display: flex; align-items: flex-start; gap: var(--space-sm); font-size: var(--text-base); color: var(--color-ink); line-height: 1.5; }
+  .quote-icon { flex-shrink: 0; width: 1.1rem; height: 1.1rem; margin-top: 0.2rem; color: var(--color-blue); }
+  .quote-cta { display: inline-flex; align-items: center; gap: var(--space-xs); font-family: var(--font-display); font-size: var(--text-base); font-weight: 600; color: var(--color-secondary); text-decoration: none; border-top: 1px solid var(--color-rule); padding-top: var(--space-lg); width: 100%; transition: color var(--dur-micro) var(--ease-out); }
+  .quote-cta:hover { color: var(--color-ink); }
+  .ps-why { padding-block: var(--space-3xl); background: var(--color-paper-dark); }
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3xl); align-items: start; margin-top: var(--space-xl); }
+  .why-text { font-size: var(--text-base); color: var(--color-muted-on-dark); line-height: 1.75; margin-bottom: var(--space-lg); }
+  .why-btn { display: inline-flex; align-items: center; gap: var(--space-xs); font-family: var(--font-display); font-size: var(--text-base); font-weight: 600; padding: var(--space-sm) var(--space-xl); border-radius: var(--radius-pill); background: var(--color-accent); color: #fff; text-decoration: none; transition: background var(--dur-micro) var(--ease-out); margin-top: var(--space-sm); }
+  .why-btn:hover { background: var(--color-accent-hover); }
+  .why-cards { list-style: none; display: flex; flex-direction: column; gap: var(--space-sm); }
+  .why-card { display: flex; align-items: flex-start; gap: var(--space-sm); font-size: var(--text-base); color: var(--color-ink-on-dark); line-height: 1.5; padding: var(--space-md); border: 1px solid var(--color-glass-border); border-radius: var(--radius-sm); background: var(--color-glass-dark); }
+  .why-card__icon { flex-shrink: 0; width: 1.15rem; height: 1.15rem; margin-top: 0.15rem; color: var(--color-blue-on-dark); }
+  .ps-scenarios { padding-block: var(--space-3xl); background: var(--color-paper); }
+  .sc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg); margin-top: var(--space-xl); }
+  .sc-card { border: 1px solid var(--color-rule); border-radius: var(--radius-lg); padding: var(--space-xl); background: var(--color-paper); display: flex; flex-direction: column; gap: var(--space-sm); }
+  .sc-card__label { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-secondary); }
+  .sc-card__title { font-family: var(--font-display); font-size: var(--text-md); font-weight: 700; letter-spacing: -0.015em; color: var(--color-ink); line-height: 1.2; }
+  .sc-card__text { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.65; margin-top: var(--space-2xs); }
+  .ps-faq { padding-block: var(--space-3xl); background: var(--color-paper-2); }
+  .ps-endcta { padding-block: var(--space-3xl); background: var(--gradient-cta); }
+  .endcta-inner { max-width: 52rem; margin-inline: auto; text-align: center; }
+  .endcta__h2 { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; letter-spacing: -0.025em; line-height: 1.2; color: var(--color-ink-on-dark); margin-bottom: var(--space-md); }
+  .endcta__text { font-size: var(--text-base); color: var(--color-muted-on-dark); line-height: 1.7; margin-bottom: var(--space-xl); }
+  .endcta__actions { display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap; }
+  .endcta__btn { display: inline-flex; align-items: center; gap: var(--space-xs); font-family: var(--font-display); font-size: var(--text-base); font-weight: 600; padding: var(--space-md) var(--space-2xl); border-radius: var(--radius-pill); text-decoration: none; cursor: pointer; border: 1px solid transparent; transition: background var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out); }
+  .endcta__btn--primary { background: var(--color-accent); color: #fff; }
+  .endcta__btn--primary:hover { background: var(--color-accent-hover); }
+  .endcta__btn--ghost { background: var(--color-glass-dark); color: var(--color-ink-on-dark); border-color: var(--color-glass-border); }
+  .endcta__btn--ghost:hover { background: oklch(100% 0 0 / 0.12); }
+  .ps-related { padding-block: var(--space-3xl); background: var(--color-paper); border-top: 1px solid var(--color-rule); }
+  .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); margin-top: var(--space-xl); }
+  .related-card { display: flex; flex-direction: column; gap: var(--space-sm); border: 1px solid var(--color-rule); border-radius: var(--radius-lg); padding: var(--space-xl); background: var(--color-paper); text-decoration: none; transition: border-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out); }
+  .related-card:hover { border-color: var(--color-blue); transform: translateY(-3px); }
+  .related-card__title { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; color: var(--color-ink); }
+  .related-card__desc { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.55; flex: 1; }
+  .related-card__arrow { font-size: var(--text-md); color: var(--color-secondary); transition: transform var(--dur-short) var(--ease-out); align-self: flex-start; margin-top: auto; }
+  .related-card:hover .related-card__arrow { transform: translateX(4px); }
+  .ps-branze { padding-block: var(--space-3xl); background: var(--color-paper-2); border-top: 1px solid var(--color-rule); }
+  .branze-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--space-md); margin-top: var(--space-xl); }
+  .branze-card { display: flex; flex-direction: column; gap: var(--space-xs); border: 1px solid var(--color-rule); border-radius: var(--radius-md); padding: var(--space-lg); background: var(--color-paper); text-decoration: none; transition: border-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out); }
+  .branze-card:hover { border-color: var(--color-blue); transform: translateY(-2px); }
+  .branze-card__industry { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-secondary); }
+  .branze-card__title { font-family: var(--font-display); font-size: var(--text-sm); font-weight: 700; color: var(--color-ink); line-height: 1.35; }
+  .branze-card__desc { font-size: var(--text-xs); color: var(--color-muted); line-height: 1.5; flex: 1; }
+  .branze-card__arrow { font-size: var(--text-base); color: var(--color-secondary); transition: transform var(--dur-short) var(--ease-out); align-self: flex-start; margin-top: var(--space-xs); }
+  .branze-card:hover .branze-card__arrow { transform: translateX(4px); }
+  .ps-market-resources { padding-block: var(--space-xl); background: var(--color-paper); border-top: 1px solid var(--color-rule); }
+  .market-resources__label { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-muted); margin-bottom: var(--space-md); }
+  .market-resources__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--space-sm); }
+  .market-resources__card { display: flex; align-items: flex-start; gap: var(--space-sm); padding: var(--space-md) var(--space-lg); border: 1px solid var(--color-rule); border-radius: var(--radius-md); background: var(--color-paper); text-decoration: none; transition: border-color var(--dur-micro) var(--ease-out), background var(--dur-short) var(--ease-out); }
+  .market-resources__card:hover { border-color: var(--color-secondary); background: var(--color-paper-2); }
+  .market-resources__title { font-family: var(--font-display); font-size: var(--text-sm); font-weight: 600; color: var(--color-secondary); display: block; margin-bottom: var(--space-2xs); }
+  .market-resources__desc { font-size: var(--text-xs); color: var(--color-muted); line-height: 1.55; flex: 1; display: block; }
+  .market-resources__ext { font-size: var(--text-base); color: var(--color-muted); flex-shrink: 0; margin-top: 2px; transition: color var(--dur-micro) var(--ease-out); }
+  .market-resources__card:hover .market-resources__ext { color: var(--color-secondary); }
+  .ps-crosslink { padding-block: var(--space-2xl); background: var(--color-paper-2); border-top: 1px solid var(--color-rule); }
+  .crosslink-box { border: 1px solid var(--color-blue); border-left: 4px solid var(--color-secondary); border-radius: var(--radius-lg); background: var(--color-blue-tint); padding: var(--space-xl); }
+  .crosslink-box__content { flex: 1; }
+  .crosslink-box__title { font-family: var(--font-display); font-size: var(--text-md); font-weight: 700; color: var(--color-ink); margin-bottom: var(--space-sm); }
+  .crosslink-box__text { font-size: var(--text-base); color: var(--color-muted); line-height: 1.6; margin-bottom: var(--space-md); }
+  .crosslink-box__link { display: inline-flex; align-items: center; gap: var(--space-xs); font-family: var(--font-display); font-size: var(--text-base); font-weight: 600; color: var(--color-secondary); text-decoration: none; transition: color var(--dur-micro) var(--ease-out); }
+  .crosslink-box__link:hover { color: var(--color-ink); }
+  @media (max-width: 60rem) { .ps-problem__grid { grid-template-columns: 1fr; } .ps-brief { position: static; } .why-grid { grid-template-columns: 1fr; } .sc-grid { grid-template-columns: 1fr; } .related-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 48rem) { .fw-grid { grid-template-columns: 1fr; } .scope-grid { grid-template-columns: 1fr; } .types-grid { grid-template-columns: 1fr; } .ben-grid { grid-template-columns: 1fr; } .when-list { grid-template-columns: 1fr; } .quote-list { grid-template-columns: 1fr; } .endcta__actions { flex-direction: column; align-items: stretch; } .endcta__btn { width: 100%; justify-content: center; } }
+</style>

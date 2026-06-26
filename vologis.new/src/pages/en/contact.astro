@@ -1,0 +1,353 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Eyebrow from "../../components/Eyebrow.astro";
+
+const schemaLocalBusiness = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Vologis Sp. z o.o.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ul. Wrocławska 79B",
+    "addressLocality": "Jarocin",
+    "postalCode": "63-200",
+    "addressCountry": "PL"
+  },
+  "email": "biuro@vologis.com",
+  "url": "https://vologis.com",
+  "description": "Independent end-to-end logistics consulting — from analysis to implementation."
+};
+
+const schemaBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home",    "item": "https://vologis.com/en/" },
+    { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://vologis.com/en/contact/" }
+  ]
+};
+---
+
+<BaseLayout
+  title="Contact — Vologis | Logistics Consulting"
+  description="Contact Vologis. Book a free consultation or write to us directly."
+  canonical="https://vologis.com/en/contact/"
+  hreflangPL="/pl/kontakt/"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaLocalBusiness)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaBreadcrumb)} />
+
+  <!-- ── Hero ───────────────────────────────────────── -->
+  <section class="contact-hero" aria-labelledby="contact-heading">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list" role="list">
+          <li><a href="/en/">Home</a></li>
+          <li aria-hidden="true" class="breadcrumb-sep">›</li>
+          <li aria-current="page">Contact</li>
+        </ol>
+      </nav>
+      <Eyebrow text="GET IN TOUCH" bg="light" />
+      <h1 id="contact-heading" class="contact-h1">
+        Book a free<br>consultation
+      </h1>
+      <p class="contact-sub">
+        We'll respond within 24 hours. The first meeting is free and non-binding.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Two-column layout ──────────────────────────── -->
+  <section class="contact-body" aria-label="Contact form and company details">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- LEFT: Form -->
+        <div class="form-col">
+
+          <div class="success-msg" id="success-msg" aria-live="polite" hidden>
+            <div class="success-inner">
+              <span class="success-icon" aria-hidden="true">✓</span>
+              <h2 class="success-title">Thank you!</h2>
+              <p class="success-text">We'll get back to you within 24 hours.</p>
+            </div>
+          </div>
+
+          <div id="form-wrapper">
+            <h2 class="col-label">Write to us</h2>
+
+            <form
+              id="contact-form"
+              class="contact-form"
+              action="https://formspree.io/f/mjgdvnav"
+              method="POST"
+              novalidate
+            >
+              <input type="hidden" name="_subject" value="New enquiry — Vologis" />
+              <input type="hidden" name="_next" value="https://vologis.com/en/contact/?success=true" />
+              <input type="hidden" name="_replyto" value="" id="replyto-field" />
+
+              <div class="form-row">
+                <div class="field">
+                  <label class="field-label" for="name">Full name <span class="req" aria-hidden="true">*</span></label>
+                  <input class="field-input" type="text" id="name" name="name" autocomplete="name" required aria-required="true" />
+                  <span class="field-error" aria-live="polite"></span>
+                </div>
+                <div class="field">
+                  <label class="field-label" for="company">Company <span class="req" aria-hidden="true">*</span></label>
+                  <input class="field-input" type="text" id="company" name="company" autocomplete="organization" required aria-required="true" />
+                  <span class="field-error" aria-live="polite"></span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="field">
+                  <label class="field-label" for="email">Business email <span class="req" aria-hidden="true">*</span></label>
+                  <input class="field-input" type="email" id="email" name="email" autocomplete="email" required aria-required="true" />
+                  <span class="field-error" aria-live="polite"></span>
+                </div>
+                <div class="field">
+                  <label class="field-label" for="phone">Phone <span class="optional">(optional)</span></label>
+                  <input class="field-input" type="tel" id="phone" name="phone" autocomplete="tel" />
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="topic">Subject <span class="req" aria-hidden="true">*</span></label>
+                <div class="select-wrap">
+                  <select class="field-input field-select" id="topic" name="topic" required aria-required="true">
+                    <option value="" disabled selected>Choose a subject…</option>
+                    <option value="logistics-brokerage">Logistics brokerage</option>
+                    <option value="operational-consulting">Operational consulting &amp; audit</option>
+                    <option value="greenfield-project">Greenfield project</option>
+                    <option value="drone-services">Drone services</option>
+                    <option value="interim-management">Interim Management</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <span class="select-arrow" aria-hidden="true">›</span>
+                </div>
+                <span class="field-error" aria-live="polite"></span>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="message">Message <span class="req" aria-hidden="true">*</span></label>
+                <textarea class="field-input field-textarea" id="message" name="message" rows="5" minlength="20" required aria-required="true" placeholder="Describe your issue or question briefly…"></textarea>
+                <span class="field-error" aria-live="polite"></span>
+              </div>
+
+              <div class="field field-checkbox">
+                <label class="checkbox-label">
+                  <input class="checkbox-input" type="checkbox" name="consent" required aria-required="true" />
+                  <span class="checkbox-text">
+                    I consent to my personal data being processed for the purpose of responding to this enquiry.
+                    <span class="req" aria-hidden="true">*</span>
+                  </span>
+                </label>
+                <span class="field-error" aria-live="polite"></span>
+              </div>
+
+              <p class="form-req-note"><span class="req" aria-hidden="true">*</span> Required fields</p>
+              <span class="form-error" id="form-error" aria-live="assertive"></span>
+
+              <button type="submit" class="btn-submit" id="submit-btn">
+                Send message →
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- RIGHT: CEO card + Company info + Calendly -->
+        <div class="info-col">
+
+          <div class="ceo-card">
+            <img src="/pawel-wojtczak.webp" alt="Paweł Wojtczak — CEO &amp; President of the Management Board, Vologis" width="80" height="80" class="ceo-card__photo" loading="lazy" decoding="async" />
+            <div class="ceo-card__info">
+              <p class="ceo-card__name">Paweł Wojtczak</p>
+              <p class="ceo-card__role">CEO &amp; President of the Management Board</p>
+              <p class="ceo-card__company">Vologis Sp. z o.o.</p>
+              <a href="https://www.linkedin.com/company/vologis/" class="ceo-card__linkedin" target="_blank" rel="noopener noreferrer" aria-label="Vologis on LinkedIn">LinkedIn →</a>
+            </div>
+          </div>
+
+          <div class="info-block">
+            <p class="info-block-label">COMPANY DETAILS</p>
+            <address class="company-data">
+              <p class="company-name">Vologis Sp. z o.o.</p>
+              <p>ul. Wrocławska 79B<br>63-200 Jarocin, Poland</p>
+              <p class="company-reg">NIP: 6172220630 &nbsp;|&nbsp; KRS: 0000902577</p>
+              <p><a href="mailto:biuro@vologis.com" class="company-link">biuro@vologis.com</a></p>
+              <p><a href="tel:+48533037996" class="company-link">+48 533 037 996</a></p>
+            </address>
+          </div>
+
+          <div class="calendly-block">
+            <p class="info-block-label">OR BOOK AN ONLINE MEETING</p>
+            <button class="btn-calendly" data-calendly="popup" type="button" aria-label="Open Calendly calendar and choose a meeting time">
+              Open calendar and choose a time
+            </button>
+            <p class="calendly-note">
+              Click to book a free online consultation (30 min).
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .breadcrumb { margin-bottom: var(--space-lg); }
+  .breadcrumb-list { display: flex; align-items: center; gap: var(--space-xs); list-style: none; font-size: var(--text-sm); color: var(--color-muted); }
+  .breadcrumb-list a { color: var(--color-muted); text-decoration: none; transition: color var(--dur-micro) var(--ease-out); }
+  .breadcrumb-list a:hover { color: var(--color-ink); }
+  .breadcrumb-sep { color: var(--color-neutral); user-select: none; }
+  .breadcrumb-list [aria-current="page"] { color: var(--color-ink); font-weight: 500; }
+  .contact-hero { padding-top: calc(var(--space-3xl) + 5rem); padding-bottom: var(--space-2xl); }
+  .eyebrow { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.12em; color: var(--color-accent); margin-bottom: var(--space-md); text-transform: uppercase; }
+  .contact-h1 { font-size: var(--text-display); letter-spacing: -0.03em; line-height: 1.1; color: var(--color-ink); margin-bottom: var(--space-lg); }
+  .contact-sub { font-size: var(--text-md); color: var(--color-muted); max-width: 52ch; line-height: 1.6; }
+  .contact-body { padding-bottom: var(--space-3xl); }
+  .contact-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--space-3xl); align-items: start; }
+  .col-label { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; letter-spacing: -0.02em; color: var(--color-ink); margin-bottom: var(--space-xl); }
+  .info-block-label { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.1em; color: var(--color-neutral); text-transform: uppercase; margin-bottom: var(--space-md); }
+  .contact-form { display: flex; flex-direction: column; gap: var(--space-lg); }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+  .field { display: flex; flex-direction: column; gap: var(--space-2xs); }
+  .field-label { font-size: var(--text-sm); font-weight: 500; color: var(--color-ink); }
+  .req { color: var(--color-accent); margin-left: 1px; }
+  .optional { font-size: var(--text-xs); font-weight: 400; color: var(--color-neutral); }
+  .field-input { font-family: var(--font-body); font-size: var(--text-base); color: var(--color-ink); background: var(--color-paper); border: 1px solid var(--color-rule); border-radius: var(--space-2xs); padding: var(--space-sm) var(--space-md); width: 100%; outline: none; transition: border-color var(--dur-micro) var(--ease-out), box-shadow var(--dur-micro) var(--ease-out); appearance: none; }
+  .field-input::placeholder { color: var(--color-neutral); }
+  .field-input:focus { border-color: var(--color-secondary); box-shadow: 0 0 0 3px oklch(56% 0.078 238 / 0.20); }
+  .field-input.is-invalid { border-color: var(--color-accent); }
+  .field-textarea { resize: vertical; min-height: 7rem; line-height: 1.6; }
+  .select-wrap { position: relative; }
+  .field-select { cursor: pointer; padding-right: var(--space-xl); }
+  .select-arrow { position: absolute; right: var(--space-md); top: 50%; transform: translateY(-50%) rotate(90deg); font-size: var(--text-base); color: var(--color-muted); pointer-events: none; }
+  .field-checkbox { gap: var(--space-xs); }
+  .checkbox-label { display: flex; align-items: flex-start; gap: var(--space-sm); cursor: pointer; }
+  .checkbox-input { width: 1.125rem; height: 1.125rem; flex-shrink: 0; margin-top: 0.125rem; accent-color: var(--color-ink); cursor: pointer; }
+  .checkbox-text { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.5; }
+  .field-error { font-size: var(--text-xs); color: var(--color-accent); min-height: 1em; display: block; }
+  .form-req-note { font-size: var(--text-xs); color: var(--color-neutral); }
+  .form-error { font-size: var(--text-sm); color: var(--color-accent); min-height: 1em; }
+  .form-error:empty { display: none; }
+  .btn-submit { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; color: var(--color-ink-on-dark); background: var(--color-ink); border: none; border-radius: 9999px; padding: var(--space-sm) var(--space-xl); cursor: pointer; align-self: flex-start; transition: background var(--dur-micro) var(--ease-out), transform var(--dur-micro) var(--ease-out); }
+  .btn-submit:hover { background: var(--color-secondary); transform: translateY(-1px); }
+  .btn-submit:active { transform: translateY(0); }
+  .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+  .success-msg { border: 1px solid oklch(56% 0.078 238 / 0.30); background: var(--color-blue-tint); border-radius: var(--space-xs); padding: var(--space-2xl); text-align: center; margin-bottom: var(--space-2xl); }
+  .success-inner { display: flex; flex-direction: column; align-items: center; gap: var(--space-md); }
+  .success-icon { display: flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; background: var(--color-secondary); color: #fff; border-radius: 9999px; font-size: var(--text-xl); font-weight: 700; }
+  .success-title { font-size: var(--text-2xl); font-weight: 700; color: var(--color-ink); letter-spacing: -0.02em; }
+  .success-text { font-size: var(--text-md); color: var(--color-muted); }
+  .ceo-card { display: flex; align-items: center; gap: var(--space-lg); padding: var(--space-lg) var(--space-xl); background: var(--color-paper-2); border: 1px solid var(--color-rule); border-left: 4px solid var(--color-secondary); border-radius: var(--radius-md); }
+  .ceo-card__photo { width: 4.5rem; height: 4.5rem; border-radius: var(--radius-pill); object-fit: cover; object-position: center top; flex-shrink: 0; }
+  .ceo-card__info { display: flex; flex-direction: column; gap: 2px; }
+  .ceo-card__name { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; color: var(--color-ink); line-height: 1.2; }
+  .ceo-card__role { font-size: var(--text-sm); color: var(--color-secondary); font-weight: 500; line-height: 1.3; }
+  .ceo-card__company { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.3; }
+  .ceo-card__linkedin { font-size: var(--text-sm); font-weight: 600; color: var(--color-secondary); text-decoration: none; margin-top: var(--space-2xs); display: inline-block; transition: color var(--dur-micro) var(--ease-out); }
+  .ceo-card__linkedin:hover { color: var(--color-ink); }
+  .info-col { display: flex; flex-direction: column; gap: var(--space-2xl); position: sticky; top: calc(var(--space-3xl) + 2rem); }
+  .info-block { background: var(--color-paper-2); border: 1px solid var(--color-rule); border-radius: var(--space-xs); padding: var(--space-xl); }
+  .company-data { font-style: normal; display: flex; flex-direction: column; gap: var(--space-sm); font-size: var(--text-base); color: var(--color-muted); line-height: 1.6; }
+  .company-name { font-weight: 700; font-size: var(--text-lg); color: var(--color-ink); letter-spacing: -0.01em; }
+  .company-reg { font-size: var(--text-sm); color: var(--color-neutral); }
+  .company-link { color: var(--color-secondary); text-decoration: none; transition: color var(--dur-micro) var(--ease-out); }
+  .company-link:hover { color: var(--color-ink); }
+  .calendly-block { display: flex; flex-direction: column; gap: var(--space-sm); }
+  .btn-calendly { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; color: var(--color-ink-on-dark); background: var(--color-ink); border: none; border-radius: 9999px; padding: var(--space-sm) var(--space-xl); cursor: pointer; width: 100%; text-align: center; transition: background var(--dur-micro) var(--ease-out), transform var(--dur-micro) var(--ease-out); }
+  .btn-calendly:hover { background: var(--color-secondary); transform: translateY(-1px); }
+  .btn-calendly:active { transform: translateY(0); }
+  .calendly-note { font-size: var(--text-xs); color: var(--color-neutral); line-height: 1.5; }
+  @media (max-width: 60rem) {
+    .contact-grid { grid-template-columns: 1fr; gap: var(--space-2xl); }
+    .info-col { position: static; }
+    .form-row { grid-template-columns: 1fr; }
+    .btn-submit { width: 100%; justify-content: center; }
+  }
+  @media (max-width: 40rem) { .contact-h1 { font-size: var(--text-display-s); } }
+</style>
+
+<script>
+  const successEl = document.getElementById('success-msg');
+  const formWrapper = document.getElementById('form-wrapper');
+
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('success') === 'true') {
+    if (successEl) successEl.hidden = false;
+    if (formWrapper) formWrapper.hidden = true;
+  }
+
+  const emailInput = document.getElementById('email') as HTMLInputElement | null;
+  const replytoField = document.getElementById('replyto-field') as HTMLInputElement | null;
+  if (emailInput && replytoField) {
+    emailInput.addEventListener('input', () => { replytoField.value = emailInput.value; });
+  }
+
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+
+  const MESSAGES: Record<string, string> = {
+    valueMissing: 'This field is required.',
+    typeMismatch: 'Please enter a valid email address.',
+    tooShort: 'Message must be at least 20 characters.',
+  };
+
+  function validateField(input: HTMLElement): boolean {
+    const el = input as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
+    const errorEl = el.parentElement?.querySelector('.field-error') ?? el.closest('.field')?.querySelector('.field-error');
+    let msg = '';
+    if (!el.validity.valid) {
+      if (el.validity.valueMissing) msg = MESSAGES.valueMissing;
+      else if (el.validity.typeMismatch) msg = MESSAGES.typeMismatch;
+      else if (el.validity.tooShort) msg = MESSAGES.tooShort;
+      else msg = el.validationMessage;
+    }
+    el.classList.toggle('is-invalid', !el.validity.valid);
+    if (errorEl) errorEl.textContent = msg;
+    return el.validity.valid;
+  }
+
+  if (form) {
+    form.querySelectorAll('input, textarea, select').forEach((el) => {
+      el.addEventListener('blur', () => validateField(el as HTMLElement));
+      el.addEventListener('input', () => validateField(el as HTMLElement));
+    });
+
+    const formError = document.getElementById('form-error');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (formError) formError.textContent = '';
+
+      const fields = Array.from(form.querySelectorAll('input, textarea, select'));
+      const allValid = fields.map((el) => validateField(el as HTMLElement)).every(Boolean);
+
+      if (!allValid) {
+        const firstInvalid = form.querySelector('.is-invalid') as HTMLElement | null;
+        firstInvalid?.focus();
+        return;
+      }
+
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
+
+      try {
+        const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+        if (res.ok) {
+          if (successEl) successEl.hidden = false;
+          if (formWrapper) formWrapper.hidden = true;
+          successEl?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          throw new Error('Formspree responded with ' + res.status);
+        }
+      } catch {
+        if (formError) formError.textContent = 'Something went wrong. Please try again or write to us directly at biuro@vologis.com.';
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send message →'; }
+      }
+    });
+  }
+</script>

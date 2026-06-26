@@ -1,0 +1,395 @@
+---
+import KnowledgeArticleLayout from "../../../layouts/KnowledgeArticleLayout.astro";
+import FaqAccordion from "../../../components/FaqAccordion.astro";
+import CalloutBox from "../../../components/CalloutBox.astro";
+import { articleSchema, speakableSchema } from "../../../utils/schema";
+
+const toc = [
+  { id: "what-it-is",           label: "What is a logistics audit?" },
+  { id: "when-to-run",          label: "When is the right time?" },
+  { id: "scope",                label: "What does it cover?" },
+  { id: "step-by-step",         label: "Step by step" },
+  { id: "outcomes",             label: "What outcomes to expect" },
+  { id: "warehouse-vs-company", label: "Warehouse audit vs company logistics" },
+  { id: "report",               label: "What should the report contain?" },
+  { id: "mistakes",             label: "Common mistakes" },
+  { id: "duration",             label: "How long does it take?" },
+  { id: "who-for",              label: "Who is it for?" },
+  { id: "preparation",          label: "How to prepare your company" },
+  { id: "faq",                  label: "FAQ" },
+];
+
+const whenCards = [
+  "Logistics costs are growing faster than sales or order volume.",
+  "The warehouse is operating at or near its capacity limits.",
+  "Delays, picking errors, customer complaints, or service quality issues are emerging.",
+  "The company is planning to implement or change a WMS, ERP, or other IT systems.",
+  "The team wants to improve throughput without simply adding headcount.",
+  "The business is preparing for a relocation, warehouse expansion, or automation project.",
+  "Management needs an independent diagnosis before a major investment decision.",
+  "The company wants to reduce stock levels, improve inventory turnover, or rationalise its SKU range.",
+  "A merger, acquisition, or market entry requires an assessment of operational readiness.",
+  "Leadership needs clear priorities rather than another list of problems.",
+];
+
+const scopeAreas = [
+  { title: "Logistics processes",         text: "Analysis of inbound, storage, picking, packing, dispatch, returns, document flow, and cross-departmental communication." },
+  { title: "Warehouse & infrastructure",  text: "Assessment of layout, space utilisation, storage zones, picking paths, equipment, ergonomics, and automation potential." },
+  { title: "Inventory & assortment",      text: "Analysis of stock levels, turnover, product availability, ABC/XYZ structure, surpluses, shortfalls, and the impact of purchasing policy on warehouse operations." },
+  { title: "Costs & efficiency",          text: "Review of operational costs, team productivity, cost-per-order, process throughput, and potential savings." },
+  { title: "IT systems & data",           text: "Assessment of WMS, ERP, scanners, data automation, reporting, and the quality of information available for logistics management." },
+  { title: "Organisation & competencies", text: "Analysis of team structure, accountabilities, work planning, cross-departmental communication, and the organisation's readiness for change." },
+];
+
+const processSteps = [
+  { num: "01", title: "Define the goal and scope",         text: "The first step is to establish what business question the audit needs to answer. Is it about cost reduction, warehouse efficiency, automation readiness, IT system evaluation, or a full supply chain diagnosis?" },
+  { num: "02", title: "Data collection",                   text: "The audit requires access to operational, sales, warehouse, and cost data — from WMS, ERP, spreadsheets, financial reports, order history, complaint logs, inventory records, and staffing schedules." },
+  { num: "03", title: "Process observation",               text: "The most important insights often only become visible on the floor. The audit must include direct observation of warehouse operations, conversations with staff and supervisors, and a check of how processes actually work — not just how they're documented." },
+  { num: "04", title: "Analysis and problem identification",text: "At this stage, data and observations are combined into a single picture. The goal is to find bottlenecks, root causes of errors, sources of time waste, inefficient space use, excess inventory, or gaps in management." },
+  { num: "05", title: "Recommendations and priorities",    text: "A good audit ends with a concrete list of recommendations, each with a defined business impact, difficulty level, implementation cost, expected outcome, and priority ranking." },
+  { num: "06", title: "Action plan",                       text: "The highest value comes from a plan that separates quick wins from strategic projects — so the company knows what to fix immediately and what requires investment, organisational change, or a separate implementation project." },
+];
+
+const effectsList = [
+  "An objective diagnosis of your current logistics state",
+  "Identification of the most important problems and their root causes",
+  "Clear priorities for management and the operational team",
+  "Identification of potential cost savings",
+  "Improved warehouse and process efficiency",
+  "Fewer errors, complaints, and delays",
+  "Better use of space and equipment",
+  "More informed decisions about IT, automation, or relocation",
+  "Reduced risk of misguided investment",
+  "A clear action plan for the coming weeks and months",
+];
+
+const comparisonRows = [
+  { feature: "Goal",          warehouse: "Improve warehouse operations: space utilisation, processes, and throughput.", company: "Assess the entire logistics system and its alignment with business strategy." },
+  { feature: "Scope",         warehouse: "Inbound, storage, picking, packing, dispatch, returns, layout.", company: "Warehouse, inventory, purchasing, distribution, transport, IT, organisation, cross-departmental processes." },
+  { feature: "When to choose",warehouse: "When the problem is clearly in the warehouse operation.", company: "When the issue involves costs, strategy, customer service, or investment decisions." },
+  { feature: "Outcome",       warehouse: "Concrete operational improvements.", company: "Strategic and operational recommendations for the entire system." },
+];
+
+const reportItems = [
+  "Executive summary",
+  "Description of current process state",
+  "Map of key flows",
+  "Data and KPI analysis",
+  "Bottleneck identification",
+  "List of issues with root causes",
+  "Improvement recommendations",
+  "Split into quick wins and strategic projects",
+  "Estimated impact, cost, and implementation difficulty",
+  "Action priorities",
+  "Implementation plan",
+  "Risks and dependencies",
+  "Recommendations across people, processes, IT systems, and infrastructure",
+];
+
+const commonMistakes = [
+  "Analysing only from a desk, without observing operations.",
+  "Focusing on symptoms rather than root causes.",
+  "Missing data or working with poor-quality data.",
+  "Too broad a scope with no clear business question.",
+  "A report without priorities or assigned ownership.",
+  "Recommendations disconnected from budget, people, and organisational realities.",
+  "Treating the audit as a staff inspection rather than a system improvement tool.",
+];
+
+const forWhomList = [
+  "E-commerce and D2C",
+  "Manufacturing companies",
+  "Distribution companies",
+  "Retail and wholesale",
+  "Operators with their own warehouse",
+  "Companies preparing a WMS/ERP implementation",
+  "Organisations ahead of relocation, automation, or operational scaling",
+];
+
+const preparationList = [
+  "Define the main business problem.",
+  "Prepare sales, warehouse, and cost data.",
+  "Gather reports from your WMS, ERP, or other systems.",
+  "Identify the processes that raise the most questions.",
+  "Plan conversations with people from operations, procurement, sales, IT, and finance.",
+  "Prepare information on complaints, delays, stockouts, and inventory turnover.",
+  "Agree on who will own the project on your side.",
+];
+
+const faqs = [
+  { q: "Does a logistics audit disrupt warehouse operations?", a: "It shouldn't. A well-planned audit runs alongside live processes. Observations, measurements, and conversations are conducted in a way that doesn't block day-to-day operations." },
+  { q: "Is a logistics audit only for large companies?", a: "No. An audit can deliver significant value for mid-sized and fast-growing companies too — especially when logistics costs are growing faster than sales, or the warehouse can't keep up with volume." },
+  { q: "How does a logistics audit differ from logistics consulting?", a: "An audit is a diagnosis and set of recommendations. Logistics consulting can also include implementing changes, project management, team training, and monitoring outcomes after the audit." },
+  { q: "Does the audit cover IT systems?", a: "Yes, when IT systems affect logistics processes. In practice, this means assessing WMS, ERP, scanners, reports, integrations, and the quality of data used to manage operations." },
+  { q: "What is the most important outcome of an audit?", a: "The most important outcome is a clear priority list: what to fix immediately, what requires a larger project, what not to do, and which decisions have the greatest impact on costs, efficiency, and customer service quality." },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })),
+};
+
+const schemaArticle = articleSchema({
+  headline: "The Logistics Audit — How to Objectively Find Where Your Business Is Losing Time, Money, and Efficiency",
+  description: "A logistics audit gives you an objective assessment of your warehouse, processes, costs, inventory, IT systems, and supply chain. Learn when it's worth doing and how it works step by step.",
+  url: "/en/insights/logistics-audit/",
+  datePublished: "2026-06-12",
+  dateModified: "2026-06-12",
+  inLanguage: "en",
+});
+
+const schemaSpeakable = speakableSchema("/en/insights/logistics-audit/", [
+  "[data-speakable='headline']",
+  "[data-speakable='summary']",
+]);
+---
+
+<KnowledgeArticleLayout
+  title="Logistics Audit — What It Is, When to Run One, and What It Should Contain | Vologis"
+  description="A logistics audit gives you an objective assessment of your warehouse, processes, costs, inventory, IT systems, and supply chain. Learn when it's worth doing and how it works step by step."
+  canonical="https://vologis.com/en/insights/logistics-audit/"
+  heroImage="/knowledge/audyt-logistyczny.webp"
+  category="Logistics audit"
+  readTime="8–10 min"
+  updatedAt="June 12, 2026"
+  h1="The Logistics Audit — How to Objectively Find Where Your Business Is Losing Time, Money, and Efficiency"
+  lead="A logistics audit is an independent assessment of your processes, costs, inventory, warehouse operations, IT systems, and organisational structure. The goal isn't to produce another report that collects dust — it's to pinpoint exactly where logistics is slowing your growth, generating unnecessary costs, or increasing the risk of bad decisions."
+  toc={toc}
+  ctaPrimaryLabel="Talk to us about an audit"
+  ctaSecondary={{ label: "See what an audit covers", href: "#scope" }}
+  hreflangPL="/pl/wiedza/audyt-logistyczny/"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaArticle)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaSpeakable)} />
+
+  <section class="s" id="what-it-is" aria-labelledby="h-what-it-is">
+    <h2 class="h2" id="h-what-it-is">What is a logistics audit?</h2>
+    <p class="body">A logistics audit is a structured assessment of how a company's logistics works: from the flow of goods and information, through warehousing, picking, inventory, transport, and distribution, to IT systems, organisational structure, and operations management.</p>
+    <p class="body">A good audit doesn't stop at conversations with senior management or a review of documents. It combines data analysis, process observation, conversations with staff, workshops with leadership, and assessment of key performance indicators. This reveals not just what isn't working — but why, and what to address first.</p>
+    <div class="three-q">
+      <p class="three-q__label">A logistics audit answers three questions:</p>
+      <ol class="three-q__list">
+        <li><strong>What is the current state of logistics?</strong></li>
+        <li><strong>Where are costs, delays, errors, or bottlenecks being generated?</strong></li>
+        <li><strong>Which actions will deliver the greatest impact at the lowest implementation risk?</strong></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="s" id="when-to-run" aria-labelledby="h-when-to-run">
+    <h2 class="h2" id="h-when-to-run">When is the right time for a logistics audit?</h2>
+    <p class="body">An audit delivers the most value when a company is growing, changing its operating model, or starting to see that current processes are no longer sufficient.</p>
+    <div class="when-grid">
+      {whenCards.map((text) => (
+        <div class="when-card">
+          <svg class="check-ico" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg>
+          <p class="when-card__text">{text}</p>
+        </div>
+      ))}
+    </div>
+    <div class="inline-cta">
+      <p class="inline-cta__text">Recognise any of these signals? Start with a free conversation about which area to prioritise.</p>
+      <a href="#" class="inline-cta__btn" data-calendly="popup">Book a consultation →</a>
+    </div>
+  </section>
+
+  <section class="s" id="scope" aria-labelledby="h-scope">
+    <h2 class="h2" id="h-scope">What does a logistics audit cover?</h2>
+    <p class="body">The scope should be tailored to the company's size and the business problem. An e-commerce warehouse audit looks different from a supply chain audit at a manufacturing company — and both differ from a pre-IT-implementation logistics assessment.</p>
+    <div class="scope-grid">
+      {scopeAreas.map((area) => (
+        <div class="scope-card">
+          <h3 class="scope-card__title">{area.title}</h3>
+          <p class="scope-card__text">{area.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="s" id="step-by-step" aria-labelledby="h-step-by-step">
+    <h2 class="h2" id="h-step-by-step">How does a logistics audit work, step by step?</h2>
+    <div class="steps">
+      {processSteps.map((step, i) => (
+        <div class="step">
+          <div class="step__rail">
+            <span class="step__badge tnum" aria-label={`Step ${step.num}`}>{step.num}</span>
+            {i < processSteps.length - 1 && <span class="step__line" aria-hidden="true" />}
+          </div>
+          <div class="step__body">
+            <h3 class="step__title">{step.title}</h3>
+            <p class="step__text">{step.text}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="s" id="outcomes" aria-labelledby="h-outcomes">
+    <h2 class="h2" id="h-outcomes">What outcomes should a good logistics audit deliver?</h2>
+    <ul class="checklist" role="list">
+      {effectsList.map((item) => (
+        <li class="checklist__item">
+          <svg class="check-ico" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+    <CalloutBox>The most important outcome of an audit isn't the report itself. It's the decisions your company can make based on facts, data, and shared priorities.</CalloutBox>
+  </section>
+
+  <section class="s" id="warehouse-vs-company" aria-labelledby="h-comparison">
+    <h2 class="h2" id="h-comparison">Warehouse audit vs company logistics audit — what's the difference?</h2>
+    <div class="cmp" role="table" aria-label="Comparison: warehouse audit vs company logistics audit">
+      <div class="cmp__head" role="row">
+        <span class="cmp__cell cmp__cell--feat" role="columnheader">Area</span>
+        <span class="cmp__cell cmp__cell--a" role="columnheader">Warehouse audit</span>
+        <span class="cmp__cell cmp__cell--b" role="columnheader">Company logistics audit</span>
+      </div>
+      {comparisonRows.map((row) => (
+        <div class="cmp__row" role="row">
+          <span class="cmp__cell cmp__cell--feat" role="rowheader">{row.feature}</span>
+          <span class="cmp__cell cmp__cell--a cmp__cell--body" role="cell">{row.warehouse}</span>
+          <span class="cmp__cell cmp__cell--b cmp__cell--body" role="cell">{row.company}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="s" id="report" aria-labelledby="h-report">
+    <h2 class="h2" id="h-report">What should a logistics audit report contain?</h2>
+    <div class="report-grid">
+      {reportItems.map((item) => (
+        <div class="report-card">
+          <svg class="check-ico" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg>
+          <p class="report-card__text">{item}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="s" id="mistakes" aria-labelledby="h-mistakes">
+    <h2 class="h2" id="h-mistakes">Common mistakes in a logistics audit</h2>
+    <ol class="mistake-list" role="list">
+      {commonMistakes.map((mistake) => (
+        <li class="mistake-item"><span class="mistake-item__text">{mistake}</span></li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="s" id="duration" aria-labelledby="h-duration">
+    <h2 class="h2" id="h-duration">How long does a logistics audit take?</h2>
+    <p class="body">The duration depends on the organisation's scale, number of locations, data quality, and scope of the problem. A rapid diagnostic of a specific area can take a few days or 2–3 weeks. A full company logistics audit typically requires several weeks of work — covering preparation, data analysis, process observation, workshops, recommendations, and results presentation.</p>
+    <div class="timeline-box">
+      <p class="timeline-box__label">Typical timeline</p>
+      <ul class="timeline-box__list" role="list">
+        <li><strong>1–3 days</strong> — defining scope, goals, and data requirements</li>
+        <li><strong>A few days</strong> — on-site observation, interviews, and process mapping</li>
+        <li><strong>1–3 weeks</strong> — data analysis and root cause identification</li>
+        <li><strong>A few days</strong> — recommendations, priorities, and final report</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="s" id="who-for" aria-labelledby="h-who-for">
+    <h2 class="h2" id="h-who-for">Who is a logistics audit for?</h2>
+    <p class="body">A logistics audit is particularly valuable for companies with their own warehouse, those growing quickly, handling increasing order volumes, or planning significant changes to their logistics. This includes e-commerce, manufacturing, distribution, wholesale, and retail companies — as well as organisations looking to improve customer service quality without uncontrolled cost growth.</p>
+    <div class="tag-list" role="list">
+      {forWhomList.map((item) => (
+        <span class="tag" role="listitem">{item}</span>
+      ))}
+    </div>
+  </section>
+
+  <section class="s" id="preparation" aria-labelledby="h-preparation">
+    <h2 class="h2" id="h-preparation">How to prepare your company for an audit</h2>
+    <ol class="prep-list" role="list">
+      {preparationList.map((item) => (
+        <li class="prep-item">{item}</li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="s" id="faq" aria-labelledby="h-faq">
+    <h2 class="h2" id="h-faq">FAQ — frequently asked questions</h2>
+    <FaqAccordion items={faqs} />
+  </section>
+
+  <div class="end-cta">
+    <h2 class="end-cta__h2">Want to find where your logistics is losing efficiency?</h2>
+    <p class="end-cta__text">If operational costs are rising, the warehouse is under pressure, and logistics decisions are increasingly driven by gut feel rather than data — an audit could be the best first step. Start with a conversation about the business problem you want to solve.</p>
+    <a href="#" class="end-cta__btn" data-calendly="popup">Book a consultation</a>
+  </div>
+</KnowledgeArticleLayout>
+
+<style>
+  .s { padding-block: var(--space-2xl); border-top: 1px solid var(--color-rule); }
+  .s:first-of-type { border-top: none; padding-top: 0; }
+  .h2 { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; letter-spacing: -0.025em; line-height: 1.15; color: var(--color-ink); margin-bottom: var(--space-lg); }
+  .body { font-size: var(--text-base); color: var(--color-muted); line-height: 1.75; margin-bottom: var(--space-md); }
+  .check-ico { flex-shrink: 0; width: 1.2rem; height: 1.2rem; margin-top: 0.15rem; color: var(--color-blue); }
+  .three-q { margin-top: var(--space-lg); border: 1px solid var(--color-blue); border-radius: var(--radius-lg); background: var(--color-blue-tint); padding: var(--space-lg) var(--space-xl); }
+  .three-q__label { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-secondary); margin-bottom: var(--space-md); }
+  .three-q__list { display: flex; flex-direction: column; gap: var(--space-sm); padding-left: var(--space-lg); }
+  .three-q__list li { font-size: var(--text-base); color: var(--color-ink); line-height: 1.6; }
+  .when-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: var(--space-md); margin-bottom: var(--space-xl); }
+  .when-card { display: flex; align-items: flex-start; gap: var(--space-md); border: 1px solid var(--color-rule); border-radius: var(--radius-md); padding: var(--space-md); background: var(--color-paper); transition: border-color var(--dur-micro) var(--ease-out); }
+  .when-card:hover { border-color: var(--color-blue); }
+  .when-card__text { font-size: var(--text-sm); color: var(--color-ink); line-height: 1.55; }
+  .inline-cta { display: flex; align-items: center; justify-content: space-between; gap: var(--space-lg); background: var(--color-paper-dark); border-radius: var(--radius-lg); padding: var(--space-lg) var(--space-xl); flex-wrap: wrap; }
+  .inline-cta__text { font-size: var(--text-base); color: var(--color-muted-on-dark); line-height: 1.6; flex: 1; min-width: 180px; }
+  .inline-cta__btn { display: inline-flex; align-items: center; font-family: var(--font-display); font-size: var(--text-sm); font-weight: 600; padding: var(--space-sm) var(--space-lg); border-radius: var(--radius-pill); background: var(--color-accent); color: #fff; text-decoration: none; white-space: nowrap; cursor: pointer; transition: background var(--dur-micro) var(--ease-out); flex-shrink: 0; }
+  .inline-cta__btn:hover { background: var(--color-accent-hover); }
+  .scope-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--space-md); margin-top: var(--space-lg); }
+  .scope-card { border: 1px solid var(--color-rule); border-left: 4px solid var(--color-secondary); border-radius: var(--radius-md); padding: var(--space-lg); background: var(--color-paper); }
+  .scope-card__title { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; color: var(--color-ink); margin-bottom: var(--space-sm); }
+  .scope-card__text { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.6; }
+  .steps { display: flex; flex-direction: column; }
+  .step { display: grid; grid-template-columns: 2.75rem 1fr; gap: var(--space-lg); }
+  .step__rail { display: flex; flex-direction: column; align-items: center; }
+  .step__badge { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; flex-shrink: 0; border-radius: var(--radius-pill); background: var(--color-ink); color: var(--color-ink-on-dark); font-family: var(--font-display); font-weight: 700; font-size: var(--text-sm); }
+  .step__line { width: 2px; flex: 1; min-height: var(--space-lg); background: var(--color-rule); margin-block: var(--space-xs); }
+  .step__body { padding-bottom: var(--space-xl); }
+  .step:last-child .step__body { padding-bottom: 0; }
+  .step__title { font-family: var(--font-display); font-size: var(--text-md); font-weight: 700; letter-spacing: -0.015em; color: var(--color-ink); margin-bottom: var(--space-sm); padding-top: var(--space-2xs); }
+  .step__text { font-size: var(--text-base); color: var(--color-muted); line-height: 1.7; }
+  .checklist { list-style: none; display: flex; flex-direction: column; gap: var(--space-sm); margin-bottom: var(--space-lg); }
+  .checklist__item { display: flex; align-items: flex-start; gap: var(--space-sm); font-size: var(--text-base); color: var(--color-ink); line-height: 1.55; }
+  .cmp { border: 1px solid var(--color-rule); border-radius: var(--radius-lg); overflow: hidden; background: var(--color-paper); margin-top: var(--space-lg); }
+  .cmp__head, .cmp__row { display: grid; grid-template-columns: 1fr 1.5fr 1.5fr; border-bottom: 1px solid var(--color-rule); }
+  .cmp__row:last-child { border-bottom: none; }
+  .cmp__cell { display: flex; align-items: flex-start; padding: var(--space-md) var(--space-lg); font-size: var(--text-sm); line-height: 1.55; }
+  .cmp__head .cmp__cell { font-family: var(--font-display); font-weight: 700; font-size: var(--text-sm); align-items: center; padding-block: var(--space-md); }
+  .cmp__head { background: var(--color-paper-dark); }
+  .cmp__cell--feat { font-weight: 600; color: var(--color-ink); background: var(--color-paper-2); }
+  .cmp__head .cmp__cell--feat { background: var(--color-paper-dark-2); color: var(--color-ink-on-dark); }
+  .cmp__cell--a { color: var(--color-ink); border-left: 2px solid var(--color-secondary); }
+  .cmp__head .cmp__cell--a { color: var(--color-ink-on-dark); border-left-color: var(--color-blue-on-dark); }
+  .cmp__cell--b { color: var(--color-muted); }
+  .cmp__head .cmp__cell--b { color: var(--color-muted-on-dark); }
+  @media (max-width: 48rem) { .cmp { overflow-x: auto; } .cmp__head, .cmp__row { grid-template-columns: 6rem 11rem 11rem; min-width: 28rem; } .cmp__cell--feat { position: sticky; left: 0; z-index: 1; } }
+  .report-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--space-sm); margin-top: var(--space-lg); }
+  .report-card { display: flex; align-items: flex-start; gap: var(--space-sm); border: 1px solid var(--color-rule); border-radius: var(--radius-sm); padding: var(--space-md); background: var(--color-paper); }
+  .report-card__text { font-size: var(--text-sm); color: var(--color-ink); line-height: 1.5; }
+  .mistake-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-md); counter-reset: mistakes; }
+  .mistake-item { display: flex; align-items: flex-start; gap: var(--space-md); font-size: var(--text-base); color: var(--color-ink); line-height: 1.6; counter-increment: mistakes; }
+  .mistake-item::before { content: counter(mistakes, decimal-leading-zero); font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 700; color: var(--color-accent); padding-top: 0.25rem; flex-shrink: 0; min-width: 2rem; }
+  .timeline-box { margin-top: var(--space-lg); border: 1px solid var(--color-rule); border-radius: var(--radius-lg); padding: var(--space-lg) var(--space-xl); background: var(--color-paper-2); }
+  .timeline-box__label { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-neutral); margin-bottom: var(--space-md); }
+  .timeline-box__list { display: flex; flex-direction: column; gap: var(--space-sm); list-style: none; }
+  .timeline-box__list li { font-size: var(--text-base); color: var(--color-muted); line-height: 1.6; display: flex; gap: var(--space-sm); }
+  .timeline-box__list li::before { content: "—"; color: var(--color-neutral); flex-shrink: 0; }
+  .timeline-box__list strong { color: var(--color-ink); }
+  .tag-list { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-md); }
+  .tag { display: inline-flex; align-items: center; padding: var(--space-xs) var(--space-md); border: 1px solid var(--color-rule); border-radius: var(--radius-pill); font-size: var(--text-sm); font-weight: 500; color: var(--color-ink); background: var(--color-paper); }
+  .prep-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-md); counter-reset: prep; }
+  .prep-item { display: flex; align-items: flex-start; gap: var(--space-md); font-size: var(--text-base); color: var(--color-ink); line-height: 1.6; counter-increment: prep; }
+  .prep-item::before { content: counter(prep); display: grid; place-items: center; width: 1.75rem; height: 1.75rem; flex-shrink: 0; border-radius: var(--radius-pill); background: var(--color-blue-tint); color: var(--color-secondary); font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 700; }
+  .end-cta { margin-top: var(--space-3xl); background: var(--gradient-cta); border-radius: var(--radius-lg); padding: var(--space-2xl); text-align: center; }
+  .end-cta__h2 { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; letter-spacing: -0.025em; line-height: 1.2; color: var(--color-ink-on-dark); margin-bottom: var(--space-md); }
+  .end-cta__text { font-size: var(--text-base); color: var(--color-muted-on-dark); line-height: 1.7; max-width: 52ch; margin-inline: auto; margin-bottom: var(--space-xl); }
+  .end-cta__btn { display: inline-flex; align-items: center; font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; padding: var(--space-md) var(--space-2xl); border-radius: var(--radius-pill); background: var(--color-accent); color: #fff; text-decoration: none; cursor: pointer; transition: background var(--dur-micro) var(--ease-out); }
+  .end-cta__btn:hover { background: var(--color-accent-hover); }
+  @media (max-width: 48rem) { .when-grid { grid-template-columns: 1fr; } .scope-grid { grid-template-columns: 1fr; } .inline-cta { flex-direction: column; align-items: flex-start; padding: var(--space-lg); } .inline-cta__btn { width: 100%; text-align: center; justify-content: center; } .end-cta { padding: var(--space-xl) var(--space-lg); } .end-cta__h2 { font-size: var(--text-lg); } .end-cta__btn { width: 100%; text-align: center; } .timeline-box { padding: var(--space-lg); } }
+</style>

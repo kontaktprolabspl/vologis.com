@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import { SITE } from "../config/site";
 import { orgSchema } from "../utils/schema";
+import { toEnPath, toPlPath } from "../data/url-map";
 
 interface Props {
   title?: string;
@@ -9,52 +10,174 @@ interface Props {
   ogImage?: string;
   canonical?: string;
   noIndex?: boolean;
-  /** Pass an absolute EN URL when this page has an English equivalent. */
+  /**
+   * Explicit EN alternate URL (used on PL pages for hreflang + lang switcher).
+   * Falls back to path-swap if omitted.
+   */
   hreflangEN?: string;
+  /**
+   * Explicit PL alternate URL (used on EN pages for hreflang + lang switcher).
+   * Falls back to path-swap if omitted.
+   */
+  hreflangPL?: string;
   /** Above-fold image to preload — pass per-page hero path here */
   preloadImage?: string;
 }
 
 const {
-  title = SITE.defaults.pl.title,
-  description = SITE.defaults.pl.description,
+  title,
+  description,
   ogImage = SITE.ogImage,
   canonical,
   noIndex = false,
   hreflangEN,
+  hreflangPL,
   preloadImage,
 } = Astro.props;
 
-const canonicalURL = canonical ?? new URL(Astro.url.pathname, "https://vologis.com").href;
-
 const currentLang = Astro.url.pathname.startsWith("/en") ? "en" : "pl";
-const plPath = currentLang === "en" ? Astro.url.pathname.replace(/^\/en/, "/pl") : Astro.url.pathname;
-const enPath = currentLang === "en" ? Astro.url.pathname : Astro.url.pathname.replace(/^\/pl/, "/en");
-const plURL = new URL(plPath, "https://vologis.com").href;
-const enURL = new URL(enPath, "https://vologis.com").href;
 
-const serviceLinks = [
-  { label: "Pośrednictwo logistyczne i fulfillment", href: "/pl/uslugi/posrednictwo-logistyczne/", desc: "Jeden partner zamiast dziesiątek rozmów z operatorami." },
-  { label: "Doradztwo operacyjne i audyt", href: "/pl/uslugi/doradztwo-operacyjne/", desc: "Sprawdzimy gdzie tracisz pieniądze, czas i ludzi." },
-  { label: "Projekty Greenfield", href: "/pl/uslugi/projekty-greenfield/", desc: "Od pustej działki do gotowej operacji." },
-  { label: "Usługi dronowe", href: "/pl/uslugi/uslugi-dronowe/", desc: "Pomiary, ortofotomapy, inspekcje i materiały z powietrza." },
-  { label: "Interim Management", href: "/pl/uslugi/interim-management/", desc: "Wsparcie zarządcze i gaszenie pożarów od zaraz." },
-  { label: "Komercjalizacja i sprzedaż", href: "/pl/uslugi/komercjalizacja-i-sprzedaz/", desc: "Komercjalizacja powierzchni, market entry i dobór partnera logistycznego." },
-  { label: "Bezpieczeństwo operacyjne", href: "/pl/uslugi/bezpieczenstwo-operacyjne/", desc: "Loss Prevention, CCTV/KD/SWWiN i procesy antyfraudowe dla dużych obiektów." },
-];
-const navItems = [
-  { label: "Proces",      href: "/pl/proces/",      match: "/pl/proces"      },
-  { label: "Wiedza",      href: "/pl/wiedza/",      match: "/pl/wiedza"      },
-  { label: "O nas",       href: "/pl/o-nas/",       match: "/pl/o-nas"       },
-  { label: "Współpraca",  href: "/pl/wspolpraca/",  match: "/pl/wspolpraca"  },
-];
+/* ── Resolve hreflang URLs ── */
+const plURL = (() => {
+  if (currentLang === "pl") return new URL(Astro.url.pathname, SITE.url).href;
+  return new URL(hreflangPL ?? toPlPath(Astro.url.pathname), SITE.url).href;
+})();
+
+const enURL = (() => {
+  if (currentLang === "en") return new URL(Astro.url.pathname, SITE.url).href;
+  return new URL(hreflangEN ?? toEnPath(Astro.url.pathname), SITE.url).href;
+})();
+
+/* ── Lang switcher target paths ── */
+const plSwitchPath = currentLang === "pl" ? Astro.url.pathname : (hreflangPL ?? toPlPath(Astro.url.pathname));
+const enSwitchPath = currentLang === "en" ? Astro.url.pathname : (hreflangEN ?? toEnPath(Astro.url.pathname));
+
+const canonicalURL = canonical ?? new URL(Astro.url.pathname, SITE.url).href;
+
+const defaultTitle = currentLang === "en" ? SITE.defaults.en.title : SITE.defaults.pl.title;
+const defaultDesc  = currentLang === "en" ? SITE.defaults.en.description : SITE.defaults.pl.description;
+
+const pageTitle       = title       ?? defaultTitle;
+const pageDescription = description ?? defaultDesc;
+const ogLocale        = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.pl.locale;
+
+/* ── Nav content ── */
+const isEN = currentLang === "en";
+
+const serviceLinks = isEN
+  ? [
+      { label: "Logistics brokerage & fulfillment",   href: "/en/services/logistics-brokerage/",        desc: "One partner instead of dozens of operator conversations." },
+      { label: "Operational consulting & audit",       href: "/en/services/operational-consulting/",     desc: "We find where you're losing money, time, and people." },
+      { label: "Greenfield projects",                  href: "/en/services/greenfield-projects/",        desc: "From empty plot to live operation." },
+      { label: "Drone services",                       href: "/en/services/drone-services/",             desc: "Surveys, orthophotomaps, inspections, and aerial footage." },
+      { label: "Interim Management",                   href: "/en/services/interim-management/",         desc: "Management support and firefighting — starting immediately." },
+      { label: "Commercialization & sales",            href: "/en/services/commercialization-and-sales/",desc: "Space commercialization, market entry, and logistics partner selection." },
+      { label: "Operational security",                 href: "/en/services/operational-security/",       desc: "Loss Prevention, CCTV/access control, anti-fraud processes for large sites." },
+    ]
+  : [
+      { label: "Pośrednictwo logistyczne i fulfillment", href: "/pl/uslugi/posrednictwo-logistyczne/", desc: "Jeden partner zamiast dziesiątek rozmów z operatorami." },
+      { label: "Doradztwo operacyjne i audyt",           href: "/pl/uslugi/doradztwo-operacyjne/",     desc: "Sprawdzimy gdzie tracisz pieniądze, czas i ludzi." },
+      { label: "Projekty Greenfield",                    href: "/pl/uslugi/projekty-greenfield/",      desc: "Od pustej działki do gotowej operacji." },
+      { label: "Usługi dronowe",                         href: "/pl/uslugi/uslugi-dronowe/",           desc: "Pomiary, ortofotomapy, inspekcje i materiały z powietrza." },
+      { label: "Interim Management",                     href: "/pl/uslugi/interim-management/",       desc: "Wsparcie zarządcze i gaszenie pożarów od zaraz." },
+      { label: "Komercjalizacja i sprzedaż",             href: "/pl/uslugi/komercjalizacja-i-sprzedaz/",desc: "Komercjalizacja powierzchni, market entry i dobór partnera logistycznego." },
+      { label: "Bezpieczeństwo operacyjne",              href: "/pl/uslugi/bezpieczenstwo-operacyjne/",desc: "Loss Prevention, CCTV/KD/SWWiN i procesy antyfraudowe dla dużych obiektów." },
+    ];
+
+const navItems = isEN
+  ? [
+      { label: "Process",      href: "/en/process/",      match: "/en/process"      },
+      { label: "Insights",     href: "/en/insights/",     match: "/en/insights"     },
+      { label: "About",        href: "/en/about/",        match: "/en/about"        },
+      { label: "Work with us", href: "/en/work-with-us/", match: "/en/work-with-us" },
+    ]
+  : [
+      { label: "Proces",      href: "/pl/proces/",      match: "/pl/proces"      },
+      { label: "Wiedza",      href: "/pl/wiedza/",      match: "/pl/wiedza"      },
+      { label: "O nas",       href: "/pl/o-nas/",       match: "/pl/o-nas"       },
+      { label: "Współpraca",  href: "/pl/wspolpraca/",  match: "/pl/wspolpraca"  },
+    ];
+
+const homeHref    = isEN ? "/en/" : "/pl/";
+const servicesHref= isEN ? "/en/services/" : "/pl/uslugi/";
+const contactHref = isEN ? "/en/contact/" : "/pl/kontakt/";
+
 const navPath = Astro.url.pathname;
 const isActive = (m: string) => navPath === m || navPath.startsWith(m + "/");
 
-/* Organization schema uses SITE config as single source of truth */
-const schemaOrg = orgSchema();
+/* ── Mega-menu group assignments ── */
+// Group 0: Advisory & operations = [consulting, interim, security]
+// Group 1: Logistics & market    = [brokerage, commercialization]
+// Group 2: Investment & technology= [greenfield, drones]
+const megaGroups = isEN
+  ? [
+      { label: "Advisory & operations",    items: [serviceLinks[1], serviceLinks[4], serviceLinks[6]] },
+      { label: "Logistics & market",       items: [serviceLinks[0], serviceLinks[5]] },
+      { label: "Investment & technology",  items: [serviceLinks[2], serviceLinks[3]] },
+    ]
+  : [
+      { label: "Doradztwo i operacje",     items: [serviceLinks[1], serviceLinks[4], serviceLinks[6]] },
+      { label: "Logistyka i rynek",        items: [serviceLinks[0], serviceLinks[5]] },
+      { label: "Inwestycje i technologia", items: [serviceLinks[2], serviceLinks[3]] },
+    ];
 
-const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.pl.locale;
+const UI = isEN
+  ? {
+      brandAria:      "Vologis — home",
+      navAria:        "Main navigation",
+      megaAria:       "Services",
+      megaAllServices:"See all services",
+      langAria:       "Language",
+      langTitle_pl:   "Polish",
+      langTitle_en:   "English",
+      contactBtn:     "Contact",
+      ctaBtn:         "Book a consultation",
+      burgerOpen:     "Open menu",
+      burgerClose:    "Close menu",
+      mnavServicesAll:"All services",
+      mnavFootContact:"Contact",
+      mnavFootCta:    "Book a consultation",
+      footTagline:    "Logistics consulting for ambitious companies.",
+      footServices:   "Services",
+      footCompany:    "Company",
+      footProcess:    isEN ? "How we work" : "Jak pracujemy",
+      footInsights:   "Insights",
+      footAbout:      "About",
+      footWorkWith:   "Work with us",
+      footContact:    "Contact",
+      footAllServices:"All services",
+      footPrivacy:    "Privacy policy",
+      footTerms:      "Terms",
+    }
+  : {
+      brandAria:      "Vologis — strona główna",
+      navAria:        "Nawigacja główna",
+      megaAria:       "Usługi",
+      megaAllServices:"Zobacz wszystkie usługi",
+      langAria:       "Język / Language",
+      langTitle_pl:   "Polski",
+      langTitle_en:   "English",
+      contactBtn:     "Kontakt",
+      ctaBtn:         "Umów spotkanie",
+      burgerOpen:     "Otwórz menu",
+      burgerClose:    "Zamknij menu",
+      mnavServicesAll:"Wszystkie usługi",
+      mnavFootContact:"Kontakt",
+      mnavFootCta:    "Umów spotkanie",
+      footTagline:    "Doradztwo logistyczne dla firm z ambicjami.",
+      footServices:   "Usługi",
+      footCompany:    "Firma",
+      footProcess:    "Jak pracujemy",
+      footInsights:   "Wiedza",
+      footAbout:      "O nas",
+      footWorkWith:   "Współpraca",
+      footContact:    "Kontakt",
+      footAllServices:"Wszystkie usługi",
+      footPrivacy:    "Polityka prywatności",
+      footTerms:      "Regulamin",
+    };
+
+const schemaOrg = orgSchema();
 ---
 
 <!doctype html>
@@ -69,39 +192,39 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
   <meta name="generator" content={Astro.generator} />
 
   <!-- SEO -->
-  <title>{title}</title>
-  <meta name="description" content={description} />
+  <title>{pageTitle}</title>
+  <meta name="description" content={pageDescription} />
   <link rel="canonical" href={canonicalURL} />
   <meta name="robots" content={noIndex ? "noindex, follow" : "index, follow"} />
 
-  <!-- hreflang — EN alternate only when the page has an English equivalent -->
-  <link rel="alternate" hreflang="pl-PL" href={plURL} />
-  {hreflangEN && <link rel="alternate" hreflang="en" href={hreflangEN} />}
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="pl-PL"    href={plURL} />
+  <link rel="alternate" hreflang="en"       href={enURL} />
   <link rel="alternate" hreflang="x-default" href={plURL} />
 
   <!-- GEO -->
-  <meta name="geo.region" content="PL-WP" />
+  <meta name="geo.region"   content="PL-WP" />
   <meta name="geo.placename" content="Jarocin, Polska" />
   <meta name="geo.position" content="51.9694;17.4975" />
-  <meta name="ICBM" content="51.9694, 17.4975" />
+  <meta name="ICBM"         content="51.9694, 17.4975" />
 
   <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content={pageTitle} />
+  <meta property="og:description" content={pageDescription} />
   {ogImage && <meta property="og:image" content={new URL(ogImage, SITE.url).href} />}
-  <meta property="og:url" content={canonicalURL} />
-  <meta property="og:locale" content={ogLocale} />
-  <meta property="og:site_name" content={SITE.name} />
+  <meta property="og:url"         content={canonicalURL} />
+  <meta property="og:locale"      content={ogLocale} />
+  <meta property="og:site_name"   content={SITE.name} />
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={description} />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content={pageTitle} />
+  <meta name="twitter:description" content={pageDescription} />
   {ogImage && <meta name="twitter:image" content={new URL(ogImage, SITE.url).href} />}
-  {ogImage && <meta property="og:image:width" content="1200" />}
+  {ogImage && <meta property="og:image:width"  content="1200" />}
   {ogImage && <meta property="og:image:height" content="630" />}
-  {ogImage && <meta property="og:image:type" content="image/png" />}
+  {ogImage && <meta property="og:image:type"   content="image/png" />}
 
   <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -111,13 +234,13 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
 
   <!-- Fonts self-hosted via @fontsource-variable (no external requests, no render-blocking) -->
 
-  <!-- Preload critical above-fold image — desktop only (mobile hides hero images under full-opacity gradient) -->
+  <!-- Preload critical above-fold image — desktop only -->
   {preloadImage && <link rel="preload" as="image" href={preloadImage} fetchpriority="high" media="(min-width: 641px)" />}
 
   <!-- Schema: Organization -->
   <script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
 
-  <!-- Calendly widget — load on demand only (avoids third-party cookies and render-blocking) -->
+  <!-- Calendly widget — load on demand only -->
   <script>
     function loadCalendly(cb) {
       if (window.Calendly) { if (cb) cb(); return; }
@@ -147,54 +270,34 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
   <!-- ════ Site header ════════════════════════════════ -->
   <header class="hd" role="banner">
     <div class="hd__bar container">
-      <a href="/pl/" class="hd__brand" aria-label="Vologis — strona główna">VOLOGIS</a>
+      <a href={homeHref} class="hd__brand" aria-label={UI.brandAria}>VOLOGIS</a>
 
-      <nav class="hd__nav" aria-label="Nawigacja główna">
+      <nav class="hd__nav" aria-label={UI.navAria}>
         <ul class="hd__list" role="list">
           <li class="hd__item has-mega">
             <a
-              href="/pl/uslugi/"
+              href={servicesHref}
               class="hd__link"
-              aria-current={navPath.startsWith("/pl/uslugi") ? "page" : undefined}
+              aria-current={navPath.startsWith(isEN ? "/en/services" : "/pl/uslugi") ? "page" : undefined}
               aria-haspopup="true"
-            >Usługi</a>
-            <div class="mega" role="menu" aria-label="Usługi">
+            >{isEN ? "Services" : "Usługi"}</a>
+            <div class="mega" role="menu" aria-label={UI.megaAria}>
               <div class="mega__groups">
-                <div class="mega__group">
-                  <p class="mega__group-label">Doradztwo i operacje</p>
-                  <div class="mega__group-links">
-                    {[serviceLinks[1], serviceLinks[4], serviceLinks[6]].map((s) => (
-                      <a class="mega__card" href={s.href} role="menuitem" aria-current={navPath === s.href ? "page" : undefined}>
-                        <span class="mega__card-title">{s.label}</span>
-                        <span class="mega__card-desc">{s.desc}</span>
-                      </a>
-                    ))}
+                {megaGroups.map((group) => (
+                  <div class="mega__group">
+                    <p class="mega__group-label">{group.label}</p>
+                    <div class="mega__group-links">
+                      {group.items.map((s) => (
+                        <a class="mega__card" href={s.href} role="menuitem" aria-current={navPath === s.href ? "page" : undefined}>
+                          <span class="mega__card-title">{s.label}</span>
+                          <span class="mega__card-desc">{s.desc}</span>
+                        </a>
+                      ))}
+                    </div>
                   </div>
-                </div>
-                <div class="mega__group">
-                  <p class="mega__group-label">Logistyka i rynek</p>
-                  <div class="mega__group-links">
-                    {[serviceLinks[0], serviceLinks[5]].map((s) => (
-                      <a class="mega__card" href={s.href} role="menuitem" aria-current={navPath === s.href ? "page" : undefined}>
-                        <span class="mega__card-title">{s.label}</span>
-                        <span class="mega__card-desc">{s.desc}</span>
-                      </a>
-                    ))}
-                  </div>
-                </div>
-                <div class="mega__group">
-                  <p class="mega__group-label">Inwestycje i technologia</p>
-                  <div class="mega__group-links">
-                    {[serviceLinks[2], serviceLinks[3]].map((s) => (
-                      <a class="mega__card" href={s.href} role="menuitem" aria-current={navPath === s.href ? "page" : undefined}>
-                        <span class="mega__card-title">{s.label}</span>
-                        <span class="mega__card-desc">{s.desc}</span>
-                      </a>
-                    ))}
-                  </div>
-                </div>
+                ))}
               </div>
-              <a class="mega__foot" href="/pl/uslugi/">Zobacz wszystkie usługi <span aria-hidden="true">→</span></a>
+              <a class="mega__foot" href={servicesHref}>{UI.megaAllServices} <span aria-hidden="true">→</span></a>
             </div>
           </li>
           {navItems.map((item) => (
@@ -206,21 +309,21 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
       </nav>
 
       <div class="hd__actions">
-        <div class="hd__lang" aria-label="Język / Language">
-          <a href={plPath} hreflang="pl" title="Polski" aria-current={currentLang === "pl" ? "true" : undefined}>PL</a>
+        <div class="hd__lang" aria-label={UI.langAria}>
+          <a href={plSwitchPath} hreflang="pl" title={UI.langTitle_pl} aria-current={currentLang === "pl" ? "true" : undefined}>PL</a>
           <span aria-hidden="true">/</span>
-          <a href={enPath} hreflang="en" title="English" aria-current={currentLang === "en" ? "true" : undefined}>EN</a>
+          <a href={enSwitchPath} hreflang="en" title={UI.langTitle_en} aria-current={currentLang === "en" ? "true" : undefined}>EN</a>
         </div>
 
-        <a href="/pl/kontakt/" class="btn btn--ghost hd__ghost">Kontakt</a>
+        <a href={contactHref} class="btn btn--ghost hd__ghost">{UI.contactBtn}</a>
 
         <button
           type="button"
           class="btn btn--solid"
           data-calendly="popup"
-        >Umów spotkanie</button>
+        >{UI.ctaBtn}</button>
 
-        <button class="burger" id="burger" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobile-nav">
+        <button class="burger" id="burger" aria-label={UI.burgerOpen} aria-expanded="false" aria-controls="mobile-nav">
           <span></span>
           <span></span>
         </button>
@@ -235,37 +338,36 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
         <ul class="mnav__list" role="list">
           <li class="mnav__item">
             <button class="mnav__row mnav__row--toggle" aria-expanded="false" aria-controls="msub-uslugi">
-              Usługi
+              {isEN ? "Services" : "Usługi"}
               <svg class="mnav__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
             </button>
             <ul class="mnav__sub" id="msub-uslugi" role="list">
-              <li><a class="mnav__sublink" href="/pl/uslugi/">Wszystkie usługi</a></li>
+              <li><a class="mnav__sublink" href={servicesHref}>{UI.mnavServicesAll}</a></li>
               {serviceLinks.map((s) => (
                 <li><a class="mnav__sublink" href={s.href}>{s.label}</a></li>
               ))}
             </ul>
           </li>
-          <li class="mnav__item"><a class="mnav__row" href="/pl/proces/">Proces</a></li>
-          <li class="mnav__item"><a class="mnav__row" href="/pl/wiedza/">Wiedza</a></li>
-          <li class="mnav__item"><a class="mnav__row" href="/pl/o-nas/">O nas</a></li>
-          <li class="mnav__item"><a class="mnav__row" href="/pl/wspolpraca/">Współpraca</a></li>
-          <li class="mnav__item"><a class="mnav__row" href="/pl/kontakt/">Kontakt</a></li>
+          {navItems.map((item) => (
+            <li class="mnav__item"><a class="mnav__row" href={item.href}>{item.label}</a></li>
+          ))}
+          <li class="mnav__item"><a class="mnav__row" href={contactHref}>{UI.contactBtn}</a></li>
         </ul>
 
-        <div class="mnav__lang" aria-label="Język / Language">
-          <a href={plPath} hreflang="pl" aria-current={currentLang === "pl" ? "true" : undefined}>Polski</a>
+        <div class="mnav__lang" aria-label={UI.langAria}>
+          <a href={plSwitchPath} hreflang="pl" aria-current={currentLang === "pl" ? "true" : undefined}>{UI.langTitle_pl}</a>
           <span aria-hidden="true">/</span>
-          <a href={enPath} hreflang="en" aria-current={currentLang === "en" ? "true" : undefined}>English</a>
+          <a href={enSwitchPath} hreflang="en" aria-current={currentLang === "en" ? "true" : undefined}>English</a>
         </div>
       </div>
 
       <div class="mnav__foot">
-        <a href="/pl/kontakt/" class="btn btn--ghost btn--block">Kontakt</a>
+        <a href={contactHref} class="btn btn--ghost btn--block">{UI.mnavFootContact}</a>
         <button
           type="button"
           class="btn btn--solid btn--block"
           data-calendly="popup"
-        >Umów spotkanie</button>
+        >{UI.mnavFootCta}</button>
       </div>
     </div>
   </div>
@@ -281,27 +383,27 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
 
         <div class="footer-brand">
           <p class="footer-wordmark">VOLOGIS</p>
-          <p class="footer-tagline">Doradztwo logistyczne dla firm z ambicjami.</p>
+          <p class="footer-tagline">{UI.footTagline}</p>
         </div>
 
-        <nav class="footer-col" aria-label="Usługi">
-          <h3 class="footer-col-title">Usługi</h3>
+        <nav class="footer-col" aria-label={UI.footServices}>
+          <h3 class="footer-col-title">{UI.footServices}</h3>
           <ul class="footer-col-list" role="list">
             {serviceLinks.map((s) => (
               <li><a href={s.href}>{s.label}</a></li>
             ))}
-            <li><a href="/pl/uslugi/">Wszystkie usługi</a></li>
+            <li><a href={servicesHref}>{UI.footAllServices}</a></li>
           </ul>
         </nav>
 
-        <nav class="footer-col" aria-label="Firma">
-          <h3 class="footer-col-title">Firma</h3>
+        <nav class="footer-col" aria-label={UI.footCompany}>
+          <h3 class="footer-col-title">{UI.footCompany}</h3>
           <ul class="footer-col-list" role="list">
-            <li><a href="/pl/o-nas/">O nas</a></li>
-            <li><a href="/pl/proces/">Jak pracujemy</a></li>
-            <li><a href="/pl/wiedza/">Wiedza</a></li>
-            <li><a href="/pl/wspolpraca/">Współpraca</a></li>
-            <li><a href="/pl/kontakt/">Kontakt</a></li>
+            <li><a href={isEN ? "/en/about/" : "/pl/o-nas/"}>{UI.footAbout}</a></li>
+            <li><a href={isEN ? "/en/process/" : "/pl/proces/"}>{UI.footProcess}</a></li>
+            <li><a href={isEN ? "/en/insights/" : "/pl/wiedza/"}>{UI.footInsights}</a></li>
+            <li><a href={isEN ? "/en/work-with-us/" : "/pl/wspolpraca/"}>{UI.footWorkWith}</a></li>
+            <li><a href={contactHref}>{UI.footContact}</a></li>
           </ul>
         </nav>
 
@@ -313,9 +415,9 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
             <a href={`mailto:${SITE.contact.email}`}>{SITE.contact.email}</a><br>
             <span class="footer-nip">NIP: {SITE.nip}</span>
           </address>
-          <nav class="footer-links" aria-label="Linki stopki">
-            <a href="/pl/polityka-prywatnosci/">Polityka prywatności</a>
-            <a href="/pl/regulamin/">Regulamin</a>
+          <nav class="footer-links" aria-label={isEN ? "Footer links" : "Linki stopki"}>
+            <a href={isEN ? "/en/privacy-policy/" : "/pl/polityka-prywatnosci/"}>{UI.footPrivacy}</a>
+            <a href={isEN ? "/en/terms/" : "/pl/regulamin/"}>{UI.footTerms}</a>
           </nav>
           <p class="footer-copy">&copy; 2026 Vologis Sp. z o.o.</p>
         </div>
@@ -394,7 +496,6 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
   /* Mega menu */
   .has-mega { position: relative; }
 
-  /* invisible bridge so the panel stays open across the gap */
   .has-mega::after {
     content: "";
     position: absolute;
@@ -432,13 +533,6 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
     transform: translateY(0);
   }
 
-  .mega__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-3xs);
-  }
-
-  /* Grouped mega-menu layout */
   .mega__groups {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -533,7 +627,7 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
   .hd__lang a[aria-current="true"] { color: var(--color-ink); font-weight: 700; }
   .hd__lang span { color: var(--color-neutral); user-select: none; }
 
-  /* ── Buttons (ghost + solid) ─────────────────────── */
+  /* ── Buttons ─────────────────────────────────────── */
   .btn {
     display: inline-flex;
     align-items: center;
@@ -574,7 +668,7 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
 
   .btn--block { flex: 1; padding-block: var(--space-sm); font-size: var(--text-base); }
 
-  /* ── Burger (mobile-first: visible by default, hidden on desktop) ── */
+  /* ── Burger ────────────────────────────────────── */
   .burger {
     display: flex;
     flex-direction: column;
@@ -601,7 +695,7 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
   .burger.is-open span:nth-child(1) { transform: translateY(3.5px) rotate(45deg); }
   .burger.is-open span:nth-child(2) { transform: translateY(-3.5px) rotate(-45deg); }
 
-  /* ════ Mobile nav (full-screen) ═══════════════════ */
+  /* ════ Mobile nav ═══════════════════════════════ */
   .mnav {
     position: fixed;
     left: 0;
@@ -675,7 +769,7 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
     transition: max-height var(--dur-long) var(--ease-out);
   }
 
-  .mnav__item.is-open .mnav__sub { max-height: 32rem; }
+  .mnav__item.is-open .mnav__sub { max-height: 36rem; }
 
   .mnav__sublink {
     display: block;
@@ -687,7 +781,7 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
   }
 
   .mnav__sublink:first-child { padding-top: var(--space-md); }
-  .mnav__sublink:last-child { padding-bottom: var(--space-md); }
+  .mnav__sublink:last-child  { padding-bottom: var(--space-md); }
   .mnav__sublink:hover { color: var(--color-ink); }
 
   .mnav__lang {
@@ -710,7 +804,8 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
     border-top: 1px solid var(--color-rule);
     background: var(--color-paper);
   }
-  /* ── Footer Ft1 Mast-headed ──────────────────────── */
+
+  /* ── Footer ──────────────────────────────────────── */
   .footer {
     background: var(--color-paper-2);
     border-top: 1px solid var(--color-rule);
@@ -830,7 +925,7 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
 
   @media (min-width: 60.0625rem) {
     .burger { display: none; }
-    .mnav { display: none; }
+    .mnav   { display: none; }
   }
 
   @media (max-width: 40rem) {
@@ -848,21 +943,23 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
 
 <script>
   const burger = document.getElementById('burger') as HTMLButtonElement | null;
-  const mnav = document.getElementById('mobile-nav') as HTMLElement | null;
+  const mnav   = document.getElementById('mobile-nav') as HTMLElement | null;
 
   if (burger && mnav) {
+    const burgerOpenLabel  = burger.getAttribute('aria-label') ?? 'Open menu';
+    const burgerCloseLabel = document.documentElement.lang === 'en' ? 'Close menu' : 'Zamknij menu';
+
     const setOpen = (open: boolean) => {
       mnav.classList.toggle('is-open', open);
       burger.classList.toggle('is-open', open);
       burger.setAttribute('aria-expanded', String(open));
       mnav.setAttribute('aria-hidden', String(!open));
-      burger.setAttribute('aria-label', open ? 'Zamknij menu' : 'Otwórz menu');
+      burger.setAttribute('aria-label', open ? burgerCloseLabel : burgerOpenLabel);
       document.body.style.overflow = open ? 'hidden' : '';
     };
 
     burger.addEventListener('click', () => setOpen(!mnav.classList.contains('is-open')));
 
-    // Accordion (submenu rows)
     mnav.querySelectorAll('.mnav__row--toggle').forEach((btn) => {
       btn.addEventListener('click', () => {
         const item = btn.closest('.mnav__item');
@@ -871,12 +968,10 @@ const ogLocale = currentLang === "en" ? SITE.defaults.en.locale : SITE.defaults.
       });
     });
 
-    // Close on any navigational link click
     mnav.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => setOpen(false));
     });
 
-    // Escape closes the menu
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && mnav.classList.contains('is-open')) setOpen(false);
     });

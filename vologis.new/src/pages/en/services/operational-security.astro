@@ -1,0 +1,298 @@
+---
+import ServicePageLayout from "../../../layouts/ServicePageLayout.astro";
+import FaqAccordion from "../../../components/FaqAccordion.astro";
+import CalloutBox from "../../../components/CalloutBox.astro";
+
+const SITE = "https://vologis.com";
+
+const trustItems = [
+  "CCTV, access control and intruder alarm design",
+  "Licensed investigation services",
+  "Anti-fraud processes and Loss Prevention",
+  "CCTV–WMS data correlation",
+  "Anomaly detection and investigative audits",
+];
+
+const mainAreas = [
+  { title: "Investigation services",       text: "Licensed detective work: legal information gathering, fact verification, evidence collection. Professional documentation of misconduct admissible as evidence in criminal proceedings or employment tribunals." },
+  { title: "Security systems design",      text: "Planning and implementing CCTV, access control (AC) and intruder alarm systems — for Class A office space and warehouse facilities. System integration with operational processes." },
+];
+
+const lpGroups = [
+  {
+    title: "Prevention and access architecture",
+    bullets: [
+      "Facility zoning — dividing into areas with different access levels (inbound, picking, dispatch, high-value goods zone). Every transition logged by AC — eliminating 'warehouse tourism'.",
+      "Segregation of Duties — procedures preventing a single person from completing a full transaction cycle (e.g. the person receiving goods cannot approve stock levels in the WMS).",
+      "Identity and rotation management — anti-passback, biometric airlocks, rotation on the highest-risk sections.",
+    ],
+  },
+  {
+    title: "Monitoring, detection and analytics",
+    bullets: [
+      "CCTV–WMS correlation — every system transaction generates a timestamp on video footage; a discrepancy between an operation and the image is flagged as an anomaly.",
+      "AI behavioural anomaly detection — algorithms detect unusual behaviour in real time (blind spots, concealing items, unattended open dock doors).",
+      "Transport integrity verification — trailer sealing, licence plate and container OCR, rigorous dock procedures.",
+    ],
+  },
+  {
+    title: "Audit and collusion prevention",
+    bullets: [
+      "Cycle Counting — daily random-sample counting of selected locations; detecting a shortage within 24–48h narrows the suspect pool and allows video review before footage is overwritten.",
+      "Collusion detection and disruption — random WMS task and team assignment (no fixed pairs), independent spot checks.",
+    ],
+  },
+  {
+    title: "Investigation and response",
+    bullets: [
+      "Investigative audit and Root Cause Analysis — retrospective data analysis (permissions, logins, call logs, video); identifying the perpetrator and the process gap.",
+      "Evidence preservation — professional documentation of misconduct (often with licensed investigators), so the material is admissible in criminal proceedings or employment tribunals.",
+    ],
+  },
+];
+
+const forWhom = [
+  { title: "Distribution centres and Class A warehouses",    text: "Large volumes and large workforces require a process-based approach to security." },
+  { title: "Logistics operators with large headcounts",     text: "With hundreds of employees, trust alone isn't sufficient — you need an access architecture and monitoring." },
+  { title: "Companies with high-value goods",               text: "Electronics, pharmaceuticals, spirits — require zones with enhanced controls and strict traceability." },
+  { title: "Facilities with high shrinkage risk",           text: "Regular inventory shortages signal a process or systems gap. We diagnose and close it." },
+  { title: "Investors securing new facilities (Greenfield)",text: "Security designed from the outset is many times cheaper than retrofitting after incidents." },
+];
+
+const faqs = [
+  { q: "How does Loss Prevention differ from standard physical security?", a: "Physical security responds to incidents — it protects entrances and property. Loss Prevention works preventively: it designs access architecture, implements processes minimising the risk of collusion and theft, correlates CCTV and WMS data, detects anomalies before they become a loss. It's margin protection, not just property protection." },
+  { q: "Do you design CCTV and access control systems from scratch?", a: "Yes. We plan and implement CCTV, access control (AC) and intruder alarm systems — both for new facilities (Greenfield) and existing ones. We design with operational process and WMS integration in mind." },
+  { q: "How does CCTV–WMS correlation work?", a: "Every WMS operation (inbound, outbound, inventory correction) generates a timestamp that we overlay on camera footage. A discrepancy between a system event and the image — e.g. no operator at the terminal at the time of a transaction — is automatically flagged as an anomaly for review." },
+  { q: "Do you conduct investigation services when misconduct is detected?", a: "Yes, we have licensed investigators for legally gathering information, verifying facts and collecting evidence. We preserve material in a way that allows it to be used in criminal proceedings or employment tribunals." },
+  { q: "Does the service work with very large workforces (500+ employees)?", a: "Particularly so. With large workforces the effectiveness of physical security alone drops sharply — the risk of collusion, unauthorised goods exits and WMS data manipulation rises. Loss Prevention processes are designed specifically to scale to large organisations: random task assignment, cycle counting, zone access segmentation and AI anomaly detection." },
+];
+
+const schemaService = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Operational security and Loss Prevention",
+  "provider": { "@type": "Organization", "name": "Vologis Sp. z o.o.", "url": SITE, "address": { "@type": "PostalAddress", "addressLocality": "Jarocin", "addressRegion": "Wielkopolska", "addressCountry": "PL" } },
+  "areaServed": ["Poland", "Europe"],
+  "serviceType": "Operational security and loss prevention",
+  "description": "Process security for large logistics facilities: CCTV/access control/intruder alarm design, anti-fraud processes, Loss Prevention, investigation services. Technology integrated with operational procedures.",
+  "url": `${SITE}/en/services/operational-security/`,
+  "inLanguage": "en",
+};
+
+const schemaFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })),
+};
+---
+
+<ServicePageLayout
+  title="Operational Security &amp; Loss Prevention in Logistics | Vologis"
+  description="Process security for large logistics facilities: CCTV/access control/intruder alarm design, anti-fraud processes, Loss Prevention, investigation services. Technology integrated with operational procedures."
+  canonical="https://vologis.com/en/services/operational-security/"
+  hreflangPL="/pl/uslugi/bezpieczenstwo-operacyjne/"
+  ogImage="/og/og-bezpieczenstwo.png"
+  heroImage="/services/vologis-uslugi-bezpieczenstwo-operacyjne.webp"
+  eyebrow="Logistics services / Operational security"
+  h1="Process Security — Protect Your Margin from Losses You Can't See"
+  lead="In large facilities, standard physical security isn't enough. Loss Prevention integrates technology with operational procedures and internal controls — preventing fraud, collusion and theft."
+  trustItems={trustItems}
+  ctaPrimaryLabel="Book a consultation"
+  ctaPrimaryHref="/en/contact/"
+  ctaSecondaryLabel="See operational consulting"
+  ctaSecondaryHref="/en/services/operational-consulting/"
+  breadcrumbs={[{ name: "Operational security" }]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaService)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaFaq)} />
+
+  <!-- 1. Problem / In brief -->
+  <section class="ps-problem" aria-labelledby="h-problem">
+    <div class="container">
+      <div class="ps-problem__grid">
+        <div class="ps-problem__copy">
+          <h2 class="h2" id="h-problem">Shrinkage, collusion and theft don't happen by themselves</h2>
+          <p class="body">In distribution centres, Class A warehouses and cross-dock hubs — with large workforces — losses rarely stem from isolated incidents. Most often they're process gaps: lack of segregation of duties, weak access control, absence of data correlation. Process security closes these gaps before they become a cost.</p>
+          <p class="body">In short: standard physical security guards the door. Loss Prevention guards the margin.</p>
+        </div>
+        <aside class="ps-brief" aria-label="In brief">
+          <p class="ps-brief__label">In brief</p>
+          <p class="ps-brief__text">Operational security (Loss Prevention) is protection of large logistics facilities that goes beyond physical security — integrating technology (CCTV, access control, intruder alarms) with operational processes and internal controls. Vologis designs security systems, implements anti-fraud processes (facility zoning, segregation of duties, CCTV–WMS correlation, AI anomaly detection) and conducts investigation services and investigative audits — preventing fraud, collusion and theft.</p>
+          <hr class="ps-brief__rule" />
+          <p class="ps-brief__sub">Vologis &middot; Jarocin, Poland &middot; Poland and EU</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Scope -->
+  <section class="ps-scope" aria-labelledby="h-scope">
+    <div class="container">
+      <h2 class="h2" id="h-scope">Service scope</h2>
+      <div class="scope-grid">
+        {mainAreas.map((a) => (<div class="scope-card"><h3 class="scope-card__title">{a.title}</h3><p class="scope-card__text">{a.text}</p></div>))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Loss Prevention (dark) -->
+  <section class="ps-lp" aria-labelledby="h-lp">
+    <div class="container">
+      <p class="dark-eyebrow">Loss Prevention</p>
+      <h2 class="h2 h2--dark" id="h-lp">Four areas of anti-fraud processes</h2>
+      <div class="lp-groups">
+        {lpGroups.map((g) => (
+          <div class="lp-group">
+            <h3 class="lp-group__title">{g.title}</h3>
+            <ul class="lp-group__list" role="list">
+              {g.bullets.map((b) => (
+                <li class="lp-group__item">
+                  <svg class="lp-group__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg>
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. For whom -->
+  <section class="ps-forwho" aria-labelledby="h-forwho">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-forwho">Who is this service for?</h2>
+      <div class="fw-grid">
+        {forWhom.map((p) => (<div class="fw-card"><h3 class="fw-card__title">{p.title}</h3><p class="fw-card__text">{p.text}</p></div>))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Cross-link: Greenfield -->
+  <section class="ps-crosslink" aria-label="Related services">
+    <div class="container">
+      <div class="crosslink-box">
+        <div class="crosslink-box__content">
+          <h2 class="crosslink-box__title">Building a new facility?</h2>
+          <p class="crosslink-box__text">We'll design security from the investment stage — before concrete walls define zones that will be hard to change later.</p>
+          <a href="/en/services/greenfield-projects/" class="crosslink-box__link">Greenfield projects <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5b. Founder experience -->
+  <section class="ps-experience" aria-labelledby="h-experience">
+    <div class="container">
+      <CalloutBox>
+        <p class="exp-eyebrow">From Vologis founder's experience</p>
+        <div class="exp-metrics">
+          <div class="exp-metric"><span class="exp-metric__val tnum">70,000 sqm</span><span class="exp-metric__label">intermodal park — consolidation of security management with physical facility protection and CCTV/access control systems</span></div>
+        </div>
+        <p class="exp-frame">Project carried out by the Vologis founder in a previous management role.</p>
+      </CalloutBox>
+    </div>
+  </section>
+
+  <!-- 6. FAQ -->
+  <section class="ps-faq" aria-labelledby="h-faq">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-faq">FAQ — frequently asked questions</h2>
+      <FaqAccordion items={faqs} single />
+    </div>
+  </section>
+
+  <!-- 7. End CTA -->
+  <section class="ps-endcta" aria-labelledby="h-endcta">
+    <div class="container">
+      <div class="endcta-inner">
+        <h2 class="endcta__h2" id="h-endcta">Want to protect your margin from losses you can't see?</h2>
+        <p class="endcta__text">Free initial conversation about the operational security of your facility. We'll tell you straight where the biggest process gaps are and how to close them.</p>
+        <div class="endcta__actions">
+          <a href="/en/contact/" class="endcta__btn endcta__btn--primary">Book a consultation <span aria-hidden="true">→</span></a>
+          <a href="/en/services/operational-consulting/" class="endcta__btn endcta__btn--ghost">See operational consulting <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Related -->
+  <section class="ps-related" aria-labelledby="h-related">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-related">Other Vologis services</h2>
+      <div class="related-grid">
+        <a class="related-card" href="/en/services/operational-consulting/"><span class="related-card__title">Operational consulting &amp; audit</span><span class="related-card__desc">Warehouse process audit, bottleneck identification and optimisation.</span><span class="related-card__arrow" aria-hidden="true">→</span></a>
+        <a class="related-card" href="/en/services/greenfield-projects/"><span class="related-card__title">Greenfield projects</span><span class="related-card__desc">Security designed from the investment stage — cheaper and more effective.</span><span class="related-card__arrow" aria-hidden="true">→</span></a>
+        <a class="related-card" href="/en/services/interim-management/"><span class="related-card__title">Interim Management</span><span class="related-card__desc">Operational crisis? We step in immediately, stabilise and fix.</span><span class="related-card__arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+</ServicePageLayout>
+
+<style>
+  .h2 { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; letter-spacing: -0.025em; line-height: 1.15; color: var(--color-ink); margin-bottom: var(--space-lg); }
+  .h2--center { text-align: center; }
+  .h2--dark { color: var(--color-ink-on-dark); }
+  .body { font-size: var(--text-base); color: var(--color-muted); line-height: 1.75; margin-bottom: var(--space-md); }
+  .dark-eyebrow { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-blue-on-dark); margin-bottom: var(--space-md); }
+  .ps-problem { padding-block: var(--space-3xl); background: var(--color-paper); }
+  .ps-problem__grid { display: grid; grid-template-columns: 1fr 20rem; gap: var(--space-3xl); align-items: start; }
+  .ps-brief { border: 1px solid var(--color-blue); border-radius: var(--radius-lg); background: var(--color-blue-tint); padding: var(--space-lg) var(--space-xl); position: sticky; top: calc(4.25rem + 3px + var(--space-lg)); }
+  .ps-brief__label { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-secondary); margin-bottom: var(--space-md); }
+  .ps-brief__text { font-size: var(--text-base); color: var(--color-ink); line-height: 1.7; }
+  .ps-brief__rule { border: none; border-top: 1px solid var(--color-blue); margin-block: var(--space-md); opacity: 0.3; }
+  .ps-brief__sub { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.5; }
+  .ps-scope { padding-block: var(--space-3xl); background: var(--color-paper-2); }
+  .scope-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--space-md); margin-top: var(--space-lg); }
+  .scope-card { border: 1px solid var(--color-rule); border-top: 3px solid var(--color-secondary); border-radius: var(--radius-md); padding: var(--space-xl); background: var(--color-paper); }
+  .scope-card__title { font-family: var(--font-display); font-size: var(--text-md); font-weight: 700; color: var(--color-ink); margin-bottom: var(--space-sm); }
+  .scope-card__text { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.65; }
+  .ps-lp { padding-block: var(--space-3xl); background: var(--color-paper-dark); }
+  .lp-groups { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-xl); margin-top: var(--space-xl); }
+  .lp-group { background: var(--color-glass-dark); border: 1px solid var(--color-glass-border); border-radius: var(--radius-lg); padding: var(--space-xl); }
+  .lp-group__title { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; color: var(--color-ink-on-dark); margin-bottom: var(--space-md); padding-bottom: var(--space-sm); border-bottom: 1px solid var(--color-glass-border); }
+  .lp-group__list { list-style: none; display: flex; flex-direction: column; gap: var(--space-md); }
+  .lp-group__item { display: flex; align-items: flex-start; gap: var(--space-sm); font-size: var(--text-sm); color: var(--color-muted-on-dark); line-height: 1.6; }
+  .lp-group__icon { flex-shrink: 0; width: 1.1rem; height: 1.1rem; margin-top: 0.15rem; color: var(--color-blue-on-dark); }
+  .ps-forwho { padding-block: var(--space-3xl); background: var(--color-paper); }
+  .fw-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--space-md); margin-top: var(--space-xl); }
+  .fw-card { border: 1px solid var(--color-rule); border-left: 4px solid var(--color-secondary); border-radius: var(--radius-md); padding: var(--space-lg); background: var(--color-paper); }
+  .fw-card__title { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; color: var(--color-ink); margin-bottom: var(--space-sm); }
+  .fw-card__text { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.65; }
+  .ps-crosslink { padding-block: var(--space-2xl); background: var(--color-paper-2); }
+  .crosslink-box { border: 1px solid var(--color-blue); border-left: 4px solid var(--color-secondary); border-radius: var(--radius-lg); background: var(--color-blue-tint); padding: var(--space-xl); display: flex; align-items: center; gap: var(--space-xl); }
+  .crosslink-box__content { flex: 1; }
+  .crosslink-box__title { font-family: var(--font-display); font-size: var(--text-md); font-weight: 700; color: var(--color-ink); margin-bottom: var(--space-sm); }
+  .crosslink-box__text { font-size: var(--text-base); color: var(--color-muted); line-height: 1.6; margin-bottom: var(--space-md); }
+  .crosslink-box__link { display: inline-flex; align-items: center; gap: var(--space-xs); font-family: var(--font-display); font-size: var(--text-base); font-weight: 600; color: var(--color-secondary); text-decoration: none; transition: color var(--dur-micro) var(--ease-out); }
+  .crosslink-box__link:hover { color: var(--color-ink); }
+  .ps-experience { padding-block: var(--space-xl); background: var(--color-paper); }
+  .exp-eyebrow { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; color: var(--color-blue); margin-bottom: var(--space-md); }
+  .exp-metrics { display: flex; flex-wrap: wrap; gap: var(--space-md); margin-bottom: var(--space-md); }
+  .exp-metric { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 14rem; }
+  .exp-metric__val { font-family: var(--font-display); font-size: var(--text-2xl, 2rem); font-weight: 700; letter-spacing: -0.03em; color: var(--color-metric); line-height: 1.1; }
+  .exp-metric__label { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.4; }
+  .exp-frame { font-size: var(--text-xs); color: var(--color-muted); font-style: italic; margin-top: var(--space-sm); } .ps-experience :global(.callout) { border-left-color: var(--color-metric); }
+  .ps-faq { padding-block: var(--space-3xl); background: var(--color-paper-2); }
+  .ps-endcta { padding-block: var(--space-3xl); background: var(--gradient-cta); }
+  .endcta-inner { max-width: 52rem; margin-inline: auto; text-align: center; }
+  .endcta__h2 { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; letter-spacing: -0.025em; line-height: 1.2; color: var(--color-ink-on-dark); margin-bottom: var(--space-md); }
+  .endcta__text { font-size: var(--text-base); color: var(--color-muted-on-dark); line-height: 1.7; margin-bottom: var(--space-xl); }
+  .endcta__actions { display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap; }
+  .endcta__btn { display: inline-flex; align-items: center; gap: var(--space-xs); font-family: var(--font-display); font-size: var(--text-base); font-weight: 600; padding: var(--space-md) var(--space-2xl); border-radius: var(--radius-pill); text-decoration: none; cursor: pointer; border: 1px solid transparent; transition: background var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out); }
+  .endcta__btn--primary { background: var(--color-accent); color: #fff; }
+  .endcta__btn--primary:hover { background: var(--color-accent-hover); }
+  .endcta__btn--ghost { background: var(--color-glass-dark); color: var(--color-ink-on-dark); border-color: var(--color-glass-border); }
+  .endcta__btn--ghost:hover { background: oklch(100% 0 0 / 0.12); }
+  .ps-related { padding-block: var(--space-3xl); background: var(--color-paper); border-top: 1px solid var(--color-rule); }
+  .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); margin-top: var(--space-xl); }
+  .related-card { display: flex; flex-direction: column; gap: var(--space-sm); border: 1px solid var(--color-rule); border-radius: var(--radius-lg); padding: var(--space-xl); background: var(--color-paper); text-decoration: none; transition: border-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out); }
+  .related-card:hover { border-color: var(--color-blue); transform: translateY(-3px); }
+  .related-card__title { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; color: var(--color-ink); }
+  .related-card__desc { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.55; flex: 1; }
+  .related-card__arrow { font-size: var(--text-md); color: var(--color-secondary); transition: transform var(--dur-short) var(--ease-out); align-self: flex-start; margin-top: auto; }
+  .related-card:hover .related-card__arrow { transform: translateX(4px); }
+  @media (max-width: 60rem) { .ps-problem__grid { grid-template-columns: 1fr; } .ps-brief { position: static; } .lp-groups { grid-template-columns: 1fr; } .related-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 48rem) { .fw-grid { grid-template-columns: 1fr; } .scope-grid { grid-template-columns: 1fr; } .endcta__actions { flex-direction: column; align-items: stretch; } .endcta__btn { width: 100%; justify-content: center; } }
+</style>

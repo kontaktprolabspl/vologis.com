@@ -1,0 +1,328 @@
+---
+import ServicePageLayout from "../../../layouts/ServicePageLayout.astro";
+import FaqAccordion from "../../../components/FaqAccordion.astro";
+import CalloutBox from "../../../components/CalloutBox.astro";
+
+const SITE = "https://vologis.com";
+
+const trustItems = [
+  "Warehouse space commercialisation",
+  "Location advisory and market entry for the Polish market",
+  "Free logistics partner selection for manufacturing companies",
+  "Mid-size operators — flexibility and quality",
+  "Success fee — you pay for contracted space",
+];
+
+const filary = [
+  {
+    title: "Warehouse Space Commercialisation",
+    subtitle: "For logistics operators with vacant space",
+    body: "We take over the process of sourcing and acquiring clients for vacant pallet volumes. We act as your outsourced, specialist sales function — maximising facility profitability without generating additional operational costs on your side.",
+    value: "Budget optimisation without the cost of a full-time salesperson. Billed only for actual space contracted and filled.",
+    badge: null,
+  },
+  {
+    title: "Location Advisory & Market Entry",
+    subtitle: "For companies entering the Polish market",
+    body: "We act as a local guide and representative for organisations planning expansion, branch opening or relocation of warehousing processes to Poland. We analyse infrastructure requirements, research the market and shortlist the best available warehouse options.",
+    value: "Safe market entry without overpaying — with access to real market rates and without traps arising from unfamiliarity with local conditions.",
+    badge: null,
+  },
+  {
+    title: "Strategic Logistics Partner Selection & Audit",
+    subtitle: "For manufacturing companies seeking comprehensive service",
+    body: "An alternative to inefficient tendering processes. Instead of sending enquiries to corporate giants, we map your processes and connect you with carefully selected mid-size operators — offering greater flexibility and often higher service quality.",
+    value: "Tailored service and a measurable cost reduction compared to corporate offers.",
+    badge: "For manufacturing companies, operator selection is free.",
+  },
+];
+
+const forWhom = [
+  { title: "Logistics operators with vacant space",          text: "Maximise facility profitability without building your own sales team." },
+  { title: "Foreign companies entering the Polish market",  text: "Enter the Polish logistics market with a local guide to rates and suppliers." },
+  { title: "Manufacturing companies seeking an operator",   text: "Free selection of a carefully vetted operator — an alternative to a corporate tender process." },
+  { title: "Developers and facility owners",                text: "Sell vacant warehouse space without building your own sales team." },
+  { title: "Companies relocating warehousing processes",    text: "Needs analysis, market research and support for logistics operations relocation." },
+];
+
+const programmaticLinks = [
+  { href: "/en/services/warehouse-space-commercialization/", title: "Warehouse Space Commercialisation",    desc: "For operators: selling vacant pallet volumes, success fee model." },
+  { href: "/en/services/3pl-space-commercialization/",       title: "3PL Space Commercialisation",          desc: "Maximising occupancy for 3PL and 4PL operators." },
+  { href: "/en/services/market-entry-poland/",               title: "Market Entry — Poland",                desc: "Entering the Polish logistics market — representation, analysis, negotiations." },
+  { href: "/en/services/market-entry-foreign-manufacturers/",title: "Market Entry for Foreign Manufacturers",desc: "For foreign manufacturers opening a warehouse in Poland." },
+  { href: "/en/services/logistics-partner-selection-manufacturing/", title: "Logistics Partner Selection for Manufacturing", desc: "Free operator selection for manufacturing companies." },
+  { href: "/en/services/tender-optimization-logistics/",     title: "Tender Optimisation in Logistics",     desc: "Alternative to the classic tender — mid-size operators." },
+  { href: "/en/services/space-commercialization-warsaw/",    title: "Space Commercialisation — Warsaw",      desc: "We find tenants for vacant volumes in the Warsaw agglomeration — success fee." },
+  { href: "/en/services/space-commercialization-wroclaw/",   title: "Space Commercialisation — Wrocław",     desc: "Active commercialisation in a high-supply market — we make your facility stand out." },
+  { href: "/en/services/space-commercialization-poznan/",    title: "Space Commercialisation — Poznań",      desc: "Nearshoring and e-commerce on the A2 corridor — we source tenants for your facility." },
+  { href: "/en/services/space-commercialization-katowice/",  title: "Space Commercialisation — Katowice",    desc: "Industry and automotive in Upper Silesia — we match a tenant to your technical profile." },
+];
+
+const cityLinks = [
+  { href: "/en/services/warehouse-for-rent-warsaw/",   title: "Warehouse for rent — Warsaw",   desc: "Poland's largest market, last-mile and e-commerce. We negotiate rates on behalf of the tenant." },
+  { href: "/en/services/warehouse-for-rent-wroclaw/",  title: "Warehouse for rent — Wrocław",  desc: "Tenant's market with high supply — real room to negotiate terms." },
+  { href: "/en/services/warehouse-for-rent-poznan/",   title: "Warehouse for rent — Poznań",   desc: "A2 corridor Berlin–Warsaw. Nearshoring and east–west distribution." },
+  { href: "/en/services/warehouse-for-rent-lodz/",     title: "Warehouse for rent — Łódź",     desc: "Poland's centre, A1/A2 — the most cost-effective hub for domestic distribution." },
+  { href: "/en/services/warehouse-for-rent-krakow/",   title: "Warehouse for rent — Kraków",   desc: "Tight market, low vacancy — an advisor with off-market access." },
+  { href: "/en/services/warehouse-for-rent-gdansk/",   title: "Warehouse for rent — Gdańsk",   desc: "Port and import hub of the Tri-City. Container logistics and re-export." },
+  { href: "/en/services/warehouse-for-rent-szczecin/", title: "Warehouse for rent — Szczecin", desc: "Western gateway to Poland, proximity to Berlin and Szczecin ports." },
+  { href: "/en/services/warehouse-for-rent-katowice/", title: "Warehouse for rent — Katowice", desc: "Upper Silesia, industry and automotive, A4/A1 south junction." },
+];
+
+const faqs = [
+  { q: "How does this service differ from logistics brokerage?", a: "Logistics brokerage represents a company looking for a warehouse — you commission it, you pay, we select any operator with full independence. Commercialisation & Sales covers the other side of the market: selling operators' vacant space, market entry for foreign companies and free operator selection for manufacturing companies. Two complementary services — different models and different client groups." },
+  { q: "How is warehouse space commercialisation billed?", a: "Warehouse space commercialisation is billed on a success fee basis — our fee is charged only for actual space contracted and filled. No result means no cost on the operator's side." },
+  { q: "Does market entry only cover warehouse selection?", a: "Not only. The market entry service covers full location advisory: infrastructure needs analysis, Polish market research, shortlisting available warehouse options, rate negotiations and support for logistics process relocation. We act as a local representative and independent advisor." },
+  { q: "Why is operator selection free for manufacturing companies?", a: "It's a partnership model — for manufacturing companies the entire process of searching, vetting and recommending an operator is free of charge. Manufacturing companies bear no service cost, making this a real alternative to costly internal tender processes." },
+  { q: "Do you handle specialist industries (cold storage, ADR, e-commerce)?", a: "Yes. Operator selection takes into account specialist industry requirements — cold storage and cold chain, ADR warehouses, pharma (GDP), FMCG, e-commerce. We verify actual operator capabilities, not just stated ones." },
+];
+
+const schemaService = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Commercialisation & sales",
+  "provider": { "@type": "Organization", "name": "Vologis Sp. z o.o.", "url": SITE, "address": { "@type": "PostalAddress", "addressLocality": "Jarocin", "addressRegion": "Wielkopolska", "addressCountry": "PL" } },
+  "areaServed": ["Poland", "Europe"],
+  "serviceType": "Sales brokerage, warehouse commercialization, market entry",
+  "description": "Warehouse space commercialisation, market representation for companies entering the Polish market and strategic logistics partner selection — free of charge for manufacturing companies.",
+  "url": `${SITE}/en/services/commercialization-and-sales/`,
+  "inLanguage": "en",
+};
+
+const schemaFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })),
+};
+---
+
+<ServicePageLayout
+  title="Commercialisation, Sales Brokerage &amp; Market Entry | Vologis"
+  description="Warehouse space commercialisation, market representation for companies entering the Polish market and strategic logistics partner selection — free of charge for manufacturing companies."
+  canonical="https://vologis.com/en/services/commercialization-and-sales/"
+  hreflangPL="/pl/uslugi/komercjalizacja-i-sprzedaz/"
+  ogImage="/og/og-komercjalizacja.png"
+  heroImage="/services/vologis-uslugi-komercjalizacja-i-sprzedaz.webp"
+  eyebrow="Logistics services / Commercialization & sales"
+  h1="Commercialisation, Sales Brokerage &amp; Market Entry"
+  lead="We connect both sides of the logistics market: operators with vacant space and companies seeking the best partner. We act as an outsourced sales function — without the cost of a permanent headcount."
+  trustItems={trustItems}
+  ctaPrimaryLabel="Book a consultation"
+  ctaPrimaryHref="/en/contact/"
+  ctaSecondaryLabel="See logistics brokerage"
+  ctaSecondaryHref="/en/services/logistics-brokerage/"
+  breadcrumbs={[{ name: "Commercialization & sales" }]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaService)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaFaq)} />
+
+  <!-- 1. Problem / In brief -->
+  <section class="ps-problem" aria-labelledby="h-problem">
+    <div class="container">
+      <div class="ps-problem__grid">
+        <div class="ps-problem__copy">
+          <h2 class="h2" id="h-problem">An outsourced sales function and independent advisor in one — without the cost of a permanent headcount</h2>
+          <p class="body">The logistics market has two poles of difficulty: operators with vacant space don't have a dedicated sales team — and lose facility profitability. Companies looking for a logistics partner drown in unverified offers — and lose time. Vologis combines both problems into one service.</p>
+          <p class="body">For operators we take over the process of acquiring clients for vacant pallet volumes. For foreign companies we act as a local guide and representative in the Polish logistics market. For manufacturing companies we offer free selection of a strategic partner — an alternative to inefficient tenders and corporate giants.</p>
+          <p class="body">The result: filled space, safe market entry or the right logistics partner — without your own sales team and without overpaying.</p>
+        </div>
+        <aside class="ps-brief" aria-label="In brief">
+          <p class="ps-brief__label">In brief</p>
+          <p class="ps-brief__text">Commercialisation & sales is a service combining three areas: warehouse space commercialisation for operators (success fee model), market representation and location advisory for companies entering the Polish market (market entry), and strategic logistics partner selection for manufacturing companies — free of charge for the manufacturer. Vologis acts as an outsourced sales function and independent advisor simultaneously.</p>
+          <hr class="ps-brief__rule" />
+          <p class="ps-brief__sub">Vologis &middot; Jarocin, Poland &middot; Poland and EU</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Three pillars -->
+  <section class="ps-filary" aria-labelledby="h-filary">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-filary">Three service pillars</h2>
+      <div class="filary-grid">
+        {filary.map((f) => (
+          <div class="filar-card">
+            <h3 class="filar-card__title">{f.title}</h3>
+            <p class="filar-card__subtitle">{f.subtitle}</p>
+            <p class="filar-card__body">{f.body}</p>
+            <div class="filar-card__value"><p class="filar-card__value-text">{f.value}</p></div>
+            {f.badge && <p class="filar-card__badge">{f.badge}</p>}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. For whom -->
+  <section class="ps-forwho" aria-labelledby="h-forwho">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-forwho">Who is this service for?</h2>
+      <div class="fw-grid">
+        {forWhom.map((p) => (<div class="fw-card"><h3 class="fw-card__title">{p.title}</h3><p class="fw-card__text">{p.text}</p></div>))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Detailed solutions -->
+  <section class="ps-branze" aria-labelledby="h-branze">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-branze">Detailed solutions</h2>
+      <p class="section-intro">Each area available as a dedicated service. Choose the variant that fits your situation.</p>
+      <div class="branze-grid">
+        {programmaticLinks.map((l) => (<a class="branze-card" href={l.href}><span class="branze-card__title">{l.title}</span><span class="branze-card__desc">{l.desc}</span><span class="branze-card__arrow" aria-hidden="true">→</span></a>))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Warehouse by city -->
+  <section class="ps-branze" aria-labelledby="h-miasta">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-miasta">Warehouse for rent — by city</h2>
+      <p class="section-intro">We operate across Poland's major logistics markets — negotiating lease rates and terms on behalf of tenants, with no commission from landlords.</p>
+      <div class="branze-grid">
+        {cityLinks.map((l) => (<a class="branze-card" href={l.href}><span class="branze-card__title">{l.title}</span><span class="branze-card__desc">{l.desc}</span><span class="branze-card__arrow" aria-hidden="true">→</span></a>))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Market resources -->
+  <section class="ps-market-resources" aria-labelledby="h-market-resources">
+    <div class="container">
+      <p class="market-resources__label" id="h-market-resources">Market portals</p>
+      <div class="market-resources__grid">
+        <a class="market-resources__card" href="https://www.magazynyinfo.pl/" target="_blank" rel="noopener noreferrer">
+          <span class="market-resources__title">magazynyinfo.pl</span>
+          <span class="market-resources__desc">Database of warehouse listings in Poland — browse available space by location and parameters.</span>
+          <span class="market-resources__ext" aria-label="external site">↗</span>
+        </a>
+        <a class="market-resources__card" href="https://warehousemarket.pl/" target="_blank" rel="noopener noreferrer">
+          <span class="market-resources__title">warehousemarket.pl</span>
+          <span class="market-resources__desc">Warehouse market portal — logistics space listings and market data for tenants.</span>
+          <span class="market-resources__ext" aria-label="external site">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder experience -->
+  <section class="ps-experience" aria-labelledby="h-experience">
+    <div class="container">
+      <CalloutBox>
+        <p class="exp-eyebrow">From Vologis founder's experience</p>
+        <div class="exp-metrics">
+          <div class="exp-metric"><span class="exp-metric__val tnum">70,000 sqm</span><span class="exp-metric__label">intermodal park — filling vacant space and strategic contracts with key tenants</span></div>
+        </div>
+        <p class="exp-frame">Commercialisation project carried out by the Vologis founder in a previous management role.</p>
+      </CalloutBox>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="ps-faq" aria-labelledby="h-faq">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-faq">FAQ — frequently asked questions</h2>
+      <FaqAccordion items={faqs} single />
+    </div>
+  </section>
+
+  <!-- End CTA -->
+  <section class="ps-endcta" aria-labelledby="h-endcta">
+    <div class="container">
+      <div class="endcta-inner">
+        <h2 class="endcta__h2" id="h-endcta">Want to sell vacant space, enter the Polish market or find a logistics partner?</h2>
+        <p class="endcta__text">Tell us about your situation — an operator with vacant space, a company planning expansion or a manufacturer seeking an operator. Free first conversation, we respond within 24 hours.</p>
+        <div class="endcta__actions">
+          <a href="/en/contact/" class="endcta__btn endcta__btn--primary">Book a consultation <span aria-hidden="true">→</span></a>
+          <a href="/en/services/logistics-brokerage/" class="endcta__btn endcta__btn--ghost">See logistics brokerage <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related -->
+  <section class="ps-related" aria-labelledby="h-related">
+    <div class="container">
+      <h2 class="h2 h2--center" id="h-related">Other Vologis services</h2>
+      <div class="related-grid">
+        <a class="related-card" href="/en/services/logistics-brokerage/"><span class="related-card__title">Logistics brokerage &amp; fulfillment</span><span class="related-card__desc">Warehouse, fulfillment and transport selection for your company.</span><span class="related-card__arrow" aria-hidden="true">→</span></a>
+        <a class="related-card" href="/en/services/greenfield-projects/"><span class="related-card__title">Greenfield projects</span><span class="related-card__desc">From empty plot to live operation — one partner, full accountability.</span><span class="related-card__arrow" aria-hidden="true">→</span></a>
+        <a class="related-card" href="/en/services/operational-consulting/"><span class="related-card__title">Operational consulting &amp; audit</span><span class="related-card__desc">Process audit, bottlenecks, quick wins and WMS selection.</span><span class="related-card__arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+</ServicePageLayout>
+
+<style>
+  .h2 { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; letter-spacing: -0.025em; line-height: 1.15; color: var(--color-ink); margin-bottom: var(--space-lg); }
+  .h2--center { text-align: center; }
+  .body { font-size: var(--text-base); color: var(--color-muted); line-height: 1.75; margin-bottom: var(--space-md); }
+  .section-intro { font-size: var(--text-md); color: var(--color-muted); line-height: 1.65; max-width: 60ch; margin-inline: auto; text-align: center; margin-bottom: var(--space-xl); }
+  .ps-problem { padding-block: var(--space-3xl); background: var(--color-paper); }
+  .ps-problem__grid { display: grid; grid-template-columns: 1fr 20rem; gap: var(--space-3xl); align-items: start; }
+  .ps-brief { border: 1px solid var(--color-blue); border-radius: var(--radius-lg); background: var(--color-blue-tint); padding: var(--space-lg) var(--space-xl); position: sticky; top: calc(4.25rem + 3px + var(--space-lg)); }
+  .ps-brief__label { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-secondary); margin-bottom: var(--space-md); }
+  .ps-brief__text { font-size: var(--text-base); color: var(--color-ink); line-height: 1.7; }
+  .ps-brief__rule { border: none; border-top: 1px solid var(--color-blue); margin-block: var(--space-md); opacity: 0.3; }
+  .ps-brief__sub { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.5; }
+  .ps-filary { padding-block: var(--space-3xl); background: var(--color-paper-2); }
+  .filary-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--space-lg); margin-top: var(--space-xl); }
+  .filar-card { border: 1px solid var(--color-rule); border-top: 3px solid var(--color-secondary); border-radius: var(--radius-lg); padding: var(--space-xl); background: var(--color-paper); display: flex; flex-direction: column; gap: var(--space-sm); }
+  .filar-card__title { font-family: var(--font-display); font-size: var(--text-md); font-weight: 700; letter-spacing: -0.015em; color: var(--color-ink); line-height: 1.2; }
+  .filar-card__subtitle { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-secondary); }
+  .filar-card__body { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.65; flex: 1; }
+  .filar-card__value { border-top: 1px solid var(--color-rule); padding-top: var(--space-md); margin-top: var(--space-xs); }
+  .filar-card__value-text { font-size: var(--text-sm); color: var(--color-ink); line-height: 1.6; font-style: italic; }
+  .filar-card__badge { display: inline-block; align-self: flex-start; background: var(--color-secondary); color: #fff; font-family: var(--font-display); font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.02em; padding: var(--space-2xs) var(--space-md); border-radius: var(--radius-pill); margin-top: var(--space-xs); }
+  .ps-forwho { padding-block: var(--space-3xl); background: var(--color-paper); }
+  .fw-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--space-md); margin-top: var(--space-xl); }
+  .fw-card { border: 1px solid var(--color-rule); border-left: 4px solid var(--color-secondary); border-radius: var(--radius-md); padding: var(--space-lg); background: var(--color-paper); }
+  .fw-card__title { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; color: var(--color-ink); margin-bottom: var(--space-sm); }
+  .fw-card__text { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.65; }
+  .ps-branze { padding-block: var(--space-3xl); background: var(--color-paper-2); }
+  .branze-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--space-md); margin-top: var(--space-xl); }
+  .branze-card { display: flex; flex-direction: column; gap: var(--space-xs); border: 1px solid var(--color-rule); border-radius: var(--radius-md); padding: var(--space-lg); background: var(--color-paper); text-decoration: none; transition: border-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out); }
+  .branze-card:hover { border-color: var(--color-blue); transform: translateY(-2px); }
+  .branze-card__title { font-family: var(--font-display); font-size: var(--text-sm); font-weight: 700; color: var(--color-ink); line-height: 1.35; }
+  .branze-card__desc { font-size: var(--text-xs); color: var(--color-muted); line-height: 1.5; flex: 1; }
+  .branze-card__arrow { font-size: var(--text-base); color: var(--color-secondary); transition: transform var(--dur-short) var(--ease-out); align-self: flex-start; margin-top: var(--space-xs); }
+  .branze-card:hover .branze-card__arrow { transform: translateX(4px); }
+  .ps-market-resources { padding-block: var(--space-xl); background: var(--color-paper); border-top: 1px solid var(--color-rule); }
+  .market-resources__label { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-muted); margin-bottom: var(--space-md); }
+  .market-resources__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--space-sm); }
+  .market-resources__card { display: flex; align-items: flex-start; gap: var(--space-sm); padding: var(--space-md) var(--space-lg); border: 1px solid var(--color-rule); border-radius: var(--radius-md); background: var(--color-paper); text-decoration: none; transition: border-color var(--dur-micro) var(--ease-out), background var(--dur-short) var(--ease-out); }
+  .market-resources__card:hover { border-color: var(--color-secondary); background: var(--color-paper-2); }
+  .market-resources__title { font-family: var(--font-display); font-size: var(--text-sm); font-weight: 600; color: var(--color-secondary); display: block; margin-bottom: var(--space-2xs); }
+  .market-resources__desc { font-size: var(--text-xs); color: var(--color-muted); line-height: 1.55; flex: 1; display: block; }
+  .market-resources__ext { font-size: var(--text-base); color: var(--color-muted); flex-shrink: 0; margin-top: 2px; transition: color var(--dur-micro) var(--ease-out); }
+  .market-resources__card:hover .market-resources__ext { color: var(--color-secondary); }
+  .ps-experience { padding-block: var(--space-xl); background: var(--color-paper); }
+  .exp-eyebrow { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; color: var(--color-blue); margin-bottom: var(--space-md); }
+  .exp-metrics { display: flex; flex-wrap: wrap; gap: var(--space-md); margin-bottom: var(--space-md); }
+  .exp-metric { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 14rem; }
+  .exp-metric__val { font-family: var(--font-display); font-size: var(--text-2xl, 2rem); font-weight: 700; letter-spacing: -0.03em; color: var(--color-metric); line-height: 1.1; }
+  .exp-metric__label { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.4; }
+  .exp-frame { font-size: var(--text-xs); color: var(--color-muted); font-style: italic; margin-top: var(--space-sm); } .ps-experience :global(.callout) { border-left-color: var(--color-metric); }
+  .ps-faq { padding-block: var(--space-3xl); background: var(--color-paper); }
+  .ps-endcta { padding-block: var(--space-3xl); background: var(--gradient-cta); }
+  .endcta-inner { max-width: 52rem; margin-inline: auto; text-align: center; }
+  .endcta__h2 { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; letter-spacing: -0.025em; line-height: 1.2; color: var(--color-ink-on-dark); margin-bottom: var(--space-md); }
+  .endcta__text { font-size: var(--text-base); color: var(--color-muted-on-dark); line-height: 1.7; margin-bottom: var(--space-xl); }
+  .endcta__actions { display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap; }
+  .endcta__btn { display: inline-flex; align-items: center; gap: var(--space-xs); font-family: var(--font-display); font-size: var(--text-base); font-weight: 600; padding: var(--space-md) var(--space-2xl); border-radius: var(--radius-pill); text-decoration: none; cursor: pointer; border: 1px solid transparent; transition: background var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out); }
+  .endcta__btn--primary { background: var(--color-accent); color: #fff; }
+  .endcta__btn--primary:hover { background: var(--color-accent-hover); }
+  .endcta__btn--ghost { background: var(--color-glass-dark); color: var(--color-ink-on-dark); border-color: var(--color-glass-border); }
+  .endcta__btn--ghost:hover { background: oklch(100% 0 0 / 0.12); }
+  .ps-related { padding-block: var(--space-3xl); background: var(--color-paper); border-top: 1px solid var(--color-rule); }
+  .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); margin-top: var(--space-xl); }
+  .related-card { display: flex; flex-direction: column; gap: var(--space-sm); border: 1px solid var(--color-rule); border-radius: var(--radius-lg); padding: var(--space-xl); background: var(--color-paper); text-decoration: none; transition: border-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out); }
+  .related-card:hover { border-color: var(--color-blue); transform: translateY(-3px); }
+  .related-card__title { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; color: var(--color-ink); }
+  .related-card__desc { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.55; flex: 1; }
+  .related-card__arrow { font-size: var(--text-md); color: var(--color-secondary); transition: transform var(--dur-short) var(--ease-out); align-self: flex-start; margin-top: auto; }
+  .related-card:hover .related-card__arrow { transform: translateX(4px); }
+  @media (max-width: 60rem) { .ps-problem__grid { grid-template-columns: 1fr; } .ps-brief { position: static; } .related-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 48rem) { .fw-grid { grid-template-columns: 1fr; } .filary-grid { grid-template-columns: 1fr; } .branze-grid { grid-template-columns: 1fr; } .endcta__actions { flex-direction: column; align-items: stretch; } .endcta__btn { width: 100%; justify-content: center; } }
+</style>
